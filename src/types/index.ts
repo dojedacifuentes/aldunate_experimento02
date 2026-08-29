@@ -1,0 +1,227 @@
+/**
+ * Tipos del dominio. El contenido vive como datos tipados en `src/data`,
+ * nunca incrustado dentro de un componente visual.
+ *
+ * Regla transversal del proyecto: nada académico se afirma sin respaldo.
+ * Por eso casi toda entidad admite `sources` y un estado de verificación.
+ */
+
+/* ────────────────────────────── Trazabilidad ────────────────────────────── */
+
+/**
+ * Nivel epistémico de una afirmación. Distinguirlos es el punto: un informe
+ * que mezcla hecho e hipótesis no es un informe, es una opinión larga.
+ */
+export type EvidenceLevel =
+  | 'FACT'
+  | 'SIGNAL'
+  | 'INFERENCE'
+  | 'HYPOTHESIS'
+  | 'PENDING';
+
+/** Fuente pública citable. Espeja `content/research/source-registry.csv`. */
+export interface Source {
+  id: string;
+  title: string;
+  organization: string;
+  url?: string;
+  publishedDate?: string;
+  accessedDate?: string;
+  geography?: string;
+  evidenceType?: string;
+  /** 0–100. Cuánto sostiene realmente esta fuente lo que se le atribuye. */
+  confidence?: number;
+  notes?: string;
+}
+
+/** Afirmación vinculada a evidencia. Espeja `content/research/evidence-matrix.csv`. */
+export interface EvidenceClaim {
+  id: string;
+  claim: string;
+  classification: EvidenceLevel;
+  sourceIds: string[];
+  note?: string;
+  confidence?: number;
+  report?: string;
+  lastVerified?: string;
+}
+
+/**
+ * Marca de contenido aún no confirmado. Su existencia es deliberada: es
+ * preferible un hueco declarado a un dato inventado.
+ */
+export interface Placeholder {
+  id: string;
+  label: string;
+  detail: string;
+}
+
+/* ────────────────────────────── Aldunate ────────────────────────────── */
+
+export type PublicationKind =
+  | 'libro'
+  | 'capitulo'
+  | 'articulo'
+  | 'ponencia'
+  | 'informe'
+  | 'otro';
+
+export interface Publication {
+  id: string;
+  title: string;
+  kind: PublicationKind;
+  year?: number;
+  venue?: string;
+  coauthors?: string[];
+  abstract?: string;
+  url?: string;
+  /** Solo `true` cuando existe respaldo documental cargado por el equipo. */
+  verified: boolean;
+  sourceIds?: string[];
+}
+
+export interface Course {
+  id: string;
+  title: string;
+  institution?: string;
+  year?: string;
+  audience?: string;
+  summary?: string;
+  materials?: { label: string; href: string }[];
+  status: 'confirmado' | 'pendiente';
+  sourceIds?: string[];
+}
+
+/** Nodo del mapa intelectual: una línea de trabajo, no un tema decorativo. */
+export interface ResearchLine {
+  id: string;
+  title: string;
+  summary: string;
+  /** Ids de otras líneas con las que conversa. Dibuja el grafo. */
+  related: string[];
+  status: 'activa' | 'en-formacion' | 'pendiente';
+}
+
+/* ────────────────────────────── Laboratorio ────────────────────────────── */
+
+export type ToolStatus = 'idea' | 'prototype' | 'beta' | 'stable' | 'archived';
+export type ToolMaturity = 'exploratoria' | 'en-prueba' | 'operativa';
+
+export type LabCategory =
+  | 'prompting-juridico'
+  | 'flujos-verificables'
+  | 'analisis-documental'
+  | 'comparacion-modelos'
+  | 'prototipos'
+  | 'visualizacion-juridica'
+  | 'agentes-automatizacion'
+  | 'evaluacion-trazabilidad'
+  | 'seguridad-privacidad'
+  | 'ensenanza-asistida';
+
+export interface LabTool {
+  id: string;
+  title: string;
+  summary: string;
+  status: ToolStatus;
+  category: LabCategory;
+  maturity: ToolMaturity;
+  inputs: string[];
+  outputs: string[];
+  /** Lo que la herramienta NO hace. Se muestra siempre, no en letra chica. */
+  limitations: string[];
+  source?: string;
+  demoUrl?: string;
+  repoUrl?: string;
+  updatedAt: string;
+}
+
+/* ────────────────────────────── Informes ────────────────────────────── */
+
+export type ReportStatus =
+  | 'en-investigacion'
+  | 'borrador'
+  | 'publicado'
+  | 'en-revision';
+
+/** Una versión publicada nunca se sobrescribe: se agrega y se registra. */
+export interface ReportVersion {
+  version: string;
+  date: string;
+  status: ReportStatus;
+  changelog: string[];
+  /** Ruta bajo /public. Vacío mientras no exista el archivo. */
+  pdf?: string;
+}
+
+export interface Report {
+  slug: string;
+  code: string;
+  title: string;
+  subtitle?: string;
+  executiveSummary: string;
+  authors: string[];
+  status: ReportStatus;
+  folder: string;
+  axes: string[];
+  methodology: string[];
+  limitations: string[];
+  variables?: string[];
+  versions: ReportVersion[];
+  sourceIds: string[];
+  claimIds: string[];
+  openQuestions: string[];
+  updatedAt: string;
+}
+
+/* ────────────────────────────── Experimentos ────────────────────────────── */
+
+export type ExperimentStatus = 'idea' | 'prototipo' | 'jugable' | 'archivado';
+
+export interface Experiment {
+  id: string;
+  slug: string;
+  title: string;
+  tagline: string;
+  description: string;
+  status: ExperimentStatus;
+  /** `true` cuando lo que se muestra es material de demostración, no evidencia. */
+  demoContent: boolean;
+  family: 'constitucion' | 'gramatiquerias' | 'juegos' | 'lectura';
+  href?: string;
+}
+
+/* ────────────────────────────── EVA ────────────────────────────── */
+
+export type EvaPortraitKey =
+  | 'cyberpunk'
+  | 'courtyard'
+  | 'desk'
+  | 'presenter'
+  | 'lifestyle'
+  | 'neutral'
+  | 'smile'
+  | 'cafe'
+  | 'sunset'
+  | 'studio';
+
+/** Un mensaje de EVA se ancla a una ruta, no a un temporizador aleatorio. */
+export interface EvaMessage {
+  id: string;
+  /** Prefijo de ruta al que responde. `/` solo coincide con la portada. */
+  route: string;
+  title: string;
+  body: string;
+  portrait: EvaPortraitKey;
+  /** Aviso operativo: límites, prototipo, contenido pendiente. */
+  caveat?: string;
+  action?: { label: string; href: string };
+}
+
+/* ────────────────────────────── Presentación ────────────────────────────── */
+
+/**
+ * Tono semántico compartido por badges, avisos y estados. Vive aquí —y no en
+ * un componente— porque las capas de datos lo declaran junto al contenido.
+ */
+export type Tone = 'muted' | 'signal' | 'success' | 'warning' | 'danger' | 'accent';

@@ -1,0 +1,110 @@
+# ALDUNATE · Experimento 02
+
+Laboratorio digital experimental dedicado al trabajo del profesor **Eduardo
+Aldunate Lizana**: Derecho constitucional, lenguaje jurídico, interpretación,
+investigación, enseñanza e inteligencia artificial.
+
+> **Prototipo académico experimental.** No constituye un sitio oficial de la
+> Pontificia Universidad Católica de Valparaíso ni de su Escuela de Derecho, y
+> no habla en nombre del profesor Aldunate.
+
+---
+
+## Qué es
+
+No es una página personal ni un portal legaltech. Es un espacio de trabajo
+abierto, organizado en cuatro entradas y una capa de método:
+
+| | Ruta | Qué hay |
+|---|---|---|
+| 01 | `/aldunate` | Perfil intelectual, mapa de líneas, publicaciones, cursos |
+| 02 | `/laboratorio` | Herramientas y prototipos de IA + Derecho |
+| 03 | `/informes` | Biblioteca de informes vivos, versionados |
+| 04 | `/experimentos` | Constitution Lab, Gramatiquerías, juegos |
+| 05 | `/investigacion` | Registro de fuentes, matriz de evidencia, método |
+
+Contenido académico no confirmado aparece como **hueco declarado**, nunca
+completado por inferencia. Ver `CLAUDE.md`, sección 2.
+
+---
+
+## Modo visual dual
+
+- **Nocturno** (por defecto) — *archivo constitucional del futuro*: azul-negro,
+  cian contenido, índigo, retícula tenue, metadata monoespaciada.
+- **Institucional** — editorial universitario con la paleta PUCV: azul
+  `#29588C`, rojo `#A75154`, dorado `#B78C30`, burgundy de Derecho `#8A2432`
+  sobre off-white cálido.
+
+El conmutador vive en el header. La preferencia persiste y no parpadea al
+cargar.
+
+---
+
+## EVA
+
+**EVA — Representante legal de tecnologías obsoletas.**
+
+Guía residente del laboratorio: orienta, resume, advierte y contextualiza.
+Habla cuando cambia la sección, aparece sola una única vez y se puede silenciar
+de forma permanente. Es un personaje digital experimental, no una persona.
+
+---
+
+## Desarrollo
+
+Requiere Node.js ≥ 20.9.
+
+```bash
+npm install
+npm run dev
+```
+
+Verificación completa antes de publicar:
+
+```bash
+npm run verify
+```
+
+(`typecheck` + `lint` + `build`)
+
+---
+
+## Estructura
+
+```
+src/app/         rutas (App Router)
+src/components/  common · layout · theme · eva · lab · experiments
+src/data/        contenido tipado — fuente de verdad editorial
+src/lib/         utilidades puras
+src/types/       tipos del dominio
+content/         investigación e informes (fuera del bundle)
+docs/            trazabilidad del proyecto
+public/eva/      retratos de EVA
+public/brand/    escudo Escuela de Derecho PUCV
+```
+
+Stack: Next.js 15 · React 19 · TypeScript · Tailwind v4 · Framer Motion ·
+Lucide. Sin backend.
+
+---
+
+## Documentación
+
+| Archivo | Contenido |
+|---|---|
+| `CLAUDE.md` | Reglas permanentes. Leer antes de tocar nada. |
+| `docs/MASTER_PROMPT.md` | Encargo original íntegro |
+| `docs/ARCHITECTURE.md` | Arquitectura de información |
+| `docs/CONTENT_PIPELINE.md` | Cómo entra el contenido |
+| `docs/DECISIONS.md` | Decisiones tomadas y sus razones |
+| `docs/HANDOFF.md` | Estado actual y siguiente paso |
+| `CHANGELOG.md` | Historial de versiones |
+
+---
+
+## Aviso sobre el escudo institucional
+
+El escudo de la Escuela de Derecho PUCV se muestra como referencia del contexto
+académico del proyecto. No se recolorea, anima ni deforma. Su uso está
+**pendiente de autorización formal**.

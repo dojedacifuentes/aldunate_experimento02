@@ -1,0 +1,346 @@
+@import "tailwindcss";
+
+/* El tema se conmuta con la clase `dark` en <html>. Ver ThemeProvider. */
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Puente hacia Tailwind: cada token semántico se expone como utilidad.
+   ─────────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Paleta institucional PUCV — constante en ambos modos, se usa con criterio. */
+  --color-pucv-blue: #29588C;
+  --color-pucv-red: #A75154;
+  --color-pucv-gold: #B78C30;
+  --color-derecho: #8A2432;
+
+  --color-signal: var(--signal);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   MODO CLARO — institucional PUCV, editorial y sobrio.
+   Base off-white cálida, azul PUCV como color de acción, burgundy de Derecho
+   como acento de autoridad. Sin glow: en claro la profundidad la da el papel.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --radius: 0.5rem;
+
+  --background: #FAF8F3;
+  --foreground: #191713;
+  --card: #FFFFFF;
+  --card-foreground: #191713;
+  --muted: #F0EBE1;
+  --muted-foreground: #6A6255;
+  --border: #DFD7C8;
+  --input: #FFFFFF;
+  --ring: #29588C;
+
+  --primary: #29588C;
+  --primary-foreground: #FFFFFF;
+  --accent: #8A2432;
+  --accent-foreground: #FFFFFF;
+
+  --signal: #29588C;
+  --success: #2F6B4F;
+  --warning: #8A6A1F;
+  --danger: #A0332B;
+
+  /* Ambiente: en claro la retícula es tinta tenue sobre papel. */
+  --grid-line: rgba(41, 88, 140, 0.055);
+  --grid-size: 40px;
+  --halo-1: rgba(41, 88, 140, 0.06);
+  --halo-2: rgba(138, 36, 50, 0.045);
+  --rule: rgba(41, 88, 140, 0.22);
+
+  --surface-bg: rgba(255, 255, 255, 0.86);
+  --surface-blur: 6px;
+  --surface-shadow: 0 1px 2px rgba(25, 23, 19, 0.04), 0 8px 24px -16px rgba(25, 23, 19, 0.18);
+  --surface-shadow-hover: 0 1px 2px rgba(25, 23, 19, 0.05), 0 14px 32px -18px rgba(41, 88, 140, 0.32);
+  --surface-border-hover: rgba(41, 88, 140, 0.42);
+
+  --glow-soft: none;
+  --glow-strong: none;
+  --text-glow: none;
+  --noise-opacity: 0;
+
+  color-scheme: light;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   MODO OSCURO — cyberpunk académico. Archivo constitucional del futuro:
+   azul-negro, cian contenido, índigo. Profundidad, no neón.
+   ─────────────────────────────────────────────────────────────────────────── */
+.dark {
+  --background: oklch(0.07 0.015 250);
+  --foreground: oklch(0.93 0.01 240);
+  --card: oklch(0.105 0.018 250);
+  --card-foreground: oklch(0.93 0.01 240);
+  --muted: oklch(0.145 0.02 250);
+  --muted-foreground: oklch(0.66 0.014 240);
+  --border: oklch(0.22 0.02 250);
+  --input: oklch(0.16 0.02 250);
+  --ring: oklch(0.71 0.17 200);
+
+  --primary: oklch(0.71 0.17 200);
+  --primary-foreground: oklch(0.07 0.015 250);
+  --accent: oklch(0.62 0.19 268);
+  --accent-foreground: oklch(0.07 0.015 250);
+
+  --signal: oklch(0.71 0.17 200);
+  --success: oklch(0.72 0.16 160);
+  --warning: oklch(0.78 0.14 80);
+  --danger: oklch(0.68 0.19 22);
+
+  --grid-line: oklch(0.71 0.17 200 / 0.045);
+  --grid-size: 48px;
+  --halo-1: oklch(0.71 0.17 200 / 0.07);
+  --halo-2: oklch(0.55 0.22 264 / 0.06);
+  --rule: oklch(0.71 0.17 200 / 0.4);
+
+  --surface-bg: oklch(0.105 0.018 250 / 0.78);
+  --surface-blur: 12px;
+  --surface-shadow: none;
+  --surface-shadow-hover: 0 0 24px oklch(0.71 0.17 200 / 0.09);
+  --surface-border-hover: oklch(0.71 0.17 200 / 0.45);
+
+  --glow-soft: 0 0 20px oklch(0.71 0.17 200 / 0.15), 0 0 40px oklch(0.71 0.17 200 / 0.05);
+  --glow-strong: 0 0 30px oklch(0.71 0.17 200 / 0.28), 0 0 60px oklch(0.71 0.17 200 / 0.1);
+  --text-glow: 0 0 22px oklch(0.71 0.17 200 / 0.55);
+  --noise-opacity: 0.022;
+
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* La conmutación de tema no debe parpadear ni arrastrar cada hijo. */
+  html.theme-transition,
+  html.theme-transition body {
+    transition: background-color 0.28s ease, color 0.28s ease;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 28%, transparent);
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--muted); }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--muted-foreground) 40%, transparent);
+    border-radius: 6px;
+    border: 3px solid var(--muted);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--primary) 70%, transparent);
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Utilidades de ambiente. Una sola clase, dos lecturas según el tema.
+   ─────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .grid-bg {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+  }
+
+  .surface {
+    background: var(--surface-bg);
+    backdrop-filter: blur(var(--surface-blur));
+    border: 1px solid var(--border);
+    box-shadow: var(--surface-shadow);
+  }
+
+  .surface-interactive {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .surface-interactive:hover {
+    border-color: var(--surface-border-hover);
+    box-shadow: var(--surface-shadow-hover);
+  }
+
+  .glow { box-shadow: var(--glow-soft); }
+  .glow-strong { box-shadow: var(--glow-strong); }
+  .text-glow { text-shadow: var(--text-glow); }
+
+  .mono {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Metadato: la letra pequeña que sostiene la trazabilidad. */
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: var(--noise-opacity);
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .rule-gradient {
+    background: linear-gradient(90deg, transparent, var(--rule), transparent);
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Enlace de salto: invisible hasta recibir foco de teclado. */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3.5rem;
+  z-index: 100;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: top 0.15s ease-out;
+}
+.skip-link:focus { top: 0.75rem; }
+
+/* ── Prosa editorial para informes y textos largos ── */
+.prose-editorial {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--foreground);
+  max-width: 68ch;
+}
+.prose-editorial > * + * { margin-top: 1em; }
+.prose-editorial h2 {
+  font-size: 1.5rem;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--border);
+}
+.prose-editorial h3 { font-size: 1.2rem; margin-top: 1.6em; margin-bottom: 0.4em; }
+.prose-editorial ul, .prose-editorial ol { padding-left: 1.25em; }
+.prose-editorial li { margin-top: 0.35em; }
+.prose-editorial ul { list-style: disc; }
+.prose-editorial ol { list-style: decimal; }
+.prose-editorial strong { font-weight: 650; }
+.prose-editorial a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.prose-editorial blockquote {
+  padding-left: 1em;
+  border-left: 2px solid var(--primary);
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.prose-editorial code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--muted);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+@keyframes pulse-signal {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Quien pide menos movimiento, recibe menos movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+}
