@@ -68,7 +68,7 @@
 
   --signal: #29588C;
   --success: #2F6B4F;
-  --warning: #8A6A1F;
+  --warning: #74561A;
   --danger: #A0332B;
 
   /* Ambiente: en claro la retícula es tinta tenue sobre papel. */
@@ -114,7 +114,7 @@
 
   --signal: oklch(0.71 0.17 200);
   --success: oklch(0.72 0.16 160);
-  --warning: oklch(0.78 0.14 80);
+  --warning: oklch(0.84 0.13 85);
   --danger: oklch(0.68 0.19 22);
 
   --grid-line: oklch(0.71 0.17 200 / 0.045);
