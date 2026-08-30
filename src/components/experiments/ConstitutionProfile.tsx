@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Surface } from '@/components/common/ui';
+import { handleRadioKeyDown } from '@/lib/a11y';
 import { cn } from '@/lib/utils';
 
 /**
@@ -175,6 +176,12 @@ const tensions: Tension[] = [
 
 const STEPS = 5; // 0..4
 
+/**
+ * El helper de teclado opera sobre valores de texto, así que las posiciones del
+ * eje viajan como cadenas y se convierten de vuelta al asignarlas.
+ */
+const stepValues: readonly string[] = Array.from({ length: STEPS }, (_, i) => String(i));
+
 export function ConstitutionProfile() {
   const [values, setValues] = useState<Record<string, number>>({});
 
@@ -245,7 +252,18 @@ export function ConstitutionProfile() {
                       role="radio"
                       aria-checked={v === i}
                       aria-label={`${d.title}: posición ${i + 1} de ${STEPS}`}
+                      // Sin posición elegida, la primera casilla es la entrada
+                      // del grupo para el tabulador.
+                      tabIndex={v === i || (v === undefined && i === 0) ? 0 : -1}
                       onClick={() => setValues((p) => ({ ...p, [d.id]: i }))}
+                      onKeyDown={(event) =>
+                        handleRadioKeyDown(
+                          event,
+                          stepValues,
+                          String(v ?? 0),
+                          (next) => setValues((p) => ({ ...p, [d.id]: Number(next) })),
+                        )
+                      }
                       className={cn(
                         'h-9 flex-1 rounded-md border transition-colors',
                         v === i

@@ -54,7 +54,7 @@ export function SiteFooter() {
           </p>
           <div className="flex flex-col gap-3 text-[0.75rem] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p className="mono uppercase tracking-widest">
-              {year} · Experimento 02 · v0.1.0
+              {year} · Experimento 02 · v{site.version}
             </p>
             <p>
               <span className="text-foreground/70">{eva.name}</span> — {eva.role}.

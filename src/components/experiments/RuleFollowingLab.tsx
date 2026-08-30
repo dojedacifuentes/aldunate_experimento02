@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Badge, Surface } from '@/components/common/ui';
+import { handleRadioKeyDown } from '@/lib/a11y';
 import { cn } from '@/lib/utils';
 
 /**
@@ -65,6 +66,9 @@ const items: Item[] = [
 ];
 
 type Answer = 'entra' | 'no-entra';
+
+const contextIds = contexts.map((c) => c.id);
+const answerOptions: readonly Answer[] = ['entra', 'no-entra'];
 
 export function RuleFollowingLab() {
   const [contextId, setContextId] = useState(contexts[0].id);
@@ -151,7 +155,11 @@ export function RuleFollowingLab() {
                 type="button"
                 role="radio"
                 aria-checked={c.id === contextId}
+                tabIndex={c.id === contextId ? 0 : -1}
                 onClick={() => setContextId(c.id)}
+                onKeyDown={(event) =>
+                  handleRadioKeyDown(event, contextIds, contextId, setContextId)
+                }
                 className={cn(
                   'rounded-full border px-4 py-1.5 text-[0.8125rem] transition-colors',
                   c.id === contextId
@@ -214,13 +222,26 @@ export function RuleFollowingLab() {
                     aria-label={`${item.label}: ¿entra al parque?`}
                     className="mt-auto flex gap-2"
                   >
-                    {(['entra', 'no-entra'] as Answer[]).map((opt) => (
+                    {answerOptions.map((opt, optIndex) => (
                       <button
                         key={opt}
                         type="button"
                         role="radio"
                         aria-checked={value === opt}
+                        // Sin respuesta previa, la primera opción es la que
+                        // recibe el tabulador: el grupo debe tener una entrada.
+                        tabIndex={
+                          value === opt || (value === undefined && optIndex === 0) ? 0 : -1
+                        }
                         onClick={() => setAnswer(item.id, opt)}
+                        onKeyDown={(event) =>
+                          handleRadioKeyDown(
+                            event,
+                            answerOptions,
+                            value ?? answerOptions[0],
+                            (next) => setAnswer(item.id, next),
+                          )
+                        }
                         className={cn(
                           'flex-1 rounded-md border px-3 py-1.5 text-[0.8125rem] transition-colors',
                           value === opt
