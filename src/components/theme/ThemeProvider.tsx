@@ -4,14 +4,23 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
 } from 'react';
 
 export type Theme = 'dark' | 'light';
 
 const STORAGE_KEY = 'aldunate-theme';
+const THEME_EVENT = 'aldunate-theme-change';
+
+function readTheme(): Theme {
+  return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+}
+
+function subscribeToTheme(onChange: () => void) {
+  window.addEventListener(THEME_EVENT, onChange);
+  return () => window.removeEventListener(THEME_EVENT, onChange);
+}
 
 /**
  * Script que corre antes del primer pintado para evitar el destello de tema
@@ -47,15 +56,11 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('dark');
-  const [ready, setReady] = useState(false);
-
-  // El script de <head> ya decidió el tema. Aquí solo se lee lo que dejó puesto.
-  useEffect(() => {
-    const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-    setThemeState(current);
-    setReady(true);
-  }, []);
+  // El script de <head> decide antes del primer pintado. El store externo lee
+  // ese resultado sin introducir un segundo render de sincronización.
+  const clientTheme = useSyncExternalStore(subscribeToTheme, readTheme, () => null);
+  const theme = clientTheme ?? 'dark';
+  const ready = clientTheme !== null;
 
   const setTheme = useCallback((next: Theme) => {
     const root = document.documentElement;
@@ -69,7 +74,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // Modo privado o almacenamiento bloqueado: el tema vale para esta sesión.
     }
-    setThemeState(next);
+    window.dispatchEvent(new Event(THEME_EVENT));
     window.setTimeout(() => root.classList.remove('theme-transition'), 320);
   }, []);
 

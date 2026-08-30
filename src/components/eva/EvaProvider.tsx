@@ -8,12 +8,33 @@ import {
   useEffect,
   useMemo,
   useState,
+  useSyncExternalStore,
 } from 'react';
 import { evaMessageForRoute, evaWelcome } from '@/data/eva';
 import type { EvaMessage } from '@/types';
 
 const SEEN_KEY = 'aldunate-eva-seen';
 const MUTED_KEY = 'aldunate-eva-muted';
+const MUTED_EVENT = 'aldunate-eva-muted-change';
+let memoryMuted = false;
+
+function readMuted() {
+  try {
+    memoryMuted = localStorage.getItem(MUTED_KEY) === '1';
+  } catch {
+    // El respaldo en memoria conserva la preferencia durante esta sesión.
+  }
+  return memoryMuted;
+}
+
+function subscribeToMuted(onChange: () => void) {
+  window.addEventListener(MUTED_EVENT, onChange);
+  window.addEventListener('storage', onChange);
+  return () => {
+    window.removeEventListener(MUTED_EVENT, onChange);
+    window.removeEventListener('storage', onChange);
+  };
+}
 
 interface EvaContextValue {
   /** Mensaje correspondiente a la ruta actual. `undefined` si no hay ninguno. */
@@ -40,27 +61,24 @@ const EvaContext = createContext<EvaContextValue | null>(null);
  */
 export function EvaProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const [muted, setMuted] = useState(false);
-  const [greeting, setGreeting] = useState(false);
+  const [panel, setPanel] = useState<{ route: string; greeting: boolean } | null>(null);
+  const muted = useSyncExternalStore(subscribeToMuted, readMuted, () => false);
+  const open = panel?.route === pathname;
+  const greeting = open && panel.greeting;
 
   useEffect(() => {
-    let isMuted = false;
     let hasSeen = true;
     try {
-      isMuted = localStorage.getItem(MUTED_KEY) === '1';
       hasSeen = localStorage.getItem(SEEN_KEY) === '1';
     } catch {
       // Sin almacenamiento: se asume ya vista para no molestar en cada carga.
     }
-    setMuted(isMuted);
 
-    if (!hasSeen && !isMuted) {
+    if (!hasSeen && !readMuted()) {
       // Un respiro antes de aparecer: irrumpir durante el primer pintado se
       // lee como pop-up, no como bienvenida.
       const t = window.setTimeout(() => {
-        setGreeting(true);
-        setOpen(true);
+        setPanel({ route: pathname, greeting: true });
         try {
           localStorage.setItem(SEEN_KEY, '1');
         } catch {
@@ -69,32 +87,24 @@ export function EvaProvider({ children }: { children: React.ReactNode }) {
       }, 1400);
       return () => window.clearTimeout(t);
     }
-  }, []);
-
-  // Cambiar de sección cierra el panel: el mensaje anterior ya no aplica y
-  // dejarlo abierto obligaría a leer algo que dejó de ser pertinente.
-  useEffect(() => {
-    setOpen(false);
-    setGreeting(false);
   }, [pathname]);
 
-  const openPanel = useCallback(() => setOpen(true), []);
-  const closePanel = useCallback(() => {
-    setOpen(false);
-    setGreeting(false);
-  }, []);
+  const openPanel = useCallback(
+    () => setPanel({ route: pathname, greeting: false }),
+    [pathname],
+  );
+  const closePanel = useCallback(() => setPanel(null), []);
 
   const toggleMuted = useCallback(() => {
-    setMuted((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem(MUTED_KEY, next ? '1' : '0');
-      } catch {
-        /* sin persistencia disponible */
-      }
-      if (next) setOpen(false);
-      return next;
-    });
+    const next = !readMuted();
+    memoryMuted = next;
+    try {
+      localStorage.setItem(MUTED_KEY, next ? '1' : '0');
+    } catch {
+      /* sin persistencia disponible */
+    }
+    if (next) setPanel(null);
+    window.dispatchEvent(new Event(MUTED_EVENT));
   }, []);
 
   // Escape cierra. Un panel que no se cierra con Escape es un cuadro de diálogo

@@ -53,7 +53,7 @@ de forma permanente. Es un personaje digital experimental, no una persona.
 
 ## Desarrollo
 
-Requiere Node.js ≥ 20.9.
+Requiere Node.js 22.x.
 
 ```bash
 npm install
@@ -84,7 +84,7 @@ public/eva/      retratos de EVA
 public/brand/    escudo Escuela de Derecho PUCV
 ```
 
-Stack: Next.js 15 · React 19 · TypeScript · Tailwind v4 · Framer Motion ·
+Stack: Next.js 16 · React 19 · TypeScript · Tailwind v4 · Framer Motion ·
 Lucide. Sin backend.
 
 ---

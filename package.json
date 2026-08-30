@@ -1,9 +1,13 @@
 {
   "name": "aldunate-experimento02",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Laboratorio digital experimental — Eduardo Aldunate Lizana. Prototipo académico, no oficial PUCV.",
-  "engines": { "node": ">=20.9.0" },
+  "engines": { "node": "22.x" },
+  "allowScripts": {
+    "sharp@0.35.4": true,
+    "unrs-resolver@1.12.2": true
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,20 +20,18 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.544.0",
-    "next": "15.5.4",
+    "next": "16.3.3",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "recharts": "^2.15.4",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^22.18.1",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "eslint": "^9.35.0",
-    "eslint-config-next": "15.5.4",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.3",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
   }

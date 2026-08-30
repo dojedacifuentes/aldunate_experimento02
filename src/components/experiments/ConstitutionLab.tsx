@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { AlertTriangle, RotateCcw } from 'lucide-react';
 import { Badge, Surface } from '@/components/common/ui';
+import { handleRadioKeyDown } from '@/lib/a11y';
 import { cn } from '@/lib/utils';
 
 /**
@@ -35,6 +36,8 @@ const operators: Operator[] = [
     force: 'El órgano tiene vedado actuar.',
   },
 ];
+
+const operatorIds = operators.map((operator) => operator.id);
 
 interface Dependent {
   id: string;
@@ -181,7 +184,11 @@ export function ConstitutionLab() {
               type="button"
               role="radio"
               aria-checked={op.id === operatorId}
+              tabIndex={op.id === operatorId ? 0 : -1}
               onClick={() => setOperatorId(op.id)}
+              onKeyDown={(event) =>
+                handleRadioKeyDown(event, operatorIds, operatorId, setOperatorId)
+              }
               className={cn(
                 'rounded-full border px-4 py-1.5 text-[0.8125rem] transition-colors',
                 op.id === operatorId

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Surface } from '@/components/common/ui';
+import { handleRadioKeyDown } from '@/lib/a11y';
 import { cn } from '@/lib/utils';
 
 /**
@@ -134,6 +135,7 @@ export function AmbiguityLab() {
 function CaseCard({ item }: { item: Case }) {
   const [activeId, setActiveId] = useState(item.readings[0].id);
   const active = item.readings.find((r) => r.id === activeId) ?? item.readings[0];
+  const readingIds = item.readings.map((reading) => reading.id);
 
   return (
     <Surface className="overflow-hidden p-6 sm:p-8">
@@ -169,7 +171,11 @@ function CaseCard({ item }: { item: Case }) {
             type="button"
             role="radio"
             aria-checked={reading.id === activeId}
+            tabIndex={reading.id === activeId ? 0 : -1}
             onClick={() => setActiveId(reading.id)}
+            onKeyDown={(event) =>
+              handleRadioKeyDown(event, readingIds, activeId, setActiveId)
+            }
             className={cn(
               'rounded-full border px-4 py-1.5 text-[0.8125rem] transition-colors',
               reading.id === activeId

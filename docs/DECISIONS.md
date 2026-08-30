@@ -173,8 +173,24 @@ público hace el método auditable; el contador en cero hace el estado honesto.
 
 **Qué.** Todo es estático. Sin base de datos, sin API, sin autenticación.
 
-**Por qué.** El encargo lo pide mientras no haya necesidad real. Las 16 rutas se
+**Por qué.** El encargo lo pide mientras no haya necesidad real. Las rutas se
 prerenderizan; el despliegue en Vercel no tiene estado que administrar.
 
 **Cuándo revisar.** Cuando Lex Note necesite persistir anotaciones, o cuando un
 informe requiera datos que no quepan en el bundle.
+
+---
+
+## D-014 · Next.js 16 y Node 22 como base de despliegue
+
+**Qué.** El proyecto usa Next.js `16.3.3` y fija Node.js en la rama `22.x`.
+Los scripts de instalación necesarios se aprueban por paquete y versión.
+
+**Por qué.** Next.js `15.5.4` contenía una vulnerabilidad crítica y el rango
+abierto de Node permitía que Vercel cambiara de versión mayor sin una decisión
+del proyecto. La combinación actual compila en producción y deja la auditoría
+de dependencias en cero vulnerabilidades.
+
+**Regla.** Toda actualización futura debe pasar `npm run verify`, una
+instalación limpia y la revisión de scripts de instalación pendientes antes de
+subirse a `main`.

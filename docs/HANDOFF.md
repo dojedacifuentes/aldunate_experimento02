@@ -1,6 +1,6 @@
 # HANDOFF — estado del proyecto
 
-**Última actualización:** 2026-08-29 · versión `0.1.0`
+**Última actualización:** 2026-08-29 · versión `0.1.1`
 
 Documento para que cualquier persona o agente retome el trabajo sin haber estado
 en la sesión anterior. Se actualiza al cerrar cada sesión.
@@ -19,7 +19,7 @@ Leer `CLAUDE.md` completo. Contiene dos reglas duras —no inventar contenido
 académico, no presentar el sitio como oficial PUCV— cuyo incumplimiento no es
 un bug de estilo.
 
-Node.js ≥ 20.9.
+Node.js 22.x.
 
 ```bash
 npm install
@@ -31,13 +31,16 @@ npm run verify   # typecheck + lint + build
 
 ## 2. Qué está hecho
 
-**Todo lo estructural de la V1.** 16 rutas, build limpio, sin errores de
+**Todo lo estructural de la V1.** Rutas prerenderizadas, build limpio, sin errores de
 consola, ambos temas funcionando, EVA operativa, dos experimentos interactivos
 que funcionan de verdad.
 
 | Área | Estado |
 |---|---|
-| Base Next.js 15 / React 19 / TS / Tailwind v4 | ✅ |
+| Base Next.js 16 / React 19 / TS / Tailwind v4 | ✅ |
+| Node 22.x fijado para Vercel | ✅ |
+| Auditoría npm: 0 vulnerabilidades | ✅ |
+| Verificación automática en GitHub Actions | ✅ |
 | Tema dual nocturno + institucional PUCV | ✅ |
 | EVA (12 mensajes, anclada a ruta, silenciable) | ✅ |
 | Escudo Derecho PUCV vía `<InstitutionalMark>` | ✅ |
@@ -128,13 +131,13 @@ En este orden:
 2. **Primeras fuentes de investigación** para el Informe 01. Bastan diez
    universidades con evidencia pública para que la matriz deje de estar vacía y
    los gráficos tengan de qué alimentarse.
-3. **Visualizaciones de informe** una vez haya dataset. `recharts` ya está en
-   `package.json`, sin usar todavía: no se instaló un gráfico antes de tener
-   qué graficar.
+3. **Visualizaciones de informe** una vez haya dataset. Instalar una librería de
+   gráficos solo cuando exista información real que visualizar; `recharts` se
+   retiró mientras no se usa para reducir superficie de dependencias.
 4. **Timeline / mapa conceptual** en `/aldunate`, construido desde el catálogo
    verificado y no al revés.
 5. **Command menu** (`⌘K`) cuando haya suficiente contenido que buscar. Hoy
-   sería un buscador sobre dieciséis rutas.
+   sería un buscador sobre un catálogo todavía pequeño.
 
 ---
 
@@ -163,6 +166,6 @@ scratchpad de la sesión:
 node-v22.20.0-win-x64/
 ```
 
-Para retomar en este equipo: instalar Node ≥ 20.9 de forma permanente, o volver
+Para retomar en este equipo: instalar Node 22.x de forma permanente, o volver
 a descargar el zip portable desde `nodejs.org/dist`. No hay `winget` ni `gh`
 CLI disponibles.

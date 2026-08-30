@@ -59,11 +59,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.subject} — ${site.tagline}`,
     description: site.description,
+    images: [{ url: '/og.png', alt: 'Aldunate — Experimento 02' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${site.subject} — ${site.tagline}`,
     description: site.description,
+    images: ['/og.png'],
   },
   // Prototipo no oficial: mientras no haya autorización institucional, no se
   // busca posicionamiento. Un prototipo indexado se cita como si fuera fuente.

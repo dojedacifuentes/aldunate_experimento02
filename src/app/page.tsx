@@ -9,7 +9,7 @@ import { primaryNav, secondaryNav, site } from '@/data/site';
 import { profile, researchLines } from '@/data/aldunate';
 import { reports, reportStatusMeta } from '@/data/reports';
 import { labTools } from '@/data/lab';
-import { formatDateCompact } from '@/lib/utils';
+import { formatDateCompact, latestVersion } from '@/lib/utils';
 
 /**
  * Portal.
@@ -57,7 +57,7 @@ export default function HomePage() {
             <Stat label="Líneas activas" value={String(activeLines.length)} />
             <Stat label="Informes abiertos" value={String(reports.length)} />
             <Stat label="Fichas en el Lab" value={String(labTools.length)} />
-            <Stat label="Versión" value="v0.1.0" />
+            <Stat label="Versión" value={`v${site.version}`} />
           </dl>
         </Container>
       </section>
@@ -151,6 +151,7 @@ export default function HomePage() {
           <div className="grid gap-4 lg:grid-cols-2">
             {reports.map((report) => {
               const meta = reportStatusMeta[report.status];
+              const latest = latestVersion(report.versions);
               return (
                 <Link key={report.slug} href={`/informes/${report.slug}`} className="group">
                   <Surface interactive className="h-full p-6">
@@ -169,7 +170,7 @@ export default function HomePage() {
                       {report.executiveSummary}
                     </p>
                     <p className="mono mt-5 text-[0.6875rem] text-muted-foreground">
-                      v{report.versions[0].version} · actualizado{' '}
+                      {latest ? `v${latest.version} · ` : ''}actualizado{' '}
                       {formatDateCompact(report.updatedAt)}
                     </p>
                   </Surface>

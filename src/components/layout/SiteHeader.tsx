@@ -14,8 +14,9 @@ import { cn } from '@/lib/utils';
  */
 export function SiteHeader() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [openPathname, setOpenPathname] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const open = openPathname === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -23,9 +24,6 @@ export function SiteHeader() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  // Navegar cierra el menú móvil; si no, queda tapando la página de destino.
-  useEffect(() => setOpen(false), [pathname]);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
@@ -59,6 +57,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  onClick={() => setOpenPathname(null)}
                   aria-current={isActive(item.href) ? 'page' : undefined}
                   className={cn(
                     'relative rounded-md px-3 py-2 text-sm transition-colors',
@@ -84,7 +83,7 @@ export function SiteHeader() {
           <ThemeToggle />
           <button
             type="button"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpenPathname(open ? null : pathname)}
             aria-expanded={open}
             aria-controls="menu-movil"
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}

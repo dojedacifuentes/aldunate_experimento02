@@ -13,7 +13,13 @@ import {
 } from '@/components/common/ui';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { InstitutionalMark } from '@/components/layout/InstitutionalMark';
-import { pendingContent, profile, researchLines } from '@/data/aldunate';
+import {
+  courses,
+  pendingContent,
+  profile,
+  publications,
+  researchLines,
+} from '@/data/aldunate';
 
 export const metadata: Metadata = {
   title: 'Aldunate',
@@ -107,14 +113,14 @@ export default function AldunatePage() {
             icon={<BookOpen className="h-5 w-5" aria-hidden />}
             title="Publicaciones"
             detail="Libros, capítulos, artículos y ponencias. Cada entrada exige título exacto, año, sede y referencia de respaldo."
-            count={0}
+            count={publications.length}
           />
           <CatalogLink
             href="/aldunate/cursos"
             icon={<GraduationCap className="h-5 w-5" aria-hidden />}
             title="Cursos"
             detail="Asignaturas, programas y materiales docentes confirmados, con institución y período."
-            count={0}
+            count={courses.length}
           />
         </div>
       </Section>

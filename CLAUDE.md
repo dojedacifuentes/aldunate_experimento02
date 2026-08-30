@@ -134,7 +134,7 @@ docs/            trazabilidad del proyecto
 como datos tipados. Un componente que contiene un párrafo de contenido es un
 componente que habrá que editar para corregir una fecha.
 
-Stack: Next.js 15 (App Router) · React 19 · TypeScript estricto · Tailwind v4 ·
+Stack: Next.js 16 (App Router) · React 19 · TypeScript estricto · Tailwind v4 ·
 Framer Motion · Lucide. Sin backend mientras no haya necesidad real.
 
 ---

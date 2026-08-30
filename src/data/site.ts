@@ -8,6 +8,7 @@
 
 export const site = {
   name: 'Aldunate — Experimento 02',
+  version: '0.1.1',
   shortName: 'ALDUNATE',
   subject: 'Eduardo Aldunate Lizana',
   tagline: 'Laboratorio digital de Derecho, lenguaje y experimentación',

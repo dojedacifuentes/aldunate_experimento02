@@ -5,6 +5,44 @@ Versionado semántico.
 
 ---
 
+## [0.1.1] — 2026-08-29
+
+Versión de estabilización para producción y despliegue en Vercel.
+
+### Seguridad y plataforma
+
+- Next.js actualizado de `15.5.4` a `16.3.3`; se elimina la vulnerabilidad
+  crítica reportada para la versión anterior.
+- Node.js fijado en `22.x` para evitar saltos automáticos de versión mayor en
+  Vercel.
+- `npm audit` queda en cero vulnerabilidades.
+- Scripts de instalación de `sharp@0.35.4` y `unrs-resolver@1.12.2` revisados y
+  aprobados por versión en `package.json`.
+- `recharts` retirado mientras no exista un dataset que requiera gráficos.
+
+### Corregido
+
+- ESLint migrado a la configuración plana nativa de Next.js 16.
+- Estado de tema, menú móvil y EVA adaptado al modelo de efectos de React 19,
+  sin actualizaciones de estado sincrónicas dentro de efectos.
+- Los catálogos de Aldunate ahora calculan sus contadores desde los datos.
+- La portada obtiene la versión más reciente de cada informe por fecha, sin
+  depender del orden del arreglo.
+- La sección de fuentes de un informe queda preparada para mostrar las fichas
+  reales, no solo un contador.
+- Los selectores de Constitution Lab y Gramatiquerías incorporan navegación
+  completa por flechas, Inicio y Fin siguiendo el patrón ARIA de radio.
+
+### Verificado
+
+- TypeScript, ESLint y compilación de producción correctos.
+- Todas las rutas públicas responden `200` y los tres alias responden `307`
+  hacia su destino esperado.
+- Flujo de GitHub Actions para instalación limpia, auditoría, lint, tipos y
+  compilación en cada cambio de `main` y cada pull request.
+- Tarjeta social propia para el sitio, sin escudo ni signos de oficialidad
+  institucional; los informes sin imagen propia no heredan una portada genérica.
+
 ## [0.1.0] — 2026-08-29
 
 Primera implementación. Estructura completa, contenido académico pendiente de

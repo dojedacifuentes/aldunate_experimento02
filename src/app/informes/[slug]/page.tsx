@@ -15,7 +15,7 @@ import {
 import { EvaNote } from '@/components/eva/EvaNote';
 import { InstitutionalMark } from '@/components/layout/InstitutionalMark';
 import { getReport, reports, reportStatusMeta } from '@/data/reports';
-import { evidenceLevels } from '@/data/research';
+import { evidenceLevels, sources } from '@/data/research';
 import { formatDate, latestVersion } from '@/lib/utils';
 
 export function generateStaticParams() {
@@ -30,9 +30,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const report = getReport(slug);
   if (!report) return { title: 'Informe no encontrado' };
+  const description = report.executiveSummary.slice(0, 180);
   return {
     title: report.title,
-    description: report.executiveSummary.slice(0, 180),
+    description,
+    openGraph: {
+      title: report.title,
+      description,
+      images: [],
+    },
+    twitter: {
+      title: report.title,
+      description,
+      images: [],
+    },
   };
 }
 
@@ -58,7 +69,10 @@ export default async function InformeDetallePage({
   const meta = reportStatusMeta[report.status];
   const latest = latestVersion(report.versions);
   const ordered = [...report.versions].sort((a, b) => b.date.localeCompare(a.date));
-  const hasSources = report.sourceIds.length > 0;
+  const reportSources = report.sourceIds
+    .map((id) => sources.find((source) => source.id === id))
+    .filter((source) => source !== undefined);
+  const hasSources = reportSources.length > 0;
 
   return (
     <>
@@ -137,7 +151,7 @@ export default async function InformeDetallePage({
               <MetaRow label="Ejes" value={String(report.axes.length)} />
               <MetaRow
                 label="Fuentes registradas"
-                value={hasSources ? String(report.sourceIds.length) : '0 · en registro'}
+                value={hasSources ? String(reportSources.length) : '0 · en registro'}
               />
               <MetaRow
                 label="Carpeta"
@@ -279,9 +293,50 @@ export default async function InformeDetallePage({
       <Section eyebrow="Trazabilidad" title="Fuentes" className="scroll-mt-20">
         <div id="fuentes">
           {hasSources ? (
-            <p className="text-sm text-muted-foreground">
-              {report.sourceIds.length} fuentes registradas.
-            </p>
+            <ul className="grid gap-3 md:grid-cols-2">
+              {reportSources.map((source) => (
+                <li key={source.id}>
+                  <Surface className="h-full p-5">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="mono text-[0.6875rem] tracking-widest text-primary">
+                        {source.id}
+                      </span>
+                      {source.evidenceType && (
+                        <Badge tone="muted">{source.evidenceType}</Badge>
+                      )}
+                    </div>
+                    <h3 className="mt-3 font-serif text-lg leading-snug text-foreground">
+                      {source.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm text-muted-foreground">
+                      {source.organization}
+                    </p>
+                    <dl className="mt-4 border-t border-border/60 pt-3">
+                      {source.publishedDate && (
+                        <MetaRow label="Publicada" value={formatDate(source.publishedDate)} />
+                      )}
+                      {source.accessedDate && (
+                        <MetaRow label="Consultada" value={formatDate(source.accessedDate)} />
+                      )}
+                      {source.confidence !== undefined && (
+                        <MetaRow label="Confianza" value={`${source.confidence}/100`} />
+                      )}
+                    </dl>
+                    {source.url && (
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-4 inline-flex text-sm font-medium text-primary hover:underline"
+                      >
+                        Abrir fuente
+                        <span className="sr-only">: {source.title}</span>
+                      </a>
+                    )}
+                  </Surface>
+                </li>
+              ))}
+            </ul>
           ) : (
             <div className="space-y-8">
               <div className="rounded-lg border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
