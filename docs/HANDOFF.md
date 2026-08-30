@@ -110,7 +110,7 @@ El botón de descarga aparece solo cuando `pdf` existe.
 
 ### 3.4 Experimentos declarados como idea
 
-Cuatro piezas con estado `idea`: mapa de calor constitucional, Borges, Eco,
+Cinco piezas con estado `idea`: mapa de calor constitucional, Borges, Eco,
 La Ley de los Audaces y Lex Note.
 
 Los requisitos de las dos últimas están publicados en
@@ -122,6 +122,15 @@ segmentado y un criterio publicado de qué se mide.
 `robots: noindex` y la franja de prototipo se mantienen hasta que exista
 autorización formal para el uso del escudo y la referencia a la PUCV. Revisar
 `docs/DECISIONS.md` D-006 y D-007 antes de cambiarlo.
+
+### 3.6 PR #1 abierto y obsoleto — no fusionar
+
+`vercel/react-server-components-cve-vu-ajyqgj` propone Next.js `15.5.9`.
+`main` ya está en `16.3.3` con `npm audit` en cero vulnerabilidades, de modo
+que fusionarlo sería un **retroceso** de versión mayor.
+
+Acción sugerida: cerrar el PR sin fusionar, dejando constancia de que la
+vulnerabilidad se resolvió por otra vía en `1199fbf`.
 
 ---
 
