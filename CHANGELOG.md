@@ -42,6 +42,8 @@ Versión de estabilización para producción y despliegue en Vercel.
   compilación en cada cambio de `main` y cada pull request.
 - Tarjeta social propia para el sitio, sin escudo ni signos de oficialidad
   institucional; los informes sin imagen propia no heredan una portada genérica.
+- URL base corregida al dominio de producción asignado por Vercel para evitar
+  enlaces Open Graph rotos.
 
 ## [0.1.0] — 2026-08-29
 

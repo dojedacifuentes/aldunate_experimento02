@@ -16,7 +16,7 @@ export const site = {
     'Laboratorio digital experimental dedicado al trabajo del profesor Eduardo Aldunate Lizana: Derecho constitucional, lenguaje, investigación, enseñanza e inteligencia artificial. Prototipo académico en construcción.',
   locale: 'es_CL',
   /** Se sobrescribe en Vercel con la URL real del despliegue. */
-  url: 'https://aldunate-experimento02.vercel.app',
+  url: 'https://aldunateexperimento02.vercel.app',
   repo: 'https://github.com/dojedacifuentes/aldunate_experimento02',
 } as const;
 

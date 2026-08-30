@@ -5,6 +5,8 @@
 Documento para que cualquier persona o agente retome el trabajo sin haber estado
 en la sesión anterior. Se actualiza al cerrar cada sesión.
 
+**Producción:** `https://aldunateexperimento02.vercel.app`
+
 ---
 
 ## 1. Antes de tocar nada
