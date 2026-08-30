@@ -1,6 +1,6 @@
 {
   "name": "aldunate-experimento02",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Laboratorio digital experimental — Eduardo Aldunate Lizana. Prototipo académico, no oficial PUCV.",
   "engines": { "node": "22.x" },

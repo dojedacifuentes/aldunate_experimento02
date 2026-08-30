@@ -63,8 +63,8 @@ export const experiments: Experiment[] = [
     title: 'Borges: el jardín de las interpretaciones que se bifurcan',
     tagline: 'Todas las lecturas posibles, simultáneas',
     description:
-      'Un texto normativo desplegado como árbol de interpretaciones. Cada nodo es una decisión hermenéutica; cada hoja, un resultado. El árbol completo suele ser más instructivo que la rama que finalmente se elige.',
-    status: 'idea',
+      'Una disposición y unos hechos fijos, desplegados como árbol de interpretaciones. Cada nodo es una decisión hermenéutica apoyada en un canon reconocible; cada hoja, un desenlace distinto. Cinco resultados defendibles del mismo texto, desde el archivo sin sanción hasta la agravada contra dos personas.',
+    status: 'jugable',
     demoContent: true,
     family: 'lectura',
     href: '/experimentos/gramatiquerias',

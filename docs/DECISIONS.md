@@ -251,3 +251,44 @@ por fechas.
 **Regla.** `thesis` se completa únicamente cuando el argumento central puede
 extraerse del texto con cita. Resumir una tesis de memoria es inventarla
 despacio.
+
+---
+
+## D-018 · Borges se construye; Eco se mantiene como idea
+
+**Qué.** *El jardín de las interpretaciones que se bifurcan* pasa a ser un
+módulo funcional: una disposición ficticia, hechos fijos y tres decisiones
+hermenéuticas encadenadas que producen cinco desenlaces.
+
+**Por qué se pudo construir.** No necesita datos externos. Todo lo que exige es
+un caso bien diseñado y cánones interpretativos reconocibles —literal frente a
+teleológica, empírica frente a conceptual, estricta frente a extensiva—.
+
+**El árbol es asimétrico a propósito.** La lectura teleológica de «alterar»
+cierra el caso y deja sin objeto las dos preguntas siguientes. Un árbol
+equilibrado habría sido más ordenado y habría ocultado el punto: existen
+decisiones interpretativas que no responden una pregunta, sino que vuelven
+irrelevantes las demás.
+
+**Descartado.** Reproducir texto de Borges. La estructura es el préstamo; la
+prosa no. El módulo no cita ni parafrasea la obra.
+
+**Por qué Eco sigue como idea.** El módulo sobre los límites de la
+interpretación es el contrapeso del jardín: sostiene que no toda lectura es
+admisible. Eso exige un criterio publicado de qué hace defendible una
+interpretación, y ese criterio todavía no está escrito. Construirlo antes
+produciría un módulo que afirma tener un límite sin poder decir cuál es.
+
+---
+
+## D-019 · El PR #1 se cierra sin fusionar
+
+**Qué.** El PR automático del bot de Vercel (`next@15.5.9`) se cerró sin
+fusionar el 30-08-2026, con el motivo comentado en el propio PR.
+
+**Por qué.** `main` ya estaba en `16.3.3` con `npm audit` en cero. Fusionarlo
+habría retrocedido una versión mayor a cambio de nada.
+
+**Regla general.** Un PR automático de seguridad no se acepta por el hecho de
+serlo. Se compara contra el estado real de `main`: si la vulnerabilidad ya está
+resuelta por otra vía, el parche propuesto puede ser un retroceso.

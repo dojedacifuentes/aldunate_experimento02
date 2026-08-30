@@ -6,6 +6,7 @@ import { Container, Notice, Section } from '@/components/common/ui';
 import { ExperimentCard } from '@/components/common/ExperimentCard';
 import { AmbiguityLab } from '@/components/experiments/AmbiguityLab';
 import { RuleFollowingLab } from '@/components/experiments/RuleFollowingLab';
+import { InterpretationTree } from '@/components/experiments/InterpretationTree';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { experiments } from '@/data/experiments';
 
@@ -27,7 +28,9 @@ export default function GramatiqueriasPage() {
     (e) => e.family === 'gramatiquerias' || e.family === 'lectura',
   );
   // Las dos piezas construidas ya tienen su sección propia arriba.
-  const pending = family.filter((e) => !['gramatiquerias', 'wittgenstein'].includes(e.id));
+  const pending = family.filter(
+    (e) => !['gramatiquerias', 'wittgenstein', 'borges'].includes(e.id),
+  );
 
   return (
     <>
@@ -76,6 +79,14 @@ export default function GramatiqueriasPage() {
         description="Una disposición de tres palabras y ocho objetos. Clasifique bajo un propósito, cambie el propósito y vuelva a clasificar lo mismo. El texto no cambia en ningún momento."
       >
         <RuleFollowingLab />
+      </Section>
+
+      <Section
+        eyebrow="Ejercicio 03 · Borges"
+        title="El jardín de las interpretaciones que se bifurcan"
+        description="Una disposición, unos hechos fijos y tres decisiones hermenéuticas encadenadas. Recorra una rama hasta el desenlace y vuelva a empezar por otra: el texto no cambia en ninguna."
+      >
+        <InterpretationTree />
       </Section>
 
       <Section

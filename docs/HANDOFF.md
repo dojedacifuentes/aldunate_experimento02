@@ -1,6 +1,6 @@
 # HANDOFF — estado del proyecto
 
-**Última actualización:** 2026-08-29 · versión `0.2.0`
+**Última actualización:** 2026-08-30 · versión `0.3.0`
 
 Documento para que cualquier persona o agente retome el trabajo sin haber estado
 en la sesión anterior. Se actualiza al cerrar cada sesión.
@@ -34,7 +34,7 @@ npm run verify   # typecheck + lint + build
 ## 2. Qué está hecho
 
 **Todo lo estructural de la V1.** Rutas prerenderizadas, build limpio, sin
-errores de consola, ambos temas funcionando, EVA operativa y cuatro
+errores de consola, ambos temas funcionando, EVA operativa y cinco
 experimentos interactivos que funcionan de verdad.
 
 | Área | Estado |
@@ -56,6 +56,7 @@ experimentos interactivos que funcionan de verdad.
 | Ama tu Constitución (interactivo) | ✅ |
 | Gramatiquerías · ambigüedad (interactivo) | ✅ |
 | Wittgenstein · seguir una regla (interactivo) | ✅ |
+| Borges · jardín de interpretaciones (interactivo) | ✅ |
 | `/investigacion` (método + esquemas) | ✅ |
 | Responsive, accesibilidad, reduced-motion | ✅ |
 | Documentación de trazabilidad | ✅ |
@@ -110,7 +111,7 @@ El botón de descarga aparece solo cuando `pdf` existe.
 
 ### 3.4 Experimentos declarados como idea
 
-Cinco piezas con estado `idea`: mapa de calor constitucional, Borges, Eco,
+Cuatro piezas con estado `idea`: mapa de calor constitucional, Eco,
 La Ley de los Audaces y Lex Note.
 
 Los requisitos de las dos últimas están publicados en
@@ -123,14 +124,16 @@ segmentado y un criterio publicado de qué se mide.
 autorización formal para el uso del escudo y la referencia a la PUCV. Revisar
 `docs/DECISIONS.md` D-006 y D-007 antes de cambiarlo.
 
-### 3.6 PR #1 abierto y obsoleto — no fusionar
+### 3.6 PR #1 · cerrado sin fusionar (resuelto)
 
-`vercel/react-server-components-cve-vu-ajyqgj` propone Next.js `15.5.9`.
-`main` ya está en `16.3.3` con `npm audit` en cero vulnerabilidades, de modo
-que fusionarlo sería un **retroceso** de versión mayor.
+El bot de Vercel abrió `vercel/react-server-components-cve-vu-ajyqgj`
+proponiendo Next.js `15.5.9`. Hora y media después, `1199fbf` llevó `main` a
+`16.3.3` —versión mayor posterior, también parcheada—, de modo que fusionarlo
+habría sido un **retroceso** sin ganancia de seguridad.
 
-Acción sugerida: cerrar el PR sin fusionar, dejando constancia de que la
-vulnerabilidad se resolvió por otra vía en `1199fbf`.
+Cerrado el 30-08-2026 sin fusionar, con el motivo comentado en el propio PR.
+La rama remota sigue existiendo; puede borrarse cuando se quiera.
+No reabrir: la vulnerabilidad se resolvió por otra vía en `1199fbf`.
 
 ---
 

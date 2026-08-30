@@ -4,6 +4,43 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado semántico.
 
 ---
+
+## [0.3.0] — 2026-08-30
+
+### Añadido
+
+- **Borges · El jardín de las interpretaciones que se bifurcan** — una
+  disposición ficticia, unos hechos fijos y tres decisiones hermenéuticas
+  encadenadas, cada una apoyada en un canon reconocible (literal/teleológica,
+  empírica/conceptual, estricta/extensiva). Cinco desenlaces defendibles del
+  mismo texto, desde el archivo sin sanción hasta la agravada contra dos
+  personas.
+- El árbol es **asimétrico** a propósito: la lectura teleológica de «alterar»
+  cierra el caso y deja sin objeto las dos preguntas siguientes. Un esquema de
+  opciones equilibradas habría ocultado que existen decisiones interpretativas
+  que no responden una pregunta, sino que vuelven irrelevantes las demás.
+- Panel «el jardín completo»: cuenta las ramas recorridas sobre el total, con
+  el total derivado del recorrido del árbol y no escrito a mano.
+
+### Cambiado
+
+- Borges pasa de `idea` a `jugable`. Quedan cuatro piezas como idea.
+
+### Cerrado
+
+- PR #1 (`vercel/react-server-components-cve-vu-ajyqgj`), sin fusionar. Proponía
+  `next@15.5.9` sobre un `main` que ya está en `16.3.3` con `npm audit` en cero:
+  fusionarlo habría retrocedido una versión mayor. El motivo quedó comentado en
+  el propio PR y en `docs/HANDOFF.md` §3.6.
+
+### Verificado
+
+- typecheck, lint y build limpios.
+- Las cinco ramas recorridas contra el build de producción: cinco desenlaces
+  distintos, contador en 5/5, ninguna rama sin recorrer.
+
+---
+
 ## [0.2.0] — 2026-08-29
 
 Ajustes de fidelidad a la guía visual y dos experimentos interactivos nuevos.

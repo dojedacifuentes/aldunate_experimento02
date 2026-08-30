@@ -8,7 +8,7 @@
 
 export const site = {
   name: 'Aldunate — Experimento 02',
-  version: '0.2.0',
+  version: '0.3.0',
   shortName: 'ALDUNATE',
   subject: 'Eduardo Aldunate Lizana',
   tagline: 'Derecho constitucional, lenguaje y otras complicaciones.',
