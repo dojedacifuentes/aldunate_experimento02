@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 import { Container, Notice, Section } from '@/components/common/ui';
 import { ExperimentCard } from '@/components/common/ExperimentCard';
 import { AmbiguityLab } from '@/components/experiments/AmbiguityLab';
+import { RuleFollowingLab } from '@/components/experiments/RuleFollowingLab';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { experiments } from '@/data/experiments';
 
@@ -25,7 +26,8 @@ export default function GramatiqueriasPage() {
   const family = experiments.filter(
     (e) => e.family === 'gramatiquerias' || e.family === 'lectura',
   );
-  const pending = family.filter((e) => e.id !== 'gramatiquerias');
+  // Las dos piezas construidas ya tienen su sección propia arriba.
+  const pending = family.filter((e) => !['gramatiquerias', 'wittgenstein'].includes(e.id));
 
   return (
     <>
@@ -61,11 +63,19 @@ export default function GramatiqueriasPage() {
       </Section>
 
       <Section
-        eyebrow="Ejercicio"
+        eyebrow="Ejercicio 01"
         title="Dos lecturas, una oración"
         description="Cambie la lectura y observe cómo se reorganiza el análisis y qué consecuencia arrastra. Ninguna de las dos es un error gramatical."
       >
         <AmbiguityLab />
+      </Section>
+
+      <Section
+        eyebrow="Ejercicio 02 · Wittgenstein"
+        title="¿Qué regla estás siguiendo?"
+        description="Una disposición de tres palabras y ocho objetos. Clasifique bajo un propósito, cambie el propósito y vuelva a clasificar lo mismo. El texto no cambia en ningún momento."
+      >
+        <RuleFollowingLab />
       </Section>
 
       <Section

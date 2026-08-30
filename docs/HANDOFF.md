@@ -1,6 +1,6 @@
 # HANDOFF — estado del proyecto
 
-**Última actualización:** 2026-08-29 · versión `0.1.1`
+**Última actualización:** 2026-08-29 · versión `0.2.0`
 
 Documento para que cualquier persona o agente retome el trabajo sin haber estado
 en la sesión anterior. Se actualiza al cerrar cada sesión.
@@ -33,9 +33,9 @@ npm run verify   # typecheck + lint + build
 
 ## 2. Qué está hecho
 
-**Todo lo estructural de la V1.** Rutas prerenderizadas, build limpio, sin errores de
-consola, ambos temas funcionando, EVA operativa, dos experimentos interactivos
-que funcionan de verdad.
+**Todo lo estructural de la V1.** Rutas prerenderizadas, build limpio, sin
+errores de consola, ambos temas funcionando, EVA operativa y cuatro
+experimentos interactivos que funcionan de verdad.
 
 | Área | Estado |
 |---|---|
@@ -52,8 +52,10 @@ que funcionan de verdad.
 | `/laboratorio` (8 fichas, filtros) | ✅ |
 | `/informes` + `/informes/[slug]` (3 capas) | ✅ |
 | `/experimentos` + 3 familias | ✅ |
-| Constitution Lab (interactivo) | ✅ |
-| Gramatiquerías (interactivo) | ✅ |
+| Constitution Lab · onda expansiva (interactivo) | ✅ |
+| Ama tu Constitución (interactivo) | ✅ |
+| Gramatiquerías · ambigüedad (interactivo) | ✅ |
+| Wittgenstein · seguir una regla (interactivo) | ✅ |
 | `/investigacion` (método + esquemas) | ✅ |
 | Responsive, accesibilidad, reduced-motion | ✅ |
 | Documentación de trazabilidad | ✅ |
@@ -108,8 +110,8 @@ El botón de descarga aparece solo cuando `pdf` existe.
 
 ### 3.4 Experimentos declarados como idea
 
-Seis piezas con estado `idea`: mapa de calor constitucional, Wittgenstein,
-Borges, Eco, La Ley de los Audaces, Lex Note.
+Cuatro piezas con estado `idea`: mapa de calor constitucional, Borges, Eco,
+La Ley de los Audaces y Lex Note.
 
 Los requisitos de las dos últimas están publicados en
 `/experimentos/juegos`. El mapa de calor necesita primero un corpus normativo

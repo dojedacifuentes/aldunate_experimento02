@@ -131,3 +131,44 @@ verificación.
 - PDFs de los informes: no existen todavía; el botón de descarga no se muestra.
 - Mapa de calor constitucional, Wittgenstein, Borges, Eco, La Ley de los
   Audaces y Lex Note: declarados como ideas, con sus requisitos publicados.
+
+---
+
+## [0.2.0] — 2026-08-29
+
+Ajustes de fidelidad a la guía visual y dos experimentos interactivos nuevos.
+
+### Añadido
+
+- **Wittgenstein · ¿Qué regla estás siguiendo?** — «Ningún vehículo puede
+  entrar al parque»: ocho objetos, tres propósitos declarados, el mismo texto
+  en los tres. No corrige respuestas: devuelve las del usuario y señala cuáles
+  cambió al cambiar el contexto. Núcleo y penumbra se derivan de lo respondido.
+- **Ama tu Constitución** — ocho dimensiones de diseño institucional (rigidez,
+  vía de reforma, ejecutivo, derechos, justicia constitucional,
+  descentralización, participación, estados de excepción). Sin puntaje ni
+  etiqueta de identidad: la salida son las tensiones internas de la combinación
+  elegida.
+- Esquema de `Publication` ampliado con `question`, `thesis`, `concepts`,
+  `relatedAuthors`, `relatedWorks` y `openQuestions`, para navegar el archivo
+  por ideas y no solo por fechas.
+
+### Cambiado
+
+- Paleta fijada a los hexadecimales de la guía: nocturno `#09131D` · `#4BC7E8`;
+  claro `#F7F4EE` · `#29588C` · `#8A2432` · `#B78C30`. El fondo oscuro deja de
+  ser negro casi puro y recupera el azul.
+- Copy del portal según la guía: «Un experimento digital» como antetítulo y
+  «Derecho constitucional, lenguaje y otras complicaciones» como subtítulo.
+- Constitution Lab y Gramatiquerías pasan de `prototipo` a `jugable`.
+
+### Corregido
+
+- Contraste del tono `warning`: el badge de texto pequeño quedaba en 4.40:1
+  frente al 4.5:1 exigido. Ajustado en ambos temas.
+
+### Verificado
+
+- Auditoría de contraste sobre el DOM renderizado, con carga limpia en cada
+  tema: 0 fallos sobre 125–144 elementos por página.
+- Los cuatro módulos interactivos ejercitados contra el build de producción.

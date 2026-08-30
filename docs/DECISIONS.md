@@ -145,11 +145,13 @@ lectura.
 
 ---
 
-## D-011 · Dos experimentos funcionan; el resto se declara idea
+## D-011 · Los experimentos construidos funcionan; el resto se declara idea
 
-**Qué.** Constitution Lab (onda expansiva) y Gramatiquerías (ambigüedad
-sintáctica) son interactivos y funcionan. Las otras seis piezas figuran con
-estado real: `idea`.
+> Ampliada por **D-016**: el recuento subió de dos piezas a cuatro. El criterio
+> que sigue vigente es el de este apartado.
+
+**Qué.** Las piezas construidas son interactivas de verdad. El resto figura con
+su estado real: `idea`.
 
 **Por qué.** Un experimento que funciona argumenta; seis maquetas que no hacen
 nada prometen. Todo contenido de demostración lleva `demoContent: true`, que
@@ -194,3 +196,58 @@ de dependencias en cero vulnerabilidades.
 **Regla.** Toda actualización futura debe pasar `npm run verify`, una
 instalación limpia y la revisión de scripts de instalación pendientes antes de
 subirse a `main`.
+
+---
+
+## D-015 · La paleta se fija a los hexadecimales de la guía
+
+**Qué.** Los tokens base pasan a los valores exactos declarados en la guía
+visual: nocturno `#09131D` · `#4BC7E8` · `#29588C`; claro `#F7F4EE` ·
+`#29588C` · `#8A2432` · `#B78C30`.
+
+**Por qué.** La primera versión derivó la paleta oscura de `taller-diat` en
+`oklch`, lo que producía un fondo casi negro puro. `#09131D` conserva el azul
+en el negro —es «azul-noche», no «apagado»— y el cian `#4BC7E8` es más legible
+que el cian derivado.
+
+**Efecto lateral útil.** Al pasar de `oklch` a hexadecimal, los colores del tema
+oscuro vuelven a ser inspeccionables con herramientas que no interpretan CSS
+Color 4.
+
+---
+
+## D-016 · Cuatro experimentos funcionan, no dos
+
+**Qué.** Se suman *¿Qué regla estás siguiendo?* (Wittgenstein) y *Ama tu
+Constitución* a los dos módulos interactivos ya existentes.
+
+**Por qué.** La guía especifica ambos con suficiente detalle para construirlos
+—el caso «ningún vehículo puede entrar al parque» y las ocho dimensiones de
+diseño institucional— y ninguno requiere datos que todavía no existan.
+
+**Decisión de diseño en los dos casos: no evaluar.**
+- Wittgenstein no tiene clave de corrección. Devuelve al usuario sus propias
+  respuestas y señala cuáles cambió al cambiar el propósito de la regla. Núcleo
+  y penumbra se derivan de lo que la persona respondió, no de un baremo.
+- *Ama tu Constitución* no puntúa ni asigna etiquetas de identidad política. La
+  salida son las tensiones internas de la combinación elegida: pares de
+  decisiones que empujan en direcciones opuestas.
+
+**Descartado.** Mostrar «lo que responde la mayoría» o comparar contra
+constituciones reales. Ambas cosas exigirían datos que no tenemos, y un
+porcentaje inventado arruinaría exactamente el punto de los dos ejercicios.
+
+---
+
+## D-017 · El esquema de publicaciones va más allá de la ficha bibliográfica
+
+**Qué.** `Publication` incorpora `question`, `thesis`, `concepts`,
+`relatedAuthors`, `relatedWorks` y `openQuestions`.
+
+**Por qué.** Un catálogo que solo guarda título, año y enlace es un cementerio
+de referencias. Estos campos permiten navegar el archivo por ideas y no solo
+por fechas.
+
+**Regla.** `thesis` se completa únicamente cuando el argumento central puede
+extraerse del texto con cita. Resumir una tesis de memoria es inventarla
+despacio.

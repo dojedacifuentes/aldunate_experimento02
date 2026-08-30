@@ -26,8 +26,8 @@ export default function HomePage() {
       {/* ── Vestíbulo ── */}
       <section className="relative overflow-hidden">
         <Container className="py-20 sm:py-28 lg:py-32">
-          <p className="mono mb-6 text-[0.6875rem] tracking-[0.2em] text-primary">
-            EXPERIMENTO 02 · LABORATORIO DIGITAL
+          <p className="mono mb-6 text-[0.6875rem] uppercase tracking-[0.2em] text-primary">
+            {site.eyebrow}
           </p>
 
           <h1 className="max-w-4xl text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">

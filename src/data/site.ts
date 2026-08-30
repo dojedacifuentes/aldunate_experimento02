@@ -11,10 +11,11 @@ export const site = {
   version: '0.1.1',
   shortName: 'ALDUNATE',
   subject: 'Eduardo Aldunate Lizana',
-  tagline: 'Laboratorio digital de Derecho, lenguaje y experimentación',
+  tagline: 'Derecho constitucional, lenguaje y otras complicaciones.',
   description:
     'Laboratorio digital experimental dedicado al trabajo del profesor Eduardo Aldunate Lizana: Derecho constitucional, lenguaje, investigación, enseñanza e inteligencia artificial. Prototipo académico en construcción.',
   locale: 'es_CL',
+  eyebrow: 'Un experimento digital',
   /** Se sobrescribe en Vercel con la URL real del despliegue. */
   url: 'https://aldunateexperimento02.vercel.app',
   repo: 'https://github.com/dojedacifuentes/aldunate_experimento02',

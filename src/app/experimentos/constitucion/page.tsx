@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 
 import { Container, Notice, PendingBlock, Section } from '@/components/common/ui';
 import { ConstitutionLab } from '@/components/experiments/ConstitutionLab';
+import { ConstitutionProfile } from '@/components/experiments/ConstitutionProfile';
 import { EvaNote } from '@/components/eva/EvaNote';
 
 export const metadata: Metadata = {
@@ -53,11 +54,19 @@ export default function ConstitucionPage() {
       </Section>
 
       <Section
-        eyebrow="Ejercicio"
+        eyebrow="Ejercicio 01"
         title="Onda expansiva"
         description="Cambie el operador deóntico del artículo 11 y observe las cuatro disposiciones que remiten a él. Ninguna cambia de texto; todas cambian de sentido."
       >
         <ConstitutionLab />
+      </Section>
+
+      <Section
+        eyebrow="Ejercicio 02 · Ama tu Constitución"
+        title="Ocho decisiones y sus costos"
+        description="Rigidez, reforma, ejecutivo, derechos, justicia constitucional, descentralización, participación y excepción. No hay puntaje ni etiqueta de identidad: la salida son las tensiones internas de su propia combinación."
+      >
+        <ConstitutionProfile />
       </Section>
 
       <Section

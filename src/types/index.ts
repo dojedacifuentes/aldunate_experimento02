@@ -66,15 +66,39 @@ export type PublicationKind =
   | 'informe'
   | 'otro';
 
+/**
+ * Publicación.
+ *
+ * El esquema va más allá de la ficha bibliográfica a propósito: un catálogo que
+ * solo guarda título, año y enlace es un cementerio de referencias. Los campos
+ * `question`, `thesis`, `concepts` y `relatedAuthors` son los que convierten el
+ * archivo en algo navegable por ideas y no solo por fechas.
+ *
+ * `thesis` solo se completa cuando el argumento central puede extraerse del
+ * texto con cita. Resumir una tesis de memoria es inventarla despacio.
+ */
 export interface Publication {
   id: string;
   title: string;
   kind: PublicationKind;
   year?: number;
   venue?: string;
+  authors?: string[];
   coauthors?: string[];
   abstract?: string;
+  /** La pregunta que el trabajo intenta responder. */
+  question?: string;
+  /** Argumento central, solo si se puede extraer con fuente. */
+  thesis?: string;
+  concepts?: string[];
+  relatedAuthors?: string[];
+  /** Ids de otras publicaciones con las que conversa. */
+  relatedWorks?: string[];
+  openQuestions?: string[];
   url?: string;
+  /** Ruta al PDF bajo /public, cuando exista y esté autorizado. */
+  pdf?: string;
+  status?: 'publicado' | 'en-prensa' | 'inedito';
   /** Solo `true` cuando existe respaldo documental cargado por el equipo. */
   verified: boolean;
   sourceIds?: string[];

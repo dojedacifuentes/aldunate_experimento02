@@ -16,7 +16,7 @@ export const experiments: Experiment[] = [
     tagline: 'Ama tu Constitución',
     description:
       'Espacio para manipular texto constitucional y observar qué se rompe. Cambiar una palabra, seguir la remisión, ver hasta dónde llega la onda expansiva. La Constitución todavía no tiene botón de deshacer; aquí sí, y esa diferencia es el ejercicio.',
-    status: 'prototipo',
+    status: 'jugable',
     demoContent: true,
     family: 'constitucion',
     href: '/experimentos/constitucion',
@@ -40,7 +40,7 @@ export const experiments: Experiment[] = [
     tagline: 'La coma que decide el caso',
     description:
       'Colección de ejercicios sobre ambigüedad sintáctica en textos normativos. Una misma oración, dos lecturas legítimas, consecuencias jurídicas distintas. El lenguaje no es el envase de la norma: es la norma.',
-    status: 'prototipo',
+    status: 'jugable',
     demoContent: true,
     family: 'gramatiquerias',
     href: '/experimentos/gramatiquerias',
@@ -51,8 +51,8 @@ export const experiments: Experiment[] = [
     title: 'Wittgenstein: ¿qué regla estás siguiendo?',
     tagline: 'Seguir una regla no es obedecer un texto',
     description:
-      'Serie de casos donde dos personas aplican la misma regla y llegan a resultados incompatibles, sin que ninguna la haya infringido. El problema del seguimiento de reglas, con jurisprudencia en vez de series numéricas.',
-    status: 'idea',
+      '«Ningún vehículo puede entrar al parque»: ocho objetos, tres propósitos distintos y el mismo texto en los tres. El ejercicio no corrige respuestas; devuelve las suyas y muestra cuáles cambió al cambiar el contexto. Núcleo y penumbra no estaban en la disposición.',
+    status: 'jugable',
     demoContent: true,
     family: 'gramatiquerias',
     href: '/experimentos/gramatiquerias',
