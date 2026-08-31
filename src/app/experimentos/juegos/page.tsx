@@ -1,11 +1,23 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, BookOpen, Play } from 'lucide-react';
 
-import { Container, Notice, PendingBlock, Section } from '@/components/common/ui';
+import {
+  Badge,
+  ButtonLink,
+  Container,
+  Notice,
+  PendingBlock,
+  Section,
+  Surface,
+} from '@/components/common/ui';
 import { ExperimentCard } from '@/components/common/ExperimentCard';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { experiments } from '@/data/experiments';
+import { CHARACTER_IDS, CHARACTERS } from '@/data/rpg/characters';
+import { prologo } from '@/data/rpg/chapters/prologo';
+import { legalSources } from '@/data/rpg/legalSources';
+import { site } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Juegos',
@@ -22,6 +34,18 @@ export const metadata: Metadata = {
  */
 export default function JuegosPage() {
   const family = experiments.filter((e) => e.family === 'juegos');
+  const destacado = family.find((e) => e.jugableEn);
+  const rutaJugable = destacado?.jugableEn;
+  const resto = family.filter((e) => e !== destacado);
+
+  // Las cifras se calculan del propio contenido del capítulo. Un número escrito
+  // a mano en una plantilla envejece mal: dice 13 nodos cuando ya hay 20.
+  const nodos = Object.values(prologo.nodos).length;
+  const decisiones = Object.values(prologo.nodos).filter((n) => n.kind === 'decision').length;
+  const reparto = CHARACTER_IDS.map((id) => CHARACTERS[id]).filter(
+    (c) => c.role !== 'ambient',
+  ).length;
+  const porVerificar = legalSources.filter((f) => f.estado !== 'VERIFIED').length;
 
   return (
     <>
@@ -48,6 +72,76 @@ export default function JuegosPage() {
         </Container>
       </header>
 
+      {/*
+        ── Destacado ──
+        Lo único jugable de la sección va arriba y entero, no como una ficha
+        más de una grilla. Un prototipo que se juega y una idea que no existe
+        todavía no son dos elementos del mismo tipo, y la página no los empata.
+      */}
+      {destacado && rutaJugable && (
+        <Section>
+          <Surface className="overflow-hidden p-0">
+            <div className="border-b border-border/60 px-6 py-6 sm:px-8 sm:py-8">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <Badge tone="success" dot>
+                  Capítulo 0 jugable
+                </Badge>
+                <Badge tone="signal">Prototipo</Badge>
+                <Badge tone="warning">Ficción</Badge>
+              </div>
+
+              <h2 className="mt-5 font-serif text-2xl leading-snug text-foreground sm:text-3xl">
+                {destacado.title}
+              </h2>
+              <p className="mt-1.5 font-serif text-base italic text-primary">
+                {destacado.tagline}
+              </p>
+              <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+                {destacado.description}
+              </p>
+
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <ButtonLink href={rutaJugable} size="md">
+                  <Play className="h-4 w-4" aria-hidden />
+                  Jugar el Capítulo 0
+                </ButtonLink>
+                <ButtonLink
+                  href={`${site.repo}/tree/main/docs/juegos/ley-de-los-audaces`}
+                  size="md"
+                  variant="outline"
+                  external
+                >
+                  <BookOpen className="h-4 w-4" aria-hidden />
+                  Cómo se construyó
+                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                </ButtonLink>
+                <span className="mono text-[0.6875rem] text-muted-foreground">
+                  3–5 min · teclado 1–5, E o Espacio
+                </span>
+              </div>
+            </div>
+
+            {/* Las cuatro cifras salen del contenido, no de una plantilla. */}
+            <dl className="grid grid-cols-2 divide-x divide-y divide-border/60 sm:grid-cols-4 sm:divide-y-0">
+              {[
+                { label: 'Nodos del capítulo', value: String(nodos) },
+                { label: 'Decisiones con consecuencia', value: String(decisiones) },
+                { label: 'Personajes con ficha', value: String(reparto) },
+                {
+                  label: 'Referencias por verificar',
+                  value: `${porVerificar} de ${legalSources.length}`,
+                },
+              ].map((cifra) => (
+                <div key={cifra.label} className="px-6 py-5">
+                  <dt className="meta">{cifra.label}</dt>
+                  <dd className="mono mt-1.5 text-xl text-foreground">{cifra.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </Surface>
+        </Section>
+      )}
+
       <Section>
         <Notice tone="signal" className="max-w-3xl">
           Sección en construcción. <strong>La Ley de los Audaces</strong> tiene
@@ -58,9 +152,13 @@ export default function JuegosPage() {
         </Notice>
       </Section>
 
-      <Section eyebrow="Estado" title="Las dos piezas">
+      <Section
+        eyebrow="Estado"
+        title="La otra pieza"
+        description="Lo que todavía no se puede tocar, dicho como lo que es."
+      >
         <ul className="grid gap-4 md:grid-cols-2">
-          {family.map((exp) => (
+          {resto.map((exp) => (
             <li key={exp.id}>
               <ExperimentCard experiment={exp} />
             </li>

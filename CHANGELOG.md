@@ -15,13 +15,33 @@
 - Scripts `juego:arte` (horneado del arte) y `juego:suelto` (el juego en un
   archivo, sin red).
 - `npm run verify` incorpora los tests: 25, con Vitest.
+- `docs/AUDITORIA-2026-08-31.md`: auditoría del repositorio completo, con foco en
+  la sección `/laboratorio`.
+- `docs/PUENTE-Y-HOJA-DE-RUTA.md`: qué es el sitio como puente entre proyectos,
+  los cuatro pendientes reales y en qué fase entra cada uno. Documento interno:
+  las fichas que propone **no** están publicadas.
+- `docs/juegos/ley-de-los-audaces/misiones/INFORME-2026-08-31.md`: informe de la
+  misión de publicación.
 
 ### Cambiado
 
 - La ficha de `La Ley de los Audaces` deja de describir el juego anterior
   —legislar bajo presión— y pasa a `prototipo` con enlace jugable.
 - `Experiment` admite `jugableEn`; la tarjeta pinta el botón **sólo si existe**.
-- `/experimentos/juegos` declara el estado real de cada pieza.
+- `/experimentos/juegos` declara el estado real de cada pieza y **abre con el
+  juego destacado**: estado, botón «Jugar el Capítulo 0», enlace a su
+  documentación y cuatro cifras calculadas del propio capítulo. El catálogo de
+  abajo pasa a mostrar sólo lo que todavía no se puede tocar. D-026.
+
+### Corregido
+
+- **`/experimentos` rompía la hidratación.** La ficha del juego trae su propio
+  enlace «Jugar» y el catálogo la envolvía en otro: `<a>` dentro de `<a>`, HTML
+  inválido, y React descartaba el árbol servido para rehidratar la página
+  entera. La tarjeta deja de ser enlace cuando la ficha ya trae el suyo. D-024.
+- **El recuento de familias dejaba fuera al juego.** Desde que la pieza jugable
+  tiene ruta propia, comparar con `===` la excluía: «Juegos» anunciaba 1 pieza
+  con 2 en el catálogo. Se cuenta por prefijo de ruta. D-025.
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado semántico.

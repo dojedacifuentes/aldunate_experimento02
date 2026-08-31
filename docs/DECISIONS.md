@@ -363,3 +363,56 @@ un paso de compilación.
 
 **Regla.** Es la **única** duplicación de color aceptada en el repositorio.
 Cambiar un token obliga a cambiar los tres.
+
+---
+
+## D-024 · Una tarjeta con salida propia deja de ser una tarjeta-enlace
+
+**Qué.** En `/experimentos`, la ficha de un experimento se envuelve en un enlace
+sólo si la propia ficha no trae ya uno. Desde que `ExperimentCard` pinta el botón
+«Jugar» cuando hay `jugableEn`, envolverla producía un `<a>` dentro de otro `<a>`.
+
+**Por qué.** No es una preferencia de estilo: es HTML inválido, y React lo
+resuelve descartando el árbol servido y rehidratando la página entera. Se veía
+como un parpadeo en `/experimentos` y desactivaba la mejora progresiva de esa
+ruta. El error sólo aparece en la consola del navegador; `npm run verify` compila
+y pasa sin quejarse.
+
+**Regla general.** Un contenedor clicable y un botón dentro de él no pueden ser
+ambos enlaces. Cuando una ficha gane su propia acción, la tarjeta cede.
+
+---
+
+## D-025 · Las piezas de una familia se cuentan por destino, no por igualdad
+
+**Qué.** El recuento de piezas por familia en `/experimentos` compara con
+`startsWith`, no con `===`.
+
+**Por qué.** Cuando una pieza se vuelve jugable gana ruta propia
+—`/experimentos/juegos/ley-de-los-audaces`— y deja de ser igual a la ruta de su
+familia. La tarjeta «Juegos» anunciaba una pieza cuando había dos. Un catálogo
+que publica el estado real de cada experimento no puede equivocarse contando los
+suyos.
+
+**Consecuencia.** Las piezas de la familia `lectura`, que viven bajo
+`/experimentos/gramatiquerias`, siguen contándose donde el lector las encuentra.
+El recuento agrupa por dónde va a parar el usuario, no por cómo está etiquetado
+el dato.
+
+---
+
+## D-026 · El juego va arriba en su sección, y entero
+
+**Qué.** `/experimentos/juegos` abre con un bloque destacado de La Ley de los
+Audaces —estado, promesa, botón «Jugar el Capítulo 0», enlace a su documentación
+y cuatro cifras calculadas del propio capítulo— antes del catálogo. La grilla de
+abajo pasa a mostrar sólo lo que todavía no se puede tocar.
+
+**Por qué.** Un prototipo jugable y una idea sin escribir no son dos elementos
+del mismo tipo. Ponerlos en la misma grilla de dos columnas los empata
+visualmente y obliga a leer las etiquetas para distinguirlos. La jerarquía hace
+ese trabajo antes que el texto.
+
+**Las cifras se calculan, no se escriben.** Nodos, decisiones, reparto y
+referencias por verificar salen de `prologo`, `CHARACTERS` y `legalSources`. Un
+número escrito a mano en una plantilla dice trece nodos cuando ya hay veinte.
