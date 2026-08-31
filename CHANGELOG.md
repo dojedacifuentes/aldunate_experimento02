@@ -5,6 +5,52 @@ Versionado semántico.
 
 ---
 
+## [0.4.0] — 2026-08-31
+
+### Añadido
+
+- **Informe 02 v0.2.0** — documento completo: 24 capítulos y 3 anexos,
+  76 páginas, 12 figuras y 24 tablas. Descargable en PDF desde la ficha del
+  informe. El botón aparece porque el archivo existe.
+- **Capa de investigación poblada.** `sources` pasa de 0 a 24 entradas y
+  `claims` de 0 a 18. Cada fuente se verificó abriendo el documento original;
+  las que no pudieron rastrearse hasta su fuente primaria quedaron fuera.
+- Las 18 afirmaciones se distribuyen en los cinco niveles sin colapsarlos:
+  siete hechos, cinco señales, tres inferencias, una hipótesis y dos
+  pendientes. Los dos pendientes son los que más dicen —no hay evidencia
+  independiente de que los despliegues masivos mejoren el aprendizaje, y no se
+  localizó rediseño evaluativo publicado en facultades chilenas— y se registran
+  como ausencia de evidencia, no como evidencia de ausencia.
+
+### Cambiado
+
+- Informe 02 pasa de `en-investigacion` a `en-revision`. Existe documento, no
+  existe revisión externa: `publicado` habría sido una promesa que el estado
+  real no sostiene.
+- Su resumen ejecutivo deja de describir alcance y pasa a describir hallazgos,
+  porque ahora los hay.
+- Tres preguntas abiertas nuevas, todas sobre vacíos que la investigación
+  identificó y no pudo cerrar: el coste real de la evaluación válida, el efecto
+  a lo largo de una carrera completa y la validez de estos hallazgos fuera del
+  inglés.
+
+### Registrado
+
+- La retractación del metaanálisis de Wang y Fan (22 de abril de 2026, tras 266
+  citas) entra como fuente propia. Cualquier lectura de la literatura anterior a
+  esa fecha tiene que hacerse con ese dato delante.
+
+### Sin verificar
+
+- **No se ejecutaron `typecheck`, `lint` ni `build`**: la máquina donde se hizo
+  este cambio no tiene Node instalado. Se comprobó a mano que los 42
+  identificadores de `sourceIds` y `claimIds` existen en `research.ts`, sin
+  huérfanos en ninguna de las dos direcciones, y que los campos poblados
+  coinciden con los que consume la interfaz. Falta correr `npm run verify` antes
+  de dar por bueno el despliegue.
+
+---
+
 ## [0.3.0] — 2026-08-30
 
 ### Añadido

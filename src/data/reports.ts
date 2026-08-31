@@ -6,8 +6,12 @@ import type { Report, ReportStatus, Tone } from '@/types';
  * Un informe vivo no se reemplaza: se versiona. `versions` crece hacia
  * adelante y nunca se edita hacia atrás; el changelog es la prueba de eso.
  *
- * Ambos informes están en fase de investigación. Sus resúmenes describen el
- * alcance del trabajo, no hallazgos: todavía no hay hallazgos que reportar.
+ * El informe 01 sigue en fase de investigación: su resumen describe el alcance
+ * del trabajo, no hallazgos, porque todavía no hay hallazgos que reportar.
+ *
+ * El informe 02 alcanzó su versión 0.2.0 con documento completo. Sus hallazgos
+ * están respaldados en `src/data/research.ts`, con el nivel epistémico de cada
+ * afirmación declarado y su fecha de verificación.
  */
 
 export const reportStatusMeta: Record<ReportStatus, { label: string; tone: Tone }> = {
@@ -94,9 +98,9 @@ export const reports: Report[] = [
       'Cómo se está transformando la enseñanza del Derecho en el contexto de la inteligencia artificial',
     subtitle: 'Metodologías, evaluación y competencias',
     executiveSummary:
-      'Análisis de los desplazamientos en curso en la enseñanza jurídica frente a sistemas generativos: qué se evalúa cuando el producto escrito deja de ser prueba de proceso, qué competencias pasan a primer plano, cómo se reconfigura el rol docente y qué exige la integridad académica en este contexto. El informe combina revisión de literatura, casos internacionales documentados y análisis conceptual, manteniendo separado en todo momento lo observado de lo proyectado.',
+      'Qué se evalúa cuando el producto escrito deja de ser prueba de proceso. La versión 0.2.0 sitúa la enseñanza jurídica dentro del cuadro más amplio de la educación superior: veinticuatro capítulos que recorren evaluación, competencias, metodologías, rol docente, currículo, gobernanza y mercado profesional, con la formación en Derecho como caso crítico porque su cadena formativa completa —leer, sintetizar, argumentar y redactar— coincide con lo que los sistemas generativos ejecutan con alta fluidez y fiabilidad insuficiente. El hallazgo central es asimétrico: la transformación verificable se concentra casi por completo en la evaluación, y de treinta y ocho hallazgos registrados solo seis alcanzan nivel de causalidad establecida. Ninguna afirmación sobre despliegues institucionales de escala supera el nivel de implementación.',
     authors: ['Equipo Experimento 02'],
-    status: 'en-investigacion',
+    status: 'en-revision',
     folder: 'content/reports/02_transformacion_ensenanza_derecho/',
     axes: [
       'Metodologías de enseñanza',
@@ -133,16 +137,80 @@ export const reports: Report[] = [
           'Estructura de carpetas de fuentes, borradores y versiones publicadas.',
         ],
       },
+      {
+        version: '0.2.0',
+        date: '2026-08-31',
+        status: 'en-revision',
+        pdf: '/descargas/informe-02-transformacion-ensenanza-v0.2.0.pdf',
+        changelog: [
+          'Documento completo: 24 capítulos y 3 anexos, 76 páginas, 12 figuras y 24 tablas.',
+          'Registro de fuentes poblado con 24 entradas verificadas una a una en el documento original.',
+          'Matriz de evidencia con 18 afirmaciones clasificadas en los cinco niveles epistémicos.',
+          'Mapa internacional de 30 instituciones de 10 países, clasificadas por profundidad verificada de transformación.',
+          'Seis estudios de caso con la pregunta doble qué demuestra y qué no demuestra cada uno.',
+          'Capítulo sobre enseñanza del Derecho ampliado a once secciones, con hoja de ruta para una facultad.',
+          'Se registra la ausencia de evidencia pública de rediseño evaluativo en facultades chilenas.',
+          'Se incorpora la retractación del metaanálisis de Wang y Fan (22 de abril de 2026) como advertencia de lectura sobre la literatura previa.',
+          'Auditoría de consistencia numérica: cuatro discrepancias de recuento detectadas y corregidas.',
+        ],
+      },
     ],
-    sourceIds: [],
-    claimIds: [],
+    sourceIds: [
+      'src-scarfe-2024',
+      'src-kestin-2025',
+      'src-bastani-2025',
+      'src-metr-2025',
+      'src-wangfan-retraction-2026',
+      'src-doshi-hauser-2024',
+      'src-magesh-2025',
+      'src-charlotin-2026',
+      'src-choi-schwarcz',
+      'src-otis-2025',
+      'src-brynjolfsson-2026',
+      'src-hepi-2026',
+      'src-unesco-2025',
+      'src-teqsa-2025',
+      'src-sydney-2024',
+      'src-vanderbilt-2023',
+      'src-the-foi-2025',
+      'src-dec-2026',
+      'src-csu-2026',
+      'src-casewestern-2026',
+      'src-uchicago-law-2026',
+      'src-ncbe-nextgen',
+      'src-eu-ai-act-annex3',
+      'src-bid-ceibal-2025',
+    ],
+    claimIds: [
+      'clm-validez-evaluacion',
+      'clm-uso-vs-delegacion',
+      'clm-diseno-no-acceso',
+      'clm-deteccion-fracaso',
+      'clm-alucinacion-juridica',
+      'clm-compresion-desempeno',
+      'clm-retractacion-metaanalisis',
+      'clm-politica-vigente',
+      'clm-brecha-docente',
+      'clm-descalibracion',
+      'clm-peldano-entrada',
+      'clm-brecha-genero',
+      'clm-reforma-evaluativa',
+      'clm-derecho-caso-critico',
+      'clm-coste-evaluacion',
+      'clm-verificacion-competencia',
+      'clm-despliegues-sin-resultados',
+      'clm-chile-evidencia',
+    ],
     openQuestions: [
       '¿Qué instrumentos de evaluación resisten el uso no declarado de sistemas generativos?',
       '¿La alfabetización en IA es contenido transversal o asignatura propia?',
       '¿Qué competencias jurídicas ganan valor y cuáles se abaratan?',
       '¿Cómo se traduce esto a la formación práctica y al ejercicio profesional temprano?',
+      '¿Cuánto tiempo docente cuesta realmente la evaluación que recupera validez? Es la variable que decide si la reforma es viable y nadie la ha medido.',
+      '¿Qué ocurre con el aprendizaje a lo largo de una carrera completa? Toda la evidencia disponible mide semanas o un semestre.',
+      '¿Se sostienen estos hallazgos fuera del inglés? Casi toda la evidencia procede de sistemas anglófonos, con modelos que rinden mejor en esa lengua.',
     ],
-    updatedAt: '2026-08-29',
+    updatedAt: '2026-08-31',
   },
 ];
 
