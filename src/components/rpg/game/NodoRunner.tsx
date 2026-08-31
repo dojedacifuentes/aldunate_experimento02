@@ -8,13 +8,43 @@ import { prologo } from '@/data/rpg/chapters/prologo';
 import { legalSources } from '@/data/rpg/legalSources';
 import { emit } from '@/lib/rpg/bus';
 import { useAudaces } from '@/state/rpg/useAudaces';
-import type { SceneNode, SlotId } from '@/types/game';
-import type { DialogueLine } from '@/types/rpg';
+import type { Linea, SceneNode, SlotId } from '@/types/game';
+import type { CharacterId, DialogueLine } from '@/types/rpg';
 
 /** Una unidad de presentación: alguien habla, o el narrador describe. */
 type Item =
-  | { tipo: 'dialogo'; linea: DialogueLine }
+  | { tipo: 'dialogo'; linea: DialogueLine; a?: string }
   | { tipo: 'narracion'; texto: string };
+
+/**
+ * Normaliza una línea de guion.
+ *
+ * Una cadena suelta la dice quien lleva el nodo. Una línea con `quien` se la
+ * cede a otro, y con `a` declara a quién se dirige: eso es lo que permite que
+ * los tres jueces se interrumpan dentro de un mismo nodo y que la cámara sepa
+ * a quién encuadrar sin que el guion hable de cámaras.
+ */
+function aItem(linea: Linea, porDefecto: CharacterId, moodNodo?: DialogueLine['mood']): Item {
+  if (typeof linea === 'string') {
+    return { tipo: 'dialogo', linea: { characterId: porDefecto, mood: moodNodo, text: linea } };
+  }
+  return {
+    tipo: 'dialogo',
+    linea: {
+      characterId: linea.quien ?? porDefecto,
+      mood: linea.mood ?? moodNodo,
+      text: linea.text,
+    },
+    a: linea.a,
+  };
+}
+
+/** Lo que se dice tras una decisión: narración si nadie la firma. */
+function aItemDeRespuesta(linea: Linea): Item {
+  if (typeof linea === 'string') return { tipo: 'narracion', texto: linea };
+  if (!linea.quien) return { tipo: 'narracion', texto: linea.text };
+  return aItem(linea, linea.quien);
+}
 
 const nodoDe = (id: string | null): SceneNode | null =>
   (id && prologo.nodos[id]) || null;
@@ -23,9 +53,7 @@ const nodoDe = (id: string | null): SceneNode | null =>
 function colaDeEntrada(nodo: SceneNode): Item[] {
   const items: Item[] = [];
   if (nodo.kind === 'dialogo') {
-    nodo.lines.forEach((text) =>
-      items.push({ tipo: 'dialogo', linea: { characterId: nodo.speaker, mood: nodo.mood, text } }),
-    );
+    nodo.lines.forEach((linea) => items.push(aItem(linea, nodo.speaker, nodo.mood)));
   }
   if (nodo.eva) {
     items.push({ tipo: 'dialogo', linea: { characterId: 'eva', text: nodo.eva } });
@@ -76,9 +104,13 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
   const actual = cola[0];
 
   useEffect(() => {
-    if (actual?.tipo === 'dialogo') {
-      emit('hablar', { puesto: PUESTO_DE[actual.linea.characterId] });
-    }
+    if (actual?.tipo !== 'dialogo') return;
+    const quien = actual.linea.characterId;
+    emit('hablar', {
+      personaje: quien,
+      puesto: PUESTO_DE[quien],
+      hacia: actual.a,
+    });
   }, [actual]);
 
   /**
@@ -97,9 +129,9 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
     setCola((previa) => previa.slice(1));
   }, [alFinal, cola.length]);
 
-  /** Encola narración y define qué ocurre al terminarla. */
-  const narrar = useCallback((textos: string[], despues: () => void) => {
-    setCola(textos.map((texto) => ({ tipo: 'narracion' as const, texto })));
+  /** Encola lo que sigue a una elección y define qué ocurre al terminarlo. */
+  const narrar = useCallback((lineas: Linea[], despues: () => void) => {
+    setCola(lineas.map(aItemDeRespuesta));
     setAlFinal(() => despues);
   }, []);
 

@@ -22,6 +22,8 @@ export const ASSET_LOCATION = {
   counterparty_hector: { group: 'counterparty', slug: 'hector' },
   // Sala de audiencias. Se suman para el Capítulo 0, que es penal.
   judge_achurra: { group: 'court', slug: 'achurra' },
+  judge_pinilla: { group: 'court', slug: 'pinilla' },
+  judge_riquelme: { group: 'court', slug: 'riquelme' },
   prosecutor_naveas: { group: 'court', slug: 'naveas' },
   witness_zapata: { group: 'court', slug: 'zapata' },
   eva: { group: 'eva', slug: 'eva' },

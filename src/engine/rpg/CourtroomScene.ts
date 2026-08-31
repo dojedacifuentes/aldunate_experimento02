@@ -2,6 +2,12 @@ import * as Phaser from 'phaser';
 
 import { spritePath } from '@/lib/rpg/art/asset-paths.mjs';
 import { on } from '@/lib/rpg/bus';
+import {
+  encuadreDeDos,
+  encuadreDeUno,
+  mereceMoverse,
+  type Encuadre,
+} from '@/lib/rpg/encuadre';
 import type { FocusTarget } from '@/types/game';
 
 /**
@@ -12,6 +18,11 @@ import type { FocusTarget } from '@/types/game';
  * viven en React, encima del canvas. La escena **no lee el store**: recibe
  * órdenes por el bus y no devuelve nada. Es lo que permitirá que el Capítulo 3
  * añada movimiento libre sin tocar el guion.
+ *
+ * Cámara: la escena encuadra **personas**, no muebles. Antes se plantaba en el
+ * puesto declarado por el nodo y no se movía aunque contestaran tres personas
+ * distintas; por eso casi ninguna transición cuajaba. Ahora cada línea dice
+ * quién habla y a quién, y la cámara va con ella.
  *
  * Las hojas de sprites son las mismas del registro de personajes: 288×288,
  * celdas de 48 px, 6×6. Fila 0 abajo, 1 arriba, 2 izquierda, 3 derecha,
@@ -40,12 +51,12 @@ const C = {
 interface Puesto {
   x: number;
   y: number;
-  /** Zoom que adopta la cámara al enfocar este puesto. */
+  /** Zoom que adopta la cámara al enfocar este puesto entero. */
   zoom: number;
 }
 
 const PUESTOS: Record<FocusTarget, Puesto> = {
-  estrado: { x: 640, y: 168, zoom: 1.35 },
+  estrado: { x: 640, y: 176, zoom: 1.2 },
   testigo: { x: 968, y: 300, zoom: 1.4 },
   fiscalia: { x: 372, y: 452, zoom: 1.3 },
   defensa: { x: 908, y: 452, zoom: 1.3 },
@@ -53,9 +64,13 @@ const PUESTOS: Record<FocusTarget, Puesto> = {
   sala: { x: 640, y: 380, zoom: 1 },
 };
 
+/** Separación de los tres jueces sobre el estrado. */
+const ASIENTOS_ESTRADO = [-136, 0, 136];
+
 /** Qué personaje ocupa cada puesto en el Capítulo 0. */
 export interface Reparto {
-  estrado: string;
+  /** El tribunal es colegiado: tres. El primero preside. */
+  estrado: string[];
   fiscalia: string;
   testigo: string;
   defensa: string;
@@ -65,18 +80,23 @@ export interface Reparto {
 interface Actor {
   sprite: Phaser.GameObjects.Sprite;
   clave: string;
+  puesto: FocusTarget;
+  x: number;
+  y: number;
+  /** Postura a la que vuelve cuando no habla. */
+  reposo: string;
 }
-
-type ActoresPorPuesto = Partial<Record<FocusTarget, Actor[]>>;
 
 export class CourtroomScene extends Phaser.Scene {
   private reparto: Reparto;
-  private actores: ActoresPorPuesto = {};
+  private actores = new Map<string, Actor>();
   private foco!: Phaser.GameObjects.Ellipse;
   private destello!: Phaser.GameObjects.Rectangle;
   private barrido!: Phaser.GameObjects.Rectangle;
   private desuscribir: (() => void)[] = [];
   private movimientoReducido = false;
+  /** Último encuadre pedido. Evita repanear cuando no ha cambiado nada. */
+  private encuadre: Encuadre = { x: 640, y: 380, zoom: 1 };
 
   constructor(reparto: Reparto) {
     super('courtroom');
@@ -89,7 +109,7 @@ export class CourtroomScene extends Phaser.Scene {
       this.load.spritesheet(id, spritePath(id), { frameWidth: CELDA, frameHeight: CELDA });
     };
     [
-      this.reparto.estrado,
+      ...this.reparto.estrado,
       this.reparto.fiscalia,
       this.reparto.testigo,
       this.reparto.defensa,
@@ -111,7 +131,14 @@ export class CourtroomScene extends Phaser.Scene {
       .ellipse(PUESTOS.sala.x, PUESTOS.sala.y, 420, 220, C.gold, 0.06)
       .setDepth(2);
 
-    this.colocar(this.reparto.estrado, 'estrado', 'idle_down');
+    // El tribunal, de izquierda a derecha. El primero de la lista preside y va
+    // al centro, que es donde se sienta quien preside.
+    const [presidenta, ...vocales] = this.reparto.estrado;
+    const ordenEstrado = [vocales[0], presidenta, vocales[1]].filter(Boolean);
+    ordenEstrado.forEach((id, i) => {
+      this.colocar(id, 'estrado', 'idle_down', ASIENTOS_ESTRADO[i] ?? 0);
+    });
+
     this.colocar(this.reparto.fiscalia, 'fiscalia', 'idle_right');
     this.colocar(this.reparto.testigo, 'testigo', 'idle_left');
     this.colocar(this.reparto.defensa, 'defensa', 'idle_left');
@@ -158,8 +185,13 @@ export class CourtroomScene extends Phaser.Scene {
       g.lineStyle(2, C.charcoalLift, 1).strokeRect(x, 48, 120, 168);
     }
 
-    // Estrado.
-    this.mueble(g, 640, 200, 460, 92, C.charcoalLift, C.gold);
+    // Estrado: ancho para tres, con separadores entre los asientos.
+    this.mueble(g, 640, 208, 620, 96, C.charcoalLift, C.gold);
+    ASIENTOS_ESTRADO.slice(0, -1).forEach((dx, i) => {
+      const medio = (dx + ASIENTOS_ESTRADO[i + 1]) / 2;
+      g.fillStyle(C.ink, 0.55).fillRect(640 + medio - 2, 168, 4, 80);
+    });
+
     // Testigo.
     this.mueble(g, 968, 332, 190, 72, C.charcoalSoft, C.stone);
     // Mesas de las partes.
@@ -196,31 +228,23 @@ export class CourtroomScene extends Phaser.Scene {
 
   /* ── Actores ────────────────────────────────────────────────────────── */
 
-  private colocar(
-    clave: string,
-    puesto: FocusTarget,
-    animacion: string,
-    dx = 0,
-  ): void {
-    if (!this.textures.exists(clave)) return;
+  private colocar(clave: string, puesto: FocusTarget, animacion: string, dx = 0): void {
+    if (!clave || !this.textures.exists(clave)) return;
     const p = PUESTOS[puesto];
+    const x = p.x + dx;
     this.crearAnimaciones(clave);
 
     const sprite = this.add
-      .sprite(p.x + dx, p.y, clave)
+      .sprite(x, p.y, clave)
       .setScale(3)
       .setOrigin(0.5, 0.85)
       .setDepth(10 + Math.round(p.y / 10));
     sprite.play(`${clave}:${animacion}`);
 
     // Sombra de contacto: sin ella los sprites flotan sobre la baldosa.
-    this.add
-      .ellipse(p.x + dx, p.y + 6, 62, 16, C.ink, 0.45)
-      .setDepth(sprite.depth - 1);
+    this.add.ellipse(x, p.y + 6, 62, 16, C.ink, 0.45).setDepth(sprite.depth - 1);
 
-    const lista = this.actores[puesto] ?? [];
-    lista.push({ sprite, clave });
-    this.actores[puesto] = lista;
+    this.actores.set(clave, { sprite, clave, puesto, x, y: p.y, reposo: animacion });
   }
 
   private crearAnimaciones(clave: string): void {
@@ -249,42 +273,125 @@ export class CourtroomScene extends Phaser.Scene {
   private conectarBus(): void {
     this.desuscribir.push(
       on('enfocar', ({ objetivo }) => this.enfocar(objetivo)),
-      on('hablar', ({ puesto }) => this.hablar(puesto)),
+      on('hablar', ({ personaje, puesto, hacia }) => this.hablar(personaje, puesto, hacia)),
+      on('reaccionar', ({ personaje, tipo }) => this.reaccionar(personaje, tipo)),
       on('acierto', () => this.retroalimentar(C.gold, 0.22, 4)),
       on('fallo', () => this.retroalimentar(C.burgundy, 0.28, 9)),
       on('escanear', () => this.escanear()),
     );
   }
 
-  private enfocar(objetivo: FocusTarget): void {
-    const p = PUESTOS[objetivo];
-    const camara = this.cameras.main;
-    const duracion = this.movimientoReducido ? 0 : 520;
+  /* ── Cámara ─────────────────────────────────────────────────────────── */
 
-    camara.pan(p.x, p.y, duracion, 'Cubic.easeInOut');
-    camara.zoomTo(p.zoom, duracion, 'Cubic.easeInOut');
+  /**
+   * Mueve la cámara sólo si hace falta.
+   *
+   * Dos líneas seguidas de la misma persona pedían el mismo encuadre y la
+   * cámara volvía a arrancar el tween cada vez: un temblor pequeño y constante
+   * que era buena parte de lo que se veía mal. Con umbral, quien no se mueve no
+   * mueve la cámara.
+   */
+  private encuadrar(x: number, y: number, zoom: number, duracion = 420): void {
+    const nuevo = { x, y, zoom };
+    if (!mereceMoverse(this.encuadre, nuevo)) return;
+
+    this.encuadre = nuevo;
+    const camara = this.cameras.main;
+    const ms = this.movimientoReducido ? 0 : duracion;
+
+    camara.pan(x, y, ms, 'Sine.easeInOut');
+    camara.zoomTo(zoom, ms, 'Sine.easeInOut');
 
     this.tweens.add({
       targets: this.foco,
-      x: p.x,
-      y: p.y,
-      fillAlpha: objetivo === 'sala' ? 0.05 : 0.12,
-      duration: duracion,
-      ease: 'Cubic.easeInOut',
+      x,
+      y,
+      duration: ms,
+      ease: 'Sine.easeInOut',
     });
   }
 
+  private enfocar(objetivo: FocusTarget): void {
+    const p = PUESTOS[objetivo];
+    this.foco.setFillStyle(C.gold, objetivo === 'sala' ? 0.05 : 0.1);
+    this.encuadrar(p.x, p.y, p.zoom, 520);
+  }
+
   /**
-   * Hace hablar a quien ocupa un puesto y devuelve a los demás a su reposo.
-   * Nadie gesticula fuera de turno: en una sala, eso se nota.
+   * Encuadra a una persona, o a dos si una le habla a la otra.
+   *
+   * Con dos, la cámara va al punto medio y se abre lo justo para que quepan
+   * ambas dentro de la ventana segura. Es lo que hace legible un
+   * contrainterrogatorio: se ve quién pregunta y quién tiene que contestar.
    */
-  private hablar(puesto: FocusTarget): void {
-    (Object.keys(this.actores) as FocusTarget[]).forEach((p) => {
-      this.actores[p]?.forEach((actor) => {
-        const anim = p === puesto ? 'talk' : reposoDe(p);
-        actor.sprite.play(`${actor.clave}:${anim}`, true);
-      });
+  private encuadrarPersonas(a: Actor, b?: Actor): void {
+    if (!b || b === a) {
+      const e = encuadreDeUno(a, PUESTOS[a.puesto].zoom);
+      this.encuadrar(e.x, e.y, e.zoom);
+      return;
+    }
+    const e = encuadreDeDos(a, b);
+    this.encuadrar(e.x, e.y, e.zoom, 480);
+  }
+
+  /**
+   * Hace hablar a una persona concreta y devuelve a las demás a su reposo.
+   *
+   * Por persona y no por puesto: en el estrado hay tres jueces y que gesticulen
+   * los tres a la vez cuando habla uno es exactamente lo que delata que esto es
+   * un decorado.
+   */
+  private hablar(personaje: string, puesto: FocusTarget, hacia?: string): void {
+    const quien = this.actores.get(personaje);
+    const destino = this.resolver(hacia);
+
+    this.actores.forEach((actor) => {
+      const anim = actor.clave === personaje ? 'talk' : actor.reposo;
+      actor.sprite.play(`${actor.clave}:${anim}`, true);
     });
+
+    // Quien escucha no se queda de piedra: se gira un momento hacia quien habla.
+    if (destino) destino.sprite.play(`${destino.clave}:thinking`, true);
+
+    if (quien) {
+      this.encuadrarPersonas(quien, destino);
+      return;
+    }
+    // Personaje sin cuerpo en la sala —EVA— : el encuadre lo pone el nodo.
+    this.enfocar(puesto);
+  }
+
+  /**
+   * Resuelve a quién se dirige una línea.
+   *
+   * Puede venir un personaje —«a Naveas»— o un puesto —«a la defensa»—, porque
+   * quién ocupa la defensa depende del avatar elegido y el guion no lo sabe.
+   */
+  private resolver(referencia?: string): Actor | undefined {
+    if (!referencia) return undefined;
+    const porNombre = this.actores.get(referencia);
+    if (porNombre) return porNombre;
+    for (const actor of this.actores.values()) {
+      if (actor.puesto === referencia) return actor;
+    }
+    return undefined;
+  }
+
+  /** Un gesto corto y sin diálogo. Barato, y es lo que da vida a la sala. */
+  private reaccionar(personaje: string, tipo: 'asentir' | 'negar' | 'sobresalto'): void {
+    const actor = this.actores.get(personaje);
+    if (!actor || this.movimientoReducido) return;
+
+    const s = actor.sprite;
+    if (tipo === 'asentir') {
+      this.tweens.add({ targets: s, y: actor.y + 6, duration: 130, yoyo: true, repeat: 1 });
+      return;
+    }
+    if (tipo === 'negar') {
+      this.tweens.add({ targets: s, x: actor.x - 7, duration: 90, yoyo: true, repeat: 2 });
+      return;
+    }
+    this.tweens.add({ targets: s, y: actor.y - 12, duration: 110, yoyo: true, ease: 'Quad.easeOut' });
   }
 
   private retroalimentar(color: number, alpha: number, sacudida: number): void {
@@ -318,22 +425,7 @@ export class CourtroomScene extends Phaser.Scene {
   shutdown(): void {
     this.desuscribir.forEach((fn) => fn());
     this.desuscribir = [];
-    this.actores = {};
-  }
-}
-
-/** Postura de reposo según hacia dónde mira cada puesto. */
-function reposoDe(puesto: FocusTarget): string {
-  switch (puesto) {
-    case 'estrado':
-      return 'idle_down';
-    case 'fiscalia':
-      return 'idle_right';
-    case 'testigo':
-    case 'defensa':
-      return 'idle_left';
-    default:
-      return 'idle_up';
+    this.actores.clear();
   }
 }
 

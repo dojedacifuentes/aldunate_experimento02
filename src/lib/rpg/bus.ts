@@ -8,10 +8,19 @@ import type { FocusTarget } from '@/types/game';
  * renderizador —o quitarlo— sin tocar la lógica del juego.
  */
 export interface EventosJuego {
-  /** La cámara mira a un punto de la sala. */
+  /** La cámara mira a un punto de la sala. Encuadre de entrada al nodo. */
   enfocar: { objetivo: FocusTarget };
-  /** Alguien habla: el actor de ese puesto gesticula y los demás reposan. */
-  hablar: { puesto: FocusTarget };
+  /**
+   * Habla alguien concreto.
+   *
+   * `personaje` es el `CharacterId`, no el puesto: en el estrado hay tres
+   * jueces y sólo gesticula el que habla. `hacia` es a quién se dirige; si
+   * viene, la cámara abre lo justo para que quepan los dos, que es la única
+   * forma de que se entienda quién le está hablando a quién.
+   */
+  hablar: { personaje: string; puesto: FocusTarget; hacia?: string };
+  /** Alguien reacciona sin hablar. Es lo que hace que la sala parezca viva. */
+  reaccionar: { personaje: string; tipo: 'asentir' | 'negar' | 'sobresalto' };
   /** Retroalimentación de acierto o error. */
   acierto: { intensidad?: number };
   fallo: Record<string, never>;

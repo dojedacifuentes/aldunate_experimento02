@@ -4,6 +4,21 @@
 
 ### Añadido
 
+- **El tribunal son tres.** Isabel Achurra preside con hambre, Óscar Pinilla
+  anota y sólo interviene por el acta, Amanda Riquelme hace la pregunta que
+  nadie quería hacer. Dos personajes nuevos con su arte horneado. D-029.
+- **La cámara sigue a quien habla.** Cada línea del guion puede declarar `quien`
+  la dice y `a` quién: gesticula sólo esa persona y la cámara va a ella, o abre
+  para encuadrar a las dos cuando alguien le habla a alguien. Antes el encuadre
+  se fijaba una vez por nodo y no se movía aunque contestaran tres personas
+  distintas. D-029.
+- `src/lib/rpg/encuadre.ts`: la matemática del encuadre, fuera de Phaser y con
+  diez pruebas. Es la única parte de la cinematografía que puede equivocarse en
+  silencio.
+- **Humor.** El Capítulo 0 se reescribe como comedia de sala, con el límite
+  anotado: nadie hace un chiste a costa de la acusada. D-030.
+- Dos pruebas más sobre el guion: que toda línea dirigida apunte a alguien que
+  existe, y que los tres jueces hablen. Total: 44.
 - **El juego se juega sin desplazar la página.** La cabina mide `100dvh` menos
   el cromo del sitio y reparte ese alto entre barra superior, escena, panel y
   acciones. Antes había que bajar 895 px para empezar a jugar y el juego seguía

@@ -486,3 +486,66 @@ prototipo», además del que la página ya muestra.
 la franja del layout raíz y el aviso de ficción. La regla dura 3 de `CLAUDE.md`
 no admite que exista un estado de la interfaz sin ese rótulo. Duplicarlo cuesta
 una línea; perderlo cuesta la regla.
+
+---
+
+## D-029 · El tribunal son tres, y la cámara sigue a quien habla
+
+**Qué.** Tres cambios que son el mismo cambio: el tribunal pasa de una persona a
+tres, cada línea del guion declara quién la dice y a quién, y la cámara encuadra
+personas en vez de muebles.
+
+**Por qué el tribunal es colegiado.** Un tribunal oral se compone de más de un
+juez, y con uno solo la sala se leía como un despacho. Además abre lo que el
+capítulo necesitaba: tres caracteres que se interrumpen. Achurra preside y tiene
+hambre; Pinilla anota y sólo interviene por el acta; Riquelme hace la pregunta
+que nadie quería hacer. La composición se usa como puesta en escena, no como
+cita: **no se afirma ninguna regla procesal**, y las referencias normativas del
+capítulo siguen siendo las tres de `legalSources`, rotuladas «por verificar».
+
+**Por qué la cámara.** Antes el encuadre se fijaba una vez por nodo, con el
+`focus` declarado, y no se movía aunque contestaran tres personas distintas. Con
+el recorte panorámico de D-027 eso era peor: la cámara se quedaba mirando un
+mueble mientras hablaba alguien que estaba fuera de plano. Ahora cada línea
+puede traer `quien` y `a`:
+
+- con `quien`, gesticula **sólo** esa persona —con tres jueces, que gesticulen
+  los tres a la vez delata el decorado— y la cámara va a ella;
+- con `a`, la cámara abre lo justo para que quepan las dos, que es lo que hace
+  legible un contrainterrogatorio;
+- `a` admite un puesto además de una persona, porque quién ocupa la defensa
+  depende del avatar elegido y el guion no puede saberlo.
+
+**Umbral de movimiento.** Dos líneas seguidas de la misma persona piden el mismo
+encuadre. Sin umbral, la cámara rearrancaba el tween en cada línea: un temblor
+pequeño y constante que era buena parte de lo que se veía mal.
+
+**La matemática del encuadre vive fuera de Phaser.** `src/lib/rpg/encuadre.ts`,
+función pura, con pruebas. Es la única parte de la cinematografía que puede
+equivocarse en silencio: un encuadre malo no lanza ningún error, sólo deja a
+alguien fuera de plano. Diez pruebas comprueban que las parejas que de verdad se
+hablan en el Capítulo 0 —fiscal y testigo, defensa y estrado, los dos extremos
+del tribunal— caben en el plano.
+
+---
+
+## D-030 · El humor es de oficio, y nunca a costa de la acusada
+
+**Qué.** El Capítulo 0 se escribe como comedia de sala.
+
+**Por qué.** El registro seco anterior era correcto y no invitaba a seguir
+jugando. Un tutorial que se recorre una vez tiene que dar ganas de la segunda.
+
+**Dónde está el límite.** Tres reglas, anotadas también en la cabecera de
+`prologo.ts`:
+
+1. **Nadie hace un chiste a costa de la acusada.** Es la única que se juega algo
+   de verdad; reírse de ella convertiría el juego en otra cosa.
+2. El chiste sale de que el Derecho lo hacen personas con hambre y con manías,
+   no de que el Derecho sea ridículo.
+3. Si una línea es sólo graciosa, sobra. Toda línea informa de un hecho, una
+   relación o un peligro.
+
+**Lo que no cambia.** Ni una regla procesal se afirma en broma, la franja de
+prototipo y el rótulo de ficción siguen donde estaban, y las tres referencias
+normativas del capítulo siguen «por verificar».

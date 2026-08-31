@@ -10,6 +10,8 @@ import type { CharacterId } from '@/types/rpg';
  */
 export const PUESTO_DE: Record<CharacterId, FocusTarget> = {
   judge_achurra: 'estrado',
+  judge_pinilla: 'estrado',
+  judge_riquelme: 'estrado',
   prosecutor_naveas: 'fiscalia',
   witness_zapata: 'testigo',
   player_tomas: 'defensa',

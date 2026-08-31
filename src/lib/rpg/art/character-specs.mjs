@@ -130,6 +130,36 @@ export const CHARACTER_SPECS = {
     prop: 'none',
     heightOffset: 0,
   },
+  // Los tres del tribunal comparten tinta y cuello abierto: desde el fondo de
+  // la sala tienen que leerse como un cuerpo, no como tres señores cualquiera.
+  // Lo que los distingue es la silueta —moño, calva, media melena— y el acento.
+  judge_pinilla: {
+    skin: SKIN.light,
+    hair: HAIR.ash,
+    hairStyle: 'balding',
+    cloth: CLOTH.inkSuit,
+    shirt: SHIRT.bone,
+    accent: ACCENT.stone,
+    neckwear: 'openCollar',
+    build: 'broad',
+    glasses: true,
+    prop: 'folder',
+    heightOffset: -1,
+  },
+  judge_riquelme: {
+    skin: SKIN.tan,
+    hair: HAIR.jet,
+    hairStyle: 'bob',
+    cloth: CLOTH.inkSuit,
+    shirt: SHIRT.paleStone,
+    accent: ACCENT.burgundy,
+    neckwear: 'openCollar',
+    build: 'slim',
+    glasses: false,
+    prop: 'none',
+    heightOffset: 1,
+  },
+
   prosecutor_naveas: {
     skin: SKIN.warm,
     hair: HAIR.jet,

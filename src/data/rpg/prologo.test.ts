@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { CHARACTERS } from '@/data/rpg/characters';
+import { CHARACTER_IDS, CHARACTERS } from '@/data/rpg/characters';
 import { prologo } from '@/data/rpg/chapters/prologo';
 import { evidenceById } from '@/data/rpg/evidence';
 import { legalSources } from '@/data/rpg/legalSources';
@@ -88,6 +88,49 @@ describe('contenido del prólogo', () => {
       if (n.kind === 'dialogo') expect(CHARACTERS[n.speaker]).toBeDefined();
       if (n.kind === 'decision' && n.speaker) expect(CHARACTERS[n.speaker]).toBeDefined();
     });
+  });
+
+  it('toda línea dirigida apunta a alguien que existe', () => {
+    // Un `quien` mal escrito no rompe el build ni el tipo —es un `CharacterId`
+    // válido o no compila—, pero un `a` mal escrito sí pasa: puede ser un
+    // puesto. Si no es ninguna de las dos cosas, la cámara se queda quieta y
+    // nadie se entera hasta que alguien juega.
+    const puestos = new Set(['estrado', 'fiscalia', 'defensa', 'testigo', 'publico', 'sala']);
+    const lineas = nodos.flatMap((n) => {
+      if (n.kind === 'dialogo') return n.lines;
+      if (n.kind === 'decision') return n.opciones.flatMap((o) => o.respuesta);
+      return [];
+    });
+
+    lineas.forEach((linea) => {
+      if (typeof linea === 'string') return;
+      if (linea.quien) {
+        expect(CHARACTERS[linea.quien], `hablante desconocido: ${linea.quien}`).toBeDefined();
+      }
+      if (linea.a) {
+        const valido = puestos.has(linea.a) || Boolean(CHARACTERS[linea.a as never]);
+        expect(valido, `destinatario desconocido: ${linea.a}`).toBe(true);
+      }
+    });
+  });
+
+  it('el tribunal es colegiado y sus tres integrantes hablan', () => {
+    const jueces = CHARACTER_IDS.filter((id) => CHARACTERS[id].role === 'judge');
+    expect(jueces.length, 'un tribunal oral no se compone de una sola persona').toBe(3);
+
+    const hablan = new Set<string>();
+    nodos.forEach((n) => {
+      if (n.kind === 'dialogo') {
+        hablan.add(n.speaker);
+        n.lines.forEach((l) => typeof l !== 'string' && l.quien && hablan.add(l.quien));
+      }
+      if (n.kind === 'decision') {
+        n.opciones.forEach((o) =>
+          o.respuesta.forEach((l) => typeof l !== 'string' && l.quien && hablan.add(l.quien)),
+        );
+      }
+    });
+    jueces.forEach((id) => expect(hablan.has(id), `${id} no dice nada en el capítulo`).toBe(true));
   });
 
   it('toda evidencia mencionada existe en el catálogo', () => {
