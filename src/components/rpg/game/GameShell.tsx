@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { Maximize2, Minimize2, Pause } from 'lucide-react';
 
 import { GameCanvas } from '@/components/rpg/GameCanvas';
 import { CreacionPersonaje } from '@/components/rpg/game/CreacionPersonaje';
+import { Hoja } from '@/components/rpg/game/Hoja';
 import { Hud } from '@/components/rpg/game/Hud';
 import { FuentesDelCapitulo, NodoRunner } from '@/components/rpg/game/NodoRunner';
 import { prologo } from '@/data/rpg/chapters/prologo';
@@ -15,8 +17,18 @@ import type { Reparto } from '@/engine/rpg/bootstrap';
  *
  * Decide qué pantalla toca y monta la escena una sola vez por partida. No
  * contiene guion ni reglas: reparte.
+ *
+ * Todas las pantallas devuelven **un solo elemento** que ocupa la fila
+ * flexible de la cabina y resuelve dentro su propio desbordamiento. Ninguna
+ * puede crecer hacia abajo: la cabina tiene alto definido y `overflow: hidden`.
  */
-export function GameShell() {
+export function GameShell({
+  inmersiva = false,
+  onAlternarInmersiva,
+}: {
+  inmersiva?: boolean;
+  onAlternarInmersiva?: () => void;
+}) {
   const hidratado = useAudaces((s) => s.hidratado);
   const player = useAudaces((s) => s.player);
   const nodeId = useAudaces((s) => s.nodeId);
@@ -66,56 +78,172 @@ export function GameShell() {
     [player?.avatar],
   );
 
+  const enPartida = Boolean(player && nodeId && fase !== 'fin');
+
+  return (
+    <>
+      <BarraSuperior
+        inmersiva={inmersiva}
+        onAlternarInmersiva={onAlternarInmersiva}
+        enPartida={enPartida}
+        onPausa={() => setPausa(true)}
+      />
+
+      <Pantalla
+        hidratado={hidratado}
+        fase={fase}
+        player={player}
+        nodeId={nodeId}
+        finales={finales}
+        decisiones={decisiones}
+        reparto={reparto}
+        reiniciar={reiniciar}
+        irA={irA}
+      />
+
+      {pausa && (
+        <ModalPausa
+          inmersiva={inmersiva}
+          onAlternarInmersiva={onAlternarInmersiva}
+          onVolver={() => setPausa(false)}
+          onAbandonar={() => {
+            setPausa(false);
+            reiniciar();
+          }}
+        />
+      )}
+    </>
+  );
+}
+
+/* ── Barra superior ──────────────────────────────────────────────────────────
+   Identidad, rótulo de ficción y los controles que no pueden esconderse nunca.
+   El rótulo va aquí y no sólo en la página porque en pantalla completa la
+   página no se ve, y la advertencia no es decorativa. */
+
+function BarraSuperior({
+  inmersiva,
+  onAlternarInmersiva,
+  enPartida,
+  onPausa,
+}: {
+  inmersiva: boolean;
+  onAlternarInmersiva?: () => void;
+  enPartida: boolean;
+  onPausa: () => void;
+}) {
+  return (
+    <div className="audaces-topbar">
+      <span className="mono audaces-topbar-capitulo" style={{ color: 'var(--gold)' }}>
+        La Ley de los Audaces · Capítulo 0
+      </span>
+      <span className="mono audaces-topbar-ficcion">Ficción · prototipo</span>
+
+      {enPartida && (
+        <button type="button" className="mono" onClick={onPausa} aria-label="Pausa (Esc)">
+          <Pause className="inline h-3 w-3 align-[-1px]" aria-hidden /> Esc
+        </button>
+      )}
+
+      {onAlternarInmersiva && (
+        <button
+          type="button"
+          className="mono"
+          onClick={onAlternarInmersiva}
+          aria-pressed={inmersiva}
+          aria-label={inmersiva ? 'Salir de pantalla completa' : 'Jugar a pantalla completa'}
+        >
+          {inmersiva ? (
+            <Minimize2 className="inline h-3 w-3 align-[-1px]" aria-hidden />
+          ) : (
+            <Maximize2 className="inline h-3 w-3 align-[-1px]" aria-hidden />
+          )}
+        </button>
+      )}
+    </div>
+  );
+}
+
+/* ── Selector de pantalla ─────────────────────────────────────────────────── */
+
+type PantallaProps = {
+  hidratado: boolean;
+  fase: string;
+  player: ReturnType<typeof useAudaces.getState>['player'];
+  nodeId: string | null;
+  finales: string[];
+  decisiones: { acierta: boolean }[];
+  reparto: Reparto;
+  reiniciar: () => void;
+  irA: (id: string) => void;
+};
+
+function Pantalla({
+  hidratado,
+  fase,
+  player,
+  nodeId,
+  finales,
+  decisiones,
+  reparto,
+  reiniciar,
+  irA,
+}: PantallaProps) {
   // Antes de hidratar no se sabe si hay partida guardada. Mostrar «nueva
   // partida» y que aparezca «continuar» un instante después sería peor que
   // esperar un fotograma.
   if (!hidratado) {
-    return <p className="mono p-8" style={{ color: 'var(--stone)' }}>Cargando…</p>;
+    return (
+      <div className="grid place-items-center">
+        <p className="mono" style={{ color: 'var(--stone)' }}>
+          Cargando…
+        </p>
+      </div>
+    );
   }
 
   if (fase === 'fin') {
     const aciertos = decisiones.filter((d) => d.acierta).length;
     return (
-      <main className="mx-auto max-w-2xl px-6 py-16">
-        <p className="mono" style={{ color: 'var(--gold)' }}>
-          Fin del Capítulo 0
-        </p>
-        <h1 className="mt-3 text-4xl">Ganó el juicio.</h1>
-        <p className="mt-5 text-lg leading-relaxed" style={{ color: 'var(--ivory-dim)' }}>
-          {player?.nombre}, nivel {player?.nivel}, {player?.xp} XP. Acertó{' '}
-          {aciertos} de {decisiones.length} decisiones con consecuencia.
-        </p>
-        <p className="mt-5 leading-relaxed" style={{ color: 'var(--stone)' }}>
-          El Capítulo 1 —«La caída»— todavía no existe. Este prototipo termina
-          donde empieza el problema, que es exactamente donde debe terminar un
-          vertical slice.
-        </p>
-        <p className="mt-2" style={{ color: 'var(--stone)' }}>
-          Finales desbloqueados: {finales.join(', ') || '—'}
-        </p>
-        <button
-          type="button"
-          className="mono mt-8 border px-6 py-3"
-          style={{ borderColor: 'var(--gold)', color: 'var(--gold)', cursor: 'pointer' }}
-          onClick={reiniciar}
-        >
-          Volver al inicio
-        </button>
-        <FuentesDelCapitulo />
-      </main>
+      <Hoja
+        acciones={
+          <button type="button" className="boton boton--principal" onClick={reiniciar}>
+            Volver al inicio
+          </button>
+        }
+      >
+        <div className="mx-auto max-w-2xl">
+          <p className="mono" style={{ color: 'var(--gold)' }}>
+            Fin del Capítulo 0
+          </p>
+          <h2 className="mt-3 text-3xl">Ganó el juicio.</h2>
+          <p className="mt-4 leading-relaxed" style={{ color: 'var(--ivory-dim)' }}>
+            {player?.nombre}, nivel {player?.nivel}, {player?.xp} XP. Acertó{' '}
+            {aciertos} de {decisiones.length} decisiones con consecuencia.
+          </p>
+          <p className="mt-4 leading-relaxed" style={{ color: 'var(--stone)' }}>
+            El Capítulo 1 —«La caída»— todavía no existe. Este prototipo termina
+            donde empieza el problema, que es exactamente donde debe terminar un
+            vertical slice.
+          </p>
+          <p className="mt-2" style={{ color: 'var(--stone)' }}>
+            Finales desbloqueados: {finales.join(', ') || '—'}
+          </p>
+          <FuentesDelCapitulo />
+        </div>
+      </Hoja>
     );
   }
 
+  if (fase === 'creacion') return <CreacionPersonaje />;
+
   if (!player) {
     return (
-      <>
-        <Portada
-          hayPartida={false}
-          onNueva={() => useAudaces.setState({ fase: 'creacion' })}
-          onContinuar={() => undefined}
-        />
-        {fase === 'creacion' && <CreacionPersonaje />}
-      </>
+      <Portada
+        hayPartida={false}
+        onNueva={() => useAudaces.setState({ fase: 'creacion' })}
+        onContinuar={() => undefined}
+      />
     );
   }
 
@@ -133,58 +261,19 @@ export function GameShell() {
   }
 
   return (
-    <main className="grid min-h-screen lg:grid-cols-[1fr_320px]">
-      <div>
+    <div className="audaces-cuerpo">
+      <Hud />
+      <div className="audaces-juego">
         <GameCanvas reparto={reparto} />
-        <section id="panel-juego">
+        <section id="panel-juego" className="audaces-panel">
           <NodoRunner />
         </section>
       </div>
-      <Hud />
-
-      {pausa && (
-        <div
-          role="dialog"
-          aria-label="Pausa"
-          className="fixed inset-0 z-50 flex items-center justify-center"
-          style={{ background: 'color-mix(in srgb, var(--ink) 88%, transparent)' }}
-        >
-          <div className="max-w-md border p-6" style={{ borderColor: 'var(--gold)' }}>
-            <p className="mono" style={{ color: 'var(--gold)' }}>
-              Pausa
-            </p>
-            <h2 className="mt-2 text-2xl">{prologo.titulo}</h2>
-            <p className="mt-3" style={{ color: 'var(--stone)' }}>
-              Controles: <b>1–5</b> elegir · <b>E</b> o <b>Espacio</b> avanzar ·{' '}
-              <b>Esc</b> pausa. La partida se guarda sola en este navegador.
-            </p>
-            <div className="mt-5 flex gap-3">
-              <button
-                type="button"
-                className="mono border px-5 py-2"
-                style={{ borderColor: 'var(--gold)', color: 'var(--gold)', cursor: 'pointer' }}
-                onClick={() => setPausa(false)}
-              >
-                Volver
-              </button>
-              <button
-                type="button"
-                className="mono border px-5 py-2"
-                style={{ borderColor: 'var(--charcoal-lift)', color: 'var(--stone)', cursor: 'pointer' }}
-                onClick={() => {
-                  setPausa(false);
-                  reiniciar();
-                }}
-              >
-                Abandonar partida
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </main>
+    </div>
   );
 }
+
+/* ── Piezas de composición ────────────────────────────────────────────────── */
 
 function Portada({
   hayPartida,
@@ -195,49 +284,116 @@ function Portada({
   onNueva: () => void;
   onContinuar: () => void;
 }) {
-  const fase = useAudaces((s) => s.fase);
-  if (fase === 'creacion') return null;
+  return (
+    <Hoja
+      acciones={
+        <>
+          <button type="button" className="boton boton--principal" onClick={onNueva}>
+            Nueva partida
+          </button>
+          {hayPartida && (
+            <button type="button" className="boton" onClick={onContinuar}>
+              Continuar
+            </button>
+          )}
+          <span className="mono audaces-acciones-pista">1–5 elegir · E o Espacio avanzar</span>
+        </>
+      }
+    >
+      <div className="mx-auto max-w-2xl">
+        <p className="mono" style={{ color: 'var(--gold)' }}>
+          RPG jurídico chileno · alpha 0.1
+        </p>
+        <h2
+          className="mt-3 leading-none"
+          style={{ fontSize: 'clamp(1.75rem, 5.5vh, 3.25rem)' }}
+        >
+          La Ley de los Audaces
+        </h2>
+        <p
+          className="mt-5 max-w-xl leading-relaxed"
+          style={{ color: 'var(--ivory-dim)', fontSize: 'var(--texto)' }}
+        >
+          Capítulo 0: gane un juicio. Es lo único que tiene que hacer hoy, y es lo
+          último que le va a salir bien.
+        </p>
+        <p className="mt-6 max-w-xl text-sm" style={{ color: 'var(--stone)' }}>
+          Ficción. Personajes, empresa, documentos, tribunal y causa son
+          inventados. Las referencias normativas van rotuladas según su estado de
+          verificación y ninguna se presenta como Derecho vigente sin contraste.
+        </p>
+      </div>
+    </Hoja>
+  );
+}
+
+function ModalPausa({
+  inmersiva,
+  onAlternarInmersiva,
+  onVolver,
+  onAbandonar,
+}: {
+  inmersiva: boolean;
+  onAlternarInmersiva?: () => void;
+  onVolver: () => void;
+  onAbandonar: () => void;
+}) {
+  const player = useAudaces((s) => s.player);
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-20">
-      <p className="mono" style={{ color: 'var(--gold)' }}>
-        RPG jurídico chileno · alpha 0.1
-      </p>
-      <h1 className="mt-4 text-5xl leading-none sm:text-6xl">La Ley de los Audaces</h1>
-      <p className="mt-6 max-w-xl text-lg leading-relaxed" style={{ color: 'var(--ivory-dim)' }}>
-        Capítulo 0: gane un juicio. Es lo único que tiene que hacer hoy, y es lo
-        último que le va a salir bien.
-      </p>
-      <div className="mt-10 flex flex-wrap gap-3">
-        <button
-          type="button"
-          className="mono border px-6 py-3"
-          style={{
-            borderColor: 'var(--gold)',
-            background: 'var(--gold)',
-            color: 'var(--ink)',
-            cursor: 'pointer',
-          }}
-          onClick={onNueva}
-        >
-          Nueva partida
-        </button>
-        {hayPartida && (
-          <button
-            type="button"
-            className="mono border px-6 py-3"
-            style={{ borderColor: 'var(--charcoal-lift)', color: 'var(--ivory)', cursor: 'pointer' }}
-            onClick={onContinuar}
-          >
-            Continuar
+    <div role="dialog" aria-label="Pausa" className="audaces-modal">
+      <div className="audaces-modal-caja">
+        <div className="audaces-topbar">
+          <span className="mono" style={{ color: 'var(--gold)' }}>
+            Pausa
+          </span>
+          <span className="mono audaces-topbar-ficcion">{prologo.titulo}</span>
+        </div>
+
+        <div className="audaces-modal-cuerpo">
+          <p style={{ color: 'var(--stone)' }}>
+            Controles: <b>1–5</b> elegir · <b>E</b> o <b>Espacio</b> avanzar ·{' '}
+            <b>Esc</b> pausa. La partida se guarda sola en este navegador.
+          </p>
+
+          {player && (
+            <dl
+              className="mono mt-4 grid grid-cols-2 gap-x-4 gap-y-1"
+              style={{ color: 'var(--stone)' }}
+            >
+              {(
+                [
+                  ['Argumentación', player.stats.argumentacion],
+                  ['Investigación', player.stats.investigacion],
+                  ['Negociación', player.stats.negociacion],
+                  ['Estrategia', player.stats.estrategia],
+                  ['Integridad', player.stats.integridad],
+                  ['Prestigio', player.stats.prestigio],
+                ] as const
+              ).map(([k, v]) => (
+                <div key={k} className="flex justify-between gap-3">
+                  <dt>{k}</dt>
+                  <dd style={{ color: 'var(--ivory-deep)' }}>{v}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+        </div>
+
+        <div className="audaces-acciones">
+          <button type="button" className="boton boton--principal" onClick={onVolver}>
+            Volver
           </button>
-        )}
+          {onAlternarInmersiva && (
+            <button type="button" className="boton" onClick={onAlternarInmersiva}>
+              {inmersiva ? 'Salir de pantalla completa' : 'Pantalla completa'}
+            </button>
+          )}
+          <button type="button" className="boton" onClick={onAbandonar}>
+            Abandonar partida
+          </button>
+        </div>
       </div>
-      <p className="mt-12 max-w-xl text-sm" style={{ color: 'var(--stone)' }}>
-        Ficción. Personajes, empresa, documentos, tribunal y causa son
-        inventados. Las referencias normativas van rotuladas según su estado de
-        verificación y ninguna se presenta como Derecho vigente sin contraste.
-      </p>
-    </main>
+    </div>
   );
 }

@@ -6,9 +6,13 @@
  * sus propios tokens: se lee igual en modo nocturno y en modo institucional, y
  * ni uno solo de estos colores se escapa al resto del sitio.
  *
+ * La cabina es además el GameShell: se dimensiona al viewport disponible y
+ * reparte ese alto entre barra, escena, panel y acciones. Nada de lo que hay
+ * dentro empuja la página. Ver `docs/DECISIONS.md` D-027.
+ *
  * Cambiar un token aquí obliga a cambiarlo también en
  * `src/lib/rpg/art/palette.mjs` y en `src/engine/rpg/CourtroomScene.ts`. Esa
- * triple copia está anotada en `docs/DECISIONS.md`.
+ * triple copia está anotada en D-023.
  */
 
 @import '../../../../components/rpg/rpg.css';
@@ -30,18 +34,103 @@
   --juego-serif: ui-serif, Georgia, 'Iowan Old Style', 'Times New Roman', serif;
   --juego-mono: ui-monospace, 'SF Mono', Menlo, 'Cascadia Mono', Consolas, monospace;
 
+  /*
+   * Alto del cromo del sitio por encima de la cabina —franja de prototipo más
+   * cabecera—. El valor de reserva basta para pintar bien antes de hidratar; el
+   * componente lo afina con la medida real. Es la única medición en JS del
+   * juego: la distancia entre el inicio del documento y la cabina no se puede
+   * expresar en CSS.
+   */
+  --cabina-chrome: 5.75rem;
+  --cabina-alto: calc(100dvh - var(--cabina-chrome));
+
+  /* Ritmo interno. Se encoge con el alto disponible, no con el ancho. */
+  --paso: clamp(0.6rem, 1.6vh, 1.25rem);
+  --paso-lado: clamp(0.85rem, 2.2vw, 1.5rem);
+  --texto: clamp(0.95rem, 1.7vh, 1.0625rem);
+
   color-scheme: dark;
   background: var(--ink);
   color: var(--ivory);
   font-family: var(--juego-serif);
-  line-height: 1.6;
+  line-height: 1.55;
   border: 1px solid var(--charcoal-lift);
+
+  /*
+   * El juego es una pantalla, no un tramo de página. Su alto es el viewport
+   * disponible y su desbordamiento se resuelve dentro, nunca empujando el
+   * documento.
+   */
+  height: var(--cabina-alto);
+  max-height: var(--cabina-alto);
+  /*
+   * Mínimo deliberadamente bajo. En un teléfono en horizontal el viewport son
+   * 390 px y el cromo del sitio se lleva 93: quedan 297. Con un mínimo de
+   * 22 rem la cabina medía 352 y la barra de acciones caía fuera de la
+   * pantalla, que es justo lo que no puede pasar. Con 16 rem entra, aunque el
+   * panel tenga que desplazarse por dentro.
+   */
+  min-height: 16rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   overflow: hidden;
+  /* Los modales del juego se miden contra la cabina, no contra el documento:
+     así no pueden ser más altos que la pantalla de juego. */
+  position: relative;
 }
 
-/* La cabina no ocupa la pantalla: vive dentro de la página del laboratorio. */
-.cabina-audaces main {
+/* ── Modales del juego ──────────────────────────────────────────────────────
+   Cabecera, cuerpo desplazable y acciones. El cierre nunca entra en el scroll. */
+
+.cabina-audaces .audaces-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: var(--paso-lado);
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+}
+
+.cabina-audaces .audaces-modal-caja {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(34rem, 100%);
+  max-height: 100%;
+  border: 1px solid var(--gold);
+  background: var(--ink);
+}
+
+.cabina-audaces .audaces-modal-cuerpo {
   min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--paso) var(--paso-lado);
+}
+
+@supports not (height: 100dvh) {
+  .cabina-audaces {
+    --cabina-alto: calc(100vh - var(--cabina-chrome));
+  }
+}
+
+/* Pantalla completa sin depender de la del navegador: el juego tapa el sitio,
+   conserva su propio rótulo de prototipo y devuelve el control con Esc. */
+.cabina-audaces[data-inmersiva='true'] {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  --cabina-alto: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  border: 0;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Mientras el juego ocupa la pantalla, el documento de detrás no se desplaza. */
+body[data-juego-inmersivo='true'] {
+  overflow: hidden;
 }
 
 .cabina-audaces .mono {
@@ -70,12 +159,234 @@
   border-color: var(--gold);
 }
 
-/* ── Escena ─────────────────────────────────────────────────────────────── */
+.cabina-audaces :focus-visible {
+  outline: 2px solid var(--gold-lift);
+  outline-offset: 2px;
+}
+
+/* ── Barra superior ─────────────────────────────────────────────────────────
+   Identidad, rótulo de ficción y los dos controles que no pueden esconderse.
+   Ocupa fila propia en la rejilla: nunca la empuja el contenido. */
+
+.cabina-audaces .audaces-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem var(--paso-lado);
+  border-bottom: 1px solid var(--charcoal-lift);
+  background: var(--charcoal);
+  min-height: 0;
+}
+
+.cabina-audaces .audaces-topbar-ficcion {
+  margin-left: auto;
+  color: var(--burgundy-lift);
+  white-space: nowrap;
+}
+
+.cabina-audaces .audaces-topbar button {
+  border: 1px solid var(--charcoal-lift);
+  color: var(--ivory-deep);
+  background: transparent;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cabina-audaces .audaces-topbar button:hover {
+  border-color: var(--gold);
+  color: var(--gold-lift);
+}
+
+/* En pantallas estrechas el rótulo largo sobra: el aviso de ficción se queda,
+   el nombre del capítulo no. */
+@media (max-width: 40rem) {
+  .cabina-audaces .audaces-topbar-capitulo {
+    display: none;
+  }
+}
+
+/* ── Cuerpo: juego + HUD ──────────────────────────────────────────────────── */
+
+.cabina-audaces .audaces-cuerpo {
+  display: grid;
+  min-height: 0;
+  grid-template-areas: 'hud' 'juego';
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 64rem) {
+  .cabina-audaces .audaces-cuerpo {
+    grid-template-areas: 'juego hud';
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) clamp(15rem, 20vw, 19rem);
+  }
+}
+
+/*
+ * Flex y no rejilla, a propósito.
+ *
+ * Con `grid-template-rows: minmax(0,1fr) auto`, la pista `auto` del panel se
+ * dimensiona por su contenido máximo y un `max-height` en porcentaje se
+ * resuelve contra esa pista, no contra el espacio real: medido a 1280×600, la
+ * rejilla interna se pasaba 94 px y dejaba la escena en 42 px con un hueco
+ * negro debajo. En flex el reparto es directo: el panel pide lo que ocupa
+ * —acotado—, y la escena se queda con el resto y encoge si hace falta.
+ */
+.cabina-audaces .audaces-juego {
+  grid-area: juego;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* ── HUD ────────────────────────────────────────────────────────────────────
+   Dos formas de la misma marca. Banda horizontal compacta por defecto —que es
+   el caso difícil— y columna lateral cuando sobra ancho. El expediente es lo
+   único que puede crecer sin límite y por eso es lo único que se desplaza. */
+
+.cabina-audaces .audaces-hud {
+  grid-area: hud;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.5rem var(--paso-lado);
+  border-bottom: 1px solid var(--charcoal-lift);
+  background: var(--charcoal);
+}
+
+.cabina-audaces .audaces-hud-id {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+/* El retrato es pixel art: escalarlo por CSS no lo degrada. */
+.cabina-audaces .audaces-hud-id img {
+  width: auto;
+  height: clamp(1.75rem, 5vh, 3.25rem);
+}
+
+.cabina-audaces .audaces-hud-barras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(5rem, 9rem));
+  gap: 0.75rem;
+}
+
+.cabina-audaces .audaces-hud-exp {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1 1 12rem;
+}
+
+.cabina-audaces .audaces-hud-exp-lista {
+  display: flex;
+  gap: 0.4rem;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+}
+
+.cabina-audaces .audaces-hud-exp-lista > li {
+  white-space: nowrap;
+}
+
+/* En banda, la evidencia se anuncia por su nombre; el resumen necesita sitio. */
+.cabina-audaces .audaces-hud-exp-detalle,
+.cabina-audaces .audaces-hud-exp-vacio {
+  display: none;
+}
+
+/* Las seis estadísticas son información secundaria: en banda se van a la
+   pausa, donde se leen mejor. No se pierden, cambian de sitio. */
+.cabina-audaces .audaces-hud-stats {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .cabina-audaces .audaces-hud {
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    align-content: start;
+    gap: var(--paso);
+    padding: var(--paso) var(--paso-lado);
+    border-bottom: 0;
+    border-left: 1px solid var(--charcoal-lift);
+  }
+
+  .cabina-audaces .audaces-hud-barras {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--paso);
+  }
+
+  .cabina-audaces .audaces-hud-exp {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0.5rem;
+    align-content: start;
+    min-height: 0;
+  }
+
+  .cabina-audaces .audaces-hud-exp-lista {
+    display: grid;
+    align-content: start;
+    gap: 0.5rem;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--charcoal-lift) transparent;
+  }
+
+  .cabina-audaces .audaces-hud-exp-lista > li {
+    white-space: normal;
+  }
+
+  .cabina-audaces .audaces-hud-exp-detalle {
+    display: block;
+  }
+
+  .cabina-audaces .audaces-hud-exp-vacio {
+    display: list-item;
+  }
+
+  .cabina-audaces .audaces-hud-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.15rem 0.75rem;
+  }
+
+  /* Poca altura y mucho ancho: las estadísticas vuelven a la pausa antes de
+     que el expediente se quede sin sitio. */
+  @media (max-height: 44rem) {
+    .cabina-audaces .audaces-hud-stats {
+      display: none;
+    }
+  }
+}
+
+/* ── Escena ─────────────────────────────────────────────────────────────────
+   Sin `aspect-ratio`: el alto lo pone la rejilla y Phaser encaja dentro con
+   `Scale.FIT`, que conserva la proporción 16:9 y no deforma a nadie. */
 
 .cabina-audaces .escena {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  /*
+   * Base cero y crecimiento libre: la escena se queda con lo que sobre después
+   * de que el panel pida lo suyo, y no puede robarle sitio. Cuando no sobra
+   * nada, vale cero y el que encoge es el panel, no las acciones.
+   */
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
   background: var(--ink);
   border-bottom: 1px solid var(--charcoal-lift);
   overflow: hidden;
@@ -93,6 +404,218 @@
   inset: auto 0 1rem 0;
   text-align: center;
   color: var(--stone);
+}
+
+/*
+ * Viewport bajo: la sala se va.
+ *
+ * Es decoración —lleva `aria-hidden`— y por debajo de unos 640 px de alto sólo
+ * puede ser una rendija letterboxed de cien píxeles. Medido a 1280×600: con la
+ * sala puesta, tres de las nueve opciones del alegato quedaban fuera y había
+ * que desplazar la lista; sin ella caben las nueve. Entre un dibujo inútil y
+ * una decisión completa, gana la decisión.
+ */
+@media (max-height: 44rem) {
+  .cabina-audaces .escena {
+    display: none;
+  }
+}
+
+/* ── Panel de diálogo y acciones ────────────────────────────────────────────
+   Tres zonas: enunciado, cuerpo desplazable y barra de acciones. El scroll
+   vive en el cuerpo; las acciones quedan siempre fuera de él. */
+
+.cabina-audaces .audaces-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  /*
+   * Pide su alto natural y encoge si no cabe; nunca crece por encima de él.
+   * Sin porcentajes: un tope proporcional dejaba 49 px de la lista del alegato
+   * fuera a 1366×650, y ese scroll interno era la única cosa que el jugador
+   * tenía que descubrir por su cuenta.
+   */
+  flex: 0 1 auto;
+  min-height: 0;
+  /* Guardia para monitores muy altos: sin ella, un nodo con muchas opciones se
+     comería el escenario en 4K. */
+  max-height: 32rem;
+  background: var(--ink);
+}
+
+/* Sin escena, el panel es el juego entero y puede quedarse con todo el alto. */
+@media (max-height: 44rem) {
+  .cabina-audaces .audaces-panel {
+    flex: 1 1 auto;
+    max-height: none;
+  }
+}
+
+/* Filas explícitas: un nodo sin enunciado no debe promocionar el cuerpo a la
+   fila fija ni degradar la barra de acciones a la fila flexible. */
+.cabina-audaces .audaces-panel-cabeza {
+  grid-row: 1;
+  padding: var(--paso) var(--paso-lado) 0;
+}
+
+.cabina-audaces .audaces-panel > .audaces-panel-cuerpo {
+  grid-row: 2;
+}
+
+.cabina-audaces .audaces-panel > .audaces-acciones {
+  grid-row: 3;
+}
+
+.cabina-audaces .audaces-panel-cuerpo {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--paso) var(--paso-lado);
+  scrollbar-width: thin;
+  scrollbar-color: var(--charcoal-lift) transparent;
+}
+
+.cabina-audaces .audaces-panel-cuerpo::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cabina-audaces .audaces-panel-cuerpo::-webkit-scrollbar-thumb {
+  background: var(--charcoal-lift);
+}
+
+/*
+ * Poca altura: las pistas de cada pieza del alegato se pliegan y el marco se
+ * aprieta. Se va la explicación, nunca la opción. Con esto las nueve opciones
+ * del alegato caben sin desplazar el panel en un viewport de 600 px.
+ */
+@media (max-height: 44rem) {
+  .cabina-audaces .audaces-ayuda {
+    display: none;
+  }
+
+  .cabina-audaces fieldset {
+    padding: 0.4rem 0.5rem 0.5rem;
+  }
+}
+
+/* En monitores anchos una opción de línea completa es ilegible: la medida se
+   limita, y el sobrante se reparte a los lados. */
+.cabina-audaces .audaces-panel-cuerpo > ul,
+.cabina-audaces .audaces-panel-cabeza > p,
+.cabina-audaces .audaces-panel-cabeza > h2 {
+  max-width: 62rem;
+  margin-inline: auto;
+}
+
+/* Barra de acciones: parte estructural de la rejilla, nunca un pie de página
+   detrás del contenido. */
+.cabina-audaces .audaces-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: var(--paso) var(--paso-lado);
+  border-top: 1px solid var(--charcoal-lift);
+  background: var(--charcoal);
+}
+
+.cabina-audaces .audaces-acciones-pista {
+  margin-left: auto;
+  color: var(--stone);
+}
+
+/*
+ * Hueco para el lanzador de EVA.
+ *
+ * EVA es del sitio, no del juego: vive en `position: fixed` abajo a la derecha
+ * y no se puede quitar sin tocar D-008. Cuando el HUD está en el lateral
+ * derecho, EVA cae sobre el HUD y no molesta; cuando el HUD es banda superior
+ * —pantallas estrechas— cae justo encima de la barra de acciones y tapaba el
+ * botón. Aquí se le reserva su esquina en vez de discutirla.
+ *
+ * A pantalla completa la cabina va por encima de EVA y esto sobra, pero no
+ * estorba.
+ */
+@media (max-width: 63.999rem) {
+  .cabina-audaces .audaces-acciones {
+    padding-right: 7rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .cabina-audaces .audaces-acciones-pista {
+    display: none;
+  }
+}
+
+/* ── Pantallas de una sola columna: portada, creación, veredicto ───────────── */
+
+.cabina-audaces .audaces-hoja {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.cabina-audaces .audaces-hoja > .audaces-acciones {
+  flex: 0 0 auto;
+}
+
+.cabina-audaces .audaces-hoja-cuerpo {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(1rem, 4vh, 2.5rem) var(--paso-lado);
+  scrollbar-width: thin;
+  scrollbar-color: var(--charcoal-lift) transparent;
+}
+
+.cabina-audaces .audaces-hoja-cuerpo::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cabina-audaces .audaces-hoja-cuerpo::-webkit-scrollbar-thumb {
+  background: var(--charcoal-lift);
+}
+
+/* ── Botones ────────────────────────────────────────────────────────────────
+   Tamaños táctiles razonables incluso en el modo más compacto: la altura se
+   recorta en el espaciado, no en el objetivo de pulsación. */
+
+.cabina-audaces .boton {
+  font-family: var(--juego-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  min-height: 2.5rem;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid var(--charcoal-lift);
+  background: transparent;
+  color: var(--ivory);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+.cabina-audaces .boton:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--gold-lift);
+}
+
+.cabina-audaces .boton--principal {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.cabina-audaces .boton--principal:hover:not(:disabled) {
+  background: var(--gold-lift);
+  border-color: var(--gold-lift);
+  color: var(--ink);
+}
+
+.cabina-audaces .boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ── Barras ─────────────────────────────────────────────────────────────── */
@@ -119,10 +642,10 @@
   border: 1px solid var(--charcoal-lift);
   background: color-mix(in srgb, var(--charcoal) 88%, transparent);
   color: var(--ivory);
-  padding: 0.85rem 1rem;
+  padding: clamp(0.5rem, 1.2vh, 0.85rem) 1rem;
   font-family: var(--juego-serif);
-  font-size: 0.98rem;
-  line-height: 1.45;
+  font-size: var(--texto);
+  line-height: 1.4;
   cursor: pointer;
   transition:
     border-color 140ms ease,
