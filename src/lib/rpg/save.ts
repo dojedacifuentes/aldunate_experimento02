@@ -6,7 +6,7 @@ import type { EvidenceItem, Player } from '@/types/game';
  * Subirla obliga a escribir el paso correspondiente en `migrar()`. Un save que
  * no migra es un jugador que pierde su partida en un deploy.
  */
-export const SAVE_VERSION = 1;
+export const SAVE_VERSION = 2;
 
 export const SAVE_KEY = 'audaces-save';
 
@@ -103,6 +103,25 @@ export function migrar(estado: unknown, version: number): Partial<SaveShape> {
     if (!Array.isArray(datos.finales)) datos.finales = [];
     if (typeof datos.impulso !== 'number') datos.impulso = 0;
     if (typeof datos.combo !== 'number') datos.combo = 0;
+  }
+
+  /*
+   * v1 → v2: el Capítulo 0 se reescribió.
+   *
+   * El tribunal pasó de uno a tres jueces, la apertura es otra y hay líneas
+   * nuevas repartidas por todo el capítulo. Los identificadores de nodo siguen
+   * siendo válidos, así que el save no está roto: está desactualizado. Retomarlo
+   * a mitad significa no ver nunca la mitad de lo que cambió.
+   *
+   * Se conserva el personaje —nombre, avatar, especialidad, estadísticas— y se
+   * suelta la posición. En la portada aparece «Continuar», que ahora arranca el
+   * capítulo desde el principio. Nadie pierde su personaje en un deploy; lo que
+   * se pierde es un punto de retorno a un texto que ya no existe.
+   */
+  if (version < 2) {
+    const v2 = datos as Record<string, unknown>;
+    v2.nodeId = null;
+    v2.fase = 'portada';
   }
 
   // La fase se guarda para poder retomar el cierre de capítulo, pero sólo dos

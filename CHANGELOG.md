@@ -4,6 +4,14 @@
 
 ### Corregido
 
+- **Quien ya había jugado no veía el capítulo nuevo.** La partida guardada lo
+  devolvía a mitad del Capítulo 0 —los ids de nodo no cambiaron, así que el save
+  funcionaba— y se saltaba para siempre la apertura reescrita y el tribunal de
+  tres. `SAVE_VERSION` sube a 2: se conserva el personaje y se suelta la
+  posición. D-032.
+- **El juego no se nombraba desde la portada.** La pista de «Experimentos» y el
+  pie ahora lo llaman por su nombre; antes estaba a tres clics y sin nombre.
+
 - **No se veían los jueces.** `setBounds` pegado al mundo recortaba el
   desplazamiento de cámara: a zoom 1,2 el centro sólo podía moverse entre y=300
   e y=420, y el estrado está en y=176. La cámara **no podía enfocar al

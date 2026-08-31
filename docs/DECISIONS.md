@@ -597,3 +597,27 @@ vista previa estrangula `requestAnimationFrame`: el bucle de Phaser avanza cero
 fotogramas y la cámara se queda congelada a mitad del recorrido. Se verifica
 leyendo el objetivo de cámara —`scene.encuadre`— y forzando un paso del bucle
 con `game.loop.step()`.
+
+---
+
+## D-032 · Un capítulo reescrito no se retoma a mitad
+
+**Qué.** `SAVE_VERSION` sube a 2. La migración de 1 a 2 conserva el personaje
+—nombre, avatar, especialidad, estadísticas, XP— y suelta la posición: el
+jugador vuelve a la portada y «Continuar» arranca el capítulo desde el
+principio.
+
+**Por qué.** El Capítulo 0 se reescribió: tribunal de tres, apertura distinta,
+líneas nuevas repartidas por todo el guion. Los identificadores de nodo siguen
+siendo válidos, así que el save **no está roto**: está desactualizado. Y ahí
+está el problema, porque un save que funciona no avisa de nada. Quien ya había
+jugado volvía a `scan` o a `alegato` y no veía nunca la mitad de lo que había
+cambiado. El síntoma desde fuera es «subiste los cambios y no se ven».
+
+**La regla.** Cuando el contenido de un capítulo cambie de forma que retomarlo a
+mitad deje al jugador viendo una versión que ya no existe, se sube
+`SAVE_VERSION` y se suelta la posición. Se conserva siempre el personaje: nadie
+pierde a quien construyó por un despliegue.
+
+**Lo que no basta.** Confiar en que el jugador empiece una partida nueva por su
+cuenta. Nadie borra su partida para comprobar si cambió algo.
