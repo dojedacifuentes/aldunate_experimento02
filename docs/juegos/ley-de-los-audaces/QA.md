@@ -20,12 +20,36 @@ milestone. Cada línea se marca **PASS** o **FAIL**; un FAIL bloquea el avance.
 
 ## Escena
 
-- [ ] La sala monta y se ven los seis actores en su puesto.
-- [ ] La cámara se mueve al cambiar de nodo y el foco sigue a quien habla.
-- [ ] Quien habla gesticula; los demás vuelven a reposo.
+- [ ] La sala monta y se ven los ocho actores en su puesto.
+- [ ] En el estrado hay **tres** jueces, separados, con la presidenta al centro.
 - [ ] Acertar produce destello dorado; fallar, burdeos.
 - [ ] ANALIZAR produce el barrido.
 - [ ] Con el canvas deshabilitado, el juego sigue siendo jugable.
+
+## Cámara
+
+Lo que más se nota y lo que más caro sale equivocar. Se revisa jugando el
+capítulo entero, no mirando una pantalla suelta.
+
+- [ ] La cámara va a **quien habla**, no al mueble de su puesto.
+- [ ] Gesticula **sólo** quien habla. En el estrado, los otros dos jueces
+      siguen quietos.
+- [ ] Cuando alguien se dirige a alguien —Riquelme a la testigo, Achurra a la
+      defensa— se ve a los dos en el plano, ninguno cortado.
+- [ ] Dos líneas seguidas de la misma persona **no** mueven la cámara. Si
+      tiembla entre líneas, el umbral se rompió.
+- [ ] Al pasar de un nodo a otro el movimiento es un paneo, no un salto.
+- [ ] Con `prefers-reduced-motion`, la cámara cambia de plano sin recorrido.
+- [ ] Nada de esto depende de la altura de la pantalla: repetir a 1366×650.
+
+## Tribunal
+
+- [ ] Achurra corta, Pinilla anota y Riquelme incomoda: se distinguen sin
+      mirar el nombre.
+- [ ] Los tres hablan al menos una vez antes del veredicto.
+- [ ] Ningún chiste es a costa de la acusada. Si aparece uno, se quita. D-030.
+
+## Diálogo y decisiones
 
 ## Diálogo y decisiones
 
