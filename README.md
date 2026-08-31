@@ -103,6 +103,7 @@ Lucide. Sin backend.
 | `docs/HANDOFF.md` | Estado actual y siguiente paso |
 | `docs/informes/` | El método de los informes en siete documentos: investigación, diseño, motor de gráficos, generador de Word, modelo de contenido, reproducción y puente con el sitio |
 | `tools/informes/README.md` | La maquinaria: cómo compilar un informe y cómo arrancar uno nuevo |
+| `.claude/skills/informe-vivo/` | Skill que encapsula el flujo completo. Se activa sola cuando se pide crear, ampliar o publicar un informe |
 | `CHANGELOG.md` | Historial de versiones |
 
 ---

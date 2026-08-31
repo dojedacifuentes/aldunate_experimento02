@@ -5,6 +5,34 @@ Versionado semántico.
 
 ---
 
+## [0.6.0] — 2026-08-31
+
+### Añadido
+
+- **Skill `informe-vivo`** en `.claude/skills/`. Encapsula el flujo completo de
+  producción: investigación, corpus, contenido, figuras, compilación y
+  publicación. Existía la maquinaria y existía el método escrito; faltaba lo que
+  los invoca cuando alguien pide un informe sin saber que hay una cadena detrás.
+- La skill trata como caso de primera clase el encargo más frecuente y peor
+  resuelto: **fundir varios documentos de investigación en un informe único**.
+  Cuatro investigaciones no son cuatro capítulos. El procedimiento —inventariar
+  fuentes en vez de textos, arbitrar los desacuerdos abriendo la fuente,
+  reclasificar desde cero y derivar la estructura de la evidencia y no de los
+  documentos de origen— es lo que separa una fusión de una suma.
+- Recoge además los errores ya cometidos en este repositorio, para que no se
+  repitan: el BOM de PowerShell, las variables que no distinguen mayúsculas, la
+  numeración manual de figuras, la renumeración ascendente de capítulos y los
+  identificadores huérfanos.
+
+### Corregido
+
+- Las notas «Sin verificar» de 0.4.0 y 0.5.0 quedan resueltas: el CI del
+  repositorio ejecuta `npm run verify` en cada push a `main`, y ambos commits
+  (`3ec584a` y `5d78036`) pasaron typecheck, lint y build. La verificación
+  existía; lo que faltaba era mirarla.
+
+---
+
 ## [0.5.0] — 2026-08-31
 
 ### Añadido

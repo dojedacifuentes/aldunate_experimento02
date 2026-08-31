@@ -190,6 +190,11 @@ Reglas propias de esa cadena:
 - Para arrancar un informe nuevo se copia `tools/informes/plantilla-informe-nuevo/`.
   No se empieza de cero ni se clona el informe 02.
 
+La skill `informe-vivo` (`.claude/skills/`) encapsula el flujo entero y se activa
+sola cuando se pide crear, ampliar o publicar un informe. Cubre además el caso de
+fundir varios documentos de investigación en uno solo, que es donde más se pierde
+trazabilidad si se aborda como una suma de capítulos.
+
 Publicar una versión son cinco pasos y están en
 `docs/informes/07-puente-con-el-sitio.md`. El paso que más se olvida es el
 último: comprobar que no queda ningún `source_id` ni `claim_id` huérfano, porque
