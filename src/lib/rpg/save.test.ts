@@ -21,9 +21,35 @@ describe('migración de guardado', () => {
   });
 
   it('conserva lo que ya estaba', () => {
-    const migrado = migrar({ impulso: 68, nodeId: 'scan' }, 0);
+    const migrado = migrar({ impulso: 68, nodeId: 'scan' }, SAVE_VERSION);
     expect(migrado.impulso).toBe(68);
     expect(migrado.nodeId).toBe('scan');
+  });
+
+  it('un save del capítulo anterior vuelve al principio con su personaje', () => {
+    // El Capítulo 0 se reescribió: los ids de nodo siguen valiendo, así que el
+    // save no está roto, está desactualizado. Retomarlo a mitad significaría no
+    // ver nunca la mitad de lo que cambió.
+    const jugador = {
+      nombre: 'Ana',
+      avatar: 'player_renata',
+      especialidad: 'litigacion',
+      stats: {
+        argumentacion: 7,
+        investigacion: 3,
+        negociacion: 3,
+        estrategia: 4,
+        integridad: 5,
+        prestigio: 2,
+      },
+      xp: 430,
+      nivel: 3,
+    };
+    const migrado = migrar({ nodeId: 'scan', fase: 'juego', player: jugador }, 1);
+
+    expect(migrado.nodeId, 'la posición se suelta').toBeNull();
+    expect((migrado as Record<string, unknown>).fase).toBe('portada');
+    expect(migrado.player, 'nadie pierde su personaje en un deploy').toEqual(jugador);
   });
 });
 
@@ -56,12 +82,14 @@ describe('save utilizable', () => {
 
 describe('fase persistida', () => {
   it('sólo se retoman partidas en curso o terminadas', () => {
-    expect((migrar({ fase: 'juego' }, 1) as Record<string, unknown>).fase).toBe('juego');
-    expect((migrar({ fase: 'fin' }, 1) as Record<string, unknown>).fase).toBe('fin');
+    expect((migrar({ fase: 'juego' }, SAVE_VERSION) as Record<string, unknown>).fase).toBe('juego');
+    expect((migrar({ fase: 'fin' }, SAVE_VERSION) as Record<string, unknown>).fase).toBe('fin');
   });
 
   it('una creación de personaje a medias vuelve a la portada', () => {
-    expect((migrar({ fase: 'creacion' }, 1) as Record<string, unknown>).fase).toBe('portada');
-    expect((migrar({}, 1) as Record<string, unknown>).fase).toBe('portada');
+    expect((migrar({ fase: 'creacion' }, SAVE_VERSION) as Record<string, unknown>).fase).toBe(
+      'portada',
+    );
+    expect((migrar({}, SAVE_VERSION) as Record<string, unknown>).fase).toBe('portada');
   });
 });

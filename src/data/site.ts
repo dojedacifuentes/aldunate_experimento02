@@ -62,7 +62,9 @@ export const primaryNav: NavEntry[] = [
   {
     href: '/experimentos',
     label: 'Experimentos',
-    hint: 'Constitution Lab, Gramatiquerías, juegos y visualizaciones.',
+    // La pista nombra lo único que se puede jugar. Sin nombrarlo, desde la
+    // portada el juego está a tres clics y no se llama de ninguna manera.
+    hint: 'Constitution Lab, Gramatiquerías y La Ley de los Audaces, RPG jurídico jugable.',
     code: '04',
   },
 ];
@@ -101,6 +103,7 @@ export const footerNav = [
       { href: '/experimentos/constitucion', label: 'Constitution Lab' },
       { href: '/experimentos/gramatiquerias', label: 'Gramatiquerías' },
       { href: '/experimentos/juegos', label: 'Juegos' },
+      { href: '/experimentos/juegos/ley-de-los-audaces', label: 'La Ley de los Audaces' },
     ],
   },
 ] as const;
