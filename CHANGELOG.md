@@ -57,8 +57,13 @@
   desaparecer.
 - **Creación de personaje en dos columnas**: nombre y avatar a un lado,
   especialidad al otro. Las tres decisiones se ven a la vez.
-- Por debajo de 704 px de alto la sala no se dibuja: es decoración, y sin ella
-  las nueve opciones del alegato caben sin desplazar nada. D-027.
+- **La sala llena el ancho del hueco.** Phaser pasa de `Scale.FIT` a
+  `Scale.ENVELOP`: con FIT, a 1366×650 el tribunal quedaba en 311 px dentro de
+  un hueco de 1082, con 770 px de franjas negras. Ahora cubre y recorta techo y
+  suelo, que es donde no pasa nada, y la cámara sigue a quien habla. D-027.
+- El panel reserva siempre 11 rem para la sala. Cuando su contenido no cabe en
+  lo que le toca, se desplaza por dentro; la barra de acciones sigue fuera de
+  ese desplazamiento.
 - Phaser arranca con `audio: { noAudio: true }`. El capítulo no tiene sonido y
   el contexto de audio dejaba dos `InvalidStateError` en la consola al salir de
   la ruta.
@@ -74,6 +79,10 @@
 - **Al salir de pantalla completa la cabina se quedaba con el viewport entero.**
   El observador medía el cromo mientras la cabina estaba en `fixed` y guardaba
   cero. Ahora no se mide en ese estado.
+- **La sala del tribunal había desaparecido en la mayoría de los portátiles.**
+  El umbral que la ocultaba estaba en 704 px de alto y el viewport real de un
+  1366×768 ronda los 650: la regla borraba el tribunal justo en la pantalla más
+  común. Ahora sólo desaparece por debajo de 432 px.
 
 - **`/experimentos` rompía la hidratación.** La ficha del juego trae su propio
   enlace «Jugar» y el catálogo la envolvía en otro: `<a>` dentro de `<a>`, HTML

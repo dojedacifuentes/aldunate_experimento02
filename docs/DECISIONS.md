@@ -450,10 +450,22 @@ reserva en CSS para el primer pintado. **No se mide mientras el juego está a
 pantalla completa**: ahí la cabina es `fixed`, su distancia al documento es cero,
 y guardarla dejaba la cabina desbordando justo lo que mide el cromo al salir.
 
-**Por debajo de 704 px de alto, la sala no se dibuja.** Es decoración
-—`aria-hidden`— y a esa altura sólo puede ser una rendija de cien píxeles. Sin
-ella, las nueve opciones del alegato caben sin desplazar nada; con ella, tres se
-quedaban fuera. Entre un dibujo inútil y una decisión completa, gana la decisión.
+**La sala se dibuja siempre, y llena el ancho.** Hubo una primera versión que la
+escondía por debajo de 704 px de alto, para que las nueve opciones del alegato
+cupieran sin desplazar la lista. Era el umbral equivocado y se corrigió el mismo
+día: un portátil de 1366×768 tiene un viewport real de unos 650 px, de modo que
+la regla borraba el tribunal precisamente en la pantalla más común. El tribunal
+es la mitad de la promesa del juego; que una lista larga se desplace por dentro
+—30 px a 1366×650— es un precio muy inferior a jugar sin sala. Sólo desaparece
+por debajo de 432 px de alto, donde la cabina entera mide 297 px.
+
+**Phaser escala con `ENVELOP`, no con `FIT`.** El hueco que le deja la cabina es
+ancho y bajo. Con `FIT`, a 1366×650 la sala quedaba encajada en 311 px dentro de
+un hueco de 1082, con 770 px de franjas negras a los lados: un sello, no un
+tribunal. `ENVELOP` cubre el hueco y recorta arriba y abajo. La proporción se
+conserva en ambos casos y nadie se deforma; lo que cambia es qué sobra, y sobra
+techo y suelo, que es donde no pasa nada. Además la cámara sigue a quien habla,
+así que el recorte nunca esconde al que está hablando.
 
 **Lo que no se hizo.** No hay `transform: scale()` ni `zoom` ni tipografías
 reducidas para forzar el encaje. El texto se mueve entre `0.95rem` y `1.0625rem`
