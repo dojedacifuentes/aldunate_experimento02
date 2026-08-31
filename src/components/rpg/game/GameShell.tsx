@@ -69,7 +69,9 @@ export function GameShell({
 
   const reparto = useMemo<Reparto>(
     () => ({
-      estrado: 'judge_achurra',
+      // El tribunal es colegiado. La primera de la lista preside y se sienta al
+      // centro; las otras dos van a los flancos.
+      estrado: ['judge_achurra', 'judge_pinilla', 'judge_riquelme'],
       fiscalia: 'prosecutor_naveas',
       testigo: 'witness_zapata',
       defensa: player?.avatar ?? 'player_tomas',

@@ -95,6 +95,36 @@ export type FocusTarget =
   | 'publico'
   | 'sala';
 
+/* ────────────────────────── Guion ────────────────────────── */
+
+/**
+ * Una línea con dirección de escena.
+ *
+ * Antes una línea era una cadena y el nodo entero tenía un solo hablante y un
+ * solo encuadre: la cámara se plantaba al entrar y no se movía aunque
+ * respondieran tres personas distintas. Por eso las transiciones no cuajaban.
+ *
+ * Ahora cada línea puede decir quién la dice, a quién se la dice y con qué
+ * cara. La cámara se entera y hace su trabajo; el guion se lee como un guion.
+ */
+export interface ScriptLine {
+  text: string;
+  /** Quién la dice. Por defecto, el `speaker` del nodo. */
+  quien?: CharacterId;
+  /**
+   * A quién se la dice. La cámara abre para encuadrar a los dos.
+   *
+   * Admite un puesto además de una persona porque quién ocupa la defensa
+   * depende del avatar que se haya elegido, y el guion no puede saberlo.
+   */
+  a?: CharacterId | FocusTarget;
+  /** Con qué cara. Por defecto, la del estilo del personaje. */
+  mood?: EvaMood;
+}
+
+/** Texto pelado o línea dirigida. Las dos formas conviven. */
+export type Linea = string | ScriptLine;
+
 /* ────────────────────────── Grafo de escena ────────────────────────── */
 
 export type NodeId = string;
@@ -116,9 +146,10 @@ interface BaseNode {
 
 export interface DialogueNode extends BaseNode {
   kind: 'dialogo';
+  /** Quién lleva la voz del nodo. Cada línea puede cedérsela a otro. */
   speaker: CharacterId;
   mood?: EvaMood;
-  lines: string[];
+  lines: Linea[];
   next: NodeId;
 }
 
@@ -129,7 +160,12 @@ export interface ChoiceOption {
   /** Si acertar suma impulso y rompe combo al fallar. */
   acierta?: boolean;
   efectos?: Effects;
-  respuesta: string[];
+  /**
+   * Lo que pasa al elegir. Una cadena es narración; una línea con `quien` es
+   * alguien contestando, que es como se consigue que la sala reaccione en el
+   * acto en vez de en el nodo siguiente.
+   */
+  respuesta: Linea[];
   next: NodeId;
 }
 

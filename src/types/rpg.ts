@@ -20,6 +20,8 @@ export type CharacterId =
   | 'client_marta'
   | 'counterparty_hector'
   | 'judge_achurra'
+  | 'judge_pinilla'
+  | 'judge_riquelme'
   | 'prosecutor_naveas'
   | 'witness_zapata'
   | 'eva'
