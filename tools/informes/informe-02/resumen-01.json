@@ -1,0 +1,79 @@
+[
+{"t":"h1","n":"El problema","x":"Qué se rompió exactamente","nobreak":true},
+
+{"t":"lead","x":"Durante siglos, el trabajo que un estudiante entregaba cumplía cuatro funciones a la vez: le enseñaba, producía algo útil, lo entrenaba para su profesión y demostraba que sabía. La inteligencia artificial generativa automatizó la cuarta. Al hacerlo, desacopló las otras tres."},
+
+{"t":"p","x":"Esto no es una opinión sobre tecnología. Es un resultado experimental. En 2024, un equipo insertó respuestas generadas íntegramente por ChatGPT en el sistema real de exámenes de una universidad británica, en condiciones de examen y con corrección ciega por los propios evaluadores del curso. **El 94 % pasó sin detección y obtuvo, en promedio, mejores notas que las de los estudiantes reales.**"},
+
+{"t":"p","x":"La consecuencia es precisa: la calificación de un trabajo no supervisado ha dejado de ser información fiable sobre quien lo entrega. No solo cuando alguien quiere engañar. **De forma general.** Un estudiante honesto que usa IA de manera razonable y declarada también entrega un producto que ya no informa sobre lo que sabe hacer sin ella."},
+
+{"t":"callout","h":"Por qué la vía disciplinaria no resuelve esto","c":"brick","x":"El 94 % de los estudiantes de grado usa IA para trabajos evaluados. Los sistemas disciplinarios británicos prueban unos siete casos por cada mil estudiantes. La distancia entre ambas cifras no se cierra con más vigilancia: los detectores automáticos marcaron erróneamente como IA el **61,3 %** de los ensayos escritos por hablantes no nativos de inglés, y al menos doce universidades importantes —Yale y Johns Hopkins entre ellas— los han desactivado. El problema no es de integridad. Es de **validez**."},
+
+{"t":"h1","n":"Las cifras","x":"Cinco datos que deberían gobernar la decisión","nobreak":true},
+
+{"t":"table","cap":"Todas las cifras proceden de fuentes verificadas individualmente. El informe completo indica en cada caso qué mide exactamente el dato y con qué sesgo.",
+ "head":["Dato","Cifra","Qué implica para la institución"],
+ "w":[2500,1300,5320],
+ "align":["left","center","left"],
+ "rows":[
+ ["Estudiantes que usan IA para trabajos evaluados","**94 %**","Prohibir no es una política viable: sería legislar sobre una realidad inexistente."],
+ ["Estudiantes que insertan texto de IA directamente en la entrega","**12 %**","La delegación total es minoritaria. Tratar al 94 % como sospechoso es tan erróneo como ignorar al 12 %."],
+ ["Entregas de IA no detectadas en un examen real","**94 %**","La evaluación no supervisada perdió su función certificadora. Es el dato que obliga a rediseñar."],
+ ["Instituciones con política de IA formalmente vigente","**19 %**","El titular de UNESCO dice «dos tercios». La política que obliga alcanza a una de cada cinco."],
+ ["Profesorado en nivel avanzado de alfabetización en IA","**17 %**","Con el 77 % ya usando la herramienta, el cuello de botella dejó de ser la adopción."]
+ ]},
+
+{"t":"fig","id":"g01-uso-delegacion","cap":"Las dos curvas que no deben confundirse. La superior justifica dejar de prohibir; la inferior, dejar de sospechar."},
+
+{"t":"h1","n":"La evidencia","x":"Qué funciona y qué no, según los datos","nobreak":true},
+
+{"t":"p","x":"En 2025 se publicaron dos ensayos aleatorizados que parecen contradecirse y no lo hacen. En Harvard, un tutor de IA construido con andamiajes redactados por expertos y guardarraíles explícitos produjo **el doble de ganancias de aprendizaje** que el aprendizaje activo presencial bien ejecutado. En Turquía, con cerca de mil estudiantes, el acceso libre al mismo tipo de modelo mejoró el rendimiento un 48 % mientras la herramienta estaba disponible y, **al retirarla, dejó a esos estudiantes un 17 % por debajo de quienes nunca la habían tenido**."},
+
+{"t":"fig","id":"g02-rendimiento-vs-aprendizaje","cap":"El mismo modelo subyacente, resultados opuestos. La variable no es la tecnología."},
+
+{"t":"callout","h":"La regla operativa","c":"navy","x":"**Lo que determina si la IA ayuda o daña el aprendizaje es el diseño pedagógico de la tarea, no el acceso a la herramienta.** Esto invierte la lógica de gasto dominante: comprar licencias de acceso general —la inversión mayoritaria del sector— es la intervención con menor probabilidad demostrada de producir aprendizaje, y puede producir el efecto contrario. La intervención con evidencia a favor es el rediseño de tareas y andamiajes, que es trabajo docente cualificado y no software."},
+
+{"t":"h2","x":"El contraejemplo que conviene conocer"},
+
+{"t":"p","x":"California State University desplegó ChatGPT Edu para más de 470.000 estudiantes en 23 campus y renovó el contrato en mayo de 2026 por trece millones de dólares anuales. Su propia encuesta interna, con más de 94.000 respuestas, encontró que **el 52 % del profesorado reporta un efecto negativo sobre su docencia** y que **el 67 % de los estudiantes considera que sus profesores no les enseñan a usar la IA de manera eficaz**."},
+
+{"t":"p","x":"El caso no demuestra que licenciar sea un error. Demuestra que licenciar **sin** rediseño evaluativo, **sin** formación docente obligatoria y **sin** participación del profesorado compra el nivel más superficial de transformación al precio del más profundo."},
+
+{"t":"h1","n":"Las decisiones","x":"Cinco medidas, ordenadas por coste","nobreak":true},
+
+{"t":"table","cap":"Las cinco medidas con mejor relación entre impacto y coste, derivadas de la evidencia del informe completo. Ninguna requiere adquirir tecnología.",
+ "head":["Decisión","Qué implica","Coste","Plazo"],
+ "w":[2400,4020,1200,1500],
+ "align":["left","left","center","center"],
+ "rows":[
+ ["**1. Escribir la lista de capacidades exigidas sin asistencia**","Cada programa responde por escrito qué debe saber hacer un titulado por sí solo. De ahí se deriva todo lo demás. Casi ninguna institución lo ha hecho.","Nulo","Un semestre"],
+ ["**2. Declarar dos carriles de evaluación**","Separar la evaluación que **garantiza** (supervisada, sobre lo nuclear) de la que **desarrolla** (abierta, con uso declarado), y situar la garantía a nivel de programa, no de asignatura.","Documental","Un año"],
+ ["**3. Dejar de invertir en detección automática**","La evidencia es concluyente en ambas direcciones: falsos positivos discriminatorios y falsos negativos masivos. Los recursos liberados van a diseño de tareas.","Negativo","Inmediato"],
+ ["**4. Evaluar la verificación como competencia**","Comprobar que una fuente existe, dice lo que se afirma y sigue vigente es hoy un paso separado, porque el proceso que lo garantizaba se automatizó. Requiere rúbrica propia.","Bajo","Un año"],
+ ["**5. Presupuestar horas de evaluación oral y diseño de tareas**","Es la medida cara y la que decide si la reforma es real. Sin partida específica, el rediseño se degrada en rúbricas nuevas sobre prácticas viejas.","**Alto**","Dos a tres años"]
+ ]},
+
+{"t":"h2","x":"El orden importa"},
+
+{"t":"p","x":"Las cuatro primeras medidas cuestan poco o nada y pueden adoptarse en el plazo de un año académico. La quinta es la que determina si las anteriores producen algo. Los instrumentos que recuperan validez —defensa oral, observación de desempeño, proceso documentado— consumen tiempo docente en proporción directa al número de estudiantes, y ninguna institución examinada en este informe ha presupuestado ese coste."},
+
+{"t":"callout","h":"La predicción que este informe se atreve a hacer","c":"ochre","x":"El principal riesgo de fracaso de la reforma evaluativa no es pedagógico ni tecnológico: es **presupuestario**. El indicador que lo anticipará es sencillo y puede vigilarse: si en los presupuestos de 2027 y 2028 no aparece una partida de horas docentes destinadas a evaluación oral, diseño de tareas y observación de desempeño, la reforma se habrá quedado en el documento."},
+
+{"t":"h1","n":"Contexto","x":"Dónde está el resto del mundo","nobreak":true},
+
+{"t":"p","x":"El informe completo mapea treinta instituciones de diez países con iniciativas verificadas. Tres conclusiones del mapa importan para calibrar cualquier decisión propia."},
+
+{"t":"numbers","items":[
+"**Ninguna institución alcanza la transformación sistémica.** En una muestra escogida precisamente por documentar iniciativas, ninguna cambia de forma coordinada currículo, evaluación, docencia, competencias, infraestructura y gobernanza. Nadie va tan por delante como el discurso sugiere.",
+"**El tamaño del despliegue no predice la profundidad.** La institución con más usuarios del mundo está en el nivel de «política y alfabetización». La que tiene la mejor evidencia de resultados actuó sobre dos cursos.",
+"**No existe evidencia de que los despliegues masivos mejoren el aprendizaje.** Después de cuatro años y miles de millones comprometidos, esta investigación no localizó un solo estudio independiente que lo demuestre en educación superior. Toda la evidencia sólida procede de intervenciones pequeñas y bien evaluadas."
+]},
+
+{"t":"h2","x":"Y una nota sobre la evidencia misma"},
+
+{"t":"p","x":"En abril de 2026, la revista *Humanities and Social Sciences Communications* retractó el metaanálisis de Wang y Fan, la referencia más citada del mundo a favor de efectos positivos grandes de la IA sobre el aprendizaje. Había acumulado 266 citas y cerca de 486.000 visualizaciones antes de retirarse por agrupar estudios demasiado distintos para combinarlos."},
+
+{"t":"p","x":"Durante once meses, políticas institucionales y presentaciones de rectoría se apoyaron en una cifra que no se sostenía. Cualquier documento sobre este asunto fechado antes de esa retractación merece releerse con esa información delante."},
+
+{"t":"quote","x":"Mientras la universidad certifique capacidades individuales, necesita saber qué capacidades exige que sus titulados posean sin asistencia. Esa lista —corta, explícita y defendible— es hoy el documento que casi ninguna institución ha escrito, y es probablemente el más importante que debería escribir.","a":"Conclusión central del informe completo"}
+]

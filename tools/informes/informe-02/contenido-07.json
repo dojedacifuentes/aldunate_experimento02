@@ -1,0 +1,203 @@
+﻿[
+{"t":"h1","n":"Capítulo 23","x":"Conclusiones"},
+
+{"t":"lead","x":"La pregunta con la que se abrió este informe era qué significa enseñar, aprender, evaluar y certificar conocimiento universitario cuando estudiantes y profesionales disponen permanentemente de sistemas capaces de ejecutar parte significativa del trabajo cognitivo. La evidencia recogida permite responder cuatro de esas cinco cosas con razonable seguridad, y deja la quinta abierta."},
+
+{"t":"h2","x":"23.1 Sobre certificar"},
+
+{"t":"p","x":"Es la función más dañada y la respuesta es la más clara. **El producto entregado sin supervisión ha dejado de ser evidencia de capacidad.** No para algunos estudiantes ni en algunos casos: de forma general y estructural. El experimento de Reading lo estableció y ningún trabajo posterior lo ha contradicho."},
+
+{"t":"p","x":"La consecuencia es que la certificación debe apoyarse en desempeño observado, defensa oral, trazabilidad del proceso o supervisión efectiva. La universidad que no haga esa migración seguirá emitiendo títulos, pero esos títulos habrán dejado de contener la información que se les atribuye. El riesgo no es el fraude de un estudiante; es la pérdida silenciosa de significado de una credencial que la sociedad sigue tratando como si significara lo mismo."},
+
+{"t":"h2","x":"23.2 Sobre evaluar"},
+
+{"t":"p","x":"Aquí está la transformación real del periodo, y es una transformación por necesidad más que por convicción. El modelo de dos carriles resuelve el problema con una elegancia notable: separar lo que debe garantizarse de lo que debe desarrollarse, y trasladar la garantía del nivel de la asignatura al nivel del programa."},
+
+{"t":"p","x":"Su límite es económico, no conceptual. Los instrumentos que recuperan validez —defensa oral, observación de desempeño, examen supervisado, proceso documentado— consumen tiempo docente en proporción al número de estudiantes. Ninguna institución de la muestra ha presupuestado ese coste. **Esta es la principal predicción de fracaso de este informe**, y es la única que puede desmentirse mirando presupuestos en lugar de discursos."},
+
+{"t":"h2","x":"23.3 Sobre aprender"},
+
+{"t":"p","x":"La respuesta es más precisa de lo que era hace un año y va en contra de la intuición institucional dominante. **El acceso a la herramienta no determina el efecto; el diseño de la interacción sí.** El mismo modelo subyacente duplicó el aprendizaje en Harvard con andamiajes de expertos y lo dañó en Turquía sin ellos."},
+
+{"t":"p","x":"Esto invierte por completo la lógica de gasto observada. La inversión mayoritaria de las universidades —licencias de acceso general— es la intervención con menor probabilidad demostrada de producir aprendizaje, y puede producir el efecto contrario si no va acompañada de rediseño de tareas. La inversión con evidencia a favor —diseño pedagógico y andamiajes— es trabajo docente cualificado, no software, y es la que ninguna institución ha financiado a escala."},
+
+{"t":"h2","x":"23.4 Sobre enseñar"},
+
+{"t":"p","x":"El rol docente no se debilita: se desplaza y, en las funciones que importan, se vuelve más exigente. Diseñar tareas que produzcan aprendizaje en presencia de un sistema que puede ejecutarlas es intelectualmente más difícil que diseñar tareas que lo producían en su ausencia. Evaluar oralmente es más difícil que corregir un texto. Enseñar a desconfiar de una respuesta bien redactada es más difícil que enseñar a encontrarla."},
+
+{"t":"p","x":"El problema es que estas funciones no están reconocidas en la carga docente, no están formadas —solo el 17 % del profesorado se sitúa en nivel avanzado— y no están financiadas. **El eslabón crítico del sistema es también el único que no ha recibido inversión.**"},
+
+{"t":"h2","x":"23.5 Lo que queda abierto"},
+
+{"t":"p","x":"La quinta pregunta —qué significa **saber** algo en este contexto— no puede responderse con la evidencia disponible, y este informe no va a fingir lo contrario."},
+
+{"t":"p","x":"Hay indicios en direcciones opuestas. El estudio de Bastani sugiere que la capacidad autónoma se degrada cuando se delega sistemáticamente. Los datos de uso muestran que lo que más se delega son precisamente los procesos cognitivos de orden superior. Pero también es cierto que ninguna competencia intelectual ha existido nunca al margen de sus herramientas, que la escritura misma fue denunciada como destructora de la memoria, y que la pregunta por qué capacidades deben internalizarse y cuáles pueden externalizarse no tiene una respuesta atemporal."},
+
+{"t":"quote","x":"Lo que sí puede afirmarse es más modesto y más útil: mientras la universidad certifique capacidades individuales, necesita saber qué capacidades exige que sus titulados posean sin asistencia. Esa lista —corta, explícita y defendible— es hoy el documento que casi ninguna institución ha escrito, y es probablemente el más importante que debería escribir.","a":"Conclusión central de este informe"},
+
+{"t":"h1","n":"Capítulo 24","x":"Recomendaciones"},
+
+{"t":"lead","x":"Ocho recomendaciones ordenadas por relación entre impacto esperado y coste. Todas se derivan directamente de la evidencia expuesta; ninguna requiere adquirir tecnología adicional."},
+
+{"t":"h2","x":"Prioridad inmediata"},
+
+{"t":"numbers","items":[
+"**Escribir la lista de capacidades que se exigen sin asistencia.** Antes que cualquier política de uso, cada programa debe responder por escrito qué debe saber hacer un titulado por sí solo. Es corto, es barato, y de él se deriva todo lo demás: qué se evalúa en carril seguro, qué se enseña y qué puede delegarse legítimamente. Casi ninguna institución lo ha hecho, y sin ese documento las políticas de IA carecen de criterio.",
+"**Separar los dos carriles y declararlo en cada asignatura.** Adoptar la distinción entre evaluación segura y evaluación abierta, situar la garantía a nivel de programa y explicitar en cada tarea a qué carril pertenece. Elimina la ambigüedad que hoy perjudica por igual al estudiante honesto y al docente. Coste: rediseño documental, no tecnología.",
+"**Dejar de invertir en detección algorítmica.** La evidencia es concluyente en las dos direcciones —falsos positivos discriminatorios y falsos negativos masivos—. Los recursos liberados deben ir a diseño de tareas. Coste: negativo.",
+"**Enseñar verificación como competencia evaluada, no como advertencia.** Comprobar que una fuente existe, dice lo que se afirma y sigue vigente es hoy un paso separado del proceso de investigación, porque el proceso que lo garantizaba fue automatizado. En Derecho es urgente; en toda disciplina es necesario. Debe tener rúbrica propia."
+]},
+
+{"t":"h2","x":"Prioridad estructural"},
+
+{"t":"numbers","items":[
+"**Presupuestar horas de evaluación oral y de diseño de tareas.** Es la recomendación cara y la que decide si la reforma es real. Sin una partida específica, la migración hacia evaluación válida se degradará en cambio cosmético. Si hay que elegir entre licencias y horas docentes, la evidencia favorece inequívocamente a las horas.",
+"**Invertir en diseño de andamiajes antes que en acceso.** La diferencia entre el resultado de Harvard y el de Turquía es enteramente atribuible al diseño de la interacción. Un tutor con guardarraíles construido sobre un modelo modesto supera a un modelo excelente sin diseño pedagógico.",
+"**Enseñar calibración de la confianza de forma explícita.** Si expertos se equivocan en cuarenta puntos al estimar su propia productividad asistida, ningún estudiante puede autorregularse sin entrenamiento específico. Es enseñable: basta con tareas donde se compare el rendimiento estimado con el medido.",
+"**Evaluar y publicar.** Ninguna institución de la muestra ha publicado evidencia independiente de resultados. Una universidad que despliega IA a escala y no mide sus efectos está tomando la decisión de mayor coste de la década sin información. Publicar los resultados adversos es, además, la contribución más valiosa que una institución puede hacer hoy al campo."
+]},
+
+{"t":"callout","h":"Una recomendación específica para América Latina","c":"teal","x":"La región no necesita, en primer lugar, más despliegues tecnológicos. Necesita la capa que convierte iniciativas en conocimiento: evaluación independiente, comparabilidad entre instituciones y publicación de resultados —incluidos los negativos—. Un consorcio regional que evalúe con rigor tres o cuatro intervenciones existentes produciría más valor, y a un coste mucho menor, que un nuevo despliegue institucional. Y ocuparía un espacio que hoy está vacío en todo el mundo, no solo en la región."},
+
+{"t":"h1","n":"Anexo A","x":"Nota metodológica"},
+
+{"t":"h2","x":"A.1 Alcance y procedimiento"},
+
+{"t":"p","x":"Esta investigación se realizó mediante búsqueda directa y verificación individual de fuentes entre 2022 y agosto de 2026, con prioridad en el periodo 2024-2026. El foco es la educación superior; los casos de educación secundaria se incorporaron únicamente cuando su diseño resolvía una pregunta sin equivalente universitario, como ocurre con el experimento de retirada de Bastani et al."},
+
+{"t":"p","x":"Cada afirmación sustantiva se clasificó según tres criterios independientes: el tipo de fuente (evidencia académica revisada por pares, organismo internacional o público, fuente institucional primaria, proveedor, prensa especializada u otras); el nivel demostrativo (existencia, implementación, adopción, resultados, causalidad); y el estado epistemológico (verificado, reportado, emergente, controvertido, no demostrado)."},
+
+{"t":"h2","x":"A.2 Limitaciones declaradas"},
+
+{"t":"bullets","items":[
+"**Sesgo anglófono.** Pese a la búsqueda deliberada en español y portugués, la documentación pública de instituciones anglófonas es sustancialmente más accesible y detallada. Las puntuaciones de la matriz institucional lo reflejan y penalizan a quien documenta menos.",
+"**Sesgo de publicación.** Las instituciones publican sus éxitos y no sus fracasos. La única excepción localizada es la encuesta interna de California State University, y es reveladora precisamente por su rareza.",
+"**Cifras excluidas.** Se descartaron datos sobre políticas y presupuestos de universidades españolas que circulan ampliamente pero cuya fuente primaria no pudo verificarse. Se prefirió la ausencia a la cita insegura.",
+"**Puntuaciones analíticas.** Las escalas de las figuras 10 y 11 son valoraciones del autor a partir de la evidencia pública, no mediciones. Se declaran como tales en cada figura.",
+"**Caducidad rápida.** El campo se mueve deprisa y sus hallazgos caducan: la retractación de Wang y Fan y la reclasificación del resultado de METR ocurrieron durante la elaboración de este informe."
+]},
+
+{"t":"h1","n":"Anexo B","x":"Matriz maestra de evidencia"},
+
+{"t":"lead","x":"Cada afirmación sustantiva del informe, con su fuente, el tipo de fuente, lo que esa fuente realmente demuestra y su estado epistemológico. Esta tabla es la columna vertebral auditable del documento: cualquier lector puede recorrerla y comprobar si una conclusión descansa sobre un experimento, sobre una encuesta o sobre un comunicado."},
+
+{"t":"h2","x":"B.1 Cómo leer la matriz"},
+
+{"t":"bullets","items":[
+"**Tipo de fuente.** **A** evidencia académica revisada por pares · **B** organismo internacional o público · **C** fuente institucional primaria · **D** proveedor · **E** prensa especializada · **F** otras.",
+"**Nivel demostrativo.** **D1** la iniciativa existe · **D2** fue implementada · **D3** hay adopción efectiva · **D4** hay resultados medidos · **D5** puede atribuirse causalidad.",
+"**Estado epistemológico.** VERIFICADO, REPORTADO, EMERGENTE, CONTROVERTIDO o NO DEMOSTRADO, según la convergencia de fuentes y la calidad del diseño."
+]},
+
+{"t":"h2","x":"B.2 La matriz"},
+
+{"t":"table","cap":"Matriz maestra de evidencia. Treinta y ocho hallazgos con su trazabilidad completa. Las filas marcadas como NO DEMOSTRADO o CONTROVERTIDO son tan importantes como las verificadas.",
+ "head":["ID","Hallazgo","Fuente","Tipo","Nivel","Estado"],
+ "w":[440,3300,2860,480,640,1400],
+ "align":["center","left","left","center","center","center"],
+ "rows":[
+ ["E-01","94 % de los estudiantes de grado británicos usa IA generativa para trabajos evaluados (53 % en 2024, 88 % en 2025)","HEPI, Student Generative AI Survey 2026 (n = 1.054)","B","D3","VERIFICADO"],
+ ["E-02","Solo el 12 % inserta texto generado por IA directamente en la entrega (3 % en 2024, 8 % en 2025)","HEPI, misma encuesta","B","D3","VERIFICADO"],
+ ["E-03","65 % de los estudiantes afirma que su evaluación cambió significativamente por la IA","HEPI 2026","B","D3","VERIFICADO"],
+ ["E-04","Solo el 38 % recibe herramientas de IA de su institución; solo el 36 % se siente animado a usarlas","HEPI 2026","B","D3","VERIFICADO"],
+ ["E-05","94 % de las entregas generadas por IA pasó sin detección en exámenes reales y obtuvo notas superiores","Scarfe, Watcham, Clarke y Roesch, PLOS ONE 19(6): e0305354 (2024)","A","D4","VERIFICADO"],
+ ["E-06","Tasa media de falsos positivos del 61,3 % en siete detectores aplicados a textos de hablantes no nativos","Estudio de Stanford (2023)","A","D4","VERIFICADO"],
+ ["E-07","Al menos doce instituciones importantes desactivaron la detección de IA de Turnitin","Vanderbilt (ago. 2023) y cobertura sectorial a marzo de 2026","C/E","D2","VERIFICADO"],
+ ["E-08","Casos probados de mala conducta con IA: 1,6 → 5,1 por mil estudiantes; proyección de 7,5","The Guardian por acceso a la información (155 universidades, 131 respuestas); Times Higher Education","B/E","D3","VERIFICADO"],
+ ["E-09","Más del 27 % de las universidades británicas no registraba la mala conducta con IA por separado","Misma investigación","B/E","D3","VERIFICADO"],
+ ["E-10","Un tutor de IA con andamiaje experto duplicó las ganancias de aprendizaje frente al aprendizaje activo presencial","Kestin, Miller, Klales, Milbourne y Ponti, Scientific Reports (3 jun. 2025), n ≈ 180","A","D5","VERIFICADO"],
+ ["E-11","El acceso libre a GPT-4 mejoró el desempeño un 48 % durante la práctica y lo empeoró un 17 % al retirarlo","Bastani, Bastani, Sungu, Ge, Kabakçı y Mariman, PNAS (2025), n ≈ 1.000","A","D5","VERIFICADO"],
+ ["E-12","El andamiaje diseñado por docentes elevó la mejora al 127 % y mitigó el daño posterior","Misma fuente","A","D5","VERIFICADO"],
+ ["E-13","Desarrolladores expertos fueron un 19 % más lentos con IA y siguieron creyéndose un 20 % más rápidos","METR (jul. 2025), n = 16, 246 tareas reales","A","D5","VERIFICADO"],
+ ["E-14","El metaanálisis más citado a favor de efectos positivos grandes fue retractado el 22 de abril de 2026","Wang y Fan, HSSC 12, art. 621 (2025); nota de retractación HSSC 13 (2026)","A","D4","VERIFICADO"],
+ ["E-15","La IA aumenta la creatividad individual y reduce la diversidad colectiva del contenido","Doshi y Hauser, Science Advances 10(28), eadn5290 (2024)","A","D5","VERIFICADO"],
+ ["E-16","La IA sube 45 puntos percentiles a los estudiantes de peor desempeño y empeora a los mejores","Choi y Schwarcz, Journal of Legal Education","A","D5","VERIFICADO"],
+ ["E-17","Herramientas jurídicas comerciales alucinan entre el 17 % y el 33 %; GPT-4 el 43 %","Magesh, Surani, Dahl, Suzgun, Manning y Ho, Journal of Empirical Legal Studies (2025)","A","D4","VERIFICADO"],
+ ["E-18","1.981 resoluciones judiciales con citas fabricadas constatadas por tribunales al 28 de agosto de 2026","Charlotin, AI Hallucination Cases Database, HEC Paris","B","D4","VERIFICADO"],
+ ["E-19","Las mujeres tienen un 22 % menos de probabilidades de usar IA generativa, y la brecha persiste con acceso igualado","Otis, Delecourt, Cranney y Koning, HBS Working Paper 25-023 (18 estudios, 143.008 personas, 25 países)","A","D4","VERIFICADO"],
+ ["E-20","Empleo de jóvenes de 22-25 años en ocupaciones expuestas a IA, 19 % por debajo de su trayectoria esperada","Brynjolfsson, Chandar y Chen, Stanford Digital Economy Lab, actualización de ago. 2026","A","D4","VERIFICADO"],
+ ["E-21","Solo el 19 % de las instituciones tiene política formal vigente; 42 % la tiene en desarrollo","UNESCO, encuesta a Cátedras UNESCO y Redes UNITWIN (400 respuestas, 90 países, sept. 2025)","B","D2","VERIFICADO"],
+ ["E-22","77 % del profesorado usa IA en su docencia frente al 88 % de los estudiantes; solo el 17 % en nivel avanzado","Digital Education Council, encuestas 2025 (n = 1.681) y 2026","E","D3","REPORTADO"],
+ ["E-23","52 % del profesorado de CSU reporta efecto negativo de la IA sobre su docencia","Encuesta interna de California State University (más de 94.000 respuestas)","C","D4","VERIFICADO"],
+ ["E-24","CSU renovó su contrato con OpenAI por 13 M USD anuales pese a la petición del profesorado","EdSource, CalMatters, Inside Higher Ed (may. 2026)","E","D2","VERIFICADO"],
+ ["E-25","Oxford, primera universidad británica en ofrecer ChatGPT Edu a todo el personal y estudiantado","Universidad de Oxford (19 sept. 2025)","C","D2","VERIFICADO"],
+ ["E-26","HKU exige dos cursos de alfabetización en IA para graduarse desde la cohorte 2025-26","University of Hong Kong, normativa de currículo de grado","C","D2","VERIFICADO"],
+ ["E-27","NTU hace obligatoria la alfabetización en IA para todos los estudiantes de grado desde agosto de 2026","NTU Singapur","C","D2","VERIFICADO"],
+ ["E-28","China convierte la IA en asignatura obligatoria; más de 600 universidades con grados de IA frente a 35 en 2018","Plan «IA + Educación» del Ministerio de Educación y otros cuatro organismos (abr. 2026)","B","D2","VERIFICADO"],
+ ["E-29","El Reglamento europeo clasifica como alto riesgo la evaluación de resultados de aprendizaje y el proctoring","Anexo III del Reglamento europeo de IA; vigencia general desde el 2 ago. 2026, Anexo III prorrogado a dic. 2027","B","D1","VERIFICADO"],
+ ["E-30","193 iniciativas de IA educativa activas en 22 países de América Latina y el Caribe","BID con Ceibal y Socialab, «¡IA Presente!» (2025)","B","D1","VERIFICADO"],
+ ["E-31","TECgpt reporta más de 14.000 usuarios y ganancias de aprendizaje de 20 a 30 puntos","Tecnológico de Monterrey, AI Day 2025","C/D","D2","REPORTADO"],
+ ["E-32","La IA daña de forma duradera capacidades cognitivas generales","Kosmyna et al., arXiv 2506.08872 (n = 54); comentario crítico en arXiv 2601.00856","A","D4","CONTROVERTIDO"],
+ ["E-33","La IA ahorra tiempo docente de forma neta","Evidencia contradictoria; revisión integrativa (Frontiers in Education, 2025) califica la base de deficiente","A","D4","CONTROVERTIDO"],
+ ["E-34","Un despliegue institucional masivo de IA mejora los resultados de aprendizaje","Ningún estudio independiente localizado en ninguna institución del mapa","—","—","NO DEMOSTRADO"],
+ ["E-35","La IA generativa mejora el pensamiento crítico","Sin evidencia experimental sólida en ninguna dirección","—","—","NO DEMOSTRADO"],
+ ["E-36","El NextGen bar exam debuta en julio de 2026 y desplaza el peso hacia destrezas aplicadas del ejercicio","National Conference of Bar Examiners; primeras jurisdicciones Maryland, Missouri y Oregón","B","D2","VERIFICADO"],
+ ["E-37","La contratación de asociados cayó un 5 % en 2025 y solo el 38 % procedió directamente de la promoción egresada","Análisis del sector jurídico estadounidense sobre despachos AmLaw 200","E","D3","REPORTADO"],
+ ["E-38","La University of Chicago Law School pilota escritura jurídica sin IA como base con escritura con IA superpuesta","University of Chicago Law School, piloto del curso 2026-2027","C","D1","VERIFICADO"]
+ ]},
+
+{"t":"callout","h":"Lo que la matriz muestra de un vistazo","c":"navy","x":"De treinta y ocho hallazgos, **treinta y uno están verificados**, tres son reportados por su propia institución, proveedor o sector, dos son controvertidos y dos no están demostrados. Pero la distribución por nivel demostrativo es la lectura importante: los hallazgos de nivel **D5 —causalidad establecida— son solo seis**, y todos proceden de experimentos pequeños. Ninguna afirmación sobre despliegues institucionales de escala supera el nivel D2. El informe es sólido en lo que se sabe y explícito en lo que no, y esa proporción —seis resultados causales frente a decenas de implementaciones sin medir— es el estado real del campo en agosto de 2026."},
+
+{"t":"h1","n":"Anexo C","x":"Bibliografía clasificada"},
+
+{"t":"h2","x":"C.1 Evidencia académica revisada por pares"},
+
+{"t":"bullets","items":[
+"Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö. y Mariman, R. «Generative AI without guardrails can harm learning: Evidence from high school mathematics». *PNAS* (2025). Versión previa: SSRN 4895486.",
+"Choi, J. H. y Schwarcz, D. «AI Assistance in Legal Analysis: An Empirical Study». *Journal of Legal Education*. SSRN 4539836.",
+"Choi, J. H., Monahan, A. y Schwarcz, D. «Lawyering in the Age of Artificial Intelligence». *Minnesota Law Review* (2024).",
+"Doshi, A. R. y Hauser, O. P. «Generative AI enhances individual creativity but reduces the collective diversity of novel content». *Science Advances* 10(28), eadn5290 (2024).",
+"Kestin, G., Miller, K., Klales, A., Milbourne, T. y Ponti, G. «AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting». *Scientific Reports* (3 de junio de 2025).",
+"Kosmyna, N. et al. «Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task». arXiv 2506.08872 (2025). *Preprint con limitaciones metodológicas documentadas; véase el comentario en arXiv 2601.00856.*",
+"Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D. y Ho, D. E. «Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools». *Journal of Empirical Legal Studies* (2025). Preprint: arXiv 2405.20362.",
+"Otis, N. G., Delecourt, S., Cranney, K. y Koning, R. «Global Evidence on Gender Gaps and Generative AI». Harvard Business School Working Paper 25-023.",
+"Ho, C. M. «What AI Can't Say: Oral Competence in Legal Education». *Santa Clara Law Review* 66(3).",
+"Scarfe, P., Watcham, K., Clarke, A. y Roesch, E. «A real-world test of artificial intelligence infiltration of a university examinations system: A Turing Test case study». *PLOS ONE* 19(6): e0305354 (2024).",
+"Wang, J. y Fan, W. «The effect of ChatGPT on students' learning performance, learning perception, and higher-order thinking: insights from a meta-analysis». *Humanities and Social Sciences Communications* 12, art. 621 (2025). **RETRACTADO el 22 de abril de 2026**; nota de retractación: *HSSC* 13 (2026), doi 10.1057/s41599-026-07310-z."
+]},
+
+{"t":"h2","x":"C.2 Organismos internacionales y públicos"},
+
+{"t":"bullets","items":[
+"Banco Interamericano de Desarrollo y Ceibal. «¡IA Presente!»: 193 iniciativas de IA educativa en 22 países de América Latina y el Caribe (2025).",
+"Brynjolfsson, E., Chandar, B. y Chen, R. «Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence». Stanford Digital Economy Lab, actualización de agosto de 2026.",
+"CEPAL y CENIA. *Índice Latinoamericano de Inteligencia Artificial (ILIA) 2025*, tercera edición, 19 países.",
+"Comisión Europea. Reglamento de Inteligencia Artificial, Anexo III (sistemas de alto riesgo en educación). Requisitos generales en vigor desde el 2 de agosto de 2026; usos del Anexo III prorrogados hasta el 2 de diciembre de 2027.",
+"HEPI. *Student Generative AI Survey 2025* (Policy Note 61) y *2026* (Informe 199; n = 1.054, trabajo de campo de diciembre de 2025, Savanta).",
+"METR. «Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity» (julio de 2025) y actualización de febrero de 2026.",
+"National Association of Colleges and Employers. *Job Outlook 2026* y actualizaciones de tendencias sobre competencias de IA en empleos de entrada.",
+"TEQSA. «Assessment reform for the age of artificial intelligence» y «Enacting assessment reform in a time of artificial intelligence» (septiembre de 2025).",
+"UNESCO. *Guidance for Generative AI in Education and Research* (2023); *AI Competency Frameworks for Teachers and for Students* (2024); encuesta a Cátedras UNESCO y Redes UNITWIN, 400 respuestas de 90 países (septiembre de 2025)."
+]},
+
+{"t":"h2","x":"C.3 Fuentes institucionales primarias"},
+
+{"t":"bullets","items":[
+"California State University. Contrato con OpenAI y encuesta interna a más de 94.000 estudiantes y empleados (2026).",
+"Case Western Reserve University School of Law. «Introduction to AI and the Law», obligatoria para primer año (2025, ampliada en 2026).",
+"Ohio State University, Office of Academic Affairs. Iniciativa AI Fluency y actualización de febrero de 2026.",
+"Tecnológico de Monterrey. TECgpt (28 de septiembre de 2023) y TECgpt Open Edition.",
+"Universidad de Chile. Lineamientos éticos para la docencia universitaria con IA. Ministerio de Ciencia de Chile, programa «Futuros Docentes en IA».",
+"Legal Writing Institute. «Critique v. Composition: Rethinking Memos, Motions, and Briefs in the Era of AI and the NextGen Bar» e «Integrating Generative AI into Legal Writing Pedagogy».",
+"National Conference of Bar Examiners. NextGen Bar Exam: debut en julio de 2026 y calendario de adopción por jurisdicción.",
+"Universidad de Valparaíso, Facultad de Derecho. LIDET, Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías.",
+"University of Chicago Law School. Módulos obligatorios de IA para estudiantes de primer año (2026) y piloto de investigación y escritura jurídica sin IA como base con IA superpuesta (curso 2026-2027).",
+"University of Sydney. Política de inteligencia artificial y evaluación: modelo de dos carriles (noviembre de 2024).",
+"Vanderbilt University. «Guidance on AI Detection and Why We're Disabling Turnitin's AI Detector» (agosto de 2023)."
+]},
+
+{"t":"h2","x":"C.4 Proveedores y prensa especializada"},
+
+{"t":"bullets","items":[
+"Anthropic. *Education Report* sobre patrones de uso estudiantil; Claude for Education (LSE, Northeastern, Champlain College, 2025; ampliación en 2026).",
+"Charlotin, D. *AI Hallucination Cases Database*, Smart Law Hub, HEC Paris. 1.981 casos al 28 de agosto de 2026.",
+"Digital Education Council. *Global AI Faculty Survey 2025* (n = 1.681, 52 instituciones, 28 países) y *AI in Higher Education Global Survey 2026*.",
+"EDUCAUSE. *AI Landscape Study* (2024, 2025) y *The Impact of AI on Work in Higher Education* (2026).",
+"*The Guardian* / *Times Higher Education*. Investigación mediante Freedom of Information sobre mala conducta académica con IA en 155 universidades británicas.",
+"*Inside Higher Ed*, *EdSource*, *CalMatters*. Cobertura del contrato de California State University con OpenAI y de la oposición del profesorado."
+]},
+
+{"t":"rule"},
+
+{"t":"p","x":"*Informe elaborado en calidad de investigador y consultor experto en modelos educativos, innovación y transformación institucional. Todas las fuentes fueron verificadas individualmente en agosto de 2026. Las valoraciones analíticas se identifican como tales en el punto en que aparecen.*"}
+]

@@ -1,0 +1,51 @@
+[
+{"t":"h1","n":"Capítulo 12","x":"Currículo: enseñar sobre la IA, con la IA o para trabajar con ella"},
+
+{"t":"lead","x":"Hay tres maneras distintas de incorporar la inteligencia artificial a un plan de estudios, y se confunden constantemente. Una es barata y visible; otra es incómoda y silenciosa; la tercera es la que realmente decidiría el valor de un título, y casi nadie la ha intentado. El mapa del capítulo anterior permite por primera vez decir cuál domina."},
+
+{"t":"h2","x":"12.1 Tres modelos que no son etapas de un mismo proceso"},
+
+{"t":"p","x":"La distinción no es académica: cada modelo cuesta algo distinto, choca con resistencias distintas y produce titulados distintos. Y ninguno conduce automáticamente al siguiente."},
+
+{"t":"table","cap":"Los tres modelos de incorporación curricular. La última columna explica por qué la adopción no avanza en el orden que la lógica pedagógica sugeriría.",
+ "head":["Modelo","En qué consiste","Qué exige de la institución","Por qué avanza o se atasca"],
+ "w":[1600,2500,2400,2620],
+ "align":["left","left","left","left"],
+ "rows":[
+ ["**Enseñar SOBRE la IA**","Añadir contenido: qué es, cómo funciona, cómo se usa, qué implica éticamente. Cursos, módulos, certificaciones.","Crear una asignatura nueva y encontrarle hueco. Nada más.","**Avanza deprisa.** Es aditivo: no obliga a tocar ninguna asignatura existente, ni la evaluación, ni el perfil de egreso. Se aprueba en un consejo y se anuncia."],
+ ["**Enseñar CON la IA**","Usar la herramienta dentro de las asignaturas existentes como instrumento de trabajo y de aprendizaje.","Que cada docente rediseñe sus tareas y su evaluación. Formación real, no informativa.","**Se atasca.** Exige trabajo distribuido en cientos de programas, con profesorado que en un 83 % declara no dominar la herramienta. Es lo que la evidencia del capítulo 5 dice que más importa y lo que menos se financia."],
+ ["**Enseñar PARA entornos mediados**","Redefinir el perfil profesional: qué hace un jurista, un médico o un ingeniero cuando parte de su trabajo está automatizado.","Revisar resultados de aprendizaje, secuencia curricular y relación con la práctica profesional.","**Apenas existe.** Requiere consenso disciplinar y acuerdo con el mundo profesional. Es la respuesta al problema del capítulo 10, y no se ha localizado ninguna institución que la haya completado."]
+ ]},
+
+{"t":"h2","x":"12.2 El modelo dominante es el primero, y esa es la noticia"},
+
+{"t":"p","x":"Los ocho casos de nivel 4 del mapa internacional se reparten de forma reveladora. Siete de ellos —Hong Kong, Nanyang, la Universidad Nacional de Singapur, Ohio State y las tres facultades de Derecho— son variantes del primer modelo: **contenido nuevo, obligatorio, añadido al plan de estudios**. Solo uno, la University of Sydney, corresponde al segundo, y lo hace por la vía de la evaluación antes que por la del currículo."},
+
+{"t":"p","x":"Ninguno corresponde al tercero."},
+
+{"t":"p","x":"La explicación no es intelectual sino organizativa, y conecta con el diagnóstico de gobernanza del capítulo 11. Crear una asignatura obligatoria de alfabetización en IA es una decisión que un consejo académico puede tomar en una sesión, que no obliga a ningún profesor a cambiar su forma de enseñar y que produce un anuncio comunicable. Rediseñar cómo se enseña Contabilidad, Historia o Cirugía cuando parte de esas tareas está automatizada exige convencer a cada departamento, uno por uno, durante años."},
+
+{"t":"callout","h":"El currículo aditivo","c":"ochre","x":"La respuesta curricular dominante en el mundo es **aditiva**: se añade IA al plan de estudios sin quitar ni reordenar nada. Es un progreso real —un titulado que entiende qué es un modelo de lenguaje está mejor preparado que uno que no— y es también la forma de cambio que menos altera la institución. El riesgo es confundir el catálogo con la formación: una universidad puede tener un curso obligatorio de IA en primer año y seguir evaluando en cuarto exactamente como en 2019. Ese es, hoy, el perfil más frecuente entre los casos avanzados."},
+
+{"t":"h2","x":"12.3 La expansión de la oferta: crecimiento sin precedentes en Asia"},
+
+{"t":"p","x":"En paralelo al currículo transversal, la oferta de titulaciones específicas en IA se ha expandido a una velocidad que no tiene equivalente reciente."},
+
+{"t":"bullets","items":[
+"**China.** Más de **600 universidades** ofrecen grados de inteligencia artificial en 2026, frente a las **35** que recibieron aprobación en 2018. En abril de 2026 el Ministerio de Educación, junto al organismo de planificación económica, el de industria y tecnologías de la información, el de ciencia y tecnología y la Administración Nacional de Datos, publicó el plan de acción «IA + Educación», que convierte la IA en asignatura fundamental obligatoria y prevé integrarla en todas las asignaturas públicas universitarias en el curso 2026-2027, con dieciocho universidades piloto. La contrapartida está documentada: el sistema recortó miles de programas universitarios y reemplazó parte de ellos por titulaciones de IA.",
+"**México.** Más de **190 universidades** ofrecen programas relacionados con IA, con alrededor de **3.600 estudiantes** matriculados, en ausencia de regulación nacional unificada: cada institución emite sus propios lineamientos.",
+"**Singapur y Hong Kong.** La vía no es la titulación específica sino el requisito universal: alfabetización obligatoria para **todo** el estudiantado, con Hong Kong exigiendo dos cursos sucesivos para graduarse."
+]},
+
+{"t":"p","x":"El contraste entre modelos nacionales es instructivo. China resuelve el problema por mandato estatal y a escala de sistema; Singapur y Hong Kong, por requisito universal dentro de cada institución; Estados Unidos, por iniciativa aislada de universidades concretas; Europa continental, por regulación del uso antes que por currículo. Las cuatro rutas producen titulados que **saben sobre IA**. Ninguna garantiza todavía titulados que sepan **trabajar** en entornos donde la IA ejecuta parte de su oficio."},
+
+{"t":"h2","x":"12.4 Lo que falta: el tercer modelo"},
+
+{"t":"p","x":"El capítulo 10 documentó que el empleo de jóvenes de 22 a 25 años en ocupaciones expuestas a IA está un 19 % por debajo de su trayectoria esperada, sin brecha equivalente en trabajadores experimentados. Es decir: se está erosionando el peldaño de entrada, el trabajo de perfil junior que durante décadas convirtió a titulados en profesionales."},
+
+{"t":"p","x":"Ese es un problema curricular, no tecnológico, y tiene una respuesta curricular posible: si el mercado deja de proveer la práctica formativa de los primeros años, la universidad tiene que construirla deliberadamente mediante simulación, práctica supervisada, observación de desempeño y trabajo sobre casos reales con responsabilidad progresiva. Es exactamente lo que la formación médica hace desde hace un siglo con la residencia, y lo que la formación jurídica hace parcialmente con las clínicas."},
+
+{"t":"p","x":"Esta investigación **no ha localizado ninguna institución que haya rediseñado su currículo con ese propósito explícito**. Se discute mucho sobre qué enseñar acerca de la IA y muy poco sobre qué parte de la formación profesional que el mercado ya no proporciona debe asumir ahora la universidad."},
+
+{"t":"callout","h":"La pregunta curricular que nadie está haciendo","c":"navy","x":"La conversación curricular dominante pregunta **qué añadir**. La pregunta con consecuencias es otra: **qué parte del aprendizaje que antes ocurría en los primeros años de ejercicio profesional debe ahora ocurrir dentro de la universidad, y con qué recursos**. Es una pregunta cara, incómoda para la relación entre universidad y empleadores, y probablemente la más importante que el sector tendrá que responder antes de 2030. Un curso obligatorio de alfabetización en IA es una respuesta razonable a un problema menor. El problema mayor sigue sin respuesta."}
+]

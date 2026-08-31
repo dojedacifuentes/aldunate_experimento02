@@ -128,6 +128,7 @@ src/lib/         utilidades puras
 src/types/       tipos del dominio
 content/         material de investigación e informes (fuera del bundle)
 docs/            trazabilidad del proyecto
+tools/           cadena de producción de informes (fuera del bundle)
 ```
 
 **El contenido nunca se incrusta en un componente visual.** Vive en `src/data`
@@ -167,7 +168,33 @@ evidencia con relleno es peor que una vacía: la vacía es honesta.
 
 Una versión publicada **nunca se sobrescribe**. Se agrega una entrada a
 `versions` con su `changelog`. El botón de descarga solo aparece si el archivo
-existe: un botón que promete un PDF inexistente es peor que no tener botón.
+existe: un botón que promete un PDF inexistente es peor que no tener botón. Lo
+mismo vale para `html`, la versión web del documento.
+
+### La cadena de producción
+
+Los informes **no se redactan en Word**. El texto vive en archivos `.json` y el
+Word, el PDF y la web se generan desde ahí, de modo que las tres versiones no
+pueden divergir. La maquinaria está en `tools/informes/` y el método en
+`docs/informes/`, siete documentos que explican investigación, diseño, motor de
+gráficos, generador de Word, modelo de contenido, reproducción y el puente con
+`src/data`.
+
+Reglas propias de esa cadena:
+
+- **Figuras y tablas no llevan número escrito.** Se numeran solas por orden de
+  aparición. Escribir el número a mano reintroduce el error que esto resuelve.
+- **Una figura sin `fuente` no se publica.** El campo es obligatorio por diseño.
+- Los `.ps1` se guardan en **UTF-8 con BOM**: PowerShell 5.1 los lee como ANSI
+  si falta, y los acentos se corrompen en silencio. `tools/informes/motor/utf8bom.ps1`.
+- Para arrancar un informe nuevo se copia `tools/informes/plantilla-informe-nuevo/`.
+  No se empieza de cero ni se clona el informe 02.
+
+Publicar una versión son cinco pasos y están en
+`docs/informes/07-puente-con-el-sitio.md`. El paso que más se olvida es el
+último: comprobar que no queda ningún `source_id` ni `claim_id` huérfano, porque
+la interfaz filtra los `undefined` y una fuente mal enlazada desaparece sin
+avisar.
 
 ---
 

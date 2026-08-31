@@ -142,6 +142,7 @@ export const reports: Report[] = [
         date: '2026-08-31',
         status: 'en-revision',
         pdf: '/descargas/informe-02-transformacion-ensenanza-v0.2.0.pdf',
+        html: '/descargas/informe-02-completo-v0.2.0.html',
         changelog: [
           'Documento completo: 24 capítulos y 3 anexos, 76 páginas, 12 figuras y 24 tablas.',
           'Registro de fuentes poblado con 24 entradas verificadas una a una en el documento original.',

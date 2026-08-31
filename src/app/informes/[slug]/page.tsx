@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Download, FlaskConical, ListTree } from 'lucide-react';
+import { ArrowLeft, BookOpen, Download, FlaskConical, ListTree } from 'lucide-react';
 
 import {
   Badge,
@@ -111,8 +111,18 @@ export default async function InformeDetallePage({
           )}
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
+            {latest?.html && (
+              <ButtonLink href={latest.html} variant="primary" external>
+                <BookOpen className="h-4 w-4" aria-hidden />
+                Leer en línea · v{latest.version}
+              </ButtonLink>
+            )}
             {latest?.pdf ? (
-              <ButtonLink href={latest.pdf} variant="primary" external>
+              <ButtonLink
+                href={latest.pdf}
+                variant={latest.html ? 'outline' : 'primary'}
+                external
+              >
                 <Download className="h-4 w-4" aria-hidden />
                 Descargar PDF · v{latest.version}
               </ButtonLink>

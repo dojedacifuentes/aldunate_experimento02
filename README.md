@@ -80,6 +80,8 @@ src/lib/         utilidades puras
 src/types/       tipos del dominio
 content/         investigación e informes (fuera del bundle)
 docs/            trazabilidad del proyecto
+tools/informes/  cadena de producción de informes (fuera del bundle)
+public/descargas/ documentos publicados en PDF y HTML
 public/eva/      retratos de EVA
 public/brand/    escudo Escuela de Derecho PUCV
 ```
@@ -99,7 +101,31 @@ Lucide. Sin backend.
 | `docs/CONTENT_PIPELINE.md` | Cómo entra el contenido |
 | `docs/DECISIONS.md` | Decisiones tomadas y sus razones |
 | `docs/HANDOFF.md` | Estado actual y siguiente paso |
+| `docs/informes/` | El método de los informes en siete documentos: investigación, diseño, motor de gráficos, generador de Word, modelo de contenido, reproducción y puente con el sitio |
+| `tools/informes/README.md` | La maquinaria: cómo compilar un informe y cómo arrancar uno nuevo |
 | `CHANGELOG.md` | Historial de versiones |
+
+---
+
+## Cómo se producen los informes
+
+El texto no vive en el Word: vive en archivos `.json`, y el Word, el PDF y la web
+se **generan** desde ahí. Las tres versiones no pueden divergir porque no hay
+copia que quede desactualizada.
+
+```
+contenido-*.json  ──┬──►  Build-Informe.ps1   ──►  .docx  ──(Word)──►  .pdf
+   fuente única     │
+                    └──►  Build-Artifact.ps1  ──►  .html
+
+Graficos.ps1  ──►  ChartEngine.ps1  ──►  figuras/      (impresión, ×2,5)
+                                    └──►  figuras-web/ (web, ×1,55)
+```
+
+Requiere Windows con PowerShell 5.1 y Word. Sin Python, sin Node, sin
+dependencias externas. Para arrancar un informe nuevo se copia
+`tools/informes/plantilla-informe-nuevo/`; el informe 02 completo está en
+`tools/informes/informe-02/` como ejemplo funcionando.
 
 ---
 

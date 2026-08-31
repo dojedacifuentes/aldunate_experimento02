@@ -1,0 +1,45 @@
+[
+{"t":"h1","n":"Nota preliminar","x":"Cómo leer este informe","nobreak":true},
+
+{"t":"lead","x":"Párrafo de entrada. Va en cuerpo mayor y color secundario. Sirve para abrir un capítulo diciendo de qué va y por qué importa, antes de entrar en materia."},
+
+{"t":"p","x":"Párrafo normal. Admite **negrita**, *cursiva* y `código` sin escribir el formato dos veces: el mismo marcado se interpreta igual en Word y en la web. Para comillas se usan las angulares «así», que ambos formatos representan sin escapes."},
+
+{"t":"h2","x":"1.1 Subtítulo de segundo nivel"},
+
+{"t":"p","x":"El numeral del subtítulo se escribe a mano y debe coincidir con el número del capítulo. Al insertar un capítulo hay que renumerarlos: el procedimiento está en docs/informes/05-modelo-de-contenido.md."},
+
+{"t":"bullets","items":[
+"Elemento de lista con viñeta.",
+"Segundo elemento, más largo, para comprobar cómo se comporta la sangría francesa cuando el texto ocupa varias líneas."
+]},
+
+{"t":"numbers","items":[
+"Elemento numerado. El número se genera solo.",
+"Segundo elemento numerado."
+]},
+
+{"t":"h3","x":"Subtítulo de tercer nivel"},
+
+{"t":"quote","x":"Cita destacada, con barra lateral de acento y cursiva. Se usa para la formulación de una tesis o para una frase de una fuente que merece destacarse.","a":"Atribución de la cita, en versalitas"},
+
+{"t":"callout","h":"Advertencia de lectura","c":"ochre","x":"Bloque destacado. El color declara su naturaleza: navy para síntesis, teal para un matiz constructivo, ochre para una advertencia de lectura, brick para contraevidencia o riesgo, sage para evidencia sólida."},
+
+{"t":"fig","id":"g01-ejemplo","cap":"Qué muestra la figura y qué conviene advertir al leerla. NO escribas el número: se antepone solo, según el orden de aparición."},
+
+{"t":"table","cap":"Pie de tabla con la fuente y su advertencia. Tampoco lleva número escrito.",
+ "head":["Columna","Otra columna","Confianza"],
+ "w":[3000,4620,1500],
+ "align":["left","left","center"],
+ "rows":[
+ ["**Fila destacada**","El contenido de la celda admite el mismo marcado que un párrafo.","ALTA"],
+ ["Fila normal","Un valor en versales del vocabulario epistémico se convierte solo en etiqueta de color.","MEDIA"],
+ ["Otra fila","ALTA · MEDIA-ALTA · MEDIA · BAJA · INSUFICIENTE · VERIFICADO · REPORTADO · CONTROVERTIDO · NO DEMOSTRADO","INSUFICIENTE"]
+ ]},
+
+{"t":"p","x":"La suma de los anchos de columna en `w` debe dar **9120**. Es la única restricción numérica del modelo, y respetarla es lo que impide que la tabla desborde la caja de A4."},
+
+{"t":"rule"},
+
+{"t":"p","x":"Los archivos se concatenan por orden alfabético, así que para insertar un capítulo entre dos existentes basta un sufijo de letra: `contenido-01b.json` va después de `contenido-01.json` y antes de `contenido-02.json`."}
+]

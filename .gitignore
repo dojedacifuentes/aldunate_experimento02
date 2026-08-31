@@ -18,9 +18,15 @@ next-env.d.ts
 # vercel
 .vercel
 
+# salida de la cadena de producción de informes
+# el documento publicado vive en public/descargas, no aquí
+tools/informes/*/salida/
+
 # sistema
 .DS_Store
 Thumbs.db
+desktop.ini
+~$*.docx
 *.log
 npm-debug.log*
 /.npm-cache/

@@ -1,0 +1,160 @@
+<title>Decisiones sobre IA en la Universidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+:root{
+  --paper:#FBFCFD; --surface:#F1F5F7; --surface-2:#E8EEF2; --plate:#FFFFFF;
+  --ink:#0F1720; --ink-2:#3A4654; --muted:#6C7A88; --rule:#DDE4EA; --rule-2:#C7D2DA;
+  --navy:#1B3A5C; --teal:#276E7C; --ochre:#96681C; --brick:#93372A;
+  --navy-soft:#E6EDF4; --teal-soft:#E0EEF1; --ochre-soft:#F6EEDD; --brick-soft:#F7E7E4;
+  --shadow:0 1px 2px rgba(15,23,32,.05), 0 8px 24px -12px rgba(15,23,32,.18);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --measure:66ch; --wide:900px; --mtext:660px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1319; --surface:#151D25; --surface-2:#1C262F; --plate:#FFFFFF;
+    --ink:#E8EEF3; --ink-2:#B4C0CA; --muted:#7E8D99; --rule:#243039; --rule-2:#324150;
+    --navy:#8FB3D4; --teal:#63B7C6; --ochre:#D8A852; --brick:#DD8375;
+    --navy-soft:#182838; --teal-soft:#142C31; --ochre-soft:#2C2416; --brick-soft:#301C19;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1319; --surface:#151D25; --surface-2:#1C262F; --plate:#FFFFFF;
+  --ink:#E8EEF3; --ink-2:#B4C0CA; --muted:#7E8D99; --rule:#243039; --rule-2:#324150;
+  --navy:#8FB3D4; --teal:#63B7C6; --ochre:#D8A852; --brick:#DD8375;
+  --navy-soft:#182838; --teal-soft:#142C31; --ochre-soft:#2C2416; --brick-soft:#301C19;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--serif); font-size:17.5px; line-height:1.66; -webkit-font-smoothing:antialiased}
+::selection{background:var(--teal-soft); color:var(--ink)}
+:focus-visible{outline:2px solid var(--teal); outline-offset:3px}
+.wrap{max-width:var(--wide); margin:0 auto; padding:0 clamp(20px,5vw,40px) 100px}
+
+.tt{position:fixed; right:18px; top:16px; z-index:55; width:34px; height:34px; display:grid; place-items:center;
+    border:1px solid var(--rule); background:var(--paper); color:var(--muted); border-radius:50%; cursor:pointer; padding:0}
+.tt:hover{color:var(--ink)} .tt svg{width:15px; height:15px}
+
+header.hero{padding:clamp(48px,8vh,88px) 0 0}
+.eyebrow{font-family:var(--mono); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); font-weight:600}
+h1{font-family:var(--sans); font-weight:700; letter-spacing:-.02em; line-height:1.08;
+   font-size:clamp(2.1rem,5vw,3.3rem); margin:14px 0 0; text-wrap:balance; max-width:15ch}
+.dek{font-size:clamp(1.02rem,1.6vw,1.17rem); color:var(--ink-2); font-weight:300; line-height:1.55; margin:18px 0 0; max-width:56ch}
+.meta{display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:22px; font-family:var(--mono); font-size:10.5px;
+      letter-spacing:.09em; text-transform:uppercase; color:var(--muted)}
+.meta b{color:var(--ink-2); font-weight:500}
+
+.board{margin:40px 0 8px; display:grid; gap:1px; background:var(--rule);
+       grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); border:1px solid var(--rule)}
+.stat{background:var(--paper); padding:18px 18px 16px}
+.stat .n{font-family:var(--sans); font-weight:700; font-size:2.35rem; line-height:1; letter-spacing:-.03em;
+         font-variant-numeric:tabular-nums; color:var(--navy)}
+.stat .n.warn{color:var(--brick)}
+.stat .l{font-size:13.2px; line-height:1.44; color:var(--ink-2); margin-top:9px}
+
+section{padding-top:64px; scroll-margin-top:20px}
+section > .kicker{font-family:var(--mono); font-size:10.5px; letter-spacing:.19em; text-transform:uppercase;
+                  color:var(--teal); font-weight:600; margin-bottom:11px}
+h2.ch{font-family:var(--sans); font-weight:700; font-size:clamp(1.6rem,3vw,2.1rem); line-height:1.14;
+      letter-spacing:-.016em; margin:0 0 4px; text-wrap:balance; max-width:var(--mtext)}
+.chrule{border:0; border-top:2px solid var(--navy); width:48px; margin:18px 0 24px}
+h3{font-family:var(--sans); font-weight:600; font-size:1.18rem; color:var(--navy); margin:38px 0 10px; max-width:var(--mtext)}
+p{margin:0 0 17px; max-width:var(--measure)}
+p.lead{font-size:1.13rem; line-height:1.58; color:var(--ink-2); font-weight:300; margin-bottom:24px}
+strong{font-weight:600; color:var(--ink)} em{font-style:italic}
+
+ul.b,ol.n{max-width:var(--measure); margin:0 0 20px; padding:0; list-style:none}
+ul.b li{position:relative; padding-left:21px; margin-bottom:10px}
+ul.b li::before{content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; background:var(--teal)}
+ol.n{counter-reset:n}
+ol.n li{position:relative; padding-left:37px; margin-bottom:14px; counter-increment:n}
+ol.n li::before{content:counter(n); position:absolute; left:0; top:.06em; width:24px; height:24px; display:grid;
+  place-items:center; font-family:var(--mono); font-size:11px; font-weight:600; color:var(--navy);
+  background:var(--navy-soft); border-radius:50%}
+
+blockquote{margin:32px 0; padding:2px 0 2px 24px; border-left:3px solid var(--teal); max-width:var(--measure)}
+blockquote p{font-size:1.16rem; line-height:1.5; font-style:italic; color:var(--ink); margin-bottom:11px}
+blockquote cite{display:block; font-family:var(--mono); font-style:normal; font-size:10.5px; color:var(--muted)}
+
+.callout{margin:30px 0; padding:21px 24px; background:var(--surface); border-left:3px solid var(--navy); max-width:var(--measure)}
+.callout.brick{border-left-color:var(--brick)} .callout.teal{border-left-color:var(--teal)} .callout.ochre{border-left-color:var(--ochre)}
+.callout h4{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; margin:0 0 10px; color:var(--navy)}
+.callout.brick h4{color:var(--brick)} .callout.teal h4{color:var(--teal)} .callout.ochre h4{color:var(--ochre)}
+.callout p{font-size:15.3px; line-height:1.6; color:var(--ink-2); margin:0}
+
+figure{margin:38px 0; max-width:100%}
+figure .plate{background:var(--plate); border:1px solid var(--rule); box-shadow:var(--shadow); padding:8px; border-radius:2px}
+figure img{display:block; width:100%; height:auto}
+figcaption{margin-top:11px; font-family:var(--sans); font-size:12.4px; line-height:1.55; color:var(--muted); max-width:76ch}
+figcaption b{color:var(--ink-2); font-weight:600}
+
+.tw{margin:30px 0; max-width:100%}
+.tscroll{overflow-x:auto; border-top:2px solid var(--navy); border-bottom:2px solid var(--navy)}
+table{border-collapse:collapse; width:100%; min-width:600px; font-family:var(--sans); font-size:13.3px; line-height:1.47}
+thead th{background:var(--surface-2); color:var(--navy); font-weight:600; text-align:left; padding:11px 12px;
+         vertical-align:bottom; border-bottom:1px solid var(--navy); font-size:12.2px}
+tbody td{padding:10px 12px; vertical-align:top; border-bottom:1px solid var(--rule); color:var(--ink-2)}
+tbody tr:nth-child(even) td{background:var(--surface)}
+tbody tr:last-child td{border-bottom:0}
+tbody td:first-child{color:var(--ink)}
+td.c,th.c{text-align:center}
+table b,table strong{color:var(--ink); font-weight:600}
+.tcap{margin-top:10px; font-family:var(--sans); font-size:12.1px; line-height:1.55; color:var(--muted); max-width:78ch}
+.chip{display:inline-block; font-family:var(--mono); font-size:9.8px; font-weight:600; letter-spacing:.075em;
+      text-transform:uppercase; padding:3.5px 8px; border-radius:2px; white-space:nowrap; border:1px solid transparent;
+      background:var(--navy-soft); color:var(--navy)}
+hr.sep{border:0; border-top:1px solid var(--rule); margin:40px 0; max-width:var(--measure)}
+
+.foot{margin-top:80px; padding-top:26px; border-top:2px solid var(--navy); max-width:var(--measure)}
+.foot p{font-family:var(--sans); font-size:12.7px; color:var(--muted); line-height:1.65}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<button class="tt" id="tt" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.1M12 19.3v2.1M4.3 4.3l1.5 1.5M18.2 18.2l1.5 1.5M2.6 12h2.1M19.3 12h2.1M4.3 19.7l1.5-1.5M18.2 5.8l1.5-1.5"/></svg>
+</button>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Resumen ejecutivo · Educación superior</div>
+    <h1>Qué debe decidir una universidad sobre la IA</h1>
+    <p class="dek">Síntesis para la toma de decisiones institucionales: qué se rompió exactamente, qué dice la evidencia que funciona y cuáles son las cinco medidas ordenadas por coste.</p>
+    <div class="meta">
+      <span><b>Lectura de 8 minutos</b></span>
+      <span>Síntesis de un informe de 76 páginas</span>
+      <span>Agosto de 2026</span>
+    </div>
+    <div class="board">
+      <div class="stat"><div class="n">94 %</div><div class="l">de los estudiantes usa IA para trabajos evaluados</div></div>
+      <div class="stat"><div class="n">12 %</div><div class="l">inserta texto generado directamente en la entrega</div></div>
+      <div class="stat"><div class="n warn">94 %</div><div class="l">de las entregas de IA pasó sin detección en un examen real</div></div>
+      <div class="stat"><div class="n warn">19 %</div><div class="l">de las instituciones tiene política de IA vigente</div></div>
+    </div>
+  </header>
+
+<!--CONTENIDO-->
+
+  <footer class="foot">
+    <p>Síntesis del informe «La universidad ante la automatización del trabajo cognitivo» (2022-2026): 24 capítulos, mapa de treinta instituciones de diez países, seis estudios de caso y una matriz maestra con treinta y ocho hallazgos trazados uno a uno. Todas las cifras de este resumen proceden de fuentes verificadas individualmente; el informe completo detalla en cada caso qué mide el dato y con qué sesgo conocido.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, tt=document.getElementById('tt');
+  try{ var s=localStorage.getItem('tema-resumen'); if(s==='dark'||s==='light') root.setAttribute('data-theme',s); }catch(e){}
+  tt.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){ cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'; }
+    var nxt = cur==='dark' ? 'light':'dark';
+    root.setAttribute('data-theme',nxt);
+    try{ localStorage.setItem('tema-resumen',nxt); }catch(e){}
+  });
+})();
+</script>

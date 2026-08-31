@@ -176,6 +176,11 @@ export interface ReportVersion {
   changelog: string[];
   /** Ruta bajo /public. Vacío mientras no exista el archivo. */
   pdf?: string;
+  /**
+   * Versión web del documento, autónoma y legible sin descargar.
+   * Misma regla que `pdf`: vacío mientras el archivo no exista.
+   */
+  html?: string;
 }
 
 export interface Report {

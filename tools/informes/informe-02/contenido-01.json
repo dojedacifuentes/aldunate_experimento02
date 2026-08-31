@@ -1,0 +1,115 @@
+﻿[
+{"t":"h1","n":"Nota preliminar","x":"Cómo leer este informe","nobreak":true},
+
+{"t":"lead","x":"Este informe no pregunta cómo usan las universidades la inteligencia artificial. Pregunta algo más incómodo: qué significa enseñar, aprender, evaluar y certificar conocimiento universitario cuando estudiantes y profesionales disponen de forma permanente de sistemas capaces de ejecutar una parte significativa del trabajo cognitivo que tradicionalmente debía realizar una persona por sí sola."},
+
+{"t":"p","x":"La diferencia no es retórica. La primera pregunta se responde con un inventario de herramientas y se agota en dieciocho meses. La segunda obliga a examinar los supuestos sobre los que descansa el título universitario: que el producto entregado por un estudiante es evidencia razonable de lo que ese estudiante sabe hacer, y que las capacidades certificadas son escasas y valiosas en el mercado profesional. Ambos supuestos están bajo presión simultánea, y por primera vez existe evidencia empírica suficiente para decir algo preciso al respecto."},
+
+{"t":"h2","x":"Cinco reglas que gobiernan cada afirmación de este texto"},
+
+{"t":"p","x":"El campo está saturado de cifras que circulan sin fuente, de anuncios institucionales presentados como resultados y de estudios frágiles amplificados por la prensa. Para no añadir ruido, este informe se somete a cinco reglas explícitas."},
+
+{"t":"numbers","items":[
+"**Existir no es implementar; implementar no es adoptar; adoptar no es funcionar.** Cada hallazgo se etiqueta según lo que realmente demuestra: existencia de la iniciativa, implementación verificada, adopción efectiva, resultados medidos o causalidad establecida. La mayor parte de lo que se publica sobre IA en educación superior demuestra solo lo primero.",
+"**Comprar licencias no es transformar una universidad.** El informe distingue cinco profundidades: digitalización, adopción instrumental, integración pedagógica, transformación curricular y transformación sistémica. Se emplea la palabra «transformación» únicamente cuando hay cambio verificable en qué se enseña, cómo se evalúa o qué se certifica.",
+"**Los anuncios de proveedores no son evidencia de eficacia pedagógica.** Sirven para demostrar que algo existe, nunca para demostrar que funciona. Lo mismo vale para las cifras de resultados que una institución publica sobre sí misma sin metodología, grupo de comparación ni revisión externa.",
+"**La contraevidencia se busca deliberadamente y se publica.** Cada capítulo incluye lo que contradice su propia tesis. Cuando la evidencia es débil, se dice que es débil; cuando un estudio célebre tiene un problema metodológico, se señala.",
+"**Toda cifra lleva su advertencia de lectura.** Ninguna figura de este informe se presenta sin indicar qué mide exactamente, sobre qué población y con qué sesgo conocido."
+]},
+
+{"t":"callout","h":"Una nota sobre la humildad de este documento","c":"teal","x":"El hecho más instructivo de los últimos doce meses no es un despliegue tecnológico sino una retractación. En abril de 2026, la revista Humanities and Social Sciences Communications retiró el metaanálisis de Wang y Fan, la referencia más citada del mundo a favor de efectos positivos grandes de ChatGPT sobre el aprendizaje. Había acumulado 266 citas y cerca de 486.000 visualizaciones. El motivo: agrupaba estudios demasiado distintos en método y muestra como para combinarlos. Durante casi un año, políticas institucionales, presentaciones de rectoría y artículos académicos se apoyaron en una cifra que no se sostenía. Este informe está escrito con esa advertencia presente en cada página."},
+
+{"t":"h2","x":"Qué contiene y qué no"},
+
+{"t":"p","x":"El foco es la **educación superior**. Los casos escolares aparecen solo cuando su hallazgo es transferible a la universidad: es el caso del experimento turco sobre retirada del andamiaje, cuyo diseño resuelve una pregunta que ningún estudio universitario ha resuelto todavía con la misma limpieza."},
+
+{"t":"p","x":"El informe cubre once ejes —modelo universitario, evaluación, competencias, metodologías, rol docente, currículo, experiencia estudiantil, gobernanza, equidad, mercado profesional y enseñanza del Derecho— sobre una base de fuentes verificadas una a una entre 2022 y agosto de 2026. Incluye un mapa internacional de treinta instituciones de diez países, seis estudios de caso desarrollados en profundidad, una matriz comparada por dimensiones, una matriz de tesis con niveles de confianza declarados, una matriz maestra de evidencia con treinta y ocho hallazgos trazados uno a uno, una cronología de diecisiete hitos, tres escenarios para 2026-2030 y una agenda de investigación con los ocho vacíos que hoy impiden decidir con evidencia."},
+
+{"t":"p","x":"No contiene predicciones tecnológicas, ni recomendaciones de compra, ni una defensa ni una condena de la inteligencia artificial en la universidad. Contiene el estado de la evidencia y lo que de él puede razonablemente deducirse."},
+
+{"t":"h1","n":"Resumen ejecutivo","x":"Diez conclusiones y su grado de confianza"},
+
+{"t":"lead","x":"El resultado central de esta investigación es que la transformación es real pero profundamente asimétrica: se concentra casi por completo en la evaluación, avanza mucho menos en el currículo, apenas ha tocado la formación docente y prácticamente no ha producido evidencia de resultados. La universidad está cambiando aquello que se vio obligada a cambiar, no aquello que decidió cambiar."},
+
+{"t":"h2","x":"Las diez conclusiones"},
+
+{"t":"table","cap":"Tabla 1. Conclusiones principales con su nivel de confianza declarado. El nivel refleja la calidad y convergencia de la evidencia disponible, no la fuerza de la convicción del autor.",
+ "head":["#","Conclusión","Confianza"],
+ "w":[420,7200,1500],
+ "align":["center","left","center"],
+ "rows":[
+ ["1","La adopción estudiantil está saturada, pero la delegación total es minoritaria. El 94 % de los estudiantes de grado británicos usa IA generativa para trabajos evaluados; solo el 12 % inserta directamente texto generado en la entrega. Confundir ambas cifras produce políticas equivocadas.","ALTA"],
+ ["2","La evaluación no supervisada perdió su validez como evidencia de aprendizaje. En un experimento ciego real, el 94 % de las entregas generadas por IA pasó sin detección y obtuvo notas superiores a las humanas.","ALTA"],
+ ["3","La detección algorítmica fracasó como estrategia central y su fracaso es lo que empuja la reforma evaluativa. Los detectores marcaron erróneamente como IA el 61,3 % de los ensayos de hablantes no nativos de inglés en una evaluación de siete herramientas.","ALTA"],
+ ["4","Lo que determina si la IA ayuda o daña el aprendizaje es el diseño pedagógico, no el acceso a la herramienta. Un tutor con andamiaje duplicó las ganancias en Harvard; el acceso libre sin andamiaje dejó a los estudiantes turcos un 17 % por debajo de quienes nunca lo tuvieron.","ALTA"],
+ ["5","La percepción de productividad propia está sistemáticamente descalibrada. Desarrolladores expertos fueron un 19 % más lentos con IA y siguieron creyendo que habían sido un 20 % más rápidos. Es el argumento empírico más fuerte para enseñar verificación y calibración.","MEDIA-ALTA"],
+ ["6","La transformación declarada supera con enorme margen a la transformación verificada. Solo el 19 % de las instituciones encuestadas por UNESCO tiene política formal vigente, pese al titular de «dos tercios».","MEDIA-ALTA"],
+ ["7","El cuello de botella se ha desplazado de la adopción a la capacidad docente. Con el 77 % del profesorado ya usando IA, el 80 % declara falta de claridad institucional y solo el 17 % se sitúa en nivel avanzado.","MEDIA-ALTA"],
+ ["8","La IA comprime la distribución del desempeño: beneficia mucho a los estudiantes de menor rendimiento previo y puede perjudicar a los de mayor rendimiento. Esto es simultáneamente una promesa de equidad y una amenaza a la capacidad discriminante de la evaluación.","MEDIA-ALTA"],
+ ["9","Se está formando una brecha de aprendizaje asistido con dimensión de género, de renta y de idioma. Las mujeres tienen un 22 % menos de probabilidades de usar IA generativa, y la brecha persiste incluso cuando el acceso se iguala.","MEDIA"],
+ ["10","El peldaño de entrada al trabajo profesional cualificado se está erosionando justo donde la universidad interviene. El empleo de jóvenes de 22 a 25 años en ocupaciones expuestas a IA está un 19 % por debajo de su trayectoria esperada, sin brecha equivalente en trabajadores experimentados.","MEDIA"]
+ ]},
+
+{"t":"h2","x":"La tesis en una frase"},
+
+{"t":"quote","x":"La inteligencia artificial generativa no es una herramienta educativa más: es una tecnología cognitiva de propósito general que interviene precisamente en aquellas tareas que en la universidad cumplían al mismo tiempo cuatro funciones —aprender, producir conocimiento, ejercer la profesión y demostrar competencia—. Al automatizar la cuarta, desacopla las otras tres.","a":"Hipótesis de trabajo de este informe. La evidencia recogida la confirma para la función evaluativa, la respalda parcialmente para el aprendizaje y aún no la resuelve para la producción de conocimiento."},
+
+{"t":"p","x":"Durante siglos, el ensayo domiciliario, el informe, el trabajo final y el memorándum jurídico funcionaron como un dispositivo económico notable: la misma actividad enseñaba, producía algo útil, entrenaba para el ejercicio profesional y servía de prueba. Esa coincidencia se ha roto. La actividad sigue produciendo algo útil y sigue entrenando para un ejercicio profesional que también ha cambiado, pero ha dejado de garantizar que se aprendió y ha dejado de probar que se sabe."},
+
+{"t":"p","x":"Todo lo que sigue en este informe es, en el fondo, el desarrollo de esa fractura y de las respuestas institucionales que ha provocado."},
+
+{"t":"h1","n":"Capítulo 1","x":"La universidad ante la automatización del trabajo cognitivo"},
+
+{"t":"lead","x":"Antes de examinar qué han hecho las universidades conviene precisar por qué esta tecnología plantea un problema distinto del que plantearon el aula virtual, los MOOC o la pizarra digital. La respuesta no está en su potencia sino en su ubicación: opera dentro de la tarea evaluada, no alrededor de ella."},
+
+{"t":"h2","x":"1.1 Qué distingue a la IA generativa de las tecnologías educativas anteriores"},
+
+{"t":"p","x":"Las tecnologías educativas de las tres décadas anteriores modificaban el **entorno** del aprendizaje: dónde ocurría (educación a distancia), con qué materiales (repositorios digitales), en qué formato (multimedia), a qué escala (MOOC) o con qué administración (plataformas de gestión del aprendizaje). Ninguna intervenía en el acto cognitivo mismo. Un estudiante con acceso a la mejor biblioteca digital del mundo seguía teniendo que leer, comprender, seleccionar, ordenar y redactar."},
+
+{"t":"p","x":"La IA generativa hace exactamente eso: lee, comprende en un sentido funcional, selecciona, ordena y redacta. No amplía el entorno del trabajo intelectual; **ejecuta el trabajo intelectual**. Y lo hace a un coste marginal cercano a cero, con disponibilidad permanente y sin dejar rastro externo."},
+
+{"t":"p","x":"De ahí se siguen tres consecuencias que ninguna tecnología educativa anterior tuvo:"},
+
+{"t":"bullets","items":[
+"**Es indistinguible en el producto.** El resultado de la asistencia no es reconocible en el objeto entregado, a diferencia de una calculadora, un corrector ortográfico o una traducción automática de generación anterior.",
+"**Es de propósito general.** Un mismo sistema opera sobre la redacción jurídica, la depuración de código, el análisis estadístico, la revisión bibliográfica y el diseño de un experimento. No hay disciplina protegida por su especificidad técnica.",
+"**Es simultáneamente herramienta de aprendizaje y sustituto del aprendizaje.** Puede explicar un concepto hasta que se entienda, o puede producir el trabajo que demostraría que se entendió. La misma interfaz sirve para las dos cosas y la institución no puede saber cuál ocurrió."
+]},
+
+{"t":"callout","h":"El punto que suele omitirse","c":"navy","x":"La discusión pública se ha centrado en si la IA «hace trampa». Es una formulación pobre. El problema real es que la universidad certificaba capacidades a partir de productos, y ese vínculo se ha roto de manera general —no solo para quien quiere engañar—. Un estudiante honesto que usa IA de forma declarada y razonable también entrega un producto que ya no informa sobre lo que sabe hacer sin ella. La integridad académica es un subconjunto del problema; el problema es la validez."},
+
+{"t":"h2","x":"1.2 Las cuatro funciones universitarias bajo presión"},
+
+{"t":"p","x":"La universidad contemporánea cumple funciones que suelen analizarse por separado pero que la IA generativa presiona a la vez."},
+
+{"t":"table","cap":"Tabla 2. Funciones universitarias y grado de presión ejercido por la disponibilidad general de IA generativa. Elaboración propia a partir de la evidencia recogida en este informe.",
+ "head":["Función","En qué consiste","Presión","Naturaleza de la presión"],
+ "w":[1500,3400,900,3320],
+ "align":["left","left","center","left"],
+ "rows":[
+ ["**Formación**","Desarrollar capacidades que el estudiante no tenía","Alta","La misma herramienta puede desarrollar la capacidad o sustituirla. El resultado depende del diseño de la tarea, no de la tecnología."],
+ ["**Certificación**","Garantizar ante terceros que el titulado sabe hacer algo","Muy alta","El producto dejó de ser prueba. Es la función más dañada y la que explica casi toda la reforma observada."],
+ ["**Señalización**","Ofrecer al mercado una señal fiable de capacidad escasa","Alta","Si la capacidad certificada deja de ser escasa, la señal pierde valor. Los datos de empleo juvenil sugieren que esto ya ocurre en ciertas ocupaciones."],
+ ["**Producción de conocimiento**","Investigar y publicar","Media","Aumenta la productividad aparente y también el volumen de literatura de baja calidad. La evidencia es todavía preliminar."],
+ ["**Socialización**","Formar criterio, comunidad y responsabilidad profesional","Baja","Es la función menos sustituible y, previsiblemente, la que más valor relativo gana."]
+ ]},
+
+{"t":"h2","x":"1.3 Cinco profundidades: la escala que ordena todo el informe"},
+
+{"t":"p","x":"La confusión más extendida en este campo consiste en llamar transformación a la compra de licencias. Para evitarla, cada institución y cada iniciativa de este informe se sitúa en una escala de seis niveles."},
+
+{"t":"table","cap":"Tabla 3. Escala de profundidad de la transformación institucional. Se emplea de forma sistemática en la matriz comparada del capítulo 17 y en la figura 10.",
+ "head":["Nivel","Denominación","Qué ocurre realmente","Señal que lo distingue"],
+ "w":[620,1700,3600,3200],
+ "align":["center","left","left","left"],
+ "rows":[
+ ["**0**","Ausencia o restricción","La IA está prohibida, bloqueada o simplemente no existe política.","Reglamento que la prohíbe, o silencio institucional."],
+ ["**1**","Herramienta","Se autoriza o se provee acceso sin cambiar nada más.","Hay contrato de licencia y no hay documento pedagógico."],
+ ["**2**","Política y alfabetización","Se emiten normas de uso, cláusulas de syllabus y formación básica.","Existe una política citable y un plan de formación."],
+ ["**3**","Integración pedagógica","Cambian efectivamente actividades, tareas o instrumentos de evaluación.","Los programas de asignatura de este año difieren de los de 2022."],
+ ["**4**","Transformación curricular","Cambian perfiles de egreso, resultados de aprendizaje o estructura curricular.","Un documento de gobierno académico aprobó competencias nuevas."],
+ ["**5**","Transformación sistémica","Cambian de forma coordinada currículo, evaluación, docencia, competencias, infraestructura y gobernanza.","Ninguna institución de la muestra alcanza este nivel en todas las dimensiones."]
+ ]},
+
+{"t":"callout","h":"Resultado adelantado","c":"brick","x":"En la muestra de nueve instituciones analizadas en profundidad, ninguna alcanza el nivel 5 en el conjunto de las dimensiones. La institución más avanzada en evaluación —la University of Sydney— está en nivel 3 en currículo. La más avanzada en currículo —Ohio State— está en nivel 2 en evaluación. La que más ha invertido en infraestructura —California State University— está en nivel 1 en evaluación. La transformación observada es real, pero es parcial por diseño o por omisión, no por etapa de un proceso que vaya a completarse solo."}
+]

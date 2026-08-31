@@ -5,6 +5,51 @@ Versionado semántico.
 
 ---
 
+## [0.5.0] — 2026-08-31
+
+### Añadido
+
+- **`tools/informes/` — la cadena de producción completa.** Deja de vivir fuera
+  del repositorio: el motor de gráficos, el generador de `.docx`, las dos
+  maquetas web y los constructores quedan versionados aquí. El informe 02 está
+  incluido íntegro como ejemplo funcionando, con sus doce figuras en dos
+  resoluciones y su corpus de evidencia.
+- **`tools/informes/plantilla-informe-nuevo/`** — esqueleto en blanco que
+  compila. Se copia para arrancar un informe: no hay que empezar de cero ni
+  clonar el 02. Documenta cada tipo de bloque con el propio contenido.
+- **`docs/informes/` — el método en siete documentos.** Metodología de
+  investigación, sistema de diseño, motor de gráficos, generador de Word, modelo
+  de contenido, guía de reproducción y puente con el sitio. Escritos para que
+  alguien que no estuvo presente pueda reconstruir lo que se hizo.
+- **Botón «Leer en línea»** en la ficha del informe. `ReportVersion` gana un
+  campo `html` con la misma regla que `pdf`: aparece solo si el archivo existe.
+
+### Cambiado
+
+- Los constructores dejan de tener rutas absolutas y pasan a aceptar
+  `-Contenido`, `-Salida`, `-Titulo` y demás. Antes solo funcionaban en la
+  máquina donde se escribieron; ahora la cadena es portátil, y se comprobó
+  ejecutándola entera desde su nueva ubicación: 12 figuras, 24 tablas y los
+  mismos pesos de salida que el original.
+- `CLAUDE.md` §6 y §8 recogen `tools/` y las reglas propias de la cadena: las
+  figuras no llevan número escrito, una figura sin fuente no se publica, los
+  `.ps1` van en UTF-8 con BOM.
+
+### Aprendido
+
+- PowerShell no distingue mayúsculas en los nombres de variable, así que `$T` y
+  `$t` son la misma. Costó un intento fallido durante esta misma sesión, y está
+  documentado en `docs/informes/06-reproducir.md` con su solución.
+
+### Sin verificar
+
+- Sigue sin ejecutarse `npm run verify`: la máquina no tiene Node. Se comprobó a
+  mano que `ButtonLink` admite las variantes `primary` y `outline` usadas, que
+  `BookOpen` existe en `lucide-react` y que los 42 identificadores de fuentes y
+  afirmaciones siguen sin huérfanos. El build de Vercel es la verificación real.
+
+---
+
 ## [0.4.0] — 2026-08-31
 
 ### Añadido

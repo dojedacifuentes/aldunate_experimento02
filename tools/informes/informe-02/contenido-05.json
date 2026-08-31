@@ -1,0 +1,206 @@
+﻿[
+{"t":"h1","n":"Capítulo 13","x":"Caso especial: la enseñanza universitaria del Derecho"},
+
+{"t":"lead","x":"El Derecho merece un capítulo propio por una razón que no es de tamaño ni de prestigio: es la disciplina cuyo núcleo formativo coincide casi exactamente con lo que los modelos de lenguaje hacen bien. Leer, sintetizar, clasificar, comparar, argumentar y redactar documentos no es una parte de la formación jurídica; es la formación jurídica. Si hay un lugar donde la hipótesis de este informe se pone a prueba, es este."},
+
+{"t":"h2","x":"13.1 Por qué el Derecho es el caso crítico"},
+
+{"t":"p","x":"En Medicina la evaluación culminante es el desempeño clínico observado; en Ingeniería, el proyecto que funciona o no funciona; en las ciencias experimentales, el resultado replicable. Todas conservan un anclaje en el mundo que la generación de texto no puede simular."},
+
+{"t":"p","x":"El Derecho no tiene ese anclaje. Su producto es un documento, y su evaluación tradicional es la calidad de un documento: el informe, el memorándum, el dictamen, el escrito, el comentario de sentencia. La cadena completa —identificar el problema, localizar la norma y la jurisprudencia, sintetizarlas, construir el argumento, redactarlo— es precisamente la cadena que un modelo de lenguaje ejecuta con fluidez notable y fiabilidad insuficiente."},
+
+{"t":"p","x":"Esa combinación —alta fluidez, fiabilidad insuficiente— es la peor posible desde el punto de vista formativo, porque el error no se manifiesta como fallo evidente sino como texto correcto que cita una sentencia inexistente."},
+
+{"t":"h2","x":"13.2 Cuánto alucinan las herramientas jurídicas profesionales"},
+
+{"t":"fig","id":"g06-alucinaciones-juridicas","cap":"Figura 6. Las tres herramientas fueron evaluadas sobre el mismo conjunto de consultas. Dos de ellas se comercializaban como libres de alucinaciones."},
+
+{"t":"p","x":"El estudio de referencia es el de Varun Magesh, Faiz Surani, Matthew Dahl, Mirac Suzgun, Christopher Manning y Daniel Ho, del RegLab y el instituto HAI de Stanford, publicado en el Journal of Empirical Legal Studies tras su versión preliminar de 2024. Sus resultados:"},
+
+{"t":"bullets","items":[
+"**Lexis+ AI** alucina en el **17 %** de las consultas y responde correctamente el **65 %**.",
+"**Westlaw AI-Assisted Research** alucina en el **33 %** y responde correctamente el **42 %**.",
+"**GPT-4** sin recuperación jurídica especializada alucina en el **43 %**.",
+"**Ask Practical Law AI** entrega respuestas incompletas en más del **60 %** de las consultas."
+]},
+
+{"t":"p","x":"La conclusión de los autores es que las afirmaciones comerciales de los proveedores estaban sobredimensionadas. Para un estudiante de Derecho la traducción es directa: **la herramienta profesional diseñada específicamente para su disciplina, con recuperación sobre bases de datos jurídicas propietarias, se equivoca en una de cada seis a una de cada tres consultas**, y lo hace produciendo texto indistinguible del correcto."},
+
+{"t":"h2","x":"13.3 La consecuencia en los tribunales"},
+
+{"t":"fig","id":"g07-citas-fabricadas","cap":"Figura 7. El registro solo incluye casos en que un tribunal constató efectivamente el uso de contenido alucinado. Es, por tanto, un mínimo."},
+
+{"t":"p","x":"Damien Charlotin, investigador del Smart Law Hub de HEC Paris, mantiene la base de datos más completa de resoluciones judiciales en las que un tribunal ha establecido el uso de contenido alucinado. Su criterio de inclusión es estricto: no recoge alegaciones sino constataciones judiciales. A inicios de 2026 superaba los 1.200 casos; en julio alcanzaba 1.668; el 28 de agosto de 2026 registraba **1.981**."},
+
+{"t":"p","x":"La lectura correcta requiere cautela: el crecimiento mezcla mayor uso de IA, mayor escrutinio judicial y mejor cobertura del propio registro. No es una tasa de error. Pero como indicador de que el problema salió del laboratorio y llegó a la responsabilidad profesional efectiva, es concluyente."},
+
+{"t":"callout","h":"Lo que esto significa para una facultad de Derecho","c":"navy","x":"Existe una competencia jurídica nueva, específica y enseñable: **verificar que una cita existe, dice lo que se afirma que dice y sigue vigente**. Antes era un subproducto automático del proceso de investigación —quien encontraba la sentencia la había leído—. Hoy es un paso separado que debe enseñarse, ejercitarse y evaluarse de forma explícita, porque el proceso que la producía ha sido automatizado. Es probablemente la incorporación curricular más urgente y de menor coste que puede hacer una facultad de Derecho hoy."},
+
+{"t":"h2","x":"13.4 El efecto sobre el aprendizaje jurídico: quién gana y quién pierde"},
+
+{"t":"p","x":"Jonathan Choi y Daniel Schwarcz realizaron el primer ensayo aleatorizado sobre asistencia de IA en análisis jurídico: estudiantes de Derecho asignados al azar a resolver tareas jurídicas realistas con o sin GPT-4, con corrección ciega y medición de tiempos. Los resultados son de una nitidez poco frecuente en este campo:"},
+
+{"t":"table","cap":"Tabla 12. Efectos heterogéneos de la asistencia de IA en análisis jurídico. Choi y Schwarcz, «AI Assistance in Legal Analysis: An Empirical Study», Journal of Legal Education.",
+ "head":["Grupo","Efecto sobre la calidad","Efecto sobre la velocidad"],
+ "w":[2900,3200,3020],
+ "align":["left","left","left"],
+ "rows":[
+ ["Estudiantes de **peor** desempeño previo","Ganancia de alrededor de **45 puntos percentiles**","Aumento amplio"],
+ ["Estudiantes de **mejor** desempeño previo","**Peores** calificaciones con acceso a IA","Aumento amplio"],
+ ["Conjunto de la muestra","Mejora **ligera e inconsistente**","Aumento **amplio y consistente**"]
+ ]},
+
+{"t":"p","x":"Tres consecuencias se siguen de aquí, y las tres son estructurales."},
+
+{"t":"numbers","items":[
+"**La IA comprime la distribución del desempeño jurídico.** Sube el suelo y baja el techo. Para una facultad que forma, es una excelente noticia; para una facultad que además certifica y jerarquiza, es la pérdida de su capacidad de discriminar.",
+"**La ganancia principal es de velocidad, no de calidad.** Un trabajo relacionado del mismo equipo, publicado en la Minnesota Law Review, encuentra que la IA aumenta la velocidad en tareas jurídicas aplicadas sin dañar la calidad. Velocidad sin calidad adicional es exactamente el perfil de una tecnología que sustituye horas facturables de perfil junior.",
+"**El mejor estudiante empeora.** Es el hallazgo más contraintuitivo y el más importante para el diseño curricular: para quien ya razona bien, la asistencia introduce ruido, ancla el razonamiento en una salida plausible y desplaza el juicio propio. Sugiere que la enseñanza del uso de IA debe ser diferenciada por nivel de competencia, algo que ningún currículo examinado hace."
+]},
+
+{"t":"h2","x":"13.5 Qué están haciendo las facultades"},
+
+{"t":"p","x":"El movimiento curricular es real y verificable, aunque todavía minoritario."},
+
+{"t":"bullets","items":[
+"**Case Western Reserve University School of Law** lanzó en 2025 «Introduction to AI and the Law», el primer programa de certificación en IA jurídica **obligatorio para estudiantes de primer año** en una facultad de Derecho estadounidense. En 2026 lo amplió: todos los estudiantes de primer año deben cursarlo y, además, desarrollar sus propias herramientas de tecnología jurídica mediante programación asistida por IA.",
+"**UNLV William S. Boyd School of Law** incorpora desde el otoño de 2026 la asignatura obligatoria «Introduction to Responsible Use of AI» en primer año.",
+"**University of Chicago Law School** implantó módulos obligatorios de IA para todos los estudiantes de primer año en su primer trimestre, desde principios de 2026, con el objetivo declarado de garantizar un mínimo común de alfabetización.",
+"Según los datos más recientes de la American Bar Association, correspondientes a 2024, el **55 %** de los programas ofrecía cursos especializados sobre IA, pero solo alrededor del **5 %** del profesorado de Derecho la enseñaba en cursos independientes. La integración mayoritaria ocurre dentro de escritura jurídica y clínicas."
+]},
+
+{"t":"p","x":"El patrón es coherente con el resto del informe: la incorporación avanza por la vía del **contenido** —enseñar sobre IA— y mucho menos por la vía de la **evaluación**. Ninguna de las facultades examinadas ha documentado un rediseño evaluativo comparable al modelo de dos carriles australiano."},
+
+{"t":"callout","h":"Una observación sobre el examen de acceso a la abogacía","c":"ochre","x":"La afirmación de que GPT-4 aprobó el bar exam en el percentil 90 circuló masivamente en 2023 y fue posteriormente corregida por un reanálisis publicado en Artificial Intelligence and Law, que mostró que el percentil declarado dependía de una comparación con una población de referencia inadecuada. El episodio es un buen recordatorio metodológico y merece figurar en cualquier curso de alfabetización jurídica en IA: la cifra que definió la percepción pública de la profesión durante dos años era, en su formulación más difundida, incorrecta."},
+
+{"t":"h2","x":"13.6 La escritura jurídica: del componer al criticar"},
+
+{"t":"p","x":"Si hay una asignatura donde el problema se concentra, es la de investigación y escritura jurídica de primer año. Su tarea canónica —redactar un memorándum desde cero— es exactamente lo que un modelo de lenguaje produce con fluidez. Y es también la asignatura donde se forma el hábito de razonamiento que define al jurista."},
+
+{"t":"p","x":"La respuesta pedagógica más interesante que ha producido el campo consiste en invertir la tarea. En lugar de pedir al estudiante que **componga** un memorándum, se le entrega un borrador —redactado por el profesor, o generado y deliberadamente defectuoso— y se le pide que lo **critique**: que identifique el error de razonamiento, la cita que no dice lo que se afirma, la analogía que no se sostiene, la omisión relevante. La competencia evaluada deja de ser la producción y pasa a ser el juicio, que es precisamente lo que la máquina no aporta."},
+
+{"t":"p","x":"La University of Chicago Law School ha llevado esa lógica a la estructura completa de su asignatura de investigación y escritura jurídica, en un piloto para el curso 2026-2027: **escribir sin IA como base, y escribir con IA superpuesto encima**. Los estudiantes redactan sin asistencia y, en paralelo, usan IA para investigación, revisión, iteración de borradores y preparación del alegato oral. Es el modelo de dos carriles del capítulo 3, aplicado dentro de una sola asignatura y por primera vez en Derecho."},
+
+{"t":"callout","h":"Por qué esto importa más allá del Derecho","c":"teal","x":"La inversión de la tarea —de componer a criticar— es transferible a cualquier disciplina cuyo producto sea un texto argumentado: historia, filosofía, ciencia política, economía aplicada. Tiene tres virtudes prácticas: no requiere tecnología, no depende de la honestidad declarada del estudiante y evalúa una competencia que **gana** valor cuando la producción se automatiza. Es, con diferencia, el rediseño de tarea más barato y mejor fundamentado que ha encontrado esta investigación."},
+
+{"t":"h2","x":"13.7 Qué instrumentos de evaluación jurídica resisten"},
+
+{"t":"p","x":"La tabla 7 ordenó los instrumentos universitarios en general. En Derecho la jerarquía es más severa, porque casi todos los instrumentos tradicionales son documentos."},
+
+{"t":"table","cap":"Validez de los instrumentos de evaluación jurídica ante la disponibilidad general de IA. Valoración propia a partir de la evidencia del capítulo y de las prácticas documentadas.",
+ "head":["Instrumento","Validez residual","Qué evalúa realmente ahora"],
+ "w":[2500,1500,5120],
+ "align":["left","center","left"],
+ "rows":[
+ ["Memorándum o informe en derecho domiciliario","**Muy baja**","Ya no informa sobre capacidad de análisis. Conserva valor formativo si se acompaña de defensa."],
+ ["Comentario de sentencia escrito","**Baja**","Producible con calidad aceptable. Recupera validez si se exige contrastar la sentencia real con una versión alterada."],
+ ["Caso práctico escrito no supervisado","**Baja**","Mide acceso a la herramienta, no razonamiento jurídico."],
+ ["Trabajo de investigación con fuentes","**Baja-media**","Recupera validez si se evalúa explícitamente la **verificación** de cada cita, no solo el argumento."],
+ ["Crítica de un borrador defectuoso","**Alta**","Evalúa juicio, detección de error y criterio. Difícil de delegar porque el fallo está escondido."],
+ ["Examen presencial supervisado","**Alta**","Recupera plena validez, con los costes pedagógicos conocidos."],
+ ["Moot court y alegato oral","**Muy alta**","Evalúa argumentación en tiempo real bajo interrogatorio adversarial. Prácticamente inmune."],
+ ["Defensa oral del trabajo escrito","**Muy alta**","Es el complemento que devuelve validez a todo lo anterior. Su límite es el tiempo docente."],
+ ["Clínica jurídica y práctica supervisada","**Muy alta**","Evalúa desempeño con responsabilidad real. El instrumento más robusto y el más caro."]
+ ]},
+
+{"t":"p","x":"El patrón repite el del capítulo 3 con un matiz propio: en Derecho, **la oralidad no es un instrumento auxiliar sino el núcleo recuperable**. Existe además literatura específica que argumenta que la competencia oral es aquello que la IA no puede sustituir en la formación jurídica, y que su desplazamiento por la evaluación escrita fue una decisión de conveniencia administrativa que ahora conviene revertir."},
+
+{"t":"h2","x":"13.8 El examen de acceso cambia al mismo tiempo"},
+
+{"t":"p","x":"Una coincidencia poco advertida agrava el problema en Estados Unidos: mientras las facultades rediseñan su evaluación, el examen de acceso a la abogacía se transforma en paralelo."},
+
+{"t":"bullets","items":[
+"El **NextGen bar exam** debuta en julio de 2026 en un número limitado de jurisdicciones —Maryland, Missouri y Oregón entre las primeras— y la mayoría transitará hacia él entre julio de 2026 y julio de 2028. El NCBE prevé de cuatro a cinco años para la implantación completa.",
+"Reduce el número de materias examinadas y desplaza el peso hacia la **aplicación de conceptos en escenarios realistas** y hacia destrezas fundamentales del ejercicio, incluida explícitamente la redacción jurídica.",
+"Se rinde íntegramente en los **computadores personales de los examinandos**, en sedes designadas por cada jurisdicción.",
+"La transición no ha sido lineal: el estado de Washington canceló la administración de julio de 2026."
+]},
+
+{"t":"p","x":"La consecuencia formativa es doble y conviene explicitarla. Por un lado, el examen se acerca a la práctica real, lo que refuerza el argumento de este informe a favor de evaluar desempeño antes que reproducción. Por otro, una facultad que rediseñe su evaluación hacia la oralidad y la crítica debe asegurarse de que sus egresados siguen siendo capaces de **producir** texto jurídico bajo presión y sin asistencia, porque eso es lo que el examen de acceso seguirá midiendo."},
+
+{"t":"h2","x":"13.9 La pirámide se estrecha"},
+
+{"t":"p","x":"El capítulo 10 documentó la erosión general del peldaño de entrada. En Derecho el mecanismo es especialmente nítido, porque el modelo económico de los despachos se apoyaba literalmente en él: contratar promociones amplias de asociados junior, asignarles volumen alto de trabajo rutinario —revisión documental, investigación, primeros borradores de contratos— y facturar esas horas."},
+
+{"t":"table","cap":"Señales del mercado jurídico estadounidense. Recogidas de análisis sectoriales; deben leerse como tendencia y no como medición causal.",
+ "head":["Señal","Dato","Lectura formativa"],
+ "w":[2400,2200,4520],
+ "align":["left","left","left"],
+ "rows":[
+ ["Contratación de asociados en los grandes despachos","Plana, con leve descenso, pese al crecimiento de los ingresos","La desconexión entre facturación y contratación junior es el indicio más claro de sustitución."],
+ ["Caída de la contratación total de asociados en 2025","**−5 %**","El ajuste ya ocurrió; no es una previsión."],
+ ["Contrataciones procedentes directamente de la promoción egresada","**38 %** del total","La vía tradicional del titulado recién graduado se ha vuelto minoritaria."],
+ ["Contratación lateral frente a contratación de entrada","La lateral **supera** hoy a la de entrada","El despacho prefiere comprar experiencia formada a formarla, porque factura a tarifa más alta y requiere menos entrenamiento."],
+ ["Trabajo rutinario externalizado por los clientes","Los propios clientes usan IA para tareas que antes enviaban al despacho","Desaparece trabajo antes de llegar al junior, no solo dentro del despacho."]
+ ]},
+
+{"t":"callout","h":"El problema formativo que esto crea","c":"brick","x":"Durante décadas, el jurista se formaba haciendo durante tres o cuatro años exactamente aquello que hoy se automatiza: leer mucho, resumir, buscar, comparar, redactar borradores que otro corregía. Ese trabajo era económicamente marginal y **formativamente indispensable**: era donde se adquiría el criterio. Si el mercado deja de proveerlo, solo la facultad puede reconstruirlo deliberadamente —mediante clínicas, simulación, práctica supervisada y responsabilidad progresiva—, y hacerlo cuesta dinero y horas docentes. Es la consecuencia curricular más costosa y menos discutida de todo este informe."},
+
+{"t":"h2","x":"13.10 Iberoamérica jurídica: un movimiento incipiente"},
+
+{"t":"p","x":"El capítulo 14 examina la región en conjunto. Conviene registrar aquí lo específicamente jurídico, que es más reciente y más disperso, y que se concentra por ahora en posgrado y educación continua antes que en el grado."},
+
+{"t":"bullets","items":[
+"**Universidad de Valparaíso (Chile).** Su Facultad de Derecho creó el **LIDET**, Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías, con el propósito declarado de observar críticamente la transformación de las profesiones jurídicas y de la propia formación universitaria. Es, de lo localizado, la iniciativa iberoamericana que aborda el problema en el plano de la **docencia** y no solo del contenido.",
+"**Pontificia Universidad Católica de Chile.** Nueva mención en Inteligencia Artificial y Tecnología en su Magíster en Derecho, además de un diplomado en Derecho e IA en educación continua.",
+"**Universidad Autónoma de Chile.** Proyecto de IA y Derecho desde su Centro de Regulación y Consumo, con un módulo Jean Monnet sobre IA y derecho privado europeo y una microcredencial internacional que arrancó con más de ochenta estudiantes.",
+"**España.** La oferta se concentra en máster: la Universidade de Santiago de Compostela incorpora Derecho e Inteligencia Artificial en su máster de derecho transnacional y tecnologías digitales para 2025-2026, con orientación explícita a *legal tech*."
+]},
+
+{"t":"p","x":"El contraste con Estados Unidos es instructivo y no favorece a la región. Allí el movimiento decisivo ocurre en **primer año y con carácter obligatorio**; aquí ocurre en posgrado y de forma optativa. La diferencia importa: un diplomado forma a quien ya decidió interesarse; un curso obligatorio de primer año alcanza a toda la promoción, incluidos quienes usarán la herramienta sin haber pensado nunca en ella."},
+
+{"t":"h2","x":"13.11 Hoja de ruta para una facultad de Derecho"},
+
+{"t":"p","x":"Reuniendo lo anterior, seis medidas concretas, ordenadas por relación entre impacto y coste. Ninguna requiere adquirir tecnología."},
+
+{"t":"numbers","items":[
+"**Convertir la verificación de citas en competencia evaluada con rúbrica propia.** Comprobar que una sentencia existe, dice lo que se afirma y sigue vigente era antes un subproducto automático de investigar; hoy es un paso separado. Con 1.981 resoluciones judiciales sancionando citas fabricadas, es además responsabilidad profesional. Coste: casi nulo. Es la primera medida que debería tomar cualquier facultad.",
+"**Invertir la tarea de escritura jurídica: de componer a criticar.** Entregar borradores defectuosos para que el estudiante detecte el error de razonamiento o la cita falsa. Evalúa juicio, no producción, y no depende de ninguna declaración de uso.",
+"**Recuperar la oralidad como instrumento central, no como complemento.** Defensa oral de todo trabajo escrito relevante, moot courts ampliados, examen oral. Es lo que devuelve validez a la certificación y lo único prácticamente inmune. Su coste es tiempo docente y hay que presupuestarlo.",
+"**Declarar el carril de cada tarea.** Aplicar la distinción entre evaluación segura y abierta asignatura por asignatura, con la garantía situada a nivel de plan de estudios y no de cada curso. Elimina la ambigüedad que hoy perjudica al estudiante honesto.",
+"**Diferenciar la enseñanza del uso por nivel de competencia.** El hallazgo de Choi y Schwarcz —la IA mejora mucho al estudiante de peor desempeño y empeora al mejor— implica que la misma instrucción no sirve para todos. Ninguna facultad examinada lo hace.",
+"**Reconstruir deliberadamente el peldaño que el mercado ya no provee.** Ampliar clínicas, simulación y práctica supervisada con responsabilidad progresiva. Es la medida cara, la más lenta y la que decidirá si el título sigue significando algo dentro de diez años."
+]},
+
+{"t":"callout","h":"Por qué el Derecho decide antes que el resto","c":"navy","x":"Tres de los ocho casos de nivel 4 del mapa internacional son facultades de Derecho, y se movieron antes que las universidades que las albergan. No es casualidad ni mérito: es que en Derecho el daño llegó primero, es medible —tasas de alucinación, sanciones judiciales, contratación junior— y toca simultáneamente la formación, la evaluación y la responsabilidad profesional. Eso convierte a las facultades de Derecho en el mejor laboratorio disponible para el resto de la universidad: lo que aquí funcione o fracase se sabrá antes, y con evidencia más dura, que en ninguna otra disciplina."},
+
+{"t":"h1","n":"Capítulo 14","x":"Iberoamérica: proyectos sin ecosistema"},
+
+{"t":"lead","x":"La narrativa habitual presenta a la región como receptora tardía. Los datos la matizan: existen iniciativas notables, algunas pioneras a escala mundial. Lo que no existe es un ecosistema. La diferencia entre ambas cosas explica por qué la región produce casos y no produce evidencia."},
+
+{"t":"h2","x":"14.1 Lo que hay: 193 iniciativas en 22 países"},
+
+{"t":"p","x":"El mapeo más completo de la región es la convocatoria «¡IA Presente!» del Banco Interamericano de Desarrollo con Ceibal, implementada por Socialab, que identificó **193 iniciativas** de IA educativa activas en **22 países** de América Latina y el Caribe. A ello se suma **EduIALab**, el laboratorio regional de IA para la educación creado por Ceibal de Uruguay junto al Banco Mundial, el BID y el IDRC de Canadá."},
+
+{"t":"p","x":"En el plano de la medición, la tercera edición del **Índice Latinoamericano de Inteligencia Artificial**, presentado por la CEPAL y el CENIA de Chile, evalúa 19 países sobre más de 100 subindicadores en tres dimensiones: factores habilitantes; investigación, desarrollo y adopción; y gobernanza."},
+
+{"t":"h2","x":"14.2 El caso Tecnológico de Monterrey: soberanía tecnológica real, evidencia declarada"},
+
+{"t":"p","x":"El Tecnológico de Monterrey lanzó TECgpt el 28 de septiembre de 2023, siendo el primer modelo de IA generativa propio de una universidad latinoamericana, y posteriormente abrió el ecosistema con TECgpt Open Edition. Es, sin discusión, la apuesta de soberanía tecnológica institucional más avanzada de la región y una de las pocas del mundo en el modelo «construir»."},
+
+{"t":"p","x":"Las cifras institucionales, presentadas en su AI Day de 2025, reportan más de 14.000 usuarios de TECgpt y un ecosistema que incluye un Sistema Inteligente de Apoyo a la Facultad. La institución declara además ganancias de aprendizaje de veinte a treinta puntos con impacto en más de 10.000 estudiantes en 2025."},
+
+{"t":"callout","h":"Advertencia obligada sobre esta cifra","c":"brick","x":"La cifra de «veinte a treinta puntos» de ganancia de aprendizaje es un **autoinforme institucional sin metodología pública, sin grupo de control y sin revisión externa**. Este informe la consigna porque es lo que la institución afirma, y advierte expresamente que no constituye evidencia de resultados en el sentido en que se emplea ese término en el capítulo 15. El contraste con el caso de Harvard —donde una ganancia comparable está respaldada por un ensayo aleatorizado publicado en una revista revisada por pares— ilustra la diferencia entre afirmar y demostrar. Esta advertencia no cuestiona el valor estratégico de TECgpt, que es considerable; cuestiona el uso de esa cifra como prueba pedagógica."},
+
+{"t":"h2","x":"14.3 Chile: formación docente como vector"},
+
+{"t":"p","x":"Chile presenta un perfil característico de nivel 2 —política y alfabetización— con un vector interesante y poco frecuente: la formación inicial docente."},
+
+{"t":"bullets","items":[
+"**MetaRed TIC Chile** definió una hoja de ruta 2025-2026 con la inteligencia artificial como eje estratégico, con participación central de la Universidad de Chile.",
+"El programa **«Futuros Docentes en IA»**, alianza público-privada impulsada desde el Ministerio de Ciencia, realizó un piloto en 2025 con cuatro universidades y cerca de 200 futuros docentes, e inició su escalamiento nacional desde marzo de 2026 con nueve universidades del CRUCH.",
+"La **Universidad de Chile** ha desarrollado lineamientos éticos para la docencia universitaria con IA, derivados de su modelo educativo institucional; la **Universidad Andrés Bello** publicó lineamientos de uso responsable en 2024."
+]},
+
+{"t":"p","x":"Formar en IA a quienes van a enseñar es una intervención de alto apalancamiento y bajo coste comparativo, y es una decisión más inteligente que la compra de licencias a escala. Lo que no existe en Chile —ni ha sido documentado públicamente en esta investigación— es un rediseño evaluativo institucional comparable al australiano, ni una modificación formal de perfiles de egreso comparable a la de Ohio State."},
+
+{"t":"h2","x":"14.4 España y el marco iberoamericano"},
+
+{"t":"p","x":"La Conferencia de Rectores de las Universidades Españolas, a través del grupo de trabajo de Inteligencia Artificial y Gobernanza del Dato de su sectorial de Digitalización, encuestó en abril y mayo de 2025 a los responsables de implantación de IA en las universidades españolas. Su posicionamiento formal de junio de 2024 se resume en una fórmula que este informe suscribe: **la IA no debe prohibirse, debe enseñarse**."},
+
+{"t":"p","x":"Es necesario señalar aquí una limitación de esta investigación. Circulan cifras muy citadas sobre el porcentaje de universidades españolas con políticas de uso condicionado y sobre presupuestos agregados de IA educativa que no ha sido posible rastrear hasta una fuente primaria fiable. Se han excluido deliberadamente de este informe. Su ausencia es preferible a su inclusión sin verificación."},
+
+{"t":"h2","x":"14.5 El diagnóstico regional"},
+
+{"t":"callout","h":"Proyectos, no ecosistema","c":"navy","x":"La región tiene iniciativas de primer nivel mundial —TECgpt es anterior a la mayoría de los despliegues estadounidenses, y Ceibal lleva casi dos décadas de infraestructura pública—. Lo que no tiene es la capa que convierte iniciativas en conocimiento acumulable: evaluación independiente, publicación de resultados negativos, comparabilidad entre instituciones y financiación sostenida de investigación educativa. El resultado es que la región **genera casos que el mundo cita y no genera evidencia que el mundo pueda usar**. Corregir eso es más barato que cualquier despliegue tecnológico y tendría más impacto."}
+]

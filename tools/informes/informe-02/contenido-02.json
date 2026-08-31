@@ -1,0 +1,152 @@
+[
+{"t":"h1","n":"Capítulo 2","x":"Adopción: la curva que todos citan y la que casi nadie mira"},
+
+{"t":"lead","x":"La cifra que circula en presentaciones institucionales es que más del noventa por ciento de los estudiantes usa inteligencia artificial. Es cierta y, aislada, resulta inútil. Junto a ella existe una segunda serie, publicada en la misma encuesta, que cambia por completo el diagnóstico."},
+
+{"t":"fig","id":"g01-uso-delegacion","cap":"Figura 1. La distancia entre ambas curvas —82 puntos porcentuales en 2026— es el espacio donde se decide la política universitaria."},
+
+{"t":"h2","x":"2.1 Lo que dicen las dos curvas"},
+
+{"t":"p","x":"El Higher Education Policy Institute británico ha medido lo mismo durante tres años sobre estudiantes de grado a tiempo completo. La proporción que declara usar IA generativa para trabajos evaluados pasó del 53 % en 2024 al 88 % en 2025 y al 94 % en 2026. La oleada más reciente se realizó en diciembre de 2025 sobre 1.054 estudiantes, con trabajo de campo de Savanta."},
+
+{"t":"p","x":"En la misma encuesta, la proporción que declara **insertar directamente texto generado por IA** en el trabajo entregado pasó del 3 % al 8 % y al 12 %. Es decir: la adopción se saturó, pero la delegación total sigue siendo minoritaria, aunque se ha cuadruplicado en dos años."},
+
+{"t":"p","x":"La lectura correcta es doble y ambas mitades importan. Por un lado, el uso es universal y ninguna política que suponga lo contrario es viable: prohibir es legislar sobre una realidad inexistente. Por otro, la mayoría de los estudiantes usa la herramienta para explicar conceptos, resumir lecturas, estructurar ideas o revisar redacción, no para sustituir el trabajo. Tratar a ese 94 % como sospechoso es tan erróneo como ignorar que el 12 % restante existe y crece."},
+
+{"t":"callout","h":"Advertencia de lectura","c":"ochre","x":"Son datos autoinformados de una muestra británica, y el enunciado de las preguntas varió levemente entre oleadas. La serie indica magnitud y dirección con solidez; no es una medición estrictamente equivalente año a año. Además, el autoinforme sobre conducta sancionable subestima sistemáticamente: el 12 % debe leerse como un suelo, no como una estimación central."},
+
+{"t":"h2","x":"2.2 Lo que la adopción no significa"},
+
+{"t":"p","x":"Existe una tentación institucional de leer la penetración del uso como evidencia de transformación. No lo es. Las cifras de la misma encuesta que documentan el 94 % documentan también lo siguiente:"},
+
+{"t":"bullets","items":[
+"Solo el **38 %** de los estudiantes declara que su institución le provee herramientas de IA. La adopción ha sido mayoritariamente privada, con cuentas personales y planes gratuitos.",
+"Solo el **36 %** se siente animado por su institución a usarla, y el 36 % percibe activamente lo contrario. La señal institucional es ambigua.",
+"El **68 %** cree que las competencias de IA son esenciales para su futuro, pero solo el **48 %** siente que el profesorado le ayuda a desarrollarlas.",
+"El **65 %** afirma que su evaluación **ha cambiado significativamente** en respuesta a la IA. Este es, con diferencia, el dato más importante de la encuesta y el que confirma que la reforma evaluativa ha llegado al aula, no solo a los documentos."
+]},
+
+{"t":"p","x":"La combinación es reveladora: los estudiantes han adoptado la tecnología por su cuenta, perciben que la evaluación cambió a su alrededor y no perciben que la institución los esté acompañando. La universidad ha reaccionado defendiendo su evaluación antes que enseñando el uso."},
+
+{"t":"h2","x":"2.3 El estado institucional del lado de la oferta"},
+
+{"t":"p","x":"En Estados Unidos, EDUCAUSE reporta que alrededor del 74 % de las instituciones tiene al menos un despliegue de IA en producción que afecta directamente a estudiantes, frente al 28 % a principios de 2024; y la proporción de líderes institucionales que se declaran cautelosos cayó del 23 % en 2024 al 15 % en 2026. La cautela se ha disuelto más rápido que la evidencia que la justificaría."},
+
+{"t":"p","x":"En el plano normativo, la encuesta de UNESCO difundida en septiembre de 2025 —400 respuestas de Cátedras UNESCO y Redes UNITWIN en 90 países— es más matizada de lo que sugiere su titular, y se analiza en el capítulo 8."},
+
+{"t":"h1","n":"Capítulo 3","x":"Evaluación: la ruptura entre el producto y el aprendizaje"},
+
+{"t":"lead","x":"Este es el capítulo central del informe. Si hay un lugar donde la transformación universitaria ha dejado de ser discursiva para volverse material, es la evaluación. No porque las universidades lo desearan, sino porque un experimento publicado en 2024 demostró que el instrumento sobre el que descansaba buena parte del sistema había dejado de funcionar."},
+
+{"t":"h2","x":"3.1 El experimento que cerró la discusión"},
+
+{"t":"p","x":"En junio de 2024, Peter Scarfe, Kelly Watcham, Alasdair Clarke y Etienne Roesch publicaron en PLOS ONE el ensayo más riguroso disponible sobre el problema. En lugar de preguntar a docentes si creían poder detectar texto generado por IA, insertaron entregas generadas íntegramente por ChatGPT en el sistema real de exámenes de varios módulos de Psicología de la Universidad de Reading, en condiciones de examen real y con corrección ciega por los propios evaluadores del curso. Las entregas artificiales representaron alrededor del 5 % del total de cada módulo."},
+
+{"t":"table","cap":"Tabla 4. Resultados del experimento de Reading. Scarfe, Watcham, Clarke y Roesch, PLOS ONE 19(6): e0305354 (26 de junio de 2024).",
+ "head":["Medida","Resultado","Qué implica"],
+ "w":[2400,1600,5120],
+ "align":["left","center","left"],
+ "rows":[
+ ["Entregas de IA no detectadas por los correctores","**94 %**","La detección humana experta, en condiciones reales y sin sospecha previa, no funciona."],
+ ["Calificación media de las entregas de IA","**Superior** a la de los estudiantes reales","La evaluación no supervisada no solo deja pasar el trabajo automatizado: lo premia."],
+ ["Condiciones del ensayo","Ciego, en el sistema real, corrección por los evaluadores del curso","No es un experimento de laboratorio ni una simulación."]
+ ]},
+
+{"t":"p","x":"Los autores lo describieron como una llamada de atención para los docentes de todo el mundo. La formulación exacta importa menos que la consecuencia lógica: **si el producto entregado sin supervisión no distingue entre un estudiante y un modelo de lenguaje, entonces la calificación de ese producto ha dejado de ser información sobre el estudiante**."},
+
+{"t":"p","x":"Conviene precisar el alcance. El estudio se realizó en un grado de Psicología y en un tipo concreto de examen abierto; su generalización a un trabajo de investigación de máster o a una tesis doctoral no es automática. Pero la dirección del hallazgo es robusta y ningún estudio posterior la ha contradicho."},
+
+{"t":"h2","x":"3.2 Por qué la detección algorítmica no era la salida"},
+
+{"t":"p","x":"La primera reacción institucional, entre 2023 y 2024, fue tecnológica: si la IA escribe, otra IA lo detectará. Esa vía se cerró por dos motivos distintos, y ambos son concluyentes."},
+
+{"t":"h3","x":"El problema de los falsos positivos"},
+
+{"t":"p","x":"Un estudio de Stanford de 2023 evaluó siete detectores sobre ensayos escritos por hablantes no nativos de inglés y encontró una tasa media de falsos positivos del **61,3 %**. La causa es estructural: los detectores basados en perplejidad penalizan el vocabulario más simple y las estructuras gramaticales más regulares, que son precisamente los rasgos de quien escribe en una lengua que no es la propia. El instrumento no discrimina entre texto artificial y texto de estudiante internacional."},
+
+{"t":"p","x":"Vanderbilt University desactivó el detector de IA de Turnitin en agosto de 2023 con un argumento aritmético difícil de refutar: con 75.000 trabajos procesados en 2022 y la tasa de falsos positivos del 1 % que el propio proveedor declaraba, unos 750 trabajos habrían sido señalados erróneamente en un solo año. A marzo de 2026, al menos doce instituciones importantes —entre ellas Yale, Johns Hopkins y Northwestern— habían tomado la misma decisión."},
+
+{"t":"h3","x":"El problema de los falsos negativos"},
+
+{"t":"p","x":"El experimento de Reading resuelve el otro lado: el 94 % de no detección en condiciones reales. Un instrumento que acusa a estudiantes inocentes y no detecta el trabajo automatizado no es un instrumento imperfecto; es un instrumento que empeora activamente la situación."},
+
+{"t":"callout","h":"La consecuencia estratégica","c":"brick","x":"El cierre de la vía de la detección es el hecho que explica prácticamente toda la reforma evaluativa observada entre 2024 y 2026. Las universidades no rediseñaron su evaluación porque una teoría pedagógica las convenciera, sino porque se quedaron sin alternativa técnica. Esto tiene una implicación práctica: cualquier institución que hoy siga invirtiendo en detección está financiando una estrategia que el resto del sistema ya abandonó."},
+
+{"t":"h2","x":"3.3 Lo que la cifra de sanciones revela sobre el sistema"},
+
+{"t":"fig","id":"g05-integridad","cap":"Figura 5. Los casos probados se han multiplicado por más de cuatro en tres años. Contrastados con el uso declarado, muestran que el sistema disciplinario capta una fracción residual del fenómeno."},
+
+{"t":"p","x":"Una investigación de The Guardian mediante solicitudes de acceso a la información a 155 universidades británicas —131 respondieron— documentó la evolución de los casos probados de mala conducta académica con IA: 1,6 por cada mil estudiantes en 2022-23, 5,1 en 2023-24 —casi 7.000 casos— y una proyección en torno a 7,5 para 2024-25. En el Russell Group, los estudiantes sancionados pasaron de unos 700 a más de 2.000 en un año."},
+
+{"t":"p","x":"El crecimiento es espectacular y, sin embargo, el dato relevante es otro. Si el 94 % de los estudiantes usa IA para trabajos evaluados y el 12 % inserta texto generado directamente, una tasa de siete casos por cada mil estudiantes significa que el sistema disciplinario detecta y prueba algo así como el 0,7 % de una conducta que, en su versión más extrema, afecta al 12 %. Más del 27 % de las universidades que respondieron ni siquiera registraba la mala conducta con IA de forma separada."},
+
+{"t":"p","x":"La conclusión no es que las universidades sean laxas. Es que **la vía disciplinaria no puede escalar al tamaño del fenómeno**, y que sostenerla como respuesta principal produce un sistema arbitrario: sanciona a quien tiene mala suerte, no a quien incumple."},
+
+{"t":"h2","x":"3.4 La respuesta que sí está funcionando: los dos carriles"},
+
+{"t":"p","x":"El desplazamiento internacional más significativo de estos cuatro años es conceptual y muy simple: dejar de preguntarse **cómo impedir el uso de IA en cada tarea** y empezar a preguntarse **qué tareas necesitan garantía y cuáles necesitan desarrollo**."},
+
+{"t":"p","x":"La University of Sydney formalizó esa distinción en noviembre de 2024, con despliegue progresivo desde el primer semestre de 2025. Su modelo de dos carriles es deliberadamente binario:"},
+
+{"t":"table","cap":"Tabla 5. El modelo de dos carriles de la University of Sydney. Fuente institucional primaria: intranet de enseñanza y aprendizaje de la universidad.",
+ "head":["","Carril 1 · Evaluación segura","Carril 2 · Evaluación abierta"],
+ "w":[1700,3710,3710],
+ "align":["left","left","left"],
+ "rows":[
+ ["**Finalidad**","Evaluación **del** aprendizaje: verificar competencias nucleares","Evaluación **para** el aprendizaje: desarrollar conocimiento y criterio"],
+ ["**Uso de IA**","Sin ayudas externas","Uso productivo, declarado y responsable"],
+ ["**Formato**","Supervisada, presencial, en condiciones controladas","Trabajo abierto, con proceso documentado"],
+ ["**Nivel de decisión**","Programa, no asignatura: se verifica lo esencial del perfil de egreso","Asignatura: cada docente decide el diseño"],
+ ["**Función en el conjunto**","Sostiene la validez de la certificación","Sostiene la formación y prepara para el ejercicio real"]
+ ]},
+
+{"t":"p","x":"La virtud del modelo no está en ninguno de los dos carriles por separado —ambos existían— sino en dos decisiones de diseño que resuelven problemas reales. La primera: la garantía se traslada del nivel de la asignatura al nivel del **programa**, de modo que no toda tarea debe ser segura, solo el conjunto debe garantizar el perfil de egreso. La segunda: al declarar explícitamente qué carril es cada tarea, se elimina la ambigüedad que hoy angustia por igual a estudiantes y docentes."},
+
+{"t":"p","x":"El regulador australiano, TEQSA, encuadró este movimiento sin imponer un método único. Sus dos principios son que la evaluación debe preparar para participar ética y activamente en una sociedad donde la IA es ubicua, y que formar juicios fiables sobre el aprendizaje exige enfoques múltiples, inclusivos y contextualizados. En septiembre de 2025 publicó una guía de aplicación específica. Australia es hoy el sistema nacional que ha llevado más lejos la reforma evaluativa, y lo ha hecho por vía regulatoria antes que por adopción tecnológica."},
+
+{"t":"p","x":"El modelo se está difundiendo. La University of Bath anunció el abandono de su sistema de semáforo en favor de un enfoque de dos carriles basado en principios a partir del curso 2026-27."},
+
+{"t":"h2","x":"3.5 Una tipología de seis regímenes"},
+
+{"t":"p","x":"Bajo la superficie de las políticas institucionales existen seis regímenes distintos de uso de IA en evaluación. Distinguirlos importa porque cada uno exige un instrumento diferente y produce un tipo de evidencia diferente."},
+
+{"t":"table","cap":"Tabla 6. Tipología de regímenes de uso de IA en la evaluación universitaria. Elaboración propia a partir de las políticas institucionales examinadas.",
+ "head":["Régimen","Qué se permite","Qué evidencia produce","Cuándo es apropiado"],
+ "w":[1500,2400,2700,2520],
+ "align":["left","left","left","left"],
+ "rows":[
+ ["**1. Prohibida**","Ningún uso","Capacidad autónoma, si y solo si hay supervisión efectiva","Verificación de competencias nucleares. Inútil sin supervisión real."],
+ ["**2. Restringida**","Usos delimitados y enumerados","Capacidad autónoma en el núcleo, asistida en la periferia","Tareas complejas donde solo una parte debe garantizarse."],
+ ["**3. Permitida con declaración**","Uso libre con obligación de declararlo","Depende enteramente de la honestidad de la declaración","Régimen de transición. Es el más extendido y el más frágil."],
+ ["**4. Integrada**","El uso forma parte del diseño de la tarea","Capacidad de trabajar con el sistema","Tareas que replican el ejercicio profesional real."],
+ ["**5. Requerida**","El uso es obligatorio","Capacidad de dirigir, criticar y corregir el sistema","Cuando el objetivo de aprendizaje es la colaboración humano-IA."],
+ ["**6. Evaluada como competencia**","El uso es en sí mismo el objeto de evaluación","Juicio, verificación, criterio y responsabilidad sobre lo asistido","El régimen más exigente y el más escaso. Requiere rúbricas propias."]
+ ]},
+
+{"t":"callout","h":"Dónde está realmente el sistema","c":"ochre","x":"La abrumadora mayoría de las políticas institucionales examinadas se sitúa en el régimen 3, permitida con declaración. Es comprensible como transición y es insostenible como estado final: descansa por completo en una declaración que no puede verificarse, y coloca al estudiante honesto en desventaja frente al que no declara. Los regímenes 5 y 6 son los únicos que producen evidencia sobre lo que realmente importa en un entorno profesional mediado por IA, y son los menos frecuentes."},
+
+{"t":"h2","x":"3.6 Qué instrumentos resisten y cuáles no"},
+
+{"t":"p","x":"No todos los instrumentos de evaluación perdieron validez al mismo tiempo ni en el mismo grado. La siguiente tabla ordena los principales según su capacidad de seguir informando sobre lo que un estudiante sabe hacer."},
+
+{"t":"table","cap":"Tabla 7. Validez de los instrumentos de evaluación universitaria ante la disponibilidad general de IA generativa. Valoración propia a partir de la evidencia recogida.",
+ "head":["Instrumento","Validez residual","Diagnóstico"],
+ "w":[2300,1400,5420],
+ "align":["left","center","left"],
+ "rows":[
+ ["Ensayo domiciliario y trabajo escrito no supervisado","**Muy baja**","Es el instrumento directamente invalidado por el experimento de Reading. Conserva valor formativo; ha perdido valor certificador."],
+ ["Cuestionario de opción múltiple en línea","**Muy baja**","Resuelto trivialmente por cualquier modelo actual. Solo sirve con supervisión."],
+ ["Ejercicio de programación entregado","**Baja**","La generación de código es una de las capacidades más maduras. Conserva valor si se evalúa la depuración, la arquitectura o la justificación de decisiones."],
+ ["Revisión bibliográfica","**Baja**","Producible en minutos. Recupera validez si se exige verificación de fuentes y trazabilidad."],
+ ["Trabajo con proceso documentado y versionado","**Media**","La trazabilidad del proceso es más costosa de simular que el producto, aunque no imposible."],
+ ["Portafolio con evidencia de proceso","**Media-alta**","Difícil de fabricar en bloque; exige sostener coherencia a lo largo del tiempo."],
+ ["Examen presencial supervisado","**Alta**","Recupera plena validez, al precio de volver a lo que la pedagogía criticaba con razón: memorización, artificialidad, ansiedad."],
+ ["Defensa oral y examen oral","**Muy alta**","Verifica comprensión en tiempo real y es prácticamente inmune. Su límite es el coste en horas docentes."],
+ ["Desempeño observado, simulación y práctica clínica","**Muy alta**","Evalúa la ejecución, no el entregable. Es el instrumento más robusto y el más caro."],
+ ["Trabajo asistido por IA con defensa oral posterior","**Muy alta**","Combina realismo profesional con verificación. Es, a nuestro juicio, la arquitectura más prometedora del periodo."]
+ ]},
+
+{"t":"p","x":"El patrón es inequívoco: **la validez se ha desplazado del producto hacia el desempeño y la defensa**. Y esa migración tiene un coste que casi ninguna institución ha presupuestado, porque la evaluación oral y la observación de desempeño consumen tiempo docente en proporción directa al número de estudiantes, precisamente el recurso que las universidades llevan tres décadas comprimiendo."},
+
+{"t":"callout","h":"La tensión que nadie ha resuelto","c":"navy","x":"El rediseño evaluativo que la evidencia recomienda —menos producto, más proceso, más defensa oral— es estructuralmente más caro que el que sustituye. Al mismo tiempo, la mayoría de los sistemas universitarios enfrenta restricción presupuestaria y ratios crecientes. O la reforma evaluativa consigue financiación específica, o se degradará en una versión simbólica: rúbricas nuevas sobre prácticas viejas. Este es el principal riesgo de fracaso del periodo 2026-2030, y es económico, no pedagógico."}
+]
