@@ -94,9 +94,13 @@ desplazando; eso no es jugar.
 Viewports de la última revisión —31-08-2026, todos **PASS**—: 1920×1080,
 1366×768, 1366×650, 1280×720, 1280×600, 390×844 y 844×390.
 
-Umbral conocido: por debajo de 704 px de alto la sala deja de dibujarse. Es
-deliberado —es decoración con `aria-hidden`— y es lo que permite que las nueve
-opciones del alegato quepan sin desplazar nada. Ver D-027.
+- [ ] La sala se dibuja y llena el ancho del hueco, sin franjas negras a los
+      lados, en las seis pantallas y en los seis viewports de escritorio.
+- [ ] Al hablar un personaje, la cámara lo deja dentro de la banda visible.
+
+Umbral conocido: la sala sólo deja de dibujarse por debajo de 432 px de alto
+—un teléfono en horizontal—, donde la cabina entera mide 297 px. En todo lo
+demás se ve. Ver D-027.
 
 ## Móvil
 

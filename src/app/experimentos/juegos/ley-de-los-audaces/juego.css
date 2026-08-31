@@ -407,15 +407,19 @@ body[data-juego-inmersivo='true'] {
 }
 
 /*
- * Viewport bajo: la sala se va.
+ * La sala se queda.
  *
- * Es decoración —lleva `aria-hidden`— y por debajo de unos 640 px de alto sólo
- * puede ser una rendija letterboxed de cien píxeles. Medido a 1280×600: con la
- * sala puesta, tres de las nueve opciones del alegato quedaban fuera y había
- * que desplazar la lista; sin ella caben las nueve. Entre un dibujo inútil y
- * una decisión completa, gana la decisión.
+ * Hubo una versión que la escondía por debajo de 704 px de alto, para que las
+ * nueve opciones del alegato cupieran sin desplazar la lista. Era el umbral
+ * equivocado: un portátil de 1366×768 tiene un viewport real de unos 650 px,
+ * así que la sala desaparecía precisamente en la pantalla más común. El
+ * tribunal es la mitad de la promesa del juego; que una lista larga se
+ * desplace por dentro es un precio muy inferior a jugar sin sala.
+ *
+ * Sólo desaparece en alturas donde ya no cabría nada: un teléfono en
+ * horizontal, donde la cabina entera mide 297 px.
  */
-@media (max-height: 44rem) {
+@media (max-height: 27rem) {
   .cabina-audaces .escena {
     display: none;
   }
@@ -436,14 +440,20 @@ body[data-juego-inmersivo='true'] {
    */
   flex: 0 1 auto;
   min-height: 0;
-  /* Guardia para monitores muy altos: sin ella, un nodo con muchas opciones se
-     comería el escenario en 4K. */
-  max-height: 32rem;
+  /*
+   * Dos topes. El de rem guarda los monitores muy altos: sin él, un nodo con
+   * muchas opciones se comería el escenario en 4K. El proporcional garantiza
+   * que a la sala siempre le queden unas 11 rem, que es lo que necesita para
+   * leerse como una sala y no como una rendija. Cuando el panel no cabe en lo
+   * que le toca, se desplaza por dentro: la barra de acciones sigue fuera de
+   * ese desplazamiento.
+   */
+  max-height: min(32rem, calc(100% - 11rem));
   background: var(--ink);
 }
 
 /* Sin escena, el panel es el juego entero y puede quedarse con todo el alto. */
-@media (max-height: 44rem) {
+@media (max-height: 27rem) {
   .cabina-audaces .audaces-panel {
     flex: 1 1 auto;
     max-height: none;

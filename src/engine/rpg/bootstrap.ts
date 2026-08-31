@@ -20,10 +20,20 @@ export async function crearJuego(padre: HTMLElement, reparto: Reparto): Promise<
     roundPixels: true,
     antialias: false,
     scale: {
-      // FIT conserva la proporción 16:9 y encaja en el hueco que le deje la
-      // cabina, sea cual sea. La escena no impone alto a la página: es al
-      // revés. Ver D-027.
-      mode: Phaser.Scale.FIT,
+      /*
+       * ENVELOP, no FIT.
+       *
+       * La escena no impone alto a la página: se conforma con el hueco que le
+       * deje la cabina (D-027). Ese hueco es ancho y bajo, y con FIT la sala
+       * quedaba encajada en 311 px dentro de un hueco de 1082, con 770 px de
+       * franjas negras a los lados: un sello, no un tribunal. ENVELOP cubre el
+       * hueco y recorta arriba y abajo, que es lo que hace una cámara.
+       *
+       * La proporción se conserva en ambos casos; nadie se deforma. Lo que
+       * cambia es qué sobra: antes sobraba fondo a los lados, ahora sobra
+       * techo y suelo, que es donde no pasa nada.
+       */
+      mode: Phaser.Scale.ENVELOP,
       autoCenter: Phaser.Scale.CENTER_BOTH,
     },
     /*
