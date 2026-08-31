@@ -1,0 +1,56 @@
+/**
+ * components/rpg/rpg.css
+ *
+ * Lo mínimo que no puede vivir en estilos en línea: keyframes y la regla de
+ * escalado de píxel. Importar una vez en el layout del RPG.
+ *
+ *   import '@/components/rpg/rpg.css';
+ *
+ * Todo lo demás (colores, variantes de cuadro, tipografías) sale del registro de
+ * personajes, no de aquí. Este archivo no debe crecer con estilos de personaje.
+ */
+
+@keyframes rpgNudge {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+}
+
+/* Deriva del barrido de EVA. La animación es de la interfaz, no del PNG: así el
+   sprite horneado y el procedural se comportan igual. */
+@keyframes rpgEvaDrift {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: 4px;
+  }
+}
+
+/* El pixel art nunca se interpola, en ningún navegador. */
+.rpg-pixel,
+.rpg-pixel img,
+.rpg-dialogue-portrait img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* El retrato se apoya en el borde inferior del cuadro, sin marco propio. */
+.rpg-dialogue-portrait {
+  flex: 0 0 auto;
+  margin-right: -6px;
+  margin-bottom: -2px;
+  filter: drop-shadow(0 2px 0 rgba(18, 16, 15, 0.55));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rpg-eva-drift {
+    animation: none !important;
+  }
+}

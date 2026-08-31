@@ -3,7 +3,9 @@
   "version": "0.3.0",
   "private": true,
   "description": "Laboratorio digital experimental — Eduardo Aldunate Lizana. Prototipo académico, no oficial PUCV.",
-  "engines": { "node": "22.x" },
+  "engines": {
+    "node": "22.x"
+  },
   "allowScripts": {
     "sharp@0.35.4": true,
     "unrs-resolver@1.12.2": true
@@ -14,7 +16,11 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "verify": "npm run typecheck && npm run lint && npm run build"
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "juego:arte": "node scripts/rpg-art/bake.mjs",
+    "juego:suelto": "tsx scripts/standalone/dump.mts && node scripts/standalone/build.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -23,7 +29,9 @@
     "next": "16.3.3",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "phaser": "^3.90.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
@@ -33,6 +41,8 @@
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.3",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "tsx": "^4.21.0"
   }
 }

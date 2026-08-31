@@ -292,3 +292,127 @@ habría retrocedido una versión mayor a cambio de nada.
 **Regla general.** Un PR automático de seguridad no se acepta por el hecho de
 serlo. Se compara contra el estado real de `main`: si la vulnerabilidad ya está
 resuelta por otra vía, el parche propuesto puede ser un retroceso.
+
+
+---
+
+## D-020 · El juego se aloja aquí, no se enlaza
+
+**Qué.** «La Ley de los Audaces» —RPG jurídico— deja de ser una idea y pasa a
+vivir dentro de este repositorio: código, arte, documentación y encargos a
+agentes. Se juega en `/experimentos/juegos/ley-de-los-audaces`.
+
+**Por qué.** El valor del experimento no está sólo en que se pueda jugar, sino en
+que se pueda **auditar**: ver el guion, el reparto, las fuentes normativas con su
+estado, la dirección de arte y las decisiones, sin salir del árbol. Repartido en
+dos repositorios eso se pierde, y con ello la posibilidad de corregirlo o de
+derivar escenarios nuevos sin reconstruir el contexto.
+
+**El riesgo, y qué se hizo con él.** El juego es un thriller: incriminación,
+prisión, fuga. Alojarlo bajo un sitio que lleva el escudo de la Escuela no es
+neutro. Se acota en vez de ignorarse: la ficha abre con un aviso de ficción antes
+del juego, el juego declara que no habla por nadie, el `noindex` y la franja de
+prototipo se mantienen, y el reparto y las fuentes se publican en la propia ficha
+para que cualquiera compruebe que nada es real.
+
+**Lo que la técnica no resuelve.** Antes de quitar el `noindex` o difundir el
+enlace, corresponde que el profesor sepa qué se aloja bajo su laboratorio.
+
+**Descartado.** Repositorio y dominio propios, enlazados desde aquí. Era la
+opción más prudente y la menos auditable.
+
+---
+
+## D-021 · La ficha del juego se puede jugar y revisar
+
+**Qué.** `/experimentos/juegos/ley-de-los-audaces` tiene dos mitades: arriba se
+juega, abajo se audita —de qué está hecho el capítulo, qué reparto lo interpreta,
+qué referencias normativas usa y en qué estado de verificación está cada una—.
+
+**Por qué.** Un experimento que sólo se puede jugar es una demo. Los recuentos se
+calculan del propio contenido, no se escriben a mano: si alguien añade un nodo o
+una fuente, la ficha lo refleja sola y no puede quedar desactualizada.
+
+---
+
+## D-022 · El juego trae sus propias excepciones de lint
+
+**Qué.** `react-hooks/set-state-in-effect` baja a aviso en
+`src/components/rpg/*.tsx` y `src/hooks/rpg/*.ts`.
+
+**Por qué.** Es una heurística de rendimiento, no una regla de corrección, y esos
+archivos sincronizan estado con fuentes externas: temporizadores de animación,
+manifiesto de assets, efecto de tecleo. Llegaron como paquete cerrado y
+funcionan; reescribirlos para silenciar un aviso arriesga más de lo que gana.
+
+**Lo que no se relaja.** El código propio del juego no usa ese patrón, y el resto
+del sitio conserva la regla como error.
+
+---
+
+## D-023 · La paleta del juego vive en tres copias
+
+**Qué.** Los colores del juego existen en `src/lib/rpg/art/palette.mjs` (motor de
+arte), en `src/app/experimentos/juegos/ley-de-los-audaces/juego.css` (interfaz) y
+en `src/engine/rpg/CourtroomScene.ts` (Phaser).
+
+**Por qué.** Los tres consumidores hablan idiomas distintos: el motor de arte
+corre en Node y en el navegador sin compilador, la interfaz usa variables CSS y
+Phaser necesita enteros. No hay fuente única que los tres puedan leer sin añadir
+un paso de compilación.
+
+**Regla.** Es la **única** duplicación de color aceptada en el repositorio.
+Cambiar un token obliga a cambiar los tres.
+
+---
+
+## D-024 · Una tarjeta con salida propia deja de ser una tarjeta-enlace
+
+**Qué.** En `/experimentos`, la ficha de un experimento se envuelve en un enlace
+sólo si la propia ficha no trae ya uno. Desde que `ExperimentCard` pinta el botón
+«Jugar» cuando hay `jugableEn`, envolverla producía un `<a>` dentro de otro `<a>`.
+
+**Por qué.** No es una preferencia de estilo: es HTML inválido, y React lo
+resuelve descartando el árbol servido y rehidratando la página entera. Se veía
+como un parpadeo en `/experimentos` y desactivaba la mejora progresiva de esa
+ruta. El error sólo aparece en la consola del navegador; `npm run verify` compila
+y pasa sin quejarse.
+
+**Regla general.** Un contenedor clicable y un botón dentro de él no pueden ser
+ambos enlaces. Cuando una ficha gane su propia acción, la tarjeta cede.
+
+---
+
+## D-025 · Las piezas de una familia se cuentan por destino, no por igualdad
+
+**Qué.** El recuento de piezas por familia en `/experimentos` compara con
+`startsWith`, no con `===`.
+
+**Por qué.** Cuando una pieza se vuelve jugable gana ruta propia
+—`/experimentos/juegos/ley-de-los-audaces`— y deja de ser igual a la ruta de su
+familia. La tarjeta «Juegos» anunciaba una pieza cuando había dos. Un catálogo
+que publica el estado real de cada experimento no puede equivocarse contando los
+suyos.
+
+**Consecuencia.** Las piezas de la familia `lectura`, que viven bajo
+`/experimentos/gramatiquerias`, siguen contándose donde el lector las encuentra.
+El recuento agrupa por dónde va a parar el usuario, no por cómo está etiquetado
+el dato.
+
+---
+
+## D-026 · El juego va arriba en su sección, y entero
+
+**Qué.** `/experimentos/juegos` abre con un bloque destacado de La Ley de los
+Audaces —estado, promesa, botón «Jugar el Capítulo 0», enlace a su documentación
+y cuatro cifras calculadas del propio capítulo— antes del catálogo. La grilla de
+abajo pasa a mostrar sólo lo que todavía no se puede tocar.
+
+**Por qué.** Un prototipo jugable y una idea sin escribir no son dos elementos
+del mismo tipo. Ponerlos en la misma grilla de dos columnas los empata
+visualmente y obliga a leer las etiquetas para distinguirlos. La jerarquía hace
+ese trabajo antes que el texto.
+
+**Las cifras se calculan, no se escriben.** Nodos, decisiones, reparto y
+referencias por verificar salen de `prologo`, `CHARACTERS` y `legalSources`. Un
+número escrito a mano en una plantilla dice trece nodos cuando ya hay veinte.

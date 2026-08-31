@@ -218,6 +218,14 @@ export interface Experiment {
   demoContent: boolean;
   family: 'constitucion' | 'gramatiquerias' | 'juegos' | 'lectura';
   href?: string;
+  /**
+   * Ruta donde la pieza se juega de verdad, si existe.
+   *
+   * El botón sólo se pinta cuando este campo tiene valor: una ficha que promete
+   * una pieza jugable inexistente es peor que una ficha sin botón. Misma regla
+   * que la descarga de los informes.
+   */
+  jugableEn?: string;
 }
 
 /* ────────────────────────────── EVA ────────────────────────────── */

@@ -1,4 +1,6 @@
-import { Badge, Surface } from '@/components/common/ui';
+import { ArrowUpRight } from 'lucide-react';
+
+import { Badge, ButtonLink, Surface } from '@/components/common/ui';
 import type { Experiment, ExperimentStatus, Tone } from '@/types';
 
 const statusMeta: Record<ExperimentStatus, { label: string; tone: Tone }> = {
@@ -34,6 +36,13 @@ export function ExperimentCard({ experiment }: { experiment: Experiment }) {
       <p className="mt-3.5 text-sm leading-relaxed text-muted-foreground">
         {experiment.description}
       </p>
+
+      {experiment.jugableEn && (
+        <ButtonLink href={experiment.jugableEn} size="sm" variant="outline" className="mt-5 self-start">
+          Jugar
+          <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+        </ButtonLink>
+      )}
     </Surface>
   );
 }

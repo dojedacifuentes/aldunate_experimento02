@@ -30,3 +30,5 @@ desktop.ini
 *.log
 npm-debug.log*
 /.npm-cache/
+dist/
+.tmp/

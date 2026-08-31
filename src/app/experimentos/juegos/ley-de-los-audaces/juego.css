@@ -1,0 +1,162 @@
+/**
+ * Estilos del juego, acotados a `.cabina-audaces`.
+ *
+ * El juego es de un solo tono —tinta, marfil, burdeos, oro— y el sitio tiene
+ * tema dual. En vez de pelear, el juego vive dentro de una cabina que declara
+ * sus propios tokens: se lee igual en modo nocturno y en modo institucional, y
+ * ni uno solo de estos colores se escapa al resto del sitio.
+ *
+ * Cambiar un token aquí obliga a cambiarlo también en
+ * `src/lib/rpg/art/palette.mjs` y en `src/engine/rpg/CourtroomScene.ts`. Esa
+ * triple copia está anotada en `docs/DECISIONS.md`.
+ */
+
+@import '../../../../components/rpg/rpg.css';
+
+.cabina-audaces {
+  --ink: #12100f;
+  --charcoal: #1b1917;
+  --charcoal-soft: #2a2724;
+  --charcoal-lift: #3a3632;
+  --ivory: #ede6d6;
+  --ivory-dim: #d6cdb9;
+  --ivory-deep: #b9af99;
+  --burgundy: #8a2432;
+  --burgundy-lift: #a84150;
+  --gold: #b78c30;
+  --gold-lift: #d6ae58;
+  --stone: #6e6a63;
+  --stone-dim: #4c4945;
+  --juego-serif: ui-serif, Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --juego-mono: ui-monospace, 'SF Mono', Menlo, 'Cascadia Mono', Consolas, monospace;
+
+  color-scheme: dark;
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--juego-serif);
+  line-height: 1.6;
+  border: 1px solid var(--charcoal-lift);
+  overflow: hidden;
+}
+
+/* La cabina no ocupa la pantalla: vive dentro de la página del laboratorio. */
+.cabina-audaces main {
+  min-height: 0;
+}
+
+.cabina-audaces .mono {
+  font-family: var(--juego-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+}
+
+.cabina-audaces h1,
+.cabina-audaces h2,
+.cabina-audaces h3 {
+  font-family: var(--juego-serif);
+  font-weight: 400;
+}
+
+.cabina-audaces input {
+  background: transparent;
+  border: 1px solid var(--charcoal-lift);
+  color: var(--ivory);
+  font-family: var(--juego-serif);
+}
+
+.cabina-audaces input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+/* ── Escena ─────────────────────────────────────────────────────────────── */
+
+.cabina-audaces .escena {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+  border-bottom: 1px solid var(--charcoal-lift);
+  overflow: hidden;
+}
+
+.cabina-audaces .escena-canvas,
+.cabina-audaces .escena-canvas canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cabina-audaces .escena-aviso {
+  position: absolute;
+  inset: auto 0 1rem 0;
+  text-align: center;
+  color: var(--stone);
+}
+
+/* ── Barras ─────────────────────────────────────────────────────────────── */
+
+.cabina-audaces .barra {
+  height: 4px;
+  background: var(--charcoal-lift);
+  overflow: hidden;
+}
+
+.cabina-audaces .barra > span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  transition: width 260ms ease-out;
+}
+
+/* ── Opciones ───────────────────────────────────────────────────────────── */
+
+.cabina-audaces .opcion {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--charcoal-lift);
+  background: color-mix(in srgb, var(--charcoal) 88%, transparent);
+  color: var(--ivory);
+  padding: 0.85rem 1rem;
+  font-family: var(--juego-serif);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  cursor: pointer;
+  transition:
+    border-color 140ms ease,
+    background 140ms ease,
+    transform 140ms ease;
+}
+
+.cabina-audaces .opcion:hover:not(:disabled),
+.cabina-audaces .opcion:focus-visible {
+  border-color: var(--gold);
+  background: var(--charcoal-soft);
+  outline: none;
+  transform: translateX(2px);
+}
+
+.cabina-audaces .opcion:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cabina-audaces .opcion[data-elegida='true'] {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 12%, var(--charcoal));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cabina-audaces *,
+  .cabina-audaces *::before,
+  .cabina-audaces *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .cabina-audaces .opcion:hover:not(:disabled) {
+    transform: none;
+  }
+}

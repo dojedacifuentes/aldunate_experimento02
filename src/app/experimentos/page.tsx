@@ -48,7 +48,10 @@ export default function ExperimentosPage() {
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {experimentFamilies.map((family) => {
-            const n = experiments.filter((e) => e.href === family.href).length;
+            // Se cuenta por destino, no por igualdad exacta: desde que una
+            // pieza jugable tiene su propia ruta (`/experimentos/juegos/…`),
+            // comparar con `===` la dejaba fuera del recuento de su familia.
+            const n = experiments.filter((e) => e.href?.startsWith(family.href)).length;
             return (
               <Link key={family.id} href={family.href} className="group">
                 <Surface interactive className="flex h-full flex-col p-6">
@@ -83,7 +86,14 @@ export default function ExperimentosPage() {
         <ul className="grid gap-4 md:grid-cols-2">
           {experiments.map((exp) => (
             <li key={exp.id}>
-              {exp.href ? (
+              {/*
+                Una ficha jugable trae su propio botón «Jugar», que ya es un
+                enlace. Envolverla además en un enlace de tarjeta anida un <a>
+                dentro de otro: HTML inválido que rompe la hidratación de toda
+                la página. Cuando la ficha tiene su propia salida, la tarjeta
+                deja de ser un enlace.
+              */}
+              {exp.href && !exp.jugableEn ? (
                 <Link href={exp.href} className="block h-full">
                   <ExperimentCard experiment={exp} />
                 </Link>
