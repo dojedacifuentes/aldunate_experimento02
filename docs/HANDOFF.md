@@ -1,6 +1,6 @@
 # HANDOFF — estado del proyecto
 
-**Última actualización:** 2026-08-30 · versión `0.3.0`
+**Última actualización:** 2026-08-31 · versión `0.3.0`
 
 Documento para que cualquier persona o agente retome el trabajo sin haber estado
 en la sesión anterior. Se actualiza al cerrar cada sesión.
@@ -60,6 +60,9 @@ experimentos interactivos que funcionan de verdad.
 | `/investigacion` (método + esquemas) | ✅ |
 | Responsive, accesibilidad, reduced-motion | ✅ |
 | Documentación de trazabilidad | ✅ |
+| La Ley de los Audaces · Capítulo 0 jugable + ficha auditable | ✅ |
+| Auditoría del repositorio (`docs/AUDITORIA-2026-08-31.md`) | ✅ |
+| Hoja de ruta del puente (`docs/PUENTE-Y-HOJA-DE-RUTA.md`) | ✅ |
 
 ---
 
@@ -139,7 +142,16 @@ No reabrir: la vulnerabilidad se resolvió por otra vía en `1199fbf`.
 
 ## 4. Siguiente paso recomendado
 
-En este orden:
+La auditoría del 31-08-2026 (`docs/AUDITORIA-2026-08-31.md`, §7) reordenó esta
+lista. Lo primero ya no es el contenido académico —que depende de terceros— sino
+cerrar lo que no depende de nadie:
+
+0. **Darle un artefacto a tres fichas del laboratorio** (prompt acotado, flujo
+   verificable, rúbrica de trazabilidad) y bajar a `idea` lo que no lo tenga.
+   Hoy `/laboratorio` es la única sección del sitio que no cumple la regla que
+   el propio sitio impone. Ver auditoría §4 y §7.
+
+Después, en este orden:
 
 1. **Cargar contenido académico verificado** en cuanto llegue. Es lo que
    convierte el andamiaje en laboratorio. Empezar por publicaciones: es el
