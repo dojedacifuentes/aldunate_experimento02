@@ -416,3 +416,61 @@ ese trabajo antes que el texto.
 **Las cifras se calculan, no se escriben.** Nodos, decisiones, reparto y
 referencias por verificar salen de `prologo`, `CHARACTERS` y `legalSources`. Un
 número escrito a mano en una plantilla dice trece nodos cuando ya hay veinte.
+
+---
+
+## D-027 · El juego es una pantalla, no un tramo de página
+
+**Qué.** `/experimentos/juegos/ley-de-los-audaces` abre con la cabina del juego,
+que mide `100dvh` menos el cromo del sitio y resuelve dentro todo su
+desbordamiento. La cabecera de la página, el aviso de ficción y la ficha
+auditable pasan a estar **debajo**.
+
+**Por qué.** Medido el 31-08-2026 a 1366×768 antes del cambio: la cabina
+empezaba en el píxel 895 y medía 729, de modo que había que desplazar la página
+para empezar a jugar y seguía sin caber entera. La creación de personaje medía
+1207 px en un viewport de 768. Un juego al que hay que perseguir con la rueda no
+es un juego: es un artículo con un juego dentro.
+
+**Cómo.**
+
+- La cabina es una rejilla de dos filas —barra superior y cuerpo— con alto
+  definido y `overflow: hidden`.
+- El cuerpo reparte: escena con `flex: 1 1 0`, panel con `flex: 0 1 auto`. La
+  escena se queda con lo que sobra y encoge primero; el panel pide lo suyo y
+  encoge después; la barra de acciones no encoge nunca.
+- El único desplazamiento permitido es el del cuerpo de un panel, y la acción
+  principal siempre queda fuera de él.
+
+**El cromo se mide en JavaScript, y es la única medición del juego.** La
+distancia entre el inicio del documento y la cabina —franja de prototipo más
+cabecera pegajosa— no se puede expresar en CSS. Se mide con un `ResizeObserver`
+sobre `body`, sin sondeo y sin manejadores de `scroll`, y hay un valor de
+reserva en CSS para el primer pintado. **No se mide mientras el juego está a
+pantalla completa**: ahí la cabina es `fixed`, su distancia al documento es cero,
+y guardarla dejaba la cabina desbordando justo lo que mide el cromo al salir.
+
+**Por debajo de 704 px de alto, la sala no se dibuja.** Es decoración
+—`aria-hidden`— y a esa altura sólo puede ser una rendija de cien píxeles. Sin
+ella, las nueve opciones del alegato caben sin desplazar nada; con ella, tres se
+quedaban fuera. Entre un dibujo inútil y una decisión completa, gana la decisión.
+
+**Lo que no se hizo.** No hay `transform: scale()` ni `zoom` ni tipografías
+reducidas para forzar el encaje. El texto se mueve entre `0.95rem` y `1.0625rem`
+y los botones conservan 40 px de alto en el modo más apretado.
+
+**Pantalla completa propia, no la del navegador.** Un botón en la barra superior
+pone la cabina en `fixed`. Nadie debería tener que pulsar F11 para jugar, y el
+juego tiene que funcionar igual en una pestaña normal.
+
+---
+
+## D-028 · La franja de prototipo viaja con el juego
+
+**Qué.** La barra superior de la cabina lleva su propio rótulo «Ficción ·
+prototipo», además del que la página ya muestra.
+
+**Por qué.** A pantalla completa la página no se ve, y con ella desaparecerían
+la franja del layout raíz y el aviso de ficción. La regla dura 3 de `CLAUDE.md`
+no admite que exista un estado de la interfaz sin ese rótulo. Duplicarlo cuesta
+una línea; perderlo cuesta la regla.

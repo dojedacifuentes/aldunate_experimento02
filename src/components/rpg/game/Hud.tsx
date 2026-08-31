@@ -7,9 +7,16 @@ import { useAudaces } from '@/state/rpg/useAudaces';
 /**
  * HUD.
  *
- * Muestra lo que cambia y nada más. Las seis estadísticas completas viven en la
- * pausa: en pantalla permanente sólo van nivel, XP, impulso y expediente, que
- * son las que se mueven durante una audiencia.
+ * Muestra lo que cambia y nada más: nivel, XP, impulso y expediente, que son
+ * las cifras que se mueven durante una audiencia. Las seis estadísticas
+ * completas viven también en la pausa, que es donde hay sitio para leerlas.
+ *
+ * Dos formas, una sola marca: columna lateral cuando hay ancho, y banda
+ * horizontal compacta cuando no. El reparto lo hace el CSS —`audaces-hud`—;
+ * aquí no hay ninguna medición ni ningún `matchMedia`.
+ *
+ * El expediente es la única lista que puede crecer sin límite, así que es la
+ * única que se desplaza por dentro. Nada de lo que hay aquí empuja al juego.
  */
 export function Hud() {
   const player = useAudaces((s) => s.player);
@@ -21,54 +28,53 @@ export function Hud() {
   const mult = multiplicador(combo);
 
   return (
-    <aside
-      className="flex flex-col gap-4 border-l p-4"
-      style={{ borderColor: 'var(--charcoal-lift)', background: 'var(--charcoal)' }}
-    >
-      <header className="flex items-center gap-3">
+    <aside className="audaces-hud" aria-label="Estado de la partida">
+      <header className="audaces-hud-id">
         <CharacterPortrait id={player.avatar} size={56} />
-        <div>
-          <p className="text-base leading-tight">{player.nombre}</p>
+        <div className="min-w-0">
+          <p className="truncate leading-tight">{player.nombre}</p>
           <p className="mono" style={{ color: 'var(--stone)' }}>
-            Nivel {player.nivel} · {player.xp} XP
+            Nv {player.nivel} · {player.xp} XP
           </p>
         </div>
       </header>
 
-      <div>
-        <div className="mono flex justify-between" style={{ color: 'var(--stone)' }}>
-          <span>Nivel</span>
-          <span>{Math.round(progresoNivel(player.xp) * 100)}%</span>
+      <div className="audaces-hud-barras">
+        <div>
+          <div className="mono flex justify-between gap-2" style={{ color: 'var(--stone)' }}>
+            <span>Nivel</span>
+            <span>{Math.round(progresoNivel(player.xp) * 100)}%</span>
+          </div>
+          <div className="barra mt-1">
+            <span style={{ width: `${progresoNivel(player.xp) * 100}%` }} />
+          </div>
         </div>
-        <div className="barra mt-1">
-          <span style={{ width: `${progresoNivel(player.xp) * 100}%` }} />
+
+        <div>
+          <div className="mono flex justify-between gap-2" style={{ color: 'var(--stone)' }}>
+            <span>Impulso</span>
+            <span style={{ color: mult > 1 ? 'var(--gold-lift)' : 'var(--stone)' }}>
+              {mult > 1 ? `×${mult}` : '—'}
+            </span>
+          </div>
+          <div className="barra mt-1">
+            <span
+              style={{
+                width: `${(impulso / IMPULSO_MAX) * 100}%`,
+                background: mult > 1 ? 'var(--gold-lift)' : 'var(--gold)',
+              }}
+            />
+          </div>
         </div>
       </div>
 
-      <div>
-        <div className="mono flex justify-between" style={{ color: 'var(--stone)' }}>
-          <span>Impulso</span>
-          <span style={{ color: mult > 1 ? 'var(--gold-lift)' : 'var(--stone)' }}>
-            {mult > 1 ? `combo ×${mult}` : '—'}
-          </span>
-        </div>
-        <div className="barra mt-1">
-          <span
-            style={{
-              width: `${(impulso / IMPULSO_MAX) * 100}%`,
-              background: mult > 1 ? 'var(--gold-lift)' : 'var(--gold)',
-            }}
-          />
-        </div>
-      </div>
-
-      <div>
+      <div className="audaces-hud-exp">
         <p className="mono" style={{ color: 'var(--stone)' }}>
           Expediente · {evidencias.length}
         </p>
-        <ul className="mt-2 flex flex-col gap-2">
+        <ul className="audaces-hud-exp-lista">
           {evidencias.length === 0 && (
-            <li className="text-sm" style={{ color: 'var(--stone-dim)' }}>
+            <li className="audaces-hud-exp-vacio text-sm" style={{ color: 'var(--stone-dim)' }}>
               Todavía nada que proyectar.
             </li>
           )}
@@ -79,13 +85,15 @@ export function Hud() {
               style={{ borderColor: 'var(--charcoal-lift)' }}
             >
               <strong className="block font-normal">{e.nombre}</strong>
-              <span style={{ color: 'var(--stone)' }}>{e.resumen}</span>
+              <span className="audaces-hud-exp-detalle" style={{ color: 'var(--stone)' }}>
+                {e.resumen}
+              </span>
             </li>
           ))}
         </ul>
       </div>
 
-      <dl className="mono mt-auto grid grid-cols-2 gap-x-3 gap-y-1" style={{ color: 'var(--stone)' }}>
+      <dl className="audaces-hud-stats mono" style={{ color: 'var(--stone)' }}>
         {(
           [
             ['Arg', player.stats.argumentacion],
@@ -96,7 +104,7 @@ export function Hud() {
             ['Pre', player.stats.prestigio],
           ] as const
         ).map(([k, v]) => (
-          <div key={k} className="flex justify-between">
+          <div key={k} className="flex justify-between gap-2">
             <dt>{k}</dt>
             <dd style={{ color: 'var(--ivory-deep)' }}>{v}</dd>
           </div>

@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 
 import { Container, MetaRow, Notice, PendingBlock, Section } from '@/components/common/ui';
 import { EvaNote } from '@/components/eva/EvaNote';
-import { GameShell } from '@/components/rpg/game/GameShell';
+import { CabinaAudaces } from '@/components/rpg/game/CabinaAudaces';
 import { CHARACTER_IDS, CHARACTERS } from '@/data/rpg/characters';
 import { prologo } from '@/data/rpg/chapters/prologo';
 import { legalSources } from '@/data/rpg/legalSources';
@@ -35,7 +35,16 @@ export default function LeyDeLosAudacesPage() {
 
   return (
     <>
-      <header className="border-b border-border/70 py-12 sm:py-16">
+      {/*
+        El juego va primero y ocupa el alto disponible. No es una preferencia
+        estética: mientras estuvo debajo de la cabecera y del aviso, había que
+        desplazar 895 px para empezar a jugar y el juego seguía sin caber. La
+        cabina se mide contra el viewport y el resto de la página —que es la
+        ficha auditable, no el juego— queda debajo. D-027.
+      */}
+      <CabinaAudaces />
+
+      <header className="border-b border-border/70 py-10 sm:py-14">
         <Container>
           <Link
             href="/experimentos/juegos"
@@ -56,6 +65,9 @@ export default function LeyDeLosAudacesPage() {
             minutos y es todo lo que existe: el resto está en construcción, y se
             construye en este mismo repositorio.
           </p>
+          <p className="mono mt-6 text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
+            Teclado: 1–5 elegir · E o Espacio avanzar · Esc pausa
+          </p>
         </Container>
       </header>
 
@@ -66,12 +78,6 @@ export default function LeyDeLosAudacesPage() {
           van rotuladas según su estado de verificación y ninguna se presenta
           como Derecho vigente sin contraste. No es asesoría jurídica.
         </Notice>
-      </Section>
-
-      <Section eyebrow="Capítulo 0" title="El juicio" description="Teclado: 1–5 elegir · E o Espacio avanzar · Esc pausa.">
-        <div className="cabina-audaces">
-          <GameShell />
-        </div>
       </Section>
 
       {/* ── Auditoría ──────────────────────────────────────────────────── */}

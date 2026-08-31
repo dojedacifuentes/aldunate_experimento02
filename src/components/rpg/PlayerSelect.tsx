@@ -40,9 +40,21 @@ export interface PlayerSelectProps {
   onChange?: (id: CharacterId) => void;
   onConfirm?: (id: CharacterId) => void;
   className?: string;
+  /**
+   * Dentro de la creación de personaje esto es un paso de tres, no una
+   * pantalla: se queda sin titular propio y con las figuras más pequeñas, para
+   * que las tres decisiones quepan a la vez.
+   */
+  compacto?: boolean;
 }
 
-export function PlayerSelect({ value, onChange, onConfirm, className }: PlayerSelectProps) {
+export function PlayerSelect({
+  value,
+  onChange,
+  onConfirm,
+  className,
+  compacto = false,
+}: PlayerSelectProps) {
   const [selected, setSelected] = useState<CharacterId>(value ?? PLAYER_AVATARS[0].id);
 
   useEffect(() => {
@@ -62,11 +74,11 @@ export function PlayerSelect({ value, onChange, onConfirm, className }: PlayerSe
 
   const card = (active: boolean): CSSProperties => ({
     flex: 1,
-    minWidth: 240,
+    minWidth: compacto ? 180 : 240,
     background: active ? PALETTE.panelOn : PALETTE.panel,
     border: `1px solid ${active ? PALETTE.gold : PALETTE.border}`,
     borderRadius: 2,
-    padding: '18px 18px 20px',
+    padding: compacto ? '12px 14px 14px' : '18px 18px 20px',
     cursor: 'pointer',
     textAlign: 'left',
     color: PALETTE.ivory,
@@ -86,13 +98,23 @@ export function PlayerSelect({ value, onChange, onConfirm, className }: PlayerSe
       >
         Primer día
       </p>
-      <h2 style={{ margin: '0 0 8px', fontSize: 26, fontWeight: 500 }}>¿Quién entra hoy al estudio?</h2>
-      <p style={{ margin: '0 0 22px', color: PALETTE.ivoryDim, maxWidth: '56ch' }}>
-        Las dos plazas de junior son idénticas sobre el papel. Lo que cambia es a quién van a
-        mirar cuando algo salga mal.
-      </p>
+      {!compacto && (
+        <>
+          <h2 style={{ margin: '0 0 8px', fontSize: 26, fontWeight: 500 }}>
+            ¿Quién entra hoy al estudio?
+          </h2>
+          <p style={{ margin: '0 0 22px', color: PALETTE.ivoryDim, maxWidth: '56ch' }}>
+            Las dos plazas de junior son idénticas sobre el papel. Lo que cambia es a quién van a
+            mirar cuando algo salga mal.
+          </p>
+        </>
+      )}
 
-      <div role="radiogroup" aria-label="Avatar" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+      <div
+        role="radiogroup"
+        aria-label="Avatar"
+        style={{ display: 'flex', gap: compacto ? 12 : 16, flexWrap: 'wrap' }}
+      >
         {PLAYER_AVATARS.map((option) => {
           const def = getCharacter(option.id);
           const active = selected === option.id;
@@ -106,13 +128,32 @@ export function PlayerSelect({ value, onChange, onConfirm, className }: PlayerSe
               onDoubleClick={() => onConfirm?.(option.id)}
               style={card(active)}
             >
-              <div style={{ display: 'flex', alignItems: 'flex-end', gap: 14, marginBottom: 14 }}>
-                <CharacterPortrait id={option.id} mood={active ? 'friendly' : 'neutral'} size={104} />
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  gap: compacto ? 10 : 14,
+                  marginBottom: compacto ? 10 : 14,
+                }}
+              >
+                <CharacterPortrait
+                  id={option.id}
+                  mood={active ? 'friendly' : 'neutral'}
+                  size={compacto ? 72 : 104}
+                />
                 {/* Andando, no quieto: es como se le va a ver el 90 % del tiempo. */}
-                <CharacterSprite id={option.id} facing="down" moving={active} scale={2} paused={!active} />
+                <CharacterSprite
+                  id={option.id}
+                  facing="down"
+                  moving={active}
+                  scale={compacto ? 1 : 2}
+                  paused={!active}
+                />
               </div>
 
-              <p style={{ margin: '0 0 2px', fontSize: 18, fontWeight: 500 }}>{option.label}</p>
+              <p style={{ margin: '0 0 2px', fontSize: compacto ? 16 : 18, fontWeight: 500 }}>
+                {option.label}
+              </p>
               <p
                 style={{
                   margin: '0 0 10px',
@@ -124,7 +165,16 @@ export function PlayerSelect({ value, onChange, onConfirm, className }: PlayerSe
               >
                 {def.title}
               </p>
-              <p style={{ margin: 0, color: PALETTE.ivoryDim, fontSize: 14, lineHeight: 1.55 }}>
+              {/* La descripción se encoge, no desaparece: es lo único que
+                  distingue a una plaza de la otra. */}
+              <p
+                style={{
+                  margin: 0,
+                  color: PALETTE.ivoryDim,
+                  fontSize: compacto ? 13 : 14,
+                  lineHeight: 1.45,
+                }}
+              >
                 {option.blurb}
               </p>
             </button>
@@ -132,24 +182,28 @@ export function PlayerSelect({ value, onChange, onConfirm, className }: PlayerSe
         })}
       </div>
 
-      <button
-        type="button"
-        onClick={() => onConfirm?.(selected)}
-        style={{
-          marginTop: 22,
-          padding: '10px 22px',
-          background: 'transparent',
-          border: `1px solid ${PALETTE.gold}`,
-          borderRadius: 2,
-          color: PALETTE.gold,
-          font: `500 11px/1 ${MONO}`,
-          letterSpacing: '0.18em',
-          textTransform: 'uppercase',
-          cursor: 'pointer',
-        }}
-      >
-        Entrar
-      </button>
+      {/* El botón sólo existe si tiene a quién avisar. Sin `onConfirm` era un
+          control que no hacía nada, que es peor que no tener control. */}
+      {onConfirm && (
+        <button
+          type="button"
+          onClick={() => onConfirm(selected)}
+          style={{
+            marginTop: 22,
+            padding: '10px 22px',
+            background: 'transparent',
+            border: `1px solid ${PALETTE.gold}`,
+            borderRadius: 2,
+            color: PALETTE.gold,
+            font: `500 11px/1 ${MONO}`,
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+          }}
+        >
+          Entrar
+        </button>
+      )}
     </div>
   );
 }

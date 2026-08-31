@@ -4,6 +4,24 @@
 
 ### Añadido
 
+- **El juego se juega sin desplazar la página.** La cabina mide `100dvh` menos
+  el cromo del sitio y reparte ese alto entre barra superior, escena, panel y
+  acciones. Antes había que bajar 895 px para empezar a jugar y el juego seguía
+  sin caber; la creación de personaje medía 1207 px en un viewport de 768.
+  D-027.
+- **Pantalla completa propia**, sin depender de la del navegador: un botón en la
+  barra del juego pone la cabina en `fixed`. Se sale con el mismo botón o desde
+  la pausa.
+- Barra superior del juego con el rótulo «Ficción · prototipo», que a pantalla
+  completa es el único que queda a la vista. D-028.
+- Barra de acciones estructural en todas las pantallas del juego: «Continuar»,
+  «Entrar a la sala» y «Alegato final» dejan de vivir dentro del texto.
+- El veredicto se lee paginado, con contador `n/total`.
+- Siete pruebas nuevas (`cabina.test.ts`) que cierran las tres formas concretas
+  en que este layout se rompió: alturas de pantalla sueltas, contenedores
+  flexibles sin `min-height: 0` y barras de acciones dentro de la zona que se
+  desplaza. Total: 32.
+
 - **La Ley de los Audaces**: RPG jurídico chileno jugable en
   `/experimentos/juegos/ley-de-los-audaces`. Capítulo 0 completo —creación de
   personaje, audiencia, contradicción, prueba y alegato final—, con su motor,
@@ -32,8 +50,30 @@
   juego destacado**: estado, botón «Jugar el Capítulo 0», enlace a su
   documentación y cuatro cifras calculadas del propio capítulo. El catálogo de
   abajo pasa a mostrar sólo lo que todavía no se puede tocar. D-026.
+- **La página del juego abre con el juego.** La cabecera, el aviso de ficción y
+  la ficha auditable pasan debajo de la cabina.
+- **HUD responsive**: columna lateral cuando hay ancho, banda horizontal
+  compacta cuando no. Las seis estadísticas se van a la pausa en vez de
+  desaparecer.
+- **Creación de personaje en dos columnas**: nombre y avatar a un lado,
+  especialidad al otro. Las tres decisiones se ven a la vez.
+- Por debajo de 704 px de alto la sala no se dibuja: es decoración, y sin ella
+  las nueve opciones del alegato caben sin desplazar nada. D-027.
+- Phaser arranca con `audio: { noAudio: true }`. El capítulo no tiene sonido y
+  el contexto de audio dejaba dos `InvalidStateError` en la consola al salir de
+  la ruta.
 
 ### Corregido
+
+- **La barra de acciones se salía de la pantalla en móvil en horizontal.** A
+  844×390 la cabina medía 352 px por su alto mínimo y el cromo del sitio otros
+  93, contra 390 de viewport. Mínimo bajado a 16 rem.
+- **El lanzador de EVA tapaba el botón principal** en pantallas estrechas, donde
+  el HUD no ocupa el lateral derecho. La barra de acciones le reserva su
+  esquina.
+- **Al salir de pantalla completa la cabina se quedaba con el viewport entero.**
+  El observador medía el cromo mientras la cabina estaba en `fixed` y guardaba
+  cero. Ahora no se mide en ese estado.
 
 - **`/experimentos` rompía la hidratación.** La ficha del juego trae su propio
   enlace «Jugar» y el catálogo la envolvía en otro: `<a>` dentro de `<a>`, HTML

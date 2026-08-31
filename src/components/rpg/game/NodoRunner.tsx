@@ -146,27 +146,32 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
   /* ── Presentación de la cola ──────────────────────────────────────────── */
 
   if (actual) {
+    // El paginado del diálogo lo lleva la propia cola: una línea por pantalla.
+    // Nunca hay un muro de texto que empuje el botón de avanzar fuera de la
+    // vista, porque el botón no está dentro del texto: está en la barra.
     return (
-      <div className="p-5">
-        {actual.tipo === 'dialogo' ? (
-          <DialogueBox line={actual.linea} onAdvance={avanzar} hasNext={cola.length > 1} />
-        ) : (
-          <button
-            type="button"
-            data-primario
-            onClick={avanzar}
-            className="w-full cursor-pointer border p-5 text-left"
-            style={{ borderColor: 'var(--charcoal-lift)', background: 'var(--charcoal)' }}
-          >
-            <p className="text-lg leading-relaxed" style={{ color: 'var(--ivory-dim)' }}>
+      <>
+        <div className="audaces-panel-cuerpo">
+          {actual.tipo === 'dialogo' ? (
+            <DialogueBox line={actual.linea} onAdvance={avanzar} hasNext={cola.length > 1} />
+          ) : (
+            <p
+              className="mx-auto max-w-3xl leading-relaxed"
+              style={{ color: 'var(--ivory-dim)', fontSize: 'var(--texto)' }}
+            >
               {actual.texto}
             </p>
-            <p className="mono mt-3" style={{ color: 'var(--stone)' }}>
-              {cola.length > 1 ? 'E · continuar' : 'E · seguir'}
-            </p>
+          )}
+        </div>
+        <div className="audaces-acciones">
+          <button type="button" data-primario className="boton boton--principal" onClick={avanzar}>
+            {cola.length > 1 ? 'Continuar' : 'Seguir'}
           </button>
-        )}
-      </div>
+          <span className="mono audaces-acciones-pista">
+            E o Espacio · {cola.length > 1 ? `quedan ${cola.length - 1}` : 'última'}
+          </span>
+        </div>
+      </>
     );
   }
 
@@ -175,7 +180,14 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
   switch (nodo.kind) {
     case 'decision':
       return (
-        <Bloque prompt={nodo.prompt}>
+        <Bloque
+          prompt={nodo.prompt}
+          acciones={
+            <span className="mono audaces-acciones-pista">
+              1–{nodo.opciones.length} · elegir con el teclado
+            </span>
+          }
+        >
           <ul className="grid gap-2">
             {nodo.opciones.map((o, i) => (
               <li key={o.id}>
@@ -207,7 +219,14 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
 
     case 'scan':
       return (
-        <Bloque prompt={nodo.prompt}>
+        <Bloque
+          prompt={nodo.prompt}
+          acciones={
+            <span className="mono audaces-acciones-pista">
+              1–{nodo.objetivos.length} · elegir con el teclado
+            </span>
+          }
+        >
           <ul className="grid gap-2">
             {nodo.objetivos.map((t, i) => (
               <li key={t.id}>
@@ -238,7 +257,14 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
 
     case 'prueba':
       return (
-        <Bloque prompt={nodo.prompt}>
+        <Bloque
+          prompt={nodo.prompt}
+          acciones={
+            <span className="mono audaces-acciones-pista">
+              1–{evidencias.length} · elegir con el teclado
+            </span>
+          }
+        >
           <blockquote
             className="mb-4 border-l-2 pl-4 text-lg italic"
             style={{ borderColor: 'var(--burgundy)', color: 'var(--ivory-dim)' }}
@@ -293,15 +319,65 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
     case 'alegato': {
       const completo = nodo.slots.every((s) => alegato[s.id]);
       const aciertos = nodo.slots.filter((s) => alegato[s.id] === s.correcta).length;
+      const puestas = nodo.slots.filter((s) => alegato[s.id]).length;
       return (
-        <Bloque prompt={nodo.prompt}>
-          <div className="grid gap-5">
+        <Bloque
+          prompt={nodo.prompt}
+          acciones={
+            <>
+              <button
+                type="button"
+                data-primario
+                disabled={!completo}
+                className={`boton ${completo ? 'boton--principal' : ''}`}
+                onClick={() => {
+                  const perfecto = aciertos === nodo.slots.length;
+                  aplicar(
+                    {
+                      xp: 40 * aciertos,
+                      stats: perfecto ? { argumentacion: 1, prestigio: 1 } : {},
+                      flag: perfecto ? 'alegato_perfecto' : 'alegato_incompleto',
+                    },
+                    perfecto,
+                  );
+                  emit(perfecto ? 'acierto' : 'fallo', {});
+                  narrar(
+                    perfecto
+                      ? [
+                          'Lo dice en ese orden y en ese orden entra: hecho, prueba, norma. Cuarenta segundos.',
+                          'La presidenta lo escucha sin anotar. Cuando alguien no necesita anotar, es porque lo está siguiendo.',
+                        ]
+                      : [
+                          `Alega con ${aciertos} de ${nodo.slots.length} piezas en su sitio.`,
+                          'Se entiende. No convence del todo, pero se entiende, y con la carga en la otra parte eso puede bastar.',
+                        ],
+                    () => irA(nodo.next),
+                  );
+                }}
+              >
+                {completo ? 'Espacio · alegato final' : 'Faltan piezas'}
+              </button>
+              {/* El recuento vive en la barra, no dentro del scroll: se puede
+                  saber cuánto falta sin recorrer los tres campos. */}
+              <span className="mono audaces-acciones-pista">
+                {puestas} de {nodo.slots.length} piezas
+              </span>
+            </>
+          }
+        >
+          <div className="mx-auto grid max-w-4xl gap-3 md:grid-cols-3">
             {nodo.slots.map((slot) => (
-              <fieldset key={slot.id} className="border p-3" style={{ borderColor: 'var(--charcoal-lift)' }}>
+              <fieldset
+                key={slot.id}
+                className="border p-3"
+                style={{ borderColor: alegato[slot.id] ? 'var(--gold)' : 'var(--charcoal-lift)' }}
+              >
                 <legend className="mono px-2" style={{ color: 'var(--gold)' }}>
                   {slot.label} {alegato[slot.id] ? '✓' : '—'}
                 </legend>
-                <p className="mb-2 text-sm" style={{ color: 'var(--stone)' }}>
+                {/* Pista de la pieza. Es lo primero que cede cuando falta
+                    alto: explica la decisión, pero no es la decisión. */}
+                <p className="audaces-ayuda mb-2 text-sm" style={{ color: 'var(--stone)' }}>
                   {slot.ayuda}
                 </p>
                 <ul className="grid gap-2">
@@ -321,45 +397,6 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
               </fieldset>
             ))}
           </div>
-
-          <button
-            type="button"
-            data-primario
-            disabled={!completo}
-            className="mono mt-6 w-full border px-6 py-4"
-            style={{
-              borderColor: completo ? 'var(--gold)' : 'var(--charcoal-lift)',
-              background: completo ? 'var(--gold)' : 'transparent',
-              color: completo ? 'var(--ink)' : 'var(--stone)',
-              cursor: completo ? 'pointer' : 'not-allowed',
-            }}
-            onClick={() => {
-              const perfecto = aciertos === nodo.slots.length;
-              aplicar(
-                {
-                  xp: 40 * aciertos,
-                  stats: perfecto ? { argumentacion: 1, prestigio: 1 } : {},
-                  flag: perfecto ? 'alegato_perfecto' : 'alegato_incompleto',
-                },
-                perfecto,
-              );
-              emit(perfecto ? 'acierto' : 'fallo', {});
-              narrar(
-                perfecto
-                  ? [
-                      'Lo dice en ese orden y en ese orden entra: hecho, prueba, norma. Cuarenta segundos.',
-                      'La presidenta lo escucha sin anotar. Cuando alguien no necesita anotar, es porque lo está siguiendo.',
-                    ]
-                  : [
-                      `Alega con ${aciertos} de ${nodo.slots.length} piezas en su sitio.`,
-                      'Se entiende. No convence del todo, pero se entiende, y con la carga en la otra parte eso puede bastar.',
-                    ],
-                () => irA(nodo.next),
-              );
-            }}
-          >
-            {completo ? 'ESPACIO · Alegato final' : 'Faltan piezas'}
-          </button>
         </Bloque>
       );
     }
@@ -385,14 +422,35 @@ function NodoVista({ nodo }: { nodo: SceneNode }) {
 
 /* ── Piezas de presentación ───────────────────────────────────────────────── */
 
-function Bloque({ prompt, children }: { prompt: string; children: React.ReactNode }) {
+/**
+ * Enunciado fijo, opciones desplazables, acciones fijas.
+ *
+ * El enunciado no se desplaza porque es la pregunta: desaparecer mientras se
+ * responde sería absurdo. Las acciones tampoco, porque son la salida. Lo único
+ * que puede desplazarse es la lista de opciones, y sólo cuando no cabe.
+ */
+function Bloque({
+  prompt,
+  children,
+  acciones,
+}: {
+  prompt: string;
+  children: React.ReactNode;
+  acciones?: React.ReactNode;
+}) {
   return (
-    <section className="p-5">
-      <p className="mb-4 text-lg leading-relaxed" style={{ color: 'var(--ivory)' }}>
-        {prompt}
-      </p>
-      {children}
-    </section>
+    <>
+      <div className="audaces-panel-cabeza">
+        <p
+          className="leading-relaxed"
+          style={{ color: 'var(--ivory)', fontSize: 'var(--texto)' }}
+        >
+          {prompt}
+        </p>
+      </div>
+      <div className="audaces-panel-cuerpo">{children}</div>
+      {acciones && <div className="audaces-acciones">{acciones}</div>}
+    </>
   );
 }
 
@@ -409,35 +467,48 @@ function Veredicto({
   const enEpilogo = paso >= nodo.cuerpo.length;
   const ultima = paso === total - 1;
 
+  // El veredicto se lee paginado —un tramo por pantalla— con el contador a la
+  // vista. Es la alternativa a un muro de texto con el botón al final.
   return (
-    <section className="p-5">
-      <p className="mono" style={{ color: 'var(--gold)' }}>
-        {enEpilogo ? 'Después' : 'Veredicto'}
-      </p>
-      <h2 className="mt-2 text-3xl">{nodo.titulo}</h2>
-      <p
-        className="mt-6 text-xl leading-relaxed"
-        style={{ color: ultima ? 'var(--burgundy-lift)' : 'var(--ivory-dim)' }}
-      >
-        {texto}
-      </p>
-      <button
-        type="button"
-        data-primario
-        className="mono mt-8 border px-6 py-3"
-        style={{ borderColor: 'var(--gold)', color: 'var(--gold)', cursor: 'pointer' }}
-        onClick={() => (ultima ? onCerrar() : setPaso((p) => p + 1))}
-      >
-        {ultima ? 'Fin del Capítulo 0' : 'E · continuar'}
-      </button>
-    </section>
+    <>
+      <div className="audaces-panel-cabeza">
+        <p className="mono" style={{ color: 'var(--gold)' }}>
+          {enEpilogo ? 'Después' : 'Veredicto'} · {paso + 1}/{total}
+        </p>
+        <h2 className="mt-1" style={{ fontSize: 'clamp(1.25rem, 3.2vh, 1.875rem)' }}>
+          {nodo.titulo}
+        </h2>
+      </div>
+      <div className="audaces-panel-cuerpo">
+        <p
+          className="mx-auto max-w-3xl leading-relaxed"
+          style={{
+            color: ultima ? 'var(--burgundy-lift)' : 'var(--ivory-dim)',
+            fontSize: 'clamp(1rem, 2vh, 1.25rem)',
+          }}
+        >
+          {texto}
+        </p>
+      </div>
+      <div className="audaces-acciones">
+        <button
+          type="button"
+          data-primario
+          className="boton boton--principal"
+          onClick={() => (ultima ? onCerrar() : setPaso((p) => p + 1))}
+        >
+          {ultima ? 'Fin del Capítulo 0' : 'Continuar'}
+        </button>
+        <span className="mono audaces-acciones-pista">E o Espacio</span>
+      </div>
+    </>
   );
 }
 
 /** Referencias citadas en el capítulo, con su estado de verificación visible. */
 export function FuentesDelCapitulo() {
   return (
-    <section className="border-t p-5" style={{ borderColor: 'var(--charcoal-lift)' }}>
+    <section className="mt-6 border-t pt-4" style={{ borderColor: 'var(--charcoal-lift)' }}>
       <p className="mono" style={{ color: 'var(--stone)' }}>
         Referencias normativas del capítulo
       </p>
