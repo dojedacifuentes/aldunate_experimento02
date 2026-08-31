@@ -2,6 +2,23 @@
 
 ## No publicado
 
+### Corregido
+
+- **No se veían los jueces.** `setBounds` pegado al mundo recortaba el
+  desplazamiento de cámara: a zoom 1,2 el centro sólo podía moverse entre y=300
+  e y=420, y el estrado está en y=176. La cámara **no podía enfocar al
+  tribunal**. Con `FIT` no se notaba; con el recorte panorámico los dejaba fuera
+  de pantalla. Ahora hay 300 px de margen y la sala se dibuja hasta ahí. D-031.
+- **No se identificaba a quien habla.** Rótulo con el nombre sobre la cabeza
+  —sujeto a la banda visible, que si no desaparecía en los planos de dos—, los
+  demás al 55 % de opacidad, y sólo gesticula quien habla. D-031.
+- **Las caras no se distinguían.** El zoom de conversación sube de 1,35 a 1,8:
+  con 1,35 la cara quedaba en unos treinta píxeles. D-031.
+- **El ritmo era lento.** El tecleo baja de 22–30 ms por carácter a 9–15, y los
+  paneos de 420–520 ms a 260–320. D-031.
+- **El recorte panorámico dejaba poco sitio.** El escenario pasa de 11 a 15 rem
+  de suelo garantizado.
+
 ### Añadido
 
 - **El tribunal son tres.** Isabel Achurra preside con hambre, Óscar Pinilla

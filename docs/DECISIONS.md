@@ -549,3 +549,51 @@ jugando. Un tutorial que se recorre una vez tiene que dar ganas de la segunda.
 **Lo que no cambia.** Ni una regla procesal se afirma en broma, la franja de
 prototipo y el rótulo de ficción siguen donde estaban, y las tres referencias
 normativas del capítulo siguen «por verificar».
+
+---
+
+## D-031 · La cámara no llegaba al estrado, y por eso no se veían los jueces
+
+**Qué.** La cámara tiene un margen dibujado de 300 px alrededor del mundo, se
+acerca a 1,8 para hablar, rotula a quien habla y apaga a quien no.
+
+**El fallo.** `setBounds(0, 0, 1280, 720)` recorta el desplazamiento para no
+enseñar el vacío. A zoom 1,2 la vista mide 600 px de alto, así que el centro de
+cámara sólo podía moverse entre y=300 e y=420. **El estrado está en y=176: la
+cámara no podía enfocar a los jueces.** Con `FIT` no se notaba porque se veía el
+mundo entero; al pasar a `ENVELOP` (D-027) el recorte los dejó fuera de
+pantalla, que es exactamente el síntoma reportado: «casi toda la pantalla no se
+ven los jueces».
+
+Comprobado en el navegador antes de tocar nada: con la línea de Achurra en
+pantalla, el objetivo de cámara era el correcto —(640, 176)— y `midPoint`
+seguía en (640, 360).
+
+**El arreglo.** Un margen de 300 px en los límites, y el dibujo de la sala
+extendido para llenarlo: si la cámara puede llegar ahí, ahí tiene que haber
+sala. Con eso el centro de cámara alcanza cualquier puesto y el recorte deja de
+importar, porque quien habla siempre está en el centro del lienzo.
+
+**Identificar a quien habla.** Tres señales a la vez, porque una sola no
+bastaba en una sala de ocho personas:
+
+1. **Rótulo con el nombre** sobre la cabeza, sujeto a la banda visible. Sin
+   sujetarlo desaparecía justo cuando más falta hace —en los planos de dos, que
+   es donde hay dos personas y hay que saber cuál habla—.
+2. **Los demás se apagan** a 55 % de opacidad.
+3. **Sólo gesticula quien habla.**
+
+**Zoom de conversación a 1,8.** El sprite mide 48 px de celda y la cabeza es una
+fracción de eso: con el tope anterior de 1,35 la cara quedaba en unos treinta
+píxeles. El plano de dos se abre hasta donde haga falta para que quepan ambos,
+y ahí las caras se ven más pequeñas: es el coste inevitable de encuadrar a la
+vez el estrado y el suelo.
+
+**Ritmo.** El tecleo baja de 22–30 ms por carácter a 9–15, y los paneos de
+420–520 ms a 260–320.
+
+**Nota de entorno.** Nada de esto se puede comprobar con capturas si el panel de
+vista previa estrangula `requestAnimationFrame`: el bucle de Phaser avanza cero
+fotogramas y la cámara se queda congelada a mitad del recorrido. Se verifica
+leyendo el objetivo de cámara —`scene.encuadre`— y forzando un paso del bucle
+con `game.loop.step()`.

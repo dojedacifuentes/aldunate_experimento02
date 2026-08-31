@@ -3,7 +3,14 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { emit, limpiarBus } from '@/lib/rpg/bus';
+import { CHARACTER_IDS, CHARACTERS } from '@/data/rpg/characters';
 import type { Reparto } from '@/engine/rpg/bootstrap';
+
+/**
+ * Nombre visible de cada personaje, para que la escena pueda rotular a quien
+ * habla. Sale del registro: la escena no conoce el reparto, sólo claves.
+ */
+const NOMBRES = Object.fromEntries(CHARACTER_IDS.map((id) => [id, CHARACTERS[id].name]));
 
 /**
  * Monta y desmonta la escena Phaser.
@@ -28,7 +35,7 @@ export function GameCanvas({ reparto }: { reparto: Reparto }) {
       try {
         const { crearJuego } = await import('@/engine/rpg/bootstrap');
         if (cancelado || !contenedor.current) return;
-        juego = await crearJuego(contenedor.current, reparto);
+        juego = await crearJuego(contenedor.current, reparto, NOMBRES);
         if (cancelado) return;
         setEstado('listo');
         emit('listo', {});

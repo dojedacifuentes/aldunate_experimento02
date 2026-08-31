@@ -1,6 +1,6 @@
 import * as Phaser from 'phaser';
 
-import { CourtroomScene, DIMENSIONES, type Reparto } from './CourtroomScene';
+import { CourtroomScene, DIMENSIONES, type Nombres, type Reparto } from './CourtroomScene';
 
 /**
  * Arranque de Phaser.
@@ -9,7 +9,11 @@ import { CourtroomScene, DIMENSIONES, type Reparto } from './CourtroomScene';
  * el motor entero y no debe entrar en el bundle de ninguna otra ruta ni
  * ejecutarse durante el render en servidor.
  */
-export async function crearJuego(padre: HTMLElement, reparto: Reparto): Promise<Phaser.Game> {
+export async function crearJuego(
+  padre: HTMLElement,
+  reparto: Reparto,
+  nombres: Nombres = {},
+): Promise<Phaser.Game> {
   return new Phaser.Game({
     type: Phaser.AUTO,
     parent: padre,
@@ -45,8 +49,8 @@ export async function crearJuego(padre: HTMLElement, reparto: Reparto): Promise<
      */
     audio: { noAudio: true },
     // Sin física: en el Capítulo 0 nadie se mueve. Se activará con el mapa.
-    scene: [new CourtroomScene(reparto)],
+    scene: [new CourtroomScene(reparto, nombres)],
   });
 }
 
-export type { Reparto };
+export type { Nombres, Reparto };
