@@ -36,8 +36,16 @@ describe('encuadre de una persona', () => {
     expect(e.y).toBe(TESTIGO.y);
   });
 
-  it('no se acerca tanto como para que un plano corto parezca un error', () => {
-    expect(encuadreDeUno(TESTIGO, 3).zoom).toBeLessThanOrEqual(1.35);
+  it('se acerca lo suficiente para que se le vea la cara', () => {
+    // El sprite mide 48 px de celda y la cabeza es una fracción de eso. Con el
+    // tope anterior —1.35— la cara quedaba en unos treinta píxeles y no se
+    // distinguía a quién se estaba escuchando.
+    expect(encuadreDeUno({ x: 640, y: 176 }, 1.2).zoom).toBeGreaterThanOrEqual(1.5);
+    expect(encuadreDeUno(TESTIGO, 1.4).zoom).toBeGreaterThanOrEqual(1.5);
+  });
+
+  it('no se acerca tanto como para enseñar el pixelado', () => {
+    expect(encuadreDeUno(TESTIGO, 9).zoom).toBeLessThanOrEqual(ZOOM.max);
     expect(encuadreDeUno(TESTIGO, 0.1).zoom).toBeGreaterThanOrEqual(ZOOM.min);
   });
 });

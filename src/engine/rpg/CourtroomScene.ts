@@ -33,6 +33,22 @@ const ANCHO = 1280;
 const ALTO = 720;
 const CELDA = 48;
 
+/**
+ * Margen dibujado alrededor del mundo.
+ *
+ * Existe por la cámara, no por decoración. Con los límites pegados al mundo,
+ * `Phaser` recorta el desplazamiento para no enseñar el vacío: a zoom 1.2 la
+ * vista mide 600 px de alto y el centro de cámara sólo podía moverse entre
+ * y=300 e y=420. El estrado está en y=176, así que **la cámara no podía
+ * enfocar a los jueces**: quedaban siempre por encima del encuadre y, con el
+ * recorte panorámico de D-027, fuera de pantalla.
+ *
+ * Con margen, el centro de cámara alcanza cualquier puesto de la sala y el
+ * recorte deja de ser el problema, porque quien habla siempre está en el
+ * centro del lienzo.
+ */
+const MARGEN = 300;
+
 /** Paleta. Phaser no lee variables CSS: espeja `src/lib/rpg/art/palette.mjs`. */
 const C = {
   ink: 0x12100f,
@@ -67,6 +83,9 @@ const PUESTOS: Record<FocusTarget, Puesto> = {
 /** Separación de los tres jueces sobre el estrado. */
 const ASIENTOS_ESTRADO = [-136, 0, 136];
 
+/** Nombre visible de cada personaje. La escena rotula a quien habla. */
+export type Nombres = Record<string, string>;
+
 /** Qué personaje ocupa cada puesto en el Capítulo 0. */
 export interface Reparto {
   /** El tribunal es colegiado: tres. El primero preside. */
@@ -89,8 +108,12 @@ interface Actor {
 
 export class CourtroomScene extends Phaser.Scene {
   private reparto: Reparto;
+  private nombres: Nombres;
   private actores = new Map<string, Actor>();
   private foco!: Phaser.GameObjects.Ellipse;
+  /** Rótulo con el nombre de quien habla. Sin él no se sabe quién es quién. */
+  private rotulo!: Phaser.GameObjects.Text;
+  private rotuloFondo!: Phaser.GameObjects.Rectangle;
   private destello!: Phaser.GameObjects.Rectangle;
   private barrido!: Phaser.GameObjects.Rectangle;
   private desuscribir: (() => void)[] = [];
@@ -98,9 +121,10 @@ export class CourtroomScene extends Phaser.Scene {
   /** Último encuadre pedido. Evita repanear cuando no ha cambiado nada. */
   private encuadre: Encuadre = { x: 640, y: 380, zoom: 1 };
 
-  constructor(reparto: Reparto) {
+  constructor(reparto: Reparto, nombres: Nombres = {}) {
     super('courtroom');
     this.reparto = reparto;
+    this.nombres = nombres;
   }
 
   preload(): void {
@@ -123,7 +147,7 @@ export class CourtroomScene extends Phaser.Scene {
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     this.cameras.main.setBackgroundColor(C.ink);
-    this.cameras.main.setBounds(0, 0, ANCHO, ALTO);
+    this.cameras.main.setBounds(-MARGEN, -MARGEN, ANCHO + MARGEN * 2, ALTO + MARGEN * 2);
 
     this.dibujarSala();
 
@@ -155,6 +179,22 @@ export class CourtroomScene extends Phaser.Scene {
       .rectangle(-40, ALTO / 2, 10, ALTO * 2, C.gold, 0)
       .setDepth(49);
 
+    // Rótulo de quien habla. Va pegado al personaje, no a una esquina: en una
+    // sala con ocho personas, un nombre en una esquina no señala a nadie.
+    this.rotuloFondo = this.add
+      .rectangle(0, 0, 10, 30, C.ink, 0.82)
+      .setDepth(44)
+      .setVisible(false);
+    this.rotulo = this.add
+      .text(0, 0, '', {
+        fontFamily: 'ui-monospace, Menlo, monospace',
+        fontSize: '20px',
+        color: '#D6AE58',
+      })
+      .setOrigin(0.5, 1)
+      .setDepth(45)
+      .setVisible(false);
+
     this.conectarBus();
     this.enfocar('sala');
   }
@@ -164,23 +204,25 @@ export class CourtroomScene extends Phaser.Scene {
   private dibujarSala(): void {
     const g = this.add.graphics().setDepth(0);
 
-    g.fillStyle(C.charcoal, 1).fillRect(0, 0, ANCHO, ALTO);
+    // El dibujo desborda el mundo por el margen de cámara: si la cámara puede
+    // llegar hasta ahí, ahí tiene que haber sala.
+    g.fillStyle(C.charcoal, 1).fillRect(-MARGEN, -MARGEN, ANCHO + MARGEN * 2, ALTO + MARGEN * 2);
 
     // Piso: baldosa alterna, muy tenue. Da escala sin competir con nadie.
-    for (let y = 240; y < ALTO; y += 72) {
-      for (let x = 0; x < ANCHO; x += 72) {
+    for (let y = 240; y < ALTO + MARGEN; y += 72) {
+      for (let x = -MARGEN; x < ANCHO + MARGEN; x += 72) {
         const claro = ((x / 72 + y / 72) | 0) % 2 === 0;
         g.fillStyle(claro ? C.charcoalSoft : C.charcoal, 1).fillRect(x, y, 72, 72);
       }
     }
 
     // Muro del fondo y friso.
-    g.fillStyle(C.ink, 1).fillRect(0, 0, ANCHO, 240);
-    g.fillStyle(C.charcoalLift, 1).fillRect(0, 228, ANCHO, 6);
-    g.fillStyle(C.gold, 0.35).fillRect(0, 234, ANCHO, 2);
+    g.fillStyle(C.ink, 1).fillRect(-MARGEN, -MARGEN, ANCHO + MARGEN * 2, 240 + MARGEN);
+    g.fillStyle(C.charcoalLift, 1).fillRect(-MARGEN, 228, ANCHO + MARGEN * 2, 6);
+    g.fillStyle(C.gold, 0.35).fillRect(-MARGEN, 234, ANCHO + MARGEN * 2, 2);
 
     // Paneles del muro.
-    for (let x = 64; x < ANCHO - 64; x += 168) {
+    for (let x = -MARGEN + 40; x < ANCHO + MARGEN - 64; x += 168) {
       g.fillStyle(C.charcoal, 1).fillRect(x, 48, 120, 168);
       g.lineStyle(2, C.charcoalLift, 1).strokeRect(x, 48, 120, 168);
     }
@@ -206,8 +248,8 @@ export class CourtroomScene extends Phaser.Scene {
 
     // Viñeta: dos rectángulos, no un shader. Suficiente y barato.
     const v = this.add.graphics().setDepth(40);
-    v.fillStyle(C.ink, 0.45).fillRect(0, 0, ANCHO, 60);
-    v.fillStyle(C.ink, 0.5).fillRect(0, ALTO - 70, ANCHO, 70);
+    v.fillStyle(C.ink, 0.45).fillRect(-MARGEN, -MARGEN, ANCHO + MARGEN * 2, 60 + MARGEN);
+    v.fillStyle(C.ink, 0.5).fillRect(-MARGEN, ALTO - 70, ANCHO + MARGEN * 2, 70 + MARGEN);
   }
 
   private mueble(
@@ -291,7 +333,7 @@ export class CourtroomScene extends Phaser.Scene {
    * que era buena parte de lo que se veía mal. Con umbral, quien no se mueve no
    * mueve la cámara.
    */
-  private encuadrar(x: number, y: number, zoom: number, duracion = 420): void {
+  private encuadrar(x: number, y: number, zoom: number, duracion = 260): void {
     const nuevo = { x, y, zoom };
     if (!mereceMoverse(this.encuadre, nuevo)) return;
 
@@ -314,7 +356,7 @@ export class CourtroomScene extends Phaser.Scene {
   private enfocar(objetivo: FocusTarget): void {
     const p = PUESTOS[objetivo];
     this.foco.setFillStyle(C.gold, objetivo === 'sala' ? 0.05 : 0.1);
-    this.encuadrar(p.x, p.y, p.zoom, 520);
+    this.encuadrar(p.x, p.y, p.zoom, 320);
   }
 
   /**
@@ -331,7 +373,7 @@ export class CourtroomScene extends Phaser.Scene {
       return;
     }
     const e = encuadreDeDos(a, b);
-    this.encuadrar(e.x, e.y, e.zoom, 480);
+    this.encuadrar(e.x, e.y, e.zoom, 300);
   }
 
   /**
@@ -346,19 +388,57 @@ export class CourtroomScene extends Phaser.Scene {
     const destino = this.resolver(hacia);
 
     this.actores.forEach((actor) => {
-      const anim = actor.clave === personaje ? 'talk' : actor.reposo;
-      actor.sprite.play(`${actor.clave}:${anim}`, true);
+      const hablando = actor.clave === personaje;
+      actor.sprite.play(`${actor.clave}:${hablando ? 'talk' : actor.reposo}`, true);
+      // Quien no habla se apaga un poco. Es la diferencia entre una sala con
+      // ocho personas y una sala con ocho personas donde se sabe cuál habla.
+      actor.sprite.setAlpha(hablando ? 1 : 0.55);
     });
 
     // Quien escucha no se queda de piedra: se gira un momento hacia quien habla.
     if (destino) destino.sprite.play(`${destino.clave}:thinking`, true);
 
-    if (quien) {
-      this.encuadrarPersonas(quien, destino);
+    // El encuadre primero: el rótulo se sujeta a la banda visible y necesita
+    // saber dónde va a quedar la cámara, no dónde estaba.
+    if (quien) this.encuadrarPersonas(quien, destino);
+    else this.enfocar(puesto); // Personaje sin cuerpo en la sala: EVA.
+
+    this.rotular(quien);
+  }
+
+  /** Pone el nombre de quien habla justo encima de su cabeza. */
+  private rotular(actor?: Actor): void {
+    const nombre = actor && (this.nombres[actor.clave] ?? '');
+    if (!actor || !nombre) {
+      this.rotulo.setVisible(false);
+      this.rotuloFondo.setVisible(false);
       return;
     }
-    // Personaje sin cuerpo en la sala —EVA— : el encuadre lo pone el nodo.
-    this.enfocar(puesto);
+
+    /*
+     * El rótulo va sobre la cabeza, pero sujeto a la banda visible.
+     *
+     * Con el recorte panorámico sólo se ve una franja alrededor del centro de
+     * cámara, y esa franja se estrecha cuanto más se acerca el zoom. Sin
+     * sujetarlo, el rótulo desaparecía justo cuando más falta hace: en los
+     * planos de dos, donde hay dos personas y hay que saber cuál habla.
+     *
+     * BANDA_SEGURA es deliberadamente conservadora —la mitad del alto que se
+     * ve en el peor caso—, porque la escena no sabe cuánto la recorta la
+     * cabina y prefiere pecar de prudente.
+     */
+    const BANDA_SEGURA = 110;
+    const alcance = BANDA_SEGURA / this.encuadre.zoom;
+    const y = Phaser.Math.Clamp(
+      actor.y - 96,
+      this.encuadre.y - alcance + 24,
+      this.encuadre.y + alcance,
+    );
+    this.rotulo.setText(nombre.toUpperCase()).setPosition(actor.x, y).setVisible(true);
+    this.rotuloFondo
+      .setSize(this.rotulo.width + 20, this.rotulo.height + 10)
+      .setPosition(actor.x, y - this.rotulo.height / 2 - 1)
+      .setVisible(true);
   }
 
   /**

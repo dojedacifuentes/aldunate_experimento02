@@ -32,10 +32,17 @@ export interface Ventana {
 export const VISTA_SEGURA: Ventana = { ancho: 1120, alto: 400 };
 
 /** Márgenes alrededor de las personas encuadradas. Un plano pegado incomoda. */
-const AIRE = { x: 260, y: 200 };
+const AIRE = { x: 180, y: 140 };
 
-/** Límites de zoom. Por debajo se ve el borde del mundo; por encima, poros. */
-export const ZOOM = { min: 0.85, max: 1.4 } as const;
+/**
+ * Límites de zoom.
+ *
+ * El mínimo evita enseñar el borde del mundo. El máximo subió al comprobar que
+ * a 1.35 no se distinguían las caras: el sprite mide 48 px de celda y la cabeza
+ * es una fracción de eso, así que un plano de conversación necesita acercarse
+ * de verdad.
+ */
+export const ZOOM = { min: 0.9, max: 2.4 } as const;
 
 export function acotar(valor: number, min: number, max: number): number {
   return Math.min(Math.max(valor, min), max);
@@ -48,10 +55,12 @@ export function acotar(valor: number, min: number, max: number): number {
  * público— y aquí sólo se acota.
  */
 export function encuadreDeUno(persona: Punto, zoomDelPuesto: number): Encuadre {
+  // Primer plano de verdad: quien habla ocupa pantalla. Con el recorte
+  // panorámico, un plano general deja la cara en treinta píxeles.
   return {
     x: persona.x,
     y: persona.y,
-    zoom: acotar(zoomDelPuesto, ZOOM.min, 1.35),
+    zoom: acotar(zoomDelPuesto * 1.5, 1.5, ZOOM.max),
   };
 }
 
@@ -68,7 +77,7 @@ export function encuadreDeDos(a: Punto, b: Punto, vista: Ventana = VISTA_SEGURA)
   return {
     x: (a.x + b.x) / 2,
     y: (a.y + b.y) / 2,
-    zoom: acotar(Math.min(vista.ancho / dx, vista.alto / dy), ZOOM.min, ZOOM.max),
+    zoom: acotar(Math.min(vista.ancho / dx, vista.alto / dy), ZOOM.min, 1.9),
   };
 }
 

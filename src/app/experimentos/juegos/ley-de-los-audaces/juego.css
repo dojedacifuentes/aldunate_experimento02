@@ -448,7 +448,12 @@ body[data-juego-inmersivo='true'] {
    * que le toca, se desplaza por dentro: la barra de acciones sigue fuera de
    * ese desplazamiento.
    */
-  max-height: min(32rem, calc(100% - 11rem));
+  /*
+   * Sube el suelo del escenario de 11 a 15 rem. Con 11, la sala quedaba en una
+   * franja donde no se reconocía a nadie; el tribunal es la mitad de la
+   * promesa del juego y necesita sitio para que se vean las caras.
+   */
+  max-height: min(30rem, calc(100% - 15rem));
   background: var(--ink);
 }
 
