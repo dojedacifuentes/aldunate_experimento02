@@ -1,5 +1,28 @@
 # Changelog
 
+## No publicado
+
+### Añadido
+
+- **La Ley de los Audaces**: RPG jurídico chileno jugable en
+  `/experimentos/juegos/ley-de-los-audaces`. Capítulo 0 completo —creación de
+  personaje, audiencia, contradicción, prueba y alegato final—, con su motor,
+  su reparto de arte procedural y su documentación dentro de este repositorio.
+- Ficha auditable: reparto, referencias normativas con su estado de verificación
+  y pendientes declarados, calculados del propio contenido.
+- `docs/juegos/ley-de-los-audaces/`: checkpoint, decisiones, dirección de arte,
+  QA, backlog, devlog y encargos a agentes.
+- Scripts `juego:arte` (horneado del arte) y `juego:suelto` (el juego en un
+  archivo, sin red).
+- `npm run verify` incorpora los tests: 25, con Vitest.
+
+### Cambiado
+
+- La ficha de `La Ley de los Audaces` deja de describir el juego anterior
+  —legislar bajo presión— y pasa a `prototipo` con enlace jugable.
+- `Experiment` admite `jugableEn`; la tarjeta pinta el botón **sólo si existe**.
+- `/experimentos/juegos` declara el estado real de cada pieza.
+
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado semántico.
 

@@ -292,3 +292,74 @@ habría retrocedido una versión mayor a cambio de nada.
 **Regla general.** Un PR automático de seguridad no se acepta por el hecho de
 serlo. Se compara contra el estado real de `main`: si la vulnerabilidad ya está
 resuelta por otra vía, el parche propuesto puede ser un retroceso.
+
+
+---
+
+## D-020 · El juego se aloja aquí, no se enlaza
+
+**Qué.** «La Ley de los Audaces» —RPG jurídico— deja de ser una idea y pasa a
+vivir dentro de este repositorio: código, arte, documentación y encargos a
+agentes. Se juega en `/experimentos/juegos/ley-de-los-audaces`.
+
+**Por qué.** El valor del experimento no está sólo en que se pueda jugar, sino en
+que se pueda **auditar**: ver el guion, el reparto, las fuentes normativas con su
+estado, la dirección de arte y las decisiones, sin salir del árbol. Repartido en
+dos repositorios eso se pierde, y con ello la posibilidad de corregirlo o de
+derivar escenarios nuevos sin reconstruir el contexto.
+
+**El riesgo, y qué se hizo con él.** El juego es un thriller: incriminación,
+prisión, fuga. Alojarlo bajo un sitio que lleva el escudo de la Escuela no es
+neutro. Se acota en vez de ignorarse: la ficha abre con un aviso de ficción antes
+del juego, el juego declara que no habla por nadie, el `noindex` y la franja de
+prototipo se mantienen, y el reparto y las fuentes se publican en la propia ficha
+para que cualquiera compruebe que nada es real.
+
+**Lo que la técnica no resuelve.** Antes de quitar el `noindex` o difundir el
+enlace, corresponde que el profesor sepa qué se aloja bajo su laboratorio.
+
+**Descartado.** Repositorio y dominio propios, enlazados desde aquí. Era la
+opción más prudente y la menos auditable.
+
+---
+
+## D-021 · La ficha del juego se puede jugar y revisar
+
+**Qué.** `/experimentos/juegos/ley-de-los-audaces` tiene dos mitades: arriba se
+juega, abajo se audita —de qué está hecho el capítulo, qué reparto lo interpreta,
+qué referencias normativas usa y en qué estado de verificación está cada una—.
+
+**Por qué.** Un experimento que sólo se puede jugar es una demo. Los recuentos se
+calculan del propio contenido, no se escriben a mano: si alguien añade un nodo o
+una fuente, la ficha lo refleja sola y no puede quedar desactualizada.
+
+---
+
+## D-022 · El juego trae sus propias excepciones de lint
+
+**Qué.** `react-hooks/set-state-in-effect` baja a aviso en
+`src/components/rpg/*.tsx` y `src/hooks/rpg/*.ts`.
+
+**Por qué.** Es una heurística de rendimiento, no una regla de corrección, y esos
+archivos sincronizan estado con fuentes externas: temporizadores de animación,
+manifiesto de assets, efecto de tecleo. Llegaron como paquete cerrado y
+funcionan; reescribirlos para silenciar un aviso arriesga más de lo que gana.
+
+**Lo que no se relaja.** El código propio del juego no usa ese patrón, y el resto
+del sitio conserva la regla como error.
+
+---
+
+## D-023 · La paleta del juego vive en tres copias
+
+**Qué.** Los colores del juego existen en `src/lib/rpg/art/palette.mjs` (motor de
+arte), en `src/app/experimentos/juegos/ley-de-los-audaces/juego.css` (interfaz) y
+en `src/engine/rpg/CourtroomScene.ts` (Phaser).
+
+**Por qué.** Los tres consumidores hablan idiomas distintos: el motor de arte
+corre en Node y en el navegador sin compilador, la interfaz usa variables CSS y
+Phaser necesita enteros. No hay fuente única que los tres puedan leer sin añadir
+un paso de compilación.
+
+**Regla.** Es la **única** duplicación de color aceptada en el repositorio.
+Cambiar un token obliga a cambiar los tres.

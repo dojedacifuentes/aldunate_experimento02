@@ -215,10 +215,53 @@ En ese orden. Un efecto que compite con la lectura se quita.
 
 ---
 
-## 10. Antes de cerrar cualquier sesión de trabajo
+## 10. El juego: La Ley de los Audaces
+
+El laboratorio aloja un RPG jurídico jugable en
+`/experimentos/juegos/ley-de-los-audaces`. Su documentación completa —estado,
+decisiones, dirección de arte, QA, encargos a agentes— vive en
+`docs/juegos/ley-de-los-audaces/`. **Empieza por `CHECKPOINT.md`.**
+
+Reglas propias que se suman a las de este archivo:
+
+- **Todo el contenido del juego vive en `src/data/rpg/`.** Un capítulo es un
+  archivo de datos; el intérprete no conoce el guion. Si estás editando una línea
+  de diálogo dentro de un `.tsx`, el dato está en el lugar equivocado.
+- **No se inventa Derecho.** Las referencias viven en
+  `src/data/rpg/legalSources.ts` con su estado de verificación. Lo `UNVERIFIED`
+  se muestra rotulado y **nunca** como Derecho vigente. Es la misma regla de
+  trazabilidad del resto del sitio, aplicada a la ficción.
+- **La ficción se mantiene abstracta.** Personajes, empresas, documentos, causas
+  y recintos son inventados. La fuga carcelaria y cualquier acto ilícito se
+  resuelven con mecánicas arcade: nada de procedimientos reales de seguridad ni
+  métodos replicables.
+- **El juego no habla por nadie.** Ni por la Escuela, ni por la Universidad, ni
+  por el profesor. La ficha lo declara antes de dejar jugar. Ver D-020.
+- **Phaser se importa dinámicamente** y sólo desde `GameCanvas`. No entra en el
+  bundle de ninguna otra ruta ni se ejecuta en el servidor, y se destruye al
+  desmontar. Está comprobado: ninguna otra página del sitio lo carga.
+- **El juego vive en `.cabina-audaces`**, que declara sus propios tokens. Ni uno
+  se escapa al resto del sitio, y el juego se ve igual en ambos temas.
+- **El código donado** —`src/components/rpg/*.tsx`, `src/hooks/rpg/*.ts`,
+  `src/lib/rpg/art/*.mjs`— llegó como paquete cerrado y funciona. No se reescribe
+  para silenciar avisos de lint; los ocho actuales están justificados.
+
+---
+
+## 11. Antes de cerrar cualquier sesión de trabajo
 
 ```bash
-npm run typecheck && npm run lint && npm run build
+npm run verify   # typecheck + lint + tests + build
 ```
 
 Actualizar `CHANGELOG.md` y, si el estado cambió, `docs/HANDOFF.md`.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

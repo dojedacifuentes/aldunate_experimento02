@@ -85,13 +85,14 @@ export const experiments: Experiment[] = [
     id: 'ley-audaces',
     slug: 'juegos',
     title: 'La Ley de los Audaces',
-    tagline: 'Juego de decisión normativa',
+    tagline: 'RPG jurídico chileno',
     description:
-      'Se legisla bajo presión de tiempo e información incompleta. Cada decisión produce consecuencias que aparecen varias jugadas después, cuando ya es tarde para atribuirlas a su causa.',
-    status: 'idea',
+      'Gana un juicio y, un minuto después, alguien lo incrimina por un delito que no cometió. El Capítulo 0 ya se juega: creación de personaje, audiencia, contradicción, prueba y alegato final, en tres a cinco minutos. Lo demás está en construcción, y se construye en este mismo repositorio.',
+    status: 'prototipo',
     demoContent: true,
     family: 'juegos',
-    href: '/experimentos/juegos',
+    href: '/experimentos/juegos/ley-de-los-audaces',
+    jugableEn: '/experimentos/juegos/ley-de-los-audaces',
   },
   {
     id: 'lex-note',

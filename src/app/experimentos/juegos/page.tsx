@@ -10,15 +10,15 @@ import { experiments } from '@/data/experiments';
 export const metadata: Metadata = {
   title: 'Juegos',
   description:
-    'La Ley de los Audaces y Lex Note: piezas sobre decisión normativa bajo presión y lectura anotada con trazabilidad.',
+    'La Ley de los Audaces, RPG jurídico con su primer capítulo jugable, y Lex Note, lectura anotada con trazabilidad.',
 };
 
 /**
  * Juegos.
  *
- * Ninguna pieza está construida todavía. La página lo dice en la primera línea
- * en vez de simular actividad: un hub con maquetas vacías promete más que un
- * hub que declara su estado.
+ * Una pieza tiene su primer capítulo jugable y vive dentro de este repositorio,
+ * con su código, su arte y su trazabilidad. La otra sigue en diseño. La página
+ * distingue las dos situaciones en vez de aplanarlas.
  */
 export default function JuegosPage() {
   const family = experiments.filter((e) => e.family === 'juegos');
@@ -41,20 +41,24 @@ export default function JuegosPage() {
             Consecuencias diferidas
           </p>
           <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
-            Piezas sobre decisión normativa bajo presión y sobre lectura anotada
-            con trazabilidad. Dos ideas en diseño, ninguna jugable todavía.
+            Piezas sobre decisión jurídica y sobre lectura anotada con
+            trazabilidad. Una tiene su primer capítulo jugable; la otra sigue en
+            diseño.
           </p>
         </Container>
       </header>
 
       <Section>
         <Notice tone="signal" className="max-w-3xl">
-          Esta sección está en diseño. Las fichas siguientes describen qué se
-          quiere construir y con qué criterio, no algo que ya funcione.
+          Sección en construcción. <strong>La Ley de los Audaces</strong> tiene
+          su Capítulo 0 jugable —un prototipo de tres a cinco minutos, no un
+          juego terminado— con el código, el arte y la documentación dentro de
+          este repositorio, para poder auditarlo y continuarlo. Lex Note todavía
+          es una idea.
         </Notice>
       </Section>
 
-      <Section eyebrow="En diseño" title="Las dos piezas">
+      <Section eyebrow="Estado" title="Las dos piezas">
         <ul className="grid gap-4 md:grid-cols-2">
           {family.map((exp) => (
             <li key={exp.id}>
@@ -71,12 +75,12 @@ export default function JuegosPage() {
       >
         <div className="grid gap-3 md:grid-cols-2">
           <PendingBlock
-            label="La Ley de los Audaces · mecánica"
-            detail="Falta definir el modelo de consecuencias diferidas: cuántos turnos median entre una decisión y su efecto, y cómo se le muestra al jugador la relación causal sin arruinar el punto del juego, que es precisamente que no se ve."
+            label="La Ley de los Audaces · validación"
+            detail="El Capítulo 0 funciona; falta saber si entretiene. Antes de escribir el capítulo siguiente hay que ver a alguien jugarlo entero sin instrucciones y anotar dónde se aburre."
           />
           <PendingBlock
-            label="La Ley de los Audaces · contenido"
-            detail="Escenarios normativos de demostración, rotulados como tales. No se usarán casos reales: un caso real convertido en juego se cita después como si fuera análisis."
+            label="La Ley de los Audaces · verificación jurídica"
+            detail="Las tres referencias normativas del capítulo están rotuladas «por verificar» y así se muestran dentro del juego. Pasan a citarse como Derecho vigente sólo cuando alguien las contraste con el texto oficial y deje la fecha."
           />
           <PendingBlock
             label="Lex Note · modelo de anotación"
@@ -93,10 +97,8 @@ export default function JuegosPage() {
         <Container>
           <EvaNote portrait="sunset" className="max-w-3xl">
             <p>
-              Se decide rápido y con información incompleta; los efectos aparecen
-              varias jugadas después, cuando ya nadie recuerda quién los causó.
-              Cualquier parecido con la realidad legislativa es estructural, no
-              anecdótico.
+              Una de las dos ya se juega. La otra sigue siendo una idea, y decir
+              cuál es cuál es la mitad del trabajo de un laboratorio.
             </p>
           </EvaNote>
         </Container>
