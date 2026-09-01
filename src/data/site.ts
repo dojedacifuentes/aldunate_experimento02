@@ -126,7 +126,8 @@ export const secondaryNav: NavEntry[] = [
  *
  * Eran tres columnas con once enlaces —un segundo índice completo, con las
  * piezas sueltas de Experimentos incluidas—. Ahora es una sola fila con las
- * cinco secciones: las hijas se alcanzan desde su sección, que es donde tienen
+ * cinco secciones más la política de correcciones; las hijas se alcanzan desde
+ * su sección, que es donde tienen
  * contexto.
  */
 export const footerNav = [
@@ -135,4 +136,5 @@ export const footerNav = [
   { href: '/laboratorio', label: 'Lab IA + Derecho' },
   { href: '/investigacion', label: 'Investigación' },
   { href: '/aldunate', label: 'Aldunate' },
+  { href: '/correcciones', label: 'Correcciones' },
 ] as const;

@@ -81,9 +81,70 @@ describe('navegación', () => {
     expect(secondaryNav.filter((e) => p.has(e.href))).toEqual([]);
   });
 
-  it('el footer enlaza exactamente las cinco secciones de la navegación', () => {
-    const nav = [...primaryNav, ...secondaryNav].map((e) => e.href).sort();
-    expect(footerNav.map((l) => l.href).sort()).toEqual(nav);
+  it('el footer enlaza todas las secciones de la navegación', () => {
+    // Puede llevar además páginas de política —correcciones, legal— que no son
+    // secciones del sitio. Lo que no puede es olvidarse de una sección.
+    const enFooter = new Set<string>(footerNav.map((l) => l.href));
+    const ausentes = [...primaryNav, ...secondaryNav]
+      .map((e) => e.href)
+      .filter((h) => !enFooter.has(h));
+    expect(ausentes).toEqual([]);
+  });
+});
+
+describe('coherencia de la cadena de conteos', () => {
+  /**
+   * 24 fuentes, 38 hallazgos, 18 afirmaciones. Parecían contradecirse porque
+   * aparecían sueltas en sitios distintos; cuentan eslabones distintos de la
+   * misma cadena. Lo que sí sería incoherente es que el recuento declarado no
+   * coincidiera con lo que hay cargado.
+   */
+  it('el recuento de fuentes declarado coincide con las fuentes vinculadas', () => {
+    for (const r of reports) {
+      if (!r.counts) continue;
+      expect(r.counts.sources, `informe ${r.slug}`).toBe(r.sourceIds.length);
+    }
+  });
+
+  it('la cadena no se estrecha al revés: hay más hallazgos que afirmaciones', () => {
+    for (const r of reports) {
+      if (!r.counts) continue;
+      expect(r.counts.findings, `informe ${r.slug}`).toBeGreaterThanOrEqual(r.counts.claims);
+      expect(r.counts.claims, `informe ${r.slug}`).toBeGreaterThanOrEqual(
+        r.counts.recommendations,
+      );
+    }
+  });
+
+  it('las afirmaciones cargadas no superan las declaradas por su informe', () => {
+    for (const r of reports) {
+      if (!r.counts) continue;
+      const propias = claims.filter((c) => c.report === r.code).length;
+      expect(propias, `informe ${r.slug}`).toBeLessThanOrEqual(r.counts.claims);
+    }
+  });
+});
+
+describe('taxonomía epistemológica', () => {
+  it('ninguna fuente conserva el rótulo de causalidad establecida', () => {
+    // D5 es identificación causal *en contexto experimental*. La diferencia no
+    // es de estilo: la primera formulación autoriza a generalizar y la segunda no.
+    const t = JSON.stringify(sources);
+    expect(t).not.toContain('causalidad establecida');
+  });
+
+  it('toda fuente con nivel D5 declara su alcance de generalización', () => {
+    const mudas = sources
+      .filter((s) => s.demonstrativeLevel === 'D5_causal_identification' && !s.generalizationScope)
+      .map((s) => s.id);
+    expect(mudas).toEqual([]);
+  });
+
+  it('una fuente corregida o retractada lo declara en su estado', () => {
+    const incoherentes = sources
+      .filter((s) => s.correction && s.documentaryStatus !== 'corrected')
+      .map((s) => s.id);
+    expect(incoherentes).toEqual([]);
   });
 });
 

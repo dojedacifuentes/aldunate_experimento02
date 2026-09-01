@@ -7,6 +7,7 @@ import {
   Badge,
   Breadcrumbs,
   ButtonLink,
+  Disclosure,
   Container,
   MetaRow,
   Notice,
@@ -14,7 +15,13 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
-import { getReport, reports, reportStatusMeta } from '@/data/reports';
+import {
+  claimChangeLabel,
+  getReport,
+  reports,
+  reportStatusMeta,
+  reportStatusNotice,
+} from '@/data/reports';
 import { autor } from '@/data/site';
 import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
@@ -103,6 +110,31 @@ export default async function InformeDetallePage({
             <p className="mt-3 font-serif text-lg italic text-muted-foreground sm:text-xl">
               {report.subtitle}
             </p>
+          )}
+          {/* Descriptor: acota el alcance, no compite con el título. */}
+          {report.descriptor && (
+            <p className="mono mt-3 text-[0.6875rem] uppercase tracking-widest text-accent">
+              {report.descriptor}
+            </p>
+          )}
+
+          {/* La cadena, con sus cifras juntas. Sueltas parecían contradecirse. */}
+          {report.counts && (
+            <ol className="mono mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.6875rem] text-muted-foreground">
+              {[
+                [report.counts.sources, 'fuentes'],
+                [report.counts.findings, 'hallazgos'],
+                [report.counts.claims, 'afirmaciones'],
+                [report.counts.recommendations, 'recomendaciones'],
+              ].map(([n, etiqueta], i, arr) => (
+                <li key={etiqueta as string} className="flex items-center gap-2">
+                  <span>
+                    <span className="text-foreground">{n}</span> {etiqueta}
+                  </span>
+                  {i < arr.length - 1 && <span aria-hidden>→</span>}
+                </li>
+              ))}
+            </ol>
           )}
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -299,6 +331,48 @@ export default async function InformeDetallePage({
                   </li>
                 ))}
               </ul>
+
+              {/*
+                Changelog a nivel de afirmación. «Se actualizaron fuentes» no
+                permite saber si la frase que alguien citó el mes pasado sigue
+                diciendo lo mismo; esto sí: qué decía, qué dice y por qué.
+              */}
+              {version.claimChanges && version.claimChanges.length > 0 && (
+                <Disclosure
+                  className="mt-4"
+                  summary="Qué afirmaciones cambiaron, y por qué"
+                  hint={`${version.claimChanges.length} cambios`}
+                >
+                  <ol className="space-y-5">
+                    {version.claimChanges.map((c, k) => (
+                      <li key={`${version.version}-${k}`}>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="mono text-[0.625rem] uppercase tracking-widest text-accent">
+                            {claimChangeLabel[c.changeType]}
+                          </span>
+                          {c.claimId && (
+                            <a
+                              href={`/investigacion#${c.claimId}`}
+                              className="mono inline-flex min-h-6 items-center text-[0.625rem] text-primary underline underline-offset-2 hover:no-underline"
+                            >
+                              {c.claimId}
+                            </a>
+                          )}
+                        </div>
+                        <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted-foreground line-through decoration-muted-foreground/40">
+                          {c.previous}
+                        </p>
+                        <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-foreground/85">
+                          {c.current}
+                        </p>
+                        <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                          <span className="meta">Motivo</span> {c.reason}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                </Disclosure>
+              )}
             </li>
           ))}
         </ol>
@@ -399,10 +473,15 @@ export default async function InformeDetallePage({
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
             <div className="space-y-6">
-              <Notice tone="warning">
-                Informe en fase de investigación. El alcance y el método están
-                definidos; los hallazgos, no. Nada de lo publicado aquí debe
-                citarse todavía como resultado.
+              {/*
+                El aviso se deriva del estado. Estaba escrito a mano y decía
+                «Informe en fase de investigación… los hallazgos, no» en los dos
+                informes, incluido el que está en revisión con PDF descargable y
+                treinta y ocho hallazgos registrados. Una advertencia que
+                contradice a la propia página no advierte de nada.
+              */}
+              <Notice tone={report.status === 'publicado' ? 'success' : 'warning'}>
+                {reportStatusNotice[report.status]}
               </Notice>
 
               {/*

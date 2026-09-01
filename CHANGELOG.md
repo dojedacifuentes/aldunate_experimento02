@@ -487,3 +487,25 @@ Auditoría en `UX-UI-AUDIT.md`, detalle por fases en `UX-UI-CHANGELOG.md`.
   objetivos táctiles por debajo de 24 px elevados, 118 fallos de contraste en
   tema claro eliminados.
 - 12 pruebas nuevas sobre `src/data/`, que no tenía ninguna.
+
+## Auditoría v0.3.0 · 01-09-2026
+
+Estado hallazgo por hallazgo en `docs/audit-v0.3.0.md`.
+
+- Once afirmaciones recalibradas al diseño de sus fuentes: alcance del estudio
+  de Reading, comparación Harvard–Bastani, gobernanza, excepcionalismo jurídico
+  y detectores dejan de afirmar más de lo que su evidencia sostiene.
+- «D5 · causalidad establecida» → «identificación causal en contexto
+  experimental», con el alcance de generalización como dimensión aparte.
+- La taxonomía se parte en cuatro: estado documental, robustez, nivel
+  demostrativo y generalización. «VERIFICADO» las mezclaba.
+- Fuentes críticas contrastadas contra su publicación original. Aparece una
+  corrección de PNAS sobre Bastani et al. que el informe no mencionaba.
+- Título canónico único entre PDF y web; estado de versión derivado de una sola
+  fuente; cadena de conteos publicada.
+- Portada del informe: cifras con universo y muestra, «Investigación aplicada»
+  en vez de «Informe experto», autoría con nombre.
+- Informe regenerado como v0.3.0 —77 páginas, sin residuos de Word— y publicado
+  junto a v0.2.0, que no se sobrescribe.
+- Changelog a nivel de afirmación: qué decía, qué dice y por qué.
+- Política pública de correcciones en `/correcciones`.

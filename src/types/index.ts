@@ -19,6 +19,42 @@ export type EvidenceLevel =
   | 'HYPOTHESIS'
   | 'PENDING';
 
+/**
+ * Cuatro dimensiones que antes viajaban juntas bajo la palabra «VERIFICADO».
+ *
+ * Que una fuente exista y diga lo que se le atribuye (`documentaryStatus`) no
+ * dice nada sobre si su hallazgo se sostiene (`robustness`), ni sobre qué
+ * demuestra su diseño (`demonstrativeLevel`), ni sobre hasta dónde puede
+ * llevarse (`generalizationScope`). Colapsarlas en una sola etiqueta convertía
+ * un estudio único no replicado en un hecho establecido.
+ */
+
+/** ¿La fuente existe, es accesible y dice lo que se le atribuye? */
+export type DocumentaryStatus = 'verified' | 'incomplete' | 'unverifiable' | 'corrected';
+
+/** ¿Cuánto se sostiene el hallazgo frente al resto de la literatura? */
+export type Robustness = 'single_study' | 'convergent' | 'replicated' | 'contested' | 'retracted';
+
+/**
+ * Qué demuestra el diseño. D5 no es «causalidad establecida»: es identificación
+ * causal **dentro de un contexto experimental**, que es cosa distinta y mucho
+ * más modesta.
+ */
+export type DemonstrativeLevel =
+  | 'D1_existence'
+  | 'D2_implementation'
+  | 'D3_adoption'
+  | 'D4_measured_outcome'
+  | 'D5_causal_identification';
+
+/** Hasta dónde puede llevarse el hallazgo. Es independiente del nivel: un D5 puede ser estrictamente local. */
+export type GeneralizationScope =
+  | 'local'
+  | 'similar_population'
+  | 'disciplinary'
+  | 'multi_context'
+  | 'not_established';
+
 /** Fuente pública citable. Espeja `content/research/source-registry.csv`. */
 export interface Source {
   id: string;
@@ -32,6 +68,20 @@ export interface Source {
   /** 0–100. Cuánto sostiene realmente esta fuente lo que se le atribuye. */
   confidence?: number;
   notes?: string;
+
+  /* ── Taxonomía epistemológica (auditoría v0.3.0) ── */
+  documentaryStatus?: DocumentaryStatus;
+  robustness?: Robustness;
+  demonstrativeLevel?: DemonstrativeLevel;
+  generalizationScope?: GeneralizationScope;
+  /** Fecha en que se contrastó contra la publicación original. */
+  lastVerified?: string;
+  /**
+   * Aviso editorial del propio publicador: corrección, fe de erratas o
+   * retractación, con su fecha. Una fuente corregida sigue siendo utilizable;
+   * lo que no es aceptable es citarla sin decir que lo está.
+   */
+  correction?: { date: string; url?: string; note: string };
 }
 
 /** Afirmación vinculada a evidencia. Espeja `content/research/evidence-matrix.csv`. */
@@ -169,11 +219,34 @@ export type ReportStatus =
   | 'en-revision';
 
 /** Una versión publicada nunca se sobrescribe: se agrega y se registra. */
+/**
+ * Cambio a nivel de afirmación, no de archivo.
+ *
+ * «Se actualizaron fuentes» no permite a nadie saber si la frase que citó el
+ * mes pasado sigue diciendo lo mismo. Esto sí: qué decía, qué dice y por qué
+ * cambió.
+ */
+export interface ClaimChange {
+  claimId?: string;
+  /** Qué clase de cambio: acotar alcance, corregir dato, reformular taxonomía… */
+  changeType:
+    | 'narrowed_scope'
+    | 'corrected_data'
+    | 'retaxonomised'
+    | 'added_context'
+    | 'editorial';
+  previous: string;
+  current: string;
+  reason: string;
+}
+
 export interface ReportVersion {
   version: string;
   date: string;
   status: ReportStatus;
   changelog: string[];
+  /** Cambios a nivel de afirmación. Vacío en versiones que no tocaron claims. */
+  claimChanges?: ClaimChange[];
   /** Ruta bajo /public. Vacío mientras no exista el archivo. */
   pdf?: string;
   /**
@@ -183,11 +256,33 @@ export interface ReportVersion {
   html?: string;
 }
 
+/**
+ * Cuántas piezas hay en cada eslabón de la cadena, y qué relación tienen.
+ *
+ * Existe porque las cifras 24, 38 y 18 aparecían sueltas en sitios distintos y
+ * parecían contradecirse. No lo hacían: contaban cosas distintas. Publicar la
+ * ontología cuesta una línea y ahorra la sospecha de que los números están
+ * inflados.
+ */
+export interface ReportCounts {
+  /** Documentos públicos verificados uno a uno contra su publicación original. */
+  sources: number;
+  /** Hallazgos extraídos de esas fuentes, cada uno con su nivel demostrativo. */
+  findings: number;
+  /** Afirmaciones sintéticas: varios hallazgos condensados en una proposición. */
+  claims: number;
+  /** Recomendaciones, que además de evidencia incorporan una decisión normativa. */
+  recommendations: number;
+}
+
 export interface Report {
   slug: string;
   code: string;
   title: string;
   subtitle?: string;
+  /** Descriptor secundario. No es parte del título: lo acota. */
+  descriptor?: string;
+  counts?: ReportCounts;
   executiveSummary: string;
   authors: string[];
   status: ReportStatus;
