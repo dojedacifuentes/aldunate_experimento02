@@ -2,6 +2,51 @@
 
 ## No publicado
 
+### Perfil académico — la ruta `/aldunate`
+
+**Añadido.** La ruta pasa de declarar dos catálogos vacíos a una monografía
+navegable en cinco actos: retrato, ficha con nivel de evidencia por línea, mapa
+conceptual de arcos, explorador de preguntas, catálogo con tres lecturas,
+cronología y bibliografía. `/aldunate/papers` deja de estar huérfana y pasa a
+ser el catálogo completo, imprimible y sin un solo componente de cliente.
+
+**Contenido.** Entran 40 obras (38 artículos y 2 libros, 1993–2024) con sede,
+volumen, páginas y coautoría, contrastadas contra Dialnet y, donde estaba
+accesible, contra la publicación original. Cada dato lleva su nivel de
+evidencia y el número de la fuente que lo sostiene.
+
+**Corregido del material de partida.** Seis afirmaciones del informe de
+investigación no se sostenían y no se publicaron: «Limitación y expropiación»
+estaba fechado en 2024 y es de 2006 —y el título es «Scilla», no «Scylla»—;
+dos artículos más con año equivocado; una contradicción interna del propio
+informe; «Quilpué, 1968» sin fuente; e indicadores bibliométricos que el propio
+documento declaraba no verificados. Detalle en
+`docs/AUDITORIA-PERFIL-ALDUNATE.md`. D-034.
+
+**Corregido en el sitio.** Dos mensajes de EVA seguían diciendo que el catálogo
+estaba vacío. Es el tipo de dato falso que compila y que `verify` no ve.
+
+**Añadido.** Modo lectura conmutable y persistido: retira lienzos, movimiento,
+barras pegajosas y grano; deja texto y referencias. Es también lo que se
+imprime.
+
+**Corregido.** Dos barras pegajosas se disputaban `top-0`: la navegación de
+sección se montaba sobre la cabecera del sitio.
+
+**Corregido.** El bucle WebGL corría a 60 fps para siempre. A una vuelta cada
+110 s, un fotograma mueve la escena 0,0009 rad. Ahora va a 24 fps y el paso se
+calcula por milisegundo, de modo que no depende de la tasa de refresco.
+
+**Corregido.** El pestillo del ticker de scroll podía quedarse trabado si
+`requestAnimationFrame` no llegaba a ejecutarse, y entonces el scroll dejaba de
+actualizar para siempre. Sustituido por cancelar y volver a pedir.
+
+**Añadido.** 22 pruebas de integridad del perfil: rompen el build si un
+`sourceId` no existe, si un concepto se queda sin obras, si un dato con una
+sola fuente secundaria se marca como verificado, o si alguien atribuye una
+tesis a una obra que nadie ha leído.
+
+
 ### Corregido
 
 - **Quien ya había jugado no veía el capítulo nuevo.** La partida guardada lo
