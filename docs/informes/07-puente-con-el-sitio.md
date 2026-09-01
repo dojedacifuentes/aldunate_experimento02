@@ -115,8 +115,10 @@ Poblar `sourceIds` y `claimIds` en la entrada del informe. Antes de dar por
 terminado, comprobar que no queda ningún identificador huérfano:
 
 ```bash
-grep -o "id: '\(src\|clm\)-[a-z0-9-]*'" src/data/research.ts | sed "s/id: '//; s/'//" | sort > /tmp/definidos.txt
-grep -o "'\(src\|clm\)-[a-z0-9-]*'," src/data/reports.ts | sed "s/'//g; s/,//" | sort > /tmp/usados.txt
+grep -o "id: '\(src\|clm\)-[a-z0-9-]*'" src/data/research.ts \
+  | sed "s/id: '//; s/'//" | sort -u > /tmp/definidos.txt
+grep -oE "'(src|clm)-[a-z0-9-]*'" src/data/reports.ts \
+  | tr -d "'" | sort -u > /tmp/usados.txt
 comm -13 /tmp/definidos.txt /tmp/usados.txt   # referenciado sin definir → rompe la página
 comm -23 /tmp/definidos.txt /tmp/usados.txt   # definido y sin usar → probablemente un olvido
 ```
@@ -125,12 +127,26 @@ La página filtra los `undefined`, así que un identificador huérfano no rompe 
 build: simplemente hace desaparecer una fuente sin avisar. Por eso conviene
 comprobarlo a mano.
 
+**Dos detalles del comando que no son cosméticos**, y que costaron una falsa
+alarma el 01-09-2026:
+
+- **`sort -u` en los dos lados.** `comm` exige entrada única, y un mismo
+  identificador aparece legítimamente dos veces en `reports.ts`: una en
+  `claimIds[]` y otra en `claimChanges[].claimId`. Sin `-u`, el duplicado se
+  reporta como huérfano y manda a buscar un problema que no existe.
+- **El patrón no lleva coma final.** Exigirla haría invisible al último elemento
+  de un array escrito sin coma de cierre. Ése sería un falso negativo —silencioso,
+  y por tanto peor que la falsa alarma.
+
+Un comprobador que se equivoca enseña a ignorarlo, y entonces deja de servir el
+día que acierte.
+
 ---
 
 ## Antes de cerrar
 
 ```bash
-npm run typecheck && npm run lint && npm run build
+npm run verify   # typecheck + lint + tests + build
 ```
 
 Y actualizar `CHANGELOG.md`. Si no se pudo ejecutar la verificación —por ejemplo,
