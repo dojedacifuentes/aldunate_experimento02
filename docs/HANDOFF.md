@@ -178,10 +178,26 @@ una versión publicada.**
 
 ## 6. Siguiente paso sugerido
 
-1. Fusionar PR #10 y #11 y comprobar producción.
-2. Abrir el PDF v0.3.0 y revisar portada y páginas finales (§3).
-3. Resolver el protocolo de búsqueda (A-05) con el autor.
-4. Cerrar A-29 trayendo los `contenido-*.json` al repositorio.
+PR #10 y #11 están fusionados; producción va en `b172680` y sirve el Informe 02
+en v0.3.0. El trabajo activo pasó al **Informe 01**.
+
+1. **Verificar las 43 fuentes del Informe 01 una por una.** Es lo único que
+   desbloquea todo lo demás, y es lo que no se delega: abrir cada página y
+   contrastar lo que dice contra lo que el documento fuente le atribuye. La
+   pasada hecha sólo comprueba que responden. Procedimiento en
+   `tools/informes/informe-01/verificacion-fuentes.md`.
+2. **Igualar cobertura en las ocho universidades fuera del piloto.** Con nueve
+   fuentes contra dos, ninguna comparación nacional es publicable. Hasta que se
+   iguale, el informe publica once fichas y ninguna tabla de posiciones.
+3. Comprobar cuáles de las cuatro iniciativas anunciadas llegaron a ejecutarse
+   —UDD malla 2027, UDP currículo, UAI convenio Legu, UANDES FONDEF—.
+4. Abrir el PDF v0.3.0 del Informe 02 y revisar portada y páginas finales (§3).
+5. Resolver el protocolo de búsqueda (A-05) con el autor.
+6. Cerrar A-29 trayendo los `contenido-*.json` al repositorio.
+
+**No redactar el Informe 01 antes del punto 1.** El corpus cierra los cinco pasos
+de fusión, pero ninguna afirmación es publicable todavía y `sourceIds` /
+`claimIds` siguen vacíos a propósito.
 
 El plan de fondo del proyecto —fases A a D, y por qué nada se publica antes de
 hablar con el profesor— sigue en `docs/PUENTE-Y-HOJA-DE-RUTA.md`. No ha

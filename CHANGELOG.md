@@ -46,9 +46,51 @@ actualizar para siempre. Sustituido por cancelar y volver a pedir.
 sola fuente secundaria se marca como verificado, o si alguien atribuye una
 tesis a una obra que nadie ha leído.
 
+### Informe 01 — el corpus de evidencia
+
+- **El Informe 01 tiene corpus.** Llevaba desde el 29-08 con la estructura
+  montada y el registro vacío. Se funden tres investigaciones profundas sobre IA
+  y Derecho en las once universidades de la cohorte, siguiendo los cinco pasos de
+  la skill `informe-vivo`: **43 fuentes públicas únicas**, todas institucionales,
+  todas con fecha. Los documentos fuente quedan versionados en
+  `content/reports/01_ia_escuelas_derecho_chile/sources/`, porque lo que no está
+  versionado no es trazable. Ficha en `v0.2.0`.
+- **Una de las tres investigaciones se cayó en el paso 1, y es el hallazgo.**
+  Declaraba 25 fuentes con identificador y ninguna tenía URL: sus referencias
+  eran marcadores internos del buscador del modelo que la produjo, no resolubles
+  por un tercero. No aporta nada fusionable y queda como antecedente. Un
+  documento que se cae en el inventario es un documento que no llega a la
+  publicación.
+- **Se declara la desigualdad de cobertura antes de que engañe a nadie.** Nueve
+  fuentes en cada universidad del piloto, dos en cada una de las otras ocho: esa
+  diferencia mide esfuerzo de investigación, no actividad institucional. **No se
+  emite ninguna comparación nacional**, que es exactamente lo que la metodología
+  declarada del informe ya exigía.
+- **Verificación de resolubilidad de las 43 fuentes.** 42 responden; la de la
+  UdeC existe pero su certificado no cubre el nombre de host, así que se conserva
+  con la advertencia declarada en vez de descartarla —es una de sus dos únicas
+  fuentes—. `sourceIds` y `claimIds` **siguen vacíos**: que una URL responda no
+  prueba que diga lo que se le atribuye, y esa verificación no se delega.
 
 ### Corregido
 
+- **El comprobador de identificadores huérfanos daba una falsa alarma sobre
+  nuestros propios datos.** `CLAUDE.md` §8 lo llama «el paso que más se olvida», y
+  señalaba como huérfano un `clm-` que estaba perfectamente definido: `comm`
+  exige entrada única y ese identificador aparece dos veces en `reports.ts`, en
+  `claimIds[]` y en `claimChanges[].claimId`. Ahora lleva `sort -u` en ambos
+  lados. De paso se le quitó la coma final al patrón, que habría hecho invisible
+  al último elemento de un array sin coma de cierre —un falso negativo, peor por
+  silencioso—. Comprobado: 42 definidos, 42 usados, cero huérfanos. Un
+  comprobador que se equivoca enseña a ignorarlo.
+- **La skill daba por vacío el paso de arbitraje cuando no había fuentes
+  repetidas.** Estaba redactado sólo alrededor de «la misma fuente vista dos
+  veces». Ahora cubre también las cifras que coinciden midiendo cosas distintas y
+  las fuentes que se contradicen en apariencia, y manda comprobar de qué está
+  hecha una referencia antes de contarla.
+- **`07-puente-con-el-sitio.md` mandaba correr una verificación que ya no
+  existía** —`typecheck && lint && build`—, sin los tests que `npm run verify`
+  incorporó.
 - **Quien ya había jugado no veía el capítulo nuevo.** La partida guardada lo
   devolvía a mitad del Capítulo 0 —los ids de nodo no cambiaron, así que el save
   funcionaba— y se saltaba para siempre la apertura reescrita y el tribunal de
