@@ -356,3 +356,99 @@ export interface EvaMessage {
  * un componente— porque las capas de datos lo declaran junto al contenido.
  */
 export type Tone = 'muted' | 'signal' | 'success' | 'warning' | 'danger' | 'accent';
+
+/* ───────────────────── Perfil académico verificable ───────────────────── */
+
+/**
+ * Fuente bibliográfica citable del perfil académico.
+ *
+ * Distinta de `Source` (que espeja el registro de investigación de los
+ * informes): aquí lo que se cita es una obra, un índice bibliográfico o una
+ * ficha institucional, no un estudio con diseño y hallazgo.
+ *
+ * `tier` no es un adorno: ordena la jerarquía del §27 del encargo. Una ficha
+ * de wiki y un índice bibliográfico no sostienen lo mismo, y la interfaz debe
+ * poder decirlo sin que nadie tenga que abrir el enlace.
+ */
+export type AcademicSourceTier =
+  /** Índice bibliográfico o repositorio académico (Dialnet, SciELO, DOI). */
+  | 'indice'
+  /** La publicación original, accesible. */
+  | 'publicacion'
+  /** Sitio de la institución que emite el dato. */
+  | 'institucional'
+  /** Ficha colaborativa o secundaria. Se usa, pero se declara. */
+  | 'secundaria';
+
+export interface AcademicSource {
+  id: string;
+  title: string;
+  publisher: string;
+  tier: AcademicSourceTier;
+  url?: string;
+  /** Qué sostiene esta fuente, en una línea. Evita citarla para todo. */
+  supports: string;
+  accessedDate: string;
+  /** Reserva conocida sobre la fuente. Se muestra, no se esconde. */
+  caveat?: string;
+}
+
+/**
+ * Dato biográfico o de trayectoria, con su nivel epistémico.
+ *
+ * Reutiliza `EvidenceLevel` en vez de inventar una escala paralela: el sitio
+ * ya distingue cinco niveles en toda la capa de investigación y una segunda
+ * taxonomía solo para esta página convertiría la comparación en imposible.
+ */
+export interface ProfileFact {
+  id: string;
+  label: string;
+  value: string;
+  classification: EvidenceLevel;
+  sourceIds: string[];
+  /** Matiz, discrepancia entre fuentes o alcance de lo afirmado. */
+  note?: string;
+}
+
+/** Concepto del corpus. Se deriva de obras reales, nunca se propone a priori. */
+export interface CorpusConcept {
+  id: string;
+  title: string;
+  /** Descripción del territorio, no atribución de tesis. */
+  summary: string;
+  /** Ids de conceptos con los que comparte obras. Dibuja el grafo. */
+  related: string[];
+}
+
+export type TimelineKind = 'formacion' | 'cargo' | 'obra' | 'institucional';
+
+export interface TimelineEvent {
+  id: string;
+  year: number;
+  /** Año final, para tramos. */
+  endYear?: number;
+  title: string;
+  detail?: string;
+  kind: TimelineKind;
+  classification: EvidenceLevel;
+  sourceIds: string[];
+}
+
+/**
+ * Pregunta doctrinal documentada.
+ *
+ * `position` describe **qué problema aborda la obra**, en lenguaje de obra
+ * («en X se examina…»), no qué piensa la persona. La diferencia no es
+ * cosmética: sin acceso al texto completo, atribuir una convicción a alguien a
+ * partir de un título es inventar despacio.
+ */
+export interface DoctrinalTopic {
+  id: string;
+  conceptId: string;
+  question: string;
+  position: string;
+  classification: EvidenceLevel;
+  /** Ids de publicaciones que sostienen la entrada. */
+  publicationIds: string[];
+  note?: string;
+}
