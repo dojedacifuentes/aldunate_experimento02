@@ -22,6 +22,23 @@ export const reportStatusMeta: Record<ReportStatus, { label: string; tone: Tone 
   publicado: { label: 'Publicado', tone: 'success' },
 };
 
+/**
+ * Qué significa cada estado para quien va a citar. Fuente única: la ficha, la
+ * portada y la descarga leen de aquí, y no de tres frases escritas a mano que
+ * envejecen por separado —que es como el sitio llegó a decir a la vez «v0.2.0
+ * publicada» y «los hallazgos aún no están definidos»—.
+ */
+export const reportStatusNotice: Record<ReportStatus, string> = {
+  'en-investigacion':
+    'Investigación abierta. La estructura y el método están definidos; los hallazgos todavía no. Nada de lo publicado aquí debe citarse aún como resultado.',
+  borrador:
+    'Borrador de trabajo. El texto puede cambiar en cualquier momento y no ha pasado revisión. Cite sólo con indicación expresa de que es un borrador.',
+  'en-revision':
+    'Versión de trabajo en revisión. Los hallazgos y su interpretación pueden cambiar antes de una versión estable. Cite siempre el número de versión y la fecha de consulta.',
+  publicado:
+    'Versión estable. Las correcciones posteriores se publican como versión nueva y quedan registradas en el changelog; ninguna versión se sobrescribe.',
+};
+
 export const reports: Report[] = [
   {
     slug: 'ia-escuelas-derecho-chile',
@@ -95,9 +112,29 @@ export const reports: Report[] = [
   {
     slug: 'transformacion-ensenanza-derecho',
     code: 'INFORME 02',
-    title:
-      'Cómo se está transformando la enseñanza del Derecho en el contexto de la inteligencia artificial',
-    subtitle: 'Metodologías, evaluación y competencias',
+    /*
+      Título canónico, idéntico al de la portada del PDF. La web decía «Cómo se
+      está transformando la enseñanza del Derecho…» y el documento «La
+      universidad ante la automatización del trabajo cognitivo»: dos títulos
+      para un mismo informe, que es de las cosas más difíciles de defender ante
+      alguien que quiera citarlo. Y el estrecho era el de la web: la
+      arquitectura del informe es educación superior, con el Derecho como caso
+      crítico, no al revés.
+
+      El slug no cambia. Romper `/informes/transformacion-ensenanza-derecho`
+      para que la URL «combine» con el título nuevo rompería enlaces ya
+      publicados a cambio de nada.
+    */
+    title: 'La universidad ante la automatización del trabajo cognitivo',
+    subtitle:
+      'Transformación de la enseñanza superior en el contexto de la inteligencia artificial · 2022–2026',
+    descriptor: 'Caso especial: enseñanza del Derecho',
+    /*
+      24, 38 y 18 parecían contradecirse y no lo hacían: contaban eslabones
+      distintos de la misma cadena. Se publican juntos para que la relación se
+      vea, en vez de dejar que tres cifras sueltas siembren la sospecha.
+    */
+    counts: { sources: 24, findings: 38, claims: 18, recommendations: 8 },
     executiveSummary:
       'Qué se evalúa cuando el producto escrito deja de ser prueba de proceso. La versión 0.2.0 sitúa la enseñanza jurídica dentro del cuadro más amplio de la educación superior: veinticuatro capítulos que recorren evaluación, competencias, metodologías, rol docente, currículo, gobernanza y mercado profesional, con la formación en Derecho como caso crítico porque su cadena formativa completa —leer, sintetizar, argumentar y redactar— coincide con lo que los sistemas generativos ejecutan con alta fluidez y fiabilidad insuficiente. El hallazgo central es asimétrico: la transformación verificable se concentra casi por completo en la evaluación, y de treinta y ocho hallazgos registrados solo seis alcanzan nivel de causalidad establecida. Ninguna afirmación sobre despliegues institucionales de escala supera el nivel de implementación.',
     authors: [autor.name],

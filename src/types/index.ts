@@ -233,11 +233,33 @@ export interface ReportVersion {
   html?: string;
 }
 
+/**
+ * Cuántas piezas hay en cada eslabón de la cadena, y qué relación tienen.
+ *
+ * Existe porque las cifras 24, 38 y 18 aparecían sueltas en sitios distintos y
+ * parecían contradecirse. No lo hacían: contaban cosas distintas. Publicar la
+ * ontología cuesta una línea y ahorra la sospecha de que los números están
+ * inflados.
+ */
+export interface ReportCounts {
+  /** Documentos públicos verificados uno a uno contra su publicación original. */
+  sources: number;
+  /** Hallazgos extraídos de esas fuentes, cada uno con su nivel demostrativo. */
+  findings: number;
+  /** Afirmaciones sintéticas: varios hallazgos condensados en una proposición. */
+  claims: number;
+  /** Recomendaciones, que además de evidencia incorporan una decisión normativa. */
+  recommendations: number;
+}
+
 export interface Report {
   slug: string;
   code: string;
   title: string;
   subtitle?: string;
+  /** Descriptor secundario. No es parte del título: lo acota. */
+  descriptor?: string;
+  counts?: ReportCounts;
   executiveSummary: string;
   authors: string[];
   status: ReportStatus;

@@ -14,7 +14,7 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
-import { getReport, reports, reportStatusMeta } from '@/data/reports';
+import { getReport, reports, reportStatusMeta, reportStatusNotice } from '@/data/reports';
 import { autor } from '@/data/site';
 import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
@@ -103,6 +103,31 @@ export default async function InformeDetallePage({
             <p className="mt-3 font-serif text-lg italic text-muted-foreground sm:text-xl">
               {report.subtitle}
             </p>
+          )}
+          {/* Descriptor: acota el alcance, no compite con el título. */}
+          {report.descriptor && (
+            <p className="mono mt-3 text-[0.6875rem] uppercase tracking-widest text-accent">
+              {report.descriptor}
+            </p>
+          )}
+
+          {/* La cadena, con sus cifras juntas. Sueltas parecían contradecirse. */}
+          {report.counts && (
+            <ol className="mono mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.6875rem] text-muted-foreground">
+              {[
+                [report.counts.sources, 'fuentes'],
+                [report.counts.findings, 'hallazgos'],
+                [report.counts.claims, 'afirmaciones'],
+                [report.counts.recommendations, 'recomendaciones'],
+              ].map(([n, etiqueta], i, arr) => (
+                <li key={etiqueta as string} className="flex items-center gap-2">
+                  <span>
+                    <span className="text-foreground">{n}</span> {etiqueta}
+                  </span>
+                  {i < arr.length - 1 && <span aria-hidden>→</span>}
+                </li>
+              ))}
+            </ol>
           )}
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -399,10 +424,15 @@ export default async function InformeDetallePage({
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
             <div className="space-y-6">
-              <Notice tone="warning">
-                Informe en fase de investigación. El alcance y el método están
-                definidos; los hallazgos, no. Nada de lo publicado aquí debe
-                citarse todavía como resultado.
+              {/*
+                El aviso se deriva del estado. Estaba escrito a mano y decía
+                «Informe en fase de investigación… los hallazgos, no» en los dos
+                informes, incluido el que está en revisión con PDF descargable y
+                treinta y ocho hallazgos registrados. Una advertencia que
+                contradice a la propia página no advierte de nada.
+              */}
+              <Notice tone={report.status === 'publicado' ? 'success' : 'warning'}>
+                {reportStatusNotice[report.status]}
               </Notice>
 
               {/*
