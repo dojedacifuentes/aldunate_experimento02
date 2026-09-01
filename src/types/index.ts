@@ -19,6 +19,42 @@ export type EvidenceLevel =
   | 'HYPOTHESIS'
   | 'PENDING';
 
+/**
+ * Cuatro dimensiones que antes viajaban juntas bajo la palabra «VERIFICADO».
+ *
+ * Que una fuente exista y diga lo que se le atribuye (`documentaryStatus`) no
+ * dice nada sobre si su hallazgo se sostiene (`robustness`), ni sobre qué
+ * demuestra su diseño (`demonstrativeLevel`), ni sobre hasta dónde puede
+ * llevarse (`generalizationScope`). Colapsarlas en una sola etiqueta convertía
+ * un estudio único no replicado en un hecho establecido.
+ */
+
+/** ¿La fuente existe, es accesible y dice lo que se le atribuye? */
+export type DocumentaryStatus = 'verified' | 'incomplete' | 'unverifiable' | 'corrected';
+
+/** ¿Cuánto se sostiene el hallazgo frente al resto de la literatura? */
+export type Robustness = 'single_study' | 'convergent' | 'replicated' | 'contested' | 'retracted';
+
+/**
+ * Qué demuestra el diseño. D5 no es «causalidad establecida»: es identificación
+ * causal **dentro de un contexto experimental**, que es cosa distinta y mucho
+ * más modesta.
+ */
+export type DemonstrativeLevel =
+  | 'D1_existence'
+  | 'D2_implementation'
+  | 'D3_adoption'
+  | 'D4_measured_outcome'
+  | 'D5_causal_identification';
+
+/** Hasta dónde puede llevarse el hallazgo. Es independiente del nivel: un D5 puede ser estrictamente local. */
+export type GeneralizationScope =
+  | 'local'
+  | 'similar_population'
+  | 'disciplinary'
+  | 'multi_context'
+  | 'not_established';
+
 /** Fuente pública citable. Espeja `content/research/source-registry.csv`. */
 export interface Source {
   id: string;
@@ -32,6 +68,20 @@ export interface Source {
   /** 0–100. Cuánto sostiene realmente esta fuente lo que se le atribuye. */
   confidence?: number;
   notes?: string;
+
+  /* ── Taxonomía epistemológica (auditoría v0.3.0) ── */
+  documentaryStatus?: DocumentaryStatus;
+  robustness?: Robustness;
+  demonstrativeLevel?: DemonstrativeLevel;
+  generalizationScope?: GeneralizationScope;
+  /** Fecha en que se contrastó contra la publicación original. */
+  lastVerified?: string;
+  /**
+   * Aviso editorial del propio publicador: corrección, fe de erratas o
+   * retractación, con su fecha. Una fuente corregida sigue siendo utilizable;
+   * lo que no es aceptable es citarla sin decir que lo está.
+   */
+  correction?: { date: string; url?: string; note: string };
 }
 
 /** Afirmación vinculada a evidencia. Espeja `content/research/evidence-matrix.csv`. */

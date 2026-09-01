@@ -1,4 +1,13 @@
-import type { EvidenceClaim, EvidenceLevel, Source, Tone } from '@/types';
+import type {
+  DemonstrativeLevel,
+  DocumentaryStatus,
+  EvidenceClaim,
+  EvidenceLevel,
+  GeneralizationScope,
+  Robustness,
+  Source,
+  Tone,
+} from '@/types';
 
 /**
  * Capa de investigación profunda.
@@ -92,6 +101,11 @@ export const sources: Source[] = [
     geography: 'Reino Unido',
     evidenceType: 'Estudio experimental revisado por pares',
     confidence: 95,
+    documentaryStatus: 'verified',
+    robustness: 'single_study',
+    demonstrativeLevel: 'D5_causal_identification',
+    generalizationScope: 'local',
+    lastVerified: '2026-08-31',
     notes:
       'Inserción ciega de respuestas generadas por IA en exámenes reales, corregidas por los propios evaluadores del curso. Realizado en módulos de Psicología: la dirección del hallazgo es robusta, su magnitud en otras disciplinas no está medida.',
   },
@@ -106,6 +120,11 @@ export const sources: Source[] = [
     geography: 'Estados Unidos',
     evidenceType: 'Ensayo controlado aleatorizado',
     confidence: 92,
+    documentaryStatus: 'verified',
+    robustness: 'single_study',
+    demonstrativeLevel: 'D5_causal_identification',
+    generalizationScope: 'local',
+    lastVerified: '2026-08-31',
     notes:
       'n ≈ 180, diseño cruzado semanal. La condición de control no era clase magistral sino aprendizaje activo bien ejecutado. El tutor fue construido con andamiajes de expertos: el efecto es atribuible al diseño, no al modelo.',
   },
@@ -114,13 +133,23 @@ export const sources: Source[] = [
     title: 'Generative AI without guardrails can harm learning',
     organization: 'PNAS',
     url: 'https://www.pnas.org/doi/10.1073/pnas.2422633122',
-    publishedDate: '2025',
+    publishedDate: '2025-06-25',
     accessedDate: '2026-08-30',
     geography: 'Turquía',
     evidenceType: 'Experimento de campo aleatorizado',
     confidence: 90,
+    documentaryStatus: 'corrected',
+    robustness: 'single_study',
+    demonstrativeLevel: 'D5_causal_identification',
+    generalizationScope: 'local',
+    lastVerified: '2026-08-31',
+    correction: {
+      date: '2025-08-20',
+      url: 'https://www.pnas.org/doi/10.1073/pnas.2518204122',
+      note: 'PNAS publicó una corrección (122(34):e2518204122). El aviso no detalla qué se corrigió ni si afecta a los resultados. Se registra porque una fuente corregida se puede citar, pero no en silencio.',
+    },
     notes:
-      'n ≈ 1.000. Único diseño localizado que retira la herramienta y mide qué queda: separa rendimiento asistido de aprendizaje. Realizado en secundaria; su traslado a la universidad es inferencia razonable, no dato.',
+      'n ≈ 1.000 estudiantes de secundaria en ~50 aulas de 9.º a 11.º grado, en un liceo de Turquía. Único diseño localizado que retira la herramienta y mide qué queda: separa rendimiento asistido de aprendizaje. Realizado en secundaria y en matemáticas; su traslado a la universidad es inferencia razonable, no dato.',
   },
   {
     id: 'src-metr-2025',
@@ -147,6 +176,11 @@ export const sources: Source[] = [
     geography: 'Internacional',
     evidenceType: 'Nota de retractación',
     confidence: 98,
+    documentaryStatus: 'verified',
+    robustness: 'retracted',
+    demonstrativeLevel: 'D1_existence',
+    generalizationScope: 'not_established',
+    lastVerified: '2026-08-31',
     notes:
       'El metaanálisis retractado había acumulado 266 citas y cerca de 486.000 visualizaciones. Motivo declarado: agregación de estudios demasiado distintos en método y muestra.',
   },
@@ -170,13 +204,18 @@ export const sources: Source[] = [
       'Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools',
     organization: 'Journal of Empirical Legal Studies · Stanford RegLab y HAI',
     url: 'https://onlinelibrary.wiley.com/doi/full/10.1111/jels.12413',
-    publishedDate: '2025',
+    publishedDate: '2025-04',
     accessedDate: '2026-08-30',
     geography: 'Estados Unidos',
     evidenceType: 'Evaluación empírica de herramientas comerciales',
     confidence: 93,
+    documentaryStatus: 'verified',
+    robustness: 'single_study',
+    demonstrativeLevel: 'D4_measured_outcome',
+    generalizationScope: 'disciplinary',
+    lastVerified: '2026-08-31',
     notes:
-      'Ambos proveedores comercializaban sus productos como libres de alucinaciones. Las tasas dependen del conjunto de consultas empleado y pueden variar con versiones posteriores.',
+      'Version of record en Journal of Empirical Legal Studies 22:216–242 (2025). Precisión de mes, no de día: Wiley devuelve 403 a la consulta automatizada y el día exacto no pudo contrastarse contra la página del editor. Ambos proveedores comercializaban sus productos como libres de alucinaciones. Las tasas dependen del conjunto de consultas empleado y pueden variar con versiones posteriores.',
   },
   {
     id: 'src-charlotin-2026',
@@ -235,11 +274,16 @@ export const sources: Source[] = [
     title: 'Student Generative AI Survey 2026',
     organization: 'Higher Education Policy Institute',
     url: 'https://www.hepi.ac.uk/reports/student-generative-ai-survey-2026/',
-    publishedDate: '2026',
+    publishedDate: '2026-03-12',
     accessedDate: '2026-08-30',
     geography: 'Reino Unido',
     evidenceType: 'Encuesta',
     confidence: 82,
+    documentaryStatus: 'verified',
+    robustness: 'single_study',
+    demonstrativeLevel: 'D3_adoption',
+    generalizationScope: 'similar_population',
+    lastVerified: '2026-08-31',
     notes:
       'n = 1.054 estudiantes de grado a tiempo completo; trabajo de campo de diciembre de 2025, ejecutado por Savanta. Datos autoinformados. El enunciado varía levemente entre oleadas: la serie indica magnitud y dirección, no medición equivalente.',
   },
@@ -254,6 +298,11 @@ export const sources: Source[] = [
     geography: 'Internacional · 90 países',
     evidenceType: 'Encuesta institucional',
     confidence: 70,
+    documentaryStatus: 'verified',
+    robustness: 'single_study',
+    demonstrativeLevel: 'D1_existence',
+    generalizationScope: 'not_established',
+    lastVerified: '2026-08-31',
     notes:
       '400 respuestas autoseleccionadas dentro de la red de Cátedras UNESCO, colectivo más movilizado que el promedio del sistema. Techo optimista, no media global. El titular difundido agrega política vigente y política en desarrollo.',
   },
@@ -412,10 +461,10 @@ export const claims: EvidenceClaim[] = [
   {
     id: 'clm-validez-evaluacion',
     claim:
-      'La evaluación no supervisada perdió su validez como evidencia de aprendizaje: el 94 % de las entregas generadas por IA pasó sin detección en un sistema de exámenes real y obtuvo, en promedio, mejores calificaciones que las humanas.',
+      'La evaluación escrita no supervisada ya no puede presumirse, por sí sola, como evidencia suficiente de capacidad individual: el 94 % de las entregas generadas por IA pasó sin detección en un sistema de exámenes real y obtuvo, en promedio, mejores calificaciones que las humanas.',
     classification: 'FACT',
     sourceIds: ['src-scarfe-2024'],
-    note: 'Realizado en módulos de Psicología. La dirección del hallazgo es robusta; su magnitud exacta en otras disciplinas no está medida.',
+    note: 'Experimento en cinco módulos de Psicología de una universidad británica. La dirección del hallazgo es robusta; su magnitud en otras disciplinas no está medida, y de aquí no se sigue que toda evaluación no supervisada sea inválida: se sigue que su valor certificador depende de supervisión, defensa, trazabilidad o triangulación.',
     confidence: 95,
     report: INFORME_02,
     lastVerified: '2026-08-30',
@@ -637,3 +686,74 @@ export const claimSchema = [
   { field: 'report', desc: 'Informe donde se utiliza.' },
   { field: 'last_verified', desc: 'Última comprobación efectiva.' },
 ];
+
+/* ────────────────── Taxonomía epistemológica (auditoría v0.3.0) ────────────────── */
+
+/**
+ * Las cuatro dimensiones que antes viajaban juntas bajo «VERIFICADO».
+ *
+ * Se publican con su definición porque el lector tiene que poder discutir la
+ * clasificación, no sólo leerla. Una taxonomía que no se explica es una
+ * etiqueta de autoridad.
+ */
+export const documentaryStatusMeta: Record<DocumentaryStatus, { label: string; definition: string }> = {
+  verified: {
+    label: 'Verificada',
+    definition: 'La fuente existe, es accesible y dice lo que se le atribuye. No dice nada sobre si su hallazgo se sostiene.',
+  },
+  incomplete: {
+    label: 'Incompleta',
+    definition: 'Falta algún dato del registro —fecha exacta, versión de registro, muestra— que no pudo contrastarse.',
+  },
+  unverifiable: {
+    label: 'No verificable',
+    definition: 'No hay acceso público al documento original. Se conserva declarando la limitación.',
+  },
+  corrected: {
+    label: 'Con corrección publicada',
+    definition: 'El propio editor publicó una corrección o fe de erratas. Se puede citar, pero no en silencio.',
+  },
+};
+
+export const robustnessMeta: Record<Robustness, { label: string; definition: string }> = {
+  single_study: {
+    label: 'Estudio único',
+    definition: 'Un solo trabajo, sin réplica independiente. La dirección puede ser sólida y la magnitud no.',
+  },
+  convergent: {
+    label: 'Convergente',
+    definition: 'Varios trabajos de diseño distinto apuntan en la misma dirección sin ser réplicas.',
+  },
+  replicated: {
+    label: 'Replicada',
+    definition: 'El hallazgo se reprodujo en un diseño equivalente y población distinta.',
+  },
+  contested: {
+    label: 'Controvertida',
+    definition: 'Existe evidencia publicada que apunta en dirección contraria.',
+  },
+  retracted: {
+    label: 'Retractada',
+    definition: 'La publicación fue retirada por su editor. No sostiene nada; se conserva como registro del episodio.',
+  },
+};
+
+export const demonstrativeLevelMeta: Record<DemonstrativeLevel, { label: string; definition: string }> = {
+  D1_existence: { label: 'D1 · existencia', definition: 'Consta que la iniciativa existe. Nada más.' },
+  D2_implementation: { label: 'D2 · implementación', definition: 'Consta que se puso en marcha, no que se use.' },
+  D3_adoption: { label: 'D3 · adopción', definition: 'Consta uso efectivo, no resultados.' },
+  D4_measured_outcome: { label: 'D4 · resultado medido', definition: 'Hay medición de resultados, sin diseño que aísle la causa.' },
+  D5_causal_identification: {
+    label: 'D5 · identificación causal en contexto experimental',
+    definition:
+      'El diseño permite atribuir causalidad dentro del experimento. No es «causalidad establecida»: fuera de ese contexto, el alcance lo fija la dimensión de generalización.',
+  },
+};
+
+export const generalizationScopeMeta: Record<GeneralizationScope, { label: string; definition: string }> = {
+  local: { label: 'Local', definition: 'Vale para la población y el contexto del estudio. Llevarlo más lejos es inferencia.' },
+  similar_population: { label: 'Población similar', definition: 'Extensible a poblaciones equiparables en país, nivel y disciplina.' },
+  disciplinary: { label: 'Disciplinar', definition: 'Extensible dentro de la disciplina estudiada.' },
+  multi_context: { label: 'Multicontexto', definition: 'Sostenido en contextos, países o disciplinas distintos.' },
+  not_established: { label: 'Sin establecer', definition: 'El diseño no permite pronunciarse sobre generalización.' },
+};

@@ -2,7 +2,13 @@ import { ExternalLink } from 'lucide-react';
 
 import { Disclosure, Surface } from '@/components/common/ui';
 import { EpistemicTag } from '@/components/common/status';
-import { sources } from '@/data/research';
+import {
+  demonstrativeLevelMeta,
+  documentaryStatusMeta,
+  generalizationScopeMeta,
+  robustnessMeta,
+  sources,
+} from '@/data/research';
 import { datePrecision, formatDate, formatSourceDate } from '@/lib/utils';
 import type { EvidenceClaim, Source } from '@/types';
 
@@ -153,11 +159,44 @@ function SourceCard({ source, cited }: { source: Source; cited: boolean }) {
 
       <p className="mt-1.5 text-sm text-muted-foreground">{source.organization}</p>
 
+      {/*
+        La corrección del editor va antes que las notas y con marca propia. Una
+        fuente corregida se puede citar; lo que no se puede es citarla en
+        silencio, y quien la lea deprisa tiene que tropezarse con el aviso.
+      */}
+      {source.correction && (
+        <div className="mt-3 rounded-md border-l-2 border-l-warning bg-warning/[0.06] px-3.5 py-2.5">
+          <p className="mono text-[0.625rem] uppercase tracking-widest text-warning">
+            Corrección publicada · {formatSourceDate(source.correction.date)}
+          </p>
+          <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-foreground/80">
+            {source.correction.note}
+          </p>
+          {source.correction.url && (
+            <a
+              href={source.correction.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="mono mt-1.5 inline-flex min-h-6 items-center text-[0.6875rem] text-primary underline underline-offset-2 hover:no-underline"
+            >
+              Ver la corrección
+            </a>
+          )}
+        </div>
+      )}
+
       {source.notes && (
         <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
           {source.notes}
         </p>
       )}
+
+      {/*
+        Las cuatro dimensiones separadas. Antes todo esto era la palabra
+        «VERIFICADO», que mezclaba «la fuente existe» con «el hallazgo se
+        sostiene» y con «esto vale en cualquier parte».
+      */}
+      <Clasificacion source={source} />
 
       <dl className="mono mt-4 flex flex-wrap gap-x-5 gap-y-1.5 border-t border-border/60 pt-3 text-[0.6875rem] text-muted-foreground">
         <div className="flex gap-1.5">
@@ -226,5 +265,46 @@ export function SchemaDisclosure({
         ))}
       </dl>
     </Disclosure>
+  );
+}
+
+/**
+ * Las cuatro dimensiones de una fuente, cuando están declaradas.
+ *
+ * No se rellenan por defecto: una fuente sin clasificar aparece sin este
+ * bloque, y eso es información —dice que nadie la ha evaluado todavía—. Poner
+ * un valor plausible para que la ficha se vea completa es exactamente el
+ * problema que esta taxonomía existe para evitar.
+ */
+function Clasificacion({ source }: { source: Source }) {
+  const filas = [
+    source.documentaryStatus && {
+      k: 'Estado documental',
+      ...documentaryStatusMeta[source.documentaryStatus],
+    },
+    source.robustness && { k: 'Robustez', ...robustnessMeta[source.robustness] },
+    source.demonstrativeLevel && {
+      k: 'Nivel demostrativo',
+      ...demonstrativeLevelMeta[source.demonstrativeLevel],
+    },
+    source.generalizationScope && {
+      k: 'Generalización',
+      ...generalizationScopeMeta[source.generalizationScope],
+    },
+  ].filter((f) => f !== undefined);
+
+  if (filas.length === 0) return null;
+
+  return (
+    <dl className="mt-4 grid gap-2 sm:grid-cols-2">
+      {filas.map((f) => (
+        <div key={f.k} className="rounded-md border border-border/60 bg-card/40 px-3 py-2">
+          <dt className="meta">{f.k}</dt>
+          <dd className="mt-0.5 text-[0.8125rem] text-foreground/85" title={f.definition}>
+            {f.label}
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }
