@@ -27,9 +27,10 @@ export function SiteFooter() {
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {footerNav.map((link) => (
                 <li key={link.href}>
+                  {/* `min-h-6`: 24 px de objetivo táctil, WCAG 2.2 AA 2.5.8. */}
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="inline-flex min-h-6 items-center text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>

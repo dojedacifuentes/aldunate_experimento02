@@ -70,9 +70,10 @@ function ClaimCard({ claim }: { claim: EvidenceClaim }) {
         <ul className="flex min-w-0 flex-wrap gap-x-3 gap-y-1">
           {cited.map((source) => (
             <li key={source.id}>
+              {/* `min-h-6`: 24 px de objetivo táctil, WCAG 2.2 AA 2.5.8. */}
               <a
                 href={`#${source.id}`}
-                className="mono text-[0.6875rem] text-primary underline underline-offset-2 hover:no-underline"
+                className="mono inline-flex min-h-6 items-center text-[0.6875rem] text-primary underline underline-offset-2 hover:no-underline"
                 title={source.title}
               >
                 {source.id}
@@ -160,7 +161,7 @@ function SourceCard({ source, cited }: { source: Source; cited: boolean }) {
 
       <dl className="mono mt-4 flex flex-wrap gap-x-5 gap-y-1.5 border-t border-border/60 pt-3 text-[0.6875rem] text-muted-foreground">
         <div className="flex gap-1.5">
-          <dt className="text-muted-foreground/70">publicada</dt>
+          <dt className="text-muted-foreground">publicada</dt>
           <dd className="text-foreground/75">
             {formatSourceDate(source.publishedDate)}
             {/*
@@ -168,25 +169,25 @@ function SourceCard({ source, cited }: { source: Source; cited: boolean }) {
               año se ve distinta de una fechada al día, en vez de disimularse.
             */}
             {precision && precision !== 'día' && (
-              <span className="text-muted-foreground/70"> · precisión de {precision}</span>
+              <span className="text-muted-foreground"> · precisión de {precision}</span>
             )}
           </dd>
         </div>
         {source.geography && (
           <div className="flex gap-1.5">
-            <dt className="text-muted-foreground/70">ámbito</dt>
+            <dt className="text-muted-foreground">ámbito</dt>
             <dd className="text-foreground/75">{source.geography}</dd>
           </div>
         )}
         {source.accessedDate && (
           <div className="flex gap-1.5">
-            <dt className="text-muted-foreground/70">consultada</dt>
+            <dt className="text-muted-foreground">consultada</dt>
             <dd className="text-foreground/75">{formatSourceDate(source.accessedDate)}</dd>
           </div>
         )}
         {typeof source.confidence === 'number' && (
           <div className="flex gap-1.5">
-            <dt className="text-muted-foreground/70">confianza</dt>
+            <dt className="text-muted-foreground">confianza</dt>
             <dd className="text-foreground/75">{source.confidence}</dd>
           </div>
         )}

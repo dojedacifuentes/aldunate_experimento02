@@ -14,9 +14,13 @@ import { formatDateCompact, latestVersion } from '@/lib/utils';
 /**
  * Portal.
  *
- * Ni dashboard ni página personal: un vestíbulo. Nombre, cuatro puertas, el
- * mapa de temas y el estado real del trabajo. Nada de métricas inventadas y
- * ningún número que no se pueda contar aquí mismo.
+ * Ni dashboard ni página personal: un vestíbulo. El laboratorio, tres puertas
+ * primarias, dos capas de apoyo, el mapa de temas y el estado real del trabajo.
+ * Nada de métricas inventadas y ningún número que no se pueda contar aquí
+ * mismo.
+ *
+ * El nombre del profesor no encabeza. Es objeto de estudio del laboratorio, no
+ * su firma, y el sitio no está autorizado por él.
  */
 export default function HomePage() {
   const activeLines = researchLines.filter((l) => l.status === 'activa');
@@ -133,7 +137,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/aldunate"
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                className="mt-5 inline-flex min-h-6 items-center gap-1.5 text-sm font-medium text-primary hover:underline"
               >
                 Ver la capa académica
                 <ArrowRight className="h-3.5 w-3.5" aria-hidden />
@@ -160,7 +164,7 @@ export default function HomePage() {
                       {line.summary}
                     </p>
                     {line.related.length > 0 && (
-                      <p className="mono mt-3 text-[0.6875rem] text-muted-foreground/80">
+                      <p className="mono mt-3 text-[0.6875rem] text-muted-foreground">
                         ↳ {line.related.join(' · ')}
                       </p>
                     )}

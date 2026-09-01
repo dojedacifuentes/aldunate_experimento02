@@ -288,12 +288,21 @@ export function Notice({
   );
 }
 
-/** Par etiqueta/valor en clave de ficha técnica. */
+/**
+ * Par etiqueta/valor en clave de ficha técnica.
+ *
+ * `overflow-wrap: anywhere` y no `break-words`: los valores incluyen rutas de
+ * archivo —`content/reports/02_transformacion_ensenanza_derecho/`— que son un
+ * único token sin punto de corte. La diferencia importa porque `break-words`
+ * parte la palabra al pintar pero **no** reduce su tamaño min-content, así que
+ * un item de grid con `min-width: auto` sigue reservándole el ancho entero. Esa
+ * ruta desbordaba la ficha de informe 69 px a 375 px de ancho.
+ */
 export function MetaRow({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-1 border-b border-border/60 py-3 sm:flex-row sm:items-baseline sm:gap-4">
       <dt className="meta shrink-0 sm:w-44">{label}</dt>
-      <dd className="min-w-0 text-sm text-foreground/90">{value}</dd>
+      <dd className="min-w-0 text-sm text-foreground/90 [overflow-wrap:anywhere]">{value}</dd>
     </div>
   );
 }
@@ -366,12 +375,16 @@ export interface Crumb {
  * Migas de pan. Sólo donde la profundidad lo justifica —tercer nivel o
  * detalle dentro de un catálogo—; en una ruta de primer nivel son ruido.
  *
- * Pesan visualmente menos que el H1 a propósito: orientan, no compiten.
+ * Pesan visualmente menos que el H1 a propósito: orientan, no compiten. Pero
+ * el peso visual lo da el tamaño de letra, no el del objetivo: los enlaces
+ * llevan `min-h-6` para llegar a los 24 px que exige WCAG 2.2 AA. Sin eso
+ * medían 17 px de alto, y no son enlaces dentro de una frase —la excepción de
+ * enlace en línea no les alcanza—.
  */
 export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: string }) {
   return (
     <nav aria-label="Ruta de navegación" className={cn('min-w-0', className)}>
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+      <ol className="flex flex-wrap items-center gap-x-2">
         {items.map((item, i) => {
           const last = i === items.length - 1;
           return (
@@ -379,14 +392,14 @@ export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: 
               {item.href && !last ? (
                 <Link
                   href={item.href}
-                  className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                  className="mono inline-flex min-h-6 items-center text-[0.6875rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
                 >
                   {item.label}
                 </Link>
               ) : (
                 <span
                   aria-current={last ? 'page' : undefined}
-                  className="mono text-[0.6875rem] uppercase tracking-widest text-foreground/70"
+                  className="mono inline-flex min-h-6 items-center text-[0.6875rem] uppercase tracking-widest text-foreground/70"
                 >
                   {item.label}
                 </span>

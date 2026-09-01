@@ -9,8 +9,9 @@ import { ThemeToggle } from '@/components/theme/ThemeToggle';
 import { cn } from '@/lib/utils';
 
 /**
- * Header compacto. Cuatro entradas visibles y nada más: la navegación es una
- * decisión de producto, no un índice de todo lo que existe.
+ * Header compacto. Tres entradas primarias y dos secundarias con menos peso:
+ * la navegación es una decisión de producto, no un índice de todo lo que
+ * existe. Y lo secundario existe, que no es lo mismo que estar escondido.
  */
 export function SiteHeader() {
   const pathname = usePathname();
@@ -95,7 +96,7 @@ export function SiteHeader() {
                     'relative rounded-md px-3 py-2 text-[0.8125rem] transition-colors',
                     isActive(item.href)
                       ? 'text-foreground'
-                      : 'text-muted-foreground/80 hover:text-foreground',
+                      : 'text-muted-foreground hover:text-foreground',
                   )}
                 >
                   {item.label}

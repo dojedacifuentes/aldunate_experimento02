@@ -331,7 +331,7 @@ export default async function InformeDetallePage({
                         href={source.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-4 inline-flex text-sm font-medium text-primary hover:underline"
+                        className="mt-4 inline-flex min-h-6 items-center text-sm font-medium text-primary hover:underline"
                       >
                         Abrir fuente
                         <span className="sr-only">: {source.title}</span>
