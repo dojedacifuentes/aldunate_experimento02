@@ -345,4 +345,22 @@
 @media print {
   .no-print { display: none !important; }
   body { background: #fff; color: #000; }
+
+  /*
+   * Lo que solo existe para la pantalla no se imprime: lienzos WebGL, halos,
+   * barras pegajosas y diagramas que dependen del cursor. Lo que queda
+   * —nombre, ficha, catálogo, cronología y bibliografía— es exactamente lo
+   * que alguien querría llevarse en papel.
+   */
+  canvas,
+  .interactive-only { display: none !important; }
+
+  /* Un bloque plegado esconde la mitad del catálogo en el papel. */
+  details > div { display: block !important; }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.7em;
+    word-break: break-all;
+  }
 }
