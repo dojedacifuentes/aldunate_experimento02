@@ -7,6 +7,7 @@ import {
   Badge,
   Breadcrumbs,
   ButtonLink,
+  Disclosure,
   Container,
   MetaRow,
   Notice,
@@ -14,7 +15,13 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
-import { getReport, reports, reportStatusMeta, reportStatusNotice } from '@/data/reports';
+import {
+  claimChangeLabel,
+  getReport,
+  reports,
+  reportStatusMeta,
+  reportStatusNotice,
+} from '@/data/reports';
 import { autor } from '@/data/site';
 import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
@@ -324,6 +331,48 @@ export default async function InformeDetallePage({
                   </li>
                 ))}
               </ul>
+
+              {/*
+                Changelog a nivel de afirmación. «Se actualizaron fuentes» no
+                permite saber si la frase que alguien citó el mes pasado sigue
+                diciendo lo mismo; esto sí: qué decía, qué dice y por qué.
+              */}
+              {version.claimChanges && version.claimChanges.length > 0 && (
+                <Disclosure
+                  className="mt-4"
+                  summary="Qué afirmaciones cambiaron, y por qué"
+                  hint={`${version.claimChanges.length} cambios`}
+                >
+                  <ol className="space-y-5">
+                    {version.claimChanges.map((c, k) => (
+                      <li key={`${version.version}-${k}`}>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="mono text-[0.625rem] uppercase tracking-widest text-accent">
+                            {claimChangeLabel[c.changeType]}
+                          </span>
+                          {c.claimId && (
+                            <a
+                              href={`/investigacion#${c.claimId}`}
+                              className="mono inline-flex min-h-6 items-center text-[0.625rem] text-primary underline underline-offset-2 hover:no-underline"
+                            >
+                              {c.claimId}
+                            </a>
+                          )}
+                        </div>
+                        <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted-foreground line-through decoration-muted-foreground/40">
+                          {c.previous}
+                        </p>
+                        <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-foreground/85">
+                          {c.current}
+                        </p>
+                        <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                          <span className="meta">Motivo</span> {c.reason}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                </Disclosure>
+              )}
             </li>
           ))}
         </ol>

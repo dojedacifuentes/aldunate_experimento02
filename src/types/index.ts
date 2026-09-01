@@ -219,11 +219,34 @@ export type ReportStatus =
   | 'en-revision';
 
 /** Una versión publicada nunca se sobrescribe: se agrega y se registra. */
+/**
+ * Cambio a nivel de afirmación, no de archivo.
+ *
+ * «Se actualizaron fuentes» no permite a nadie saber si la frase que citó el
+ * mes pasado sigue diciendo lo mismo. Esto sí: qué decía, qué dice y por qué
+ * cambió.
+ */
+export interface ClaimChange {
+  claimId?: string;
+  /** Qué clase de cambio: acotar alcance, corregir dato, reformular taxonomía… */
+  changeType:
+    | 'narrowed_scope'
+    | 'corrected_data'
+    | 'retaxonomised'
+    | 'added_context'
+    | 'editorial';
+  previous: string;
+  current: string;
+  reason: string;
+}
+
 export interface ReportVersion {
   version: string;
   date: string;
   status: ReportStatus;
   changelog: string[];
+  /** Cambios a nivel de afirmación. Vacío en versiones que no tocaron claims. */
+  claimChanges?: ClaimChange[];
   /** Ruta bajo /public. Vacío mientras no exista el archivo. */
   pdf?: string;
   /**

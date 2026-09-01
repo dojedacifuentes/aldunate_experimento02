@@ -1,5 +1,5 @@
 import { autor } from './site';
-import type { Report, ReportStatus, Tone } from '@/types';
+import type { ClaimChange, Report, ReportStatus, Tone } from '@/types';
 
 /**
  * Informes vivos.
@@ -136,7 +136,7 @@ export const reports: Report[] = [
     */
     counts: { sources: 24, findings: 38, claims: 18, recommendations: 8 },
     executiveSummary:
-      'Qué se evalúa cuando el producto escrito deja de ser prueba de proceso. La versión 0.2.0 sitúa la enseñanza jurídica dentro del cuadro más amplio de la educación superior: veinticuatro capítulos que recorren evaluación, competencias, metodologías, rol docente, currículo, gobernanza y mercado profesional, con la formación en Derecho como caso crítico porque su cadena formativa completa —leer, sintetizar, argumentar y redactar— coincide con lo que los sistemas generativos ejecutan con alta fluidez y fiabilidad insuficiente. El hallazgo central es asimétrico: la transformación verificable se concentra casi por completo en la evaluación, y de treinta y ocho hallazgos registrados solo seis alcanzan nivel de causalidad establecida. Ninguna afirmación sobre despliegues institucionales de escala supera el nivel de implementación.',
+      'Qué se evalúa cuando el producto escrito deja de ser prueba de proceso. El informe sitúa la enseñanza jurídica dentro del cuadro más amplio de la educación superior: veinticuatro capítulos que recorren evaluación, competencias, metodologías, rol docente, currículo, gobernanza y mercado profesional, con la formación en Derecho como caso crítico porque buena parte de sus instrumentos de aprendizaje y certificación —leer, investigar, argumentar y redactar— coincide con tareas que los sistemas generativos ejecutan con alta fluidez y fiabilidad insuficiente. El hallazgo central es asimétrico: la transformación verificable se concentra casi por completo en la evaluación, y de treinta y ocho hallazgos registrados solo seis alcanzan identificación causal en contexto experimental, todos en estudios pequeños y de alcance local. Ninguna afirmación sobre despliegues institucionales de escala supera el nivel de implementación.',
     authors: [autor.name],
     status: 'en-revision',
     folder: 'content/reports/02_transformacion_ensenanza_derecho/',
@@ -191,6 +191,94 @@ export const reports: Report[] = [
           'Se registra la ausencia de evidencia pública de rediseño evaluativo en facultades chilenas.',
           'Se incorpora la retractación del metaanálisis de Wang y Fan (22 de abril de 2026) como advertencia de lectura sobre la literatura previa.',
           'Auditoría de consistencia numérica: cuatro discrepancias de recuento detectadas y corregidas.',
+        ],
+      },
+      {
+        version: '0.3.0',
+        date: '2026-08-31',
+        status: 'en-revision',
+        pdf: '/descargas/informe-02-transformacion-ensenanza-v0.3.0.pdf',
+        html: '/descargas/informe-02-completo-v0.3.0.html',
+        changelog: [
+          'Revisión metodológica: las afirmaciones se calibran al diseño de sus fuentes, no a su fuerza retórica.',
+          'Título canónico único en portada, metadatos, ficha web y descargas. La web presentaba el informe con un alcance más estrecho que el documento.',
+          'Portada: las cuatro cifras pasan a llevar universo, país, muestra y fuente. Un 94 % sin universo se lee como si fuera universal.',
+          'Etiqueta de portada «Informe experto» sustituida por «Investigación aplicada»: la primera es una condición que se concede, no que se toma.',
+          'Autoría con nombre y responsabilidad, en lugar de una autoría colectiva genérica.',
+          'Taxonomía epistemológica separada en cuatro dimensiones independientes: estado documental, robustez, nivel demostrativo y alcance de generalización.',
+          'Fuentes críticas contrastadas contra su publicación original, no contra el texto del informe.',
+          'Se incorpora la corrección publicada por PNAS sobre Bastani et al. (20-08-2025), que la versión anterior no mencionaba.',
+          'Eliminada la instrucción de Word visible en el índice y renumeradas las recomendaciones.',
+          'Extensión: 77 páginas frente a 76. El aumento procede de acotaciones de alcance, no de material nuevo.',
+        ],
+        claimChanges: [
+          {
+            claimId: 'clm-validez-evaluacion',
+            changeType: 'narrowed_scope',
+            previous:
+              'La evaluación no supervisada perdió su validez como evidencia de aprendizaje.',
+            current:
+              'La evaluación escrita no supervisada ya no puede presumirse, por sí sola, como evidencia suficiente de capacidad individual.',
+            reason:
+              'La fuente es un experimento en cinco módulos de Psicología de una universidad británica. Sostiene que el producto escrito sin supervisión dejó de bastar por sí solo; no sostiene que toda evaluación no supervisada sea inválida.',
+          },
+          {
+            changeType: 'narrowed_scope',
+            previous:
+              'La diferencia entre el resultado de Harvard y el de Turquía es enteramente atribuible al diseño de la interacción.',
+            current:
+              'Ambos resultados son consistentes con un papel determinante del diseño y de sus guardarraíles; la comparación no permite aislar ese factor como única causa.',
+            reason:
+              'Son dos ensayos aleatorizados en poblaciones distintas. Cada uno identifica causalidad dentro de su experimento; la diferencia entre ambos no es un contraste controlado.',
+          },
+          {
+            changeType: 'narrowed_scope',
+            previous: 'La explicación no puede ser el dinero ni la información. Es de gobernanza.',
+            current:
+              'El patrón es compatible con la hipótesis de que la gobernanza sea un cuello de botella central; la muestra no permite estimar su peso frente a financiación, capacidades o regulación.',
+            reason:
+              'La muestra es intencionada y está sesgada hacia instituciones con actividad documentada. No permite descartar explicaciones alternativas.',
+          },
+          {
+            changeType: 'retaxonomised',
+            previous: 'D5 · causalidad establecida',
+            current: 'D5 · identificación causal en contexto experimental',
+            reason:
+              'Un experimento pequeño identifica causalidad dentro de su contexto. «Causalidad establecida» autoriza a generalizar; el alcance ahora lo fija una dimensión independiente.',
+          },
+          {
+            changeType: 'narrowed_scope',
+            previous:
+              'Leer, sintetizar, clasificar, comparar, argumentar y redactar documentos no es una parte de la formación jurídica; es la formación jurídica.',
+            current:
+              'La formación jurídica centrada en lectura, investigación, argumentación y escritura presenta una exposición especialmente intensa, sin que eso agote la disciplina.',
+            reason:
+              'La formulación anterior borraba la entrevista de clientes, la negociación, la litigación oral, la ética profesional y la decisión bajo incertidumbre, que son precisamente lo menos expuesto.',
+          },
+          {
+            changeType: 'narrowed_scope',
+            previous: 'Dejar de invertir en detección algorítmica. La evidencia es concluyente.',
+            current:
+              'No usar la detección algorítmica como estrategia central de imputación o sanción mientras persistan falsos positivos y negativos relevantes y no exista validación local.',
+            reason:
+              'La recomendación es correcta como política prudencial; la evidencia no justifica una afirmación universal sobre inutilidad. Puede conservar usos diagnósticos validados localmente.',
+          },
+          {
+            changeType: 'corrected_data',
+            previous: 'Bastani et al., PNAS · fecha 2025 · sin mención de correcciones.',
+            current:
+              'Bastani et al., PNAS · 25-06-2025 · con la corrección publicada el 20-08-2025 declarada en la ficha.',
+            reason:
+              'Verificado contra la publicación original. Una fuente corregida se puede citar; en silencio, no.',
+          },
+          {
+            changeType: 'added_context',
+            previous: '94 % · 12 % · 94 % · 19 %',
+            current:
+              'Cada cifra con su universo, país, muestra y fuente en la propia portada.',
+            reason:
+              'Una cifra sin universo se lee como si describiera a todo el mundo. El 19 % de UNESCO procede de 400 respuestas de Cátedras UNESCO/UNITWIN, no de una muestra representativa de universidades.',
+          },
         ],
       },
     ],
@@ -256,3 +344,12 @@ export const reports: Report[] = [
 export function getReport(slug: string): Report | undefined {
   return reports.find((r) => r.slug === slug);
 }
+
+/** Etiqueta legible de cada tipo de cambio en el changelog granular. */
+export const claimChangeLabel: Record<ClaimChange['changeType'], string> = {
+  narrowed_scope: 'Alcance acotado',
+  corrected_data: 'Dato corregido',
+  retaxonomised: 'Reclasificado',
+  added_context: 'Contexto añadido',
+  editorial: 'Editorial',
+};
