@@ -60,7 +60,7 @@ Leyenda: `fixed` · `partially_fixed` · `requires_decision` · `not_applicable`
 | A-26 | fixed | `CLAUDE.md`, `DECISIONS.md` D-033, todo `src/app` | Escudo retirado de las cinco pantallas y del retrato de EVA que lo llevaba incrustado. 0 coincidencias en todas las rutas |
 | A-27 | fixed | `investigacion/page.tsx`, `[slug]/page.tsx` | EVA fuera de metodología y fichas de evidencia |
 | A-28 | fixed | `page.tsx` | «Cuatro entradas» pintaba cinco tarjetas |
-| A-29 | partially_fixed | `research.ts`, `reports.ts` | `src/data/` es la fuente para toda la web. El PDF sigue generándose desde `contenido-*.json`, fuera del repositorio: son dos fuentes, no una. Ver §4 |
+| A-29 | partially_fixed · custodia resuelta el 01-09-2026 | `research.ts`, `reports.ts`, `tools/informes/informe-02/` | `src/data/` es la fuente para toda la web. Los `contenido-*.json` del PDF ya viven en el repositorio y reproducen el documento publicado, pero siguen siendo un texto aparte del de la web. Ver §4 |
 | A-30 | fixed | `types/index.ts`, `reports.ts`, `[slug]/page.tsx` | Changelog a nivel de afirmación: ocho cambios con anterior, actual y motivo |
 | A-31 | fixed | `EvidenceMatrix.tsx`, `investigacion/page.tsx` | Cada afirmación y cada fuente tienen ancla estable: `/investigacion#clm-…` y `#src-…`, enlazadas entre sí |
 | A-32 | **open** | — | Exportación CSV/JSON de la matriz no implementada |
@@ -168,6 +168,23 @@ Tres caminos: (a) traer los JSON al repositorio y generar la web desde ellos;
 como está y aceptar la sincronización manual, documentada. La opción (a) es la
 más simple y la que menos código nuevo pide.
 
+> **Resolución parcial · 01-09-2026.** Se tomó la primera mitad de (a): los once
+> `contenido-*.json` y el `resumen-01.json` que generaron la v0.3.0 están en
+> `tools/informes/informe-02/`, y las correcciones de esta auditoría que vivían
+> sólo en los scripts de fuera —la autoría firmada, «INVESTIGACIÓN APLICADA» en
+> lugar de «INFORME EXPERTO», las cifras de portada con su procedencia— están
+> portadas a `plantillas/Build-Informe.ps1` y `motor/DocxBuilder.ps1`.
+>
+> El riesgo era peor de lo que decía este párrafo: no es que pudieran divergir,
+> **es que ya habían divergido**. El repositorio conservaba el texto v0.2.0
+> mientras producción servía el v0.3.0, y nadie lo habría notado leyendo el
+> repositorio. Comprobado ahora recompilando: el HTML que sale de
+> `tools/informes/informe-02/` es idéntico al publicado salvo el fin de línea.
+>
+> La segunda mitad de (a) —que la web se genere desde esos JSON— sigue abierta.
+> Mientras tanto son dos textos que hay que corregir a la vez, pero al menos
+> ambos están versionados y un diff los compara.
+
 ---
 
 ## 5. Pendientes técnicos, no de decisión
@@ -187,8 +204,11 @@ más simple y la que menos código nuevo pide.
 
 ## 6. Riesgos residuales
 
-1. **El PDF y la web pueden divergir otra vez** mientras A-29 siga abierto. Es
-   el riesgo más probable de todos: basta con corregir un lado y olvidar el otro.
+1. **El PDF y la web pueden divergir otra vez.** Se estimó el más probable de
+   todos y lo era: el 01-09-2026 se descubrió que ya había ocurrido, aunque en el
+   otro eje —repositorio contra producción— y no entre PDF y web. Corregido y
+   comprobado por recompilación. Basta con corregir un lado y olvidar el otro,
+   así que sigue vivo mientras `src/data/` y `contenido-*.json` sean dos textos.
 2. **La maquetación del PDF no se ha visto.** Los cambios de portada alteran el
    alto de la tabla de cifras y podrían empujar contenido. Conviene abrir el
    documento y mirar la portada y las páginas finales antes de distribuirlo.

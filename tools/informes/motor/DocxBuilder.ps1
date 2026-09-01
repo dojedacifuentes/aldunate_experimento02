@@ -282,7 +282,7 @@ function TOC($doc,[string]$levels='1-3') {
   $x  = '<w:p>' + (ParaProps @{before=0; after=120}) + '<w:r><w:fldChar w:fldCharType="begin" w:dirty="true"/></w:r>'
   $x += '<w:r><w:instrText xml:space="preserve"> TOC \o "' + $levels + '" \h \z \u </w:instrText></w:r>'
   $x += '<w:r><w:fldChar w:fldCharType="separate"/></w:r>'
-  $x += (Run 'Haga clic derecho sobre esta tabla y elija «Actualizar campos» para generar el indice.' @{font=$script:HEADFONT; size=9; i=$true; color=$script:DK.muted})
+  $x += (Run 'Indice generado automaticamente al abrir el documento.' @{font=$script:HEADFONT; size=9; i=$true; color=$script:DK.muted})
   $x += '<w:r><w:fldChar w:fldCharType="end"/></w:r></w:p>'
   AddXml $doc $x
 }

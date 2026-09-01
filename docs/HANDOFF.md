@@ -12,13 +12,15 @@
 | Repositorio | `dojedacifuentes/aldunate_experimento02` |
 | Producción | https://aldunateexperimento02.vercel.app |
 | Clon de trabajo | `C:\Users\Asus\Desktop\aldunate-juego-audaces` (tiene `node_modules`) |
-| Clon viejo | `C:\Users\Asus\Desktop\aldunate_experimento02` — **se queda atrás, no lo uses** |
-| Fuente del PDF | `C:\Users\Asus\Desktop\ALDUNEITOR\INFORME IA UNIVERSIDAD\_fuentes\` — **fuera del repositorio** |
+| Segundo clon | `C:\Users\Asus\Desktop\aldunate_experimento02` — también con `node_modules`; el 01-09-2026 se sincronizaron los dos. Comprueba `git status` antes de usar cualquiera |
+| Fuente del PDF | `tools/informes/informe-02/`, **dentro del repositorio** desde el 01-09-2026 |
 
-**Node no está en el PATH.** Está portátil en
-`%LOCALAPPDATA%\Temp\node-v22.20.0-audit\node-v22.20.0-win-x64`. Añádelo antes
-de `npm`, o los scripts hijos no encuentran `node`. Es una carpeta temporal:
-puede desaparecer.
+La carpeta `Desktop\ALDUNEITOR\INFORME IA UNIVERSIDAD\_fuentes\` es **histórica**.
+Fue el origen del documento hasta la v0.3.0 y ya no se edita: lo que hay allí
+está copiado al repositorio y verificado idéntico. Editarla otra vez reabre A-29.
+
+**Node está en el PATH** desde el 01-09-2026: `v24.20.0` y npm `11.19.0`, en
+`C:\Program Files\nodejs`. Ya no hace falta preparar runtimes portátiles.
 
 **No hay `gh` CLI.** Los PR se abren contra la API REST con `curl`. El token se
 recupera con `git credential fill`, y **sólo funciona desde Bash**, no desde
@@ -117,22 +119,31 @@ datos falsos que compilaban sin protestar.
   y no pude contrastarlo. Queda en `2025-04` con precisión de mes declarada.
 - **A-19 · 18 fuentes sin clasificar** en la taxonomía nueva. Las 6 críticas sí.
   La ficha no muestra el bloque cuando no hay datos, que es lo correcto.
-- **A-29 · dos fuentes de verdad.** La web lee de `src/data/`; el PDF se genera
-  desde `contenido-*.json`, fuera del repositorio. Hoy coinciden porque se
-  corrigieron a mano los dos. **Es el riesgo residual más probable.**
+- **A-29 · dos fuentes de verdad. Resuelto a medias el 01-09-2026.** Los
+  `contenido-*.json` ya están en el repositorio y se comprobó que reproducen el
+  documento publicado. Lo que queda no es un problema de custodia sino de
+  sincronización: `src/data/` y `contenido-*.json` siguen siendo dos textos que
+  hay que corregir a la vez. Ahora, al menos, un diff los compara.
 - **A-32** exportación CSV/JSON · **A-33** Lighthouse y axe · búsqueda global.
 
 ---
 
 ## 4. Cómo regenerar el informe
 
-Sólo si tocas `contenido-*.json`. Desde PowerShell, en `_fuentes\`:
+Sólo si tocas `contenido-*.json`. Desde PowerShell, en
+`tools\informes\informe-02\`:
 
 ```powershell
-.\Build-Informe.ps1     # JSON -> DOCX
-.\Build-Artifact.ps1    # JSON -> HTML
-.\Build-Resumen.ps1     # resumen ejecutivo
+..\motor\utf8bom.ps1 .                 # los .ps1 y .json en UTF-8 con BOM
+.\Graficos.ps1                         # figuras para el documento
+.\Graficos.ps1 -PxScale 1.55 -OutDir figuras-web
+..\plantillas\Build-Informe.ps1        # JSON -> DOCX
+..\plantillas\Build-Artifact.ps1       # JSON -> HTML
+..\plantillas\Build-Resumen.ps1        # resumen ejecutivo
 ```
+
+Todo sale a `salida\`, que está en `.gitignore`. El método completo está en
+`docs/informes/`, siete documentos.
 
 Después, el paso de Word por COM —**imprescindible**, es lo que actualiza el
 índice y elimina el aviso de campo sin actualizar—:

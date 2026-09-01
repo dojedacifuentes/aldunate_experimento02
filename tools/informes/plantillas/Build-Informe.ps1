@@ -14,7 +14,7 @@ param(
   [string]$Titulo    = 'La universidad ante la automatización del trabajo cognitivo',
   [string]$Subtitulo = 'Transformación de la enseñanza superior en el contexto de la inteligencia artificial: metodologías, competencias, evaluación, currículo y gobernanza',
   [string]$Periodo   = '2022 – 2026',
-  [string]$Autoria   = 'Informe elaborado en calidad de investigador y consultor experto en modelos educativos, innovación y transformación institucional',
+  [string]$Autoria   = 'Diego Hernán Ojeda Cifuentes · Licenciado en Ciencias Jurídicas · Asesor en inteligencia artificial',
   [string]$Fecha     = 'Agosto de 2026'
 )
 
@@ -38,7 +38,7 @@ $d = New-Doc
 
 # ============ PORTADA ============
 Spacer $d 54
-P $d 'INFORME EXPERTO' @{after=50} @{font=$script:HEADFONT; size=10; b=$true; color=$script:DK.teal; spacing=90}
+P $d 'INVESTIGACIÓN APLICADA' @{after=50} @{font=$script:HEADFONT; size=10; b=$true; color=$script:DK.teal; spacing=90}
 P $d 'Educación superior · Modelos educativos · Transformación institucional' @{after=90} @{font=$script:HEADFONT; size=9.5; color=$script:DK.muted}
 HRule $d $script:DK.navy 16 40 320
 P $d $TITULO @{after=140; line=232} @{font=$script:HEADFONT; size=26; b=$true; color=$script:DK.ink}
@@ -47,9 +47,9 @@ P $d $PERIODO @{after=460} @{font=$script:HEADFONT; size=13; b=$true; color=$scr
 
 # bloque de cifras de portada
 TableGrid $d $null @(
-  @('**94 %**','de los estudiantes de grado usa IA generativa para trabajos evaluados','**12 %**','inserta directamente texto generado por IA en la entrega'),
-  @('**94 %**','de las entregas generadas por IA pasó sin detección en un examen real','**19 %**','de las instituciones tiene una política de IA formalmente vigente')
-) @(900,3600,900,3720) @{ size=9; align=@('center','left','center','left'); sansCol=@(0,2) }
+  @('**94 %**','usa IA generativa para trabajos evaluados · estudiantes de grado del Reino Unido · HEPI 2026, n=1.054','**12 %**','inserta directamente texto generado en la entrega · misma encuesta HEPI 2026'),
+  @('**94 %**','de las entregas generadas por IA pasó sin detección · 5 módulos de Psicología, University of Reading · Scarfe et al. 2024','**19 %**','declara política de IA formalmente vigente · 400 respuestas de Cátedras UNESCO/UNITWIN en 90 países, no muestra representativa')
+) @(760,3740,760,3860) @{ size=8; align=@('center','left','center','left'); sansCol=@(0,2) }
 
 Spacer $d 26
 HRule $d $script:DK.rule 4 40 120
@@ -61,7 +61,6 @@ PageBreak $d
 P $d 'CONTENIDO' @{after=50} @{font=$script:HEADFONT; size=9; b=$true; color=$script:DK.teal; spacing=70}
 P $d 'Tabla de contenido' @{after=40} @{font=$script:HEADFONT; size=19; b=$true; color=$script:DK.ink}
 HRule $d $script:DK.navy 12 20 160
-P $d 'Si la numeración de páginas no aparece, haga clic derecho sobre la tabla y elija «Actualizar campos» → «Actualizar toda la tabla».' @{after=200} @{font=$script:BODYFONT; size=8.5; i=$true; color=$script:DK.muted}
 TOC $d '1-2'
 PageBreak $d
 

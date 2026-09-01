@@ -72,6 +72,30 @@ tesis a una obra que nadie ha leído.
   fuentes—. `sourceIds` y `claimIds` **siguen vacíos**: que una URL responda no
   prueba que diga lo que se le atribuye, y esa verificación no se delega.
 
+### Cadena de producción — el repositorio recupera el original del Informe 02
+
+**El repositorio no contenía el texto del documento que estaba publicado.**
+Producción servía el Informe 02 en v0.3.0 mientras `tools/informes/informe-02/`
+conservaba el texto de la v0.2.0: cinco `contenido-*.json` y el
+`resumen-01.json` se habían corregido durante la auditoría en la carpeta de
+escritorio de la que salió el PDF, fuera del control de versiones. Quien leyera
+el repositorio para saber qué dice el informe habría leído la versión anterior
+sin ninguna señal de que lo era. Es el riesgo A-29 de `docs/audit-v0.3.0.md`, y
+no era hipotético: ya había ocurrido.
+
+**Traído y comprobado.** Los once JSON del repositorio son ahora idénticos a los
+que generaron el documento publicado, y las correcciones de la auditoría que
+vivían sólo en los scripts de fuera están portadas a la versión parametrizada
+del repositorio: la autoría firmada, «INVESTIGACIÓN APLICADA» en lugar de
+«INFORME EXPERTO», y las cuatro cifras de portada con la procedencia que antes
+callaban —HEPI 2026 con su n, Scarfe et al. 2024 con sus cinco módulos, y la
+advertencia de que el 19 % sale de una muestra no representativa—.
+
+La comprobación no es que los archivos coincidan, sino que la cadena reproduce:
+recompilado desde `tools/informes/informe-02/`, el HTML resultante es idéntico
+al publicado salvo el fin de línea. La carpeta de escritorio queda como
+histórica y no se edita más.
+
 ### Corregido
 
 - **El comprobador de identificadores huérfanos daba una falsa alarma sobre

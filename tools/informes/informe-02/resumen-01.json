@@ -16,10 +16,10 @@
  "w":[2500,1300,5320],
  "align":["left","center","left"],
  "rows":[
- ["Estudiantes que usan IA para trabajos evaluados","**94 %**","Prohibir no es una política viable: sería legislar sobre una realidad inexistente."],
- ["Estudiantes que insertan texto de IA directamente en la entrega","**12 %**","La delegación total es minoritaria. Tratar al 94 % como sospechoso es tan erróneo como ignorar al 12 %."],
- ["Entregas de IA no detectadas en un examen real","**94 %**","La evaluación no supervisada perdió su función certificadora. Es el dato que obliga a rediseñar."],
- ["Instituciones con política de IA formalmente vigente","**19 %**","El titular de UNESCO dice «dos tercios». La política que obliga alcanza a una de cada cinco."],
+ ["Estudiantes de grado del Reino Unido que usan IA para trabajos evaluados · HEPI 2026, n=1.054","**94 %**","Prohibir no es una política viable: sería legislar sobre una realidad inexistente."],
+ ["De los mismos, quienes insertan texto generado directamente en la entrega · autoinforme","**12 %**","La delegación total es minoritaria. Tratar al 94 % como sospechoso es tan erróneo como ignorar al 12 %."],
+ ["Entregas de IA no detectadas en un examen real · 5 módulos de Psicología, University of Reading · Scarfe et al. 2024","**94 %**","La evaluación escrita no supervisada ya no puede presumirse, por sí sola, evidencia suficiente de capacidad. Es el dato que obliga a rediseñar."],
+ ["Instituciones con política de IA formalmente vigente · 400 respuestas de Cátedras UNESCO/UNITWIN en 90 países, no representativa","**19 %**","El titular de UNESCO dice «dos tercios». La política que obliga alcanza a una de cada cinco."],
  ["Profesorado en nivel avanzado de alfabetización en IA","**17 %**","Con el 77 % ya usando la herramienta, el cuello de botella dejó de ser la adopción."]
  ]},
 
