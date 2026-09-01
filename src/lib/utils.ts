@@ -36,3 +36,30 @@ export function latestVersion<T extends { date: string }>(versions: T[]): T | un
   if (versions.length === 0) return undefined;
   return [...versions].sort((a, b) => b.date.localeCompare(a.date))[0];
 }
+
+/**
+ * Fecha de fuente respetando su precisión real.
+ *
+ *   2024-06-26 → 26.06.2024
+ *   2024-11    → 11.2024
+ *   2025       → 2025
+ *
+ * Existe porque el registro guarda fechas con precisiones distintas y eso es
+ * correcto: de algunas publicaciones sólo se conoce el año. Rellenar con
+ * `01-01` para que todas se vean iguales sería inventar precisión, que es la
+ * forma más discreta de inventar un dato.
+ */
+export function formatSourceDate(iso?: string) {
+  if (!iso) return '—';
+  const parts = iso.split('-');
+  if (parts.length === 3) return `${parts[2]}.${parts[1]}.${parts[0]}`;
+  if (parts.length === 2) return `${parts[1]}.${parts[0]}`;
+  return iso;
+}
+
+/** Qué precisión declara una fecha: día, mes o sólo año. */
+export function datePrecision(iso?: string): 'día' | 'mes' | 'año' | null {
+  if (!iso) return null;
+  const n = iso.split('-').length;
+  return n === 3 ? 'día' : n === 2 ? 'mes' : 'año';
+}

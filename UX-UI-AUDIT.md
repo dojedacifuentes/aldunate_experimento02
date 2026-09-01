@@ -127,9 +127,17 @@ Investigación muestra **el esquema de los campos**, no los registros:
 El sitio afirma trazabilidad y no la enseña. Es el único fallo de esta auditoría
 que contradice la tesis del propio proyecto.
 
-**Arreglo:** las fuentes y la matriz de evidencia se publican como primera capa
-navegable; el esquema baja a segunda capa. Requiere componentes nuevos, no sólo
-maquetación.
+**Arreglo aplicado:** las fuentes y la matriz se publican como primera capa
+navegable, con recorrido afirmación → fuente → publicación original por ancla;
+el esquema baja a segunda capa dentro de un `Disclosure`.
+
+**Hallazgo derivado.** Al publicarlas apareció algo que el registro escondía
+mientras nadie lo pintaba: **4 de las 24 fuentes no las cita ninguna
+afirmación** (`src-casewestern-2026`, `src-uchicago-law-2026`,
+`src-ncbe-nextgen`, `src-eu-ai-act-annex3`). No es un error —una fuente puede
+estar como contexto o contraevidencia—, pero un registro que se publica para
+ser auditado no puede ocultar cuál de sus fichas sostiene algo. Van marcadas, y
+el recuento se calcula, no se escribe a mano.
 
 ### U-04 · MEDIA · «Cuatro entradas» pinta cinco tarjetas
 
