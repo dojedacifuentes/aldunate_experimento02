@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 
-import { Surface } from '@/components/common/ui';
+import { Disclosure, Surface } from '@/components/common/ui';
 import { MaturityBadge, MaturityLevel } from '@/components/common/status';
 import { labCategories, statusMeta } from '@/data/lab';
 import type { LabCategory, LabTool, ToolStatus } from '@/types';
@@ -127,16 +127,25 @@ function Chip({
 }
 
 /**
- * Ficha de herramienta. Entradas, salidas y —sobre todo— límites. La sección
- * de límites no se pliega ni se abrevia: es la parte que evita que un prototipo
- * se use como si fuera un producto.
+ * Ficha de herramienta, compacta.
+ *
+ * Antes cada ficha desplegaba entradas, salidas y la lista completa de límites
+ * a la vez. Ocho fichas así, apiladas en vertical, hacen un catálogo que no se
+ * puede escanear: para saber cuáles existen había que leerlas todas.
+ *
+ * Ahora la tarjeta responde de un vistazo —qué es, cuánto está construido, si
+ * hay algo que abrir— y el detalle `Entra / Sale / No hace` se despliega a
+ * petición. El recuento de límites va en la tarjeta cerrada a propósito: es lo
+ * que impide que un prototipo se lea como producto, y no puede quedar oculto
+ * detrás de un clic sin dejar rastro.
  */
 function ToolCard({ tool }: { tool: LabTool }) {
   const categoryLabel =
     labCategories.find((c) => c.id === tool.category)?.label ?? tool.category;
+  const hasArtifact = Boolean(tool.demoUrl || tool.repoUrl);
 
   return (
-    <Surface interactive className="flex h-full flex-col p-6">
+    <Surface className="flex h-full flex-col p-6">
       <div className="flex flex-wrap items-center gap-2.5">
         <MaturityBadge status={tool.status} />
         <span className="mono text-[0.6875rem] uppercase tracking-wider text-muted-foreground">
@@ -147,25 +156,33 @@ function ToolCard({ tool }: { tool: LabTool }) {
       <h3 className="mt-4 font-serif text-xl text-foreground">{tool.title}</h3>
       <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{tool.summary}</p>
 
-      <dl className="mt-5 space-y-3 border-t border-border/60 pt-4 text-[0.8125rem]">
-        <div>
-          <dt className="meta mb-1">Entra</dt>
-          <dd className="text-foreground/80">{tool.inputs.join(' · ')}</dd>
-        </div>
-        <div>
-          <dt className="meta mb-1">Sale</dt>
-          <dd className="text-foreground/80">{tool.outputs.join(' · ')}</dd>
-        </div>
-      </dl>
+      <p className="mono mt-4 text-[0.6875rem] text-muted-foreground">
+        {tool.inputs.length} {tool.inputs.length === 1 ? 'entrada' : 'entradas'} ·{' '}
+        {tool.outputs.length} {tool.outputs.length === 1 ? 'salida' : 'salidas'} ·{' '}
+        {tool.limitations.length} {tool.limitations.length === 1 ? 'límite' : 'límites'}
+      </p>
 
-      <div className="mt-4 rounded-md border-l-2 border-l-warning bg-warning/[0.06] px-3.5 py-3">
-        <p className="meta mb-1.5 text-warning">No hace</p>
-        <ul className="space-y-1 text-[0.8125rem] leading-relaxed text-foreground/75">
-          {tool.limitations.map((lim) => (
-            <li key={lim}>· {lim}</li>
-          ))}
-        </ul>
-      </div>
+      <Disclosure summary="Entra, sale, no hace" className="mt-4">
+        <dl className="space-y-3 text-[0.8125rem]">
+          <div>
+            <dt className="meta mb-1">Entra</dt>
+            <dd className="text-foreground/80">{tool.inputs.join(' · ')}</dd>
+          </div>
+          <div>
+            <dt className="meta mb-1">Sale</dt>
+            <dd className="text-foreground/80">{tool.outputs.join(' · ')}</dd>
+          </div>
+        </dl>
+
+        <div className="mt-4 rounded-md border-l-2 border-l-warning bg-warning/[0.06] px-3.5 py-3">
+          <p className="meta mb-1.5 text-warning">No hace</p>
+          <ul className="space-y-1 text-[0.8125rem] leading-relaxed text-foreground/75">
+            {tool.limitations.map((lim) => (
+              <li key={lim}>· {lim}</li>
+            ))}
+          </ul>
+        </div>
+      </Disclosure>
 
       <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-5">
         <span className="mono text-[0.6875rem] text-muted-foreground">
@@ -180,7 +197,7 @@ function ToolCard({ tool }: { tool: LabTool }) {
               className="inline-flex items-center gap-1 text-[0.8125rem] font-medium text-primary hover:underline"
             >
               <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-              Demo
+              Probar
             </a>
           )}
           {tool.repoUrl && (
@@ -191,8 +208,18 @@ function ToolCard({ tool }: { tool: LabTool }) {
               className="inline-flex items-center gap-1 text-[0.8125rem] font-medium text-primary hover:underline"
             >
               <Github className="h-3.5 w-3.5" aria-hidden />
-              Código
+              Ver código
             </a>
+          )}
+          {/*
+            Sin artefacto no se inventa un botón. Se dice que no lo hay: es el
+            dato que el lector no podía obtener de la ficha, y el que separa un
+            catálogo de herramientas de una lista de intenciones.
+          */}
+          {!hasArtifact && (
+            <span className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
+              sin artefacto consultable
+            </span>
           )}
         </span>
       </div>

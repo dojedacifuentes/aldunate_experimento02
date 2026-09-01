@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, BookOpen, Download, FlaskConical, ListTree } from 'lucide-react';
+import { BookOpen, Download, FlaskConical, ListTree } from 'lucide-react';
 
 import {
   Badge,
+  Breadcrumbs,
   ButtonLink,
   Container,
   MetaRow,
@@ -13,7 +14,6 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
-import { EvaNote } from '@/components/eva/EvaNote';
 import { getReport, reports, reportStatusMeta } from '@/data/reports';
 import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
@@ -80,18 +80,13 @@ export default async function InformeDetallePage({
       {/* ── Cabecera ── */}
       <header className="border-b border-border/70 py-12 sm:py-16">
         <Container>
-          <Link
-            href="/informes"
-            className="mono inline-flex items-center gap-1.5 text-[0.6875rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
-          >
-            <ArrowLeft className="h-3 w-3" aria-hidden />
-            Informes
-          </Link>
+          {/* El título del informe es largo; la ruta orienta antes de leerlo. */}
+          <Breadcrumbs
+            items={[{ label: 'Informes', href: '/informes' }, { label: report.code }]}
+          />
 
+          {/* El código ya va en la miga de pan; repetirlo aquí era eco. */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <span className="mono text-[0.6875rem] tracking-widest text-primary">
-              {report.code}
-            </span>
             <EditorialStatus status={report.status} />
             {latest && (
               <span className="mono text-[0.6875rem] text-muted-foreground">
@@ -399,14 +394,12 @@ export default async function InformeDetallePage({
                 citarse todavía como resultado.
               </Notice>
 
-              <EvaNote portrait="desk">
-                <p>
-                  Tres capas de lectura: resumen, método, historial. Puede
-                  quedarse en la primera sin culpa —para eso existe—. He reducido
-                  el sufrimiento humano a tres niveles de profundidad y me
-                  gustaría que constara en acta.
-                </p>
-              </EvaNote>
+              {/*
+                Sin nota de EVA. La ficha de un informe es capa de evidencia:
+                lleva niveles, fuentes y advertencias de lectura, y una voz que
+                interpreta no debe cerrarla. EVA sigue disponible en el panel,
+                donde el lector la abre si la quiere. Ver U-07 en UX-UI-AUDIT.md.
+              */}
             </div>
 
             <Surface className="p-6">

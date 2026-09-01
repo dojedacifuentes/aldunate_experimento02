@@ -183,8 +183,19 @@ El encargo (§14) lo nombra literalmente: «el mismo bloque al final de todas la
 páginas». El panel flotante en cambio está bien construido —se cierra con
 Escape, no atrapa el foco, se puede silenciar— y se conserva.
 
-**Arreglo:** EVA baja a intervención selectiva. Sale de Investigación e
-Informes, que son capas de evidencia; se queda donde interpreta o acompaña.
+**Arreglo aplicado.** El criterio es el del §13 del encargo de auditoría —«EVA
+interpreta, la evidencia demuestra»— y no un recuento: sale de **metodología,
+bibliografía y fichas de evidencia**, que es donde su voz competía con la voz
+metodológica. En concreto, de `/investigacion` y de `/informes/[slug]`.
+
+Se queda donde tiene función declarada por el propio encargo: *empty state* en
+los dos catálogos vacíos de `/aldunate`, e intervención editorial después de una
+sección técnica en el resto. El panel flotante sigue disponible en todas las
+rutas, porque ahí EVA se abre a petición del lector en vez de imponerse.
+
+Queda en 12 de 14 páginas. No es «todas», y cada una tiene una función
+distinta, pero sigue siendo mucho: si en una iteración posterior se quiere
+bajar más, el sitio por donde empezar son las tres páginas de `/aldunate`.
 
 ### U-08 · ALTA · La jerarquía de navegación no coincide con lo que el sitio ofrece
 
