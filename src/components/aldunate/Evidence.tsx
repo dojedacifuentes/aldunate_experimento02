@@ -117,7 +117,10 @@ export function SourceRef({ ids, className }: { ids: string[]; className?: strin
           href={`#fuente-${source.id}`}
           title={`${source.title} — ${source.publisher}`}
           className={cn(
-            'rounded border border-border/70 px-1.5 py-px text-[0.625rem] leading-relaxed',
+            // 24×24 px es el mínimo de WCAG 2.2 para un objetivo táctil. El
+            // texto sigue en 10 px; lo que crece es el área que responde.
+            'inline-flex min-h-6 min-w-6 items-center justify-center',
+            'rounded border border-border/70 px-1.5 text-[0.625rem] leading-none',
             'text-muted-foreground transition-colors hover:border-primary/60 hover:text-primary',
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
           )}

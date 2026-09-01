@@ -34,6 +34,9 @@ const views: { id: View; label: string }[] = [
   { id: 'temas', label: 'Temas' },
 ];
 
+const PANEL_ID = 'catalogo-panel';
+const tabId = (v: View) => `catalogo-vista-${v}`;
+
 export function PublicationExplorer() {
   const [view, setView] = useState<View>('lista');
   const [concept, setConcept] = useState<string | null>(null);
@@ -53,13 +56,27 @@ export function PublicationExplorer() {
       {/* ── Controles ── */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/70 pb-4">
         <div role="tablist" aria-label="Forma de ver el catálogo" className="flex gap-1">
-          {views.map((v) => (
+          {views.map((v, i) => (
             <button
               key={v.id}
+              id={tabId(v.id)}
               role="tab"
               aria-selected={view === v.id}
+              aria-controls={PANEL_ID}
+              // Tabulación itinerante: el grupo entero es una parada, y dentro
+              // se navega con flechas. Es lo que espera quien oye «pestaña».
+              tabIndex={view === v.id ? 0 : -1}
               type="button"
               onClick={() => setView(v.id)}
+              onKeyDown={(event) => {
+                const delta =
+                  event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+                if (!delta) return;
+                event.preventDefault();
+                const next = views[(i + delta + views.length) % views.length]!;
+                setView(next.id);
+                document.getElementById(tabId(next.id))?.focus();
+              }}
               className={cn(
                 'mono rounded px-3 py-1.5 text-[0.6875rem] uppercase tracking-wider transition-colors',
                 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
@@ -130,6 +147,12 @@ export function PublicationExplorer() {
       </p>
 
       {/* ── Vistas ── */}
+      {/*
+        El panel que las pestañas controlan de verdad. `tabIndex={-1}` lo hace
+        alcanzable por programa —el lector de pantalla puede saltar aquí desde
+        la pestaña— sin meterlo en el recorrido normal del tabulador.
+      */}
+      <div id={PANEL_ID} role="tabpanel" aria-labelledby={tabId(view)} tabIndex={-1}>
       {filtered.length === 0 ? (
         <p className="surface rounded-lg p-8 text-center text-sm text-muted-foreground">
           Ninguna obra del catálogo cumple ese cruce de filtros.
@@ -145,6 +168,7 @@ export function PublicationExplorer() {
       ) : (
         <ThemeView items={filtered} />
       )}
+      </div>
     </div>
   );
 }
