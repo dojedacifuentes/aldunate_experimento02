@@ -79,21 +79,66 @@ parciales, 4 abiertos, 1 que requiere decisión humana, 1 no aplicable.
 6. **Changelog a nivel de afirmación** y **política pública de correcciones** en
    `/correcciones`.
 
+### Informe 01 · el corpus, y lo que el corpus descartó
+
+El Informe 01 llevaba desde el 29-08 con la estructura montada y el registro
+vacío. Ahora tiene corpus, en `tools/informes/informe-01/`, fundido desde tres
+investigaciones profundas con el procedimiento de la skill `informe-vivo`. Ficha
+en **v0.2.0**; la 0.1.0 no se sobrescribió.
+
+1. **43 fuentes públicas únicas**, todas institucionales y con fecha, sobre las
+   once universidades de la cohorte. Los tres documentos de origen quedan
+   versionados en `content/reports/01_ia_escuelas_derecho_chile/sources/`.
+2. **Una de las tres investigaciones no pasó el paso 1 y quedó fuera.** Declaraba
+   25 fuentes con identificador y ninguna tenía URL: eran marcadores internos del
+   buscador del modelo que la produjo, irresolubles por un tercero. Un documento
+   que se cae en el inventario no llega a la publicación.
+3. **La cobertura es desigual por diseño y está declarado.** Nueve fuentes en
+   cada universidad del piloto —PUCV, UC, U. de Chile— y dos en cada una de las
+   otras ocho. Esa diferencia mide esfuerzo de investigación, no actividad
+   institucional, así que **no se emite ninguna comparación nacional**. El
+   informe publicará once fichas y ninguna tabla de posiciones hasta igualar.
+4. **`sourceIds` y `claimIds` siguen vacíos, a propósito.** Que una URL responda
+   —42 de 43 lo hacen— no prueba que diga lo que se le atribuye. Esa verificación
+   no se delega y no está hecha.
+
+### Lo que salió de validar la skill `informe-vivo`
+
+- **El chequeo de identificadores huérfanos daba una falsa alarma sobre nuestros
+  propios datos.** `comm` exige entrada única y un mismo `clm-` aparece dos veces
+  en `reports.ts`, en `claimIds[]` y en `claimChanges[].claimId`. Corregido con
+  `sort -u`, y de paso se le quitó la coma final al patrón, que habría hecho
+  invisible al último elemento de un array sin coma de cierre.
+- **La skill sólo se carga desde este repositorio**, cosa que ahora dice
+  `CLAUDE.md` §8. Se descubrió no activándose con la sesión abierta en la carpeta
+  donde viven los documentos de investigación.
+- El paso de arbitraje ya no se da por vacío cuando no hay fuentes repetidas.
+
 ---
 
 ## 2. Estado verificable
 
 ```
-npm run verify   →  0 errores · 8 avisos (D-022, no tocar) · 64 tests · 17 rutas
+npm run verify   →  exit 0 · 0 errores · 8 avisos (D-022, no tocar) · 86 tests
 ```
 
-Los 8 avisos son de siempre: siete del código donado del juego, uno de
-`figure-sprite.mjs`. Están justificados en `DECISIONS.md` D-022 y **no se
-arreglan**.
+Comprobado el 01-09-2026 sobre `ac04e93`. Los 8 avisos son de siempre: siete del
+código donado del juego, uno de `figure-sprite.mjs`. Están justificados en
+`DECISIONS.md` D-022 y **no se arreglan**.
 
-Las 64 pruebas incluyen 18 nuevas sobre `src/data/`, que antes no tenía
-ninguna: las 46 anteriores eran todas del juego, y ahí es donde vivían los dos
-datos falsos que compilaban sin protestar.
+Las 86 pruebas incluyen las de `src/data/`, que antes no tenía ninguna: las 46
+originales eran todas del juego, y ahí es donde vivían los dos datos falsos que
+compilaban sin protestar.
+
+**Si `verify` falla nada más clonar o tras un `pull` largo, mira `node_modules`
+antes que el código.** El 01-09 falló con treinta errores de tipos —`zustand/
+middleware` y `vitest/config` no encontrados— y no había nada roto: el
+fast-forward había traído un `package.json` con dependencias nuevas y las
+dependencias instaladas eran las de antes. `npm ci` y en verde.
+
+**Chequeo de identificadores huérfanos**, con el comando ya corregido de
+`docs/informes/07-puente-con-el-sitio.md`: 42 definidos, 42 usados, cero
+huérfanos en ambas direcciones.
 
 ---
 
@@ -189,8 +234,17 @@ una versión publicada.**
 
 ## 6. Siguiente paso sugerido
 
-PR #10 y #11 están fusionados; producción va en `b172680` y sirve el Informe 02
-en v0.3.0. El trabajo activo pasó al **Informe 01**.
+Producción va en **`ac04e93`**, con los PR #10 a #13 dentro. Sirve el Informe 02
+en v0.3.0, el Informe 01 en v0.2.0 y el perfil `/aldunate`; las tres rutas
+comprobadas en vivo el 01-09-2026. El trabajo activo está en el **Informe 01**.
+
+> **Este repositorio tuvo sesiones concurrentes el 01-09.** Dos líneas de trabajo
+> —el perfil de Aldunate y el corpus del Informe 01— avanzaron a la vez y se
+> encontraron en un conflicto de `CHANGELOG.md`. Antes de dar por buena la
+> posición del remoto, consúltala con `git ls-remote origin main`, no con
+> `origin/main`: esa referencia se quedó congelada días por no tener refspec
+> configurado, y por poco lleva a leer como «sin subir» tres commits que ya
+> estaban en producción. El refspec ya está reparado.
 
 1. **Verificar las 43 fuentes del Informe 01 una por una.** Es lo único que
    desbloquea todo lo demás, y es lo que no se delega: abrir cada página y
