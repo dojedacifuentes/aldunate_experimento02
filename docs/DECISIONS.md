@@ -621,3 +621,40 @@ pierde a quien construyó por un despliegue.
 
 **Lo que no basta.** Confiar en que el jugador empiece una partida nueva por su
 cuenta. Nadie borra su partida para comprobar si cambió algo.
+
+---
+
+## D-033 · El sitio deja de mostrar signos institucionales
+
+**Qué.** El escudo de la Escuela de Derecho PUCV sale del sitio público. Los
+cinco usos de `<InstitutionalMark>` —portada, `/informes`, ficha de informe,
+`/aldunate` y footer— se sustituyen por una declaración en texto: «PROTOTIPO
+ACADÉMICO EXPERIMENTAL», con la negación de afiliación al lado. El componente
+se conserva sin usos y documentado. `disclaimer.logoNotice` desaparece: describía
+un escudo que ya no está.
+
+Y con él sale el retrato `eva-pucv-courtyard.png`, que era el problema real:
+llevaba el escudo, el logotipo «DERECHO PUCV», el nombre completo de la
+universidad y el rótulo «EVA · ESCUELA DE DERECHO PUCV» incrustados en el
+píxel. Se usaba en la portada. Quitar el componente y dejar esa imagen habría
+sido cambiar la puerta por la que entra la marca, no cerrarla.
+
+**Por qué.** Un descargo colocado debajo de un escudo se lee como nota al pie,
+no como negación. Mientras la marca esté a la vista, la primera pantalla
+comunica afiliación por más que el pie diga lo contrario —y este sitio no está
+autorizado: el profesor todavía no sabe que existe (`PUENTE-Y-HOJA-DE-RUTA.md`
+§0).
+
+**Contradicción resuelta.** `CLAUDE.md` regla dura 3 ordenaba conservar el
+escudo con aviso; el encargo de auditoría (P0.9, hallazgo A-26) ordenaba
+retirarlo. Decisión del 31-08-2026: gana retirarlo, y `CLAUDE.md` se actualiza
+en el mismo cambio. Cuando el código y la regla se separan, gana el error.
+
+**Cómo se revierte.** Existe autorización → se restituye `<InstitutionalMark>`
+donde corresponda y se recupera el retrato del historial de git. Es un `import`
+y un `git checkout`, no una reconstrucción. Ese era el motivo de conservar el
+componente.
+
+**Lo que no basta.** Quitar el logotipo del layout y dar el trabajo por hecho.
+La marca también viaja dentro de imágenes de contenido, y ahí no la encuentra
+ningún `grep` de nombres de componente. Se comprueba mirando los archivos.

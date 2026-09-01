@@ -466,3 +466,24 @@ verificación.
   Audaces y Lex Note: declarados como ideas, con sus requisitos publicados.
   (Wittgenstein pasa a estar construido en 0.2.0.)
 
+
+## Rediseño UX/UI · 31-08-2026
+
+Auditoría en `UX-UI-AUDIT.md`, detalle por fases en `UX-UI-CHANGELOG.md`.
+
+- El escudo de la Escuela de Derecho sale del sitio público hasta que exista
+  autorización, y con él un retrato de EVA que lo llevaba incrustado en el
+  píxel junto al rótulo «EVA · ESCUELA DE DERECHO PUCV». D-033.
+- Tres datos falsos corregidos: «registros vacíos» sobre 24 fuentes cargadas,
+  «el PDF de noventa y seis páginas» (son 76) y «cuatro entradas» sobre cinco
+  tarjetas.
+- Las 24 fuentes y las 18 afirmaciones se publican por primera vez. El sitio
+  afirmaba trazabilidad y sólo enseñaba el esquema de sus registros.
+- Tres familias de estado con silueta propia: madurez, estado editorial y nivel
+  de evidencia dejan de compartir componente.
+- La portada encabeza el laboratorio y no el nombre del profesor. Navegación
+  reordenada: primarias Informes, Experimentos y Lab.
+- Responsive y accesibilidad medidos: un overflow de 69 px corregido, 48
+  objetivos táctiles por debajo de 24 px elevados, 118 fallos de contraste en
+  tema claro eliminados.
+- 12 pruebas nuevas sobre `src/data/`, que no tenía ninguna.

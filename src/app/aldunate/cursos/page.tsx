@@ -19,7 +19,7 @@ export default function CursosPage() {
   return (
     <>
       <PageHeader
-        code="01 · Cursos"
+        code="05 · Cursos"
         title="Cursos y docencia"
         lede="Asignaturas, programas y materiales. Se incorporan cursos confirmados, con institución y período declarados."
       />

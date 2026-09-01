@@ -1,8 +1,13 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 
-import { Container, MetaRow, Notice, PendingBlock, Section } from '@/components/common/ui';
+import {
+  Breadcrumbs,
+  Container,
+  MetaRow,
+  Notice,
+  PendingBlock,
+  Section,
+} from '@/components/common/ui';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { CabinaAudaces } from '@/components/rpg/game/CabinaAudaces';
 import { CHARACTER_IDS, CHARACTERS } from '@/data/rpg/characters';
@@ -46,13 +51,17 @@ export default function LeyDeLosAudacesPage() {
 
       <header className="border-b border-border/70 py-10 sm:py-14">
         <Container>
-          <Link
-            href="/experimentos/juegos"
-            className="mono inline-flex items-center gap-1.5 text-[0.6875rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
-          >
-            <ArrowLeft className="h-3 w-3" aria-hidden />
-            Juegos
-          </Link>
+          {/*
+            Tercer nivel: un solo «← Juegos» decía de dónde se venía pero no
+            dónde se está. La ruta completa cabe en una línea.
+          */}
+          <Breadcrumbs
+            items={[
+              { label: 'Experimentos', href: '/experimentos' },
+              { label: 'Juegos', href: '/experimentos/juegos' },
+              { label: 'La Ley de los Audaces' },
+            ]}
+          />
           <h1 className="mt-6 max-w-3xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
             La Ley de los Audaces
           </h1>

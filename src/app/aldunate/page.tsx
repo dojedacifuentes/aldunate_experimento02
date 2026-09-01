@@ -12,7 +12,6 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EvaNote } from '@/components/eva/EvaNote';
-import { InstitutionalMark } from '@/components/layout/InstitutionalMark';
 import {
   courses,
   pendingContent,
@@ -39,7 +38,7 @@ export default function AldunatePage() {
   return (
     <>
       <PageHeader
-        code="01 · Perfil"
+        code="05 · Perfil"
         title={profile.name}
         lede={profile.intro}
       >
@@ -64,9 +63,10 @@ export default function AldunatePage() {
         description="Seis territorios y sus conexiones. Cada uno describe un ámbito que el laboratorio recorre; ninguno constituye una atribución de obra ni de posición doctrinaria."
       >
         <ul className="grid gap-4 md:grid-cols-2">
+          {/* Sin `interactive`: las líneas no son enlaces. Ver `page.tsx`. */}
           {researchLines.map((line, index) => (
             <li key={line.id}>
-              <Surface interactive className="h-full p-6">
+              <Surface className="h-full p-6">
                 <div className="flex items-start justify-between gap-4">
                   <span className="mono text-[0.6875rem] tracking-widest text-primary">
                     {String(index + 1).padStart(2, '0')}
@@ -142,7 +142,7 @@ export default function AldunatePage() {
       <section className="border-t border-border/70 py-16 sm:py-20">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
-            <EvaNote portrait="courtyard">
+            <EvaNote portrait="neutral">
               <p>
                 Podría haber llenado esta página con tres libros plausibles, dos
                 cursos de nombre convincente y una cita bien construida. Nadie lo
@@ -152,11 +152,13 @@ export default function AldunatePage() {
             </EvaNote>
 
             <Surface className="p-6">
-              <p className="meta mb-4">Contexto institucional</p>
-              <InstitutionalMark size={52} withCaption />
-              <p className="mt-4 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                Prototipo académico experimental. No representa a la PUCV ni a su
-                Escuela de Derecho.
+              <p className="meta mb-4">Naturaleza de esta página</p>
+              <p className="mono text-[0.6875rem] uppercase tracking-widest text-warning">
+                Prototipo académico experimental
+              </p>
+              <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                No representa a la PUCV ni a su Escuela de Derecho, y no habla en
+                nombre del profesor Eduardo Aldunate Lizana.
               </p>
             </Surface>
           </div>

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, BookOpen, Download, FlaskConical, ListTree } from 'lucide-react';
+import { BookOpen, Download, FlaskConical, ListTree } from 'lucide-react';
 
 import {
   Badge,
+  Breadcrumbs,
   ButtonLink,
   Container,
   MetaRow,
@@ -12,9 +13,10 @@ import {
   Section,
   Surface,
 } from '@/components/common/ui';
-import { EvaNote } from '@/components/eva/EvaNote';
-import { InstitutionalMark } from '@/components/layout/InstitutionalMark';
+import { EditorialStatus, EpistemicTag } from '@/components/common/status';
 import { getReport, reports, reportStatusMeta } from '@/data/reports';
+import { autor } from '@/data/site';
+import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
 import { formatDate, latestVersion } from '@/lib/utils';
 
@@ -79,21 +81,14 @@ export default async function InformeDetallePage({
       {/* ── Cabecera ── */}
       <header className="border-b border-border/70 py-12 sm:py-16">
         <Container>
-          <Link
-            href="/informes"
-            className="mono inline-flex items-center gap-1.5 text-[0.6875rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
-          >
-            <ArrowLeft className="h-3 w-3" aria-hidden />
-            Informes
-          </Link>
+          {/* El título del informe es largo; la ruta orienta antes de leerlo. */}
+          <Breadcrumbs
+            items={[{ label: 'Informes', href: '/informes' }, { label: report.code }]}
+          />
 
+          {/* El código ya va en la miga de pan; repetirlo aquí era eco. */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <span className="mono text-[0.6875rem] tracking-widest text-primary">
-              {report.code}
-            </span>
-            <Badge tone={meta.tone} dot>
-              {meta.label}
-            </Badge>
+            <EditorialStatus status={report.status} />
             {latest && (
               <span className="mono text-[0.6875rem] text-muted-foreground">
                 v{latest.version}
@@ -157,7 +152,17 @@ export default async function InformeDetallePage({
               <MetaRow label="Estado" value={meta.label} />
               <MetaRow label="Versión" value={latest ? `v${latest.version}` : '—'} />
               <MetaRow label="Actualizado" value={formatDate(report.updatedAt)} />
-              <MetaRow label="Autoría" value={report.authors.join(', ')} />
+              <MetaRow
+                label="Autoría"
+                value={
+                  <>
+                    <span className="block text-foreground">{report.authors.join(', ')}</span>
+                    <span className="mt-0.5 block text-[0.75rem] text-muted-foreground">
+                      {autor.credential} · {autor.role}
+                    </span>
+                  </>
+                }
+              />
               <MetaRow label="Ejes" value={String(report.axes.length)} />
               <MetaRow
                 label="Fuentes registradas"
@@ -337,7 +342,7 @@ export default async function InformeDetallePage({
                         href={source.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-4 inline-flex text-sm font-medium text-primary hover:underline"
+                        className="mt-4 inline-flex min-h-6 items-center text-sm font-medium text-primary hover:underline"
                       >
                         Abrir fuente
                         <span className="sr-only">: {source.title}</span>
@@ -375,7 +380,7 @@ export default async function InformeDetallePage({
                   {Object.entries(evidenceLevels).map(([key, level]) => (
                     <li key={key}>
                       <div className="h-full rounded-md border border-border/70 bg-card/40 p-4">
-                        <Badge tone={level.tone}>{level.label}</Badge>
+                        <EpistemicTag level={key as EvidenceLevel} code />
                         <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
                           {level.definition}
                         </p>
@@ -400,22 +405,22 @@ export default async function InformeDetallePage({
                 citarse todavía como resultado.
               </Notice>
 
-              <EvaNote portrait="desk">
-                <p>
-                  Tres capas de lectura: resumen, método, historial. Puede
-                  quedarse en la primera sin culpa —para eso existe—. He reducido
-                  el sufrimiento humano a tres niveles de profundidad y me
-                  gustaría que constara en acta.
-                </p>
-              </EvaNote>
+              {/*
+                Sin nota de EVA. La ficha de un informe es capa de evidencia:
+                lleva niveles, fuentes y advertencias de lectura, y una voz que
+                interpreta no debe cerrarla. EVA sigue disponible en el panel,
+                donde el lector la abre si la quiere. Ver U-07 en UX-UI-AUDIT.md.
+              */}
             </div>
 
             <Surface className="p-6">
-              <p className="meta mb-4">Contexto institucional</p>
-              <InstitutionalMark size={48} withCaption />
-              <p className="mt-4 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                Documento de trabajo de un prototipo académico. No es una
-                publicación oficial de la PUCV.
+              <p className="meta mb-4">Naturaleza de este documento</p>
+              <p className="mono text-[0.6875rem] uppercase tracking-widest text-warning">
+                Prototipo académico experimental
+              </p>
+              <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                Documento de trabajo. No es una publicación oficial de la PUCV ni
+                de su Escuela de Derecho.
               </p>
             </Surface>
           </div>

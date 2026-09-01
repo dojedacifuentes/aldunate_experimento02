@@ -288,12 +288,131 @@ export function Notice({
   );
 }
 
-/** Par etiqueta/valor en clave de ficha técnica. */
+/**
+ * Par etiqueta/valor en clave de ficha técnica.
+ *
+ * `overflow-wrap: anywhere` y no `break-words`: los valores incluyen rutas de
+ * archivo —`content/reports/02_transformacion_ensenanza_derecho/`— que son un
+ * único token sin punto de corte. La diferencia importa porque `break-words`
+ * parte la palabra al pintar pero **no** reduce su tamaño min-content, así que
+ * un item de grid con `min-width: auto` sigue reservándole el ancho entero. Esa
+ * ruta desbordaba la ficha de informe 69 px a 375 px de ancho.
+ */
 export function MetaRow({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-1 border-b border-border/60 py-3 sm:flex-row sm:items-baseline sm:gap-4">
       <dt className="meta shrink-0 sm:w-44">{label}</dt>
-      <dd className="min-w-0 text-sm text-foreground/90">{value}</dd>
+      <dd className="min-w-0 text-sm text-foreground/90 [overflow-wrap:anywhere]">{value}</dd>
     </div>
+  );
+}
+
+/* ────────────────────────────── Profundidad bajo demanda ────────────────────────────── */
+
+/**
+ * Sección plegable.
+ *
+ * `<details>` nativo y no un acordeón a medida: llega accesible de fábrica
+ * —foco, teclado, `aria-expanded` implícito—, funciona sin JavaScript y
+ * responde a `Ctrl+F` en los navegadores que buscan dentro de detalles
+ * cerrados. Un acordeón propio habría necesitado cuarenta líneas de ARIA para
+ * empatar.
+ *
+ * Sirve para bajar a segunda capa lo que no todo lector necesita: esquemas,
+ * campos técnicos, listas largas de limitaciones. Lo que se pliega no
+ * desaparece; deja de imponerse.
+ */
+export function Disclosure({
+  summary,
+  hint,
+  defaultOpen = false,
+  className,
+  children,
+}: {
+  summary: string;
+  hint?: string;
+  defaultOpen?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <details
+      open={defaultOpen}
+      className={cn('group rounded-lg border border-border bg-card/40', className)}
+    >
+      <summary
+        className={cn(
+          'flex cursor-pointer list-none items-center gap-3 rounded-lg px-5 py-4',
+          'text-sm font-medium text-foreground transition-colors hover:text-primary',
+          '[&::-webkit-details-marker]:hidden',
+        )}
+      >
+        <span
+          aria-hidden
+          className="mono shrink-0 text-[0.75rem] text-primary transition-transform group-open:rotate-90"
+        >
+          ▸
+        </span>
+        <span className="min-w-0 flex-1">{summary}</span>
+        {hint && (
+          <span className="mono shrink-0 text-[0.6875rem] text-muted-foreground">{hint}</span>
+        )}
+      </summary>
+      <div className="border-t border-border/60 px-5 py-4">{children}</div>
+    </details>
+  );
+}
+
+/* ────────────────────────────── Ruta ────────────────────────────── */
+
+export interface Crumb {
+  label: string;
+  /** El último tramo no lleva enlace: es dónde está el lector, no adónde va. */
+  href?: string;
+}
+
+/**
+ * Migas de pan. Sólo donde la profundidad lo justifica —tercer nivel o
+ * detalle dentro de un catálogo—; en una ruta de primer nivel son ruido.
+ *
+ * Pesan visualmente menos que el H1 a propósito: orientan, no compiten. Pero
+ * el peso visual lo da el tamaño de letra, no el del objetivo: los enlaces
+ * llevan `min-h-6` para llegar a los 24 px que exige WCAG 2.2 AA. Sin eso
+ * medían 17 px de alto, y no son enlaces dentro de una frase —la excepción de
+ * enlace en línea no les alcanza—.
+ */
+export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: string }) {
+  return (
+    <nav aria-label="Ruta de navegación" className={cn('min-w-0', className)}>
+      <ol className="flex flex-wrap items-center gap-x-2">
+        {items.map((item, i) => {
+          const last = i === items.length - 1;
+          return (
+            <li key={`${item.label}-${i}`} className="flex items-center gap-2">
+              {item.href && !last ? (
+                <Link
+                  href={item.href}
+                  className="mono inline-flex min-h-6 items-center text-[0.6875rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span
+                  aria-current={last ? 'page' : undefined}
+                  className="mono inline-flex min-h-6 items-center text-[0.6875rem] uppercase tracking-widest text-foreground/70"
+                >
+                  {item.label}
+                </span>
+              )}
+              {!last && (
+                <span aria-hidden className="text-[0.6875rem] text-muted-foreground/50">
+                  /
+                </span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }

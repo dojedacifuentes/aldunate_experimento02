@@ -38,8 +38,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  /*
+    El título por defecto era el nombre del profesor. En una pestaña, en un
+    marcador y en cualquier enlace compartido, eso presenta el sitio como suyo
+    —y no lo es—. Encabeza el laboratorio; el nombre aparece en la descripción,
+    donde es contexto y no firma.
+  */
   title: {
-    default: `${site.subject} — ${site.tagline}`,
+    default: `Experimento 02 — ${site.field}`,
     template: `%s · ${site.shortName}`,
   },
   description: site.description,
@@ -57,13 +63,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: site.locale,
     siteName: site.name,
-    title: `${site.subject} — ${site.tagline}`,
+    title: `Experimento 02 — ${site.field}`,
     description: site.description,
     images: [{ url: '/og.png', alt: 'Aldunate — Experimento 02' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.subject} — ${site.tagline}`,
+    title: `Experimento 02 — ${site.field}`,
     description: site.description,
     images: ['/og.png'],
   },

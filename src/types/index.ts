@@ -232,7 +232,6 @@ export interface Experiment {
 
 export type EvaPortraitKey =
   | 'cyberpunk'
-  | 'courtyard'
   | 'desk'
   | 'presenter'
   | 'lifestyle'

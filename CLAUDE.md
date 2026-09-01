@@ -65,9 +65,17 @@ Este sitio **no es** un sitio oficial de la PUCV ni de su Escuela de Derecho, y
 
 - La franja de prototipo del layout raíz no se quita.
 - `robots: { index: false }` se mantiene mientras no exista autorización.
-- El escudo (`/public/brand/derecho-pucv-logo.jpg`) no se recolorea, anima,
-  deforma ni recibe glow. Se usa a través de `<InstitutionalMark>` y nada más.
-- El aviso de uso pendiente de autorización vive en el footer y se conserva.
+- **Ninguna pantalla muestra signos institucionales.** El escudo se retiró del
+  sitio el 31-08-2026 y no vuelve sin autorización expresa. Un descargo colocado
+  bajo un escudo se lee como nota al pie, no como negación: mientras la marca
+  esté a la vista, la primera pantalla comunica afiliación por más que el pie
+  diga lo contrario.
+- `<InstitutionalMark>` se conserva sin usos, documentado, para que restituirlo
+  el día que haya autorización sea un `import`. No lo reintroduzcas antes.
+- Cuando vuelva: no se recolorea, anima, deforma ni recibe glow, y se usa a
+  través de `<InstitutionalMark>` y nada más.
+- El carácter de **prototipo académico experimental** se declara en texto, en la
+  franja superior y en el footer.
 
 ---
 

@@ -1,3 +1,4 @@
+import { autor } from './site';
 import type { Report, ReportStatus, Tone } from '@/types';
 
 /**
@@ -30,7 +31,7 @@ export const reports: Report[] = [
     subtitle: 'Mapeo de evidencia pública',
     executiveSummary:
       'Mapeo sistemático de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en Escuelas y Facultades de Derecho chilenas. El informe se construye por acumulación verificada: cada institución incorporada exige documento público, fecha de consulta y nivel de confianza declarado. Hasta que ese registro alcance cobertura suficiente, este documento no emite conclusiones sobre tendencias nacionales.',
-    authors: ['Equipo Experimento 02'],
+    authors: [autor.name],
     status: 'en-investigacion',
     folder: 'content/reports/01_ia_escuelas_derecho_chile/',
     axes: [
@@ -99,7 +100,7 @@ export const reports: Report[] = [
     subtitle: 'Metodologías, evaluación y competencias',
     executiveSummary:
       'Qué se evalúa cuando el producto escrito deja de ser prueba de proceso. La versión 0.2.0 sitúa la enseñanza jurídica dentro del cuadro más amplio de la educación superior: veinticuatro capítulos que recorren evaluación, competencias, metodologías, rol docente, currículo, gobernanza y mercado profesional, con la formación en Derecho como caso crítico porque su cadena formativa completa —leer, sintetizar, argumentar y redactar— coincide con lo que los sistemas generativos ejecutan con alta fluidez y fiabilidad insuficiente. El hallazgo central es asimétrico: la transformación verificable se concentra casi por completo en la evaluación, y de treinta y ocho hallazgos registrados solo seis alcanzan nivel de causalidad establecida. Ninguna afirmación sobre despliegues institucionales de escala supera el nivel de implementación.',
-    authors: ['Equipo Experimento 02'],
+    authors: [autor.name],
     status: 'en-revision',
     folder: 'content/reports/02_transformacion_ensenanza_derecho/',
     axes: [

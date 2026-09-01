@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, FileText } from 'lucide-react';
 
-import { Badge, Container, Notice, PageHeader, Section, Surface } from '@/components/common/ui';
+import { Container, Notice, PageHeader, Section, Surface } from '@/components/common/ui';
+import { EditorialStatus } from '@/components/common/status';
 import { EvaNote } from '@/components/eva/EvaNote';
-import { InstitutionalMark } from '@/components/layout/InstitutionalMark';
-import { reports, reportStatusMeta } from '@/data/reports';
+import { reports } from '@/data/reports';
 import { formatDate, latestVersion } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function InformesPage() {
   return (
     <>
       <PageHeader
-        code="03 · Informes"
+        code="01 · Informes"
         title="Documentos vivos"
         lede="Biblioteca de informes versionados. Cada uno declara su metodología, sus fuentes, sus límites y su historial de cambios."
       />
@@ -45,7 +45,6 @@ export default function InformesPage() {
       <Section>
         <ul className="space-y-4">
           {reports.map((report) => {
-            const meta = reportStatusMeta[report.status];
             const latest = latestVersion(report.versions);
 
             return (
@@ -56,9 +55,7 @@ export default function InformesPage() {
                       <span className="mono text-[0.6875rem] tracking-widest text-primary">
                         {report.code}
                       </span>
-                      <Badge tone={meta.tone} dot>
-                        {meta.label}
-                      </Badge>
+                      <EditorialStatus status={report.status} />
                       {latest && (
                         <span className="mono text-[0.6875rem] text-muted-foreground">
                           v{latest.version}
@@ -104,21 +101,25 @@ export default function InformesPage() {
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
             <EvaNote portrait="desk">
               <p>
-                Dos informes abiertos, ninguno concluido. Ambos declaran alcance
-                y método antes de tener hallazgos, que es el orden correcto y el
-                menos frecuente. Detecté una tecnología obsoleta —el PDF de
-                noventa y seis páginas sin índice— y procedo a representar
-                legalmente a la víctima.
+                Ambos informes declaran alcance y método antes de tener
+                conclusiones, que es el orden correcto y el menos frecuente. El
+                que ya se puede descargar rotula cada hallazgo con su nivel de
+                evidencia, de modo que se ve cuánto sostiene y cuánto todavía no.
+                Es menos rotundo que la alternativa y sobrevive mejor a que
+                alguien lo revise.
               </p>
             </EvaNote>
 
             <Surface className="p-6">
               <FileText className="h-5 w-5 text-primary" aria-hidden />
-              <p className="meta mt-4 mb-3">Contexto institucional</p>
-              <InstitutionalMark size={48} withCaption />
-              <p className="mt-4 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                Documentos de trabajo de un prototipo académico. No son
-                publicaciones oficiales de la PUCV.
+              <p className="meta mt-4 mb-3">Naturaleza de estos documentos</p>
+              <p className="mono text-[0.6875rem] uppercase tracking-widest text-warning">
+                Prototipo académico experimental
+              </p>
+              <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                Documentos de trabajo. No son publicaciones oficiales de la PUCV
+                ni de su Escuela de Derecho, y no hablan en nombre del profesor
+                Eduardo Aldunate Lizana.
               </p>
             </Surface>
           </div>
