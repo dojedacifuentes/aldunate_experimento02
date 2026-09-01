@@ -10,6 +10,7 @@ import {
   EvidenceLegend,
   SourceRef,
 } from '@/components/aldunate/Evidence';
+import { MotionStage } from '@/components/aldunate/MotionStage';
 import { PortraitHero } from '@/components/aldunate/PortraitHero';
 import { PublicationExplorer } from '@/components/aldunate/PublicationExplorer';
 import { SectionNav } from '@/components/aldunate/SectionNav';
@@ -73,18 +74,24 @@ export const metadata: Metadata = {
 export default function AldunatePage() {
   return (
     <>
+      {/* Un solo motor de movimiento para toda la ruta. Ver MotionStage. */}
+      <MotionStage />
+
       <PortraitHero />
       <SectionNav />
 
       {/* ── Aviso de alcance ── */}
-      <Section>
+      <div data-reveal>
+        <Section>
         <Notice tone="warning" className="max-w-3xl">
           {profile.note}
-        </Notice>
-      </Section>
+          </Notice>
+        </Section>
+      </div>
 
       {/* ── ACTO 01 · Ficha ── */}
-      <Section
+      <div data-reveal>
+        <Section
         eyebrow="02 — En noventa segundos"
         title="Quién es, según qué fuente"
         description="Cada línea lleva su nivel de evidencia y el número de la fuente que la sostiene. Un dato que consta en una sola ficha colaborativa no se presenta igual que uno indexado."
@@ -140,10 +147,11 @@ export default function AldunatePage() {
             </Surface>
           </div>
         </div>
-      </Section>
+        </Section>
+      </div>
 
       {/* ── ACTO 02 · Ideas ── */}
-      <section id="pensamiento" className="scroll-mt-32 border-t border-border/70">
+      <section id="pensamiento" data-reveal className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="03 — Mapa intelectual"
           title="Qué territorios recorre el corpus"
@@ -153,7 +161,7 @@ export default function AldunatePage() {
         </Section>
       </section>
 
-      <section className="border-t border-border/70">
+      <section data-reveal className="border-t border-border/70">
         <Section
           eyebrow="04 — Preguntas"
           title="Qué problemas aborda, y hasta dónde podemos decirlo"
@@ -164,7 +172,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 03 · Obra ── */}
-      <section id="publicaciones" className="scroll-mt-32 border-t border-border/70">
+      <section id="publicaciones" data-reveal className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="05 — Catálogo"
           title={`${corpusStats.total} obras, ${corpusStats.span.from}—${corpusStats.span.to}`}
@@ -175,7 +183,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 04 · Tiempo ── */}
-      <section id="trayectoria" className="scroll-mt-32 border-t border-border/70">
+      <section id="trayectoria" data-reveal className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="06 — Trayectoria"
           title="La cronología, con su respaldo"
@@ -186,7 +194,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 05 · Evidencia ── */}
-      <section id="fuentes" className="scroll-mt-32 border-t border-border/70">
+      <section id="fuentes" data-reveal className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="07 — Fuentes"
           title="Sobre qué se sostiene todo lo anterior"
@@ -197,7 +205,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── Huecos ── */}
-      <section className="border-t border-border/70">
+      <section data-reveal className="border-t border-border/70">
         <Section
           eyebrow="08 — Estado del contenido"
           title="Lo que falta, dicho en voz alta"
@@ -238,7 +246,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── Cierre ── */}
-      <section className="border-t border-border/70 py-16 sm:py-20">
+      <section data-reveal className="border-t border-border/70 py-16 sm:py-20">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
             <EvaNote portrait="neutral">

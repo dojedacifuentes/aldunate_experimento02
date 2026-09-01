@@ -140,6 +140,8 @@ export function ConceptMap() {
             height={height}
             viewBox={`0 0 ${LANE} ${height}`}
             aria-hidden
+            data-draw
+            data-reveal
             className="interactive-only hidden shrink-0 sm:block"
           >
             {conceptEdges.map((edge) => {

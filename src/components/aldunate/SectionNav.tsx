@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
+import { BookOpenText, Sparkles } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -23,8 +24,61 @@ const sections = [
   { id: 'fuentes', label: 'Fuentes' },
 ] as const;
 
+const LECTURA_KEY = 'aldunate:lectura';
+const LECTURA_EVENT = 'aldunate:lectura-change';
+
+/**
+ * El modo lectura vive en un atributo del `<html>`, no en el estado de React.
+ *
+ * Tiene que vivir ahí de todos modos —es CSS quien lo aplica— y duplicarlo en
+ * un `useState` crea dos fuentes de verdad que se pueden desincronizar.
+ * `useSyncExternalStore` lee el DOM directamente, que es exactamente para lo
+ * que existe: estado externo a React, leído sin un render en cascada.
+ */
+function subscribe(onChange: () => void) {
+  window.addEventListener(LECTURA_EVENT, onChange);
+  return () => window.removeEventListener(LECTURA_EVENT, onChange);
+}
+
+function leerModo() {
+  return document.documentElement.hasAttribute('data-lectura');
+}
+
+/** En el servidor no hay DOM y el modo por defecto es explorar. */
+function modoEnServidor() {
+  return false;
+}
+
+function aplicarModo(activo: boolean) {
+  const root = document.documentElement;
+  if (activo) root.setAttribute('data-lectura', '');
+  else root.removeAttribute('data-lectura');
+  window.dispatchEvent(new Event(LECTURA_EVENT));
+}
+
 export function SectionNav() {
   const [active, setActive] = useState<string | null>(null);
+  const lectura = useSyncExternalStore(subscribe, leerModo, modoEnServidor);
+
+  // Restaura la preferencia guardada. Solo toca el DOM y avisa: el estado se
+  // lee de ahí, así que no hay `setState` dentro del efecto.
+  useEffect(() => {
+    try {
+      if (localStorage.getItem(LECTURA_KEY) === '1') aplicarModo(true);
+    } catch {
+      /* ventana privada o almacenamiento bloqueado: se queda en explorar */
+    }
+  }, []);
+
+  function toggleLectura() {
+    const next = !leerModo();
+    aplicarModo(next);
+    try {
+      localStorage.setItem(LECTURA_KEY, next ? '1' : '0');
+    } catch {
+      /* la preferencia no sobrevive a la sesión, y no pasa nada */
+    }
+  }
 
   useEffect(() => {
     const targets = sections
@@ -88,6 +142,32 @@ export function SectionNav() {
             />
           </a>
         ))}
+
+        <button
+          type="button"
+          onClick={toggleLectura}
+          aria-pressed={lectura}
+          title={
+            lectura
+              ? 'Volver al modo explorar: diagramas, movimiento y campo de conceptos'
+              : 'Modo lectura: retira lienzos, movimiento y diagramas; deja el texto y las referencias'
+          }
+          className={cn(
+            'mono ml-auto flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1',
+            'text-[0.625rem] uppercase tracking-wider transition-colors',
+            'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
+            lectura
+              ? 'border-primary/60 bg-primary/10 text-primary'
+              : 'border-border/70 text-muted-foreground hover:border-primary/40 hover:text-foreground',
+          )}
+        >
+          {lectura ? (
+            <Sparkles className="h-3 w-3" aria-hidden />
+          ) : (
+            <BookOpenText className="h-3 w-3" aria-hidden />
+          )}
+          {lectura ? 'Explorar' : 'Leer'}
+        </button>
       </div>
     </nav>
   );

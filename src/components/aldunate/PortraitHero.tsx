@@ -75,7 +75,10 @@ export function PortraitHero() {
   }, []);
 
   return (
-    <header className="relative isolate overflow-hidden border-b border-border/70">
+    <header
+      data-hero
+      className="relative isolate overflow-hidden border-b border-border/70"
+    >
       {/* El campo de conceptos vive detrás de todo, en su propia capa. */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <ConstitutionalField />
@@ -83,7 +86,10 @@ export function PortraitHero() {
 
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16 lg:py-28">
         {/* ── Columna editorial ── */}
-        <div className="order-2 lg:order-1">
+        <div
+          className="order-2 lg:order-1"
+          style={{ opacity: 'calc(1 - var(--hero-p, 0) * 0.75)' }}
+        >
           <p className="mono text-[0.6875rem] uppercase tracking-[0.2em] text-muted-foreground">
             01 — Perfil
           </p>
@@ -104,12 +110,16 @@ export function PortraitHero() {
 
           {/* Cifras derivadas del catálogo. Ninguna escrita a mano. */}
           <dl className="mt-9 grid max-w-lg grid-cols-3 gap-px overflow-hidden rounded-lg border border-border/70 bg-border/70">
-            <Figure label="Obras" value={String(corpusStats.total)} />
+            <Figure label="Obras" value={String(corpusStats.total)} count={corpusStats.total} />
             <Figure
               label="Años"
               value={`${corpusStats.span.from}—${corpusStats.span.to}`}
             />
-            <Figure label="Conceptos" value={String(corpusStats.concepts)} />
+            <Figure
+              label="Conceptos"
+              value={String(corpusStats.concepts)}
+              count={corpusStats.concepts}
+            />
           </dl>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -128,7 +138,13 @@ export function PortraitHero() {
           <div
             ref={frameRef}
             className="group relative mx-auto w-full max-w-[19rem] sm:max-w-[21rem] lg:max-w-none"
-            style={{ transform: 'translate3d(var(--px, 0), var(--py, 0), 0)' }}
+            style={{
+              // Cursor y scroll componen en la misma propiedad: dos capas de
+              // movimiento, una sola transformación, cero maquetación.
+              transform:
+                'translate3d(var(--px, 0), var(--py, 0), 0) scale(calc(1 - var(--hero-p, 0) * 0.07))',
+              transformOrigin: '50% 35%',
+            }}
           >
             {/* Halo. Se mueve con el grupo, un poco más que la imagen. */}
             <div
@@ -168,17 +184,29 @@ export function PortraitHero() {
         </figure>
       </div>
 
-      <p className="mono pb-8 text-center text-[0.625rem] uppercase tracking-[0.2em] text-muted-foreground/70">
+      <p
+        className="mono interactive-only pb-8 text-center text-[0.625rem] uppercase tracking-[0.2em] text-muted-foreground/70"
+        style={{ opacity: 'calc(1 - var(--hero-p, 0) * 4)' }}
+      >
         ↓ Sigue bajando
       </p>
     </header>
   );
 }
 
-function Figure({ label, value }: { label: string; value: string }) {
+function Figure({ label, value, count }: { label: string; value: string; count?: number }) {
   return (
     <div className="bg-background px-4 py-4">
-      <dd className="font-serif text-[1.375rem] leading-none text-foreground">{value}</dd>
+      {/*
+        El valor va escrito en el HTML servido. `data-count` solo pide que se
+        anime al entrar; si el script no corre, la cifra ya está ahí.
+      */}
+      <dd
+        className="font-serif text-[1.375rem] leading-none text-foreground tabular-nums"
+        data-count={count}
+      >
+        {value}
+      </dd>
       <dt className="mono mt-2 text-[0.5625rem] uppercase tracking-[0.16em] text-muted-foreground">
         {label}
       </dt>

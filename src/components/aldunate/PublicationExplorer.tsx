@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 import {
   conceptById,
@@ -161,12 +161,34 @@ function PublicationRow({ pub }: { pub: Publication }) {
       <details className="group">
         <summary
           className={cn(
-            'flex cursor-pointer list-none items-baseline gap-4 py-4',
+            'relative flex cursor-pointer list-none items-baseline gap-4 py-4 pl-3',
             'transition-colors hover:bg-muted/40',
             'focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ring',
           )}
         >
-          <span className="mono w-10 shrink-0 text-[0.75rem] text-primary">{pub.year}</span>
+          {/*
+            Filete que crece desde arriba al pasar por encima y se queda
+            mientras la ficha está abierta. Anima `transform`, no `height`:
+            escalar no vuelve a maquetar la lista de cuarenta filas.
+          */}
+          <span
+            aria-hidden
+            className={cn(
+              'interactive-only absolute left-0 top-0 h-full w-px origin-top scale-y-0 bg-primary',
+              'transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+              'group-hover:scale-y-100 group-open:scale-y-100',
+            )}
+          />
+
+          <span
+            className={cn(
+              'mono w-10 shrink-0 text-[0.75rem] text-primary',
+              'transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+              'group-hover:translate-x-0.5',
+            )}
+          >
+            {pub.year}
+          </span>
           <span className="min-w-0 flex-1">
             <span className="block text-[0.9375rem] leading-snug text-foreground">{pub.title}</span>
             <span className="mono mt-1 block text-[0.6875rem] text-muted-foreground">
@@ -176,9 +198,18 @@ function PublicationRow({ pub }: { pub: Publication }) {
           <span className="mono hidden shrink-0 text-[0.625rem] uppercase tracking-wider text-muted-foreground sm:block">
             {pub.kind}
           </span>
+
+          <ChevronDown
+            aria-hidden
+            className={cn(
+              'h-3.5 w-3.5 shrink-0 self-center text-muted-foreground',
+              'transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]',
+              'group-open:rotate-180',
+            )}
+          />
         </summary>
 
-        <div className="grid gap-4 pb-6 pl-14 pr-2 sm:grid-cols-[1fr_auto]">
+        <div className="grid gap-4 pb-6 pl-[4.25rem] pr-2 sm:grid-cols-[1fr_auto]">
           <div className="space-y-3">
             {pub.coauthors && pub.coauthors.length > 0 && (
               <p className="text-[0.8125rem] text-muted-foreground">
