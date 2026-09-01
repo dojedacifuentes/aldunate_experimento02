@@ -658,3 +658,95 @@ componente.
 **Lo que no basta.** Quitar el logotipo del layout y dar el trabajo por hecho.
 La marca también viaja dentro de imágenes de contenido, y ahí no la encuentra
 ningún `grep` de nombres de componente. Se comprueba mirando los archivos.
+
+
+---
+
+## D-034 — El catálogo se llena, pero ninguna obra afirma una tesis
+
+**Fecha:** 01-09-2026
+
+**Qué se decidió.** Cargar las 40 obras verificadas en `publications`, y dejar
+el campo `thesis` vacío en todas ellas, con una prueba que impide llenarlo.
+
+**Por qué.** La regla dura 2 prohibía inventar publicaciones, no publicarlas.
+El informe aportado, contrastado contra Dialnet y las publicaciones originales,
+es el respaldo documental que esa regla esperaba. Pero el respaldo cubre la
+ficha bibliográfica —título, sede, año, páginas, coautoría—, no el argumento.
+Resumir la tesis de un artículo a partir de su título es inventar despacio, y
+es el error que más fácilmente pasa por erudición.
+
+De ahí la asimetría deliberada del explorador doctrinal: cuatro de sus seis
+entradas van marcadas «sin leer». No es un hueco pendiente de rellenar con una
+síntesis convincente: es el estado real del conocimiento de esta página sobre
+esos textos.
+
+**Lo que no se publicó, y por qué importa.** Seis afirmaciones del informe de
+partida. La más instructiva no es la fecha equivocada sino la tesis atribuida:
+el informe sostenía que los trabajos de 2010 afirman que el neoconstitucionalismo
+genera un «choque de fuentes» que mina la autonomía legislativa. No se localizó
+respaldo textual. Lo que sí puede decirse —y se dice— es que el artículo se
+anuncia desde su título como aproximación conceptual *y crítica*. La distancia
+entre «examina críticamente X» y «sostiene que X mina Y» es la que separa un
+catálogo de una atribución.
+
+**Cómo se revierte.** Alguien lee los textos, llena `thesis` con cita, y cambia
+la prueba en el mismo movimiento. Que haya que tocar la prueba a conciencia es
+el punto.
+
+---
+
+## D-035 — El mapa conceptual es SVG, y el WebGL se queda en el hero
+
+**Fecha:** 01-09-2026
+
+**Qué se decidió.** El campo de conceptos del hero usa Three.js. El mapa
+intelectual —qué conceptos recorre el corpus y cuáles comparten obra— es SVG y
+DOM, navegable con teclado y presente en el HTML servido.
+
+**Por qué.** Es información importante, y la información importante no puede
+existir solo dentro de un canvas: no se lee con lector de pantalla, no se
+imprime, no se indexa y desaparece si falla el contexto WebGL. El WebGL es la
+metáfora; el SVG es el dato.
+
+**Lo que costó descubrir.** La primera versión del mapa repartía los dieciséis
+conceptos sobre una elipse. Medido en el navegador con
+`getBoundingClientRect`: tres rótulos se salían del contenedor y dos pares se
+pisaban. Apilar los de la cima y la base subió el recuento a cuatro, porque un
+rótulo centrado ocupa más ancho que uno al costado.
+
+La causa no era el ajuste: dieciséis títulos de hasta treinta caracteres
+alrededor de una circunferencia no caben, y ninguna combinación de radios lo
+arregla. Un diagrama de arcos —filas de altura fija, relaciones en un carril
+lateral— **no puede solaparse por construcción**. Se pierde la sugerencia de
+constelación, que ya la da el hero, y se gana que los dieciséis nombres se lean
+siempre.
+
+**No volver al layout radial** sin medir primero.
+
+---
+
+## D-036 — Un solo motor de movimiento, y solo transform y opacity
+
+**Fecha:** 01-09-2026
+
+**Qué se decidió.** Toda la animación de la ruta la coordina `MotionStage`: un
+observador para las apariciones, un listener de scroll pasivo y un ticker. Y
+una regla: solo se animan `transform` y `opacity`.
+
+**Por qué.** Son las dos propiedades que el compositor resuelve sin volver a
+maquetar ni repintar. Con cuarenta filas de catálogo, animar `height` o
+`width` fuerza layout en cada fotograma y se nota justo donde importa, que es
+al hacer scroll rápido.
+
+Framer Motion es dependencia del proyecto y aquí no se usa: por elemento es
+cómoda, pero monta un ciclo de React por cada uno. El trabajo por fotograma en
+esta ruta es escribir una variable CSS; de ahí en adelante anima el compositor.
+
+**Dos defectos que solo aparecieron midiendo.** Un pestillo booleano en el
+ticker se quedaba trabado si `requestAnimationFrame` nunca llegaba a
+ejecutarse —no lo hace con la pestaña en segundo plano—, y el scroll dejaba de
+actualizar para siempre, también al volver. Y una aparición cuyo estado inicial
+es `opacity: 0` deja el contenido invisible si el observador no dispara: hay
+una red de seguridad de tres segundos. Un texto que aparece de golpe es un
+defecto estético; uno que no aparece nunca es una página rota.

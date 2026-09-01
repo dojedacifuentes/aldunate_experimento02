@@ -54,15 +54,15 @@ export const evaMessages: EvaMessage[] = [
   {
     id: 'aldunate',
     route: '/aldunate',
-    title: 'Sobre lo que todavía no está',
-    body: 'Esta sección tiene menos contenido del que tendrá. Es deliberado: preferimos un vacío rotulado antes que un dato verosímil sin respaldo. Nada de lo académico se completa por analogía.',
+    title: 'Cuarenta obras, ninguna tesis',
+    body: 'El catálogo ya no está vacío: cuarenta obras contrastadas contra un índice bibliográfico, con su fuente al lado. Lo que sigue sin estar es qué sostiene cada una, y eso exige leerlas. Un catálogo sabe dónde termina; una biografía, no siempre.',
     portrait: 'neutral',
   },
   {
     id: 'papers',
     route: '/aldunate/papers',
-    title: 'Catálogo en espera',
-    body: 'Sin publicaciones cargadas. Podría haber inventado tres títulos plausibles y nadie lo habría notado hasta la primera cita. Por eso no lo hice.',
+    title: 'Para citar, no para recorrer',
+    body: 'Esta es la lista entera, en orden y sin filtros, servida desde el servidor: se imprime de un tirón y se copia sin desplegar nada. Si prefieres explorarla por concepto o por década, el explorador está en el perfil.',
     portrait: 'lifestyle',
   },
   {

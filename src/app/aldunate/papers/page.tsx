@@ -1,119 +1,153 @@
 import type { Metadata } from 'next';
-import { PageHeader, Section, Notice, Surface, Badge } from '@/components/common/ui';
-import { EvaNote } from '@/components/eva/EvaNote';
-import { publications } from '@/data/aldunate';
+import Link from 'next/link';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
+
+import { SourceList } from '@/components/aldunate/AcademicTimeline';
+import { SourceRef } from '@/components/aldunate/Evidence';
+import { Notice, PageHeader, Section, Surface } from '@/components/common/ui';
+import { conceptById, corpusStats, publications } from '@/data/aldunate';
 
 export const metadata: Metadata = {
-  title: 'Publicaciones',
-  description:
-    'Catálogo de publicaciones. Cada entrada requiere respaldo documental verificable antes de publicarse.',
+  title: 'Publicaciones — catálogo completo',
+  description: `Listado bibliográfico completo: ${corpusStats.total} obras entre ${corpusStats.span.from} y ${corpusStats.span.to}, con sede, volumen, páginas, coautoría y fuente de cada entrada.`,
+  alternates: { canonical: '/aldunate/papers' },
 };
 
 /**
- * Catálogo de publicaciones.
+ * Catálogo completo, sin filtros.
  *
- * Hoy está vacío. La página está construida para el catálogo lleno —el bloque
- * de listado ya existe y se activa solo— de modo que incorporar la primera
- * entrada verificada sea cargar un dato, no rehacer una vista.
+ * Convive con el explorador de `/aldunate` a propósito, y no lo duplica: hacen
+ * trabajos distintos. Aquel sirve para **recorrer** —filtros, vistas, panel de
+ * concepto, todo en cliente—; este sirve para **citar**: una sola lista, en
+ * orden cronológico inverso, enteramente renderizada en el servidor, que se
+ * imprime de un tirón y se copia sin desplegar nada.
+ *
+ * De ahí que aquí no haya un solo componente de cliente. Es una página que
+ * funciona con JavaScript desactivado, porque una bibliografía que necesita
+ * hidratación para leerse es una bibliografía peor.
  */
 export default function PapersPage() {
-  const hasPublications = publications.length > 0;
+  const ordered = [...publications].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+
+  // Agrupación por año: da al listado el ritmo que una lista plana de cuarenta
+  // entradas no tiene, y ubica cada obra sin repetir la fecha en cada línea.
+  const byYear = ordered.reduce<Map<number, typeof publications>>((acc, pub) => {
+    if (typeof pub.year !== 'number') return acc;
+    const bucket = acc.get(pub.year);
+    if (bucket) bucket.push(pub);
+    else acc.set(pub.year, [pub]);
+    return acc;
+  }, new Map());
 
   return (
     <>
       <PageHeader
         code="05 · Publicaciones"
-        title="Publicaciones"
-        lede="Libros, capítulos, artículos y ponencias. El catálogo se construye a partir de referencias verificables, no de reconstrucciones."
+        title="Catálogo completo"
+        lede={`${corpusStats.total} obras entre ${corpusStats.span.from} y ${corpusStats.span.to}: ${corpusStats.articles} artículos y ${corpusStats.books} libros, con sede, volumen, páginas y coautoría. Ordenadas de la más reciente a la más antigua.`}
       />
 
       <Section>
-        {hasPublications ? (
-          <ul className="space-y-3">
-            {publications.map((pub) => (
-              <li key={pub.id}>
-                <Surface className="p-6">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <Badge tone="muted">{pub.kind}</Badge>
-                    {pub.year && (
-                      <span className="mono text-[0.75rem] text-muted-foreground">
-                        {pub.year}
-                      </span>
-                    )}
-                    {pub.verified ? (
-                      <Badge tone="success" dot>
-                        Verificada
-                      </Badge>
-                    ) : (
-                      <Badge tone="warning" dot>
-                        Sin verificar
-                      </Badge>
-                    )}
-                  </div>
-                  <h2 className="mt-3 font-serif text-lg text-foreground">{pub.title}</h2>
-                  {pub.venue && (
-                    <p className="mt-1 text-sm text-muted-foreground">{pub.venue}</p>
-                  )}
-                  {pub.abstract && (
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      {pub.abstract}
-                    </p>
-                  )}
-                  {pub.url && (
-                    <a
-                      href={pub.url}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="mt-4 inline-block text-sm font-medium text-primary hover:underline"
-                    >
-                      Ver referencia
-                    </a>
-                  )}
-                </Surface>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <div className="space-y-8">
-            <div className="rounded-lg border border-dashed border-border bg-muted/30 px-6 py-14 text-center sm:py-20">
-              <p className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
-                Catálogo vacío
-              </p>
-              <h2 className="mt-4 font-serif text-2xl text-foreground">
-                Todavía no hay publicaciones cargadas
-              </h2>
-              <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                No es un error de carga. Ninguna entrada se incorpora sin título
-                exacto, año, sede de publicación y una referencia que cualquiera
-                pueda comprobar por su cuenta.
-              </p>
-            </div>
+        <div className="flex flex-wrap items-center gap-4">
+          <Link
+            href="/aldunate#publicaciones"
+            className="mono inline-flex items-center gap-2 text-[0.6875rem] uppercase tracking-wider text-primary hover:underline"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
+            Volver al explorador, con filtros y vistas
+          </Link>
+        </div>
 
-            <Notice tone="signal" className="max-w-3xl">
-              <p className="font-medium text-foreground">Qué se necesita para cargar una entrada</p>
-              <ul className="mt-2 space-y-1 text-muted-foreground">
-                <li>· Título exacto, tal como aparece en la publicación.</li>
-                <li>· Año y sede: editorial, revista o congreso.</li>
-                <li>· Coautoría, cuando corresponda.</li>
-                <li>· Enlace, DOI o referencia bibliográfica completa.</li>
-              </ul>
-              <p className="mt-3 text-[0.8125rem] text-muted-foreground">
-                El material se deposita en <code className="mono">content/aldunate/papers/</code>{' '}
-                y se registra según <code className="mono">docs/CONTENT_PIPELINE.md</code>.
-              </p>
-            </Notice>
-
-            <EvaNote portrait="lifestyle">
-              <p>
-                Sin publicaciones cargadas. Podría haber inventado tres títulos
-                verosímiles y nadie lo habría notado hasta la primera cita ajena.
-                Por eso no lo hice: represento legalmente a las víctimas de la
-                bibliografía plausible.
-              </p>
-            </EvaNote>
-          </div>
-        )}
+        <Notice tone="warning" className="mt-6 max-w-3xl">
+          Listado construido a partir de la ficha de autor en Dialnet, contrastado contra la
+          publicación original donde estaba accesible. Cubre lo indexado: la ausencia de una
+          obra aquí no prueba que no exista. Ninguna entrada lleva un resumen de su
+          argumento, porque no se han consultado los textos completos.
+        </Notice>
       </Section>
+
+      {/* ── El listado ── */}
+      <Section eyebrow="Bibliografía" title="Obras, por año">
+        <div className="space-y-10">
+          {[...byYear.entries()].map(([year, list]) => (
+            <section key={year} className="grid gap-4 sm:grid-cols-[5rem_1fr] sm:gap-6">
+              <h3 className="font-serif text-3xl leading-none text-foreground sm:sticky sm:top-24 sm:self-start">
+                {year}
+              </h3>
+
+              <ol className="min-w-0 space-y-4">
+                {list.map((pub) => (
+                  <li key={pub.id}>
+                    <Surface className="p-5">
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        <span className="mono text-[0.5625rem] uppercase tracking-[0.16em] text-primary">
+                          {pub.kind}
+                        </span>
+                        <SourceRef ids={pub.sourceIds ?? []} className="ml-auto" />
+                      </div>
+
+                      <h4 className="mt-2.5 text-[0.9375rem] leading-snug text-foreground">
+                        {pub.title}
+                      </h4>
+
+                      <p className="mono mt-1.5 text-[0.6875rem] leading-relaxed text-muted-foreground">
+                        {pub.venue}
+                      </p>
+
+                      {pub.coauthors && pub.coauthors.length > 0 && (
+                        <p className="mt-2 text-[0.8125rem] text-muted-foreground">
+                          <span className="meta mr-2">En coautoría con</span>
+                          {pub.coauthors.join(' · ')}
+                        </p>
+                      )}
+
+                      {pub.abstract && (
+                        <p className="mt-3 border-l-2 border-border/70 pl-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                          {pub.abstract}
+                        </p>
+                      )}
+
+                      <div className="mt-3.5 flex flex-wrap items-center gap-2">
+                        {pub.concepts?.map((id) => (
+                          <span
+                            key={id}
+                            className="mono rounded border border-border/70 px-2 py-0.5 text-[0.5625rem] uppercase tracking-wider text-muted-foreground"
+                          >
+                            {conceptById.get(id)?.title ?? id}
+                          </span>
+                        ))}
+
+                        {pub.url && (
+                          <a
+                            href={pub.url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="mono ml-auto inline-flex items-center gap-1 text-[0.625rem] uppercase tracking-wider text-primary hover:underline"
+                          >
+                            Texto
+                            <ExternalLink className="h-3 w-3" aria-hidden />
+                          </a>
+                        )}
+                      </div>
+                    </Surface>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── Fuentes, para que el listado se sostenga sin salir de la página ── */}
+      <section className="border-t border-border/70">
+        <Section
+          eyebrow="Fuentes"
+          title="De dónde sale este listado"
+          description="Los números entre corchetes de cada entrada apuntan aquí."
+        >
+          <SourceList />
+        </Section>
+      </section>
     </>
   );
 }

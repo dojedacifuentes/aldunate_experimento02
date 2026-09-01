@@ -333,6 +333,113 @@
 }
 
 /* Quien pide menos movimiento, recibe menos movimiento. */
+/* ═══════════════════════ Movimiento ═══════════════════════
+
+   Una sola curva y tres duraciones para todo el sitio. El movimiento se lee
+   como intencional cuando comparte temperamento; con seis curvas distintas se
+   lee como accidente.
+
+   Regla dura de fluidez: **solo se animan `transform` y `opacity`**. Son las
+   dos propiedades que el compositor resuelve sin volver a maquetar ni repintar,
+   y por eso son las únicas que sostienen 60 fps en un portátil normal. Animar
+   `width`, `top`, `height` o `box-shadow` fuerza layout en cada fotograma.
+   ────────────────────────────────────────────────────────── */
+
+:root {
+  /* Expo-out: arranca rápido y se posa. Es la que hace que algo parezca
+     pesado y bien amortiguado en vez de elástico. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-fast: 180ms;
+  --dur: 380ms;
+  --dur-slow: 720ms;
+}
+
+/*
+ * Aparición al entrar en pantalla.
+ *
+ * El estado oculto se aplica **solo** bajo `html.motion`, una clase que pone
+ * el propio JavaScript al montar. Sin JavaScript —o si el script falla— nada
+ * se oculta nunca. Una página cuyo contenido depende de que un observador
+ * arranque es una página que a veces sale en blanco.
+ */
+html.motion [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+}
+
+html.motion [data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/*
+ * Trazado de los arcos del mapa conceptual.
+ *
+ * Las relaciones se dibujan una vez, al entrar: el gesto explica que los
+ * vínculos se calculan desde las obras, no que estaban ahí dibujados. Después
+ * queda quieto. `stroke-dashoffset` no es compositable, pero son diecisiete
+ * trazos que se animan una sola vez y nunca más.
+ */
+html.motion [data-draw] path {
+  stroke-dasharray: var(--len, 400);
+  stroke-dashoffset: var(--len, 400);
+}
+
+html.motion [data-draw].revealed path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.5s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+
+/*
+ * Modo lectura.
+ *
+ * No es un tema: es un modo de consumo. Retira todo lo que existe para la
+ * pantalla —lienzos, halos, grano, barras pegajosas, diagramas— y deja el
+ * texto, las referencias y el catálogo. Es además lo que se imprime.
+ */
+html[data-lectura] canvas,
+html[data-lectura] .interactive-only {
+  display: none !important;
+}
+
+html[data-lectura] {
+  --glow-soft: none;
+  --glow-strong: none;
+  --text-glow: none;
+  --noise-opacity: 0;
+  --grid-line: transparent;
+}
+
+html[data-lectura] [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/*
+ * Preferencia de movimiento reducido.
+ *
+ * La regla global de más abajo ya lleva las duraciones a cero, pero eso, con
+ * un estado inicial oculto, dejaría el contenido invisible para siempre. Aquí
+ * se neutraliza el estado inicial, no solo la transición.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html.motion [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+  html.motion [data-draw] path {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -345,4 +452,22 @@
 @media print {
   .no-print { display: none !important; }
   body { background: #fff; color: #000; }
+
+  /*
+   * Lo que solo existe para la pantalla no se imprime: lienzos WebGL, halos,
+   * barras pegajosas y diagramas que dependen del cursor. Lo que queda
+   * —nombre, ficha, catálogo, cronología y bibliografía— es exactamente lo
+   * que alguien querría llevarse en papel.
+   */
+  canvas,
+  .interactive-only { display: none !important; }
+
+  /* Un bloque plegado esconde la mitad del catálogo en el papel. */
+  details > div { display: block !important; }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.7em;
+    word-break: break-all;
+  }
 }
