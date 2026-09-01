@@ -38,7 +38,7 @@ export default function AldunatePage() {
   return (
     <>
       <PageHeader
-        code="01 · Perfil"
+        code="05 · Perfil"
         title={profile.name}
         lede={profile.intro}
       >

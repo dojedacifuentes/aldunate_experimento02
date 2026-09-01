@@ -3,60 +3,55 @@ import { disclaimer, footerNav, site } from '@/data/site';
 import { eva } from '@/data/eva';
 
 /**
- * Footer institucional. Aquí vive el aviso de prototipo, en texto plano y sin
- * eufemismos: es la pieza que impide que el sitio se lea como oficial.
+ * Footer. Orienta y cierra.
+ *
+ * Eran tres columnas con once enlaces, el descargo largo, un aviso sobre el
+ * escudo, el año, la versión y la firma de EVA: un segundo índice del sitio.
+ * Ahora son cinco secciones en una fila, el descargo —que es obligatorio— y la
+ * versión.
  *
  * No lleva escudo. Mientras no exista autorización, ninguna pantalla muestra
- * signos institucionales: un descargo bajo un escudo se lee como una nota al
- * pie, no como una negación. Ver `docs/DECISIONS.md` D-033.
+ * signos institucionales: un descargo bajo un escudo se lee como nota al pie,
+ * no como negación. Ver `docs/DECISIONS.md` D-033.
  */
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="no-print mt-auto border-t border-border bg-background">
-      <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-14">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr]">
-          <div className="space-y-5">
-            <div>
-              <p className="font-serif text-lg text-foreground">{site.subject}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{site.tagline}</p>
-            </div>
+      <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+          <p className="font-serif text-lg text-foreground">Experimento 02</p>
 
-            <p className="mono text-[0.6875rem] uppercase tracking-widest text-warning">
-              {disclaimer.short}
-            </p>
-
-            <p className="max-w-sm text-[0.8125rem] leading-relaxed text-muted-foreground">
-              {disclaimer.long}
-            </p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-3">
-            {footerNav.map((group) => (
-              <nav key={group.title} aria-label={group.title}>
-                <h2 className="meta mb-3">{group.title}</h2>
-                <ul className="space-y-2">
-                  {group.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            ))}
-          </div>
+          <nav aria-label="Secciones del sitio" className="min-w-0">
+            <ul className="flex flex-wrap gap-x-5 gap-y-2">
+              {footerNav.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
-        <div className="mt-10 space-y-4 border-t border-border/70 pt-6">
-          <div className="flex flex-col gap-3 text-[0.75rem] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 space-y-4 border-t border-border/70 pt-6">
+          {/* Regla dura: este párrafo no se acorta ni se pliega. */}
+          <p className="max-w-2xl text-[0.8125rem] leading-relaxed text-muted-foreground">
+            <span className="mono uppercase tracking-widest text-warning">
+              {disclaimer.short}
+            </span>
+            {' — '}
+            {disclaimer.long}
+          </p>
+
+          <div className="flex flex-col gap-2 text-[0.75rem] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p className="mono uppercase tracking-widest">
-              {year} · Experimento 02 · v{site.version}
+              {year} · v{site.version}
             </p>
             <p>
               <span className="text-foreground/70">{eva.name}</span> — {eva.role}.

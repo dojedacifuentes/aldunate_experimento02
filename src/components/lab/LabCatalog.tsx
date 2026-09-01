@@ -3,7 +3,8 @@
 import { useMemo, useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 
-import { Badge, Surface } from '@/components/common/ui';
+import { Surface } from '@/components/common/ui';
+import { MaturityBadge, MaturityLevel } from '@/components/common/status';
 import { labCategories, statusMeta } from '@/data/lab';
 import type { LabCategory, LabTool, ToolStatus } from '@/types';
 import { cn, formatDateCompact } from '@/lib/utils';
@@ -131,16 +132,13 @@ function Chip({
  * se use como si fuera un producto.
  */
 function ToolCard({ tool }: { tool: LabTool }) {
-  const meta = statusMeta[tool.status];
   const categoryLabel =
     labCategories.find((c) => c.id === tool.category)?.label ?? tool.category;
 
   return (
     <Surface interactive className="flex h-full flex-col p-6">
       <div className="flex flex-wrap items-center gap-2.5">
-        <Badge tone={meta.tone} dot>
-          {meta.label}
-        </Badge>
+        <MaturityBadge status={tool.status} />
         <span className="mono text-[0.6875rem] uppercase tracking-wider text-muted-foreground">
           {categoryLabel}
         </span>
@@ -171,7 +169,7 @@ function ToolCard({ tool }: { tool: LabTool }) {
 
       <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-5">
         <span className="mono text-[0.6875rem] text-muted-foreground">
-          madurez: {tool.maturity} · {formatDateCompact(tool.updatedAt)}
+          <MaturityLevel maturity={tool.maturity} /> · {formatDateCompact(tool.updatedAt)}
         </span>
         <span className="flex items-center gap-3">
           {tool.demoUrl && (

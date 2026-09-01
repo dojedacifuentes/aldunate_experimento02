@@ -22,7 +22,7 @@ export default function PapersPage() {
   return (
     <>
       <PageHeader
-        code="01 · Publicaciones"
+        code="05 · Publicaciones"
         title="Publicaciones"
         lede="Libros, capítulos, artículos y ponencias. El catálogo se construye a partir de referencias verificables, no de reconstrucciones."
       />

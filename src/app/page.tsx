@@ -2,11 +2,12 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import { Badge, ButtonLink, Container, Surface } from '@/components/common/ui';
+import { EditorialStatus } from '@/components/common/status';
 import { DoorCard } from '@/components/common/DoorCard';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { primaryNav, secondaryNav, site } from '@/data/site';
 import { profile, researchLines } from '@/data/aldunate';
-import { reports, reportStatusMeta } from '@/data/reports';
+import { reports } from '@/data/reports';
 import { labTools } from '@/data/lab';
 import { formatDateCompact, latestVersion } from '@/lib/utils';
 
@@ -19,35 +20,41 @@ import { formatDateCompact, latestVersion } from '@/lib/utils';
  */
 export default function HomePage() {
   const activeLines = researchLines.filter((l) => l.status === 'activa');
+  /** El más reciente, no uno elegido a mano: la portada no se desactualiza sola. */
+  const featured = [...reports].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0];
 
   return (
     <>
       {/* ── Vestíbulo ── */}
       <section className="relative overflow-hidden">
         <Container className="py-20 sm:py-28 lg:py-32">
+          {/*
+            PRODUCTO → CAMPO → PROPUESTA → ACCIÓN. En ese orden y sin cuarta
+            capa: la portada orienta y abre rutas, no es el índice del sitio.
+          */}
           <p className="mono mb-6 text-[0.6875rem] uppercase tracking-[0.2em] text-primary">
             {site.eyebrow}
           </p>
 
           <h1 className="max-w-4xl text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
-            {profile.name}
+            Experimento 02
           </h1>
 
           <p className="mt-6 max-w-xl font-serif text-lg italic leading-relaxed text-muted-foreground sm:text-xl">
-            {site.tagline}
+            {site.field}
           </p>
 
           <p className="mt-8 max-w-2xl text-base leading-relaxed text-foreground/80">
-            {profile.intro}
+            {site.proposition}
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <ButtonLink href="/informes" variant="primary">
-              Leer los informes
+            <ButtonLink href={`/informes/${featured.slug}`} variant="primary">
+              Leer el último informe
               <ArrowRight className="h-4 w-4" aria-hidden />
             </ButtonLink>
-            <ButtonLink href="/experimentos" variant="outline">
-              Probar los experimentos
+            <ButtonLink href="/investigacion" variant="outline">
+              Recorrer la evidencia
             </ButtonLink>
           </div>
 
@@ -61,30 +68,51 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* ── Las cuatro puertas ── */}
+      {/* ── Las puertas: tres primarias, dos de apoyo ── */}
       <section className="border-t border-border/70 py-16 sm:py-20">
         <Container>
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <div className="max-w-xl">
-              <p className="meta mb-3 text-primary">Entradas</p>
-              <h2 className="text-2xl sm:text-3xl">Elija por dónde empezar</h2>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
-                No hay recorrido obligatorio ni orden correcto. Cada puerta abre
-                un tipo de trabajo distinto.
-              </p>
-            </div>
+          <div className="mb-10 max-w-xl">
+            <p className="meta mb-3 text-primary">Entradas</p>
+            <h2 className="text-2xl sm:text-3xl">Elija por dónde empezar</h2>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Tres rutas con material que se puede leer, tocar o usar. Debajo,
+              las dos capas que las sostienen.
+            </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 lg:grid-cols-3">
             {primaryNav.map((entry) => (
               <DoorCard key={entry.href} entry={entry} />
             ))}
           </div>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            {secondaryNav.map((entry) => (
-              <DoorCard key={entry.href} entry={entry} />
-            ))}
+          {/*
+            Las secundarias con menos peso, no en el mismo grid: cinco tarjetas
+            idénticas hacían que sostener la evidencia pareciera tan primario
+            como leer un informe, y que una sección deliberadamente vacía
+            pareciera una puerta más.
+          */}
+          <div className="mt-8 border-t border-border/60 pt-8">
+            <p className="meta mb-4">Capas de apoyo</p>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {secondaryNav.map((entry) => (
+                <li key={entry.href}>
+                  <Link href={entry.href} className="group flex items-start gap-3 py-1">
+                    <span className="mono mt-0.5 shrink-0 text-[0.6875rem] text-primary">
+                      {entry.code}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-medium text-foreground group-hover:text-primary">
+                        {entry.label}
+                      </span>
+                      <span className="mt-0.5 block text-[0.8125rem] leading-snug text-muted-foreground">
+                        {entry.hint}
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>
@@ -97,14 +125,17 @@ export default function HomePage() {
               <p className="meta mb-3 text-primary">Mapa intelectual</p>
               <h2 className="text-2xl sm:text-3xl">Territorios que recorre</h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                Los ejes del laboratorio y cómo conversan entre sí. Describen el
-                alcance del proyecto, no una atribución de obra.
+                {profile.intro}
+              </p>
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                Los ejes describen el alcance del laboratorio, no una atribución
+                de obra ni una posición doctrinaria.
               </p>
               <Link
                 href="/aldunate"
                 className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
               >
-                Ver el perfil completo
+                Ver la capa académica
                 <ArrowRight className="h-3.5 w-3.5" aria-hidden />
               </Link>
             </div>
@@ -155,7 +186,6 @@ export default function HomePage() {
 
           <div className="grid gap-4 lg:grid-cols-2">
             {reports.map((report) => {
-              const meta = reportStatusMeta[report.status];
               const latest = latestVersion(report.versions);
               return (
                 <Link key={report.slug} href={`/informes/${report.slug}`} className="group">
@@ -164,9 +194,7 @@ export default function HomePage() {
                       <span className="mono text-[0.6875rem] tracking-widest text-primary">
                         {report.code}
                       </span>
-                      <Badge tone={meta.tone} dot>
-                        {meta.label}
-                      </Badge>
+                      <EditorialStatus status={report.status} />
                     </div>
                     <h3 className="mt-4 font-serif text-xl leading-snug text-foreground group-hover:text-primary">
                       {report.title}

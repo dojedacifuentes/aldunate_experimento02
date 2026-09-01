@@ -25,7 +25,7 @@ export default function LaboratorioPage() {
   return (
     <>
       <PageHeader
-        code="02 · Laboratorio"
+        code="03 · Laboratorio"
         title="Lab IA + Derecho"
         lede="Herramientas, prototipos y flujos de trabajo aplicados al Derecho. Cada ficha declara qué entra, qué sale y qué la herramienta no hace."
       >

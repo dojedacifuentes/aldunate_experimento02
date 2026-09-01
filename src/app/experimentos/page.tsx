@@ -23,7 +23,7 @@ export default function ExperimentosPage() {
   return (
     <>
       <PageHeader
-        code="04 · Experimentos"
+        code="02 · Experimentos"
         title="Aquí se puede romper cosas"
         lede="Prototipos, juegos y visualizaciones sobre texto normativo, lenguaje e interpretación. Un experimento que se puede tocar discute mejor que un párrafo."
       />

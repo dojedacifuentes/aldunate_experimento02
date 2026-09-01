@@ -1,4 +1,4 @@
-import type { LabCategory, LabTool, Tone, ToolStatus } from '@/types';
+import type { LabCategory, LabTool, Tone, ToolMaturity, ToolStatus } from '@/types';
 
 /**
  * Lab IA + Derecho.
@@ -69,6 +69,26 @@ export const statusMeta: Record<ToolStatus, { label: string; tone: Tone }> = {
   beta: { label: 'Beta', tone: 'warning' },
   stable: { label: 'Estable', tone: 'success' },
   archived: { label: 'Archivado', tone: 'muted' },
+};
+
+/**
+ * Grado de prueba, que no es lo mismo que madurez de construcción: una
+ * herramienta puede estar terminada y no haberse usado nunca con trabajo real.
+ * Se mostraba en crudo, con guion incluido («madurez: en-prueba»).
+ */
+export const maturityMeta: Record<ToolMaturity, { label: string; definition: string }> = {
+  exploratoria: {
+    label: 'Exploratoria',
+    definition: 'Formulada y no probada con trabajo real.',
+  },
+  'en-prueba': {
+    label: 'En prueba',
+    definition: 'Usada en casos propios; sin uso externo documentado.',
+  },
+  operativa: {
+    label: 'Operativa',
+    definition: 'Usada de forma recurrente con resultados registrados.',
+  },
 };
 
 export const labTools: LabTool[] = [

@@ -9,6 +9,7 @@ import {
   Section,
   Surface,
 } from '@/components/common/ui';
+import { EpistemicTag } from '@/components/common/status';
 import { EvaNote } from '@/components/eva/EvaNote';
 import {
   claimSchema,
@@ -39,7 +40,7 @@ export default function InvestigacionPage() {
   return (
     <>
       <PageHeader
-        code="05 · Investigación"
+        code="04 · Investigación"
         title="La capa que sostiene todo lo demás"
         lede="Registro de fuentes, matriz de evidencia y método de trabajo. Un gráfico bonito sobre evidencia débil sigue siendo evidencia débil, solo que más persuasiva."
       >
@@ -96,12 +97,7 @@ export default function InvestigacionPage() {
             return (
               <li key={key}>
                 <Surface className="h-full p-5">
-                  <div className="flex items-center gap-2.5">
-                    <Badge tone={level.tone}>{level.label}</Badge>
-                    <code className="mono text-[0.625rem] tracking-widest text-muted-foreground">
-                      {key}
-                    </code>
-                  </div>
+                  <EpistemicTag level={key} code />
                   <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
                     {level.definition}
                   </p>

@@ -297,3 +297,109 @@ export function MetaRow({ label, value }: { label: string; value: React.ReactNod
     </div>
   );
 }
+
+/* ────────────────────────────── Profundidad bajo demanda ────────────────────────────── */
+
+/**
+ * Sección plegable.
+ *
+ * `<details>` nativo y no un acordeón a medida: llega accesible de fábrica
+ * —foco, teclado, `aria-expanded` implícito—, funciona sin JavaScript y
+ * responde a `Ctrl+F` en los navegadores que buscan dentro de detalles
+ * cerrados. Un acordeón propio habría necesitado cuarenta líneas de ARIA para
+ * empatar.
+ *
+ * Sirve para bajar a segunda capa lo que no todo lector necesita: esquemas,
+ * campos técnicos, listas largas de limitaciones. Lo que se pliega no
+ * desaparece; deja de imponerse.
+ */
+export function Disclosure({
+  summary,
+  hint,
+  defaultOpen = false,
+  className,
+  children,
+}: {
+  summary: string;
+  hint?: string;
+  defaultOpen?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <details
+      open={defaultOpen}
+      className={cn('group rounded-lg border border-border bg-card/40', className)}
+    >
+      <summary
+        className={cn(
+          'flex cursor-pointer list-none items-center gap-3 rounded-lg px-5 py-4',
+          'text-sm font-medium text-foreground transition-colors hover:text-primary',
+          '[&::-webkit-details-marker]:hidden',
+        )}
+      >
+        <span
+          aria-hidden
+          className="mono shrink-0 text-[0.75rem] text-primary transition-transform group-open:rotate-90"
+        >
+          ▸
+        </span>
+        <span className="min-w-0 flex-1">{summary}</span>
+        {hint && (
+          <span className="mono shrink-0 text-[0.6875rem] text-muted-foreground">{hint}</span>
+        )}
+      </summary>
+      <div className="border-t border-border/60 px-5 py-4">{children}</div>
+    </details>
+  );
+}
+
+/* ────────────────────────────── Ruta ────────────────────────────── */
+
+export interface Crumb {
+  label: string;
+  /** El último tramo no lleva enlace: es dónde está el lector, no adónde va. */
+  href?: string;
+}
+
+/**
+ * Migas de pan. Sólo donde la profundidad lo justifica —tercer nivel o
+ * detalle dentro de un catálogo—; en una ruta de primer nivel son ruido.
+ *
+ * Pesan visualmente menos que el H1 a propósito: orientan, no compiten.
+ */
+export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: string }) {
+  return (
+    <nav aria-label="Ruta de navegación" className={cn('min-w-0', className)}>
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+        {items.map((item, i) => {
+          const last = i === items.length - 1;
+          return (
+            <li key={`${item.label}-${i}`} className="flex items-center gap-2">
+              {item.href && !last ? (
+                <Link
+                  href={item.href}
+                  className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span
+                  aria-current={last ? 'page' : undefined}
+                  className="mono text-[0.6875rem] uppercase tracking-widest text-foreground/70"
+                >
+                  {item.label}
+                </span>
+              )}
+              {!last && (
+                <span aria-hidden className="text-[0.6875rem] text-muted-foreground/50">
+                  /
+                </span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  );
+}

@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, FileText } from 'lucide-react';
 
-import { Badge, Container, Notice, PageHeader, Section, Surface } from '@/components/common/ui';
+import { Container, Notice, PageHeader, Section, Surface } from '@/components/common/ui';
+import { EditorialStatus } from '@/components/common/status';
 import { EvaNote } from '@/components/eva/EvaNote';
-import { reports, reportStatusMeta } from '@/data/reports';
+import { reports } from '@/data/reports';
 import { formatDate, latestVersion } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function InformesPage() {
   return (
     <>
       <PageHeader
-        code="03 · Informes"
+        code="01 · Informes"
         title="Documentos vivos"
         lede="Biblioteca de informes versionados. Cada uno declara su metodología, sus fuentes, sus límites y su historial de cambios."
       />
@@ -44,7 +45,6 @@ export default function InformesPage() {
       <Section>
         <ul className="space-y-4">
           {reports.map((report) => {
-            const meta = reportStatusMeta[report.status];
             const latest = latestVersion(report.versions);
 
             return (
@@ -55,9 +55,7 @@ export default function InformesPage() {
                       <span className="mono text-[0.6875rem] tracking-widest text-primary">
                         {report.code}
                       </span>
-                      <Badge tone={meta.tone} dot>
-                        {meta.label}
-                      </Badge>
+                      <EditorialStatus status={report.status} />
                       {latest && (
                         <span className="mono text-[0.6875rem] text-muted-foreground">
                           v{latest.version}

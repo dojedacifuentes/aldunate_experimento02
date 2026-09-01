@@ -12,8 +12,10 @@ import {
   Section,
   Surface,
 } from '@/components/common/ui';
+import { EditorialStatus, EpistemicTag } from '@/components/common/status';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { getReport, reports, reportStatusMeta } from '@/data/reports';
+import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
 import { formatDate, latestVersion } from '@/lib/utils';
 
@@ -90,9 +92,7 @@ export default async function InformeDetallePage({
             <span className="mono text-[0.6875rem] tracking-widest text-primary">
               {report.code}
             </span>
-            <Badge tone={meta.tone} dot>
-              {meta.label}
-            </Badge>
+            <EditorialStatus status={report.status} />
             {latest && (
               <span className="mono text-[0.6875rem] text-muted-foreground">
                 v{latest.version}
@@ -374,7 +374,7 @@ export default async function InformeDetallePage({
                   {Object.entries(evidenceLevels).map(([key, level]) => (
                     <li key={key}>
                       <div className="h-full rounded-md border border-border/70 bg-card/40 p-4">
-                        <Badge tone={level.tone}>{level.label}</Badge>
+                        <EpistemicTag level={key as EvidenceLevel} code />
                         <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
                           {level.definition}
                         </p>
