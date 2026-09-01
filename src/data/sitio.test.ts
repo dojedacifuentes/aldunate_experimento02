@@ -81,9 +81,14 @@ describe('navegación', () => {
     expect(secondaryNav.filter((e) => p.has(e.href))).toEqual([]);
   });
 
-  it('el footer enlaza exactamente las cinco secciones de la navegación', () => {
-    const nav = [...primaryNav, ...secondaryNav].map((e) => e.href).sort();
-    expect(footerNav.map((l) => l.href).sort()).toEqual(nav);
+  it('el footer enlaza todas las secciones de la navegación', () => {
+    // Puede llevar además páginas de política —correcciones, legal— que no son
+    // secciones del sitio. Lo que no puede es olvidarse de una sección.
+    const enFooter = new Set<string>(footerNav.map((l) => l.href));
+    const ausentes = [...primaryNav, ...secondaryNav]
+      .map((e) => e.href)
+      .filter((h) => !enFooter.has(h));
+    expect(ausentes).toEqual([]);
   });
 });
 
