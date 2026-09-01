@@ -154,12 +154,34 @@ export function MotionStage() {
           const DURATION = 900;
           const start = performance.now();
 
+          /**
+           * Garantía de aterrizaje.
+           *
+           * El contador reemplaza el número servido por uno intermedio, y si
+           * los fotogramas se detienen a mitad —la pestaña pasa a segundo
+           * plano, el sistema throttlea— el número se queda congelado en un
+           * valor **falso** y no se corrige nunca. Se llegó a ver «1 obras»
+           * en una captura: un dato inventado en la primera pantalla, que es
+           * bastante peor que no animar nada.
+           *
+           * Este temporizador escribe el valor final pase lo que pase. El
+           * bucle lo cancela si llega a terminar por su cuenta.
+           */
+          const land = window.setTimeout(() => {
+            el.textContent = String(target);
+          }, DURATION + 400);
+
           const step = (now: number) => {
             const t = Math.min((now - start) / DURATION, 1);
             // Misma curva que el resto del movimiento: el número se posa.
             const eased = 1 - Math.pow(1 - t, 4);
             el.textContent = String(Math.round(target * eased));
-            if (t < 1) requestAnimationFrame(step);
+            if (t < 1) {
+              requestAnimationFrame(step);
+            } else {
+              window.clearTimeout(land);
+              el.textContent = String(target);
+            }
           };
 
           el.textContent = '0';
