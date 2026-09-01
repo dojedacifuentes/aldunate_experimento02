@@ -15,6 +15,7 @@ import {
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
 import { getReport, reports, reportStatusMeta } from '@/data/reports';
+import { autor } from '@/data/site';
 import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
 import { formatDate, latestVersion } from '@/lib/utils';
@@ -151,7 +152,17 @@ export default async function InformeDetallePage({
               <MetaRow label="Estado" value={meta.label} />
               <MetaRow label="Versión" value={latest ? `v${latest.version}` : '—'} />
               <MetaRow label="Actualizado" value={formatDate(report.updatedAt)} />
-              <MetaRow label="Autoría" value={report.authors.join(', ')} />
+              <MetaRow
+                label="Autoría"
+                value={
+                  <>
+                    <span className="block text-foreground">{report.authors.join(', ')}</span>
+                    <span className="mt-0.5 block text-[0.75rem] text-muted-foreground">
+                      {autor.credential} · {autor.role}
+                    </span>
+                  </>
+                }
+              />
               <MetaRow label="Ejes" value={String(report.axes.length)} />
               <MetaRow
                 label="Fuentes registradas"

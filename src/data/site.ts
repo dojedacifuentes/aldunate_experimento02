@@ -6,6 +6,21 @@
  * sitio oficial de la PUCV ni una voz oficial del profesor.
  */
 
+/**
+ * Responsable intelectual del laboratorio y de sus informes.
+ *
+ * Sustituye a «Equipo Experimento 02», que era una autoría genérica sobre un
+ * trabajo con un responsable identificable: nadie puede pedirle cuentas a un
+ * equipo. Un informe que se quiere citable necesita un nombre que responda.
+ */
+export const autor = {
+  name: 'Diego Hernán Ojeda Cifuentes',
+  credential: 'Licenciado en Ciencias Jurídicas',
+  role: 'Asesor en inteligencia artificial',
+  /** Cómo firma en portadas y fichas: nombre, y debajo qué lo habilita. */
+  byline: 'Diego Hernán Ojeda Cifuentes · Licenciado en Ciencias Jurídicas · Asesor en inteligencia artificial',
+} as const;
+
 export const site = {
   name: 'Aldunate — Experimento 02',
   version: '0.3.0',
