@@ -12,23 +12,39 @@ import {
 import { cn } from '@/lib/utils';
 
 /**
- * Mapa intelectual.
+ * Mapa intelectual — diagrama de arcos.
  *
- * Deliberadamente **no** es WebGL. La información que contiene —qué conceptos
- * recorre el corpus y cuáles comparten obra— es de las importantes, y §40 del
- * encargo prohíbe que algo así viva solo dentro de un canvas. En SVG el grafo
- * se navega con teclado, se lee con lector de pantalla, se imprime y aparece
- * en el HTML servido. El WebGL del hero es la metáfora; esto es el dato.
+ * Deliberadamente **no** es WebGL. Qué conceptos recorre el corpus y cuáles
+ * comparten obra es información importante, y §40 del encargo prohíbe que algo
+ * así viva solo dentro de un canvas. Aquí se navega con teclado, se lee con
+ * lector de pantalla, se imprime y está en el HTML servido. El WebGL del hero
+ * es la metáfora; esto es el dato.
  *
- * La disposición es determinista: los conceptos se ordenan por número de obras
- * y se reparten en un anillo. Un `force layout` daría una figura distinta en
- * cada carga, y un diagrama que cambia de forma sin que cambien los datos no
- * es un diagrama.
+ * ── Por qué arcos y no una constelación radial ──
+ *
+ * La primera versión repartió los dieciséis conceptos sobre una elipse. Medido
+ * en el navegador, tres rótulos se salían del contenedor y dos pares se
+ * pisaban; apilar los de la cima y la base subió el recuento a cuatro, porque
+ * un rótulo centrado ocupa más ancho que uno al costado. La causa no era el
+ * ajuste: dieciséis títulos de hasta treinta caracteres alrededor de una
+ * circunferencia no caben, y ninguna combinación de radios lo arregla.
+ *
+ * Un diagrama de arcos sí cabe, y no por suerte: los conceptos van en filas de
+ * altura fija, de modo que **no pueden solaparse por construcción**, y las
+ * relaciones se dibujan en un carril lateral. Se pierde la sugerencia de
+ * constelación —que ya la da el campo del hero— y se gana que los dieciséis
+ * nombres se lean siempre, en cualquier ancho.
+ *
+ * El orden es por número de obras, determinista. Un `force layout` daría una
+ * figura distinta en cada carga, y un diagrama que cambia de forma sin que
+ * cambien los datos no es un diagrama.
  */
 
-const SIZE = 760;
-const CENTER = SIZE / 2;
-const RING = 268;
+/** Alto de fila en píxeles. Fija la geometría: la lista y el SVG comparten
+ *  este número, y por eso cada arco aterriza exactamente en su concepto. */
+const ROW = 40;
+/** Ancho del carril de arcos. */
+const LANE = 150;
 
 export function ConceptMap() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -36,28 +52,13 @@ export function ConceptMap() {
 
   const active = hovered ?? selected;
 
-  const layout = useMemo(() => {
-    const nodes = conceptsWithCounts;
-    const max = Math.max(...nodes.map((n) => n.count));
-    const step = (Math.PI * 2) / nodes.length;
+  const rows = useMemo(
+    () => conceptsWithCounts.map((c, i) => ({ ...c, y: i * ROW + ROW / 2 })),
+    [],
+  );
+  const byId = useMemo(() => new Map(rows.map((r) => [r.id, r])), [rows]);
+  const maxCount = rows[0]?.count ?? 1;
 
-    return nodes.map((node, i) => {
-      const angle = -Math.PI / 2 + i * step;
-      return {
-        ...node,
-        x: CENTER + Math.cos(angle) * RING,
-        y: CENTER + Math.sin(angle) * RING,
-        r: 7 + (node.count / max) * 15,
-        /** A la izquierda del círculo la etiqueta se alinea al otro lado. */
-        flip: Math.cos(angle) < -0.01,
-        angle,
-      };
-    });
-  }, []);
-
-  const byId = useMemo(() => new Map(layout.map((n) => [n.id, n])), [layout]);
-
-  /** Vecinos del concepto activo. Lo demás se atenúa, no desaparece. */
   const related = useMemo(() => {
     if (!active) return null;
     return new Set([active, ...(conceptNeighbours.get(active) ?? []).map((n) => n.id)]);
@@ -65,125 +66,116 @@ export function ConceptMap() {
 
   const detail = selected ? byId.get(selected) : null;
   const detailWorks = selected ? (publicationsByConcept.get(selected) ?? []) : [];
+  const height = rows.length * ROW;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start lg:gap-10">
-      {/* ── Diagrama. Oculto bajo `md`: ahí manda la lista. ── */}
-      <div className="hidden md:block">
-        <svg
-          viewBox={`0 0 ${SIZE} ${SIZE}`}
-          className="interactive-only h-auto w-full"
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_21rem] lg:items-start lg:gap-10">
+      {/* ── Diagrama ── */}
+      <div>
+        <div
+          className="flex"
           role="group"
-          aria-label="Mapa de conceptos del corpus. Cada punto es un concepto; cada línea, una obra que reúne a dos."
+          aria-label="Mapa de conceptos. Cada fila es un concepto; cada arco, las obras que reúnen a dos."
         >
-          {/* Aristas primero: quedan bajo los nodos. */}
-          <g>
+          {/* Conceptos, en filas de alto fijo. Sin solapes posibles. */}
+          <ol className="min-w-0 flex-1">
+            {rows.map((row, i) => {
+              const on = !active || related?.has(row.id);
+              const isActive = active === row.id;
+              return (
+                <li key={row.id} style={{ height: ROW }} className="flex items-center">
+                  <button
+                    type="button"
+                    aria-pressed={selected === row.id}
+                    onMouseEnter={() => setHovered(row.id)}
+                    onMouseLeave={() => setHovered(null)}
+                    onFocus={() => setHovered(row.id)}
+                    onBlur={() => setHovered(null)}
+                    onClick={() => setSelected((prev) => (prev === row.id ? null : row.id))}
+                    className={cn(
+                      'flex w-full items-center gap-3 rounded-l-md py-1.5 pl-2 pr-3 text-left',
+                      'transition-[opacity,background-color] duration-300',
+                      'focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ring',
+                      isActive && 'bg-primary/5',
+                      on ? 'opacity-100' : 'opacity-30',
+                    )}
+                  >
+                    <span className="mono w-5 shrink-0 text-[0.625rem] text-muted-foreground">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+
+                    <span
+                      className={cn(
+                        'truncate text-[0.875rem] transition-colors',
+                        isActive ? 'text-foreground' : 'text-muted-foreground',
+                      )}
+                    >
+                      {row.title}
+                    </span>
+
+                    {/* Barra proporcional: el número de obras, de un vistazo. */}
+                    <span className="ml-auto flex shrink-0 items-center gap-2">
+                      <span
+                        aria-hidden
+                        style={{ width: `${(row.count / maxCount) * 72 + 4}px` }}
+                        className={cn(
+                          'h-1 rounded-full transition-colors',
+                          isActive ? 'bg-primary' : 'bg-primary/45',
+                        )}
+                      />
+                      <span className="mono w-5 text-right text-[0.6875rem] text-primary">
+                        {row.count}
+                      </span>
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+
+          {/* Carril de arcos. Es una lectura, no la única: las mismas
+              relaciones están en el panel, como vecinos con su peso. */}
+          <svg
+            width={LANE}
+            height={height}
+            viewBox={`0 0 ${LANE} ${height}`}
+            aria-hidden
+            className="interactive-only hidden shrink-0 sm:block"
+          >
             {conceptEdges.map((edge) => {
               const a = byId.get(edge.source);
               const b = byId.get(edge.target);
               if (!a || !b) return null;
               const on = !active || (related?.has(edge.source) && related?.has(edge.target));
+              // La panza crece con la distancia entre filas: dos conceptos
+              // lejanos se conectan por fuera y el haz no se apelmaza.
+              const bulge = Math.min(18 + Math.abs(a.y - b.y) * 0.55, LANE - 8);
               return (
                 <path
                   key={`${edge.source}-${edge.target}`}
-                  d={`M ${a.x} ${a.y} Q ${CENTER} ${CENTER} ${b.x} ${b.y}`}
+                  d={`M 0 ${a.y} C ${bulge} ${a.y} ${bulge} ${b.y} 0 ${b.y}`}
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth={0.6 + edge.weight * 0.45}
+                  strokeWidth={0.7 + edge.weight * 0.5}
                   className={cn(
-                    'text-primary transition-opacity duration-500',
-                    on ? 'opacity-40' : 'opacity-[0.06]',
+                    'text-primary transition-opacity duration-300',
+                    on ? 'opacity-55' : 'opacity-[0.08]',
                   )}
                 />
               );
             })}
-          </g>
+          </svg>
+        </div>
 
-          {/* Nodos. Cada uno es un control real: foco, teclado, etiqueta. */}
-          <g>
-            {layout.map((node) => {
-              const on = !active || related?.has(node.id);
-              const isActive = active === node.id;
-              return (
-                <g
-                  key={node.id}
-                  role="button"
-                  tabIndex={0}
-                  aria-pressed={selected === node.id}
-                  aria-label={`${node.title}. ${node.count} ${node.count === 1 ? 'obra' : 'obras'}.`}
-                  className="cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-                  onMouseEnter={() => setHovered(node.id)}
-                  onMouseLeave={() => setHovered(null)}
-                  onFocus={() => setHovered(node.id)}
-                  onBlur={() => setHovered(null)}
-                  onClick={() => setSelected((prev) => (prev === node.id ? null : node.id))}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                      event.preventDefault();
-                      setSelected((prev) => (prev === node.id ? null : node.id));
-                    }
-                  }}
-                >
-                  {/* Área táctil generosa, invisible. */}
-                  <circle cx={node.x} cy={node.y} r={Math.max(node.r + 12, 24)} fill="transparent" />
-                  <circle
-                    cx={node.x}
-                    cy={node.y}
-                    r={node.r}
-                    className={cn(
-                      'transition-all duration-500',
-                      isActive ? 'fill-primary' : 'fill-primary/70',
-                      on ? 'opacity-100' : 'opacity-20',
-                    )}
-                  />
-                  {isActive && (
-                    <circle
-                      cx={node.x}
-                      cy={node.y}
-                      r={node.r + 7}
-                      fill="none"
-                      strokeWidth={1}
-                      className="stroke-primary/50"
-                    />
-                  )}
-                  <text
-                    x={node.x + (node.flip ? -(node.r + 12) : node.r + 12)}
-                    y={node.y + 4}
-                    textAnchor={node.flip ? 'end' : 'start'}
-                    className={cn(
-                      'pointer-events-none text-[13px] transition-opacity duration-500',
-                      isActive ? 'fill-foreground' : 'fill-muted-foreground',
-                      on ? 'opacity-100' : 'opacity-25',
-                    )}
-                  >
-                    {node.title}
-                  </text>
-                  <text
-                    x={node.x + (node.flip ? -(node.r + 12) : node.r + 12)}
-                    y={node.y + 20}
-                    textAnchor={node.flip ? 'end' : 'start'}
-                    className={cn(
-                      'mono pointer-events-none text-[10px] transition-opacity duration-500',
-                      'fill-muted-foreground',
-                      on ? 'opacity-70' : 'opacity-15',
-                    )}
-                  >
-                    {node.count} {node.count === 1 ? 'obra' : 'obras'}
-                  </text>
-                </g>
-              );
-            })}
-          </g>
-        </svg>
-      </div>
-
-      {/* ── Lista. Es el control en móvil y el índice en escritorio. ── */}
-      <div className="md:hidden">
-        <ConceptList selected={selected} onSelect={setSelected} />
+        <p className="mt-5 max-w-xl text-[0.8125rem] leading-relaxed text-muted-foreground">
+          La barra es el número de obras. Cada arco une dos conceptos que aparecen juntos en
+          una misma publicación, y su grosor es cuántas veces ocurre. Pasa por una fila para
+          aislar sus relaciones.
+        </p>
       </div>
 
       {/* ── Panel de detalle ── */}
-      <aside className="lg:sticky lg:top-24">
+      <aside className="lg:sticky lg:top-32">
         {detail ? (
           <div className="surface rounded-lg p-6">
             <p className="meta mb-2">Concepto</p>
@@ -226,7 +218,7 @@ export function ConceptMap() {
               </ul>
               {detailWorks.length > 6 && (
                 <a
-                  href={`#publicaciones`}
+                  href="#publicaciones"
                   className="mono mt-4 inline-flex items-center gap-1 text-[0.6875rem] uppercase tracking-wider text-primary hover:underline"
                 >
                   Ver las {detailWorks.length} en el catálogo
@@ -247,57 +239,21 @@ export function ConceptMap() {
           <div className="surface rounded-lg p-6">
             <p className="meta mb-3">Cómo leer el mapa</p>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              El tamaño de cada punto es el número de obras del catálogo que tratan ese
-              concepto. Cada línea une dos conceptos que aparecen juntos en una misma obra,
-              y su grosor es cuántas veces ocurre.
+              Los dieciséis conceptos salen de las obras del catálogo, no de una lista
+              propuesta de antemano: cada uno etiqueta al menos una publicación, y una prueba
+              lo comprueba en cada compilación.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Las relaciones no están escritas a mano: se calculan desde el catálogo. El
+              Las relaciones tampoco están escritas a mano: se calculan desde el catálogo. El
               mapa no puede dibujar un vínculo que las publicaciones no sostengan.
             </p>
-            <div className="mt-5 hidden border-t border-border/60 pt-4 md:block">
-              <ConceptList selected={selected} onSelect={setSelected} compact />
-            </div>
+            <p className="mt-4 border-t border-border/60 pt-4 text-[0.8125rem] leading-relaxed text-muted-foreground">
+              Elige un concepto para ver su definición, con qué otros comparte obra y qué
+              publicaciones lo tratan.
+            </p>
           </div>
         )}
       </aside>
     </div>
-  );
-}
-
-function ConceptList({
-  selected,
-  onSelect,
-  compact = false,
-}: {
-  selected: string | null;
-  onSelect: (id: string | null) => void;
-  compact?: boolean;
-}) {
-  return (
-    <>
-      {!compact && <p className="meta mb-3">Conceptos del corpus</p>}
-      {compact && <p className="meta mb-2.5">Ir a un concepto</p>}
-      <ul className={cn('grid gap-1.5', !compact && 'sm:grid-cols-2')}>
-        {conceptsWithCounts.map((concept) => (
-          <li key={concept.id}>
-            <button
-              type="button"
-              onClick={() => onSelect(selected === concept.id ? null : concept.id)}
-              className={cn(
-                'flex w-full items-baseline justify-between gap-3 rounded-md border px-3 py-2 text-left',
-                'transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
-                selected === concept.id
-                  ? 'border-primary/60 bg-primary/5 text-foreground'
-                  : 'border-border/70 text-muted-foreground hover:border-primary/40 hover:text-foreground',
-              )}
-            >
-              <span className={cn(compact ? 'text-[0.8125rem]' : 'text-sm')}>{concept.title}</span>
-              <span className="mono shrink-0 text-[0.625rem] text-primary">{concept.count}</span>
-            </button>
-          </li>
-        ))}
-      </ul>
-    </>
   );
 }

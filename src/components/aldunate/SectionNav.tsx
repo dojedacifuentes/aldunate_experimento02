@@ -52,7 +52,10 @@ export function SectionNav() {
   return (
     <nav
       aria-label="Secciones del perfil"
-      className="interactive-only sticky top-0 z-30 border-b border-border/70 bg-background/85 backdrop-blur-sm"
+      // La cabecera del sitio ya ocupa 'top-0' con 4rem de alto y z-30. Esta se
+      // apoya justo debajo y pasa por detrás: dos barras disputándose el mismo
+      // borde superior es el defecto clásico de una navegación de sección.
+      className="interactive-only sticky top-16 z-20 border-b border-border/70 bg-background/85 backdrop-blur-sm"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center gap-1 overflow-x-auto px-5 py-2.5 sm:px-8">
         <span className="mono mr-3 shrink-0 text-[0.625rem] uppercase tracking-[0.18em] text-muted-foreground">

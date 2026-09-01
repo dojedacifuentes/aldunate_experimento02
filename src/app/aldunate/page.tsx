@@ -143,7 +143,7 @@ export default function AldunatePage() {
       </Section>
 
       {/* ── ACTO 02 · Ideas ── */}
-      <section id="pensamiento" className="scroll-mt-20 border-t border-border/70">
+      <section id="pensamiento" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="03 — Mapa intelectual"
           title="Qué territorios recorre el corpus"
@@ -164,7 +164,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 03 · Obra ── */}
-      <section id="publicaciones" className="scroll-mt-20 border-t border-border/70">
+      <section id="publicaciones" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="05 — Catálogo"
           title={`${corpusStats.total} obras, ${corpusStats.span.from}—${corpusStats.span.to}`}
@@ -175,7 +175,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 04 · Tiempo ── */}
-      <section id="trayectoria" className="scroll-mt-20 border-t border-border/70">
+      <section id="trayectoria" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="06 — Trayectoria"
           title="La cronología, con su respaldo"
@@ -186,7 +186,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 05 · Evidencia ── */}
-      <section id="fuentes" className="scroll-mt-20 border-t border-border/70">
+      <section id="fuentes" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="07 — Fuentes"
           title="Sobre qué se sostiene todo lo anterior"

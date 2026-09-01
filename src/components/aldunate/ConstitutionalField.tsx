@@ -171,13 +171,25 @@ export default function ConstitutionalField() {
       let running = false;
 
       // Una vuelta completa cada ~110 s. El encargo pedía entre 80 y 150.
-      const SPIN = (Math.PI * 2) / (110 * 60);
+      //
+      // El paso se calcula por milisegundo, no por fotograma, porque el bucle
+      // no corre a 60 fps: a esta velocidad, un fotograma de 60 fps mueve la
+      // escena 0,0009 rad —invisible— y mantener el hilo principal ocupado
+      // sesenta veces por segundo para eso es puro desperdicio. Con 24 fps la
+      // figura se ve idéntica y la página alcanza reposo, que además es la
+      // condición para que un navegador dé por terminada la carga.
+      const RAD_PER_MS = (Math.PI * 2) / (110 * 1000);
+      const FRAME_MS = 1000 / 24;
+      let last = 0;
 
-      function render() {
-        eased.x += (pointer.x - eased.x) * 0.035;
-        eased.y += (pointer.y - eased.y) * 0.035;
+      function render(deltaMs: number) {
+        // El suavizado también se normaliza: atado al fotograma, el retardo
+        // cambiaría con la tasa de refresco del monitor.
+        const k = Math.min(deltaMs / FRAME_MS, 3) * 0.085;
+        eased.x += (pointer.x - eased.x) * k;
+        eased.y += (pointer.y - eased.y) * k;
 
-        group.rotation.y += SPIN;
+        group.rotation.y += RAD_PER_MS * deltaMs;
         group.rotation.x = eased.y * 0.14;
         group.rotation.z = eased.x * 0.045;
         camera.position.x = eased.x * 0.5;
@@ -187,15 +199,19 @@ export default function ConstitutionalField() {
         renderer.render(scene, camera);
       }
 
-      function loop() {
+      function loop(now: number) {
         if (!running) return;
-        render();
         frame = requestAnimationFrame(loop);
+        const delta = now - last;
+        if (delta < FRAME_MS) return;
+        last = now;
+        render(delta);
       }
 
       function start() {
         if (running || reduced) return;
         running = true;
+        last = performance.now();
         frame = requestAnimationFrame(loop);
       }
       function stop() {
@@ -220,7 +236,7 @@ export default function ConstitutionalField() {
       document.addEventListener('visibilitychange', onVisibility);
 
       // Con `reduced`, un único fotograma: la figura queda quieta pero visible.
-      render();
+      render(0);
       if (!reduced) start();
 
       cleanup = () => {
