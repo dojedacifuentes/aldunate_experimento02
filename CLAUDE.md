@@ -203,6 +203,12 @@ sola cuando se pide crear, ampliar o publicar un informe. Cubre además el caso 
 fundir varios documentos de investigación en uno solo, que es donde más se pierde
 trazabilidad si se aborda como una suma de capítulos.
 
+**Se carga desde este repositorio y sólo desde aquí.** Si trabajas con el
+directorio puesto en otra carpeta —por ejemplo, donde viven los documentos de
+investigación— la skill no existe para la sesión y no se activará por mucho que
+el encargo encaje. Abre la sesión aquí y lee el material de fuera por ruta
+absoluta, no al revés.
+
 Publicar una versión son cinco pasos y están en
 `docs/informes/07-puente-con-el-sitio.md`. El paso que más se olvida es el
 último: comprobar que no queda ningún `source_id` ni `claim_id` huérfano, porque

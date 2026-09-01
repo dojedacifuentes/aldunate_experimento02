@@ -46,6 +46,18 @@ lecturas distintas. Cuando dos documentos digan cosas incompatibles sobre la
 misma fuente, abre la fuente y decide. Registra el desacuerdo en `notes`: que dos
 investigaciones discreparan es información sobre la solidez del dato.
 
+El solapamiento no siempre es de fuente, y este paso no queda vacío porque no lo
+haya. Arbitra también **las cifras que coinciden midiendo cosas distintas** —dos
+«94 %» en capítulos contiguos invitan a una correspondencia que nadie midió— y
+**las fuentes que se contradicen en apariencia**, que a menudo convergen en una
+variable que ambas declaran y entonces valen más juntas que por separado. Son
+conflictos aunque no compartan procedencia.
+
+Y comprueba de qué está hecha cada referencia antes de contarla: una fuente sin
+URL resoluble por un tercero no es fusionable, por muchos identificadores que
+tenga. Un documento entero puede caerse en este paso, y es mejor que se caiga
+aquí.
+
 **3 · Reclasifica todo desde cero.** No heredes las etiquetas de los documentos
 de origen. Una afirmación que en un informe temático era un hecho central puede
 ser una señal marginal en el informe fundido, porque el contexto cambió. Esto es
@@ -88,7 +100,9 @@ bloque con su propio contenido y compila tal cual.
 
 Escribe en los `contenido-*.json`. Se concatenan por orden alfabético, así que
 para insertar un capítulo entre dos existentes basta un sufijo de letra
-(`contenido-04b.json`).
+(`contenido-04b.json`). Alfabético, no numérico: mantén el relleno a dos dígitos
+que trae la plantilla, porque `contenido-9.json` se ordenaría después de
+`contenido-10.json`.
 
 ### 3 · Figuras
 
