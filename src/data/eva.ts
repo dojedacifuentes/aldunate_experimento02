@@ -28,7 +28,6 @@ export const eva = {
 
 export const evaPortraits: Record<EvaPortraitKey, { src: string; alt: string }> = {
   cyberpunk: { src: '/eva/eva-cyberpunk.png', alt: 'EVA, retrato en clave nocturna' },
-  courtyard: { src: '/eva/eva-pucv-courtyard.png', alt: 'EVA en un patio universitario' },
   desk: { src: '/eva/eva-desk.png', alt: 'EVA en un escritorio de trabajo' },
   presenter: { src: '/eva/eva-presenter.png', alt: 'EVA en actitud de presentación' },
   lifestyle: { src: '/eva/eva-lifestyle-grid.png', alt: 'EVA, serie de retratos cotidianos' },
@@ -49,7 +48,7 @@ export const evaMessages: EvaMessage[] = [
     route: '/',
     title: 'Bienvenida. Brevemente.',
     body: 'Esto es un laboratorio, no una página de profesor. Hay cuatro puertas y ninguna urgencia. Puede entrar por donde quiera; el orden es suyo.',
-    portrait: 'courtyard',
+    portrait: 'smile',
     caveat: 'Prototipo en construcción. Lo que falta está declarado como faltante.',
   },
   {
@@ -57,7 +56,7 @@ export const evaMessages: EvaMessage[] = [
     route: '/aldunate',
     title: 'Sobre lo que todavía no está',
     body: 'Esta sección tiene menos contenido del que tendrá. Es deliberado: preferimos un vacío rotulado antes que un dato verosímil sin respaldo. Nada de lo académico se completa por analogía.',
-    portrait: 'courtyard',
+    portrait: 'neutral',
   },
   {
     id: 'papers',

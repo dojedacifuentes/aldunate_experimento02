@@ -21,11 +21,15 @@ export const site = {
   repo: 'https://github.com/dojedacifuentes/aldunate_experimento02',
 } as const;
 
+/**
+ * El sitio no muestra signos institucionales. El escudo de la Escuela de
+ * Derecho se retiró el 31-08-2026 hasta que exista autorización expresa: un
+ * descargo colocado bajo un escudo se lee como nota al pie, no como negación.
+ * Ver `docs/DECISIONS.md` D-033.
+ */
 export const disclaimer = {
   short: 'Prototipo académico no oficial',
   long: 'Prototipo académico experimental en desarrollo. No constituye un sitio oficial de la Pontificia Universidad Católica de Valparaíso ni de su Escuela de Derecho, y no habla en nombre del profesor Eduardo Aldunate Lizana.',
-  logoNotice:
-    'El escudo de la Escuela de Derecho PUCV se muestra como referencia institucional del contexto académico del proyecto. Uso pendiente de autorización formal.',
 } as const;
 
 export interface NavEntry {

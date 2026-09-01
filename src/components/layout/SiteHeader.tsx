@@ -51,6 +51,12 @@ export function SiteHeader() {
           </span>
         </Link>
 
+        {/*
+          Las secundarias también viven aquí, separadas por una regla vertical y
+          con menos peso. Estaban sólo en el menú móvil, así que en un portátil
+          la capa de investigación —veinticuatro fuentes— no existía en la
+          navegación.
+        */}
         <nav aria-label="Navegación principal" className="ml-auto hidden lg:block">
           <ul className="flex items-center gap-1">
             {primaryNav.map((item) => (
@@ -64,6 +70,32 @@ export function SiteHeader() {
                     isActive(item.href)
                       ? 'text-foreground'
                       : 'text-muted-foreground hover:text-foreground',
+                  )}
+                >
+                  {item.label}
+                  {isActive(item.href) && (
+                    <span
+                      className="absolute inset-x-3 -bottom-px h-px bg-primary"
+                      aria-hidden
+                    />
+                  )}
+                </Link>
+              </li>
+            ))}
+
+            <li aria-hidden className="mx-2 h-4 w-px shrink-0 bg-border" />
+
+            {secondaryNav.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpenPathname(null)}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                  className={cn(
+                    'relative rounded-md px-3 py-2 text-[0.8125rem] transition-colors',
+                    isActive(item.href)
+                      ? 'text-foreground'
+                      : 'text-muted-foreground/80 hover:text-foreground',
                   )}
                 >
                   {item.label}

@@ -4,10 +4,16 @@ import { cn } from '@/lib/utils';
 /**
  * Escudo de la Escuela de Derecho PUCV.
  *
- * No se recolorea, no se anima, no se deforma y no lleva glow. En modo oscuro
- * se atenúa levemente el brillo para que no queme sobre el fondo azul-negro,
- * pero el escudo en sí no se altera. Cualquier tentación de "integrarlo" al
- * tema termina en una marca institucional intervenida sin autorización.
+ * **Sin usos en el árbol público desde el 31-08-2026.** Se conserva a propósito:
+ * el día que exista autorización, restituirlo debe ser un `import`, no una
+ * reconstrucción con las reglas de uso ya olvidadas. Ver `docs/DECISIONS.md`
+ * D-033. No lo reintroduzcas sin esa autorización.
+ *
+ * Cuando vuelva: no se recolorea, no se anima, no se deforma y no lleva glow.
+ * En modo oscuro se atenúa levemente el brillo para que no queme sobre el fondo
+ * azul-negro, pero el escudo en sí no se altera. Cualquier tentación de
+ * «integrarlo» al tema termina en una marca institucional intervenida sin
+ * autorización.
  */
 export function InstitutionalMark({
   size = 40,

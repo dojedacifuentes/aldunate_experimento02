@@ -13,7 +13,6 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EvaNote } from '@/components/eva/EvaNote';
-import { InstitutionalMark } from '@/components/layout/InstitutionalMark';
 import { getReport, reports, reportStatusMeta } from '@/data/reports';
 import { evidenceLevels, sources } from '@/data/research';
 import { formatDate, latestVersion } from '@/lib/utils';
@@ -411,11 +410,13 @@ export default async function InformeDetallePage({
             </div>
 
             <Surface className="p-6">
-              <p className="meta mb-4">Contexto institucional</p>
-              <InstitutionalMark size={48} withCaption />
-              <p className="mt-4 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                Documento de trabajo de un prototipo académico. No es una
-                publicación oficial de la PUCV.
+              <p className="meta mb-4">Naturaleza de este documento</p>
+              <p className="mono text-[0.6875rem] uppercase tracking-widest text-warning">
+                Prototipo académico experimental
+              </p>
+              <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                Documento de trabajo. No es una publicación oficial de la PUCV ni
+                de su Escuela de Derecho.
               </p>
             </Surface>
           </div>

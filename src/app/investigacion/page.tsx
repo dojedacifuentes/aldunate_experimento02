@@ -157,18 +157,18 @@ export default function InvestigacionPage() {
 
       {/* ── Estado ── */}
       <Section>
-        <Notice tone="warning" className="max-w-3xl">
-          <p className="font-medium text-foreground">Estado actual: registros vacíos</p>
+        <Notice tone="signal" className="max-w-3xl">
+          <p className="font-medium text-foreground">Estado actual del registro</p>
           <p className="mt-2 text-muted-foreground">
-            Todavía no hay fuentes cargadas. Poblar la matriz con datos de
-            ejemplo para que «se vea trabajada» produciría exactamente el
-            problema que este método existe para evitar. Los informes en curso
-            aparecen sin fuentes porque no las tienen aún, no porque falte
-            mostrarlas.
+            {sources.length} fuentes verificadas y {claims.length} afirmaciones
+            sintéticas, todas trazables hasta su publicación original. La
+            cobertura es desigual por diseño: se registra lo que se pudo
+            verificar, no lo que haría ver el registro más completo. Las lagunas
+            se anotan como lagunas.
           </p>
           <p className="mt-3">
             <Link href="/informes" className="font-medium text-primary hover:underline">
-              Ver los informes que alimentará
+              Ver los informes que alimenta
             </Link>
           </p>
         </Notice>

@@ -4,7 +4,6 @@ import { ArrowRight } from 'lucide-react';
 import { Badge, ButtonLink, Container, Surface } from '@/components/common/ui';
 import { DoorCard } from '@/components/common/DoorCard';
 import { EvaNote } from '@/components/eva/EvaNote';
-import { InstitutionalMark } from '@/components/layout/InstitutionalMark';
 import { primaryNav, secondaryNav, site } from '@/data/site';
 import { profile, researchLines } from '@/data/aldunate';
 import { reports, reportStatusMeta } from '@/data/reports';
@@ -43,12 +42,12 @@ export default function HomePage() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <ButtonLink href="/aldunate" variant="primary">
-              Entrar
+            <ButtonLink href="/informes" variant="primary">
+              Leer los informes
               <ArrowRight className="h-4 w-4" aria-hidden />
             </ButtonLink>
-            <ButtonLink href="/informes" variant="outline">
-              Ver informes
+            <ButtonLink href="/experimentos" variant="outline">
+              Probar los experimentos
             </ButtonLink>
           </div>
 
@@ -67,7 +66,7 @@ export default function HomePage() {
         <Container>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-xl">
-              <p className="meta mb-3 text-primary">Cuatro entradas</p>
+              <p className="meta mb-3 text-primary">Entradas</p>
               <h2 className="text-2xl sm:text-3xl">Elija por dónde empezar</h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 No hay recorrido obligatorio ni orden correcto. Cada puerta abre
@@ -111,9 +110,15 @@ export default function HomePage() {
             </div>
 
             <ul className="space-y-3">
+              {/*
+                Sin `interactive`: estos territorios no llevan a ninguna parte
+                todavía. Un borde que se ilumina al pasar el cursor promete una
+                acción, y aquí no la hay. La taxonomía navegable llega en la
+                fase 4; hasta entonces, esto se lee como lo que es.
+              */}
               {researchLines.map((line) => (
                 <li key={line.id}>
-                  <Surface interactive className="p-5">
+                  <Surface className="p-5">
                     <div className="flex flex-wrap items-baseline justify-between gap-3">
                       <h3 className="font-serif text-lg text-foreground">{line.title}</h3>
                       {line.status === 'en-formacion' && (
@@ -185,7 +190,7 @@ export default function HomePage() {
       <section className="border-t border-border/70 py-16 sm:py-20">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
-            <EvaNote portrait="courtyard">
+            <EvaNote portrait="smile">
               <p>
                 Este laboratorio se construye a la vista. Lo que todavía no
                 existe aparece rotulado como pendiente, no rellenado con material
@@ -195,11 +200,13 @@ export default function HomePage() {
             </EvaNote>
 
             <Surface className="p-6">
-              <p className="meta mb-4">Contexto institucional</p>
-              <InstitutionalMark size={52} withCaption />
-              <p className="mt-4 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                Prototipo académico experimental. No es un sitio oficial de la
-                PUCV ni de su Escuela de Derecho.
+              <p className="meta mb-4">Qué es este sitio</p>
+              <p className="mono text-[0.6875rem] uppercase tracking-widest text-warning">
+                Prototipo académico experimental
+              </p>
+              <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                No es un sitio oficial de la PUCV ni de su Escuela de Derecho, y
+                no habla en nombre del profesor Eduardo Aldunate Lizana.
               </p>
             </Surface>
           </div>

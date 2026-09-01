@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import { disclaimer, footerNav, site } from '@/data/site';
 import { eva } from '@/data/eva';
-import { InstitutionalMark } from './InstitutionalMark';
 
 /**
  * Footer institucional. Aquí vive el aviso de prototipo, en texto plano y sin
  * eufemismos: es la pieza que impide que el sitio se lea como oficial.
+ *
+ * No lleva escudo. Mientras no exista autorización, ninguna pantalla muestra
+ * signos institucionales: un descargo bajo un escudo se lee como una nota al
+ * pie, no como una negación. Ver `docs/DECISIONS.md` D-033.
  */
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -20,7 +23,9 @@ export function SiteFooter() {
               <p className="mt-1 text-sm text-muted-foreground">{site.tagline}</p>
             </div>
 
-            <InstitutionalMark size={44} withCaption />
+            <p className="mono text-[0.6875rem] uppercase tracking-widest text-warning">
+              {disclaimer.short}
+            </p>
 
             <p className="max-w-sm text-[0.8125rem] leading-relaxed text-muted-foreground">
               {disclaimer.long}
@@ -49,9 +54,6 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 space-y-4 border-t border-border/70 pt-6">
-          <p className="text-[0.75rem] leading-relaxed text-muted-foreground">
-            {disclaimer.logoNotice}
-          </p>
           <div className="flex flex-col gap-3 text-[0.75rem] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p className="mono uppercase tracking-widest">
               {year} · Experimento 02 · v{site.version}
