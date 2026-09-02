@@ -2,6 +2,60 @@
 
 ## No publicado
 
+### Estado del arte en la portada
+
+**Añadido.** La portada declara en qué punto va cada línea de trabajo, entre el
+vestíbulo y las puertas. Cinco entradas: los dos informes, el diseño del curso
+de alfabetización en IA, el optativo «IA y Derecho» y las otras líneas. Cada
+una con su etapa, lo que falta para la siguiente y, cuando corresponde, su
+salvedad.
+
+Existía el dato —informes, experimentos y fichas de Lab tenían cada uno su
+estado— pero ninguna vista los ponía juntos. La primera pregunta de quien llega
+a un laboratorio en marcha se contestaba leyendo cuatro secciones y sumando de
+cabeza.
+
+**Añadido · regla permanente.** `CLAUDE.md` §12 obliga a mantenerlo: toda línea
+en curso aparece, lo que no está en curso no aparece, cada entrada declara su
+siguiente paso, y se actualiza en el mismo cambio que altera el estado real. Es
+lo único de la portada que envejece solo.
+
+**Añadido · cuarta familia de estado.** `StageMeter`, con silueta propia: un
+medidor de cuatro tramos. Responde a una pregunta que las otras tres no
+contestan —*¿cuánto le falta a esta línea?*—, y una posición en una recta se lee
+mejor dibujada que escrita. Un informe puede estar `en-revision` como documento
+y ser a la vez lo más atrasado del laboratorio: son dos hechos distintos.
+
+`comprometido` y `supeditado` **no reciben medidor**: no son «más avanzados» que
+un desarrollo, son otra clase de hecho, y dibujarlos en la recta sugeriría un
+progreso que nadie ha medido.
+
+**Los informes no declaran su estado en el registro nuevo**, lo derivan de
+`reports.ts`. Es la regla de fuente única del resto del sitio, y existe porque
+ya se rompió una vez: el sitio llegó a decir a la vez «v0.2.0 publicada» y «los
+hallazgos todavía no están definidos».
+
+**El movimiento significa algo.** El tramo actual del medidor late sólo en las
+líneas que están efectivamente en marcha —`en-desarrollo` y `en-revision`—.
+Publicado no late porque ya llegó; en estudio no late porque todavía no arrancó.
+Se apaga en modo lectura, con `prefers-reduced-motion` y al imprimir.
+
+**Salvedad institucional.** El optativo va como `comprometido`, no como
+programado, y su ficha declara que no está formalizado y que no constituye
+anuncio de la Escuela de Derecho. La regla dura 3 prohíbe que este sitio hable
+por la Escuela; una prueba impide que esa salvedad desaparezca en una edición de
+estilo.
+
+**Añadido.** Recuento de una línea sobre el tablero. El tablero completo mide
+2129 px a 375 px de ancho —dos pantallas y media—, y «legible de un vistazo» no
+puede depender de recorrerlo entero. El recuento se calcula, no se escribe.
+
+**Añadido.** Ocho pruebas que convierten en fallo la erosión del tablero:
+estado y derivación excluyentes, informes que existen, siguiente paso
+obligatorio, salvedad obligatoria en los compromisos, enlaces a rutas reales,
+horizontes sin fechas inventadas y medidor sólo para los estados de la recta.
+Comprobadas por mutación: quitar la salvedad del optativo rompe exactamente una
+prueba.
 ### Informe 01 — kit canónico inter-IA
 
 **Añadido.** Kit canónico `v1.0.0` para continuar la actualización del Informe

@@ -328,6 +328,81 @@ npm run verify   # typecheck + lint + tests + build
 
 Actualizar `CHANGELOG.md` y, si el estado cambió, `docs/HANDOFF.md`.
 
+Y si lo que cambió fue el **estado real de una línea de trabajo** —un informe
+que pasa a revisión, un curso que se formaliza, un proyecto que se abandona—,
+actualizar también `src/data/trabajos.ts`. Ver §12: es lo único de la portada
+que envejece solo.
+
+---
+
+## 12. Estado del arte en la portada · REGLA PERMANENTE
+
+**La portada declara en qué punto va cada línea de trabajo, y esa declaración se
+mantiene al día.** No es una sección decorativa ni un adorno de lanzamiento: es
+la primera pregunta que se hace quien llega a un sitio que se presenta como
+laboratorio en marcha, y antes había que leer cuatro secciones y sumar de
+cabeza.
+
+Vive en `src/data/trabajos.ts` y la pinta `components/work/WorkBoard.tsx`, entre
+el vestíbulo y las puertas de la portada.
+
+### Qué obliga
+
+- **Toda línea en curso aparece.** Informes, cursos, proyectos. Si algo se está
+  haciendo y no está en el registro, la portada miente por omisión: dice que no
+  hay nada en marcha cuando lo hay.
+- **Lo que no está en curso, no aparece.** La sección se lee como «esto es lo
+  que hay»; meter una idea sin trabajo la convierte en un escaparate de
+  intenciones.
+- **Cada entrada declara `nextStep`.** Un estado sin siguiente paso es una
+  etiqueta que nadie puede auditar. Con él, cualquiera comprueba dentro de un
+  mes si la línea avanzó o sólo cambió de rótulo. Es obligatorio por tipo.
+- **`comprometido` obliga a `caveat`, y la salvedad no se pliega.** Un
+  compromiso publicado sin decir que no está formalizado se lee como anuncio, y
+  la regla dura 3 de este archivo prohíbe que este sitio anuncie en nombre de la
+  Escuela, de la Universidad o del profesor. Lo verifica una prueba de
+  `sitio.test.ts`; si la quitas, la prueba falla.
+- **Los informes NO declaran su estado aquí.** Lo derivan de `reports.ts` con
+  `reportSlug`. Es la regla de fuente única del resto del sitio y existe porque
+  ya se rompió: el sitio llegó a decir a la vez «v0.2.0 publicada» y «los
+  hallazgos todavía no están definidos». `stage` y `reportSlug` son excluyentes.
+- **Sin fechas inventadas.** El horizonte va en palabras —«próximo semestre»—
+  porque es lo que se sabe. Una fecha exacta puesta para que la ficha parezca
+  completa es un dato falso, igual que en el resto del sitio.
+- **`href` sólo si hay algo que abrir**, y sólo entonces la fila es tarjeta
+  espacial. Una superficie que se levanta al pasar el cursor promete una acción:
+  sin destino, esa promesa vacía es el hallazgo U-05.
+
+### El vocabulario, y por qué no es un `Badge` más
+
+Es la **cuarta familia de estado** del sitio, y responde a una pregunta que
+ninguna de las otras tres contesta: *¿cuánto le falta a esta línea?* Un informe
+puede estar `en-revision` como documento y ser a la vez lo más atrasado del
+laboratorio.
+
+Los cuatro primeros estados son una recta y se dibujan con un medidor de cuatro
+tramos (`StageMeter`); `comprometido` y `supeditado` **no están en la recta** y
+llevan una marca distinta, porque no son «más avanzados» que un desarrollo sino
+otra clase de hecho.
+
+```
+en-estudio → en-desarrollo → en-revision → publicado     ▰▰▱▱
+comprometido · supeditado                                 ┄┄┄┄
+```
+
+No reutilices `Badge`, `MaturityBadge`, `EditorialStatus` ni `EpistemicTag`:
+reintroduce el hallazgo U-13, que costó una fase entera separar.
+
+### Cuándo se toca
+
+**Siempre que cambie el estado real del trabajo**, en el mismo cambio que lo
+produce. Si un informe pasa a revisión, si un curso se formaliza, si una línea
+se abandona: se actualiza `trabajos.ts` y su `updatedAt`. Un tablero de estado
+desactualizado es peor que no tenerlo, porque se lee como vigente.
+
+Al cerrar sesión, si tocaste el estado de algo, comprueba que el tablero lo
+refleja. Es lo único de la portada que envejece solo.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

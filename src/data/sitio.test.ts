@@ -4,6 +4,12 @@ import { claims, sources } from './research';
 import { reports } from './reports';
 import { labTools } from './lab';
 import { footerNav, primaryNav, secondaryNav } from './site';
+import {
+  resolveWorkItems,
+  workItems,
+  workPipeline,
+  workStageMeta,
+} from './trabajos';
 
 /**
  * Pruebas de la capa de datos del sitio.
@@ -164,6 +170,99 @@ describe('lo que el sitio afirma de sí mismo', () => {
     for (const r of reports) {
       const v = r.versions.map((x) => x.version);
       expect(new Set(v).size, `versiones repetidas en ${r.slug}`).toBe(v.length);
+    }
+  });
+});
+
+describe('estado del arte de la portada', () => {
+  /**
+   * La portada declara en qué punto va cada línea de trabajo (CLAUDE.md §12).
+   * Es la sección que más fácilmente envejece en silencio: nada en el build
+   * falla si un informe pasa a revisión y el tablero sigue diciendo otra cosa.
+   * Estas pruebas convierten esa erosión en un fallo.
+   */
+
+  it('ninguna entrada declara estado y a la vez lo deriva de un informe', () => {
+    // Serían dos fuentes de verdad para el mismo hecho, que es exactamente
+    // como el sitio llegó a decir «v0.2.0 publicada» y «los hallazgos todavía
+    // no están definidos» a la vez.
+    const ambiguas = workItems
+      .filter((w) => w.reportSlug && w.stage)
+      .map((w) => w.id);
+    expect(ambiguas).toEqual([]);
+  });
+
+  it('toda entrada que deriva de un informe apunta a uno que existe', () => {
+    const slugs = new Set(reports.map((r) => r.slug));
+    const rotas = workItems
+      .filter((w) => w.reportSlug && !slugs.has(w.reportSlug))
+      .map((w) => `${w.id} → ${w.reportSlug}`);
+    expect(rotas).toEqual([]);
+  });
+
+  it('toda entrada declara su siguiente paso', () => {
+    // Un estado sin siguiente paso es una etiqueta que nadie puede auditar.
+    const mudas = workItems.filter((w) => !w.nextStep?.trim()).map((w) => w.id);
+    expect(mudas).toEqual([]);
+  });
+
+  it('todo compromiso declara que no está formalizado', () => {
+    /*
+     * La regla dura 3 prohíbe que el sitio hable en nombre de la Escuela, de la
+     * Universidad o del profesor. Un curso «comprometido» publicado sin
+     * salvedad se lee como programación oficial. Esta es la prueba que impide
+     * que la salvedad desaparezca en una edición de estilo.
+     */
+    const sinSalvedad = resolveWorkItems()
+      .filter((w) => w.resolvedStage === 'comprometido' && !w.caveat?.trim())
+      .map((w) => w.id);
+    expect(sinSalvedad).toEqual([]);
+  });
+
+  it('ninguna entrada enlaza a una ruta que el sitio no tiene', () => {
+    // Mismo criterio que el botón de descarga de los informes: un enlace que
+    // promete una página inexistente es peor que no tener enlace.
+    const rutas = new Set<string>([
+      '/',
+      '/laboratorio',
+      '/investigacion',
+      '/informes',
+      '/experimentos',
+      '/aldunate',
+      '/correcciones',
+      ...reports.map((r) => `/informes/${r.slug}`),
+    ]);
+    const rotas = workItems
+      .filter((w) => w.href && !rutas.has(w.href))
+      .map((w) => `${w.id} → ${w.href}`);
+    expect(rotas).toEqual([]);
+  });
+
+  it('el horizonte no inventa una fecha exacta', () => {
+    // «Próximo semestre» es lo que se sabe. Un ISO puesto para que la ficha
+    // parezca completa es un dato falso, igual que en el registro de fuentes.
+    const inventadas = workItems
+      .filter((w) => w.horizon && /\d{4}-\d{2}-\d{2}/.test(w.horizon))
+      .map((w) => `${w.id}: ${w.horizon}`);
+    expect(inventadas).toEqual([]);
+  });
+
+  it('todo estado resuelto tiene definición publicada', () => {
+    const huerfanos = resolveWorkItems()
+      .filter((w) => !workStageMeta[w.resolvedStage])
+      .map((w) => w.id);
+    expect(huerfanos).toEqual([]);
+  });
+
+  it('sólo los cuatro estados de la recta reciben posición en el medidor', () => {
+    /*
+     * `comprometido` y `supeditado` no son «más avanzados» que un desarrollo:
+     * son otra clase de hecho. Darles posición sugeriría un progreso que nadie
+     * ha medido.
+     */
+    for (const w of resolveWorkItems()) {
+      const enLaRecta = (workPipeline as readonly string[]).includes(w.resolvedStage);
+      expect(w.pipelineIndex === null, `${w.id} (${w.resolvedStage})`).toBe(!enLaRecta);
     }
   });
 });

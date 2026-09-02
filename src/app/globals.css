@@ -834,3 +834,27 @@ html[data-lectura] [data-hero] [data-hero-layer] {
     transform: none !important;
   }
 }
+
+/* ── Tramo vivo del medidor de trabajo ───────────────────────────────────
+   El último tramo lleno late, y sólo en las líneas que están efectivamente en
+   marcha (`en-desarrollo`, `en-revision`). No es decoración: es la diferencia
+   entre «va por aquí» y «se quedó aquí». Una línea publicada o en estudio no
+   late, porque no se está moviendo.
+
+   Reutiliza `pulse-signal`, que ya existía para el resto del sitio: una sola
+   curva de latido en todo el proyecto, no una por componente.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.stage-live {
+  animation: pulse-signal 2.4s var(--ease-in-out) infinite;
+}
+
+/* Un tablero de estado en modo lectura o en papel es una foto fija: nada late.
+   El movimiento reducido ya lo cubre la regla global de duraciones. */
+html[data-lectura] .stage-live {
+  animation: none;
+}
+
+@media print {
+  .stage-live { animation: none !important; }
+}
