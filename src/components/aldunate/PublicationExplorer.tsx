@@ -97,7 +97,7 @@ export function PublicationExplorer() {
               type="button"
               onClick={() => setKind(k)}
               className={cn(
-                'mono rounded-full border px-2.5 py-0.5 text-[0.625rem] uppercase tracking-wider transition-colors',
+                'mono inline-flex min-h-6 items-center rounded-full border px-2.5 py-0.5 text-[0.625rem] uppercase tracking-wider transition-colors',
                 kind === k
                   ? 'border-primary/60 bg-primary/10 text-primary'
                   : 'border-border/70 text-muted-foreground hover:border-primary/40 hover:text-foreground',
@@ -115,7 +115,7 @@ export function PublicationExplorer() {
           type="button"
           onClick={() => setConcept(null)}
           className={cn(
-            'mono rounded-full border px-2.5 py-0.5 text-[0.625rem] uppercase tracking-wider transition-colors',
+            'mono inline-flex min-h-6 items-center rounded-full border px-2.5 py-0.5 text-[0.625rem] uppercase tracking-wider transition-colors',
             concept === null
               ? 'border-foreground/40 bg-muted text-foreground'
               : 'border-border/70 text-muted-foreground hover:border-primary/40',
@@ -129,7 +129,7 @@ export function PublicationExplorer() {
             type="button"
             onClick={() => setConcept(concept === c.id ? null : c.id)}
             className={cn(
-              'mono rounded-full border px-2.5 py-0.5 text-[0.625rem] uppercase tracking-wider transition-colors',
+              'mono inline-flex min-h-6 items-center rounded-full border px-2.5 py-0.5 text-[0.625rem] uppercase tracking-wider transition-colors',
               concept === c.id
                 ? 'border-primary/60 bg-primary/10 text-primary'
                 : 'border-border/70 text-muted-foreground hover:border-primary/40 hover:text-foreground',
@@ -285,7 +285,7 @@ function PublicationRow({ pub }: { pub: Publication }) {
                 href={pub.url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="mono inline-flex items-center gap-1 text-[0.625rem] uppercase tracking-wider text-primary hover:underline"
+                className="mono inline-flex min-h-6 items-center gap-1 text-[0.625rem] uppercase tracking-wider text-primary hover:underline"
               >
                 Texto
                 <ExternalLink className="h-3 w-3" aria-hidden />

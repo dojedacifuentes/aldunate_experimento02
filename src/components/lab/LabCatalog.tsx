@@ -145,7 +145,7 @@ function ToolCard({ tool }: { tool: LabTool }) {
   const hasArtifact = Boolean(tool.demoUrl || tool.repoUrl);
 
   return (
-    <Surface className="flex h-full flex-col p-6">
+    <Surface interactive className="flex h-full flex-col p-6">
       <div className="flex flex-wrap items-center gap-2.5">
         <MaturityBadge status={tool.status} />
         <span className="mono text-[0.6875rem] uppercase tracking-wider text-muted-foreground">

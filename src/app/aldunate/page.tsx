@@ -10,7 +10,6 @@ import {
   EvidenceLegend,
   SourceRef,
 } from '@/components/aldunate/Evidence';
-import { MotionStage } from '@/components/aldunate/MotionStage';
 import { PortraitHero } from '@/components/aldunate/PortraitHero';
 import { PublicationExplorer } from '@/components/aldunate/PublicationExplorer';
 import { SectionNav } from '@/components/aldunate/SectionNav';
@@ -74,14 +73,11 @@ export const metadata: Metadata = {
 export default function AldunatePage() {
   return (
     <>
-      {/* Un solo motor de movimiento para toda la ruta. Ver MotionStage. */}
-      <MotionStage />
-
       <PortraitHero />
       <SectionNav />
 
       {/* ── Aviso de alcance ── */}
-      <div data-reveal>
+      <div>
         <Section>
         <Notice tone="warning" className="max-w-3xl">
           {profile.note}
@@ -90,7 +86,7 @@ export default function AldunatePage() {
       </div>
 
       {/* ── ACTO 01 · Ficha ── */}
-      <div data-reveal>
+      <div>
         <Section
         eyebrow="02 — En noventa segundos"
         title="Quién es, según qué fuente"
@@ -151,7 +147,7 @@ export default function AldunatePage() {
       </div>
 
       {/* ── ACTO 02 · Ideas ── */}
-      <section id="pensamiento" data-reveal className="scroll-mt-32 border-t border-border/70">
+      <section id="pensamiento" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="03 — Mapa intelectual"
           title="Qué territorios recorre el corpus"
@@ -161,7 +157,7 @@ export default function AldunatePage() {
         </Section>
       </section>
 
-      <section data-reveal className="border-t border-border/70">
+      <section className="border-t border-border/70">
         <Section
           eyebrow="04 — Preguntas"
           title="Qué problemas aborda, y hasta dónde podemos decirlo"
@@ -172,7 +168,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 03 · Obra ── */}
-      <section id="publicaciones" data-reveal className="scroll-mt-32 border-t border-border/70">
+      <section id="publicaciones" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="05 — Catálogo"
           title={`${corpusStats.total} obras, ${corpusStats.span.from}—${corpusStats.span.to}`}
@@ -183,7 +179,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 04 · Tiempo ── */}
-      <section id="trayectoria" data-reveal className="scroll-mt-32 border-t border-border/70">
+      <section id="trayectoria" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="06 — Trayectoria"
           title="La cronología, con su respaldo"
@@ -194,7 +190,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── ACTO 05 · Evidencia ── */}
-      <section id="fuentes" data-reveal className="scroll-mt-32 border-t border-border/70">
+      <section id="fuentes" className="scroll-mt-32 border-t border-border/70">
         <Section
           eyebrow="07 — Fuentes"
           title="Sobre qué se sostiene todo lo anterior"
@@ -205,7 +201,7 @@ export default function AldunatePage() {
       </section>
 
       {/* ── Huecos ── */}
-      <section data-reveal className="border-t border-border/70">
+      <section className="border-t border-border/70">
         <Section
           eyebrow="08 — Estado del contenido"
           title="Lo que falta, dicho en voz alta"

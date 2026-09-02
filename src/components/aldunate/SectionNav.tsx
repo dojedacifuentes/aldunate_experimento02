@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useState, useSyncExternalStore } from 'react';
-import { BookOpenText, Sparkles } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -14,7 +13,14 @@ import { cn } from '@/lib/utils';
  * lee de arriba abajo es la forma más rápida de que alguien la cierre.
  *
  * En pantallas estrechas la barra se desplaza en horizontal en vez de
- * apilarse: cinco anclas apiladas ocuparían media pantalla.
+ * apilarse: cuatro anclas apiladas ocuparían media pantalla.
+ *
+ * **El conmutador de modo lectura ya no vive aquí.** Estaba en esta barra, y
+ * por tanto sólo existía en `/aldunate`, cuando el CSS que lo aplica siempre
+ * fue global. Ahora está en la cabecera del sitio y funciona en las dieciséis
+ * rutas; el estado compartido está en `components/layout/reading-mode.ts`.
+ * Dejar aquí un segundo botón para el mismo modo habría sido peor que no
+ * tener ninguno.
  */
 
 const sections = [
@@ -24,61 +30,8 @@ const sections = [
   { id: 'fuentes', label: 'Fuentes' },
 ] as const;
 
-const LECTURA_KEY = 'aldunate:lectura';
-const LECTURA_EVENT = 'aldunate:lectura-change';
-
-/**
- * El modo lectura vive en un atributo del `<html>`, no en el estado de React.
- *
- * Tiene que vivir ahí de todos modos —es CSS quien lo aplica— y duplicarlo en
- * un `useState` crea dos fuentes de verdad que se pueden desincronizar.
- * `useSyncExternalStore` lee el DOM directamente, que es exactamente para lo
- * que existe: estado externo a React, leído sin un render en cascada.
- */
-function subscribe(onChange: () => void) {
-  window.addEventListener(LECTURA_EVENT, onChange);
-  return () => window.removeEventListener(LECTURA_EVENT, onChange);
-}
-
-function leerModo() {
-  return document.documentElement.hasAttribute('data-lectura');
-}
-
-/** En el servidor no hay DOM y el modo por defecto es explorar. */
-function modoEnServidor() {
-  return false;
-}
-
-function aplicarModo(activo: boolean) {
-  const root = document.documentElement;
-  if (activo) root.setAttribute('data-lectura', '');
-  else root.removeAttribute('data-lectura');
-  window.dispatchEvent(new Event(LECTURA_EVENT));
-}
-
 export function SectionNav() {
   const [active, setActive] = useState<string | null>(null);
-  const lectura = useSyncExternalStore(subscribe, leerModo, modoEnServidor);
-
-  // Restaura la preferencia guardada. Solo toca el DOM y avisa: el estado se
-  // lee de ahí, así que no hay `setState` dentro del efecto.
-  useEffect(() => {
-    try {
-      if (localStorage.getItem(LECTURA_KEY) === '1') aplicarModo(true);
-    } catch {
-      /* ventana privada o almacenamiento bloqueado: se queda en explorar */
-    }
-  }, []);
-
-  function toggleLectura() {
-    const next = !leerModo();
-    aplicarModo(next);
-    try {
-      localStorage.setItem(LECTURA_KEY, next ? '1' : '0');
-    } catch {
-      /* la preferencia no sobrevive a la sesión, y no pasa nada */
-    }
-  }
 
   useEffect(() => {
     const targets = sections
@@ -109,7 +62,7 @@ export function SectionNav() {
       // La cabecera del sitio ya ocupa 'top-0' con 4rem de alto y z-30. Esta se
       // apoya justo debajo y pasa por detrás: dos barras disputándose el mismo
       // borde superior es el defecto clásico de una navegación de sección.
-      className="interactive-only sticky top-16 z-20 border-b border-border/70 bg-background/85 backdrop-blur-sm"
+      className="interactive-only glass sticky top-16 z-20 rounded-none border-x-0 border-t-0"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center gap-1 overflow-x-auto px-5 py-2.5 sm:px-8">
         <span className="mono mr-3 shrink-0 text-[0.625rem] uppercase tracking-[0.18em] text-muted-foreground">
@@ -120,9 +73,10 @@ export function SectionNav() {
           <a
             key={section.id}
             href={`#${section.id}`}
+            data-press
             aria-current={active === section.id ? 'true' : undefined}
             className={cn(
-              'relative shrink-0 rounded px-3 py-1.5 text-[0.8125rem] transition-colors',
+              'ui relative shrink-0 rounded-lg px-3 py-1.5 text-[0.8125rem] transition-colors',
               'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
               active === section.id
                 ? 'text-foreground'
@@ -142,32 +96,6 @@ export function SectionNav() {
             />
           </a>
         ))}
-
-        <button
-          type="button"
-          onClick={toggleLectura}
-          aria-pressed={lectura}
-          title={
-            lectura
-              ? 'Volver al modo explorar: diagramas, movimiento y campo de conceptos'
-              : 'Modo lectura: retira lienzos, movimiento y diagramas; deja el texto y las referencias'
-          }
-          className={cn(
-            'mono ml-auto flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1',
-            'text-[0.625rem] uppercase tracking-wider transition-colors',
-            'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
-            lectura
-              ? 'border-primary/60 bg-primary/10 text-primary'
-              : 'border-border/70 text-muted-foreground hover:border-primary/40 hover:text-foreground',
-          )}
-        >
-          {lectura ? (
-            <Sparkles className="h-3 w-3" aria-hidden />
-          ) : (
-            <BookOpenText className="h-3 w-3" aria-hidden />
-          )}
-          {lectura ? 'Explorar' : 'Leer'}
-        </button>
       </div>
     </nav>
   );

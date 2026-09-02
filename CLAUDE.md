@@ -124,6 +124,64 @@ sola clase rinde dos lecturas. **No hardcodear colores en componentes.**
 
 Ni Matrix ni estética hacker. El cian es contenido, no neón.
 
+### 5.1 Capa espacial
+
+Sobre los dos modos hay una capa de material y profundidad, inspirada en las
+*Human Interface Guidelines* de Apple. Vive entera en `globals.css` bajo el
+rótulo «Capa espacial» y la gobierna un solo motor, `SpatialStage`, montado en
+el layout raíz.
+
+**Tres reglas, y las tres son duras.**
+
+1. **El material se gana, no se reparte.** Sólo llevan `.glass` las capas que
+   de verdad flotan sobre el contenido: cabecera, barra de pestañas y panel de
+   EVA. Una página entera de vidrio no es profundidad, es ruido caro de pintar.
+2. **La luz es una sola y viene de arriba.** Especular en el canto superior;
+   reflejo del cursor al 10-13 %. Por encima de eso deja de leerse como
+   material y empieza a leerse como efecto.
+3. **Nada de esto sostiene información.** Todo se apaga en modo lectura, con
+   `prefers-reduced-motion` y al imprimir, y la página sigue diciendo lo mismo.
+   Es la forma de que el §9 se cumpla: primero contenido, los efectos al final.
+
+**Sólo se animan `transform` y `opacity`.** La única excepción admitida es la
+sombra de elevación de `[data-spatial]` al pasar el cursor, que ocurre en un
+elemento cada vez y es lo que ya hacía `.surface-interactive`.
+
+**Cuarta familia tipográfica: `--font-ui`**, la del sistema —SF Pro en un
+aparato de Apple, Segoe UI Variable en Windows—. Manda sobre navegación,
+botones, controles y rótulos, **y sobre nada más**. Newsreader sigue firmando
+la prosa y JetBrains Mono los metadatos: si SF entrara también ahí, el sitio
+pasaría de archivo constitucional a aplicación genérica.
+
+**Atributos que entiende el motor**, y que son la manera de sumarse a la capa
+sin escribir JavaScript:
+
+| Atributo | Qué hace |
+|---|---|
+| `data-reveal` | aparece al entrar en pantalla. Lo pone `<Section>` solo |
+| `data-spatial` | tarjeta con radio grande, elevación y reflejo del cursor |
+| `data-press` | cede a la pulsación |
+| `data-hero` + `data-hero-layer` | publica `--hero-p` 0→1 y aparta la primera pantalla |
+| `data-depth` | paralaje al desplazar. Por encima de `0.06` marea |
+| `data-count` | el número sube una vez al entrar |
+
+**El motor depende de `usePathname()` y vuelve a escanear en cada navegación.**
+No lo cambies a `[]`: montado en el layout, observaría los elementos de la
+primera página visitada y de ninguna más, y a partir del segundo clic todo lo
+que llevara `data-reveal` se quedaría invisible para siempre.
+
+**La red de seguridad de tres segundos no se quita.** El estado inicial de una
+aparición es `opacity: 0`, y un `IntersectionObserver` no dispara en una
+pestaña que no produce fotogramas. Un texto que aparece de golpe es un defecto
+estético; un texto que no aparece nunca es una página rota.
+
+**Las capas flotantes usan `--float-bottom`**, no un `bottom` propio: cuenta el
+alto de la barra de pestañas y el respiro de la barra de gestos del teléfono.
+Con `bottom-4` fijo, el panel de EVA se montaba encima de la barra.
+
+**La barra de pestañas sobrevive al modo lectura.** No es decoración: en un
+teléfono es la única navegación de la ruta.
+
 ---
 
 ## 6. Arquitectura

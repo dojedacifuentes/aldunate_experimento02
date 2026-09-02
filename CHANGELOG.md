@@ -2,6 +2,70 @@
 
 ## No publicado
 
+### Capa espacial — el patrón de `/aldunate` alcanza a todo el sitio
+
+**Añadido.** Motor de movimiento global (`SpatialStage`). Vivía sólo en
+`/aldunate` como `MotionStage`; ahora está en el layout raíz y sirve a las
+dieciséis rutas. Es el mismo motor —un observador, un listener de scroll, un
+ticker— más el reflejo del puntero y la profundidad al desplazar.
+
+**La corrección que lo hacía posible:** montado en el layout, un efecto con
+`[]` observaría los elementos de la primera página visitada y de ninguna más,
+y a partir del segundo clic todo lo que llevara `data-reveal` se quedaría en
+`opacity: 0` para siempre. Depende de `usePathname()` y vuelve a escanear en
+cada navegación.
+
+**Añadido.** Lenguaje visual de computación espacial, inspirado en las *Human
+Interface Guidelines*: material translúcido con desenfoque y saturación
+(`.glass`), escala de elevación de tres pasos, radio de tarjeta grande, reflejo
+del cursor sobre las tarjetas y respuesta a la pulsación. Sólo llevan vidrio
+las capas que de verdad flotan —cabecera, barra de pestañas, panel de EVA—;
+una página entera de vidrio no es profundidad, es ruido caro de pintar.
+
+**Añadido.** Cuarta familia tipográfica, `--font-ui`: la del sistema —SF Pro en
+un aparato de Apple, Segoe UI Variable en Windows— y sólo para el chrome de
+interfaz. Newsreader sigue firmando la prosa y JetBrains Mono los metadatos.
+El límite es deliberado: con SF en todo, el sitio pasaría de archivo
+constitucional a aplicación genérica.
+
+**Cambiado.** El menú de hamburguesa desaparece en pantallas estrechas y lo
+sustituye `<TabBar>`, la navegación inferior de iOS: las cinco secciones
+visibles sin abrir nada y al alcance del pulgar. Lo que se pierde son las
+pistas de una línea que el menú mostraba; siguen en las tarjetas de la portada,
+que es donde se decide entrar.
+
+**Cambiado.** El modo lectura sube a la cabecera del sitio. El CSS que lo
+aplica siempre fue global; lo único que lo ataba a `/aldunate` era dónde vivía
+el botón. Ahora funciona en las dieciséis rutas, persiste y sobrevive al cambio
+de ruta. Estado compartido en `components/layout/reading-mode.ts`. La barra de
+pestañas **no** desaparece en modo lectura: es la única navegación de la ruta
+en un teléfono.
+
+**Cambiado.** `Surface interactive` implica tarjeta espacial, y `<Section>`
+aparece al entrar en pantalla. Las dos decisiones están en la primitiva y no en
+las páginas: es lo que armoniza las rejillas de Experimentos, Lab e Informes
+sin pasar por trece archivos, y lo que impide que una página nueva se olvide
+del atributo.
+
+**Cambiado.** Radio base de 8 a 12 px. Da una escala de dos radios en vez de un
+salto: 12 px en lo que está apoyado en la página y 20 px en lo que flota.
+
+**Corregido.** El panel de EVA se montaba 41 px encima de la barra de pestañas
+y tapaba dos de las cinco secciones —medido, no supuesto—. Las capas flotantes
+usan ahora un suelo común (`--float-bottom`) que cuenta el alto de la barra y
+el respiro de la barra de gestos del teléfono.
+
+**Corregido.** Veintiséis objetivos táctiles por debajo de 24 px en
+`/aldunate`, todos anteriores a este cambio: veinte fichas de filtro del
+explorador de publicaciones a 21 px, dos enlaces de texto a 15 y cuatro
+enlaces de fuente de la cronología a 17. Ninguno era enlace en línea, así que
+la excepción de WCAG 2.2 AA 2.5.8 no los cubría. Quedan en cero.
+
+**Verificado.** 0 fallos de contraste en ambos temas; 0 desbordes horizontales
+en las siete rutas medidas a 375 px; 0 objetivos táctiles bajo 24 px. La capa
+entera se apaga en modo lectura, con `prefers-reduced-motion` y al imprimir, y
+la página sigue diciendo lo mismo.
+
 ### Perfil académico — la ruta `/aldunate`
 
 **Añadido.** La ruta pasa de declarar dos catálogos vacíos a una monografía

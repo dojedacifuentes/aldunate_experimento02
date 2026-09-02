@@ -30,8 +30,8 @@ export default function HomePage() {
   return (
     <>
       {/* ── Vestíbulo ── */}
-      <section className="relative overflow-hidden">
-        <Container className="py-20 sm:py-28 lg:py-32">
+      <section data-hero className="relative overflow-hidden">
+        <Container data-hero-layer className="py-20 sm:py-28 lg:py-32">
           {/*
             PRODUCTO → CAMPO → PROPUESTA → ACCIÓN. En ese orden y sin cuarta
             capa: la portada orienta y abre rutas, no es el índice del sitio.
@@ -64,16 +64,16 @@ export default function HomePage() {
 
           {/* Estado del laboratorio: solo lo que se puede contar en este repositorio. */}
           <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 border-t border-border/70 pt-8 sm:grid-cols-4">
-            <Stat label="Líneas activas" value={String(activeLines.length)} />
-            <Stat label="Informes abiertos" value={String(reports.length)} />
-            <Stat label="Fichas en el Lab" value={String(labTools.length)} />
+            <Stat label="Líneas activas" value={String(activeLines.length)} count={activeLines.length} />
+            <Stat label="Informes abiertos" value={String(reports.length)} count={reports.length} />
+            <Stat label="Fichas en el Lab" value={String(labTools.length)} count={labTools.length} />
             <Stat label="Versión" value={`v${site.version}`} />
           </dl>
         </Container>
       </section>
 
       {/* ── Las puertas: tres primarias, dos de apoyo ── */}
-      <section className="border-t border-border/70 py-16 sm:py-20">
+      <section data-reveal className="border-t border-border/70 py-16 sm:py-20">
         <Container>
           <div className="mb-10 max-w-xl">
             <p className="meta mb-3 text-primary">Entradas</p>
@@ -122,7 +122,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Mapa intelectual ── */}
-      <section className="border-t border-border/70 py-16 sm:py-20">
+      <section data-reveal className="border-t border-border/70 py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr]">
             <div className="lg:sticky lg:top-24 lg:self-start">
@@ -177,7 +177,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Informes en curso ── */}
-      <section className="border-t border-border/70 py-16 sm:py-20">
+      <section data-reveal className="border-t border-border/70 py-16 sm:py-20">
         <Container>
           <div className="mb-8 max-w-2xl">
             <p className="meta mb-3 text-primary">Documentos vivos</p>
@@ -219,7 +219,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Nota de EVA + marca institucional ── */}
-      <section className="border-t border-border/70 py-16 sm:py-20">
+      <section data-reveal className="border-t border-border/70 py-16 sm:py-20">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
             <EvaNote portrait="smile">
@@ -248,11 +248,26 @@ export default function HomePage() {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+/**
+ * Cifra del estado del laboratorio.
+ *
+ * `count` hace que el número suba al entrar en pantalla, con el mismo motor y
+ * la misma curva que las cifras de `/aldunate`: es un gesto de bienvenida, no
+ * un indicador en vivo. Sólo lo llevan las cifras que **son** números; la
+ * versión (`v0.3.0`) se sirve tal cual, porque un contador que recorre una
+ * versión inventa versiones que no existen.
+ *
+ * El valor va escrito en el HTML de todos modos. Si el observador no llegara a
+ * disparar —pestaña en segundo plano, JavaScript caído—, lo que se lee es la
+ * cifra correcta y no un cero.
+ */
+function Stat({ label, value, count }: { label: string; value: string; count?: number }) {
   return (
     <div>
       <dt className="meta">{label}</dt>
-      <dd className="mono mt-1.5 text-2xl text-foreground">{value}</dd>
+      <dd className="mono mt-1.5 text-2xl text-foreground">
+        {count !== undefined ? <span data-count={count}>{value}</span> : value}
+      </dd>
     </div>
   );
 }
