@@ -183,11 +183,25 @@ export const workItems: WorkItem[] = [
 export interface ResolvedWorkItem extends WorkItem {
   /** Estado efectivo: el declarado, o el derivado de la ficha del informe. */
   resolvedStage: WorkStage;
-  /** Versión vigente del informe, cuando la entrada es un informe. */
-  version?: string;
   /** Posición en la recta, o `null` si el estado no está en ella. */
   pipelineIndex: number | null;
 }
+
+/*
+ * ── Por qué el tablero NO imprime el número de versión ──
+ *
+ * La primera versión de esto pintaba `versions.at(-1)`. El 02-09-2026 otra
+ * sesión añadió al Informe 01 una versión `1.0.0` que es la del **kit canónico
+ * metodológico**, no la del informe sustantivo, cuyas 43 fuentes siguen sin
+ * verificar. El tablero habría escrito «v1.0.0 · En desarrollo» junto a un
+ * informe que no emite conclusiones: un dato falso, compilando y en la primera
+ * pantalla.
+ *
+ * Mientras `versions` mezcle versiones del documento con versiones de
+ * artefactos metodológicos, el último elemento no significa «versión del
+ * informe» y no se puede publicar como si lo fuera. La etapa sí es
+ * inequívoca; el número vive en la ficha, que es donde tiene contexto.
+ */
 
 /**
  * Resuelve el estado de cada entrada una sola vez, aquí, y no en el componente.
@@ -206,15 +220,12 @@ export function resolveWorkItems(items: WorkItem[] = workItems): ResolvedWorkIte
       ? desdeEstadoEditorial[informe.status]
       : (item.stage ?? 'en-estudio');
 
-    // La versión vigente es la última declarada, no una escrita a mano.
-    const version = informe?.versions.at(-1)?.version;
 
     const idx = (workPipeline as readonly string[]).indexOf(resolvedStage);
 
     return {
       ...item,
       resolvedStage,
-      version,
       pipelineIndex: idx === -1 ? null : idx,
     };
   });

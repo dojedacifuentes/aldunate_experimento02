@@ -56,6 +56,21 @@ obligatorio, salvedad obligatoria en los compromisos, enlaces a rutas reales,
 horizontes sin fechas inventadas y medidor sólo para los estados de la recta.
 Comprobadas por mutación: quitar la salvedad del optativo rompe exactamente una
 prueba.
+### Informe 01 — kit canónico inter-IA
+
+**Añadido.** Kit canónico `v1.0.0` para continuar la actualización del Informe
+01 sobre una cohorte histórica fija de once universidades: fuente maestra en
+Markdown, manifiesto, siete plantillas CSV y reglas de relevo para que ChatGPT,
+Claude y Gemini trabajen sobre la misma fuente de verdad.
+
+**Publicado.** Exportaciones descargables en PDF, Word, HTML y Markdown, más un
+ZIP con el paquete completo y controles de integridad. La ficha del Informe 01
+distingue explícitamente este protocolo de los hallazgos sustantivos todavía en
+investigación.
+
+**Verificado.** TypeScript, ESLint, 86 pruebas y compilación de producción
+correctos; ficha del informe y cinco descargas comprobadas también en el dominio
+público, todas con respuesta `200`.
 
 ### Capa espacial — el patrón de `/aldunate` alcanza a todo el sitio
 

@@ -82,6 +82,9 @@ export default async function InformeDetallePage({
     .map((id) => sources.find((source) => source.id === id))
     .filter((source) => source !== undefined);
   const hasSources = reportSources.length > 0;
+  const primaryKitArtifact = report.researchKit?.artifacts.find(
+    (artifact) => artifact.format === 'PDF',
+  );
 
   return (
     <>
@@ -152,6 +155,11 @@ export default async function InformeDetallePage({
               >
                 <Download className="h-4 w-4" aria-hidden />
                 Descargar PDF · v{latest.version}
+              </ButtonLink>
+            ) : primaryKitArtifact && report.researchKit ? (
+              <ButtonLink href={primaryKitArtifact.href} variant="primary" external>
+                <Download className="h-4 w-4" aria-hidden />
+                Descargar kit · v{report.researchKit.version}
               </ButtonLink>
             ) : (
               <span className="inline-flex h-10 items-center gap-2 rounded-md border border-dashed border-border px-4 text-sm text-muted-foreground">
@@ -244,6 +252,59 @@ export default async function InformeDetallePage({
           </div>
         )}
       </Section>
+
+      {report.researchKit && (
+        <Section
+          eyebrow="Para comenzar"
+          title={report.researchKit.title}
+          description={report.researchKit.summary}
+        >
+          <div className="mb-6 grid gap-4 lg:grid-cols-[1.5fr_1fr] lg:items-start">
+            <Notice tone="signal">
+              Este material fija el método, la cohorte y el sistema de coordinación. Su
+              publicación no implica que existan hallazgos sobre las universidades.
+            </Notice>
+            <Surface className="p-5">
+              <dl>
+                <MetaRow label="Versión del kit" value={`v${report.researchKit.version}`} />
+                <MetaRow
+                  label="Publicado"
+                  value={formatDate(report.researchKit.publishedAt)}
+                />
+                <MetaRow label="Estado" value={report.researchKit.status} />
+              </dl>
+            </Surface>
+          </div>
+
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {report.researchKit.artifacts.map((artifact) => (
+              <li key={artifact.format}>
+                <Surface className="flex h-full flex-col p-5">
+                  <Badge tone={artifact.format === 'ZIP' ? 'accent' : 'muted'}>
+                    {artifact.format}
+                  </Badge>
+                  <h3 className="mt-3 font-serif text-lg leading-snug text-foreground">
+                    {artifact.label}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {artifact.description}
+                  </p>
+                  <ButtonLink
+                    href={artifact.href}
+                    variant={artifact.format === 'ZIP' ? 'accent' : 'outline'}
+                    size="sm"
+                    external
+                    className="mt-4 self-start"
+                  >
+                    <Download className="h-3.5 w-3.5" aria-hidden />
+                    {artifact.format === 'HTML' ? 'Abrir' : 'Descargar'}
+                  </ButtonLink>
+                </Surface>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
 
       {/* ── Capa 2 · Metodología y límites ── */}
       <Section eyebrow="Capa 2" title="Metodología" className="scroll-mt-20">

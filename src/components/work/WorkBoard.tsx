@@ -131,11 +131,11 @@ export function WorkBoard() {
                   <span className="mono text-[0.625rem] uppercase tracking-[0.16em] text-muted-foreground">
                     {meta.label}
                   </span>
-                  {item.version && (
-                    <span className="mono text-[0.625rem] text-muted-foreground">
-                      v{item.version}
-                    </span>
-                  )}
+                  {/*
+                    Sin número de versión, y a propósito: ver la nota de
+                    `trabajos.ts`. El `versions` del Informe 01 termina en una
+                    v1.0.0 que es la del kit metodológico, no la del informe.
+                  */}
                   {item.horizon && (
                     <span className="mono rounded-full border border-warning/40 bg-warning/10 px-2 py-0.5 text-[0.625rem] uppercase tracking-wider text-warning">
                       {item.horizon}

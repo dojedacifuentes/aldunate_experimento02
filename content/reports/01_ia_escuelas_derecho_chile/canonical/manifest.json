@@ -1,0 +1,29 @@
+{
+  "kit_id": "KIT_CANONICO_INTER_IA_V1",
+  "title": "Kit canónico de investigación inter-IA",
+  "subtitle": "IA y Derecho en una cohorte histórica de once universidades chilenas",
+  "version": "1.0.0",
+  "published_date": "2026-09-02",
+  "cutoff_date": "2026-09-01",
+  "status": "protocolo-operativo",
+  "cohort_id": "COHORTE_IA_DERECHO_CHILE_11_V1",
+  "protocol_id": "METODOLOGIA_IA_DERECHO_V2.0",
+  "canonical_source": "kit-canonico-v1.0.0.md",
+  "responsible": "Diego Hernán Ojeda Cifuentes",
+  "primary_recipient": "Profesor Eduardo Aldunate Lizana",
+  "official": false,
+  "outputs": ["md", "html", "docx", "pdf", "zip"],
+  "institutions": [
+    "puc-chile",
+    "uchile",
+    "udp",
+    "uandes",
+    "uai",
+    "unab",
+    "udd",
+    "uautonoma",
+    "ucentral",
+    "pucv",
+    "udec"
+  ]
+}
