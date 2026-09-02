@@ -52,6 +52,27 @@ export default function ConstitutionalField() {
         return;
       }
 
+      /*
+       * Los colores salen del tema, no del componente.
+       *
+       * Estaban escritos a mano en hexadecimal, contra CLAUDE.md §5, y eso
+       * traía la paleta nocturna al modo institucional: en tema claro el campo
+       * seguía pintando el mismo azul frío sobre un fondo hueso. Ahora se leen
+       * de las variables CSS al montar, que es cuando el tema ya está aplicado.
+       */
+      const css = getComputedStyle(document.documentElement);
+      function token(nombre: string, respaldo: number) {
+        const v = css.getPropertyValue(nombre).trim();
+        if (!v.startsWith('#')) return respaldo;
+        const hex = v.slice(1);
+        const full = hex.length === 3 ? hex.replace(/./g, (c) => c + c) : hex;
+        const n = Number.parseInt(full.slice(0, 6), 16);
+        return Number.isFinite(n) ? n : respaldo;
+      }
+
+      const colorNodo = token('--primary', 0x5fa8d8);
+      const colorArista = token('--signal', 0x4b90c4);
+
       const reduced =
         typeof window.matchMedia === 'function' &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -106,7 +127,7 @@ export default function ConstitutionalField() {
       pointGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
       const pointMaterial = new THREE.PointsMaterial({
-        color: 0x5fa8d8,
+        color: colorNodo,
         size: 0.16,
         sizeAttenuation: true,
         transparent: true,
@@ -130,16 +151,40 @@ export default function ConstitutionalField() {
         byWeight.set(bucket, list);
       }
 
+      const materialesArista: InstanceType<typeof THREE.LineBasicMaterial>[] = [];
+
       for (const [weight, points] of byWeight) {
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
         const material = new THREE.LineBasicMaterial({
-          color: 0x4b90c4,
+          color: colorArista,
           transparent: true,
           opacity: 0.1 + weight * 0.075,
           depthWrite: false,
         });
+        materialesArista.push(material);
         group.add(new THREE.LineSegments(geometry, material));
       }
+
+      /*
+       * El campo sigue al tema mientras está montado.
+       *
+       * Leer los tokens una sola vez dejaba el lienzo con la paleta del tema
+       * que hubiera al cargar: quien conmuta a institucional se quedaba con el
+       * azul nocturno hasta recargar. El conmutador cambia una clase y un
+       * atributo del `<html>`, así que basta con observarlos.
+       */
+      // `css` es el objeto vivo que devuelve `getComputedStyle`: relee el valor
+      // vigente en cada consulta, así que `token` no necesita recalcularse.
+      const observadorTema = new MutationObserver(() => {
+        pointMaterial.color.setHex(token('--primary', 0x5fa8d8));
+        const arista = token('--signal', 0x4b90c4);
+        for (const m of materialesArista) m.color.setHex(arista);
+        render(0);
+      });
+      observadorTema.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'data-theme'],
+      });
 
       /* ── Movimiento ── */
 
@@ -241,6 +286,7 @@ export default function ConstitutionalField() {
 
       cleanup = () => {
         stop();
+        observadorTema.disconnect();
         intersection.disconnect();
         observer.disconnect();
         document.removeEventListener('visibilitychange', onVisibility);
@@ -253,6 +299,11 @@ export default function ConstitutionalField() {
           mesh.geometry?.dispose();
           mesh.material?.dispose();
         });
+        // `dispose()` libera programas y render targets, pero no devuelve el
+        // contexto WebGL. Un navegador admite del orden de dieciséis vivos: en
+        // una aplicación de una sola página que entra y sale de esta ruta, se
+        // agotan y el lienzo deja de pintar sin dar ningún error.
+        renderer.forceContextLoss();
         renderer.dispose();
         renderer.domElement.remove();
       };

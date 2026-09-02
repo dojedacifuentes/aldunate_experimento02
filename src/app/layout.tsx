@@ -124,6 +124,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </p>
             </div>
 
+            {/*
+              El mismo descargo, para el papel.
+
+              La franja de arriba y el pie llevan `no-print`, así que una hoja
+              impresa se quedaba sin ningún aviso: cuarenta obras de una persona
+              real, con su retrato, y ni una palabra sobre que esto no es un
+              sitio oficial. En pantalla el aviso ya está dos veces; en papel no
+              estaba ninguna. Va la versión larga, porque una hoja circula sola
+              y sin contexto alrededor.
+            */}
+            <div className="print-only border-b border-black/30 pb-2 text-[9pt] leading-snug">
+              <p>
+                <strong>{disclaimer.short}.</strong> {disclaimer.long}
+              </p>
+              <p className="mt-1">{site.url}</p>
+            </div>
+
             <div className="flex min-h-screen flex-col">
               <SiteHeader />
               <main id="contenido" tabIndex={-1} className="flex-1 outline-none">
