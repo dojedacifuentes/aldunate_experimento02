@@ -89,6 +89,22 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '0.4.0',
+        date: '2026-09-02',
+        status: 'en-investigacion',
+        changelog: [
+          'Ronda 2 de fusión: se incorporan dos investigaciones profundas que habían quedado sin inventariar.',
+          'El corpus pasa de 43 a 72 fuentes públicas únicas; 22 de las localizadas ya estaban y sirven de corroboración.',
+          'Segunda pasada de resolubilidad: 28 de 29 fuentes nuevas responden; la base INDICES del CNED rechaza la petición automatizada y se conserva con advertencia.',
+          'Auditoría aritmética del documento antecedente: cuatro totales no cuadran con sus propias puntuaciones, de modo que ninguna puntuación heredada se arrastra y la tabla debe rehacerse desde la matriz de evidencias.',
+          'Se deshacen seis atribuciones: tres capacidades de universidad contadas como capacidades de Derecho, y tres denominaciones de unidad corregidas contra la fuente oficial.',
+          'Se derriban dos ceros heredados de uso interno de IA —PUCV y U. Autónoma—, ninguno sostenible al corte.',
+          'Se declara que el documento tratado como línea base de 2025 contiene actividades de 2026 y no sirve como corte histórico congelado.',
+          'Ninguna institución alcanza evidencia de evaluación de efecto. Es la segunda ronda independiente que llega a esa misma ausencia.',
+          'La cobertura sigue desigual: 15 de las 29 fuentes nuevas van al piloto de tres, y la razón con el resto solo baja de 4,5:1 a 4,0:1. No se emite comparación nacional.',
+        ],
+      },
+      {
         version: '0.3.0',
         date: '2026-09-02',
         status: 'en-investigacion',
@@ -132,6 +148,10 @@ export const reports: Report[] = [
       '¿Qué diferencia hay entre lo declarado institucionalmente y lo observable en programas de curso?',
       '¿Cuáles de las iniciativas anunciadas llegaron a ejecutarse? Cuatro fuentes prueban anuncio y no ejecución.',
       '¿Puede igualarse la cobertura de las ocho universidades fuera del piloto, sin la cual no hay comparación posible?',
+      '¿Existe acto formal de creación —resolución, organigrama— de las unidades que hoy constan solo por su nombre comunicacional?',
+      '¿Qué dicen los syllabus 2026 sobre obligatoriedad, semestre, créditos y matrícula real de los cursos de IA?',
+      '¿Se sostienen en ANID los proyectos Fondecyt y FONDEF que hoy constan por noticia universitaria?',
+      '¿Puede reconstruirse una línea base de 2025 auténticamente congelada? La heredada contiene actividades de 2026.',
     ],
     researchKit: {
       title: 'Kit canónico de investigación inter-IA',
