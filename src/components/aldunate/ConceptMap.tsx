@@ -94,16 +94,34 @@ export function ConceptMap() {
                     onClick={() => setSelected((prev) => (prev === row.id ? null : row.id))}
                     className={cn(
                       'flex w-full items-center gap-3 rounded-l-md py-1.5 pl-2 pr-3 text-left',
-                      'transition-[opacity,background-color] duration-300',
+                      'transition-colors duration-300',
                       'focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ring',
-                      isActive && 'bg-primary/5',
-                      on ? 'opacity-100' : 'opacity-30',
+                      // El énfasis viaja por el fondo, no por la opacidad del
+                      // texto. Ver la nota sobre contraste más abajo.
+                      isActive ? 'bg-primary/10' : on && active ? 'bg-primary/[0.03]' : '',
                     )}
                   >
                     <span className="mono w-5 shrink-0 text-[0.625rem] text-muted-foreground">
                       {String(i + 1).padStart(2, '0')}
                     </span>
 
+                    {/*
+                      Los rótulos NUNCA se atenúan.
+
+                      La versión anterior bajaba toda la fila a `opacity-30`
+                      cuando el concepto no era vecino del activo. Medido: 1,5:1
+                      de contraste en tema claro y 1,7:1 en oscuro, sobre texto
+                      de 14 px —WCAG 1.4.3 exige 4,5:1—. Y no era un estado de
+                      paso: `active` conserva la selección al retirar el ratón,
+                      así que quince de los dieciséis nombres quedaban
+                      ilegibles de forma permanente, sin dejar de ser
+                      tabulables ni pulsables.
+
+                      A opacidad plena, `muted-foreground` da 5,5:1 en claro y
+                      7,4:1 en oscuro. El des-énfasis se traslada al fondo de
+                      la fila, a la barra y a los arcos del SVG, que sí son
+                      decorativos y pueden desvanecerse sin coste.
+                    */}
                     <span
                       className={cn(
                         'truncate text-[0.875rem] transition-colors',
@@ -120,10 +138,15 @@ export function ConceptMap() {
                         style={{ width: `${(row.count / maxCount) * 72 + 4}px` }}
                         className={cn(
                           'h-1 rounded-full transition-colors',
-                          isActive ? 'bg-primary' : 'bg-primary/45',
+                          isActive ? 'bg-primary' : on ? 'bg-primary/45' : 'bg-primary/15',
                         )}
                       />
-                      <span className="mono w-5 text-right text-[0.6875rem] text-primary">
+                      <span
+                        className={cn(
+                          'mono w-5 text-right text-[0.6875rem] transition-colors',
+                          on ? 'text-primary' : 'text-muted-foreground',
+                        )}
+                      >
                         {row.count}
                       </span>
                     </span>
