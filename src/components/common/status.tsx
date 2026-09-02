@@ -2,7 +2,8 @@ import { cn } from '@/lib/utils';
 import { evidenceLevels } from '@/data/research';
 import { statusMeta, maturityMeta } from '@/data/lab';
 import { reportStatusMeta } from '@/data/reports';
-import type { EvidenceLevel, ReportStatus, ToolMaturity, ToolStatus } from '@/types';
+import { workPipeline, workStageMeta } from '@/data/trabajos';
+import type { EvidenceLevel, ReportStatus, ToolMaturity, ToolStatus, WorkStage } from '@/types';
 
 /**
  * Las tres familias de estado, y por qué no comparten componente.
@@ -160,6 +161,123 @@ export function EpistemicTag({
     >
       [{evidenceLevels[level].label}
       {code && <span className="text-muted-foreground"> · {level}</span>}]
+    </span>
+  );
+}
+
+/* ─────────────────────────── D · Estado del trabajo ─────────────────────────── */
+
+/**
+ * Cuarta familia: **¿en qué punto va esta línea de trabajo?**
+ *
+ * Es una pregunta que ninguna de las tres anteriores contesta. Un informe puede
+ * estar `en-revision` como documento —familia editorial— y ser a la vez la
+ * línea más atrasada del laboratorio. Son dos hechos distintos sobre la misma
+ * cosa.
+ *
+ * **Silueta propia: un medidor de cuatro tramos.** No es un capricho de estilo;
+ * es lo que la información pide. Las otras tres familias responden «qué es
+ * esto», y una etiqueta basta. Ésta responde «cuánto falta», que es una
+ * posición en una recta, y una posición se lee mejor dibujada que escrita.
+ *
+ *   MADUREZ     píldora con punto        ● PROTOTIPO
+ *   EDITORIAL   sello con filo izquierdo ▏EN REVISIÓN
+ *   EPISTÉMICO  código entre corchetes   [SEÑAL]
+ *   TRABAJO     medidor de tramos        ▰▰▱▱ EN DESARROLLO
+ *
+ * **Los estados fuera de la recta no reciben medidor.** `comprometido` y
+ * `supeditado` no son «más avanzados» que un desarrollo: son otra clase de
+ * hecho —una fecha dada, una condición pendiente— y llevan una marca distinta.
+ * Dibujarlos en la recta sugeriría un progreso que nadie ha medido.
+ *
+ * El medidor no depende del color: los tramos llenos se distinguen de los
+ * vacíos por opacidad y borde, así que sobrevive en escala de grises. Y el
+ * recuento va además en texto para lectores de pantalla, porque cuatro
+ * rectángulos no se leen en voz alta.
+ */
+
+const stageTone: Record<'muted' | 'signal' | 'warning' | 'success', string> = {
+  muted: 'text-muted-foreground',
+  signal: 'text-signal',
+  warning: 'text-warning',
+  success: 'text-success',
+};
+
+const stageFill: Record<'muted' | 'signal' | 'warning' | 'success', string> = {
+  muted: 'bg-muted-foreground',
+  signal: 'bg-signal',
+  warning: 'bg-warning',
+  success: 'bg-success',
+};
+
+export function StageMeter({
+  stage,
+  pipelineIndex,
+  className,
+}: {
+  stage: WorkStage;
+  /** Posición en la recta, o `null` si el estado está fuera de ella. */
+  pipelineIndex: number | null;
+  className?: string;
+}) {
+  const meta = workStageMeta[stage];
+  const total = workPipeline.length;
+
+  /** Sólo estas dos avanzan ahora mismo. Ver `.stage-live` en globals.css. */
+  const enMarcha = stage === 'en-desarrollo' || stage === 'en-revision';
+
+  return (
+    <span className={cn('inline-flex items-center gap-2', className)} title={meta.meaning}>
+      {pipelineIndex === null ? (
+        /*
+          Fuera de la recta. Un trazo discontinuo dice «esto no avanza por
+          etapas» sin necesidad de explicarlo: es una condición, no un progreso.
+        */
+        <span
+          aria-hidden
+          className={cn(
+            'h-[3px] w-11 rounded-full border-t-2 border-dashed',
+            stage === 'comprometido' ? 'border-warning/70' : 'border-muted-foreground/50',
+          )}
+        />
+      ) : (
+        <span aria-hidden className="inline-flex items-center gap-[3px]">
+          {Array.from({ length: total }, (_, i) => (
+            <span
+              key={i}
+              className={cn(
+                'h-[3px] w-2.5 rounded-full transition-opacity',
+                i <= pipelineIndex
+                  ? cn(stageFill[meta.tone], 'opacity-100')
+                  : 'bg-muted-foreground opacity-25',
+                /*
+                  El tramo actual late, y sólo si la línea está de verdad en
+                  marcha. Publicado no late porque ya llegó; en estudio no late
+                  porque todavía no arrancó. Así el movimiento significa algo en
+                  vez de adornar.
+                */
+                i === pipelineIndex && enMarcha && 'stage-live',
+              )}
+            />
+          ))}
+        </span>
+      )}
+
+      <span
+        className={cn(
+          'mono text-[0.625rem] font-medium uppercase tracking-wider',
+          stageTone[meta.tone],
+        )}
+      >
+        {meta.label}
+      </span>
+
+      {/* Cuatro rectángulos no se leen en voz alta. Esto sí. */}
+      <span className="sr-only">
+        {pipelineIndex === null
+          ? `${meta.label}. ${meta.meaning}`
+          : `Etapa ${pipelineIndex + 1} de ${total}: ${meta.label}. ${meta.meaning}`}
+      </span>
     </span>
   );
 }

@@ -452,3 +452,90 @@ export interface DoctrinalTopic {
   publicationIds: string[];
   note?: string;
 }
+
+/* ────────────────────────── Estado del arte del trabajo ────────────────────────── */
+
+/**
+ * Cuarta familia de estado, y la razón de que sea una familia aparte.
+ *
+ * El sitio ya distinguía tres vocabularios (ver `components/common/status.tsx`):
+ * madurez del artefacto, estado editorial de un informe y nivel epistémico de
+ * una afirmación. Este responde a una cuarta pregunta, que ninguno de los tres
+ * contesta: **¿en qué punto del trabajo va esta línea, y qué falta para el
+ * siguiente?**
+ *
+ * Un informe puede estar `en-revision` como documento —familia editorial— y ser
+ * a la vez la línea de trabajo más atrasada del laboratorio. Son dos hechos
+ * distintos sobre la misma cosa, y mezclarlos es el error que la auditoría del
+ * 31-08-2026 encontró en U-13.
+ *
+ * ── Las cuatro primeras son una recta; las dos últimas, no ──
+ *
+ * `en-estudio` → `en-desarrollo` → `en-revision` → `publicado` es una
+ * progresión: cada estado supone el anterior, y por eso se puede dibujar como
+ * un medidor de cuatro tramos que se lee de un vistazo.
+ *
+ * `comprometido` y `supeditado` **no están en esa recta** y no se pintan con el
+ * medidor. Un compromiso no es «más avanzado» que un desarrollo: es otra clase
+ * de hecho —una fecha dada— y merece su propia marca. Meterlos en la recta
+ * sugeriría un progreso que nadie ha medido.
+ */
+export type WorkStage =
+  /** Se está aprendiendo el terreno. No hay entregable definido todavía. */
+  | 'en-estudio'
+  /** Hay entregable definido y trabajo en curso sobre él. */
+  | 'en-desarrollo'
+  /** Existe y se está revisando. Puede cambiar antes de ser estable. */
+  | 'en-revision'
+  /** Disponible y citable. Las correcciones van como versión nueva. */
+  | 'publicado'
+  /**
+   * Hay compromiso con fecha, sin trámite formal cerrado.
+   *
+   * Obliga a `caveat`: publicar un compromiso sin decir que no está formalizado
+   * lo convierte en un anuncio, y este sitio no anuncia por nadie.
+   */
+  | 'comprometido'
+  /** Depende de conversación o de hechos posteriores. No tiene fecha. */
+  | 'supeditado';
+
+export type WorkKind = 'informe' | 'curso' | 'proyecto';
+
+/**
+ * Una línea de trabajo del laboratorio, tal como se muestra en la portada.
+ *
+ * **Los informes no declaran aquí su estado.** Lo derivan de `reports.ts`, que
+ * es su fuente única. Duplicarlo permitiría que la portada dijera «en revisión»
+ * mientras la ficha dice otra cosa —exactamente lo que ya pasó una vez, cuando
+ * el sitio afirmaba a la vez «v0.2.0 publicada» y «los hallazgos todavía no
+ * están definidos»—. Por eso `reportSlug` y `stage` son excluyentes.
+ */
+export interface WorkItem {
+  id: string;
+  kind: WorkKind;
+  title: string;
+  /** Una línea. Qué es esto, para quien no lo sabe. */
+  summary: string;
+  /**
+   * Estado declarado. Sólo para lo que no es un informe: los informes lo
+   * derivan de su ficha mediante `reportSlug`.
+   */
+  stage?: WorkStage;
+  /** Informe del que se deriva el estado. Excluyente con `stage`. */
+  reportSlug?: string;
+  /**
+   * Qué falta para el siguiente estado.
+   *
+   * Obligatorio, y es la mitad del valor de esta sección: un estado sin
+   * siguiente paso es una etiqueta. Con él, cualquiera puede comprobar dentro
+   * de un mes si la línea avanzó o sólo cambió de rótulo.
+   */
+  nextStep: string;
+  /** Salvedad. Obligatoria en `comprometido`; opcional en el resto. */
+  caveat?: string;
+  /** Ruta interna, sólo si hay algo que abrir. Nunca una promesa. */
+  href?: string;
+  /** Horizonte declarado, en palabras y no en fecha falsa: «próximo semestre». */
+  horizon?: string;
+  updatedAt: string;
+}

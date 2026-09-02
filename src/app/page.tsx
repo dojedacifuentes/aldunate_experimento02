@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { Badge, ButtonLink, Container, Surface } from '@/components/common/ui';
 import { EditorialStatus } from '@/components/common/status';
 import { DoorCard } from '@/components/common/DoorCard';
+import { WorkBoard } from '@/components/work/WorkBoard';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { primaryNav, secondaryNav, site } from '@/data/site';
 import { profile, researchLines } from '@/data/aldunate';
@@ -71,6 +72,16 @@ export default function HomePage() {
           </dl>
         </Container>
       </section>
+
+      {/*
+        ── Estado del arte ──
+        Va antes de las puertas a propósito. La jerarquía de la portada era
+        PRODUCTO → CAMPO → PROPUESTA → ACCIÓN; esto inserta un ESTADO entre la
+        propuesta y la acción, porque quien llega a un laboratorio quiere saber
+        qué hay en marcha antes de elegir puerta. Es la única sección que
+        envejece sola si nadie la mantiene: ver CLAUDE.md §12.
+      */}
+      <WorkBoard />
 
       {/* ── Las puertas: tres primarias, dos de apoyo ── */}
       <section data-reveal className="border-t border-border/70 py-16 sm:py-20">

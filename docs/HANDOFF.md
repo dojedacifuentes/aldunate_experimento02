@@ -162,6 +162,38 @@ En los dos casos el instrumento estaba roto, no el sitio. Antes de creerse una
 medida en este equipo, medir el instrumento: `document.hidden`,
 `clientWidth` y fotogramas por segundo.
 
+**Y un tercero, del propio medidor de contraste.** El comprobador que usaban
+estas sesiones parseaba el color con una expresión regular sobre `rgb()`.
+Tailwind v4 devuelve `oklab(0.94 -0.006 -0.011 / 0.8)` para cualquier utilidad
+con opacidad, y esos tres decimales se leían como si fueran valores 0-255: un
+texto claro pasaba por casi negro y salían **12 fallos de contraste
+inexistentes**. La versión buena no parsea nada —pinta el color en un canvas de
+1×1 y lee el píxel—, y así cubre `rgb`, `oklab`, `oklch` y `color-mix` sin
+saber cuál es cuál. Con ella: 0 fallos en ambos temas.
+
+---
+
+## 1ter. Estado del arte en la portada · 02-09-2026
+
+La portada declara en qué punto va cada línea de trabajo, entre el vestíbulo y
+las puertas. Es **regla permanente**: `CLAUDE.md` §12.
+
+- Registro en `src/data/trabajos.ts`; lo pinta `components/work/WorkBoard.tsx`.
+- **Se actualiza en el mismo cambio que altera el estado real del trabajo.** Es
+  lo único de la portada que envejece solo, y un tablero desactualizado es peor
+  que ninguno porque se lee como vigente.
+- **Los informes no declaran estado ahí**: lo derivan de `reports.ts`.
+- **`comprometido` obliga a salvedad**, y una prueba lo impone. El optativo «IA
+  y Derecho» está comprometido y **no formalizado**; su ficha declara que no es
+  anuncio de la Escuela. Sin esa salvedad el sitio estaría anunciando en nombre
+  de una institución que no lo ha autorizado — regla dura 3.
+- Cuarta familia de estado (`StageMeter`, medidor de cuatro tramos). No
+  reutilizar `Badge` ni las otras tres: reintroduce U-13.
+
+Las cinco líneas actuales: Informe 01 (en desarrollo), Informe 02 (en revisión),
+diseño del curso de alfabetización en IA (en estudio), optativo IA y Derecho
+(comprometido, próximo semestre) y otras líneas (supeditado).
+
 ---
 
 ## 2. Estado verificable
