@@ -241,9 +241,218 @@ encontró la corrección de PNAS sobre Bastani que la v0.2.0 no mencionaba.
 
 ---
 
-## Estado y siguiente paso
+## Estado tras la ronda 1
 
-- Pasos 1 a 5 cerrados. **Ninguna afirmación es publicable todavía.**
-- Antes de redactar: verificar las 43 URL una por una, con `last_verified` propio.
-- `sourceIds` y `claimIds` del Informe 01 siguen vacíos, y así deben seguir hasta
-  que la verificación exista. Una matriz con relleno es peor que una vacía.
+- Pasos 1 a 5 cerrados sobre 43 fuentes.
+- Antes de redactar: verificar esas 43 URL una por una, con `last_verified`
+  propio. Una matriz con relleno es peor que una vacía.
+- Las lagunas L-1 a L-5 de esta ronda siguen vigentes; la ronda 2 actualiza L-1
+  y añade L-6 a L-10.
+
+
+---
+
+# Ronda 2 · Fusión de los intentos 3a y 3b
+
+**Fecha de fusión:** 02-09-2026. **Fecha de consulta de las fuentes nuevas:** 02-09-2026.
+
+Dos documentos de investigación profunda producidos el 01-09-2026 a las 05:16 y
+05:32 quedaron fuera de la primera fusión. No se descartaron: no llegaron a
+inventariarse. Se versionan como `intento-3a` y `intento-3b` y se funden aquí
+con el mismo procedimiento de cinco pasos.
+
+## Paso 1 · Inventario
+
+| Documento | Qué es | URLs | Pasa el paso 1 |
+|---|---|---:|---|
+| `intento-3a_linea-base-y-diccionario` | Auditoría de línea base, diccionario de datos y matrices del piloto de tres | 28 | Sí |
+| `intento-3b_avance-y-evidencia-actualizada` | Barrido de las once al corte de septiembre de 2026, con registro de cambios | 31 | Sí |
+
+**Ambos traen marcadores `citeturn`, y aun así pasan.** Es la diferencia que
+importa respecto del `intento-1`, que se cayó en este mismo paso: allí los
+marcadores **sustituían** a la referencia y el documento no contenía ni una
+cadena `http`. Aquí acompañan a una URL real que un tercero puede abrir. Un
+marcador irresoluble junto a una URL resoluble es ruido; solo, es una promesa de
+fuente.
+
+Tres URLs de `intento-3a` apuntan al propio sitio de este laboratorio. No son
+evidencia sobre universidades y se excluyen del inventario.
+
+## Paso 2 · Deduplicar y arbitrar
+
+### 2.1 · Los dos documentos no comparten ni una fuente
+
+De las 29 fuentes nuevas, **cero aparecen en ambos**. No es casualidad: `3a`
+profundiza en el piloto de tres y `3b` barre las once al corte de 2026. Como
+en la ronda anterior, son complementarios y no rivales.
+
+| | Fuentes |
+|---|---:|
+| Ya en el corpus (corroboran, no suman) | 22 |
+| Nuevas de `3a` | 15 |
+| Nuevas de `3b` | 14 |
+| **Nuevas únicas** | **29** |
+| **Total del corpus tras la fusión** | **72** |
+
+Las 22 coincidencias no son desperdicio: una fuente que dos rondas de
+investigación independientes localizan por separado vale más que una que
+apareció una vez.
+
+### 2.2 · La tabla de puntajes heredada no se puede actualizar, hay que rehacerla
+
+Es el arbitraje más costoso de esta ronda y el que más consecuencias tiene.
+
+`intento-3b` audita la aritmética del documento antecedente y encuentra que sus
+totales no salen de sus propias puntuaciones:
+
+| Institución | Suma de las cinco puntuaciones declaradas | Total escrito | |
+|---|---:|---:|---|
+| UAI | 7,5 | 6,2 | Error |
+| UNAB | 7,75 | 8,75 | Error |
+| U. Central | 8,0 | 8,5 | Error |
+| UDP (I+D) | 1,0 | 0,75 | Inconsistencia interna |
+
+A eso se suma que el antecedente mezclaba dos lógicas —puntuaciones holísticas
+de 0–3 por dimensión y microponderaciones de 0,25–1,50 por actividad— sin regla
+para deduplicar iniciativas ni para impedir que el número de eventos se
+confundiera con institucionalización.
+
+**Consecuencia registrada: ninguna puntuación heredada se arrastra.** No se
+corrigen décimas; la tabla se reconstruye desde la matriz de evidencias o no
+existe. Sumar o restar a un total que no cuadra con sus sumandos propaga el
+error con apariencia de precisión.
+
+### 2.3 · El «informe 2025» no era una fotografía de 2025
+
+`CONF-SEP26-002`. El documento tratado como línea base histórica contiene
+actividades fechadas en abril, junio, agosto y septiembre de **2026**. Una
+comparación mecánica «antes contra septiembre de 2026» mezclaría cambios reales
+con incorporaciones hechas retrospectivamente sobre el propio archivo.
+
+**Toda etiqueta «nuevo desde 2025» queda provisional** hasta reconstruir un
+corte congelado de verdad. Es la laguna L-9.
+
+### 2.4 · Seis atribuciones que había que deshacer
+
+La colisión «universidad no es facultad» del §2.4 de la ronda 1 reaparece, y
+esta vez con nombres:
+
+| Registro heredado | Qué dice la fuente | Operación |
+|---|---|---|
+| Red AIGEN contada como capacidad de Derecho (UANDES) | Ninguna fuente identifica participación concreta de Derecho | Reclasificar adyacente |
+| Tribunal del metaverso contado como IA (UNAB) | La fuente oficial describe realidad virtual y simulación, no IA sustantiva | Reclasificar adyacente |
+| `[genIA]` contado como I+D de Derecho (UdeC) | Es programa interdisciplinario de toda la Universidad | Reclasificar adyacente |
+| «Centro de IA y Derecho» (UDP) | La unidad oficial es **Dirección** de Inteligencia Artificial y Derecho | Corregir nomenclatura |
+| «Centro DIAT» (PUCV) | En 2026 la unidad es **Programa** Derecho, Inteligencia Artificial y Tecnología | Corregir nomenclatura |
+| «Cátedra LegalTech» (U. Central) | La página vigente muestra **Programa IA & LegalTech** | Sustituir, conservando la Cátedra como antecedente |
+
+Tratar una tecnología digital que no es IA como si lo fuera, o adjudicar a
+Derecho la capacidad de otra facultad, son los dos modos de inflar un mapa sin
+inventar ni una fuente.
+
+### 2.5 · Dos ceros heredados que la evidencia derriba
+
+El antecedente registraba «uso interno de IA = 0» para PUCV y para U. Autónoma.
+Ninguno se sostiene al corte:
+
+- **PUCV.** Decálogo institucional de uso de IA presentado en enero de 2026,
+  elaborado por la Unidad de Integridad Académica y liderado por una profesora
+  de Derecho; Gemini habilitado para la comunidad desde marzo de 2026; y
+  experiencia docente previa con «Prompts Socráticos» en Filosofía del Derecho
+  documentada desde abril de 2024.
+- **U. Autónoma.** La Facultad informa alfabetización en IA generativa con
+  cobertura cercana al 80 % de sus docentes de Derecho en tres sedes.
+
+**Regla que se deriva y se aplica a todo el corpus:** un cero heredado no se
+arrastra. La ausencia de evidencia pública en una ronda anterior no es evidencia
+de inexistencia, y menos cuando la ronda anterior ni siquiera buscó.
+
+Queda en pie, eso sí, una distinción que la propia fuente obliga a hacer en el
+caso PUCV: **infraestructura universitaria**, **participación de Derecho** y
+**uso efectivo en la Facultad** son tres cosas, y solo las dos primeras están
+documentadas.
+
+## Paso 3 · Reclasificar desde cero
+
+`intento-3b` trae su propia escala documental de cuatro niveles: señal,
+operación, institucionalización y evaluación. Se traduce a los cinco niveles del
+sitio del mismo modo que en la ronda 1, sin heredar etiquetas.
+
+**El dato de esta ronda no es lo que encontró, sino lo que no encontró:
+ninguna institución alcanza el cuarto nivel.** El documento lo declara
+expresamente y lo razona: se localizaron métricas de cobertura —cerca del 80 %
+del profesorado de Derecho en la Autónoma, unos 90 participantes en el taller de
+la PUCV, más de 800 en el congreso de la Universidad de Chile— y ninguna de ellas
+es una evaluación de efecto. Cuántos asistieron no dice si algo cambió.
+
+Esto **confirma la laguna L-4 con un corpus independiente**. Dos rondas de
+investigación separadas, con documentos distintos y fuentes que apenas se
+solapan, llegan a la misma ausencia. Es el hallazgo más sólido del Informe 01
+hasta ahora, y es un hallazgo sobre el estado del campo, no sobre las
+universidades: nadie está midiendo si esto funciona.
+
+## Paso 4 · Estructura
+
+Los ocho ejes declarados en la ficha del informe siguen sirviendo. La fusión no
+obliga a reordenarlos: obliga a poblarlos.
+
+## Paso 5 · Lagunas que esta fusión revela
+
+**L-1 (actualizada) · La cobertura sigue desigual, y la brecha apenas se mueve.**
+Las fuentes nuevas se concentran otra vez en el piloto: 15 de 29 van a PUCV, PUC
+y Universidad de Chile.
+
+| | Antes | Después |
+|---|---:|---:|
+| Piloto de tres | 27 (9 por universidad) | 42 (14 de media) |
+| Las otras ocho | 16 (2 por universidad) | 28 (3,5 de media) |
+| Bases de universo nacional | 0 | 2 |
+| **Total** | **43** | **72** |
+
+La razón entre el piloto y el resto pasa de 4,5:1 a 4,0:1. **Sigue sin haber
+comparación nacional posible.** Casi setenta fuentes se leen como cobertura, y
+no lo son: son veintinueve fuentes más sobre una asimetría que persiste. La
+prohibición de publicar ranking o comparación se mantiene íntegra.
+
+**L-6 · Falta el acto formal de creación de casi todas las unidades.** Nombre
+comunicacional y unidad administrativa formal no son lo mismo. Se necesitan
+resolución, organigrama o documento constitutivo de: Departamento UC, Dirección
+UDP, Programa IA & LegalTech de la Central, Programa DIAT y LMIL de la PUCV, y
+estructura IA+D de la Autónoma.
+
+**L-7 · La integración curricular efectiva es la mayor incógnita.** Hay mallas y
+anuncios; faltan syllabus 2026 con obligatoriedad, semestre, créditos y matrícula
+real. Sin eso, un taller optativo y una línea curricular obligatoria se
+confunden.
+
+**L-8 · Los proyectos con financiamiento público no se han verificado en ANID.**
+Fondecyt de la UAI y FONDEF de UANDES y PUCV constan por noticia universitaria.
+La fuente gubernamental —código, monto, duración, investigadores— debe sustituir
+a la nota de prensa, no complementarla.
+
+**L-9 · No existe una línea base congelada de 2025.** Ver §2.3. Mientras no
+exista, ninguna afirmación de la forma «X aumentó desde 2025» es publicable.
+
+**L-10 · Las herramientas heredadas pueden ser páginas históricas.** iLex, IDEA
+de la Central y AyudantIA de la UC constan en el antecedente; falta comprobar
+vigencia en 2026 antes de presentarlas como stock actual.
+
+## Verificación
+
+Segunda pasada de resolubilidad, ejecutada el 02-09-2026 sobre las 29 fuentes
+nuevas: **28 responden**. La restante —la base INDICES del Consejo Nacional de
+Educación— devuelve `403` a una petición automatizada; el sitio existe y es
+consultable desde un navegador, de modo que se conserva con advertencia. Quince
+redirigen a su forma canónica, todas por barra final o `www`.
+
+Vale la misma advertencia de la ronda 1, y con más motivo ahora que el corpus
+crece: **que una URL responda no prueba que diga lo que se le atribuye.** La
+verificación sustantiva sigue sin hacerse y sigue sin delegarse.
+
+## Estado tras la ronda 2
+
+- Pasos 1 a 5 cerrados sobre 72 fuentes. **Ninguna afirmación es publicable.**
+- Diez lagunas declaradas, de las cuales cinco son nuevas de esta ronda.
+- `sourceIds` y `claimIds` siguen vacíos, y siguen debiendo estarlo.
+- Lo que esta ronda cambia de verdad no es el tamaño del corpus: es que la
+  ausencia de evaluación de efecto ya no descansa en un solo barrido.

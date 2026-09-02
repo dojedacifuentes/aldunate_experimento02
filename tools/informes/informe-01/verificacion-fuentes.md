@@ -87,3 +87,42 @@ retractado tras 266 citas, y la que encontró la corrección de PNAS sobre Basta
 et al. del 20-08-2025 que la versión 0.2.0 no mencionaba. Ninguna de las dos la
 habría detectado un proceso automático, y ninguna de las dos era visible desde el
 texto que las citaba.
+
+
+---
+
+# Segunda pasada · las 29 fuentes de la ronda 2
+
+**Ejecutada el 02-09-2026** sobre las fuentes nuevas que aportaron los intentos
+3a y 3b. Mismo alcance que la primera: **resolubilidad, no contenido.**
+
+| | |
+|---|---:|
+| Comprobadas | 29 |
+| Responden | 28 |
+| No responden | 1 |
+| Redirigen a su forma canónica | 16 |
+
+## La que no responde
+
+- `cned.cl/institucional/bases-de-datos` → **403**. Es la base INDICES de oferta
+  académica del Consejo Nacional de Educación, la fuente propuesta para
+  construir el universo nacional. El sitio existe y es consultable desde un
+  navegador: el rechazo es a la petición automatizada, no a la dirección. Se
+  conserva con advertencia, igual que se hizo con la fuente de la UdeC en la
+  primera pasada.
+
+## Las que redirigen
+
+Quince fuentes redirigen a su forma canónica, todas por barra final o por el
+prefijo `www`. **Se registra la URL final, no la de partida.** Una URL que
+redirige hoy puede dejar de hacerlo, y una cita que depende de un redirect es
+una cita con fecha de caducidad silenciosa.
+
+## Lo que esta pasada sigue sin probar
+
+Lo mismo que la primera, y conviene repetirlo porque el corpus ha crecido a 72
+fuentes y el número invita a confundir tamaño con solidez: **un `200` prueba
+que la página existe, no que diga lo que se le atribuye.**
+
+La verificación sustantiva de las 72 sigue pendiente y sigue sin delegarse.
