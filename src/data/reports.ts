@@ -419,3 +419,54 @@ export const claimChangeLabel: Record<ClaimChange['changeType'], string> = {
   added_context: 'Contexto añadido',
   editorial: 'Editorial',
 };
+
+/* ────────────────────────── Cuál informe encabeza la portada ────────────────────────── */
+
+/**
+ * Orden de madurez editorial. Mayor es más terminado.
+ *
+ * No es el mismo orden que el de `ReportStatus` declarado en `types`: aquí lo
+ * que importa es **cuánto se puede leer hoy**, que es la pregunta que hace
+ * quien entra por primera vez.
+ */
+const madurez: Record<ReportStatus, number> = {
+  'en-investigacion': 0,
+  borrador: 1,
+  'en-revision': 2,
+  publicado: 3,
+};
+
+/**
+ * El informe que encabeza la portada: **el más terminado**, no el más reciente.
+ *
+ * ── Por qué cambió, y por qué el criterio anterior era una trampa ──
+ *
+ * La portada elegía por `updatedAt`, con el argumento de que así no se
+ * desactualiza sola. El 02-09-2026 eso mandó a la acción principal del sitio
+ * —«Leer el último informe»— al **Informe 01**, que declara expresamente que no
+ * emite conclusiones y cuyas 43 fuentes siguen sin verificar. No porque el
+ * informe hubiera avanzado: porque otra sesión le tocó la fecha al publicar un
+ * kit metodológico.
+ *
+ * «Más reciente» y «más terminado» son cosas distintas, y en la primera
+ * pantalla de un sitio que se ofrece para ser citado, la que importa es la
+ * segunda. Un lector que llega y pulsa el botón principal tiene que aterrizar
+ * en algo que pueda leer, no en un registro en construcción.
+ *
+ * `updatedAt` sigue mandando, pero sólo **dentro** del mismo grado de madurez:
+ * entre dos informes igual de terminados, gana el más fresco.
+ */
+export const informeDestacado: Report = [...reports].sort((a, b) => {
+  const porMadurez = madurez[b.status] - madurez[a.status];
+  if (porMadurez !== 0) return porMadurez;
+  return b.updatedAt.localeCompare(a.updatedAt);
+})[0];
+
+/**
+ * ¿Hay algo terminado que ofrecer, o todo está en construcción?
+ *
+ * Sirve para que la portada no prometa con el verbo lo que el estado no
+ * sostiene: «Leer el informe» cuando hay algo legible, y otra cosa cuando lo
+ * único disponible es una investigación abierta.
+ */
+export const hayInformeLegible: boolean = madurez[informeDestacado.status] >= 2;

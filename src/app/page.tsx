@@ -5,10 +5,11 @@ import { Badge, ButtonLink, Container, Surface } from '@/components/common/ui';
 import { EditorialStatus } from '@/components/common/status';
 import { DoorCard } from '@/components/common/DoorCard';
 import { WorkBoard } from '@/components/work/WorkBoard';
+import { JuegoEnPortada } from '@/components/rpg/game/JuegoEnPortada';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { primaryNav, secondaryNav, site } from '@/data/site';
 import { profile, researchLines } from '@/data/aldunate';
-import { reports } from '@/data/reports';
+import { informeDestacado, reports } from '@/data/reports';
 import { labTools } from '@/data/lab';
 import { formatDateCompact, latestVersion } from '@/lib/utils';
 
@@ -25,8 +26,14 @@ import { formatDateCompact, latestVersion } from '@/lib/utils';
  */
 export default function HomePage() {
   const activeLines = researchLines.filter((l) => l.status === 'activa');
-  /** El más reciente, no uno elegido a mano: la portada no se desactualiza sola. */
-  const featured = [...reports].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0];
+  /**
+   * El más **terminado**, no el más reciente, y la diferencia no es teórica:
+   * con el criterio anterior la acción principal del sitio apuntaba al Informe
+   * 01 —que declara no emitir conclusiones— porque otra sesión le había tocado
+   * la fecha al publicar un kit metodológico. El criterio vive en
+   * `reports.ts`, que es donde se decide qué significan los estados.
+   */
+  const featured = informeDestacado;
 
   return (
     <>
@@ -54,8 +61,14 @@ export default function HomePage() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
+            {/*
+              «El último» era literalmente falso desde que el destino dejó de
+              elegirse por fecha. Y era además la promesa equivocada: quien
+              pulsa el botón principal de un sitio que se ofrece para ser
+              citado quiere algo que pueda leer hoy, no lo más recién tocado.
+            */}
             <ButtonLink href={`/informes/${featured.slug}`} variant="primary">
-              Leer el último informe
+              Leer el informe
               <ArrowRight className="h-4 w-4" aria-hidden />
             </ButtonLink>
             <ButtonLink href="/investigacion" variant="outline">
@@ -82,6 +95,51 @@ export default function HomePage() {
         envejece sola si nadie la mantiene: ver CLAUDE.md §12.
       */}
       <WorkBoard />
+
+      {/*
+        ── El juego, jugable aquí mismo ──
+
+        Sin un clic de por medio: la cabina se monta sola al entrar su sección
+        en pantalla. Phaser son 1,17 MB y baja en ese momento, no al abrir el
+        sitio, de modo que quien viene a leer un informe y no llega hasta aquí
+        no descarga un byte. Es la excepción declarada a §10, que prohibía que
+        el motor entrara en cualquier otra ruta.
+      */}
+      <section
+        aria-labelledby="juego-portada"
+        className="border-t border-border/70 pt-14 sm:pt-16"
+      >
+        <Container className="mb-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <p className="meta mb-3 text-primary">Experimento jugable</p>
+              <h2 id="juego-portada" className="text-2xl sm:text-3xl">
+                La Ley de los Audaces · Capítulo 0
+              </h2>
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                RPG jurídico. El Capítulo 0 está completo y se juega en tres a
+                cinco minutos, aquí mismo. La ficha con el guion, el reparto y
+                las fuentes normativas —con su estado de verificación— está
+                detrás del juego.
+              </p>
+            </div>
+            <ButtonLink
+              href="/experimentos/juegos/ley-de-los-audaces"
+              variant="outline"
+              size="sm"
+            >
+              Ver la ficha auditable
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+            </ButtonLink>
+          </div>
+        </Container>
+
+        {/*
+          Fuera del `Container`: la cabina se mide contra el viewport y con
+          márgenes laterales dejaría de caber, que es el fallo de D-027.
+        */}
+        <JuegoEnPortada />
+      </section>
 
       {/* ── Las puertas: tres primarias, dos de apoyo ── */}
       <section data-reveal className="border-t border-border/70 py-16 sm:py-20">

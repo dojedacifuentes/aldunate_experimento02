@@ -14,7 +14,7 @@ import { CHARACTER_IDS, CHARACTERS } from '@/data/rpg/characters';
 import { prologo } from '@/data/rpg/chapters/prologo';
 import { legalSources } from '@/data/rpg/legalSources';
 
-import './juego.css';
+import '@/components/rpg/game/juego.css';
 
 export const metadata: Metadata = {
   title: 'La Ley de los Audaces',

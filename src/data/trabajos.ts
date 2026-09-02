@@ -165,6 +165,20 @@ export const workItems: WorkItem[] = [
     updatedAt: '2026-09-02',
   },
   {
+    id: 'ley-de-los-audaces',
+    kind: 'proyecto',
+    title: 'La Ley de los Audaces · RPG jurídico',
+    summary:
+      'Capítulo 0 completo y jugable en tres a cinco minutos, con su guion, su reparto y sus fuentes normativas auditables.',
+    stage: 'en-revision',
+    nextStep:
+      'Ver a alguien jugarlo entero sin instrucciones y anotar dónde se aburre. Escribir el capítulo siguiente antes de eso multiplica un problema que todavía no se ha medido.',
+    caveat:
+      'Vertical slice, no juego terminado: hay un capítulo y no habrá más hasta que éste se pruebe con lectores reales.',
+    href: '/experimentos/juegos/ley-de-los-audaces',
+    updatedAt: '2026-09-02',
+  },
+  {
     id: 'otros-proyectos',
     kind: 'proyecto',
     title: 'Otras líneas',

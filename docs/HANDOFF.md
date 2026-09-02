@@ -201,9 +201,27 @@ las puertas. Es **regla permanente**: `CLAUDE.md` §12.
 - Cuarta familia de estado (`StageMeter`, medidor de cuatro tramos). No
   reutilizar `Badge` ni las otras tres: reintroduce U-13.
 
-Las cinco líneas actuales: Informe 01 (en desarrollo), Informe 02 (en revisión),
+Las seis líneas actuales: Informe 01 (en desarrollo), Informe 02 (en revisión),
 diseño del curso de alfabetización en IA (en estudio), optativo IA y Derecho
-(comprometido, próximo semestre) y otras líneas (supeditado).
+(comprometido, próximo semestre), La Ley de los Audaces (en revisión) y otras
+líneas (supeditado).
+
+### La portada, después del 02-09 por la tarde
+
+- **El botón principal apunta al informe más terminado, no al más reciente.**
+  Antes se elegía por `updatedAt` y eso mandaba al Informe 01 —que declara no
+  emitir conclusiones— porque el kit canónico le tocó la fecha. El criterio
+  vive en `informeDestacado` (`reports.ts`) y lo fijan tres pruebas.
+- **El juego se juega en la portada, sin clic.** `JuegoEnPortada` monta la
+  cabina cuando su sección entra en pantalla. Abrir la portada cuesta 200 KB;
+  Phaser (1,17 MB) sólo baja al empezar a jugar. **§10 se reescribió sobre el
+  paquete inicial en vez de sobre la ruta.**
+- **Si tocas eso, la prueba es empírica:** servir el build de producción, abrir
+  `/` y comprobar que no baja ningún trozo pesado antes de llegar al juego. Un
+  `import` estático de `CabinaAudaces` lo rompe sin que falle nada en `verify`.
+- `juego.css` se movió a `src/components/rpg/game/` para viajar en el trozo
+  diferido. Su `@import` relativo hubo que corregirlo, y `cabina.test.ts`
+  apunta a la ruta nueva.
 
 ---
 
