@@ -514,7 +514,83 @@ html[data-lectura] [data-reveal] {
   }
 }
 
+/*
+ * Utilidad inversa a `.no-print`: solo existe en papel.
+ *
+ * La usa el descargo de prototipo. En pantalla ese aviso ya vive en la franja
+ * superior y en el pie; ambos llevan `.no-print`, de modo que una hoja
+ * impresa se quedaba sin **ningún** descargo. Un papel con cuarenta obras de
+ * una persona real y sin la palabra «prototipo» es exactamente lo que la regla
+ * dura institucional existe para impedir (CLAUDE.md §3).
+ */
+.print-only { display: none; }
+
 @media print {
+  .print-only { display: block !important; }
+
+  /*
+   * Los tokens del tema se fuerzan a claro.
+   *
+   * `body { background: #fff; color: #000 }` no bastaba: todo el contenido usa
+   * `text-foreground`, `text-muted-foreground` y `bg-card`, que en el tema
+   * nocturno —el de por defecto— son colores claros. Imprimir desde el modo
+   * oscuro daba texto casi blanco sobre papel blanco. Se reescriben los tokens
+   * y el resto de la hoja de estilos se corrige sola.
+   */
+  :root,
+  .dark,
+  [data-theme] {
+    color-scheme: light;
+
+    --background: #ffffff;
+    --foreground: #111111;
+    --card: #ffffff;
+    --card-foreground: #111111;
+    --muted: #f2f2f0;
+    --muted-foreground: #444444;
+    --border: #b9b9b4;
+    --input: #ffffff;
+
+    --primary: #1a4d80;
+    --primary-foreground: #ffffff;
+    --accent: #7a2030;
+    --accent-foreground: #ffffff;
+
+    --signal: #1a4d80;
+    --success: #1f5a3d;
+    --warning: #6b4a10;
+    --danger: #8a2a22;
+
+    --glow-soft: none;
+    --glow-strong: none;
+    --text-glow: none;
+    --noise-opacity: 0;
+    --grid-line: transparent;
+    --surface-bg: #ffffff;
+    --surface-blur: 0px;
+    --surface-shadow: none;
+    --surface-shadow-hover: none;
+  }
+
+  /*
+   * Una aparición sin revelar es `opacity: 0`.
+   *
+   * Quien pulsa Ctrl+P nada más cargar imprime en blanco todo lo que no haya
+   * cruzado aún el observador. La red de seguridad de tres segundos existe,
+   * pero hacer depender el papel de un temporizador es hacerlo depender del
+   * azar.
+   */
+  html.motion [data-reveal],
+  html.motion [data-reveal]:not(.revealed) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html.motion [data-draw] path {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
   .no-print { display: none !important; }
   body { background: #fff; color: #000; }
 
@@ -527,8 +603,19 @@ html[data-lectura] [data-reveal] {
   canvas,
   .interactive-only { display: none !important; }
 
-  /* Un bloque plegado esconde la mitad del catálogo en el papel. */
-  details > div { display: block !important; }
+  /*
+   * Un bloque plegado esconde la mitad del catálogo en el papel.
+   *
+   * `display: block` sobre el hijo ya no basta: los navegadores actuales
+   * ocultan el contenido de un `<details>` cerrado con `content-visibility`
+   * sobre `::details-content`, no con `display` sobre los hijos. Se atacan
+   * las dos formas, la antigua y la vigente.
+   */
+  details > *:not(summary) { display: block !important; }
+  details::details-content {
+    content-visibility: visible !important;
+    block-size: auto !important;
+  }
 
   a[href^='http']::after {
     content: ' (' attr(href) ')';

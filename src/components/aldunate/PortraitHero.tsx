@@ -46,6 +46,7 @@ export function PortraitHero() {
     frame.style.willChange = 'transform';
 
     let raf = 0;
+    let corriendo = false;
     const target = { x: 0, y: 0 };
     const current = { x: 0, y: 0 };
 
@@ -56,6 +57,7 @@ export function PortraitHero() {
     }
 
     function tick() {
+      if (!corriendo) return;
       current.x += (target.x - current.x) * 0.06;
       current.y += (target.y - current.y) * 0.06;
       // 4 px de recorrido máximo. Suficiente para leerse como profundidad,
@@ -65,12 +67,48 @@ export function PortraitHero() {
       raf = requestAnimationFrame(tick);
     }
 
+    /*
+     * El bucle solo corre mientras el retrato se ve.
+     *
+     * Antes arrancaba al montar y no paraba nunca: alguien que baja hasta la
+     * bibliografía y se queda leyendo dejaba un `requestAnimationFrame`
+     * interpolando por milímetros un elemento que ya no está en pantalla. No
+     * es caro, pero es trabajo por fotograma a cambio de nada, y es lo que
+     * impide que la página llegue a reposo.
+     */
+    function arrancar() {
+      if (corriendo) return;
+      corriendo = true;
+      raf = requestAnimationFrame(tick);
+    }
+    function parar() {
+      corriendo = false;
+      cancelAnimationFrame(raf);
+    }
+
+    const visible = new IntersectionObserver(
+      ([entrada]) => {
+        if (entrada.isIntersecting && !document.hidden) arrancar();
+        else parar();
+      },
+      { threshold: 0.01 },
+    );
+    visible.observe(frame);
+
+    function onVisibilidad() {
+      if (document.hidden) parar();
+      else if (frame!.getBoundingClientRect().bottom > 0) arrancar();
+    }
+    document.addEventListener('visibilitychange', onVisibilidad);
+
     window.addEventListener('pointermove', onMove, { passive: true });
-    raf = requestAnimationFrame(tick);
+    arrancar();
 
     return () => {
       window.removeEventListener('pointermove', onMove);
-      cancelAnimationFrame(raf);
+      document.removeEventListener('visibilitychange', onVisibilidad);
+      visible.disconnect();
+      parar();
     };
   }, []);
 

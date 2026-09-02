@@ -249,6 +249,18 @@ export function SpatialStage() {
     // bienvenida; repetido en cada sección es un tic.
     const counters = [...document.querySelectorAll<HTMLElement>('[data-count]')];
 
+    /*
+     * Fotogramas y temporizadores del contador, registrados para poder
+     * cancelarlos.
+     *
+     * El efecto depende de `pathname`: al navegar se vuelve a montar. Sin este
+     * registro, la cadena de `requestAnimationFrame` y el temporizador de
+     * aterrizaje seguían vivos escribiendo sobre elementos ya desprendidos del
+     * documento, y se acumulaban una copia por navegación.
+     */
+    const cuadros = new Set<number>();
+    const aterrizajes = new Set<number>();
+
     const countObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -279,8 +291,10 @@ export function SpatialStage() {
            * bucle lo cancela si llega a terminar por su cuenta.
            */
           const land = window.setTimeout(() => {
+            aterrizajes.delete(land);
             el.textContent = String(target);
           }, DURATION + 400);
+          aterrizajes.add(land);
 
           const step = (now: number) => {
             const t = Math.min((now - start) / DURATION, 1);
@@ -288,15 +302,16 @@ export function SpatialStage() {
             const eased = 1 - Math.pow(1 - t, 4);
             el.textContent = String(Math.round(target * eased));
             if (t < 1) {
-              requestAnimationFrame(step);
+              cuadros.add(requestAnimationFrame(step));
             } else {
               window.clearTimeout(land);
+              aterrizajes.delete(land);
               el.textContent = String(target);
             }
           };
 
           el.textContent = '0';
-          requestAnimationFrame(step);
+          cuadros.add(requestAnimationFrame(step));
         }
       },
       { threshold: 0.5 },
@@ -306,6 +321,8 @@ export function SpatialStage() {
 
     return () => {
       window.clearTimeout(safety);
+      cuadros.forEach((id) => cancelAnimationFrame(id));
+      aterrizajes.forEach((id) => window.clearTimeout(id));
       reveal.disconnect();
       countObserver.disconnect();
       window.removeEventListener('scroll', onScroll);
