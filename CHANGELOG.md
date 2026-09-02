@@ -14,8 +14,9 @@ ZIP con el paquete completo y controles de integridad. La ficha del Informe 01
 distingue explícitamente este protocolo de los hallazgos sustantivos todavía en
 investigación.
 
-**Verificado.** TypeScript, ESLint y compilación de producción correctos; vista
-del informe, documento HTML y cinco descargas comprobados localmente.
+**Verificado.** TypeScript, ESLint, 86 pruebas y compilación de producción
+correctos; ficha del informe y cinco descargas comprobadas también en el dominio
+público, todas con respuesta `200`.
 
 ### Capa espacial — el patrón de `/aldunate` alcanza a todo el sitio
 

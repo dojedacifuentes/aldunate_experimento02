@@ -3,8 +3,9 @@
 **Última actualización:** 02-09-2026
 **Quien lea esto primero:** `CLAUDE.md` y `AGENTS.md` mandan sobre este documento.
 
-**Estado de esta sesión:** el kit canónico `v1.0.0` del Informe 01 está listo y
-verificado en local, pero todavía no ha sido desplegado en Vercel.
+**Estado de esta sesión:** el kit canónico `v1.0.0` del Informe 01 está
+desplegado en producción. La ficha y sus descargas PDF, Word, HTML, Markdown y
+ZIP responden `200` en el dominio público.
 
 ---
 
