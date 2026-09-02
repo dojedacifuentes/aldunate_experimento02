@@ -89,6 +89,17 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '0.3.0',
+        date: '2026-09-02',
+        status: 'en-investigacion',
+        changelog: [
+          'Publicación del kit canónico de investigación inter-IA v1.0.0.',
+          'Cohorte longitudinal fijada en once Facultades, Escuelas o carreras de Derecho.',
+          'Metodología 2.0 compatible con las cinco dimensiones del informe anterior.',
+          'Plantillas, estados editoriales, identificadores y relevos para ChatGPT, Gemini y Claude.',
+        ],
+      },
+      {
         version: '0.1.0',
         date: '2026-08-29',
         status: 'en-investigacion',
@@ -122,7 +133,47 @@ export const reports: Report[] = [
       '¿Cuáles de las iniciativas anunciadas llegaron a ejecutarse? Cuatro fuentes prueban anuncio y no ejecución.',
       '¿Puede igualarse la cobertura de las ocho universidades fuera del piloto, sin la cual no hay comparación posible?',
     ],
-    updatedAt: '2026-09-01',
+    researchKit: {
+      title: 'Kit canónico de investigación inter-IA',
+      summary:
+        'Protocolo metodológico, cohorte histórica, plantillas y sistema de relevo para que ChatGPT, Gemini y Claude trabajen sobre una misma fuente de verdad. No contiene resultados sobre universidades.',
+      version: '1.0.0',
+      publishedAt: '2026-09-02',
+      status: 'Protocolo operativo · investigación sustantiva pendiente',
+      artifacts: [
+        {
+          format: 'PDF',
+          label: 'Leer o imprimir',
+          href: '/descargas/informe-01-kit-canonico-v1.0.0/kit-canonico-v1.0.0.pdf',
+          description: 'Versión A4 de 18 páginas para lectura, presentación y archivo.',
+        },
+        {
+          format: 'Word',
+          label: 'Editar en Word',
+          href: '/descargas/informe-01-kit-canonico-v1.0.0/kit-canonico-v1.0.0.docx',
+          description: 'Documento editable con portada, índice, tablas y metadatos.',
+        },
+        {
+          format: 'HTML',
+          label: 'Abrir versión web',
+          href: '/descargas/informe-01-kit-canonico-v1.0.0/kit-canonico-v1.0.0.html',
+          description: 'Lectura navegable, adaptable a móvil y preparada para impresión.',
+        },
+        {
+          format: 'Markdown',
+          label: 'Usar como fuente canónica',
+          href: '/descargas/informe-01-kit-canonico-v1.0.0/kit-canonico-v1.0.0.md',
+          description: 'Fuente editorial reutilizable por personas, repositorios y modelos de IA.',
+        },
+        {
+          format: 'ZIP',
+          label: 'Descargar paquete completo',
+          href: '/descargas/informe-01-kit-canonico-v1.0.0.zip',
+          description: 'Todos los formatos, manifiesto, controles de integridad y plantillas CSV.',
+        },
+      ],
+    },
+    updatedAt: '2026-09-02',
   },
   {
     slug: 'transformacion-ensenanza-derecho',

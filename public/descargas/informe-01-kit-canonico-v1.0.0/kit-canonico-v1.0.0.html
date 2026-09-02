@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Diego Hernán Ojeda Cifuentes">
+  <meta name="description" content="Protocolo canónico y experiencia de investigación inter-IA para una cohorte histórica de Facultades de Derecho chilenas.">
+  <title>Kit canónico de investigación inter-IA · v1.0.0</title>
+  <style>
+    :root { --blue:#29588c; --burgundy:#8a2432; --gold:#b78c30; --ink:#191713; --muted:#685f52; --paper:#faf8f3; --card:#fff; --rule:#ddd5c6; --soft:#f1ece2; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.65 Arial, Helvetica, sans-serif; }
+    a { color:var(--blue); text-underline-offset:3px; }
+    a:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    .skip { position:absolute; left:1rem; top:-4rem; background:#fff; border:2px solid var(--blue); padding:.6rem 1rem; z-index:10; }
+    .skip:focus { top:1rem; }
+    .topbar { background:var(--ink); color:#fff; padding:.55rem 1rem; text-align:center; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    .cover { min-height:88vh; display:flex; align-items:center; border-bottom:6px solid var(--blue); background:linear-gradient(135deg,#fff 0%,#f6f1e7 72%,#e9eff6 100%); }
+    .cover-inner { width:min(1040px,calc(100% - 2.5rem)); margin:auto; padding:4rem 0; }
+    .kicker { color:var(--blue); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; }
+    h1,h2,h3,h4 { font-family:Georgia,'Times New Roman',serif; font-weight:500; line-height:1.18; color:var(--ink); }
+    h1 { max-width:850px; font-size:clamp(2.5rem,6vw,4.8rem); margin:.7rem 0 1rem; }
+    .subtitle { max-width:760px; color:var(--muted); font-family:Georgia,'Times New Roman',serif; font-size:clamp(1.15rem,2.3vw,1.55rem); }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:2.5rem 0 1.5rem; }
+    .meta-item { background:rgba(255,255,255,.9); padding:1rem; }
+    .meta-label { display:block; color:var(--muted); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; }
+    .meta-value { display:block; margin-top:.3rem; font-weight:700; }
+    .notice { max-width:780px; border-left:4px solid var(--burgundy); background:#fff8f3; padding:1rem 1.25rem; }
+    .downloads { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.5rem; }
+    .downloads a { display:inline-block; text-decoration:none; border:1px solid var(--blue); border-radius:6px; padding:.55rem .85rem; font-weight:700; background:#fff; }
+    .downloads a:first-child { color:#fff; background:var(--blue); }
+    .layout { width:min(1120px,calc(100% - 2rem)); margin:0 auto; display:grid; grid-template-columns:260px minmax(0,760px); gap:3rem; align-items:start; padding:3rem 0 6rem; }
+    nav { position:sticky; top:1.5rem; max-height:calc(100vh - 3rem); overflow:auto; padding:1.2rem; background:rgba(255,255,255,.82); border:1px solid var(--rule); border-radius:8px; }
+    nav h2 { font:700 .72rem/1.2 Arial,sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0 0 .8rem; }
+    nav ol { list-style:none; margin:0; padding:0; }
+    nav li { margin:.2rem 0; line-height:1.3; }
+    nav a { text-decoration:none; font-size:.78rem; }
+    nav .toc-3 { padding-left:.75rem; }
+    main { min-width:0; }
+    main h2 { margin:3.2rem 0 1rem; padding-top:.5rem; padding-bottom:.5rem; border-bottom:2px solid var(--blue); font-size:2rem; }
+    main h2:first-child { margin-top:0; }
+    main h3 { margin:2.2rem 0 .65rem; font-size:1.38rem; }
+    main h4 { margin:1.6rem 0 .5rem; font-size:1.12rem; color:var(--burgundy); }
+    main p, main li { max-width:72ch; }
+    main ul, main ol { padding-left:1.35rem; }
+    main li { margin:.35rem 0; }
+    blockquote { margin:1.5rem 0; border-left:4px solid var(--blue); background:#eef4f9; padding:1rem 1.25rem; font-family:Georgia,'Times New Roman',serif; font-size:1.1rem; }
+    code { background:var(--soft); padding:.12rem .35rem; border-radius:4px; font: .9em Consolas,'Courier New',monospace; }
+    pre { overflow:auto; background:#20252b; color:#f5f7f8; padding:1rem; border-radius:7px; line-height:1.45; }
+    pre code { background:transparent; color:inherit; padding:0; }
+    .table-wrap { overflow-x:auto; margin:1.3rem 0; border:1px solid var(--rule); border-radius:7px; }
+    table { width:100%; border-collapse:collapse; background:#fff; font-size:.89rem; }
+    th,td { padding:.68rem .75rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule); }
+    th { background:#eaf0f6; color:#1f456c; }
+    tr:last-child td { border-bottom:0; }
+    hr { border:0; height:1px; background:var(--rule); margin:3rem 0; }
+    .check-item { list-style:none; margin-left:-1.3rem; display:flex; gap:.5rem; }
+    .check-box { flex:0 0 1rem; height:1rem; margin-top:.3rem; border:1px solid var(--muted); display:inline-flex; align-items:center; justify-content:center; font-size:.7rem; }
+    footer { border-top:1px solid var(--rule); padding:2rem 1rem; color:var(--muted); text-align:center; font-size:.8rem; }
+    @media (max-width:860px) { .layout { grid-template-columns:1fr; } nav { position:relative; top:auto; max-height:360px; } .cover { min-height:auto; } }
+    @media print {
+      @page { size:A4; margin:18mm 17mm 20mm; }
+      body { background:#fff; font-size:10.5pt; }
+      .topbar,.downloads,.skip,nav { display:none !important; }
+      .cover { min-height:240mm; page-break-after:always; border-bottom:4pt solid var(--blue); }
+      .cover-inner,.layout { width:100%; padding:0; margin:0; display:block; }
+      main h2 { page-break-before:always; }
+      main h2:first-child { page-break-before:auto; }
+      h2,h3,h4 { page-break-after:avoid; }
+      table,blockquote,pre { page-break-inside:avoid; }
+      a { color:inherit; text-decoration:none; }
+      footer { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="topbar">Prototipo académico experimental · Documento de trabajo no oficial PUCV</div>
+  <header class="cover">
+    <div class="cover-inner">
+      <div class="kicker">Informe 01 · Sistema metodológico</div>
+      <h1>Kit canónico de investigación inter-IA</h1>
+      <p class="subtitle">IA y Derecho en una cohorte histórica de once universidades chilenas</p>
+      <div class="meta-grid">
+        <div class="meta-item"><span class="meta-label">Versión</span><span class="meta-value">v1.0.0</span></div>
+        <div class="meta-item"><span class="meta-label">Fecha de corte</span><span class="meta-value">1 de septiembre de 2026</span></div>
+        <div class="meta-item"><span class="meta-label">Publicado</span><span class="meta-value">2 de septiembre de 2026</span></div>
+        <div class="meta-item"><span class="meta-label">Cohorte</span><span class="meta-value">11 instituciones</span></div>
+        <div class="meta-item"><span class="meta-label">Estado</span><span class="meta-value">Protocolo operativo</span></div>
+      </div>
+      <p class="notice"><strong>Alcance.</strong> Este kit no contiene resultados sobre universidades. Define cómo producirlos, verificarlos, comunicarlos y actualizarlos sin perder continuidad.</p>
+      <div class="downloads" aria-label="Descargas alternativas">
+        <a href="kit-canonico-v1.0.0.pdf">PDF</a>
+        <a href="kit-canonico-v1.0.0.docx">Word</a>
+        <a href="kit-canonico-v1.0.0.md">Markdown</a>
+        <a href="../informe-01-kit-canonico-v1.0.0.zip">Paquete ZIP</a>
+      </div>
+    </div>
+  </header>
+  <div class="layout">
+    <nav aria-label="Índice del documento">
+      <h2>Contenido</h2>
+      <ol><li class="toc-2"><a href="#capa-1-orientacion-rapida">Capa 1 · Orientación rápida</a></li>
+<li class="toc-3"><a href="#1-que-resuelve-este-kit">1. Qué resuelve este kit</a></li>
+<li class="toc-3"><a href="#2-que-no-resuelve-todavia">2. Qué no resuelve todavía</a></li>
+<li class="toc-3"><a href="#3-inicio-en-quince-minutos">3. Inicio en quince minutos</a></li>
+<li class="toc-3"><a href="#4-principio-rector">4. Principio rector</a></li>
+<li class="toc-2"><a href="#capa-2-protocolo-de-investigacion">Capa 2 · Protocolo de investigación</a></li>
+<li class="toc-3"><a href="#5-pregunta-y-proposito">5. Pregunta y propósito</a></li>
+<li class="toc-3"><a href="#6-cohorte-historica-canonica">6. Cohorte histórica canónica</a></li>
+<li class="toc-3"><a href="#7-unidad-de-analisis">7. Unidad de análisis</a></li>
+<li class="toc-3"><a href="#8-dos-direcciones-de-la-relacion-ia-derecho">8. Dos direcciones de la relación IA–Derecho</a></li>
+<li class="toc-3"><a href="#9-continuidad-con-el-informe-anterior">9. Continuidad con el informe anterior</a></li>
+<li class="toc-3"><a href="#10-que-se-mide">10. Qué se mide</a></li>
+<li class="toc-3"><a href="#11-escala-de-madurez">11. Escala de madurez</a></li>
+<li class="toc-3"><a href="#12-trayectoria-temporal">12. Trayectoria temporal</a></li>
+<li class="toc-3"><a href="#13-protocolo-homogeneo-de-busqueda">13. Protocolo homogéneo de búsqueda</a></li>
+<li class="toc-3"><a href="#14-jerarquia-de-fuentes">14. Jerarquía de fuentes</a></li>
+<li class="toc-3"><a href="#15-cadena-de-trazabilidad">15. Cadena de trazabilidad</a></li>
+<li class="toc-3"><a href="#16-clasificacion-epistemologica">16. Clasificación epistemológica</a></li>
+<li class="toc-3"><a href="#17-control-de-doble-conteo">17. Control de doble conteo</a></li>
+<li class="toc-3"><a href="#18-comparacion-de-la-pucv">18. Comparación de la PUCV</a></li>
+<li class="toc-3"><a href="#19-derecho-de-observacion-institucional">19. Derecho de observación institucional</a></li>
+<li class="toc-2"><a href="#capa-3-sistema-canonico-y-coordinacion-inter-ia">Capa 3 · Sistema canónico y coordinación inter-IA</a></li>
+<li class="toc-3"><a href="#20-fuente-de-verdad">20. Fuente de verdad</a></li>
+<li class="toc-3"><a href="#21-identificadores-estables">21. Identificadores estables</a></li>
+<li class="toc-3"><a href="#22-estados-editoriales">22. Estados editoriales</a></li>
+<li class="toc-3"><a href="#23-roles">23. Roles</a></li>
+<li class="toc-3"><a href="#24-paquete-de-relevo">24. Paquete de relevo</a></li>
+<li class="toc-3"><a href="#25-contrato-de-salida-de-las-ia">25. Contrato de salida de las IA</a></li>
+<li class="toc-3"><a href="#26-prompt-comun-de-arranque">26. Prompt común de arranque</a></li>
+<li class="toc-3"><a href="#27-prompt-del-investigador-principal">27. Prompt del investigador principal</a></li>
+<li class="toc-3"><a href="#28-prompt-del-buscador-de-omisiones">28. Prompt del buscador de omisiones</a></li>
+<li class="toc-3"><a href="#29-prompt-del-auditor-metodologico">29. Prompt del auditor metodológico</a></li>
+<li class="toc-3"><a href="#30-resolucion-de-conflictos">30. Resolución de conflictos</a></li>
+<li class="toc-2"><a href="#capa-4-experiencia-centrada-en-el-usuario">Capa 4 · Experiencia centrada en el usuario</a></li>
+<li class="toc-3"><a href="#31-usuarios">31. Usuarios</a></li>
+<li class="toc-3"><a href="#32-capas-de-lectura">32. Capas de lectura</a></li>
+<li class="toc-3"><a href="#33-principios-de-interfaz">33. Principios de interfaz</a></li>
+<li class="toc-3"><a href="#34-ruta-de-usuario-recomendada">34. Ruta de usuario recomendada</a></li>
+<li class="toc-3"><a href="#35-accesibilidad-y-legibilidad">35. Accesibilidad y legibilidad</a></li>
+<li class="toc-3"><a href="#36-integridad-entre-formatos">36. Integridad entre formatos</a></li>
+<li class="toc-2"><a href="#capa-5-gobierno-almacenamiento-y-publicacion">Capa 5 · Gobierno, almacenamiento y publicación</a></li>
+<li class="toc-3"><a href="#37-versionado">37. Versionado</a></li>
+<li class="toc-3"><a href="#38-metadatos-minimos">38. Metadatos mínimos</a></li>
+<li class="toc-3"><a href="#39-privacidad-y-seguridad">39. Privacidad y seguridad</a></li>
+<li class="toc-3"><a href="#40-fases">40. Fases</a></li>
+<li class="toc-3"><a href="#41-criterios-de-aceptacion-de-la-investigacion">41. Criterios de aceptación de la investigación</a></li>
+<li class="toc-3"><a href="#42-indicadores-del-propio-proceso">42. Indicadores del propio proceso</a></li>
+<li class="toc-2"><a href="#anexo-a-diccionario-minimo">Anexo A · Diccionario mínimo</a></li>
+<li class="toc-3"><a href="#universidades">Universidades</a></li>
+<li class="toc-3"><a href="#fuentes">Fuentes</a></li>
+<li class="toc-3"><a href="#evidencias">Evidencias</a></li>
+<li class="toc-3"><a href="#afirmaciones">Afirmaciones</a></li>
+<li class="toc-2"><a href="#anexo-b-lista-de-verificacion-por-institucion">Anexo B · Lista de verificación por institución</a></li>
+<li class="toc-2"><a href="#anexo-c-lista-de-verificacion-de-publicacion">Anexo C · Lista de verificación de publicación</a></li>
+<li class="toc-2"><a href="#anexo-d-decisiones-canonicas-de-la-version-1-0-0">Anexo D · Decisiones canónicas de la versión 1.0.0</a></li>
+<li class="toc-2"><a href="#historial">Historial</a></li>
+<li class="toc-3"><a href="#v1-0-0-2-de-septiembre-de-2026">v1.0.0 · 2 de septiembre de 2026</a></li>
+<li class="toc-2"><a href="#cierre">Cierre</a></li></ol>
+    </nav>
+    <main id="contenido"><h2 id="capa-1-orientacion-rapida">Capa 1 · Orientación rápida</h2>
+<h3 id="1-que-resuelve-este-kit">1. Qué resuelve este kit</h3>
+<p>El proyecto necesita que varias inteligencias artificiales colaboren sin depender de que compartan memoria, cuenta, proveedor o historial de conversación. La solución no consiste en intentar que los modelos “conversen” directamente. Consiste en darles un expediente común, reglas idénticas y un formato obligatorio de relevo.</p>
+<p>La memoria del proyecto será el <strong>expediente canónico</strong>. ChatGPT, Claude y Gemini son colaboradores reemplazables que leen ese expediente, proponen cambios y dejan un relevo estructurado. Ninguna IA es la fuente de verdad.</p>
+<p>El kit fija:</p>
+<ul>
+<li>las once universidades que forman la cohorte histórica;</li>
+<li>la fecha de corte;</li>
+<li>las definiciones de IA aplicada al Derecho y Derecho aplicado a la IA;</li>
+<li>la continuidad con las cinco dimensiones del informe anterior;</li>
+<li>la escala de madurez;</li>
+<li>la jerarquía de fuentes;</li>
+<li>los identificadores estables;</li>
+<li>los estados de revisión;</li>
+<li>las funciones de las tres IA;</li>
+<li>el mecanismo de resolución humana;</li>
+<li>la experiencia web y las descargas derivadas de una misma fuente.</li>
+</ul>
+<h3 id="2-que-no-resuelve-todavia">2. Qué no resuelve todavía</h3>
+<p>Este kit no:</p>
+<ul>
+<li>demuestra que una universidad sea líder o esté rezagada;</li>
+<li>valida los datos del informe de 2025;</li>
+<li>contiene un ranking nacional;</li>
+<li>representa a la totalidad de las universidades chilenas;</li>
+<li>autoriza a utilizar marcas institucionales como si el documento fuera oficial;</li>
+<li>sustituye la revisión humana de fuentes y conclusiones.</li>
+</ul>
+<h3 id="3-inicio-en-quince-minutos">3. Inicio en quince minutos</h3>
+<ol>
+<li>Guardar este kit y las plantillas en una carpeta compartida.</li>
+<li>Adjuntar el informe anterior dentro de <code>antecedentes_no_canonicos</code>.</li>
+<li>Entregar a ChatGPT el manifiesto, el protocolo y la planilla vigente.</li>
+<li>Pedirle que investigue una tarea acotada, no que escriba el informe entero.</li>
+<li>Entregar a Gemini los registros propuestos para que busque omisiones y contraevidencia.</li>
+<li>Entregar a Claude las mismas fuentes para que audite atribución, inferencias y madurez.</li>
+<li>Resolver los conflictos mediante una decisión humana registrada.</li>
+<li>Publicar únicamente registros con estado <code>ACEPTADO</code>.</li>
+</ol>
+<h3 id="4-principio-rector">4. Principio rector</h3>
+<blockquote>Una cohorte fija + un protocolo versionado + una base canónica + identificadores estables + relevos estructurados + aprobación humana.</blockquote>
+<hr>
+<h2 id="capa-2-protocolo-de-investigacion">Capa 2 · Protocolo de investigación</h2>
+<h3 id="5-pregunta-y-proposito">5. Pregunta y propósito</h3>
+<p>La pregunta general es:</p>
+<blockquote>¿Qué capacidades institucionales verificables han construido once Facultades, Escuelas o carreras de Derecho chilenas en IA aplicada al Derecho y en Derecho aplicado a la IA, cómo cambiaron entre 2025 y el 1 de septiembre de 2026, y qué brechas presenta la PUCV frente a pares comparables?</blockquote>
+<p>El estudio tiene una finalidad estratégica: aportar evidencia que permita al profesor Eduardo Aldunate Lizana y a otros decisores evaluar si la PUCV está avanzando con suficiente coherencia, continuidad y recursos.</p>
+<p>La hipótesis de trabajo es:</p>
+<blockquote>La PUCV dispone de iniciativas relevantes en IA y Derecho, pero todavía no las ha convertido en una capacidad institucional coherente, transversal, sostenida, financiada y evaluable.</blockquote>
+<p>Esta hipótesis debe poder ser confirmada, matizada o refutada. La intención crítica no autoriza a seleccionar evidencia de manera sesgada. La incomodidad legítima debe provenir de datos trazables, comparadores razonables y preguntas que las autoridades puedan contestar.</p>
+<h3 id="6-cohorte-historica-canonica">6. Cohorte histórica canónica</h3>
+<p><strong>Identificador:</strong> <code>COHORTE_IA_DERECHO_CHILE_11_V1</code></p>
+<div class="table-wrap"><table><thead><tr>
+<th scope="col">ID canónico</th>
+<th scope="col">Institución</th>
+</tr></thead><tbody>
+<tr>
+<td><code>puc-chile</code></td>
+<td>Pontificia Universidad Católica de Chile</td>
+</tr>
+<tr>
+<td><code>uchile</code></td>
+<td>Universidad de Chile</td>
+</tr>
+<tr>
+<td><code>udp</code></td>
+<td>Universidad Diego Portales</td>
+</tr>
+<tr>
+<td><code>uandes</code></td>
+<td>Universidad de los Andes</td>
+</tr>
+<tr>
+<td><code>uai</code></td>
+<td>Universidad Adolfo Ibáñez</td>
+</tr>
+<tr>
+<td><code>unab</code></td>
+<td>Universidad Andrés Bello</td>
+</tr>
+<tr>
+<td><code>udd</code></td>
+<td>Universidad del Desarrollo</td>
+</tr>
+<tr>
+<td><code>uautonoma</code></td>
+<td>Universidad Autónoma de Chile</td>
+</tr>
+<tr>
+<td><code>ucentral</code></td>
+<td>Universidad Central de Chile</td>
+</tr>
+<tr>
+<td><code>pucv</code></td>
+<td>Pontificia Universidad Católica de Valparaíso</td>
+</tr>
+<tr>
+<td><code>udec</code></td>
+<td>Universidad de Concepción</td>
+</tr>
+</tbody></table></div>
+<p>Estas once instituciones constituyen una cohorte longitudinal cerrada para conservar continuidad con el informe de 2025. La selección no es probabilística ni garantiza representatividad del sistema chileno.</p>
+<p>Toda tabla, gráfico o conclusión debe decir <strong>“cohorte histórica de once instituciones”</strong>. No debe decir “las universidades chilenas” cuando el universo analizado sea solamente esta cohorte.</p>
+<p>Una institución externa relevante se registra como <code>CANDIDATA_FUERA_DE_COHORTE</code>. Su descubrimiento no modifica silenciosamente la cohorte. Ampliar el universo exige una nueva versión del manifiesto y una explicación metodológica.</p>
+<h3 id="7-unidad-de-analisis">7. Unidad de análisis</h3>
+<p>La unidad principal es la Facultad, Escuela o carrera de Derecho.</p>
+<p>Una iniciativa general de la universidad sólo puede atribuirse a Derecho si existe evidencia pública de al menos uno de estos vínculos:</p>
+<ul>
+<li>participación formal de la unidad jurídica;</li>
+<li>acceso documentado de estudiantes o docentes de Derecho;</li>
+<li>aplicación específicamente jurídica;</li>
+<li>resultados que incluyan explícitamente a esa unidad;</li>
+<li>incorporación en currículo, investigación, práctica o gestión jurídica.</li>
+</ul>
+<p>Cada iniciativa se clasifica además por nivel de atribución:</p>
+<ul>
+<li><code>UNIVERSIDAD</code>;</li>
+<li><code>FACULTAD_DERECHO</code>;</li>
+<li><code>CENTRO_O_LABORATORIO</code>;</li>
+<li><code>EQUIPO_ACADEMICO</code>;</li>
+<li><code>ACADEMICO_INDIVIDUAL</code>;</li>
+<li><code>ESTUDIANTIL</code>;</li>
+<li><code>EXTERNA_CON_PARTICIPACION</code>.</li>
+</ul>
+<p>Una actividad individual no se convierte en avance institucional por aparecer en una noticia universitaria.</p>
+<h3 id="8-dos-direcciones-de-la-relacion-ia-derecho">8. Dos direcciones de la relación IA–Derecho</h3>
+<p>Cada iniciativa recibe una etiqueta independiente de la dimensión en que se observa:</p>
+<h4 id="ia-para-derecho"><code>IA_PARA_DERECHO</code></h4>
+<p>Uso de IA en:</p>
+<ul>
+<li>enseñanza y aprendizaje jurídico;</li>
+<li>investigación y búsqueda jurídica;</li>
+<li>redacción y análisis documental;</li>
+<li>práctica profesional y clínicas;</li>
+<li>acceso a la justicia;</li>
+<li>automatización legal;</li>
+<li>gestión académica relacionada con Derecho;</li>
+<li>desarrollo de herramientas o prototipos jurídicos.</li>
+</ul>
+<h4 id="derecho-de-ia"><code>DERECHO_DE_IA</code></h4>
+<p>Aplicación del Derecho a:</p>
+<ul>
+<li>regulación y gobernanza de sistemas de IA;</li>
+<li>responsabilidad y transparencia;</li>
+<li>derechos fundamentales y discriminación;</li>
+<li>protección de datos;</li>
+<li>propiedad intelectual;</li>
+<li>ética y políticas públicas;</li>
+<li>control de decisiones automatizadas.</li>
+</ul>
+<h4 id="ambos"><code>AMBOS</code></h4>
+<p>La iniciativa integra de forma sustantiva las dos direcciones.</p>
+<h4 id="adyacente"><code>ADYACENTE</code></h4>
+<p>La actividad trata sobre innovación, tecnología, datos, ciberseguridad o derecho digital, pero la IA no es un componente central verificable. Las actividades adyacentes pueden conservarse como contexto, pero no deben elevar automáticamente la madurez en IA y Derecho.</p>
+<h3 id="9-continuidad-con-el-informe-anterior">9. Continuidad con el informe anterior</h3>
+<p>La metodología 2.0 conserva las cinco dimensiones históricas:</p>
+<ol>
+<li>formación de pregrado;</li>
+<li>formación continua y postgrado;</li>
+<li>investigación y desarrollo;</li>
+<li>vinculación con el medio;</li>
+<li>uso institucional de IA.</li>
+</ol>
+<p>Agrega tres dimensiones transversales:</p>
+<ol>
+<li>gobernanza y estrategia;</li>
+<li>recursos y capacidades;</li>
+<li>continuidad, cobertura y resultados.</li>
+</ol>
+<p>La transición se publica con tres campos separados:</p>
+<ul>
+<li><code>puntaje_publicado_2025</code>;</li>
+<li><code>puntaje_2025_recalculado</code>;</li>
+<li><code>madurez_2026_metodologia_2</code>.</li>
+</ul>
+<p>Los errores del informe anterior se corrigen mediante fe de erratas y changelog. No se reemplazan silenciosamente. Ningún dato hallado en 2026 debe presentarse como si hubiera estado públicamente disponible en 2025.</p>
+<h3 id="10-que-se-mide">10. Qué se mide</h3>
+<p>El estudio separa cuatro objetos que no deben confundirse:</p>
+<h4 id="huella-de-actividad">Huella de actividad</h4>
+<p>Cantidad y variedad de actividades verificadas. Es descriptiva y no equivale a madurez.</p>
+<h4 id="madurez-institucional">Madurez institucional</h4>
+<p>Grado en que una capacidad dejó de ser aislada y pasó a formar parte de la estructura institucional.</p>
+<h4 id="calidad-de-evidencia">Calidad de evidencia</h4>
+<p>Fuerza con que las fuentes sostienen el dato atribuido.</p>
+<h4 id="cobertura-de-investigacion">Cobertura de investigación</h4>
+<p>Proporción del protocolo efectivamente completada para cada institución y dimensión.</p>
+<p>Una universidad puede exhibir muchas actividades, baja institucionalización y evidencia débil. Otra puede mostrar pocas iniciativas, pero formalizadas y evaluadas. El informe debe conservar esa diferencia.</p>
+<h3 id="11-escala-de-madurez">11. Escala de madurez</h3>
+<div class="table-wrap"><table><thead><tr>
+<th scope="col">Nivel</th>
+<th scope="col">Nombre</th>
+<th scope="col">Condición mínima</th>
+</tr></thead><tbody>
+<tr>
+<td>0</td>
+<td>Sin evidencia pública</td>
+<td>El protocolo de búsqueda fue completado y no se localizó evidencia verificable.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Exploración</td>
+<td>Anuncio, evento, piloto o iniciativa aislada.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Operación</td>
+<td>Actividad recurrente, curso activo, proyecto en ejecución o varios antecedentes convergentes.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Institucionalización</td>
+<td>Responsables formales, continuidad, cobertura, política, recursos o integración curricular.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Evaluación</td>
+<td>Productos, resultados o efectos públicamente documentados y revisables.</td>
+</tr>
+</tbody></table></div>
+<p>Reglas de entrada:</p>
+<ul>
+<li>un centro nominal sin proyectos verificables no supera el nivel 1;</li>
+<li>varios eventos no producen por acumulación automática el nivel 3;</li>
+<li>el nivel 3 exige al menos una señal formal de institucionalización;</li>
+<li>el nivel 4 exige productos o resultados, no sólo continuidad;</li>
+<li>si la cobertura es insuficiente, se usa <code>NO_EVALUABLE</code>, no cero;</li>
+<li>la confianza de la fuente se reporta aparte de la madurez.</li>
+</ul>
+<h3 id="12-trayectoria-temporal">12. Trayectoria temporal</h3>
+<p>Cada iniciativa recibe un estado de cambio 2025–2026:</p>
+<ul>
+<li><code>NUEVA</code>;</li>
+<li><code>CONTINUA</code>;</li>
+<li><code>AMPLIADA</code>;</li>
+<li><code>INSTITUCIONALIZADA</code>;</li>
+<li><code>EVALUADA</code>;</li>
+<li><code>REDUCIDA</code>;</li>
+<li><code>DISCONTINUADA</code>;</li>
+<li><code>NO_LOCALIZADA</code>;</li>
+<li><code>DESCONOCIDA</code>.</li>
+</ul>
+<p>El análisis debe privilegiar la trayectoria. Una iniciativa que permanece durante dos años en fase de anuncio puede ser más informativa que una diferencia menor de puntaje.</p>
+<h3 id="13-protocolo-homogeneo-de-busqueda">13. Protocolo homogéneo de búsqueda</h3>
+<p>Para cada universidad deben recorrerse las mismas rutas:</p>
+<ol>
+<li>sitio de la Facultad, Escuela o carrera de Derecho;</li>
+<li>malla curricular;</li>
+<li>programas y syllabus;</li>
+<li>postgrados y formación continua;</li>
+<li>repositorios y publicaciones;</li>
+<li>proyectos, fondos y concursos;</li>
+<li>centros y laboratorios;</li>
+<li>políticas institucionales sobre IA;</li>
+<li>reglas de integridad académica y evaluación;</li>
+<li>herramientas, licencias y convenios;</li>
+<li>vinculación y transferencia;</li>
+<li>noticias institucionales;</li>
+<li>fuentes externas de contraste.</li>
+</ol>
+<p>Por institución se registra:</p>
+<ul>
+<li>consulta utilizada;</li>
+<li>dominio revisado;</li>
+<li>fecha y hora de búsqueda;</li>
+<li>resultados pertinentes;</li>
+<li>rutas sin resultados;</li>
+<li>documentos inaccesibles;</li>
+<li>responsable o modelo que ejecutó la búsqueda.</li>
+</ul>
+<p>No puede asignarse nivel 0 hasta completar el protocolo. La expresión correcta es “no se encontró evidencia pública verificable”, no “la actividad no existe”.</p>
+<h3 id="14-jerarquia-de-fuentes">14. Jerarquía de fuentes</h3>
+<p>Prioridad:</p>
+<ol>
+<li>resoluciones, políticas y documentos oficiales;</li>
+<li>mallas, programas y syllabus;</li>
+<li>repositorios, publicaciones y proyectos financiados;</li>
+<li>páginas oficiales de centros y laboratorios;</li>
+<li>memorias, convenios, cuentas públicas y documentos de resultados;</li>
+<li>noticias institucionales;</li>
+<li>prensa externa;</li>
+<li>redes sociales, sólo como pista o señal débil.</li>
+</ol>
+<p>Todo hallazgo debe verificarse abriendo la fuente original. Un resultado de buscador, una síntesis generada por IA o la conclusión de otro modelo no son fuentes.</p>
+<p>Cuando una fuente indique solamente el año, se conserva esa precisión. No se inventan día ni mes. Si una página no declara fecha, se registra <code>FECHA_NO_DECLARADA</code> y la fecha de consulta.</p>
+<h3 id="15-cadena-de-trazabilidad">15. Cadena de trazabilidad</h3>
+<p>La cadena canónica es:</p>
+<blockquote>Fuente → Evidencia → Iniciativa → Afirmación → Evaluación → Visualización → Conclusión → Recomendación</blockquote>
+<p>Ningún eslabón reemplaza al anterior. Una fuente puede sostener varias evidencias; varias fuentes pueden sostener una evidencia; una iniciativa puede estar respaldada por múltiples evidencias sin convertirse por eso en múltiples iniciativas.</p>
+<h3 id="16-clasificacion-epistemologica">16. Clasificación epistemológica</h3>
+<p>Cada afirmación se clasifica:</p>
+<ul>
+<li><code>HECHO</code>: verificable directamente en fuentes citables;</li>
+<li><code>SEÑAL</code>: indicio real pero parcial;</li>
+<li><code>INFERENCIA</code>: conclusión derivada cuya cadena de razonamiento se explicita;</li>
+<li><code>HIPOTESIS</code>: formulación por contrastar;</li>
+<li><code>PENDIENTE</code>: información necesaria aún no obtenida.</li>
+</ul>
+<p>Cada afirmación debe incluir contraevidencia, limitaciones y confianza. Los hallazgos factuales deben quedar separados de la interpretación y de la recomendación.</p>
+<h3 id="17-control-de-doble-conteo">17. Control de doble conteo</h3>
+<p>Antes de crear una nueva iniciativa se revisa si ya existe un <code>initiative_id</code> relacionado.</p>
+<p>Ejemplo:</p>
+<ul>
+<li>noticia de lanzamiento de un laboratorio;</li>
+<li>seminario inaugural;</li>
+<li>convenio asociado;</li>
+<li>página institucional del laboratorio.</li>
+</ul>
+<p>Pueden ser cuatro fuentes sobre una iniciativa. Sólo se registran como actividades distintas si representan acciones sustantivamente diferentes.</p>
+<h3 id="18-comparacion-de-la-pucv">18. Comparación de la PUCV</h3>
+<p>La PUCV se observa mediante tres espejos:</p>
+<ol>
+<li>pares chilenos comparables;</li>
+<li>frontera nacional dentro de la cohorte;</li>
+<li>referentes internacionales como modelos aspiracionales, nunca como participantes del mismo ranking.</li>
+</ol>
+<p>La sección PUCV debe preguntar:</p>
+<ul>
+<li>¿Existe estrategia formal?</li>
+<li>¿Quién tiene responsabilidad institucional?</li>
+<li>¿Qué recursos verificables existen?</li>
+<li>¿Qué competencia aparece en el currículo obligatorio?</li>
+<li>¿Qué proporción de estudiantes y docentes alcanza?</li>
+<li>¿Qué herramientas se utilizan institucionalmente?</li>
+<li>¿Qué políticas regulan su uso?</li>
+<li>¿Qué productos y resultados han generado los centros o laboratorios?</li>
+<li>¿Qué cambió desde 2025?</li>
+<li>¿Las iniciativas sobreviven a quienes las impulsaron?</li>
+<li>¿Qué universidad comparable ya hizo algo que la PUCV no ha realizado?</li>
+</ul>
+<p>La formulación narrativa inicial es una hipótesis, no un resultado:</p>
+<blockquote>La PUCV tiene semillas; la investigación debe determinar si ya existe un sistema.</blockquote>
+<h3 id="19-derecho-de-observacion-institucional">19. Derecho de observación institucional</h3>
+<p>Antes de una versión estable puede enviarse a cada institución una ficha factual para corrección o aporte de documentos públicos. Este contacto requiere autorización humana específica.</p>
+<p>Las respuestas institucionales no alteran automáticamente el registro. Toda modificación sustantiva debe estar respaldada por evidencia verificable. Se deja constancia de:</p>
+<ul>
+<li>fecha de envío;</li>
+<li>unidad contactada;</li>
+<li>respuesta recibida;</li>
+<li>documento aportado;</li>
+<li>cambio producido;</li>
+<li>decisión de aceptación o rechazo.</li>
+</ul>
+<hr>
+<h2 id="capa-3-sistema-canonico-y-coordinacion-inter-ia">Capa 3 · Sistema canónico y coordinación inter-IA</h2>
+<h3 id="20-fuente-de-verdad">20. Fuente de verdad</h3>
+<p>La fuente de verdad es el expediente compartido, no este documento aislado ni el chat de una IA.</p>
+<p>Estructura recomendada:</p>
+<pre><code>IA_DERECHO_CHILE_CANONICO/
+├── 00_MANIFIESTO_CANONICO.md
+├── 01_PROTOCOLO_METODOLOGICO.md
+├── 02_UNIVERSIDADES.csv
+├── 03_INICIATIVAS.csv
+├── 04_FUENTES.csv
+├── 05_EVIDENCIAS.csv
+├── 06_AFIRMACIONES.csv
+├── 07_EVALUACIONES.csv
+├── 08_CONFLICTOS.md
+├── 09_HANDOFF_INTER_IA.md
+├── 10_DECISIONES_HUMANAS.md
+├── 11_CHANGELOG.md
+├── antecedentes_no_canonicos/
+├── archivos_fuente/
+├── versiones_publicadas/
+└── exportaciones/</code></pre>
+<p>El sitio web, el PDF, el Word y las visualizaciones deben derivarse del mismo contenido y de los mismos metadatos. Número de versión, fecha, recuentos y estado no deben escribirse manualmente en varios lugares.</p>
+<h3 id="21-identificadores-estables">21. Identificadores estables</h3>
+<p>Formato:</p>
+<ul>
+<li>fuente: <code>src-pucv-001</code>;</li>
+<li>evidencia: <code>ev-pucv-001</code>;</li>
+<li>iniciativa: <code>ini-pucv-001</code>;</li>
+<li>afirmación: <code>clm-pucv-001</code>;</li>
+<li>evaluación: <code>eval-pucv-pregrado-2026</code>;</li>
+<li>ejecución de IA: <code>run-20260901-chatgpt-001</code>.</li>
+</ul>
+<p>Los identificadores no se reutilizan. Un registro superado conserva su ID y apunta al registro que lo reemplaza.</p>
+<h3 id="22-estados-editoriales">22. Estados editoriales</h3>
+<div class="table-wrap"><table><thead><tr>
+<th scope="col">Estado</th>
+<th scope="col">Significado</th>
+</tr></thead><tbody>
+<tr>
+<td><code>PROPUESTO</code></td>
+<td>Una IA o investigador encontró el registro.</td>
+</tr>
+<tr>
+<td><code>FUENTE_ABIERTA</code></td>
+<td>Se abrió y examinó la publicación original.</td>
+</tr>
+<tr>
+<td><code>CONTRASTADO</code></td>
+<td>Una segunda revisión examinó atribución, alcance y contraevidencia.</td>
+</tr>
+<tr>
+<td><code>ACEPTADO</code></td>
+<td>Una decisión humana lo habilitó para publicación.</td>
+</tr>
+<tr>
+<td><code>RECHAZADO</code></td>
+<td>Se descartó con una razón registrada.</td>
+</tr>
+<tr>
+<td><code>SUPERADO</code></td>
+<td>Era válido, pero evidencia posterior lo reemplazó.</td>
+</tr>
+</tbody></table></div>
+<p>Sólo <code>ACEPTADO</code> alimenta conclusiones publicadas. Ninguna IA sobrescribe directamente un registro aceptado: propone un cambio.</p>
+<h3 id="23-roles">23. Roles</h3>
+<h4 id="chatgpt-investigador-principal">ChatGPT · investigador principal</h4>
+<ul>
+<li>inventaría el corpus;</li>
+<li>ejecuta la primera búsqueda;</li>
+<li>construye fuentes, evidencias e iniciativas propuestas;</li>
+<li>redacta la primera ficha factual;</li>
+<li>señala limitaciones y preguntas abiertas.</li>
+</ul>
+<h4 id="gemini-buscador-de-omisiones-y-contraevidencia">Gemini · buscador de omisiones y contraevidencia</h4>
+<ul>
+<li>repite búsquedas independientemente;</li>
+<li>busca documentos omitidos;</li>
+<li>comprueba si una ausencia pública fue investigada suficientemente;</li>
+<li>propone fuentes contradictorias o complementarias;</li>
+<li>no modifica los registros del investigador principal.</li>
+</ul>
+<h4 id="claude-auditor-metodologico">Claude · auditor metodológico</h4>
+<ul>
+<li>revisa atribución institucional;</li>
+<li>detecta doble conteo;</li>
+<li>controla la escala de madurez;</li>
+<li>cuestiona inferencias;</li>
+<li>examina comparadores y sesgos;</li>
+<li>audita con especial cuidado las conclusiones sobre la PUCV.</li>
+</ul>
+<h4 id="curador-humano-autoridad-editorial">Curador humano · autoridad editorial</h4>
+<ul>
+<li>resuelve conflictos;</li>
+<li>acepta o rechaza registros;</li>
+<li>protege la coherencia metodológica;</li>
+<li>autoriza comunicaciones externas;</li>
+<li>aprueba versiones publicables.</li>
+</ul>
+<p>Estos roles pueden rotarse para evaluar dependencia del modelo. Debe quedar registrado qué modelo cumplió cada función.</p>
+<h3 id="24-paquete-de-relevo">24. Paquete de relevo</h3>
+<p>Cada sesión termina con:</p>
+<pre><code>HANDOFF
+protocol_version:
+cohort_version:
+cutoff_date:
+run_id:
+model:
+role:
+started_at:
+completed_at:
+institutions_reviewed:
+records_created:
+records_changed:
+sources_opened:
+claims_challenged:
+conflicts:
+unresolved_questions:
+recommended_next_task:</code></pre>
+<p>El siguiente modelo recibe el expediente actualizado y el último relevo. No necesita ni debe presumir acceso a los chats anteriores.</p>
+<h3 id="25-contrato-de-salida-de-las-ia">25. Contrato de salida de las IA</h3>
+<p>Toda entrega debe contener:</p>
+<ol>
+<li>resumen operativo breve;</li>
+<li>registros nuevos en formato tabular;</li>
+<li>registros modificados con antes y después;</li>
+<li>fuentes originales abiertas;</li>
+<li>contraevidencia;</li>
+<li>conflictos;</li>
+<li>afirmaciones debilitadas o fortalecidas;</li>
+<li>pendientes;</li>
+<li>paquete de relevo.</li>
+</ol>
+<p>Una respuesta exclusivamente narrativa no se integra al expediente.</p>
+<h3 id="26-prompt-comun-de-arranque">26. Prompt común de arranque</h3>
+<pre><code>Actúa dentro del proyecto COHORTE_IA_DERECHO_CHILE_11_V1, protocolo
+METODOLOGIA_IA_DERECHO_V2.0 y fecha de corte 2026-09-01.
+
+La fuente de verdad es el expediente canónico adjunto. El informe de 2025 es
+un antecedente no verificado y las páginas del proyecto son referencias de
+arquitectura, no evidencia sobre universidades.
+
+No agregues, elimines ni renombres universidades. No sobrescribas registros
+ACEPTADO. Toda novedad debe proponerse con un identificador estable, fuente
+original, fecha de consulta, alcance, limitaciones y relación con registros
+anteriores.
+
+Trabaja sólo en la tarea asignada. Abre las fuentes originales; no uses
+resultados de buscadores ni síntesis de otra IA como evidencia. Distingue
+universidad, Facultad de Derecho, centro, equipo, actividad individual y
+actividad estudiantil. Distingue IA_PARA_DERECHO, DERECHO_DE_IA, AMBOS y
+ADYACENTE. No conviertas ausencia de evidencia pública en inexistencia.
+
+Al terminar entrega registros propuestos, fuentes abiertas, contraevidencia,
+conflictos, pendientes y un HANDOFF completo.</code></pre>
+<h3 id="27-prompt-del-investigador-principal">27. Prompt del investigador principal</h3>
+<pre><code>Investiga la institución [UNIVERSITY_ID], dimensión [DIMENSION] y periodo
+[PERIODO]. Ejecuta todas las rutas del protocolo pertinentes. Antes de crear
+una iniciativa revisa posibles duplicados. Devuelve fuentes, evidencias,
+iniciativas y afirmaciones separadas. No asignes madurez hasta informar la
+cobertura alcanzada. No redactes conclusiones nacionales.</code></pre>
+<h3 id="28-prompt-del-buscador-de-omisiones">28. Prompt del buscador de omisiones</h3>
+<pre><code>Audita los registros propuestos para [UNIVERSITY_ID]. Repite la búsqueda sin
+depender de las consultas anteriores. Busca fuentes omitidas, documentos que
+contradigan la atribución, iniciativas discontinuadas y evidencia de
+institucionalización o ausencia de ella. No edites los registros: entrega
+propuestas de confirmación, contradicción o sustitución con fuentes originales.</code></pre>
+<h3 id="29-prompt-del-auditor-metodologico">29. Prompt del auditor metodológico</h3>
+<pre><code>Examina atribución, pertinencia temática, doble conteo, temporalidad, calidad
+de fuente, cobertura y escala de madurez. Selecciona afirmaciones sustantivas y
+comprueba cada una contra la publicación original. Clasifica los defectos como
+bloqueantes, altos, medios o menores. Indica el efecto de cada defecto sobre la
+conclusión y formula la corrección mínima necesaria.</code></pre>
+<h3 id="30-resolucion-de-conflictos">30. Resolución de conflictos</h3>
+<p>Un conflicto se abre cuando:</p>
+<ul>
+<li>dos fuentes atribuyen estados incompatibles;</li>
+<li>dos modelos clasifican de modo distinto una iniciativa;</li>
+<li>una fuente institucional contradice una externa;</li>
+<li>no puede determinarse si una actividad pertenece a Derecho;</li>
+<li>el nivel de madurez depende de una inferencia discutible;</li>
+<li>una fecha cambia el resultado temporal.</li>
+</ul>
+<p>El registro de conflicto incluye posiciones, fuentes, decisión, responsable y fecha. La resolución humana no borra la posición rechazada.</p>
+<hr>
+<h2 id="capa-4-experiencia-centrada-en-el-usuario">Capa 4 · Experiencia centrada en el usuario</h2>
+<h3 id="31-usuarios">31. Usuarios</h3>
+<p>El sistema sirve a cuatro perfiles:</p>
+<h4 id="decisor">Decisor</h4>
+<p>Necesita comprender en pocos minutos qué está demostrado, qué falta y qué decisiones se desprenden.</p>
+<h4 id="investigador">Investigador</h4>
+<p>Necesita continuar una búsqueda sin reconstruir el contexto ni interpretar conversaciones anteriores.</p>
+<h4 id="auditor">Auditor</h4>
+<p>Necesita recorrer una afirmación hacia atrás hasta su fuente y conocer qué cambió.</p>
+<h4 id="lector-publico">Lector público</h4>
+<p>Necesita una narrativa clara, límites visibles, descargas accesibles y certeza sobre la versión consultada.</p>
+<h3 id="32-capas-de-lectura">32. Capas de lectura</h3>
+<p>La interfaz web y los documentos descargables deben ofrecer:</p>
+<ol>
+<li><strong>Orientación:</strong> propósito, estado, fecha, versión y descarga.</li>
+<li><strong>Método:</strong> cohorte, dimensiones, escala, cobertura y flujo.</li>
+<li><strong>Auditoría:</strong> fuentes, evidencias, afirmaciones, conflictos y changelog.</li>
+</ol>
+<p>Nadie debe estar obligado a leer la capa técnica para comprender correctamente el estado del proyecto. Al mismo tiempo, ningún hallazgo debe quedar sin camino de auditoría.</p>
+<h3 id="33-principios-de-interfaz">33. Principios de interfaz</h3>
+<ul>
+<li>mostrar siempre versión, fecha de corte y estado;</li>
+<li>distinguir “protocolo”, “borrador” y “resultado”;</li>
+<li>no ofrecer botones de archivos inexistentes;</li>
+<li>rotular cada formato y su propósito;</li>
+<li>evitar que el color sea el único indicador de estado;</li>
+<li>utilizar lenguaje sencillo antes del vocabulario técnico;</li>
+<li>mantener tablas utilizables en pantallas pequeñas;</li>
+<li>ofrecer HTML, PDF, Word y Markdown desde el mismo punto;</li>
+<li>señalar de forma visible que el proyecto no es una publicación oficial PUCV;</li>
+<li>conservar enlaces directos a las fuentes;</li>
+<li>publicar los vacíos como pendientes, no ocultarlos.</li>
+</ul>
+<h3 id="34-ruta-de-usuario-recomendada">34. Ruta de usuario recomendada</h3>
+<h4 id="primera-visita">Primera visita</h4>
+<p>El usuario ve:</p>
+<ul>
+<li>qué es el kit;</li>
+<li>para qué sirve;</li>
+<li>que aún no contiene resultados;</li>
+<li>las once instituciones;</li>
+<li>un botón principal de descarga;</li>
+<li>formatos alternativos;</li>
+<li>la fecha de actualización.</li>
+</ul>
+<h4 id="continuacion-de-investigacion">Continuación de investigación</h4>
+<p>El investigador descarga el paquete completo, abre el manifiesto y trabaja sobre una tarea acotada. Al terminar, devuelve un relevo que puede ser utilizado por otro modelo.</p>
+<h4 id="verificacion">Verificación</h4>
+<p>El auditor abre una afirmación, ve sus fuentes, revisa el documento original, registra un conflicto o propone aceptación.</p>
+<h4 id="publicacion">Publicación</h4>
+<p>El decisor aprueba una versión. El sitio, PDF, Word y Markdown se regeneran desde el expediente. La versión anterior permanece disponible.</p>
+<h3 id="35-accesibilidad-y-legibilidad">35. Accesibilidad y legibilidad</h3>
+<ul>
+<li>estructura de encabezados consistente;</li>
+<li>índice navegable;</li>
+<li>enlaces descriptivos;</li>
+<li>contraste suficiente;</li>
+<li>tipografía de lectura y espaciado generoso;</li>
+<li>tablas con encabezados explícitos;</li>
+<li>navegación por teclado en HTML;</li>
+<li>diseño de impresión en tamaño A4;</li>
+<li>contenido comprensible sin imágenes;</li>
+<li>metadatos de autoría, versión y fecha.</li>
+</ul>
+<h3 id="36-integridad-entre-formatos">36. Integridad entre formatos</h3>
+<p>La versión Markdown es la fuente editorial de este kit. HTML, Word y PDF se generan desde ella. Un manifiesto registra nombre, versión, fecha y archivos.</p>
+<p>Antes de publicar se comprueba:</p>
+<ul>
+<li>que los cuatro formatos declaren la misma versión;</li>
+<li>que tengan el mismo título, cohorte y fecha de corte;</li>
+<li>que los enlaces relevantes sobrevivan a la conversión;</li>
+<li>que Word y PDF sean legibles;</li>
+<li>que el HTML funcione en móvil y pueda imprimirse;</li>
+<li>que el paquete ZIP contenga las plantillas;</li>
+<li>que las descargas del sitio existan realmente.</li>
+</ul>
+<hr>
+<h2 id="capa-5-gobierno-almacenamiento-y-publicacion">Capa 5 · Gobierno, almacenamiento y publicación</h2>
+<h3 id="37-versionado">37. Versionado</h3>
+<p>Se utiliza versionado semántico:</p>
+<ul>
+<li>cambio mayor: altera cohorte, conceptos centrales o compatibilidad;</li>
+<li>cambio menor: agrega dimensiones, campos o flujos sin romper continuidad;</li>
+<li>parche: corrige redacción, enlaces o errores sin cambiar el método.</li>
+</ul>
+<p>Las versiones publicadas son inmutables. Una corrección produce un nuevo archivo y una entrada de changelog.</p>
+<h3 id="38-metadatos-minimos">38. Metadatos mínimos</h3>
+<p>Cada archivo publicado declara:</p>
+<ul>
+<li>título;</li>
+<li>versión;</li>
+<li>fecha de publicación;</li>
+<li>fecha de corte;</li>
+<li>estado;</li>
+<li>responsable;</li>
+<li>carácter no oficial;</li>
+<li>archivo canónico del que deriva.</li>
+</ul>
+<h3 id="39-privacidad-y-seguridad">39. Privacidad y seguridad</h3>
+<p>La investigación se limita a datos públicos. No se incorporan:</p>
+<ul>
+<li>credenciales;</li>
+<li>conversaciones privadas con el destinatario;</li>
+<li>antecedentes personales irrelevantes;</li>
+<li>presupuestos no autorizados;</li>
+<li>archivos institucionales confidenciales;</li>
+<li>datos personales de estudiantes;</li>
+<li>inferencias sobre personas no necesarias para el objeto institucional.</li>
+</ul>
+<p>El contexto con el profesor Aldunate se limita a destinatario, finalidad, tono, decisiones que el informe busca apoyar y condición no oficial. La gestión comercial del encargo se mantiene separada de la evidencia.</p>
+<h3 id="40-fases">40. Fases</h3>
+<h4 id="fase-0-protocolo">Fase 0 · Protocolo</h4>
+<ul>
+<li>aprobar cohorte;</li>
+<li>aprobar metodología;</li>
+<li>preparar plantillas;</li>
+<li>corregir línea base;</li>
+<li>fijar presupuesto y alcance.</li>
+</ul>
+<h4 id="fase-1-piloto">Fase 1 · Piloto</h4>
+<ul>
+<li>PUCV;</li>
+<li>Pontificia Universidad Católica de Chile;</li>
+<li>Universidad de Chile;</li>
+<li>evaluación de cobertura y reglas.</li>
+</ul>
+<h4 id="fase-2-cohorte-completa">Fase 2 · Cohorte completa</h4>
+<ul>
+<li>ocho instituciones restantes;</li>
+<li>contra-búsqueda;</li>
+<li>auditoría cruzada;</li>
+<li>resolución de conflictos.</li>
+</ul>
+<h4 id="fase-3-analisis">Fase 3 · Análisis</h4>
+<ul>
+<li>trayectorias;</li>
+<li>perfiles de madurez;</li>
+<li>comparación PUCV;</li>
+<li>sensibilidad y limitaciones;</li>
+<li>recomendaciones.</li>
+</ul>
+<h4 id="fase-4-publicacion">Fase 4 · Publicación</h4>
+<ul>
+<li>informe web;</li>
+<li>PDF;</li>
+<li>Word;</li>
+<li>Markdown;</li>
+<li>matrices descargables;</li>
+<li>changelog.</li>
+</ul>
+<h4 id="fase-5-actualizacion">Fase 5 · Actualización</h4>
+<ul>
+<li>verificación periódica;</li>
+<li>nuevas fuentes;</li>
+<li>cambios de estado;</li>
+<li>versiones inmutables.</li>
+</ul>
+<h3 id="41-criterios-de-aceptacion-de-la-investigacion">41. Criterios de aceptación de la investigación</h3>
+<p>Una versión con resultados no puede publicarse si:</p>
+<ul>
+<li>existen afirmaciones sustantivas sin fuente;</li>
+<li>no se completó el protocolo para instituciones comparadas;</li>
+<li>hay errores aritméticos;</li>
+<li>se mezclan unidades de análisis;</li>
+<li>no se distingue ausencia pública de inexistencia;</li>
+<li>se atribuyen actividades individuales como institucionales;</li>
+<li>una conclusión PUCV omite contraevidencia relevante;</li>
+<li>los comparadores no son razonables;</li>
+<li>web y descargas declaran versiones diferentes;</li>
+<li>los conflictos bloqueantes permanecen abiertos.</li>
+</ul>
+<h3 id="42-indicadores-del-propio-proceso">42. Indicadores del propio proceso</h3>
+<p>El sistema debe informar:</p>
+<ul>
+<li>universidades con protocolo completo;</li>
+<li>fuentes propuestas, abiertas y aceptadas;</li>
+<li>evidencias sin segunda revisión;</li>
+<li>afirmaciones con contraevidencia;</li>
+<li>conflictos abiertos;</li>
+<li>antigüedad de la última verificación;</li>
+<li>porcentaje de campos completos;</li>
+<li>registros aportados por cada modelo;</li>
+<li>correcciones originadas por auditoría humana.</li>
+</ul>
+<p>Estos indicadores permiten evaluar la calidad del proceso sin confundirla con el desempeño de las universidades.</p>
+<hr>
+<h2 id="anexo-a-diccionario-minimo">Anexo A · Diccionario mínimo</h2>
+<h3 id="universidades">Universidades</h3>
+<div class="table-wrap"><table><thead><tr>
+<th scope="col">Campo</th>
+<th scope="col">Descripción</th>
+</tr></thead><tbody>
+<tr>
+<td><code>university_id</code></td>
+<td>Identificador canónico inmutable.</td>
+</tr>
+<tr>
+<td><code>official_name</code></td>
+<td>Nombre institucional completo.</td>
+</tr>
+<tr>
+<td><code>cohort_version</code></td>
+<td>Versión en que fue incorporada.</td>
+</tr>
+<tr>
+<td><code>unit_name</code></td>
+<td>Nombre de Facultad, Escuela o carrera.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Activa, pendiente de verificación u otro estado explícito.</td>
+</tr>
+<tr>
+<td><code>notes</code></td>
+<td>Alcance y advertencias.</td>
+</tr>
+</tbody></table></div>
+<h3 id="fuentes">Fuentes</h3>
+<div class="table-wrap"><table><thead><tr>
+<th scope="col">Campo</th>
+<th scope="col">Descripción</th>
+</tr></thead><tbody>
+<tr>
+<td><code>source_id</code></td>
+<td>Identificador único.</td>
+</tr>
+<tr>
+<td><code>university_id</code></td>
+<td>Institución relacionada.</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Título de la publicación.</td>
+</tr>
+<tr>
+<td><code>publisher</code></td>
+<td>Emisor.</td>
+</tr>
+<tr>
+<td><code>source_type</code></td>
+<td>Política, syllabus, noticia, publicación u otro.</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Enlace original.</td>
+</tr>
+<tr>
+<td><code>archived_url</code></td>
+<td>Copia permanente si existe.</td>
+</tr>
+<tr>
+<td><code>published_date</code></td>
+<td>Fecha con precisión real.</td>
+</tr>
+<tr>
+<td><code>accessed_date</code></td>
+<td>Fecha de consulta.</td>
+</tr>
+<tr>
+<td><code>document_status</code></td>
+<td>Vigente, histórico, inaccesible, sustituido.</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td>Confianza documental separada de la madurez.</td>
+</tr>
+<tr>
+<td><code>workflow_status</code></td>
+<td>Propuesto, abierto, contrastado, aceptado, etc.</td>
+</tr>
+</tbody></table></div>
+<h3 id="evidencias">Evidencias</h3>
+<div class="table-wrap"><table><thead><tr>
+<th scope="col">Campo</th>
+<th scope="col">Descripción</th>
+</tr></thead><tbody>
+<tr>
+<td><code>evidence_id</code></td>
+<td>Identificador único.</td>
+</tr>
+<tr>
+<td><code>source_id</code></td>
+<td>Fuente que la sostiene.</td>
+</tr>
+<tr>
+<td><code>initiative_id</code></td>
+<td>Iniciativa a la que pertenece.</td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td>IA para Derecho, Derecho de IA, ambos o adyacente.</td>
+</tr>
+<tr>
+<td><code>dimension</code></td>
+<td>Dimensión histórica o transversal.</td>
+</tr>
+<tr>
+<td><code>factual_statement</code></td>
+<td>Descripción factual acotada.</td>
+</tr>
+<tr>
+<td><code>institutional_level</code></td>
+<td>Nivel de atribución.</td>
+</tr>
+<tr>
+<td><code>temporal_status</code></td>
+<td>Estado de cambio.</td>
+</tr>
+<tr>
+<td><code>last_verified</code></td>
+<td>Última comprobación.</td>
+</tr>
+</tbody></table></div>
+<h3 id="afirmaciones">Afirmaciones</h3>
+<div class="table-wrap"><table><thead><tr>
+<th scope="col">Campo</th>
+<th scope="col">Descripción</th>
+</tr></thead><tbody>
+<tr>
+<td><code>claim_id</code></td>
+<td>Identificador único.</td>
+</tr>
+<tr>
+<td><code>claim_text</code></td>
+<td>Afirmación exacta.</td>
+</tr>
+<tr>
+<td><code>classification</code></td>
+<td>Hecho, señal, inferencia, hipótesis o pendiente.</td>
+</tr>
+<tr>
+<td><code>evidence_ids</code></td>
+<td>Evidencias relacionadas.</td>
+</tr>
+<tr>
+<td><code>counterevidence_ids</code></td>
+<td>Contraevidencia.</td>
+</tr>
+<tr>
+<td><code>reasoning</code></td>
+<td>Cadena inferencial.</td>
+</tr>
+<tr>
+<td><code>limitations</code></td>
+<td>Alcance y restricciones.</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td>Confianza en la afirmación.</td>
+</tr>
+<tr>
+<td><code>workflow_status</code></td>
+<td>Estado editorial.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="anexo-b-lista-de-verificacion-por-institucion">Anexo B · Lista de verificación por institución</h2>
+<ul>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se utilizó el ID canónico.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se verificó el nombre de la unidad de Derecho.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se completaron las trece rutas de búsqueda o se explicó por qué no aplican.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se registraron consultas y fechas.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se abrieron las fuentes originales.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se separaron fuentes, evidencias, iniciativas y afirmaciones.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se controló el doble conteo.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se distinguió nivel institucional.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se clasificó la dirección IA–Derecho.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se clasificó la dimensión.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se determinó trayectoria temporal.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se informó cobertura.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Se buscó contraevidencia.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Una segunda IA revisó los registros.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Los conflictos están resueltos o visibles.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Un humano aceptó lo publicable.</li>
+</ul>
+<hr>
+<h2 id="anexo-c-lista-de-verificacion-de-publicacion">Anexo C · Lista de verificación de publicación</h2>
+<ul>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Markdown, HTML, Word y PDF tienen la misma versión.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>La fecha de corte es 1 de septiembre de 2026.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>La cohorte contiene exactamente once instituciones.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>El documento se presenta como no oficial.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>El estado distingue protocolo de resultados.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>Los enlaces de descarga existen.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>El HTML es navegable con teclado.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>El PDF y Word son legibles en A4.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>El ZIP contiene manifiesto y plantillas.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>El changelog explica los cambios.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>No hay datos confidenciales.</li>
+<li class="check-item"><span aria-hidden="true" class="check-box"></span>No se publican registros distintos de <code>ACEPTADO</code> como resultados.</li>
+</ul>
+<hr>
+<h2 id="anexo-d-decisiones-canonicas-de-la-version-1-0-0">Anexo D · Decisiones canónicas de la versión 1.0.0</h2>
+<ol>
+<li>La cohorte queda fijada en once universidades.</li>
+<li>El estudio se denomina longitudinal de cohorte, no censo nacional.</li>
+<li>El informe de 2025 es línea base no verificada.</li>
+<li>Las cinco dimensiones anteriores se conservan.</li>
+<li>Se agregan tres dimensiones transversales.</li>
+<li>IA para el Derecho y Derecho de la IA son etiquetas, no dimensiones que dupliquen actividades.</li>
+<li>Actividad, madurez, evidencia y cobertura se reportan separadamente.</li>
+<li>Sólo los registros aceptados alimentan resultados.</li>
+<li>Las tres IA se comunican mediante el expediente y paquetes de relevo.</li>
+<li>El curador humano mantiene autoridad final.</li>
+<li>Todas las salidas se derivan de una fuente editorial canónica.</li>
+<li>El propósito crítico respecto de la PUCV se formula como hipótesis falsable.</li>
+</ol>
+<hr>
+<h2 id="historial">Historial</h2>
+<h3 id="v1-0-0-2-de-septiembre-de-2026">v1.0.0 · 2 de septiembre de 2026</h3>
+<ul>
+<li>Se fija la cohorte histórica de once instituciones.</li>
+<li>Se consolida la metodología 2.0 compatible con el informe anterior.</li>
+<li>Se establecen identificadores, estados y registros canónicos.</li>
+<li>Se define el flujo ChatGPT → Gemini → Claude → decisión humana.</li>
+<li>Se incorpora una experiencia de lectura en capas.</li>
+<li>Se definen criterios de accesibilidad, publicación y consistencia entre formatos.</li>
+<li>Se incluyen plantillas descargables para universidades, fuentes, evidencias, afirmaciones y ejecuciones.</li>
+</ul>
+<hr>
+<h2 id="cierre">Cierre</h2>
+<p>El valor del sistema no depende de lograr que tres modelos produzcan el mismo texto. Depende de que puedan discrepar sin romper la trazabilidad, aportar evidencia sin reescribir la historia y continuar el trabajo sin depender de la memoria de una conversación.</p>
+<p>El expediente canónico convierte esa colaboración en un proceso acumulativo, auditable y centrado en quien finalmente debe usar el informe para comprender, decidir y exigir respuestas.</p></main>
+  </div>
+  <footer>
+    Kit canónico de investigación inter-IA · v1.0.0 · Diego Hernán Ojeda Cifuentes · Documento de trabajo no oficial
+  </footer>
+</body>
+</html>

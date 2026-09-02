@@ -275,6 +275,25 @@ export interface ReportCounts {
   recommendations: number;
 }
 
+export type ReportArtifactFormat = 'PDF' | 'Word' | 'HTML' | 'Markdown' | 'ZIP';
+
+export interface ReportArtifact {
+  format: ReportArtifactFormat;
+  label: string;
+  href: string;
+  description: string;
+}
+
+/** Paquete operativo asociado a un informe; no se confunde con sus resultados. */
+export interface ReportResearchKit {
+  title: string;
+  summary: string;
+  version: string;
+  publishedAt: string;
+  status: string;
+  artifacts: ReportArtifact[];
+}
+
 export interface Report {
   slug: string;
   code: string;
@@ -295,6 +314,7 @@ export interface Report {
   sourceIds: string[];
   claimIds: string[];
   openQuestions: string[];
+  researchKit?: ReportResearchKit;
   updatedAt: string;
 }
 

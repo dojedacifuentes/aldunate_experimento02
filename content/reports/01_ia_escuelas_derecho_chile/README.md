@@ -4,6 +4,7 @@
 Mapear y actualizar evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de IA en Escuelas/Facultades de Derecho chilenas.
 
 ## Carpeta
+- `canonical/`: fuente maestra versionada, manifiesto y plantillas CSV interoperables.
 - `sources/`: fuentes y documentos originales o referencias.
 - `drafts/`: borradores de trabajo.
 - `public/`: versiones publicadas/downloadables.

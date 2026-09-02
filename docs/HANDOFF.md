@@ -3,6 +3,9 @@
 **Última actualización:** 02-09-2026
 **Quien lea esto primero:** `CLAUDE.md` y `AGENTS.md` mandan sobre este documento.
 
+**Estado de esta sesión:** el kit canónico `v1.0.0` del Informe 01 está listo y
+verificado en local, pero todavía no ha sido desplegado en Vercel.
+
 ---
 
 ## 0. Dónde está todo
@@ -85,6 +88,13 @@ El Informe 01 llevaba desde el 29-08 con la estructura montada y el registro
 vacío. Ahora tiene corpus, en `tools/informes/informe-01/`, fundido desde tres
 investigaciones profundas con el procedimiento de la skill `informe-vivo`. Ficha
 en **v0.2.0**; la 0.1.0 no se sobrescribió.
+
+Desde el 02-09 incorpora además el kit canónico metodológico `v1.0.0` en
+`content/reports/01_ia_escuelas_derecho_chile/canonical/`, con fuente maestra,
+manifiesto y plantillas para relevos entre ChatGPT, Claude y Gemini. Sus
+exportaciones PDF, Word, HTML, Markdown y ZIP viven en `public/descargas/`. El
+kit organiza la investigación; no sustituye el corpus ni constituye todavía el
+informe sustantivo.
 
 1. **43 fuentes públicas únicas**, todas institucionales y con fecha, sobre las
    once universidades de la cohorte. Los tres documentos de origen quedan
