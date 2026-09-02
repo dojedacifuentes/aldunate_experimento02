@@ -858,3 +858,76 @@ html[data-lectura] .stage-live {
 @media print {
   .stage-live { animation: none !important; }
 }
+
+/* ── Hueco de la cabina antes de que llegue el juego ─────────────────────
+   El juego de la portada baja en diferido —1,17 MB de Phaser que no tienen
+   por qué entrar en el paquete inicial— y esto reserva su sitio mientras
+   tanto. Sin la reserva, la portada da un salto de una pantalla entera cuando
+   el motor termina de bajar, justo mientras alguien lee lo que hay debajo.
+
+   Vive aquí y no en `juego.css` por una razón de orden: `juego.css` viaja
+   dentro del mismo trozo diferido que el juego, así que llegaría **después**
+   del momento en que hay que reservar. Los valores replican los de
+   `.cabina-audaces` a propósito, y una prueba comprueba que no se separen.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/*
+ * El hueco y la cabina descuentan **la misma** variable.
+ *
+ * Estaban escritos por separado —5,75rem el hueco, 4rem el encaje de la
+ * portada— y eso daba 28 px de salto al montar el juego en escritorio, medido.
+ * Con una sola variable no se pueden separar: quien cambie el cromo cambia los
+ * dos a la vez.
+ */
+.cabina-hueco {
+  height: calc(100dvh - var(--hueco-chrome, 5.75rem));
+  max-height: calc(100dvh - var(--hueco-chrome, 5.75rem));
+}
+
+/* `dvh` no existe en navegadores viejos; `vh` es la aproximación que ya usa la
+   propia cabina para ese caso. */
+@supports not (height: 100dvh) {
+  .cabina-hueco {
+    height: calc(100vh - var(--hueco-chrome, 5.75rem));
+    max-height: calc(100vh - var(--hueco-chrome, 5.75rem));
+  }
+}
+
+/* ── La cabina cuando vive dentro de la portada ──────────────────────────
+   `CabinaAudaces` calcula `--cabina-chrome` como su distancia al inicio del
+   documento. En su propia ruta eso da los ~92 px de franja y cabecera, que es
+   justo lo que la tapa. En la portada el juego está tres mil píxeles más
+   abajo, así que el mismo cálculo pide `100dvh - 3000px` y la cabina se
+   encoge a 256 px —medido—.
+
+   El supuesto no era «lo que hay encima de mí en el documento» sino «lo que me
+   tapa mientras juego», y las dos cosas sólo coinciden cuando el juego es lo
+   primero de la página. Aquí lo que tapa es la cabecera pegajosa, y en
+   pantallas estrechas además la barra de pestañas.
+
+   Se corrige desde fuera, con `!important`, porque el componente escribe la
+   variable como estilo en línea y **no se reescribe código donado por un caso
+   de uso nuevo**: su ruta original sigue funcionando exactamente igual.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* Una sola declaración del cromo, que alimenta al hueco y a la cabina. */
+.juego-portada {
+  --hueco-chrome: 4rem; /* alto de SiteHeader */
+}
+
+.juego-portada .cabina-audaces {
+  --cabina-chrome: var(--hueco-chrome) !important;
+}
+
+/* Bajo 1024 px la barra de pestañas ocupa además el borde inferior. */
+@media (max-width: 1023px) {
+  .juego-portada {
+    --hueco-chrome: calc(8rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* En pantalla completa manda la cabina y no esto: ahí no hay cromo que
+   descontar porque el resto del sitio deja de estar delante. */
+.juego-portada .cabina-audaces[data-inmersiva='true'] {
+  --cabina-chrome: 0px !important;
+}

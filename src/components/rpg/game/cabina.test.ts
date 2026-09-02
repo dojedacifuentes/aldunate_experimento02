@@ -20,7 +20,7 @@ import { describe, expect, it } from 'vitest';
 
 const RAIZ = join(process.cwd(), 'src');
 const CSS = readFileSync(
-  join(RAIZ, 'app/experimentos/juegos/ley-de-los-audaces/juego.css'),
+  join(RAIZ, 'components/rpg/game/juego.css'),
   'utf8',
 );
 

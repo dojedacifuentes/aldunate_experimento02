@@ -2,6 +2,68 @@
 
 ## No publicado
 
+### La portada ofrece el informe terminado y el juego jugable
+
+**Corregido · dato falso en la acción principal.** El botón primario de la
+portada decía «Leer el último informe» y apuntaba al **Informe 01**, que
+declara expresamente no emitir conclusiones y cuyas 43 fuentes siguen sin
+verificar. No porque hubiera avanzado: porque otra sesión le tocó `updatedAt`
+al publicar el kit canónico, y el criterio era «el más reciente».
+
+«Más reciente» y «más terminado» son cosas distintas, y en la primera pantalla
+de un sitio que se ofrece para ser citado importa la segunda. El destino se
+calcula ahora por madurez editorial —`informeDestacado` en `reports.ts`— con
+`updatedAt` como desempate dentro del mismo grado. La etiqueta pasa a «Leer el
+informe», que además es verdad.
+
+Tres pruebas lo fijan: la portada no puede encabezar un informe
+`en-investigacion`, el destacado tiene que ser el más maduro de los que hay, y
+tiene que existir en el registro.
+
+**Añadido.** El juego se juega **en la portada**, sin un clic de por medio. La
+cabina se monta sola cuando su sección entra en pantalla.
+
+**Cómo se sostiene sin romper §10.** Phaser son 1,17 MB medidos. La cabina
+entra por `next/dynamic` desde `JuegoEnPortada`, así que:
+
+| | |
+|---|---|
+| Abrir la portada | **200 KB**, ningún trozo pesado |
+| Llegar a la sección del juego | +30 KB, la cabina monta |
+| Empezar a jugar | ahí, y sólo ahí, baja Phaser |
+
+Quien viene a leer un informe y no baja hasta el juego no descarga un byte del
+motor. La regla §10 se reescribe sobre el *paquete inicial* en vez de sobre la
+ruta, que es lo que siempre quiso decir.
+
+**Corregido al integrarlo.** `CabinaAudaces` calcula su alto como
+`100dvh − distancia al inicio del documento`. Eso sólo vale cuando el juego es
+lo primero de la página: en la portada pedía `100dvh − 3000px` y la cabina se
+encogía a **256 px**. Se corrige desde `globals.css`, sin tocar código donado.
+
+**Corregido.** El hueco reservado y la cabina descontaban cromos distintos
+—5,75rem y 4rem— y daban **28 px de salto de maquetación** al montar el juego
+en escritorio. Ahora descuentan la misma variable y no pueden separarse. Salto
+medido tras el arreglo: **0 px**, en 375 y en 1270.
+
+**Añadido.** El hueco de espera es pulsable. No contradice el «sin un clic»:
+en uso normal nadie lo ve. Existe porque un `IntersectionObserver` no dispara
+en una pestaña que nunca produce un fotograma, y sin escape ese lector se
+quedaba mirando un cartel para siempre.
+
+**Añadido.** Dos frenos honestos: si el navegador declara `saveData` el juego
+espera permiso —descargar un megabyte sin preguntar en una conexión medida es
+hostil—, y en modo lectura no se carga, porque ese modo existe justamente para
+retirar lo que es pantalla.
+
+**Añadido.** El juego entra en el tablero de estado como línea de trabajo
+propia, en revisión: el Capítulo 0 está completo y lo que falta es ver a
+alguien jugarlo sin instrucciones antes de escribir el siguiente.
+
+**Verificado.** 0 errores · 8 avisos conocidos · 97 tests · build OK. En el
+navegador, sobre el build de producción: 0 fallos de contraste (181 elementos),
+0 desbordes y 0 objetivos táctiles bajo 24 px.
+
 ### Estado del arte en la portada
 
 **Añadido.** La portada declara en qué punto va cada línea de trabajo, entre el

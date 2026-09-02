@@ -309,9 +309,28 @@ Reglas propias que se suman a las de este archivo:
   métodos replicables.
 - **El juego no habla por nadie.** Ni por la Escuela, ni por la Universidad, ni
   por el profesor. La ficha lo declara antes de dejar jugar. Ver D-020.
-- **Phaser se importa dinámicamente** y sólo desde `GameCanvas`. No entra en el
-  bundle de ninguna otra ruta ni se ejecuta en el servidor, y se destruye al
-  desmontar. Está comprobado: ninguna otra página del sitio lo carga.
+- **Phaser se importa dinámicamente** y sólo desde `GameCanvas`. No se ejecuta
+  en el servidor y se destruye al desmontar. **Nunca entra en el paquete
+  inicial de ninguna ruta**, y eso sigue siendo una regla dura: son 1,17 MB
+  medidos.
+
+  **Desde el 02-09-2026 el juego también vive en la portada**, y por eso la
+  regla se enuncia sobre el *paquete inicial* y no sobre la ruta. La cabina
+  entra por `next/dynamic` desde `JuegoEnPortada`, que la monta al entrar su
+  sección en pantalla: quien abre la portada descarga **200 KB** y quien no
+  baja hasta el juego no paga un byte de Phaser. Comprobado sirviendo el build
+  de producción.
+
+  Si añades el juego en algún sitio nuevo, **la prueba es la misma**: abrir esa
+  ruta y mirar que no baje ningún trozo pesado antes de llegar al juego. Un
+  `import` estático de `CabinaAudaces` rompe esto sin que falle nada.
+
+- **El hueco y la cabina descuentan la misma variable**, `--hueco-chrome`. Se
+  escribieron por separado una vez y dieron 28 px de salto de maquetación al
+  montar el juego. Y `--cabina-chrome` se calcula dentro del componente como
+  distancia al inicio del documento, cosa que sólo vale cuando el juego es lo
+  primero de la página: en la portada se sobrescribe desde `globals.css` con
+  `!important`, **sin tocar el código donado**.
 - **El juego vive en `.cabina-audaces`**, que declara sus propios tokens. Ni uno
   se escapa al resto del sitio, y el juego se ve igual en ambos temas.
 - **El código donado** —`src/components/rpg/*.tsx`, `src/hooks/rpg/*.ts`,

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { claims, sources } from './research';
-import { reports } from './reports';
+import { informeDestacado, reports } from './reports';
 import { labTools } from './lab';
 import { footerNav, primaryNav, secondaryNav } from './site';
 import {
@@ -228,6 +228,8 @@ describe('estado del arte de la portada', () => {
       '/investigacion',
       '/informes',
       '/experimentos',
+      '/experimentos/juegos',
+      '/experimentos/juegos/ley-de-los-audaces',
       '/aldunate',
       '/correcciones',
       ...reports.map((r) => `/informes/${r.slug}`),
@@ -264,5 +266,28 @@ describe('estado del arte de la portada', () => {
       const enLaRecta = (workPipeline as readonly string[]).includes(w.resolvedStage);
       expect(w.pipelineIndex === null, `${w.id} (${w.resolvedStage})`).toBe(!enLaRecta);
     }
+  });
+});
+
+describe('el informe que encabeza la portada', () => {
+  /**
+   * La portada elegía por `updatedAt` y el 02-09-2026 eso mandó su acción
+   * principal al Informe 01 —que declara no emitir conclusiones— porque otra
+   * sesión le tocó la fecha al publicar un kit metodológico. «Más reciente» y
+   * «más terminado» no son lo mismo, y en la primera pantalla importa el
+   * segundo.
+   */
+  it('no encabeza un informe que declara no emitir conclusiones', () => {
+    expect(informeDestacado.status).not.toBe('en-investigacion');
+  });
+
+  it('encabeza el más maduro de los que hay', () => {
+    const orden = { 'en-investigacion': 0, borrador: 1, 'en-revision': 2, publicado: 3 } as const;
+    const maxima = Math.max(...reports.map((r) => orden[r.status]));
+    expect(orden[informeDestacado.status]).toBe(maxima);
+  });
+
+  it('el destacado es un informe real del registro', () => {
+    expect(reports.some((r) => r.slug === informeDestacado.slug)).toBe(true);
   });
 });

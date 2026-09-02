@@ -15,7 +15,7 @@
  * triple copia está anotada en D-023.
  */
 
-@import '../../../../components/rpg/rpg.css';
+@import '../rpg.css';
 
 .cabina-audaces {
   --ink: #12100f;
