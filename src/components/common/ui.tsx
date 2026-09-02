@@ -4,19 +4,40 @@ import type { Tone } from '@/types';
 
 /* ────────────────────────────── Superficie ────────────────────────────── */
 
+/**
+ * Superficie.
+ *
+ * `interactive` implica ahora **tarjeta espacial**: esquina grande, elevación
+ * al acercarse y reflejo del puntero. Se hereda por defecto a propósito —es lo
+ * que armoniza de una vez las rejillas de Experimentos, Lab e Informes sin
+ * pasar por las trece páginas— y `spatial={false}` deja el comportamiento
+ * anterior para el caso en que una superficie responda al cursor pero no deba
+ * flotar.
+ *
+ * El radio y el `overflow` los fija `[data-spatial]` en `globals.css`, que va
+ * fuera de capa y por tanto gana a la utilidad `rounded-lg` de Tailwind. Es
+ * deliberado: una tarjeta espacial tiene un radio propio, no el del sistema.
+ */
 export function Surface({
   className,
   interactive = false,
+  spatial,
   children,
   ...rest
-}: React.HTMLAttributes<HTMLDivElement> & { interactive?: boolean }) {
+}: React.HTMLAttributes<HTMLDivElement> & { interactive?: boolean; spatial?: boolean }) {
+  const esEspacial = spatial ?? interactive;
+
   return (
     <div
       className={cn(
         'surface rounded-lg',
-        interactive && 'surface-interactive',
+        // La elevación espacial ya cubre borde y sombra: aplicar las dos
+        // dejaría dos transiciones de `box-shadow` compitiendo en el mismo
+        // gesto.
+        interactive && !esEspacial && 'surface-interactive',
         className,
       )}
+      {...(esEspacial ? { 'data-spatial': '' } : {})}
       {...rest}
     >
       {children}
@@ -79,8 +100,14 @@ export function Badge({
 
 /* ────────────────────────────── Botones ────────────────────────────── */
 
+/**
+ * `ui` es la tipografía del sistema —SF Pro en un aparato de Apple, Segoe UI
+ * Variable en Windows—: un botón se lee como un botón del sistema operativo
+ * antes que como un botón de esta web. `rounded-full` y el ceder a la pulsación
+ * (`data-press`) son la otra mitad de esa familiaridad.
+ */
 const buttonBase =
-  'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ' +
+  'ui inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium ' +
   'transition-colors disabled:pointer-events-none disabled:opacity-50';
 
 const buttonVariants = {
@@ -110,6 +137,7 @@ export function Button({
 }) {
   return (
     <button
+      data-press
       className={cn(buttonBase, buttonVariants[variant], buttonSizes[size], className)}
       {...rest}
     />
@@ -134,13 +162,13 @@ export function ButtonLink({
   const classes = cn(buttonBase, buttonVariants[variant], buttonSizes[size], className);
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noreferrer noopener" className={classes}>
+      <a href={href} target="_blank" rel="noreferrer noopener" data-press className={classes}>
         {children}
       </a>
     );
   }
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} data-press className={classes}>
       {children}
     </Link>
   );
@@ -148,13 +176,20 @@ export function ButtonLink({
 
 /* ────────────────────────────── Estructura de página ────────────────────────────── */
 
+/**
+ * Ancho de lectura.
+ *
+ * Reenvía los atributos que no consume (`...rest`) para que se le puedan poner
+ * los del motor de movimiento —`data-hero-layer`, `data-depth`, `data-reveal`—
+ * sin envolverlo en otro `<div>`. Un contenedor extra sólo para colgar un
+ * atributo es una capa que después nadie sabe por qué está.
+ */
 export function Container({
   className,
   children,
   width = 'default',
-}: {
-  className?: string;
-  children: React.ReactNode;
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement> & {
   width?: 'default' | 'wide' | 'prose';
 }) {
   const widths = {
@@ -163,7 +198,9 @@ export function Container({
     prose: 'max-w-3xl',
   };
   return (
-    <div className={cn('mx-auto w-full px-5 sm:px-8', widths[width], className)}>{children}</div>
+    <div className={cn('mx-auto w-full px-5 sm:px-8', widths[width], className)} {...rest}>
+      {children}
+    </div>
   );
 }
 
@@ -194,21 +231,43 @@ export function PageHeader({
   );
 }
 
+/**
+ * Sección de página.
+ *
+ * Aparece al entrar en pantalla, y lo hace **desde aquí** en vez de página por
+ * página: es lo que armoniza el ritmo de las dieciséis rutas de una vez y lo
+ * que impide que cada nueva página tenga que acordarse del atributo. El motor
+ * (`SpatialStage`) recoge todo lo que lleve `data-reveal`.
+ *
+ * `reveal={false}` para el caso en que la sección ya vaya dentro de un
+ * contenedor que aparece: dos apariciones anidadas suman sus desplazamientos y
+ * el bloque entra desde demasiado abajo.
+ *
+ * `PageHeader` no aparece, y es deliberado: es lo primero que se pinta y suele
+ * ser el elemento de mayor contenido de la página. Retrasarlo con un
+ * desvanecido cuesta LCP a cambio de un gesto que nadie llega a ver, porque ya
+ * está en pantalla cuando se carga.
+ */
 export function Section({
   title,
   eyebrow,
   description,
   className,
+  reveal = true,
   children,
 }: {
   title?: string;
   eyebrow?: string;
   description?: string;
   className?: string;
+  reveal?: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <section className={cn('py-12 sm:py-16', className)}>
+    <section
+      {...(reveal ? { 'data-reveal': '' } : {})}
+      className={cn('py-12 sm:py-16', className)}
+    >
       <Container>
         {(eyebrow || title || description) && (
           <div className="mb-8 max-w-2xl">

@@ -1,6 +1,6 @@
 # Handoff · estado del sitio
 
-**Última actualización:** 01-09-2026
+**Última actualización:** 02-09-2026
 **Quien lea esto primero:** `CLAUDE.md` y `AGENTS.md` mandan sobre este documento.
 
 ---
@@ -116,6 +116,54 @@ en **v0.2.0**; la 0.1.0 no se sobrescribió.
 
 ---
 
+## 1bis. Sesión del 02-09-2026 · la capa espacial
+
+Rama `rediseno/capa-espacial`. Detalle completo en `UX-UI-CHANGELOG.md`
+Fase 9; las reglas que de aquí en adelante mandan, en `CLAUDE.md` §5.1.
+
+**El diagnóstico de partida, medido.** El motor de movimiento, el modo lectura
+y el lenguaje de interacción que estrenó `/aldunate` el 01-09 se habían quedado
+en esa ruta: `data-reveal` tenía 9 usos allí y **0 en las otras trece páginas**.
+La infraestructura CSS, en cambio, ya era global y ya resolvía movimiento
+reducido e impresión. Lo único que ataba el patrón a una ruta era dónde se
+montaba el motor.
+
+**Qué cambió.**
+
+1. `MotionStage` pasa a `SpatialStage` y sube al layout raíz: un motor para las
+   dieciséis rutas. **Depende de `usePathname()`** y vuelve a escanear en cada
+   navegación; con `[]` habría observado la primera página y ninguna más.
+2. Lenguaje de computación espacial inspirado en las HIG de Apple: `.glass` con
+   desenfoque y saturación, escala de elevación, reflejo del cursor, respuesta
+   a la pulsación. Sólo llevan material las capas que flotan.
+3. Cuarta familia `--font-ui` (SF Pro / Segoe UI Variable) **sólo en el chrome**.
+   Las tres familias editoriales no se tocan, y ése es el límite que impide que
+   el sitio se lea como una plantilla.
+4. `<TabBar>` sustituye al menú de hamburguesa en pantallas estrechas.
+5. El modo lectura sube a la cabecera y funciona en las dieciséis rutas.
+6. `Surface interactive` implica tarjeta espacial y `<Section>` aparece sola:
+   las dos decisiones viven en la primitiva, no en las páginas.
+
+**Lo que apareció al medir**, y no antes: el panel de EVA se montaba 41 px
+encima de la barra de pestañas nueva, y `/aldunate` tenía 26 objetivos táctiles
+por debajo de 24 px que venían del 01-09. Ambos corregidos; los objetivos, con
+el mismo `min-h-6` de la Fase 8.
+
+**Dos artefactos de medición que casi se publican como fallos**, anotados
+porque volverán:
+
+- «Las apariciones se quedan invisibles en las siete rutas» era **el panel de
+  vista previa oculto**: `document.hidden` a `true`, 0 fotogramas en 500 ms y
+  las transiciones congeladas en `currentTime: 0`. Un `IntersectionObserver` no
+  dispara sin ciclo de render.
+- «224 px de desborde horizontal» era **`clientWidth` a 0**: el panel colapsado.
+
+En los dos casos el instrumento estaba roto, no el sitio. Antes de creerse una
+medida en este equipo, medir el instrumento: `document.hidden`,
+`clientWidth` y fotogramas por segundo.
+
+---
+
 ## 2. Estado verificable
 
 ```
@@ -222,6 +270,22 @@ una versión publicada.**
   capturas fallan por tiempo agotado. Cuando pase, verifica por DOM
   —`getBoundingClientRect`, contraste calculado sobre el píxel con canvas— y
   **di explícitamente que no hubo revisión visual**, en vez de fingir que la hubo.
+- **Y antes de creerte la medida, mide el instrumento.** Un panel roto no da
+  error: da datos verosímiles y falsos. El 02-09 produjo dos hallazgos
+  inventados —«las apariciones se quedan invisibles en las siete rutas» y «224 px
+  de desborde horizontal»— que eran, respectivamente, la pestaña sin producir
+  fotogramas y el panel colapsado a ancho cero. Tres comprobaciones de un
+  segundo lo descartan:
+
+  ```js
+  document.hidden                          // ¿corre el ciclo de render?
+  document.documentElement.clientWidth     // ¿hay viewport?
+  // y contar fotogramas en 500 ms con requestAnimationFrame
+  ```
+
+  Con la pestaña oculta, `IntersectionObserver` no dispara y `getComputedStyle`
+  devuelve el valor congelado del **inicio** de cada transición. Para leer lo
+  que decide la cascada, `el.getAnimations().forEach(a => a.finish())` primero.
 - **No cambies el tema por JavaScript a media medición.** El proveedor lo repone
   y acabas leyendo colores de un tema con fondos del otro: da 121 fallos de
   contraste falsos. Recarga.
@@ -234,9 +298,17 @@ una versión publicada.**
 
 ## 6. Siguiente paso sugerido
 
-Producción va en **`ac04e93`**, con los PR #10 a #13 dentro. Sirve el Informe 02
+Producción va en **`c1fedb8`**, con los PR #10 a #13 dentro. Sirve el Informe 02
 en v0.3.0, el Informe 01 en v0.2.0 y el perfil `/aldunate`; las tres rutas
-comprobadas en vivo el 01-09-2026. El trabajo activo está en el **Informe 01**.
+comprobadas en vivo el 01-09-2026.
+
+**La capa espacial (§1bis) está en la rama `rediseno/capa-espacial`, sin
+fusionar.** Lo que falta antes de fusionarla no es código: es **mirarla en un
+navegador de verdad**. Se verificó por DOM porque el panel de vista previa dejó
+de pintar, y eso cubre geometría, contraste y accesibilidad, pero no dice si el
+vidrio, el reflejo del cursor y las apariciones se ven bien. Abre el dominio de
+producción tras fusionar, o `npm run dev` en local, y recorre las dieciséis
+rutas en los dos temas.
 
 > **Este repositorio tuvo sesiones concurrentes el 01-09.** Dos líneas de trabajo
 > —el perfil de Aldunate y el corpus del Informe 01— avanzaron a la vez y se

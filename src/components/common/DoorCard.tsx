@@ -14,9 +14,11 @@ export function DoorCard({ entry, className }: { entry: NavEntry; className?: st
   return (
     <Link
       href={entry.href}
+      // `data-spatial` trae su propia respuesta a la pulsación, así que aquí no
+      // va `data-press`: las dos reglas se pisarían en el mismo gesto.
+      data-spatial
       className={cn(
-        'surface surface-interactive group relative flex flex-col justify-between',
-        'overflow-hidden rounded-lg p-6 sm:p-7',
+        'surface group relative flex flex-col justify-between p-6 sm:p-7',
         className,
       )}
     >

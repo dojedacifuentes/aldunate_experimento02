@@ -51,7 +51,7 @@ export function EvaGuide() {
   return (
     <>
       {/* Lanzador. Siempre disponible, nunca sobre el contenido principal. */}
-      <div className="no-print fixed bottom-4 right-4 z-40 sm:bottom-6 sm:right-6">
+      <div className="no-print floating-layer fixed right-4 z-40 sm:right-6">
         <AnimatePresence>
           {!open && (
             <motion.button
@@ -61,8 +61,11 @@ export function EvaGuide() {
               animate={{ opacity: 1, scale: 1 }}
               exit={reduced ? undefined : { opacity: 0, scale: 0.9 }}
               aria-label="Abrir la guía de EVA"
+              data-press
               className={cn(
-                'surface surface-interactive flex items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-4',
+                // Vidrio y no superficie plana: el lanzador flota sobre la
+                // página, que es justo el caso en que el material se gana.
+                'glass flex items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-4',
                 'text-left transition-colors hover:border-primary/50',
               )}
             >
@@ -87,11 +90,13 @@ export function EvaGuide() {
             role="complementary"
             aria-label="Guía EVA"
             className={cn(
-              'no-print fixed bottom-4 right-4 z-40 w-[min(24rem,calc(100vw-2rem))]',
+              'no-print floating-layer floating-panel fixed right-4 z-40 w-[min(24rem,calc(100vw-2rem))]',
               // En pantallas cortas el panel deja de crecer y desplaza su cuerpo:
               // una guía que tapa la página deja de ser una guía.
-              'flex max-h-[min(32rem,calc(100vh-6rem))] flex-col overflow-hidden',
-              'surface rounded-xl sm:bottom-6 sm:right-6',
+              'flex flex-col overflow-hidden',
+              // Segunda capa flotante del sitio, con el mismo material y el
+              // mismo radio que las tarjetas espaciales.
+              'glass rounded-spatial sm:right-6',
             )}
           >
             <div className="flex shrink-0 items-start gap-3 border-b border-border/70 p-4">
@@ -160,7 +165,7 @@ export function EvaGuide() {
 /** Cuando EVA está silenciada queda esto: una salida, no un botón de ayuda. */
 function EvaMutedPill({ onRestore }: { onRestore: () => void }) {
   return (
-    <div className="no-print fixed bottom-4 right-4 z-40 sm:bottom-6 sm:right-6">
+    <div className="no-print floating-layer fixed right-4 z-40 sm:right-6">
       <button
         type="button"
         onClick={onRestore}

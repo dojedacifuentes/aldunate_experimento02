@@ -165,7 +165,7 @@ export function SourceList({ ids }: { ids?: string[] }) {
                     href={source.url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="mono break-all text-[0.6875rem] text-primary hover:underline"
+                    className="mono inline-flex min-h-6 items-center break-all text-[0.6875rem] text-primary hover:underline"
                   >
                     {source.url.replace(/^https:\/\//, '')} ↗
                   </a>

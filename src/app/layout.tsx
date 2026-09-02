@@ -6,8 +6,10 @@ import { ThemeProvider, themeInitScript } from '@/components/theme/ThemeProvider
 import { EvaProvider } from '@/components/eva/EvaProvider';
 import { EvaGuide } from '@/components/eva/EvaGuide';
 import { Ambience } from '@/components/common/Ambience';
+import { SpatialStage } from '@/components/motion/SpatialStage';
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
+import { TabBar } from '@/components/layout/TabBar';
 import { disclaimer, site } from '@/data/site';
 
 /**
@@ -106,6 +108,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
             <Ambience />
 
+            {/*
+              Motor de movimiento y de luz de todo el sitio: apariciones al
+              entrar en pantalla, reflejo del puntero sobre las tarjetas,
+              profundidad al desplazar y contadores. Vivía sólo en `/aldunate`;
+              aquí sirve a las dieciséis rutas y vuelve a escanear en cada
+              navegación, que es lo que exige el App Router. No pinta nada.
+            */}
+            <SpatialStage />
+
             {/* Franja de prototipo. Primera línea del documento, sin excepción. */}
             <div className="no-print border-b border-border/60 bg-muted/50">
               <p className="mono mx-auto max-w-6xl px-5 py-1.5 text-[0.625rem] uppercase tracking-[0.14em] text-muted-foreground sm:px-8">
@@ -120,6 +131,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </main>
               <SiteFooter />
             </div>
+
+            {/* Navegación inferior en pantallas estrechas. Sustituye al menú de
+                hamburguesa: las cinco secciones visibles sin abrir nada. */}
+            <TabBar />
 
             <EvaGuide />
           </EvaProvider>

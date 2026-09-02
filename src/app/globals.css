@@ -37,6 +37,23 @@
   --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
 
+  /*
+   * Cuarta familia, y la única que no se descarga: la del sistema.
+   *
+   * En un iPhone o un Mac resuelve a SF Pro; en Windows, a Segoe UI Variable.
+   * Ese es justamente el punto —el chrome de interfaz se lee como el del
+   * aparato que lo muestra, que es lo que hace que una pantalla resulte
+   * *familiar* antes que bonita—.
+   *
+   * No sustituye a las otras tres y ese límite es deliberado: Newsreader
+   * sigue firmando la prosa y JetBrains Mono los metadatos. Si SF entrara
+   * también ahí, el sitio pasaría de archivo constitucional a aplicación
+   * genérica, que es exactamente lo que la guía visual quiere evitar.
+   * Aquí manda sobre navegación, botones, controles y rótulos: nada más.
+   */
+  --font-ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+    'Segoe UI Variable Text', 'Segoe UI', Inter, system-ui, sans-serif;
+
   --radius-sm: calc(var(--radius) * 0.5);
   --radius-md: calc(var(--radius) * 0.75);
   --radius-lg: var(--radius);
@@ -49,7 +66,17 @@
    como acento de autoridad. Sin glow: en claro la profundidad la da el papel.
    ─────────────────────────────────────────────────────────────────────────── */
 :root {
-  --radius: 0.5rem;
+  /*
+   * Subido de 0.5rem con la capa espacial.
+   *
+   * Da una escala de dos radios en vez de un salto: 12 px en lo que está
+   * apoyado en la página —tarjetas de contenido, avisos, campos— y 20 px
+   * (`--radius-spatial`) en lo que flota sobre ella. Es el criterio de iOS:
+   * cuanto más alto está un elemento, más blanda es su esquina. Con el 0.5rem
+   * anterior la diferencia entre una tarjeta estática y una espacial se leía
+   * como dos sistemas distintos conviviendo.
+   */
+  --radius: 0.75rem;
 
   /* Hexadecimales fijados por la guía visual: #F7F4EE · #29588C · #8A2432 · #B78C30 */
   --background: #F7F4EE;
@@ -89,6 +116,25 @@
   --glow-strong: none;
   --text-glow: none;
   --noise-opacity: 0;
+
+  /* ── Material y profundidad (ver «Capa espacial» al final del archivo) ──
+     En claro el vidrio es papel translúcido: se aclara sobre lo que cubre y
+     el filo es una hairline oscura, no un brillo. Subir la saturación es lo
+     que evita que el desenfoque deje el fondo lavado. */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-blur: 20px;
+  --glass-saturate: 180%;
+  --glass-border: rgba(25, 23, 19, 0.09);
+  --glass-specular: rgba(255, 255, 255, 0.85);
+  --glass-light: rgba(41, 88, 140, 0.10);
+
+  --elev-1: 0 1px 2px rgba(25, 23, 19, 0.04), 0 4px 12px -4px rgba(25, 23, 19, 0.08);
+  --elev-2: 0 2px 6px rgba(25, 23, 19, 0.05), 0 12px 30px -10px rgba(25, 23, 19, 0.14);
+  --elev-3: 0 4px 12px rgba(25, 23, 19, 0.06), 0 26px 60px -18px rgba(25, 23, 19, 0.20);
+
+  /* Radio de tarjeta grande. 20px es el que usa iOS en tarjeta ancha; por
+     debajo de 16 la esquina deja de leerse como material y parece un borde. */
+  --radius-spatial: 1.25rem;
 
   color-scheme: light;
 }
@@ -135,6 +181,25 @@
   --glow-strong: 0 0 30px rgba(75, 199, 232, 0.28), 0 0 60px rgba(75, 199, 232, 0.1);
   --text-glow: 0 0 22px rgba(75, 199, 232, 0.55);
   --noise-opacity: 0.022;
+
+  /* En oscuro el vidrio no aclara: oscurece y deja pasar el halo de detrás.
+     El filo es un cian muy bajo —la luz del propio sitio reflejada en el
+     canto— y la especular es un blanco tenue arriba, no un contorno entero:
+     una luz que viene de una dirección es lo que da volumen. */
+  --glass-bg: rgba(14, 27, 39, 0.62);
+  --glass-blur: 24px;
+  --glass-saturate: 160%;
+  --glass-border: rgba(75, 199, 232, 0.14);
+  --glass-specular: rgba(228, 237, 244, 0.10);
+  --glass-light: rgba(75, 199, 232, 0.13);
+
+  /* Sin negro sobre negro: en oscuro la elevación se lee por el halo del
+     borde y por el fondo que se aclara, no por una sombra que no se ve. */
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --elev-2: 0 8px 26px -12px rgba(0, 0, 0, 0.6), 0 0 18px -6px rgba(75, 199, 232, 0.10);
+  --elev-3: 0 18px 50px -18px rgba(0, 0, 0, 0.75), 0 0 30px -8px rgba(75, 199, 232, 0.16);
+
+  --radius-spatial: 1.25rem;
 
   color-scheme: dark;
 }
@@ -469,5 +534,303 @@ html[data-lectura] [data-reveal] {
     content: ' (' attr(href) ')';
     font-size: 0.7em;
     word-break: break-all;
+  }
+}
+
+/* ═══════════════════════ Capa espacial ═══════════════════════
+
+   Computación espacial, en el sentido en que Apple la usa: la interfaz no es
+   una hoja plana con cosas dibujadas encima, sino unas pocas capas de material
+   translúcido separadas por profundidad, iluminadas desde algún sitio, que
+   responden a dónde está el cursor.
+
+   Tres reglas la mantienen sutil, que es la parte difícil:
+
+   1. **El material se gana, no se reparte.** Sólo llevan vidrio las capas que
+      de verdad flotan sobre el contenido: cabecera, barra de pestañas, panel
+      de EVA. Una página entera de tarjetas de vidrio no es profundidad, es
+      ruido caro de pintar.
+   2. **La luz es una sola y viene de arriba.** La especular es un filo claro
+      en el canto superior; el reflejo del cursor es un halo del color de
+      acción al 10-13 %. Por encima de eso deja de leerse como material y
+      empieza a leerse como efecto.
+   3. **Nada de esto sostiene información.** Todo lo de aquí se puede apagar
+      —modo lectura, movimiento reducido, impresión— y la página sigue diciendo
+      exactamente lo mismo. Es la condición para que el §9 de CLAUDE.md se
+      cumpla: primero contenido, los efectos al final.
+   ────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  /*
+   * Chrome de interfaz con la tipografía del sistema.
+   *
+   * En iOS y macOS esto es SF Pro; en Windows, Segoe UI Variable. No se
+   * descarga nada, y el resultado es que la navegación se parece a la del
+   * aparato en el que se está leyendo.
+   */
+  .ui {
+    font-family: var(--font-ui);
+    letter-spacing: -0.01em;
+  }
+
+  /*
+   * Material translúcido.
+   *
+   * `saturate` es la mitad del truco y la que casi siempre falta: desenfocar
+   * sin saturar deja el fondo lavado y grisáceo, y entonces el vidrio parece
+   * plástico sucio. Los dos filos —la hairline del borde y la especular
+   * interior de arriba— son lo que convierte un rectángulo borroso en algo
+   * con canto.
+   */
+  .glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--elev-2), inset 0 1px 0 0 var(--glass-specular);
+  }
+
+  /*
+   * Sin `backdrop-filter` el fondo translúcido deja leer el texto de detrás a
+   * través de la cabecera. Se sube a opaco. Cubre navegadores viejos y, sobre
+   * todo, los modos de ahorro de energía que lo desactivan.
+   */
+  @supports not (backdrop-filter: blur(1px)) {
+    .glass { background: var(--card); }
+  }
+
+  .elev-1 { box-shadow: var(--elev-1); }
+  .elev-2 { box-shadow: var(--elev-2); }
+  .elev-3 { box-shadow: var(--elev-3); }
+
+  .rounded-spatial { border-radius: var(--radius-spatial); }
+}
+
+/* ── Tarjeta espacial ────────────────────────────────────────────────────
+   Se activa con `data-spatial`. Hace tres cosas: se levanta dos píxeles al
+   acercarse el cursor, refleja un halo donde está el puntero y marca la
+   pulsación. Nada de eso es información: es la señal de que el elemento
+   responde, que es la que distingue un botón de un rótulo.
+   ──────────────────────────────────────────────────────────────────────── */
+
+[data-spatial] {
+  position: relative;
+  /* Contiene el halo del cursor: sin contexto de apilamiento propio, un
+     z-index negativo se iría detrás del fondo de la página. */
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-spatial);
+  transition:
+    transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+}
+
+/*
+ * El halo del cursor.
+ *
+ * Se mueve con `transform` y aparece con `opacity`: las dos propiedades que
+ * el compositor resuelve solo, según la regla dura de fluidez de más arriba.
+ * La posición llega en dos variables que escribe el motor de movimiento, una
+ * sola vez por fotograma y sólo para la tarjeta que está bajo el cursor.
+ *
+ * `z-index: -1` con `isolation: isolate` en el padre lo deja exactamente
+ * entre el fondo de la tarjeta y su texto, que es donde tiene que estar un
+ * reflejo: por delante del material, por detrás de lo que se lee.
+ */
+[data-spatial]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 24rem;
+  height: 24rem;
+  margin: -12rem 0 0 -12rem;
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side, var(--glass-light), transparent);
+  opacity: 0;
+  transform: translate3d(var(--lx, 0px), var(--ly, 0px), 0);
+  transition: opacity var(--dur) var(--ease-out);
+  pointer-events: none;
+}
+
+/*
+ * Se enciende con un atributo que pone el motor, no con `:hover`.
+ *
+ * Con `:hover` el halo aparecería en la esquina superior izquierda durante el
+ * primer fotograma —antes de que llegue la primera posición del puntero— y ese
+ * parpadeo en diagonal se ve. El motor escribe la posición y después enciende.
+ */
+[data-spatial][data-lit]::before { opacity: 1; }
+
+/*
+ * La elevación al acercarse se hace con `box-shadow`, que sí repinta.
+ *
+ * Es una excepción consciente y acotada: ocurre en un elemento cada vez, en
+ * respuesta a un gesto, y es exactamente lo que ya hacía `.surface-interactive`
+ * desde la primera versión del sistema. El levantamiento, que es el que se
+ * nota, va por `transform`.
+ */
+[data-spatial]:hover,
+[data-spatial]:focus-within {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: var(--elev-3);
+  border-color: var(--surface-border-hover);
+}
+
+/* Respuesta a la pulsación. En iOS todo lo que se puede tocar cede un poco;
+   es la diferencia entre «he pulsado» y «creo que he pulsado». */
+[data-press] { transition: transform var(--dur-fast) var(--ease-out); }
+[data-press]:active { transform: scale(0.97); }
+[data-spatial]:active { transform: translate3d(0, -1px, 0) scale(0.995); }
+
+/*
+ * Profundidad al desplazar.
+ *
+ * `--scroll-y` la publica el motor sobre `<html>`, redondeada, y sólo si la
+ * página tiene algo que la use. Cada elemento decide cuánto se separa con
+ * `--depth`; en negativo se mueve al revés. Valores por encima de 0.06 marean
+ * en un scroll rápido: esto es paralaje de fondo, no un carrusel.
+ */
+html.motion [data-depth] {
+  transform: translate3d(0, calc(var(--scroll-y, 0px) * var(--depth, 0.03)), 0);
+}
+
+/* ── Barra de pestañas ───────────────────────────────────────────────────
+   La navegación inferior de iOS. Vive sólo en pantallas estrechas y se apoya
+   sobre el borde inferior real del aparato, no sobre el del viewport: en un
+   iPhone con barra de gestos, `env(safe-area-inset-bottom)` es la diferencia
+   entre una fila cómoda y una fila que el sistema tapa por abajo.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.tabbar {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* El contenido tiene que poder terminar por encima de la barra: sin esto, el
+   pie de página queda debajo y sus enlaces son inalcanzables. */
+@media (max-width: 1023px) {
+  body:has(.tabbar) {
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ── Apagados ────────────────────────────────────────────────────────────
+   Los tres modos en los que esta capa desaparece entera.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* Modo lectura: el material se vuelve papel y la luz se apaga. Lo que queda
+   es una tarjeta con borde, que es lo que se quiere para leer y para imprimir. */
+html[data-lectura] [data-spatial]::before { display: none; }
+html[data-lectura] [data-spatial],
+html[data-lectura] [data-spatial]:hover,
+html[data-lectura] [data-spatial]:focus-within {
+  transform: none;
+  box-shadow: none;
+}
+html[data-lectura] [data-depth] { transform: none; }
+html[data-lectura] .glass {
+  background: var(--card);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Se conserva la elevación —es una señal de estado, no movimiento— y se
+     retira todo lo que se desplaza. */
+  [data-spatial]:hover,
+  [data-spatial]:focus-within,
+  [data-spatial]:active,
+  [data-press]:active { transform: none; }
+  html.motion [data-depth] { transform: none; }
+  [data-spatial]::before { display: none; }
+}
+
+@media print {
+  .tabbar { display: none !important; }
+  [data-spatial] {
+    box-shadow: none !important;
+    transform: none !important;
+    border: 1px solid #999 !important;
+  }
+  [data-spatial]::before { display: none !important; }
+  .glass {
+    background: #fff !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ── Suelo de las capas flotantes ────────────────────────────────────────
+   Cuánto espacio libre hay por debajo para lo que flota sobre la página: hoy
+   el lanzador y el panel de EVA.
+
+   Existe porque la barra de pestañas se lo come. Con `bottom-4` fijo, el panel
+   de EVA se montaba 41 px encima de la barra en un teléfono —medido, no
+   supuesto— y tapaba dos de las cinco secciones. Una variable y no una clase
+   por componente: el día que aparezca otra capa flotante, hereda el mismo
+   suelo sin que haya que acordarse de esto.
+
+   El orden de los bloques importa. El de `max-width` va el último para ganar
+   en la franja de 640 a 1023 px, que es donde conviven la barra de pestañas y
+   el respiro grande de tableta.
+   ──────────────────────────────────────────────────────────────────────── */
+
+:root { --float-bottom: 1rem; }
+
+@media (min-width: 640px) {
+  :root { --float-bottom: 1.5rem; }
+}
+
+/* Mientras exista barra de pestañas —el mismo corte que usa `<TabBar>`—, hay
+   que sumar su alto y el respiro de la barra de gestos del teléfono. */
+@media (max-width: 1023px) {
+  :root { --float-bottom: calc(4rem + 0.75rem + env(safe-area-inset-bottom, 0px)); }
+}
+
+.floating-layer { bottom: var(--float-bottom); }
+
+/* El panel además tiene que caber: sin esto crece hacia arriba desde un suelo
+   más alto y se mete debajo de la cabecera. */
+.floating-panel { max-height: min(32rem, calc(100dvh - var(--float-bottom) - 5.5rem)); }
+
+/* ── La primera pantalla se aparta ───────────────────────────────────────
+   El único gesto ligado al scroll en la portada, y el más barato de todos:
+   `--hero-p` va de 0 a 1 mientras el vestíbulo sale por arriba, y la capa de
+   texto pierde luz y se aleja un poco mientras se va. Es la lectura espacial
+   de «esto queda detrás», y sustituye a la alternativa habitual —fijar el
+   hero y desplazar lo de abajo por encima—, que en un portátil cuesta un
+   repintado de pantalla completa por fotograma.
+
+   Sin JavaScript `--hero-p` vale 0: opacidad 1 y sin desplazamiento. El texto
+   se lee igual, que es la condición para que esto pueda existir.
+   ──────────────────────────────────────────────────────────────────────── */
+
+html.motion [data-hero] [data-hero-layer] {
+  opacity: calc(1 - var(--hero-p, 0) * 0.55);
+  transform: translate3d(0, calc(var(--hero-p, 0) * -24px), 0);
+}
+
+/* Quien pide menos movimiento lee la portada quieta, y quien lee o imprime
+   también: un titular a media opacidad en papel es un titular gris. */
+@media (prefers-reduced-motion: reduce) {
+  html.motion [data-hero] [data-hero-layer] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+html[data-lectura] [data-hero] [data-hero-layer] {
+  opacity: 1;
+  transform: none;
+}
+
+@media print {
+  [data-hero] [data-hero-layer] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
