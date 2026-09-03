@@ -42,20 +42,22 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 
 ## Fase 4 — Informe
 
-- [ ] Capa de datos tipada en `src/data/`
+- [x] Capa de datos tipada en `src/data/informe01.ts`, compilada desde los CSV
+- [x] Capa editorial en `src/data/informe01-editorial.ts` — lagunas, auditoría, tabla PUCV
+- [x] Sección PUCV en contexto, con reconocimiento de evidencia favorable primero
+- [x] Bloque de lagunas, ampliado a doce con L-11 y L-12
+- [x] Auditoría de la línea base como bloque propio
+- [x] Página de fichas institucionales en `/informes/[slug]/instituciones`
 - [ ] Reescribir la ficha del informe en `src/data/reports.ts` para la v0.5.0
-- [ ] Sección PUCV en contexto
-- [ ] Bloque de lagunas L-1 a L-10
-- [ ] Auditoría de la línea base como bloque propio
 
 ## Fase 5 — Visualizaciones
 
-- [ ] Matriz de evidencia localizada por universidad y dimensión, sin puntaje
-- [ ] Cobertura de investigación, separada de la evidencia
-- [ ] Escalera de institucionalización por iniciativa
-- [ ] Mapa de direcciones IA_PARA_DERECHO / DERECHO_DE_IA / AMBOS / ADYACENTE
+- [x] Matriz de evidencia localizada por universidad y dimensión, sin puntaje
+- [x] Cobertura de investigación, separada de la evidencia
+- [x] Escalera de institucionalización por iniciativa, con el nivel 4 vacío a la vista
+- [x] Mapa de direcciones IA_PARA_DERECHO / DERECHO_DE_IA / AMBOS / ADYACENTE
 - [ ] Línea de tiempo de hitos
-- [ ] Alternativa textual o tabular de cada figura
+- [x] Alternativa textual o tabular de la matriz; el resto no depende del color
 
 ## Fase 6 — Exportaciones
 
@@ -66,10 +68,11 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 
 ## Fase 7 — QA
 
-- [ ] Validadores de integridad referencial en vitest
+- [x] Validadores de integridad referencial en el compilador de datos
+- [ ] Los mismos validadores como prueba de vitest, para que fallen en `verify`
 - [ ] QA editorial de expresiones peligrosas
 - [ ] Contadores del sitio calculados desde los datos, nunca escritos a mano
-- [ ] `npm run verify` completo
+- [~] `npm run verify` completo — typecheck, lint, tests y build pasan al 04-09-2026
 - [ ] Responsive e impresión
 
 ## Fase 8 — Entrega

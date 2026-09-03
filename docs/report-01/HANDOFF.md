@@ -46,28 +46,37 @@ Ninguna afirmación es publicable todavía. `sourceIds` y `claimIds` de
 `src/data/reports.ts` **siguen vacíos** y deben seguirlo hasta que la
 verificación sustantiva exista (DEC-108, ISSUE-001).
 
-El sitio todavía no consume el dataset: la ficha publicada sigue siendo la
-v0.4.0.
+El sitio **ya consume el dataset**. `/informes/ia-escuelas-derecho-chile` monta
+la publicación completa —hallazgos, cobertura, matriz, escalera, taxonomía,
+sección PUCV, afirmaciones, lagunas y auditoría de la línea base— y
+`/informes/ia-escuelas-derecho-chile/instituciones` sirve las once fichas.
+
+Todo se renderiza en el servidor: ni un componente de cliente, ni un gráfico que
+necesite hidratarse. Lo que se pliega usa `<details>` nativo, de modo que la
+página funciona impresa y con el JavaScript apagado.
+
+Lo que falta para publicar la v0.5.0: la ficha de `src/data/reports.ts` sigue
+declarando la v0.4.0 con 72 fuentes.
 
 ---
 
 ## Último punto completado
 
-`afirmaciones.csv` generado y validado: 14 afirmaciones cuyas `evidence_ids` se
-consultan sobre `evidencias.csv` en vez de escribirse a mano, de modo que una
-afirmación no puede citar una evidencia inexistente.
+Componentes de la publicación implementados y montados. `npm run verify`
+completo en verde: typecheck, lint (0 errores, 9 avisos preexistentes del código
+donado), 97 pruebas y build de 18 rutas.
 
 ---
 
 ## Próxima tarea exacta
 
-T-010: escribir el compilador de los seis CSV a datos tipados. Crear
-`scripts/informe-01/06-compilar-a-typescript.mjs`, que lea
-`canonical/dataset/*.csv` y emita `src/data/informe01.ts` con los tipos
-declarados en `src/types/index.ts` —`Informe01Universidad`, `Informe01Fuente`,
-`Informe01Iniciativa`, `Informe01Evidencia`, `Informe01Cobertura`,
-`Informe01Afirmacion`— más los contadores derivados. Ningún contador se escribe
-a mano: el hero del informe debe leerlos de ahí. Después `npm run typecheck`.
+T-020: actualizar la ficha del informe en `src/data/reports.ts`. Agregar la
+versión `0.5.0` con fecha `2026-09-04` al principio de `versions`, sin tocar las
+entradas anteriores, con un changelog que incluya la fe de erratas del cambio de
+72 a 74 fuentes (DEC-106). Mantener `sourceIds` y `claimIds` **vacíos**. Después
+comprobar que el contador de fuentes que muestra la ficha se lee de
+`informe01Recuento` y no de una constante escrita a mano, y revisar
+`src/data/trabajos.ts` por la regla permanente de `CLAUDE.md` §12.
 
 ---
 
@@ -139,12 +148,11 @@ Las diez están en `DECISIONS.md`. Las cuatro que más veces se rompen:
 
 ## Pendientes, por prioridad
 
-1. Capa de datos tipada y compilación CSV → TS (T-010).
-2. Componentes de la publicación, uno por uno (T-011 a T-019).
-3. Ficha del informe con la versión 0.5.0 y la fe de erratas (T-020).
-4. Exportaciones y manifiesto (T-021).
-5. QA, `npm run verify` (T-022).
-6. Bundle de entrega (T-023).
+1. Ficha del informe con la versión 0.5.0 y la fe de erratas (T-020).
+2. Exportaciones y manifiesto (T-021).
+3. Los validadores del compilador, también como prueba de vitest (T-022).
+4. Línea de tiempo de hitos, la única visualización que falta.
+5. Bundle de entrega (T-023).
 
 ---
 
@@ -164,13 +172,13 @@ Al corte de este relevo, sobre la rama `informe-01/v0.5.0`:
 
 | | Estado | Cuándo |
 |---|---|---|
-| lint | no ejecutado en esta sesión | — |
-| typecheck | no ejecutado en esta sesión | — |
-| tests | no ejecutado en esta sesión | — |
-| build | no ejecutado en esta sesión | — |
+| lint | 0 errores · 9 avisos preexistentes | 04-09-2026 |
+| typecheck | pasa | 04-09-2026 |
+| tests | 97 pruebas en 7 archivos, todas pasan | 04-09-2026 |
+| build | pasa · 18 rutas, 3 de ellas del Informe 01 | 04-09-2026 |
 
-Los cambios hasta aquí son datos y documentación: no tocan el bundle. La
-primera ejecución de `npm run verify` corresponde a T-010, cuando exista código.
+Los nueve avisos de lint son los del código donado del juego y uno de
+`useSpriteAnimation`. Están documentados en `CLAUDE.md` §10 y no se tocan.
 
 ---
 
@@ -194,5 +202,5 @@ git log --oneline -5
 cat docs/report-01/progress.json
 ```
 
-Después, T-010 de `TASKS.md`. No repitas las fases 0 a 3: están cerradas y sus
+Después, T-020 de `TASKS.md`. No repitas las fases 0 a 3: están cerradas y sus
 decisiones están registradas en `DECISIONS.md`.

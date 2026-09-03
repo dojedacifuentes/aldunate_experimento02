@@ -6,9 +6,9 @@
   "branch": "informe-01/v0.5.0",
   "base_commit": "057ad4b5a19e58905f434a414ef1b87cc9858bce",
   "cutoff_date": "2026-09-01",
-  "phase": "typed_data_layer",
-  "last_completed_task": "T-008_build_claims",
-  "next_task": "T-009_compile_csv_to_typed_data",
+  "phase": "publication_components",
+  "last_completed_task": "T-019_editorial_blocks",
+  "next_task": "T-020_report_card_v0_5_0",
   "completed": [
     "T-001_repo_audit",
     "T-002_research_corpus_inventory",
@@ -17,10 +17,19 @@
     "T-005_complete_universities_csv",
     "T-006_build_evidence_matrix",
     "T-007_research_coverage",
-    "T-008_build_claims"
+    "T-008_build_claims",
+    "T-010_typed_data_layer",
+    "T-011_ficha_component",
+    "T-012_evidence_matrix",
+    "T-013_coverage",
+    "T-014_ladder",
+    "T-015_directions_map",
+    "T-017_institution_pages",
+    "T-018_pucv_section",
+    "T-019_editorial_blocks"
   ],
   "in_progress": [
-    "T-005b_bias_control_tests"
+    "T-009_bias_control_tests"
   ],
   "blocked": [
     "ISSUE-001_substantive_source_verification",
@@ -46,9 +55,9 @@
     "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/afirmaciones.csv",
     "content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda"
   ],
-  "last_lint": "not_run",
-  "last_typecheck": "not_run",
-  "last_test": "not_run",
-  "last_build": "not_run",
-  "updated_at": "2026-09-04T00:05:00-04:00"
+  "last_lint": "pass_9_preexisting_warnings",
+  "last_typecheck": "pass",
+  "last_test": "pass_97",
+  "last_build": "pass_18_routes",
+  "updated_at": "2026-09-04T00:15:00-04:00"
 }

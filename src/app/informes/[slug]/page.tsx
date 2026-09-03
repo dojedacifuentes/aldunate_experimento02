@@ -15,6 +15,8 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
+import { Informe01Publicacion } from '@/components/informe01/Publicacion';
+import { informe01Recuento } from '@/data/informe01';
 import {
   claimChangeLabel,
   getReport,
@@ -252,6 +254,14 @@ export default async function InformeDetallePage({
           </div>
         )}
       </Section>
+
+      {/*
+        La publicación del Informe 01.
+        Vive en sus propios componentes y se monta sólo aquí: el informe 02 tiene
+        documento completo y no necesita esta capa, y hacer genérica una sección
+        que sólo un informe usa habría producido una abstracción con un solo caso.
+      */}
+      {report.slug === 'ia-escuelas-derecho-chile' && <Informe01Publicacion />}
 
       {report.researchKit && (
         <Section
