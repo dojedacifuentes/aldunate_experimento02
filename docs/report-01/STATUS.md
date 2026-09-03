@@ -30,14 +30,15 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 
 - [x] Poblar `canonical/dataset/iniciativas.csv` con las iniciativas deduplicadas
 - [x] Poblar `canonical/dataset/universidades.csv` con unidad y estado
-- [ ] Poblar `canonical/dataset/evidencias.csv`
-- [ ] Calcular la cobertura de investigación por institución y dimensión
+- [x] Poblar `canonical/dataset/evidencias.csv` — 75 evidencias, ninguna con `last_verified`
+- [x] Calcular la cobertura de investigación por institución y dimensión — `cobertura.csv`
+- [x] Dejar la construcción del dataset reproducible en `scripts/informe-01/`
 
 ## Fase 3 — Claims
 
-- [ ] Poblar `canonical/dataset/afirmaciones.csv`
-- [ ] Clasificar cada afirmación y declarar contraevidencia y limitaciones
-- [ ] Prueba A (abogado de la PUCV) y prueba B (abogado del benchmark)
+- [x] Poblar `canonical/dataset/afirmaciones.csv` — 14 afirmaciones
+- [x] Clasificar cada afirmación y declarar contraevidencia y limitaciones
+- [~] Prueba A (abogado de la PUCV) y prueba B (abogado del benchmark)
 
 ## Fase 4 — Informe
 

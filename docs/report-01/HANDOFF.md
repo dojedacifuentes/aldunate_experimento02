@@ -18,12 +18,29 @@ resultados mientras la verificación sustantiva de las fuentes no exista.**
 
 ## Estado actual
 
-Existe, por primera vez, un **dataset canónico poblado** del Informe 01 en
-`content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/`:
+Existe, por primera vez, un **dataset canónico poblado y reproducible** del
+Informe 01 en `content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/`:
 
-- `fuentes.csv` — 74 fuentes públicas únicas, con `workflow_status` real.
-- `iniciativas.csv` — 53 iniciativas deduplicadas, con nivel de escalera,
-  nivel de atribución y estado temporal.
+| Archivo | Filas | Qué contiene |
+|---|---:|---|
+| `universidades.csv` | 11 | Cohorte cerrada, con el nombre real de cada unidad |
+| `fuentes.csv` | 74 | Fuentes públicas únicas con estado editorial real |
+| `iniciativas.csv` | 53 | Iniciativas deduplicadas, con escalera, atribución y trayectoria |
+| `evidencias.csv` | 75 | Una por par fuente–iniciativa, con su límite propio |
+| `cobertura.csv` | 11 | Rutas del protocolo recorridas, separado de la madurez |
+| `afirmaciones.csv` | 14 | 10 FACT · 2 SIGNAL · 1 INFERENCE · 1 PENDING |
+
+Los cinco scripts de `scripts/informe-01/` reconstruyen el dataset entero y
+fallan si la integridad referencial se rompe.
+
+**Los tres números que hay que conocer antes de tocar nada:**
+
+- Ninguna de las 53 iniciativas alcanza el nivel 4 de la escalera. Es la tercera
+  ronda independiente que llega a la misma ausencia.
+- La cobertura del piloto es 3,7 veces la del resto en fuentes y 2,4 veces en
+  rutas del protocolo recorridas. Por eso no hay comparación nacional.
+- Ninguna de las 74 fuentes es contraste externo: la ruta 13 del protocolo está
+  sin recorrer en las once.
 
 Ninguna afirmación es publicable todavía. `sourceIds` y `claimIds` de
 `src/data/reports.ts` **siguen vacíos** y deben seguirlo hasta que la
@@ -36,20 +53,21 @@ v0.4.0.
 
 ## Último punto completado
 
-`iniciativas.csv` generado y validado contra `fuentes.csv`: 53 iniciativas, cero
-referencias huérfanas, ninguna en nivel 4.
+`afirmaciones.csv` generado y validado: 14 afirmaciones cuyas `evidence_ids` se
+consultan sobre `evidencias.csv` en vez de escribirse a mano, de modo que una
+afirmación no puede citar una evidencia inexistente.
 
 ---
 
 ## Próxima tarea exacta
 
-Completar `content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/universidades.csv`
-(T-005): rellenar `unit_name` con el nombre real de la Facultad, Escuela o
-carrera de Derecho tal como lo escribe su propia fuente institucional, y
-`status` con `PENDIENTE_VERIFICACION` mientras ISSUE-001 siga abierto. Después
-construir `evidencias.csv` (T-006) leyendo los cinco documentos de
-`sources/investigacion-profunda/` universidad por universidad, empezando por
-`puc-chile`.
+T-010: escribir el compilador de los seis CSV a datos tipados. Crear
+`scripts/informe-01/06-compilar-a-typescript.mjs`, que lea
+`canonical/dataset/*.csv` y emita `src/data/informe01.ts` con los tipos
+declarados en `src/types/index.ts` —`Informe01Universidad`, `Informe01Fuente`,
+`Informe01Iniciativa`, `Informe01Evidencia`, `Informe01Cobertura`,
+`Informe01Afirmacion`— más los contadores derivados. Ningún contador se escribe
+a mano: el hero del informe debe leerlos de ahí. Después `npm run typecheck`.
 
 ---
 
@@ -62,8 +80,8 @@ docs/report-01/TASKS.md              (nuevo)
 docs/report-01/DECISIONS.md          (nuevo)
 docs/report-01/ISSUES.md             (nuevo)
 docs/report-01/progress.json         (nuevo)
-content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/fuentes.csv      (nuevo)
-content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/iniciativas.csv  (nuevo)
+content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/*.csv   (seis archivos nuevos)
+scripts/informe-01/                  (cinco constructores y su README)
 ```
 
 ---
@@ -121,12 +139,12 @@ Las diez están en `DECISIONS.md`. Las cuatro que más veces se rompen:
 
 ## Pendientes, por prioridad
 
-1. `evidencias.csv` y `cobertura.csv` — sin ellos no hay visualización posible.
-2. `afirmaciones.csv` con contraevidencia y limitaciones.
-3. Capa de datos tipada y compilación CSV → TS.
-4. Componentes de la publicación, uno por uno.
-5. Exportaciones y manifiesto.
-6. QA, `npm run verify`, changelog v0.5.0.
+1. Capa de datos tipada y compilación CSV → TS (T-010).
+2. Componentes de la publicación, uno por uno (T-011 a T-019).
+3. Ficha del informe con la versión 0.5.0 y la fe de erratas (T-020).
+4. Exportaciones y manifiesto (T-021).
+5. QA, `npm run verify` (T-022).
+6. Bundle de entrega (T-023).
 
 ---
 
