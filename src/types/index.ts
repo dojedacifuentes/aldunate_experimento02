@@ -559,3 +559,6 @@ export interface WorkItem {
   horizon?: string;
   updatedAt: string;
 }
+
+/* ── Informe 01 · IA en Escuelas y Facultades de Derecho en Chile ── */
+export * from './informe01';

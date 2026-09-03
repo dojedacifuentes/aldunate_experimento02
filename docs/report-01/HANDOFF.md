@@ -170,7 +170,7 @@ Al corte de este relevo, sobre la rama `informe-01/v0.5.0`:
 | build | no ejecutado en esta sesión | — |
 
 Los cambios hasta aquí son datos y documentación: no tocan el bundle. La
-primera ejecución de `npm run verify` corresponde a T-009, cuando exista código.
+primera ejecución de `npm run verify` corresponde a T-010, cuando exista código.
 
 ---
 
@@ -194,5 +194,5 @@ git log --oneline -5
 cat docs/report-01/progress.json
 ```
 
-Después, T-005 y T-006 de `TASKS.md`. No repitas la Fase 0 ni la Fase 1: están
-cerradas y sus decisiones están registradas.
+Después, T-010 de `TASKS.md`. No repitas las fases 0 a 3: están cerradas y sus
+decisiones están registradas en `DECISIONS.md`.
