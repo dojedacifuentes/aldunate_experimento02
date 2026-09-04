@@ -472,3 +472,31 @@ momento: cierra la conclusión principal del informe.
 
 **No hacer.** No retirar C-5 ni rebajarla a hipótesis. El hecho sobre el corpus no
 depende de las rutas: depende de los registros, y los registros están.
+
+
+---
+
+## ISSUE-023 — Los rótulos se pisan en el cruce de cobertura y capacidad
+
+**Estado:** OPEN · **Impacto:** bajo · **Es estético, no metodológico**
+
+La figura que cruza rutas recorridas contra capacidades en operación es la que
+demuestra la tesis central del método —que trabajo de campo y capacidad son
+variables distintas— y en el cuadrante bajo del gráfico cuatro nombres se
+solapan: «U. de los Andes» con «U. Diego Portales», y «U. de Concepción» con
+«U. del Desarrollo».
+
+Las cuatro instituciones tienen pocas rutas recorridas y pocas capacidades
+acreditadas, de modo que sus puntos caen cerca unos de otros. El rótulo se dibuja
+siempre a la derecha del punto y a la misma altura, sin comprobar si ese espacio
+está ocupado.
+
+**Consecuencia.** La figura se lee y ningún dato está mal, pero cuatro de los once
+nombres hay que adivinarlos. En la versión impresa el efecto es el mismo.
+
+**Qué hacer.** Dar al rotulador una regla de colisión: si el rectángulo del texto
+se cruza con uno ya dibujado, desplazarlo verticalmente o pasarlo al otro lado
+del punto. Vive en el motor de gráficos —`src/lib/informe01-graficos.ts`—, de
+modo que la corrección alcanza a la web, al HTML y al PDF a la vez.
+
+**No hacer.** No mover los puntos: sus coordenadas son los datos.

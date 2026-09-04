@@ -106,6 +106,20 @@ mecanismos, la regla de las rutas en las dos direcciones, que la verificación n
 decida el estado, que ninguna función exportada devuelva un agregado ordenable,
 que ninguna figura escriba un color suelto y que cada hallazgo lleve su límite.
 
+**Corregido · las cifras de la prosa se escriben como las escribiría un editor.**
+Todas siguen saliendo del dataset; cambia cómo se imprimen. Los cardinales del
+cero al veinte van en palabras —«en cinco de las once Facultades», no «en 5 de
+las once»—, los decimales llevan coma y los nombres institucionales llevan
+artículo. La razón de cobertura se publicaba como «3.7 veces», que delata que el
+número salió de un programa sin pasar por nadie. Los componentes de la web la
+imprimían en crudo mientras el documento exportado ya la formateaba, de modo que
+el sitio y el PDF decían cosas distintas sobre el mismo dato.
+
+Para que un hallazgo pueda abrir frase con una cifra, `resolverCifras` entiende
+ahora una marca con inicial mayúscula —`{MecProgramasPalabra}`— y devuelve el
+mismo valor capitalizado. La alternativa era duplicar la clave en el recuento, y
+dos claves para una cifra es dejar que un día digan cosas distintas.
+
 DEC-118 a DEC-123 · ISSUE-020 a ISSUE-022.
 
 ### Informe 01 · v0.6.0 · el mapeo se somete a su propia exigencia

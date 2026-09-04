@@ -30,7 +30,8 @@ La pregunta que el informe existe para hacer discutible:
 
 ## B · Estado actual
 
-**v0.7.0, borrador académico para revisión.** Trabajo en rama, **sin fusionar**.
+**v0.7.0, borrador académico para revisión.** Trabajo en rama, **sin fusionar**,
+y **publicado como preview de Vercel** para que el autor lo revise antes de seguir.
 
 | | |
 |---|---|
@@ -39,6 +40,13 @@ La pregunta que el informe existe para hacer discutible:
 | HEAD | consúltalo con `git rev-parse HEAD`. Fijarlo aquí lo deja obsoleto en la fusión siguiente |
 | Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **todavía en v0.6.0** |
 | Fichas | `/informes/ia-escuelas-derecho-chile/instituciones` |
+| **Preview** | `aldunateexperimento02-2095wtihl-dojedacifuentes-projects.vercel.app` · commit `29c9172` |
+
+**El preview está detrás de la protección SSO de Vercel.** Se abre con la sesión
+del autor; una petición anónima recibe un 302 a `vercel.com/sso-api`. Para
+comprobarlo desde una sesión sin navegador autenticado, sirve el build de
+producción en local —`npx next start -p 3100`— y adjunta el preview por URL: es
+el mismo commit y el mismo build.
 
 **Ramas preservadas en el remoto**, no borrar: `informe-01/v0.5.0` (`a1cc758`) y
 `informe-01/borrador-aldunate` (`6dffd0f`).
@@ -92,6 +100,12 @@ Sólo lo terminado.
 10. **Fe de erratas de la v0.6.0**: la ficha de cada institución declaraba «0
     fuentes con verificación sustantiva» y la nota metodológica sostenía que
     ninguna fuente llevaba fecha de verificación.
+11. **Pasada tipográfica sobre las cifras de la prosa**, terminada en la sesión
+    siguiente. Cardinales en palabras hasta veinte, coma decimal y artículo
+    delante del nombre institucional. Ninguna cifra deja de venir del dataset:
+    cambia cómo se imprime. `resolverCifras` entiende ahora `{MarcaEnMayuscula}`
+    y devuelve el valor capitalizado, que es lo que permite abrir frase con una
+    cifra sin duplicar la clave en el recuento.
 
 **Lo que NO se hizo:** ni una fuente nueva contrastada. El corpus es exactamente
 el de la v0.6.0. Esta versión trabaja sobre el instrumento, no sobre los datos.
@@ -195,6 +209,10 @@ doble revisión.
   capacidades que se les añadió arriba. No se rediseñaron.
 - **ISSUE-020**: la UAI aparece sin unidad especializada porque su laboratorio
   consta como unidad responsable y no como iniciativa propia.
+- **ISSUE-023**: en el cruce cobertura/capacidad los rótulos se pisan en el
+  cuadrante bajo —«U. de los Andes» con «U. Diego Portales», «U. de Concepción»
+  con «U. del Desarrollo»—. La figura se lee, pero cuatro nombres hay que
+  adivinarlos. No se tocó: el autor pidió revisar antes de rediseñar.
 
 ---
 
