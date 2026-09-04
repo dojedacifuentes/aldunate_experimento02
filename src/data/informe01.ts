@@ -1616,7 +1616,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "universityId": "puc-chile",
     "name": "Departamento de Derecho y Tecnología",
     "attribution": "FACULTAD_DERECHO",
-    "direction": "ADYACENTE",
+    "direction": "DERECHO_DE_IA",
     "dimension": "gobernanza",
     "mechanism": "UNIDAD",
     "startDate": "2025-12-31",
@@ -1633,7 +1633,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
       "src-puc-chile-005",
       "src-puc-chile-007"
     ],
-    "notes": "Unidad orgánica con mandato que incluye IA. Consta en la estructura orgánica publicada; falta el documento constitutivo (L-6)."
+    "notes": "Reclasificada 04-09-2026 (ISSUE-024). Unidad orgánica con mandato publicado que incluye inteligencia artificial"
   },
   {
     "id": "ini-puc-chile-004",
@@ -1728,7 +1728,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "universityId": "uchile",
     "name": "Centro de Estudios en Derecho, Tecnología y Sociedad (CE3)",
     "attribution": "CENTRO_PROGRAMA",
-    "direction": "ADYACENTE",
+    "direction": "DERECHO_DE_IA",
     "dimension": "gobernanza",
     "mechanism": "UNIDAD",
     "startDate": "1988",
@@ -1747,7 +1747,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
       "src-uchile-010",
       "src-uchile-012"
     ],
-    "notes": "Centro histórico de derecho y tecnología; adoptó el nombre CE3 el 01-01-2025. Su especificidad en IA se evalúa aparte."
+    "notes": "Reclasificado 04-09-2026 (ISSUE-024). Centro histórico de derecho y tecnología; adoptó el nombre CE3 el 01-01-2025. Su especificidad en IA consta en el corpus con dos evidencias propias: ev-uchile-004"
   },
   {
     "id": "ini-uchile-002",
@@ -2202,7 +2202,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "universityId": "unab",
     "name": "Diplomado en Derecho, Innovación y Tecnología",
     "attribution": "FACULTAD_DERECHO",
-    "direction": "ADYACENTE",
+    "direction": "IA_PARA_DERECHO",
     "dimension": "formacion-continua",
     "mechanism": "PROGRAMA_FORMATIVO",
     "ladder": 1,
@@ -2216,7 +2216,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "sourceIds": [
       "src-unab-004"
     ],
-    "notes": "Recuperada en la ronda 3. Falta comprobar si la IA es componente sustantivo: por ahora ADYACENTE."
+    "notes": "Reclasificada 04-09-2026 (ISSUE-024) por decisión editorial"
   },
   {
     "id": "ini-udd-001",
@@ -2925,7 +2925,7 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "sourceId": "src-puc-chile-007",
     "initiativeId": "ini-puc-chile-003",
     "universityId": "puc-chile",
-    "direction": "ADYACENTE",
+    "direction": "DERECHO_DE_IA",
     "dimension": "gobernanza",
     "statement": "La fuente identifica a Raúl Madrid como director del Departamento de Derecho y Tecnología recientemente creado.",
     "attribution": "FACULTAD_DERECHO",
@@ -3053,7 +3053,7 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "sourceId": "src-uchile-010",
     "initiativeId": "ini-uchile-001",
     "universityId": "uchile",
-    "direction": "ADYACENTE",
+    "direction": "DERECHO_DE_IA",
     "dimension": "gobernanza",
     "statement": "El CE3 organiza una actividad sobre la excepción de derechos de autor para el entrenamiento de sistemas de IA.",
     "attribution": "CENTRO_PROGRAMA",
@@ -3069,7 +3069,7 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "sourceId": "src-uchile-012",
     "initiativeId": "ini-uchile-001",
     "universityId": "uchile",
-    "direction": "ADYACENTE",
+    "direction": "DERECHO_DE_IA",
     "dimension": "gobernanza",
     "statement": "La Facultad realiza un seminario sobre inteligencia artificial y acceso a la justicia en dos jornadas.",
     "attribution": "CENTRO_PROGRAMA",
@@ -3501,7 +3501,7 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "sourceId": "src-unab-004",
     "initiativeId": "ini-unab-004",
     "universityId": "unab",
-    "direction": "ADYACENTE",
+    "direction": "IA_PARA_DERECHO",
     "dimension": "formacion-continua",
     "statement": "El postgrado ofrece un Diplomado en Derecho, Innovación y Tecnología.",
     "attribution": "FACULTAD_DERECHO",
@@ -4402,9 +4402,9 @@ export const informe01Recuento: Informe01Recuento = {
   },
   "iniciativasPorDireccion": {
     "AMBOS": 11,
-    "ADYACENTE": 6,
-    "IA_PARA_DERECHO": 29,
-    "DERECHO_DE_IA": 7
+    "ADYACENTE": 3,
+    "IA_PARA_DERECHO": 30,
+    "DERECHO_DE_IA": 9
   },
   "dimensionesConEvidencia": 6,
   "dimensionesTotales": 8,

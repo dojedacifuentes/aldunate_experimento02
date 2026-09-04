@@ -30,9 +30,13 @@ La pregunta que el informe existe para hacer discutible:
 
 ## B · Estado actual
 
-**v0.8.0, borrador académico para revisión.** En rama, **sin fusionar**. En
-producción sigue la **v0.7.0**, que está publicada y **no se sobrescribe**: su
-paquete se restauró byte a byte desde `main` al cortar esta versión (CLAUDE.md §8).
+**v0.8.0, borrador académico para revisión. Fusionada en `main` y publicada en
+producción** el 04-09-2026. La v0.7.0 sigue en pie en su propia URL, byte a byte
+como se publicó: una versión publicada no se sobrescribe (CLAUDE.md §8).
+
+**Para continuar desde otra ventana**, el prompt está en
+`docs/report-01/CONTINUAR.md`. Cópialo entero; incluye las reglas duras y las
+trampas, de modo que no dependa de esta conversación.
 
 **Esta versión responde a un encargo de revisión mayor que está a medio camino.**
 Lo que se hizo y lo que falta están en §C y en §H, y conviene leer las dos antes
@@ -43,7 +47,7 @@ de decidir nada: lo hecho cambia el método y lo que falta cambia el documento.
 | Rama | `informe-01/v0.8.0` |
 | Base | `e746963`, punta de `main` al empezar |
 | HEAD | consúltalo con `git rev-parse HEAD`. Fijarlo aquí lo deja obsoleto en la fusión siguiente |
-| Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **v0.7.0**, no la 0.8.0 |
+| Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **v0.8.0** |
 | Fichas | `/informes/ia-escuelas-derecho-chile/instituciones` |
 | **Preview** | uno por commit · se consulta, no se fija aquí |
 
@@ -81,7 +85,7 @@ mismo build.
 | 0 | registros `ACEPTADO` |
 | 19 / 21 / 13 / **0** | iniciativas por peldaño 1 / 2 / 3 / **4** |
 | **10 × 11 = 110** | **celdas de la matriz de capacidades** |
-| 31 / 10 / 12 / **3** / 7 / **47** | en operación / incipiente / sólo entorno / **sólo adyacente** / no localizada / **no concluyente** |
+| 33 / 11 / 12 / **0** / 7 / **47** | en operación / incipiente / sólo entorno / **sólo adyacente** / no localizada / **no concluyente** |
 | 3,7 : 1 | razón de cobertura piloto frente al resto |
 
 **Validaciones al cierre:** typecheck en verde · lint 0 errores y 8 avisos
@@ -97,9 +101,14 @@ es la comprobación que vale: en el disco donde se generó el paquete no prueba 
 ### La revisión mayor, primera mitad
 
 1. **Una iniciativa adyacente ya no acredita una capacidad de IA**, y hay un
-   estado nuevo para decirlo sin fingir una ausencia: `SOLO_ADYACENTE`. Cinco
-   celdas se mueven, ninguna de la PUCV. Lee la regla entera en
-   `src/lib/informe01-capacidades.ts`: está documentada donde se aplica.
+   estado nuevo para decirlo sin fingir una ausencia: `SOLO_ADYACENTE`. La regla
+   entera está en `src/lib/informe01-capacidades.ts`, documentada donde se
+   aplica.
+2. **Los siete registros adyacentes se abrieron contra sus fuentes** y tres se
+   reclasificaron. **Hoy ninguna celda está en `SOLO_ADYACENTE`**: el estado se
+   conserva porque la regla sigue vigente y describe qué haría el instrumento si
+   el caso volviera a darse, no porque haya algo que pintar. Lee ISSUE-024
+   entero antes de tocar la matriz.
 2. **La prosa dejó de exponer el proceso privado de elaboración.** El conflicto
    de interés se conserva en primera persona; el destinatario y los terceros
    nombrados, no. Una prueba lo vigila.
@@ -254,36 +263,30 @@ doble revisión.
 
 ---
 
-## H · Misión: terminar la revisión mayor
+## H · Misión de la sesión siguiente
 
-> **Falta la mitad, y es la mitad que se ve.**
->
-> Lo hecho cambió el método y el envoltorio. Lo que falta cambia el documento, y
-> el encargo lo enumera:
->
-> 1. **Simplificar el modelo de diez capacidades a cinco o siete.** Hay una
->    consolidación natural en las cinco bandas que ya existen —estructura,
->    docencia, adopción, conocimiento, resultado—, y hay una trampa: fundir
->    `unidad` con `norma` destruye el hallazgo H-2, que dice que la estructura
->    se crea antes que la regla, y fundir `herramienta` con `adopcion` destruye
->    el H-4, que distingue disponer de adoptar. El modelo más parsimonioso es el
->    menor que conserve los hallazgos que la evidencia sostiene, no el menor.
-> 2. **Reescribir la arquitectura editorial** para que la narrativa llegue antes
->    a las conclusiones y el aparato metodológico baje a anexos. El resumen
->    ejecutivo debe leerse en cinco minutos.
-> 3. **Títulos declarativos en todas las figuras** y revisión de las tablas del
->    cuerpo: sintéticas arriba, completas en anexo.
-> 4. **Llevar el sistema visual a la página del sitio**, que sigue con el tema
->    oscuro espacial mientras el documento ya es claro y editorial. Hoy no
->    parecen la misma publicación.
->
-> Y sigue pendiente lo de siempre, que ninguna de estas cuatro resuelve: **el
-> corpus no ha crecido**. 38 fuentes contrastadas de 74, y 47 celdas sin concluir
-> porque su ruta no se recorrió. Ver ISSUE-022.
+**El prompt entero está en `docs/report-01/CONTINUAR.md`.** Esto es el resumen.
 
-**Antes de tocar la matriz, lee ISSUE-024.** El campo `direction` acaba de
-volverse normativo y en al menos un registro no responde la pregunta que dice
-responder.
+> 1. **Verificar el diplomado de la UNAB.** Es corto y va primero.
+>    `ini-unab-004` es el único registro del corpus clasificado **sin evidencia
+>    de contenido**: se le puso `IA_PARA_DERECHO` por el ámbito declarado del
+>    programa, y su única fuente no menciona inteligencia artificial. Abre el
+>    temario. Si lo sostiene, añade la evidencia; si no, vuelve a `ADYACENTE`.
+>    Mientras siga así, el instrumento tiene una excepción que no puede
+>    defender.
+> 2. **Simplificar el modelo**, de diez capacidades a cinco o siete. Las cinco
+>    bandas existentes dan la consolidación natural. **Las dos trampas**: fundir
+>    `unidad` con `norma` destruye el hallazgo H-2 y fundir `herramienta` con
+>    `adopcion` destruye el H-4. El modelo más parsimonioso es el menor que
+>    conserve los hallazgos, no el menor.
+> 3. **Arquitectura editorial**: que la narrativa llegue antes a las
+>    conclusiones. El índice y el resumen al principio ya están hechos.
+> 4. **La página del sitio**, que sigue oscura mientras el documento ya es claro
+>    y editorial. Hoy no parecen la misma publicación.
+
+Y sigue pendiente lo que ninguna de las cuatro resuelve: **el corpus no ha
+crecido**. 38 fuentes contrastadas de 74, y 47 celdas sin concluir porque su ruta
+no se recorrió. Ver ISSUE-022.
 
 ## I · Qué NO tocar sin causa declarada
 
