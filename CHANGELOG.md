@@ -2,6 +2,126 @@
 
 ## No publicado
 
+### Informe 01 · v0.7.0 · el instrumento se revisa contra el fenómeno
+
+**Cambiado · la metodología 2.0 se enmienda, y la enmienda es aditiva.** La 2.0
+comparaba ocho dimensiones —ámbitos académicos donde una iniciativa puede
+ocurrir— y dos de ellas no eran ámbitos sino atributos. Como el registro obliga a
+declarar una dimensión primaria y sólo una, ninguna iniciativa caía nunca ahí: el
+diplomado con dos cohortes graduadas se clasificaba en «formación continua» y su
+continuidad, que es el dato, quedaba invisible. **La doble columna vacía que la
+v0.6.0 publicó como hallazgo era en parte un artefacto del modelo.** La 2.0 se
+conserva íntegra, su matriz se publica en el anexo D y el protocolo nuevo está
+documentado en `canonical/metodologia-v2.1.md`.
+
+**Añadido · el eje de mecanismo.** Qué clase de instrumento institucional es cada
+iniciativa: unidad, norma, programa formativo, asignatura, herramienta, proyecto,
+actividad, convenio o publicación. Es una clasificación de lo que el registro ya
+contenía en su nombre, su unidad responsable y sus productos, de modo que no
+aporta evidencia nueva y no reabre la verificación de ninguna fuente. El
+compilador rechaza cualquier valor fuera del vocabulario y no escribe nada.
+
+**Añadido · la matriz de diez capacidades institucionales.** Cada una derivada
+por una regla mecánica sobre campos ya verificados, y cada una con la pregunta
+que responde escrita al lado. Responde «¿qué capacidad demuestra esta Facultad?»
+y no «¿cuánta evidencia encontramos de ella?», que era la pregunta que contestaba
+el comparador anterior.
+
+**Corregido · una ausencia sólo informa si se recorrió la ruta que la habría
+encontrado.** Es la aportación central. Cada capacidad declara qué rutas del
+protocolo la acreditarían: sin evidencia y con la ruta recorrida, la celda dice
+«no localizada»; sin recorrerla, «no concluyente». 47 de las 110 celdas son de la
+segunda clase. La desigualdad de cobertura deja de ser una advertencia al pie del
+documento y pasa a estar dentro de cada celda, que es donde el lector la
+necesita (ISSUE-018).
+
+**Corregido · la verificación deja de decidir el estado.** Un primer diseño de la
+escala distinguía «acreditada» —con fuente contrastada— de «declarada», y el
+efecto medido fue premiar a la PUCV, con el 86 % de sus fuentes contrastadas, por
+una propiedad del trabajo de campo. Es el defecto de la matriz anterior con otra
+ropa. La marca de verificación viaja aparte y no modifica el color de la celda;
+una prueba lo vigila.
+
+**Añadido · análisis de sensibilidad.** El corpus es el mismo de la v0.6.0 —74
+fuentes, 53 iniciativas, 38 contrastadas—, así que un cambio de lectura sólo
+puede venir del método. De las siete conclusiones, cinco se sostienen sin
+variación y dos se matizan: la ausencia de evaluación de efecto queda abierta en
+nueve de las once instituciones y la de línea curricular obligatoria en seis,
+porque las rutas que las acreditarían no se recorrieron allí. **Ninguna conclusión
+se hizo más fuerte por efecto del cambio de método**, y ésa era la comprobación
+que importaba.
+
+**Añadido · motor de gráficos propio.** Funciones puras que devuelven cadenas de
+SVG y que consumen dos huéspedes: los componentes del sitio y el exportador que
+produce el HTML del que se imprime el PDF. La v0.6.0 dibujaba con tablas de HTML
+y `div` de color, y el PDF que se envía al destinatario **no tenía ni una
+figura**. Ahora las nueve son las mismas en la web, en el HTML y en papel, porque
+salen de la misma función.
+
+- Ninguna figura escribe un color: todas nombran variables CSS que cada huésped
+  define para sus temas y para papel. Una prueba rechaza cualquier hexadecimal
+  que no sea la reserva de una variable.
+- El SVG sale sin atributos de ancho ni de alto. Con un alto declarado como
+  automático el navegador recortaba la matriz por abajo y se perdían cuatro de
+  las once filas sin que nada fallara.
+- El color nunca va solo: cada estado lleva además trama o glifo, de modo que la
+  figura sobrevive a una impresión en blanco y negro.
+- Cada figura declara la pregunta que responde, un título que es su lectura y no
+  un rótulo, su fuente, su nota metodológica y su alternativa textual.
+
+**Añadido · línea de tiempo**, la única visualización declarada que faltaba. 41
+de las 49 iniciativas fechadas empiezan en 2025 o después: el campo entero cabe
+en dos años.
+
+**Añadido · el cruce entre cobertura y capacidad**, que es la comprobación que
+impide leer mal todo lo demás. La Universidad Autónoma recorre 2 de 13 rutas y
+acredita tantas capacidades en operación como la Universidad de Chile, que
+recorre 11. Si el trabajo de campo y la capacidad institucional fueran la misma
+variable, ese par de valores no podría existir.
+
+**Cambiado · la arquitectura editorial.** Resumen ejecutivo de siete párrafos y
+siete hallazgos —cada uno con su dato, su lectura y su límite— antes de la
+introducción. Las once fichas, la matriz de dimensiones, las afirmaciones, las
+lagunas, la auditoría de la línea base y el registro de fuentes bajan a anexos.
+El límite de cada hallazgo es obligatorio por tipo: un hallazgo sin límite no
+compila.
+
+**Cambiado · la sección PUCV compara mecanismos.** Para cada capacidad que aquí
+no consta en funcionamiento, nombra el instrumento concreto —con su institución y
+su fuente— allí donde sí. Las implicancias se separan de las conclusiones y se
+enuncian como decisiones que la evidencia abre, no como recomendaciones.
+
+**Añadido · portada.** El PDF pasa de 56 a 72 páginas y abre con una primera
+página propia, cuya marca gráfica es la propia matriz de capacidades reducida a
+su retícula.
+
+**Corregido · fe de erratas de la v0.6.0.** La ficha de cada institución
+declaraba «0 fuentes con verificación sustantiva» y la nota metodológica sostenía
+que ninguna fuente llevaba fecha de verificación. Las dos afirmaciones eran
+ciertas en la v0.5.0 y dejaron de serlo con 38 fuentes contrastadas. La laguna
+L-5 se reescribe y declara además el sesgo de reparto de la propia verificación.
+
+**Añadido · quince pruebas**, de 127 a 142. Vigilan el vocabulario cerrado de
+mecanismos, la regla de las rutas en las dos direcciones, que la verificación no
+decida el estado, que ninguna función exportada devuelva un agregado ordenable,
+que ninguna figura escriba un color suelto y que cada hallazgo lleve su límite.
+
+**Corregido · las cifras de la prosa se escriben como las escribiría un editor.**
+Todas siguen saliendo del dataset; cambia cómo se imprimen. Los cardinales del
+cero al veinte van en palabras —«en cinco de las once Facultades», no «en 5 de
+las once»—, los decimales llevan coma y los nombres institucionales llevan
+artículo. La razón de cobertura se publicaba como «3.7 veces», que delata que el
+número salió de un programa sin pasar por nadie. Los componentes de la web la
+imprimían en crudo mientras el documento exportado ya la formateaba, de modo que
+el sitio y el PDF decían cosas distintas sobre el mismo dato.
+
+Para que un hallazgo pueda abrir frase con una cifra, `resolverCifras` entiende
+ahora una marca con inicial mayúscula —`{MecProgramasPalabra}`— y devuelve el
+mismo valor capitalizado. La alternativa era duplicar la clave en el recuento, y
+dos claves para una cifra es dejar que un día digan cosas distintas.
+
+DEC-118 a DEC-123 · ISSUE-020 a ISSUE-022.
+
 ### Informe 01 · v0.6.0 · el mapeo se somete a su propia exigencia
 
 **Añadido · la verificación sustantiva existe, y llega al 51%.** Se abrieron 38

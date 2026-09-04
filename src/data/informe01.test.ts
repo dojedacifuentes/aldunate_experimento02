@@ -33,7 +33,24 @@ import {
   pucvLectura,
   pucvRecomendaciones,
 } from './informe01-pucv';
-import { cifrasInforme01 } from '@/lib/informe01';
+import { informe01Hallazgos, informe01ResumenEjecutivo } from './informe01-hallazgos';
+import { cifrasInforme01, universidadesOrdenadas } from '@/lib/informe01';
+import {
+  CAPACIDADES,
+  celdaCapacidad,
+  MECANISMOS,
+} from '@/lib/informe01-capacidades';
+import {
+  coberturaSvg,
+  coberturaVsCapacidadSvg,
+  direccionesSvg,
+  escaleraSvg,
+  lineaTiempoSvg,
+  mapaDesarrolloSvg,
+  marcaPortadaSvg,
+  matrizCapacidadesSvg,
+  mecanismosSvg,
+} from '@/lib/informe01-graficos';
 
 /**
  * Estas pruebas existen para que el build falle antes que el informe mienta.
@@ -386,7 +403,7 @@ describe('informe 01 · el borrador, atado a sus datos', () => {
  * autor y fallaba en producción. Lo arregla `.gitattributes`; esto lo vigila.
  */
 describe('informe 01 · el paquete de descargas dice la verdad sobre sí mismo', () => {
-  const dir = join(process.cwd(), 'public', 'descargas', 'informe-01-borrador-academico-v0.6.0');
+  const dir = join(process.cwd(), 'public', 'descargas', 'informe-01-borrador-academico-v0.7.0');
   const manifiesto = readFileSync(join(dir, 'checksums.sha256'), 'utf8')
     .split('\n')
     .filter(Boolean)
@@ -416,5 +433,243 @@ describe('informe 01 · el paquete de descargas dice la verdad sobre sí mismo',
       const texto = readFileSync(join(dir, ...archivo.split('/')), 'utf8');
       expect(texto.includes('\r\n'), `${archivo} lleva CRLF`).toBe(false);
     }
+  });
+});
+
+/**
+ * La capa de capacidades (metodología 2.1).
+ *
+ * Es un derivado, no un dato: se calcula entero desde los CSV. Eso la vuelve
+ * barata de comprobar y peligrosa de dejar sin comprobar, porque un error en una
+ * regla no rompe nada —produce una matriz plausible y falsa—.
+ *
+ * Lo que estas pruebas vigilan no es que las cifras sean unas u otras: es que el
+ * instrumento siga respondiendo la pregunta para la que se construyó.
+ */
+describe('informe 01 · la capa de capacidades', () => {
+  const ids = universidadesOrdenadas.map((u) => u.id);
+  const celdas = ids.flatMap((id) => CAPACIDADES.map((c) => celdaCapacidad(id, c.id)));
+
+  it('clasifica las iniciativas dentro del vocabulario cerrado de mecanismos', () => {
+    const vocabulario = new Set(MECANISMOS.map((m) => m.id));
+    for (const i of informe01Iniciativas)
+      expect(vocabulario.has(i.mechanism), `${i.id} declara «${i.mechanism}»`).toBe(true);
+  });
+
+  it('publica una celda por cada par de institución y capacidad', () => {
+    expect(celdas.length).toBe(ids.length * CAPACIDADES.length);
+  });
+
+  /*
+   * La regla que separa cobertura de capacidad, comprobada en las dos
+   * direcciones. Si alguien invierte el condicional, la matriz sigue dibujándose
+   * y empieza a leer el trabajo de campo como si fuera actividad institucional.
+   */
+  it('sólo declara no concluyente donde falta una ruta del protocolo', () => {
+    for (const celda of celdas) {
+      if (celda.estado === 'NO_CONCLUYENTE')
+        expect(
+          celda.rutasSinRecorrer.length,
+          `${celda.universityId}/${celda.capacidad} no concluyente sin ruta pendiente`,
+        ).toBeGreaterThan(0);
+      if (celda.estado === 'NO_LOCALIZADA')
+        expect(
+          celda.rutasSinRecorrer.length,
+          `${celda.universityId}/${celda.capacidad} no localizada con ruta pendiente`,
+        ).toBe(0);
+    }
+  });
+
+  it('no marca como contrastada ninguna celda sin iniciativas que la sostengan', () => {
+    for (const celda of celdas)
+      if (celda.contrastada)
+        expect(
+          celda.iniciativas.length,
+          `${celda.universityId}/${celda.capacidad}`,
+        ).toBeGreaterThan(0);
+  });
+
+  /*
+   * La verificación viaja fuera del estado. Es la corrección que impidió que la
+   * matriz premiara a la PUCV por tener el 86 % de sus fuentes contrastadas, y la
+   * forma de comprobarla es que ambos valores del booleano aparezcan dentro del
+   * mismo estado: si `contrastada` volviera a decidir el estado, no podrían.
+   */
+  it('mantiene la verificación separada del estado', () => {
+    const enOperacion = celdas.filter((c) => c.estado === 'EN_OPERACION');
+    expect(enOperacion.some((c) => c.contrastada)).toBe(true);
+    expect(enOperacion.some((c) => !c.contrastada)).toBe(true);
+  });
+
+  it('declara la pregunta que responde cada capacidad', () => {
+    for (const c of CAPACIDADES) {
+      expect(c.pregunta.startsWith('¿'), c.id).toBe(true);
+      expect(c.pregunta.endsWith('?'), c.id).toBe(true);
+    }
+  });
+
+  /*
+   * DEC-102 y DEC-115. No existe una función que devuelva un número comparable
+   * por universidad, y la ausencia es la garantía: en cuanto exista, alguien
+   * ordenará por ella y el informe publicará el ranking que su cobertura
+   * desigual prohíbe.
+   */
+  it('no exporta ningún agregado por universidad que pueda ordenarse', () => {
+    const prohibidas = ['puntaje', 'score', 'ranking', 'total', 'promedio', 'nota'];
+    const fuente = readFileSync(
+      join(process.cwd(), 'src', 'lib', 'informe01-capacidades.ts'),
+      'utf8',
+    );
+    const exportados = [...fuente.matchAll(/export function (\w+)/g)].map((m) => m[1]);
+    for (const nombre of exportados)
+      for (const prohibida of prohibidas)
+        expect(nombre.toLowerCase().includes(prohibida), nombre).toBe(false);
+  });
+});
+
+/**
+ * El motor de gráficos.
+ *
+ * Las figuras salen de funciones puras y las consumen dos huéspedes con hojas de
+ * estilo distintas: el sitio y el exportador. Un color escrito dentro de una
+ * figura funciona en uno de los dos y falla en el otro sin avisar —texto negro
+ * sobre fondo azul-negro, o una trama invisible en papel—, y por eso el contrato
+ * es que ninguna figura escriba un color que no venga de una variable CSS.
+ */
+describe('informe 01 · el motor de gráficos', () => {
+  const figuras: [string, string][] = [
+    ['matriz de capacidades', matrizCapacidadesSvg()],
+    ['cobertura frente a capacidad', coberturaVsCapacidadSvg()],
+    ['mecanismos', mecanismosSvg()],
+    ['escalera', escaleraSvg()],
+    ['línea de tiempo', lineaTiempoSvg()],
+    ['direcciones', direccionesSvg()],
+    ['cobertura', coberturaSvg()],
+    ['mapa de desarrollo', mapaDesarrolloSvg('pucv')],
+    ['marca de portada', marcaPortadaSvg()],
+  ];
+
+  it('publica cada figura con título y descripción para lectores de pantalla', () => {
+    for (const [nombre, svg] of figuras) {
+      expect(svg.includes('role="img"'), nombre).toBe(true);
+      expect(/<title id="[^"]+">[^<]+<\/title>/.test(svg), nombre).toBe(true);
+      expect(/<desc>[^<]{40,}<\/desc>/.test(svg), nombre).toBe(true);
+    }
+  });
+
+  /*
+   * Sin atributos de ancho ni de alto. Con un alto declarado como automático el
+   * navegador recortaba la matriz por abajo y se perdían cuatro de las once filas
+   * sin que nada fallara: el viewBox fija la proporción y el huésped, el tamaño.
+   */
+  it('deja el tamaño al huésped y la proporción al viewBox', () => {
+    for (const [nombre, svg] of figuras) {
+      const raiz = svg.slice(0, svg.indexOf('>'));
+      expect(raiz.includes('viewBox="0 0 '), nombre).toBe(true);
+      expect(raiz.includes(' width='), `${nombre} fija el ancho`).toBe(false);
+      expect(raiz.includes(' height='), `${nombre} fija el alto`).toBe(false);
+    }
+  });
+
+  it('no escribe ningún color fuera de una variable CSS con reserva', () => {
+    for (const [nombre, svg] of figuras) {
+      // Se admite `var(--g-algo, #hex)`: el hexadecimal es la reserva de la
+      // variable, no un color escrito a mano. Cualquier otro es un color suelto.
+      const sinVariables = svg.replace(/var\(--[a-z0-9-]+,\s*#[0-9a-fA-F]{3,8}\)/g, '');
+      const sueltos = sinVariables.match(/#[0-9a-fA-F]{3,8}/g) ?? [];
+      expect(sueltos, `${nombre} escribe ${sueltos.join(', ')}`).toEqual([]);
+    }
+  });
+
+  it('escapa el texto que inserta, incluidos los nombres con ampersand', () => {
+    for (const [nombre, svg] of figuras) {
+      const textos = [...svg.matchAll(/<text[^>]*>([^<]*)<\/text>/g)].map((m) => m[1]);
+      for (const t of textos)
+        expect(t.includes('&') && !t.includes('&amp;'), nombre).toBe(false);
+    }
+  });
+});
+
+/*
+ * Legibilidad del color.
+ *
+ * `--muted` es la superficie sobre la que se apoyan las tarjetas y `--muted-foreground`
+ * es la tinta que se lee encima. Los nombres se parecen y la clase de Tailwind que
+ * sale de cada uno se parece más: `text-muted` frente a `text-muted-foreground`.
+ * Escribir la primera pinta la prosa del color del papel —1,11 de contraste en el
+ * tema claro y 1,20 en el oscuro, es decir, invisible en los dos— y no falla nada:
+ * el texto está en el DOM, lo lee un lector de pantalla y sale en el buscador.
+ * Ciento cincuenta y dos elementos del informe estuvieron así.
+ */
+describe('informe 01 · la prosa se ve', () => {
+  const componentes = [
+    'Borrador.tsx',
+    'Publicacion.tsx',
+    'Pucv.tsx',
+    'Matriz.tsx',
+    'Cobertura.tsx',
+  ];
+
+  it('no pinta texto con un token de superficie', () => {
+    for (const nombre of componentes) {
+      const fuente = readFileSync(join('src', 'components', 'informe01', nombre), 'utf8');
+      // `text-muted-foreground` sí; `text-muted` a secas, no.
+      const sueltos = fuente.match(/text-muted(?!-foreground)/g) ?? [];
+      expect(sueltos, `${nombre} usa text-muted como color de letra`).toEqual([]);
+    }
+  });
+
+  /*
+   * La cifra que va escrita encima de una banda de color toma su tinta de la
+   * banda. `--background` sólo acierta cuando la banda contrasta con el papel, y
+   * sobre los tonos medios de la escalera no lo hace.
+   */
+  it('no escribe cifras sobre banda con el color del papel', () => {
+    const motor = readFileSync(join('src', 'lib', 'informe01-graficos.ts'), 'utf8');
+    expect(motor.includes('g-t-cifra-clara')).toBe(false);
+    const hoja = readFileSync(join('src', 'app', 'globals.css'), 'utf8');
+    for (const clase of ['g-t-sobre-op', 'g-t-sobre-esc-3', 'g-t-sobre-esc-2'])
+      expect(hoja.includes(`.${clase}`), `falta ${clase} en globals.css`).toBe(true);
+  });
+});
+
+/**
+ * Los hallazgos principales. Van antes que todo lo demás en el documento, de
+ * modo que un hallazgo mal formado es lo primero que un lector encuentra.
+ */
+describe('informe 01 · los hallazgos', () => {
+  const cifras = cifrasInforme01();
+
+  it('publica entre cuatro y siete hallazgos', () => {
+    expect(informe01Hallazgos.length).toBeGreaterThanOrEqual(4);
+    expect(informe01Hallazgos.length).toBeLessThanOrEqual(7);
+  });
+
+  /*
+   * El límite es parte del hallazgo y no un descargo al pie. Sin esta prueba, el
+   * primer hallazgo que se escriba con prisa saldrá sin él.
+   */
+  it('acompaña cada hallazgo de su dato, su lectura y su límite', () => {
+    for (const h of informe01Hallazgos) {
+      expect(h.enunciado.length, h.id).toBeGreaterThan(20);
+      expect(h.dato.length, h.id).toBeGreaterThan(60);
+      expect(h.lectura.length, h.id).toBeGreaterThan(60);
+      expect(h.limite.length, h.id).toBeGreaterThan(60);
+      expect(h.apoyo.length, h.id).toBeGreaterThan(0);
+    }
+  });
+
+  it('resuelve desde el dataset todas las cifras que cita', () => {
+    const textos = [
+      ...informe01ResumenEjecutivo,
+      ...informe01Hallazgos.flatMap((h) => [h.enunciado, h.dato, h.lectura, h.limite]),
+    ];
+    // `resolverCifras` lanza si una marca no está definida: basta con recorrer.
+    for (const t of textos) expect(() => resolverCifras(t, cifras)).not.toThrow();
+  });
+
+  it('escribe el resumen ejecutivo en párrafos y no en una sola parrafada', () => {
+    expect(informe01ResumenEjecutivo.length).toBeGreaterThanOrEqual(5);
+    for (const p of informe01ResumenEjecutivo) expect(p.length).toBeLessThan(1300);
   });
 });

@@ -1,3 +1,4 @@
+import { CAPACIDADES, celdaCapacidad, distribucionMecanismos } from '@/lib/informe01-capacidades';
 import {
   informe01Afirmaciones,
   informe01Cobertura,
@@ -264,6 +265,7 @@ export function cifrasInforme01(): Record<string, string | number> {
     (e) => e.attribution === 'INSTITUCIONAL_UNIVERSIDAD',
   ).length;
   return {
+    ...cifrasDeCapacidad(),
     corte: CORTE_INFORME_01,
     universidades: r.universidades,
     fuentes: r.fuentes,
@@ -273,11 +275,146 @@ export function cifrasInforme01(): Record<string, string | number> {
     verificadas: r.fuentesVerificadas,
     noVerificadas,
     porcentajeVerificado: Math.round((r.fuentesVerificadas / r.fuentes) * 100),
-    razonCobertura: r.razonCobertura,
+    // Coma decimal. `String(3.7)` escribe «3.7», y un informe en castellano que
+    // publica «3.7 veces» delata que el número salió de un programa sin pasar
+    // por nadie.
+    razonCobertura: String(r.razonCobertura).replace('.', ','),
     universitarios,
     evaluadas: r.iniciativasEvaluadas,
     escalon1: r.iniciativasPorEscalon['1'] ?? 0,
     escalon2: r.iniciativasPorEscalon['2'] ?? 0,
     escalon3: r.iniciativasPorEscalon['3'] ?? 0,
+  };
+}
+
+/* ── Cifras derivadas de la capa de capacidades (metodología 2.1) ────────────
+ * Viven aquí y no en `informe01-capacidades.ts` para que la prosa siga teniendo
+ * una sola tabla de marcas. La capa de capacidades calcula; esta función nombra.
+ * Ninguna de estas cifras se escribe a mano en ningún texto del informe.       */
+
+/**
+ * Cardinales en palabras, del cero al veinte.
+ *
+ * La prosa académica escribe «en cinco de las once Facultades» y no «en 5 de las
+ * once»; mezclar dígito y palabra en la misma frase delata la interpolación. Con
+ * esto la cifra sigue viniendo del dataset y el texto sigue leyéndose como texto.
+ * Por encima de veinte se escribe el dígito, que es también lo que hace un
+ * editor humano.
+ */
+const PALABRAS = [
+  'cero', 'una', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho',
+  'nueve', 'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis',
+  'diecisiete', 'dieciocho', 'diecinueve', 'veinte',
+];
+
+export const enPalabras = (n: number): string =>
+  n >= 0 && n <= 20 ? PALABRAS[n] : String(n);
+
+/**
+ * Decimal en castellano: coma, no punto.
+ *
+ * `String(3.7)` escribe «3.7», y un informe en castellano que publica «3.7 veces
+ * mayor» delata que el número salió de un programa sin pasar por nadie. Todo
+ * componente que imprima una cifra con decimales del recuento pasa por aquí.
+ */
+export const decimal = (n: number): string => String(n).replace('.', ',');
+
+function cifrasDeCapacidad(): Record<string, string | number> {
+  const ids = universidadesOrdenadas.map((u) => u.id);
+  const celdas = ids.flatMap((id) => CAPACIDADES.map((c) => celdaCapacidad(id, c.id)));
+  const cuenta = (e: string) => celdas.filter((c) => c.estado === e).length;
+
+  const enOperacionDe = (cap: string) =>
+    ids.filter((id) => celdaCapacidad(id, cap as never).estado === 'EN_OPERACION').length;
+  const sinConcluirDe = (cap: string) =>
+    ids.filter((id) => celdaCapacidad(id, cap as never).estado === 'NO_CONCLUYENTE').length;
+
+  const mecanismos = distribucionMecanismos();
+  const mec = (id: string) => mecanismos.find((m) => m.id === id)!;
+
+  const conFecha = informe01Iniciativas.filter((i) => i.startDate);
+  const desde2025 = conFecha.filter((i) => Number(i.startDate!.slice(0, 4)) >= 2025).length;
+
+  /* El contraejemplo que prueba que cobertura y capacidad son variables
+     distintas. Se calcula, no se elige: es la institución con menos rutas
+     recorridas, y su par es la que más tiene con la misma cuenta de
+     capacidades. Si la verificación futura cambia el reparto, cambia el texto. */
+  const perfil = ids.map((id) => ({
+    id,
+    nombre: universidadesOrdenadas.find((u) => u.id === id)!.officialName,
+    rutas: informe01Cobertura.find((c) => c.universityId === id)!.routesCompleted,
+    operacion: CAPACIDADES.filter((c) => celdaCapacidad(id, c.id).estado === 'EN_OPERACION')
+      .length,
+  }));
+  const menos = [...perfil].sort((a, b) => a.rutas - b.rutas)[0];
+  const mas = [...perfil].sort((a, b) => b.rutas - a.rutas)[0];
+
+  /* Las mismas cifras en palabras, para la prosa que las necesita así. */
+  const enLetra = {
+    capacidadesPalabra: enPalabras(CAPACIDADES.length),
+    unidadOperacionPalabra: enPalabras(enOperacionDe('unidad')),
+    normaOperacionPalabra: enPalabras(enOperacionDe('norma')),
+    pregradoOperacionPalabra: enPalabras(enOperacionDe('curriculo')),
+    formacionOperacionPalabra: enPalabras(enOperacionDe('formacion')),
+    normaSinConcluirPalabra: enPalabras(sinConcluirDe('norma')),
+    pregradoSinConcluirPalabra: enPalabras(sinConcluirDe('curriculo')),
+    evaluacionSinConcluirPalabra: enPalabras(sinConcluirDe('evaluacion')),
+    investigacionSinConcluirPalabra: enPalabras(sinConcluirDe('investigacion')),
+    transferenciaIncipientePalabra: enPalabras(
+      ids.filter((id) => celdaCapacidad(id, 'transferencia').estado === 'INCIPIENTE').length,
+    ),
+    mecProgramasPalabra: enPalabras(mec('PROGRAMA_FORMATIVO').iniciativas.length),
+    mecUnidadesPalabra: enPalabras(mec('UNIDAD').iniciativas.length),
+    mecNormasPalabra: enPalabras(mec('NORMA').iniciativas.length),
+    mecAsignaturasPalabra: enPalabras(mec('ASIGNATURA').iniciativas.length),
+    mecConveniosPalabra: enPalabras(mec('CONVENIO').iniciativas.length),
+    mecActividadesPalabra: enPalabras(mec('ACTIVIDAD').iniciativas.length),
+    mecHerramientasPalabra: enPalabras(mec('HERRAMIENTA').iniciativas.length),
+    mecHerramientasEntornoPalabra: enPalabras(
+      mec('HERRAMIENTA').iniciativas.length - mec('HERRAMIENTA').deLaFacultad,
+    ),
+    mecProgramasFacultadPalabra: enPalabras(mec('PROGRAMA_FORMATIVO').deLaFacultad),
+    universidadesPalabra: enPalabras(ids.length),
+  };
+
+  return {
+    ...enLetra,
+    capacidades: CAPACIDADES.length,
+    celdas: celdas.length,
+    celdasOperacion: cuenta('EN_OPERACION'),
+    celdasIncipiente: cuenta('INCIPIENTE'),
+    celdasEntorno: cuenta('SOLO_ENTORNO'),
+    celdasNoLocalizada: cuenta('NO_LOCALIZADA'),
+    celdasNoConcluyente: cuenta('NO_CONCLUYENTE'),
+    unidadOperacion: enOperacionDe('unidad'),
+    normaOperacion: enOperacionDe('norma'),
+    normaSinConcluir: sinConcluirDe('norma'),
+    pregradoOperacion: enOperacionDe('curriculo'),
+    pregradoSinConcluir: sinConcluirDe('curriculo'),
+    formacionOperacion: enOperacionDe('formacion'),
+    investigacionSinConcluir: sinConcluirDe('investigacion'),
+    evaluacionSinConcluir: sinConcluirDe('evaluacion'),
+    transferenciaIncipiente: ids.filter(
+      (id) => celdaCapacidad(id, 'transferencia').estado === 'INCIPIENTE',
+    ).length,
+    mecProgramas: mec('PROGRAMA_FORMATIVO').iniciativas.length,
+    mecProgramasFacultad: mec('PROGRAMA_FORMATIVO').deLaFacultad,
+    mecHerramientas: mec('HERRAMIENTA').iniciativas.length,
+    mecHerramientasEntorno:
+      mec('HERRAMIENTA').iniciativas.length - mec('HERRAMIENTA').deLaFacultad,
+    mecAsignaturas: mec('ASIGNATURA').iniciativas.length,
+    mecUnidades: mec('UNIDAD').iniciativas.length,
+    mecNormas: mec('NORMA').iniciativas.length,
+    mecConvenios: mec('CONVENIO').iniciativas.length,
+    mecActividades: mec('ACTIVIDAD').iniciativas.length,
+    iniciativasFechadas: conFecha.length,
+    iniciativasDesde2025: desde2025,
+    iniciativasSinFecha: informe01Iniciativas.length - conFecha.length,
+    menosInvestigada: menos.nombre,
+    menosInvestigadaRutas: menos.rutas,
+    menosInvestigadaOperacion: menos.operacion,
+    masInvestigada: mas.nombre,
+    masInvestigadaRutas: mas.rutas,
+    masInvestigadaOperacion: mas.operacion,
   };
 }

@@ -327,3 +327,154 @@ no hay razón para elegir.
 **No hacer:** no recuperar puntajes agregados ni tablas de posiciones para ganar
 legibilidad. La claridad se consigue con jerarquía editorial y mejores gráficos,
 no bajando el estándar metodológico.
+
+---
+
+## DEC-118 — Metodología 2.1: una capa de capacidades ortogonal a las dimensiones
+
+**Fecha:** 04-09-2026
+**Decisión:** se enmienda `METODOLOGIA_IA_DERECHO_V2.0` con la versión **2.1**,
+que añade dos ejes —el **mecanismo** institucional de cada iniciativa y diez
+**capacidades** derivadas— sin recodificar un solo registro. La 2.0 se conserva
+íntegra, su matriz se publica en el anexo D del informe y ninguno de sus
+vocabularios se retira.
+
+**Motivo:** la 2.0 comparaba ámbitos académicos, y dos de sus ocho dimensiones
+—«recursos y capacidades» y «continuidad, cobertura y resultados»— no son ámbitos
+sino atributos. Como el registro obliga a declarar una `primary_dimension` y sólo
+una, ninguna iniciativa cae nunca ahí: el diplomado con dos cohortes graduadas se
+clasifica en «formación continua» y su continuidad, que es el dato, queda
+invisible. **La doble columna vacía que la v0.6.0 publicó como hallazgo es en
+parte un artefacto del modelo.**
+
+**Consecuencia:** el comparador principal pasa a responder «¿qué capacidad
+demuestra esta Facultad?» en lugar de «¿cuánta evidencia encontramos de ella?».
+El eje de mecanismo se registra en `iniciativas.csv` como `mechanism_type`, con
+vocabulario cerrado que el compilador verifica.
+
+**No hacer:** no retirar la matriz de dimensiones ni sus vocabularios. Un cambio
+de instrumento no autoriza a hacer desaparecer el instrumento con el que se
+publicó la versión anterior: impediría comprobar qué cambió.
+
+**Documento:** `content/reports/01_ia_escuelas_derecho_chile/canonical/metodologia-v2.1.md`.
+
+---
+
+## DEC-119 — Una ausencia sólo informa si se recorrió la ruta que la habría encontrado
+
+**Fecha:** 04-09-2026
+**Decisión:** la matriz de capacidades distingue dos clases de ausencia.
+`NO_LOCALIZADA` significa que se recorrieron las rutas del protocolo que
+acreditarían esa capacidad y no se halló evidencia. `NO_CONCLUYENTE` significa
+que esas rutas no se recorrieron en esa institución. Cada capacidad declara sus
+rutas, y la clasificación se calcula desde `routes_missing`.
+
+**Motivo:** es la respuesta operativa a ISSUE-018. Hasta aquí, la desigualdad de
+cobertura se advertía con un aviso encima de la tabla, y un aviso no corrige una
+lectura visual: una celda vacía seguía leyéndose como «esta Facultad no lo hace»
+tanto si se había buscado como si no.
+
+**Consecuencia:** 47 de las 110 celdas son `NO_CONCLUYENTE`, y el instrumento
+declara el límite del trabajo de campo en lugar de disimularlo. La consecuencia
+más incómoda es deliberada: la afirmación más fuerte del informe —que ninguna
+iniciativa acredita evaluación de efecto— queda `NO_CONCLUYENTE` en nueve de las
+once, porque la ruta `repositorios-publicaciones` sólo se recorrió en dos. El
+hecho sobre el corpus se mantiene con su razonamiento propio; la afirmación sobre
+cada Facultad se declara abierta.
+
+**No hacer:** no usar una sola marca de ausencia. Una cruz que signifique las dos
+cosas a la vez convierte la desigualdad de cobertura en un juicio institucional.
+
+---
+
+## DEC-120 — La verificación no entra en el estado de una capacidad
+
+**Fecha:** 04-09-2026
+**Decisión:** el estado de una celda responde una sola pregunta —qué capacidad
+demuestra la Facultad—. Si nosotros hemos contrastado o no las fuentes que la
+sostienen viaja aparte, en el campo `contrastada`, y se dibuja como una marca que
+**nunca** modifica el color de la celda.
+
+**Motivo:** el primer diseño de la escala distinguía «acreditada» —con fuente
+contrastada— de «declarada» —sin contrastar—. El efecto medido fue premiar a la
+PUCV, con el 86 % de sus fuentes contrastadas, por una propiedad del trabajo de
+campo. Es el mismo defecto de la matriz de la v0.6.0 con otra ropa, y se detectó
+comparando la matriz resultante contra el reparto de ISSUE-018.
+
+**Consecuencia:** una prueba lo vigila. Comprueba que dentro del estado
+`EN_OPERACION` aparezcan celdas contrastadas y celdas sin contrastar: si la
+verificación volviera a decidir el estado, esa coexistencia sería imposible.
+
+---
+
+## DEC-121 — El cruce entre cobertura y capacidad se publica, con tres guardas
+
+**Fecha:** 04-09-2026
+**Decisión:** se publica una figura que cruza rutas del protocolo recorridas
+—horizontal— contra capacidades en operación —vertical—, pese a que el eje
+vertical es un recuento por institución.
+
+**Motivo:** DEC-102 prohíbe la comparación ordinal, y contar capacidades se le
+parece lo suficiente como para exigir justificación. La justificación es que esta
+figura existe precisamente para **demostrar que las dos variables no coinciden**,
+y demostrarlo exige cruzarlas. El resultado es una prueba empírica dentro del
+propio corpus: la institución menos investigada de las once acredita tantas
+capacidades en operación como la más investigada.
+
+**Las tres guardas, y las tres son condición de publicación:**
+
+1. no se ordena por el eje vertical y no se numeran posiciones;
+2. cada punto muestra un halo proporcional a sus celdas no concluyentes, de modo
+   que un valor bajo con halo grande se lea «no lo sabemos» y no «hace poco»;
+3. el pie declara que el eje vertical es un recuento de preguntas contestadas
+   afirmativamente y no un puntaje, y que está acotado por arriba por lo buscado.
+
+**No hacer:** no reutilizar ese recuento fuera de esta figura, ni ordenar ninguna
+tabla por él.
+
+---
+
+## DEC-122 — Los hallazgos van antes que el método, y las fichas bajan a anexo
+
+**Fecha:** 04-09-2026
+**Decisión:** el documento abre por resumen ejecutivo y hallazgos principales.
+Introducción, objetivos y metodología vienen después, y las once fichas
+institucionales, la matriz de dimensiones, las afirmaciones, las lagunas, la
+auditoría de la línea base y el registro de fuentes pasan a anexos.
+
+**Motivo:** el orden académico exige que el método preceda a los datos; no exige
+esconder los resultados detrás del método. En la v0.6.0 el destinatario recorría
+once perfiles, cuatro visualizaciones y catorce afirmaciones antes de encontrar
+una razón para seguir leyendo.
+
+**Consecuencia:** cada hallazgo declara su dato, su lectura y su límite, y el
+límite es obligatorio por tipo. Un hallazgo sin límite no compila.
+
+**No hacer:** no eliminar el aparato. Un lector que quiere auditar y uno que
+quiere entender no necesitan lo mismo en el mismo sitio, y servir a los dos en el
+cuerpo no sirve a ninguno. Bajar algo a anexo no es retirarlo.
+
+---
+
+## DEC-123 — Un solo motor de gráficos, en funciones puras, para la web y el papel
+
+**Fecha:** 04-09-2026
+**Decisión:** las figuras se generan como cadenas de SVG por funciones puras del
+dataset, en `src/lib/informe01-svg.ts` y `src/lib/informe01-graficos.ts`. Las
+consumen dos huéspedes: los componentes del sitio y el exportador que produce el
+HTML del que se imprime el PDF.
+
+**Motivo:** la v0.6.0 dibujaba con tablas de HTML y `div` de color. Funcionaba en
+la web y **no existía en el PDF**: el documento que se envía al destinatario no
+tenía ni un gráfico, porque el exportador sólo sabía escribir párrafos, listas y
+tablas. Cualquier motor que viva dentro de React repite ese problema.
+
+**Consecuencia, y es un contrato:** ninguna figura escribe un color. Todas nombran
+variables CSS que cada huésped define para su tema y para papel, y una prueba
+rechaza cualquier hexadecimal que no sea la reserva de una variable. El SVG sale
+además sin atributos de ancho ni de alto —con un alto automático el navegador
+recortaba la matriz por abajo y se perdían cuatro de las once filas sin que nada
+fallara— y cada figura lleva `role`, `title`, `desc` y una alternativa textual.
+
+**No hacer:** no dibujar una figura dentro de un componente de React. Vivirá en
+la web y desaparecerá del documento.

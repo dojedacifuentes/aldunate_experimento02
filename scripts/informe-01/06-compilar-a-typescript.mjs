@@ -20,6 +20,19 @@ const DATASET = 'content/reports/01_ia_escuelas_derecho_chile/canonical/dataset'
 const SALIDA = 'src/data/informe01.ts';
 const DIMENSIONES_TOTALES = 8;
 
+/** Vocabulario cerrado de mecanismos institucionales (metodología 2.1 §M-2). */
+const MECANISMOS = new Set([
+  'UNIDAD',
+  'NORMA',
+  'PROGRAMA_FORMATIVO',
+  'ASIGNATURA',
+  'HERRAMIENTA',
+  'PROYECTO',
+  'ACTIVIDAD',
+  'CONVENIO',
+  'PUBLICACION',
+]);
+
 /** Lector de CSV con comillas dobles. Sin dependencias: es un formato, no un problema. */
 function leerCsv(archivo) {
   const texto = readFileSync(join(DATASET, archivo), 'utf8');
@@ -99,6 +112,7 @@ const iniciativas = leerCsv('iniciativas.csv').map((r) => ({
   attribution: r.institutional_level,
   direction: r.direction,
   dimension: r.primary_dimension,
+  mechanism: r.mechanism_type,
   ...(r.start_date ? { startDate: r.start_date } : {}),
   ...(r.end_date ? { endDate: r.end_date } : {}),
   ladder: Number(r.current_status),
@@ -204,6 +218,11 @@ for (const i of iniciativas) {
   for (const s of i.sourceIds)
     if (!idFuentes.has(s)) errores.push(`${i.id} cita una fuente inexistente: ${s}`);
   if (i.ladder < 0 || i.ladder > 4) errores.push(`${i.id} tiene un escalón fuera de 0–4`);
+  // El vocabulario de mecanismos es cerrado (metodología 2.1 §M-2). Sin esta
+  // guarda, una errata escribe una categoría nueva y la matriz de capacidades
+  // deja de contarla en silencio, que es la peor forma de perder un dato.
+  if (!MECANISMOS.has(i.mechanism))
+    errores.push(`${i.id} declara un mecanismo fuera del vocabulario: «${i.mechanism}»`);
 }
 for (const e of evidencias) {
   if (!idFuentes.has(e.sourceId)) errores.push(`${e.id} cita una fuente inexistente`);

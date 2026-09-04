@@ -20,6 +20,8 @@ import {
 } from '@/data/informe01-pucv';
 import { cifrasInforme01 } from '@/lib/informe01';
 
+import { ComparadorMecanismos, MapaDesarrollo } from './Capacidades';
+
 const cifras = cifrasInforme01();
 const t = (s: string) => resolverCifras(s, cifras);
 
@@ -31,7 +33,7 @@ const t = (s: string) => resolverCifras(s, cifras);
 function Prosa({ children, className = '' }: { children: string; className?: string }) {
   const partes = t(children).split(/(\*\*[^*]+\*\*)/g);
   return (
-    <p className={`text-pretty leading-relaxed text-muted ${className}`}>
+    <p className={`text-pretty leading-relaxed text-muted-foreground ${className}`}>
       {partes.map((parte, i) =>
         parte.startsWith('**') && parte.endsWith('**') ? (
           <strong key={i} className="font-medium text-foreground">
@@ -137,81 +139,69 @@ export function Informe01BorradorCierre() {
       <Section
         eyebrow="5"
         title="La PUCV en contexto"
-        description="Evidencia favorable primero, brechas después, y las dos preguntas de control publicadas."
+        description="Primero lo que consta, después lo que no, y las dos preguntas de control publicadas. El orden no es cortesía: una sección que empieza por las brechas ya decidió su conclusión antes de exponer los hechos."
         className="scroll-mt-20"
       >
-        <h3 className="meta mb-3">Evidencia favorable localizada</h3>
-        <div className="mb-8 grid gap-3 md:grid-cols-2">
-          {pucvFavorable.map((f) => (
-            <Surface key={f.fuente + f.hecho.slice(0, 20)} className="p-4">
-              <Prosa className="text-foreground">{f.hecho}</Prosa>
-              <p className="mt-2 text-sm text-muted">{f.fuerza}</p>
-              <p className="meta mt-3">{f.fuente}</p>
-            </Surface>
-          ))}
-        </div>
+        <div id="pucv">
+          <MapaDesarrollo universityId="pucv" />
 
-        <h3 className="meta mb-3">Brechas</h3>
-        <div className="mb-8 space-y-4">
-          {pucvBrechas.map((b) => (
-            <div key={b.brecha} className="border-l-2 border-warning/40 pl-5">
-              <p className="font-medium text-foreground">
-                {b.brecha}
-                {b.esDeCohorte && (
-                  <span className="meta ml-2 align-middle text-subtle">alcanza a las once</span>
-                )}
-              </p>
-              <p className="mt-1 text-sm text-muted">{b.evidencia}</p>
-              <p className="mt-2 text-sm text-muted">
-                <span className="meta">Comparador · </span>
-                {b.comparador}
-              </p>
-            </div>
-          ))}
-        </div>
+          <h3 className="meta mb-3 mt-10">Evidencia favorable localizada</h3>
+          <div className="mb-10 grid gap-3 md:grid-cols-2">
+            {pucvFavorable.map((f) => (
+              <Surface key={f.fuente + f.hecho.slice(0, 20)} className="p-4">
+                <Prosa className="text-foreground">{f.hecho}</Prosa>
+                <p className="mt-2 text-sm text-muted-foreground">{f.fuerza}</p>
+                <p className="meta mt-3">{f.fuente}</p>
+              </Surface>
+            ))}
+          </div>
 
-        <h3 className="meta mb-3">Lectura</h3>
-        <div className="max-w-prose space-y-3">
-          {pucvLectura.map((p, i) => (
-            <Prosa key={i}>{p}</Prosa>
-          ))}
-        </div>
+          <h3 className="meta mb-2 mt-10">Qué falta, y con qué instrumento lo resolvió quien ya lo resolvió</h3>
+          <p className="mb-5 max-w-prose text-sm leading-relaxed text-muted-foreground">
+            Cada bloque nombra la capacidad, lo que aquí consta y el mecanismo concreto —con su
+            institución— allí donde la misma capacidad está en operación. No propone qué hacer:
+            pone el referente a la vista. Una capacidad sin referente también aparece, porque que
+            nadie la haya resuelto es tan informativo como que alguien lo haya hecho.
+          </p>
+          <ComparadorMecanismos universityId="pucv" />
 
-        <Notice tone="accent" className="mt-8 max-w-prose">
-          <h3 className="mb-3 font-medium text-foreground">Doble revisión de la sección</h3>
-          <div className="space-y-4">
-            {pucvDobleRevision.map((d) => (
-              <div key={d.pregunta}>
-                <p className="font-medium text-foreground">{d.pregunta}</p>
-                <Prosa className="mt-1">{d.respuesta}</Prosa>
+          <h3 className="meta mb-3 mt-10">Brechas declaradas</h3>
+          <div className="mb-8 space-y-4">
+            {pucvBrechas.map((b) => (
+              <div key={b.brecha} className="border-l-2 border-warning/40 pl-5">
+                <p className="font-medium text-foreground">
+                  {b.brecha}
+                  {b.esDeCohorte && (
+                    <span className="meta ml-2 align-middle text-subtle">alcanza a las once</span>
+                  )}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">{b.evidencia}</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  <span className="meta">Comparador · </span>
+                  {b.comparador}
+                </p>
               </div>
             ))}
           </div>
-        </Notice>
 
-        <h3 className="meta mb-3 mt-8">Recomendaciones de desarrollo institucional</h3>
-        <div className="space-y-4">
-          {pucvRecomendaciones.map((r) => (
-            <Surface key={r.id} className="p-5">
-              <p className="meta mb-2">{r.id}</p>
-              <p className="font-medium text-foreground">{r.problema}</p>
-              <dl className="mt-3 space-y-2 text-sm">
-                {(
-                  [
-                    ['Evidencia', r.evidencia],
-                    ['Referente', r.referente],
-                    ['Acción', r.accion],
-                    ['Indicador', r.indicador],
-                  ] as const
-                ).map(([k, v]) => (
-                  <div key={k} className="sm:flex sm:gap-3">
-                    <dt className="meta shrink-0 sm:w-24">{k}</dt>
-                    <dd className="text-muted">{v}</dd>
-                  </div>
-                ))}
-              </dl>
-            </Surface>
-          ))}
+          <h3 className="meta mb-3">Lectura</h3>
+          <div className="max-w-prose space-y-3">
+            {pucvLectura.map((p, i) => (
+              <Prosa key={i}>{p}</Prosa>
+            ))}
+          </div>
+
+          <Notice tone="accent" className="mt-8 max-w-prose">
+            <h3 className="mb-3 font-medium text-foreground">Doble revisión de la sección</h3>
+            <div className="space-y-4">
+              {pucvDobleRevision.map((d) => (
+                <div key={d.pregunta}>
+                  <p className="font-medium text-foreground">{d.pregunta}</p>
+                  <Prosa className="mt-1">{d.respuesta}</Prosa>
+                </div>
+              ))}
+            </div>
+          </Notice>
         </div>
       </Section>
 
@@ -231,6 +221,44 @@ export function Informe01BorradorCierre() {
               <h3 className="font-serif text-lg leading-snug text-foreground">{c.titulo}</h3>
               <Prosa className="mt-2">{c.cuerpo}</Prosa>
               <p className="meta mt-3">Se apoya en · {c.apoyo.join(' · ')}</p>
+            </Surface>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="6 bis"
+        title="Implicancias para la PUCV"
+        description="Las conclusiones dicen qué muestra la evidencia. Esto dice qué preguntas de gestión abre esa evidencia, que es cosa distinta y no equivale a una recomendación."
+        className="scroll-mt-20"
+      >
+        <Notice tone="muted" className="mb-6 max-w-prose">
+          Ninguno de estos bloques dice qué debe hacer la institución. Cada uno enuncia un
+          problema observado, la evidencia que lo sostiene, el referente donde ese mismo problema
+          ya tiene un mecanismo, la decisión que eso abre y el indicador con el que podría
+          comprobarse más adelante si se tomó. La decisión es de quien gobierna la Facultad; el
+          informe sólo la vuelve discutible con datos a la vista.
+        </Notice>
+        <div id="implicancias" className="space-y-4">
+          {pucvRecomendaciones.map((r) => (
+            <Surface key={r.id} className="p-5">
+              <p className="meta mb-2">{r.id}</p>
+              <p className="font-medium text-foreground">{r.problema}</p>
+              <dl className="mt-3 space-y-2 text-sm">
+                {(
+                  [
+                    ['Evidencia', r.evidencia],
+                    ['Referente observado', r.referente],
+                    ['Decisión que abre', r.accion],
+                    ['Indicador', r.indicador],
+                  ] as const
+                ).map(([k, v]) => (
+                  <div key={k} className="sm:flex sm:gap-3">
+                    <dt className="meta shrink-0 sm:w-36">{k}</dt>
+                    <dd className="text-muted-foreground">{v}</dd>
+                  </div>
+                ))}
+              </dl>
             </Surface>
           ))}
         </div>
@@ -265,11 +293,11 @@ export function Informe01BorradorCierre() {
               <dl className="mt-3 space-y-2 text-sm">
                 <div className="sm:flex sm:gap-3">
                   <dt className="meta shrink-0 sm:w-28">Por qué importa</dt>
-                  <dd className="text-muted">{t(a.porQue)}</dd>
+                  <dd className="text-muted-foreground">{t(a.porQue)}</dd>
                 </div>
                 <div className="sm:flex sm:gap-3">
                   <dt className="meta shrink-0 sm:w-28">Cómo se cierra</dt>
-                  <dd className="text-muted">{t(a.comoSeCierra)}</dd>
+                  <dd className="text-muted-foreground">{t(a.comoSeCierra)}</dd>
                 </div>
               </dl>
             </Surface>

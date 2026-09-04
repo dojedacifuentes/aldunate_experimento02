@@ -1,7 +1,7 @@
 import { Notice, Surface } from '@/components/common/ui';
 import { informe01Recuento } from '@/data/informe01';
 import { informe01TemasPucv } from '@/data/informe01-editorial';
-import { afirmacionesDe, coberturaDe, iniciativasDe } from '@/lib/informe01';
+import { afirmacionesDe, coberturaDe, decimal, iniciativasDe } from '@/lib/informe01';
 import { ListaAfirmaciones } from './Afirmaciones';
 import { cn } from '@/lib/utils';
 import type { Informe01EstadoTema } from '@/data/informe01-editorial';
@@ -131,7 +131,7 @@ export function PucvEnContexto() {
           <p>
             No permite decir que la PUCV esté por detrás. Para eso haría falta haber buscado
             en las otras ocho con la misma intensidad, y no se hizo: la razón de cobertura es
-            de {informe01Recuento.razonCobertura} a 1. Lo que sí puede afirmarse, y es
+            de {decimal(informe01Recuento.razonCobertura)} a 1. Lo que sí puede afirmarse, y es
             distinto, es que la PUCV tiene hoy más evidencia pública disponible sobre sí
             misma que ocho de sus pares, y aun así ninguno de los tres indicadores que separan
             actividad de capacidad —dotación, adopción medida y evaluación— aparece en ella

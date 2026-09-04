@@ -6,6 +6,7 @@ import {
   DIMENSIONES,
   dimensionesVacias,
   universidadesOrdenadas,
+  decimal,
 } from '@/lib/informe01';
 import { cn } from '@/lib/utils';
 
@@ -47,9 +48,9 @@ export function MatrizEvidencia() {
       <Notice tone="warning" className="mb-6">
         Esta matriz muestra <strong>evidencia pública localizada</strong>, no madurez
         institucional, y sus filas van en orden alfabético. La cobertura de investigación es{' '}
-        {informe01Recuento.razonCobertura} veces mayor en las tres universidades del piloto
-        —{informe01Recuento.coberturaPiloto} fuentes de media frente a{' '}
-        {informe01Recuento.coberturaResto}—, así que una fila más poblada indica dónde se
+        {decimal(informe01Recuento.razonCobertura)} veces mayor en las tres universidades del piloto
+        —{decimal(informe01Recuento.coberturaPiloto)} fuentes de media frente a{' '}
+        {decimal(informe01Recuento.coberturaResto)}—, así que una fila más poblada indica dónde se
         buscó más, no dónde se hace más. Ordenar por esta tabla produciría un ranking del
         trabajo de campo disfrazado de ranking de universidades.
       </Notice>

@@ -1,5 +1,10 @@
 import { Badge, Notice, Surface } from '@/components/common/ui';
 import { informe01AuditoriaBase, informe01Lagunas } from '@/data/informe01-editorial';
+import { resolverCifras } from '@/data/informe01-borrador';
+import { cifrasInforme01 } from '@/lib/informe01';
+
+/** Las cifras de las lagunas se resuelven desde el dataset, como el resto de la prosa. */
+const T = (s: string) => resolverCifras(s, cifrasInforme01());
 
 /**
  * Las lagunas y la auditoría de la línea base.
@@ -49,10 +54,10 @@ export function Lagunas() {
                         {l.titulo}
                       </h4>
                       <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                        {l.cuerpo}
+                        {T(l.cuerpo)}
                       </p>
                       <p className="mt-3 border-l-2 border-l-border pl-4 text-[0.8125rem] leading-relaxed text-foreground/85">
-                        <span className="meta">Qué la cerraría</span> {l.cierre}
+                        <span className="meta">Qué la cerraría</span> {T(l.cierre)}
                       </p>
                     </Surface>
                   </li>
