@@ -1018,3 +1018,124 @@ html[data-lectura] .stage-live {
 .juego-portada .cabina-audaces[data-inmersiva='true'] {
   --cabina-chrome: 0px !important;
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   MOTOR DE GRÁFICOS DEL INFORME 01
+
+   Los gráficos se generan como cadenas de SVG en `src/lib/informe01-graficos.ts`
+   y los consumen dos huéspedes: los componentes del sitio y el exportador que
+   produce el HTML del que se imprime el PDF. Ninguna figura escribe un color:
+   todas nombran estas variables, de modo que un mismo dibujo se lee en el modo
+   institucional, en el nocturno y en papel sin que exista una segunda versión.
+
+   El exportador declara los mismos nombres en su propia hoja de estilos. Si aquí
+   se renombra una variable, allí hay que renombrarla: son un contrato.
+
+   Regla de color: el relleno lleva la lectura rápida y **nunca va solo**. Cada
+   estado añade una trama, un glifo o una cifra, para que la figura sobreviva a
+   una impresión en blanco y negro y a un lector daltónico.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --g-op: #1F5F84;
+  --g-incip: #6FA3C4;
+  --g-incip-fondo: #DCE8F1;
+  --g-entorno: #B78C30;
+  --g-entorno-fondo: #F5EBD5;
+  --g-vacio: #E8E2D6;
+  --g-linea: #C9C0AE;
+  --g-suave: #6A6255;
+  --g-banda: #E5DECF;
+  --g-cebra: rgba(26, 24, 19, 0.035);
+  --g-contraste: #8A2432;
+  --g-halo: rgba(106, 98, 85, 0.16);
+  --g-esc-1: #BDD5E5;
+  --g-esc-2: #86B2CE;
+  --g-esc-3: #4B87AE;
+  --g-esc-4: #1F5F84;
+}
+
+.dark {
+  /* No es el claro invertido: sobre azul-negro, «lleno» es el tono más luminoso
+     y «vacío» el más apagado, que es al revés que sobre papel. */
+  --g-op: #3E9CC4;
+  --g-incip: #2F7191;
+  --g-incip-fondo: #12283A;
+  --g-entorno: #C7A34E;
+  --g-entorno-fondo: #2A2417;
+  --g-vacio: #152735;
+  --g-linea: #2A4256;
+  --g-suave: #93A6B5;
+  --g-banda: #142534;
+  --g-cebra: rgba(255, 255, 255, 0.028);
+  /* El burdeos desaparece sobre fondo oscuro; la marca de contraste pasa a rosa. */
+  --g-contraste: #E08A97;
+  --g-halo: rgba(147, 166, 181, 0.18);
+  --g-esc-1: #234A61;
+  --g-esc-2: #2E6C8A;
+  --g-esc-3: #3E9CC4;
+  --g-esc-4: #6FC5E4;
+}
+
+/*
+ * La figura se dimensiona desde el CSS y no desde el atributo.
+ *
+ * El SVG sale sin `width` ni `height` a propósito: con `height="auto"` el
+ * navegador recortaba la matriz de capacidades por abajo y se perdían cuatro de
+ * las once filas sin que nada fallara. Con el `viewBox` fijando la proporción y
+ * esta regla fijando el ancho, la misma figura entra en 375 px y en un A4.
+ */
+.g-fig {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-family: var(--font-ui), ui-sans-serif, system-ui, sans-serif;
+  overflow: visible;
+}
+
+.g-t { fill: var(--foreground); }
+.g-t-fila, .g-t-col, .g-t-punto { fill: var(--foreground); }
+.g-t-eje, .g-t-leyenda, .g-t-rutas, .g-t-banda { fill: var(--g-suave); }
+.g-t-cifra { fill: var(--foreground); font-variant-numeric: tabular-nums; }
+.g-t-cifra-clara { fill: var(--background); font-variant-numeric: tabular-nums; }
+
+/*
+ * Una figura ancha no puede empujar la página. Se desplaza dentro de su caja en
+ * pantalla y, al imprimir, `overflow: visible` la deja repartirse el ancho de la
+ * hoja: es la misma corrección que ya salvó a las tablas de perder su última
+ * columna en papel (ISSUE-012).
+ */
+.g-caja {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+@media print {
+  .g-caja { overflow: visible; }
+
+  /* En papel se fuerza el juego claro, con más contraste y sin tramas tenues. */
+  :root,
+  .dark,
+  [data-theme] {
+    --g-op: #1a4d80;
+    --g-incip: #5a86a6;
+    --g-incip-fondo: #e6edf3;
+    --g-entorno: #7a5c14;
+    --g-entorno-fondo: #f2ead6;
+    --g-vacio: #eeedea;
+    --g-linea: #9a9a95;
+    --g-suave: #444444;
+    --g-banda: #eceae6;
+    --g-cebra: rgba(0, 0, 0, 0.04);
+    --g-contraste: #7a2030;
+    --g-halo: rgba(0, 0, 0, 0.09);
+    --g-esc-1: #c5d7e4;
+    --g-esc-2: #8fb0c6;
+    --g-esc-3: #4c7fa3;
+    --g-esc-4: #1a4d80;
+  }
+
+  /* Una figura partida entre dos páginas deja de decir lo que dice. */
+  .g-fig { break-inside: avoid; }
+}

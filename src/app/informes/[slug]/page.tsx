@@ -19,7 +19,11 @@ import {
   Informe01BorradorApertura,
   Informe01BorradorCierre,
 } from '@/components/informe01/Borrador';
-import { Informe01Publicacion } from '@/components/informe01/Publicacion';
+import {
+  Informe01Anexos,
+  Informe01Apertura,
+  Informe01Publicacion,
+} from '@/components/informe01/Publicacion';
 import { informe01Recuento } from '@/data/informe01';
 import {
   claimChangeLabel,
@@ -186,11 +190,30 @@ export default async function InformeDetallePage({
         </Container>
       </header>
 
-      {/* ── Capa 1 · Resumen ejecutivo ── */}
-      <Section eyebrow="Capa 1" title="Resumen ejecutivo">
+      {/* ── Capa 1 · Ficha y resumen ── */}
+      <Section
+        eyebrow="Capa 1"
+        title={esInforme01 ? 'Ficha del documento' : 'Resumen ejecutivo'}
+      >
         <div className="grid gap-10 lg:grid-cols-[1.7fr_1fr] lg:items-start">
+          {/*
+            El Informe 01 publica su resumen ejecutivo como sección propia, con
+            siete párrafos y hallazgos enumerados: repetir aquí el párrafo de la
+            ficha lo diría dos veces y en dos extensiones distintas. Los demás
+            informes conservan el resumen en este sitio.
+          */}
           <div className="prose-editorial">
-            <p>{report.executiveSummary}</p>
+            {esInforme01 ? (
+              <p className="text-muted-foreground">
+                Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas,
+                herramientas e iniciativas de inteligencia artificial en once Escuelas y
+                Facultades de Derecho chilenas. El resumen ejecutivo, los hallazgos y el
+                análisis vienen a continuación; esta ficha sólo declara el estado del
+                documento.
+              </p>
+            ) : (
+              <p>{report.executiveSummary}</p>
+            )}
           </div>
 
           <Surface className="p-6">
@@ -237,6 +260,13 @@ export default async function InformeDetallePage({
         </div>
       </Section>
 
+      {/*
+        Resumen ejecutivo y hallazgos, antes que nada. Es el cambio editorial de
+        la v0.7.0: el destinatario debe encontrar qué se halló antes de recorrer
+        el alcance, el método y once fichas institucionales.
+      */}
+      {esInforme01 && <Informe01Apertura />}
+
       {/* ── Ejes ── */}
       <Section
         eyebrow="Alcance"
@@ -279,9 +309,16 @@ export default async function InformeDetallePage({
         documento completo y no necesita esta capa, y hacer genérica una sección
         que sólo un informe usa habría producido una abstracción con un solo caso.
       */}
+      {/*
+        Después del alcance viene el aparato académico —introducción, objetivos,
+        metodología— y sólo entonces los datos. El orden de la v0.6.0 era el
+        mismo; lo que cambió es que el resumen y los hallazgos ya no esperan
+        detrás de él.
+      */}
       {esInforme01 && <Informe01BorradorApertura />}
       {esInforme01 && <Informe01Publicacion />}
       {esInforme01 && <Informe01BorradorCierre />}
+      {esInforme01 && <Informe01Anexos />}
 
       {report.downloads && report.downloads.length > 0 && (
         <Section

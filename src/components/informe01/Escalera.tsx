@@ -1,4 +1,4 @@
-import { Badge, Disclosure, Notice, Surface } from '@/components/common/ui';
+import { Notice } from '@/components/common/ui';
 import { informe01Recuento } from '@/data/informe01';
 import {
   ATRIBUCIONES,
@@ -8,7 +8,9 @@ import {
   ESCALONES,
   universidad,
 } from '@/lib/informe01';
-import { cn } from '@/lib/utils';
+import { direccionesSvg, escaleraSvg } from '@/lib/informe01-graficos';
+
+import { Figura } from './Figura';
 
 /**
  * Escalera de institucionalización, aplicada a **iniciativas**.
@@ -24,54 +26,42 @@ import { cn } from '@/lib/utils';
 export function EscaleraInstitucionalizacion() {
   const dist = distribucionEscalera();
   const total = dist.reduce((s, d) => s + d.iniciativas.length, 0);
+  const vacio = dist.find((d) => d.nivel === 4)!;
 
   return (
     <div>
-      <ol className="space-y-3">
-        {dist.map(({ nivel, iniciativas }) => {
-          const meta = ESCALONES.find((e) => e.nivel === nivel)!;
-          const pct = total ? Math.round((iniciativas.length / total) * 100) : 0;
-          const vacio = iniciativas.length === 0;
-          return (
-            <li key={nivel}>
-              <Surface
-                className={cn(
-                  'p-5',
-                  vacio && 'border-dashed bg-transparent',
-                )}
-                style={{ marginLeft: `${nivel * 4}%` }}
-              >
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h3 className="font-serif text-lg leading-snug text-foreground">
-                    <span className="mono mr-2 text-sm text-primary">{nivel}</span>
+      <Figura
+        pregunta="¿Hasta dónde llega la institucionalización de lo que se hace?"
+        titulo="La escalera se llena hasta el tercer peldaño y se detiene antes del cuarto"
+        svg={escaleraSvg()}
+        nota={
+          <>
+            El peldaño se aplica a la iniciativa y nunca a la universidad, y no se promedia:
+            una institución puede exhibir muchas actividades con baja institucionalización y
+            otra pocas pero formalizadas. El informe existe para conservar esa diferencia, y un
+            promedio la borraría.
+          </>
+        }
+        alternativa={
+          <ol className="space-y-3">
+            {dist.map(({ nivel, iniciativas }) => {
+              const meta = ESCALONES.find((e) => e.nivel === nivel)!;
+              const pct = total ? Math.round((iniciativas.length / total) * 100) : 0;
+              return (
+                <li key={nivel}>
+                  <p className="text-sm font-medium text-foreground">
+                    <span className="mono mr-2 text-primary">{nivel}</span>
                     {meta.label}
-                  </h3>
-                  <p className="mono text-xs text-muted-foreground">
-                    {iniciativas.length} de {total} iniciativas
-                    {!vacio && ` · ${pct} %`}
+                    <span className="mono ml-2 text-xs font-normal text-muted-foreground">
+                      {iniciativas.length} de {total}
+                      {iniciativas.length > 0 && ` · ${pct} %`}
+                    </span>
                   </p>
-                </div>
-                <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                  {meta.condition}
-                </p>
-
-                {vacio ? (
-                  <p className="mt-3 border-l-2 border-l-warning bg-warning/[0.07] px-4 py-3 text-sm leading-relaxed text-foreground/85">
-                    Ninguna de las {total} iniciativas registradas alcanza este peldaño. Se
-                    localizaron métricas de cobertura —cerca del 80 % del profesorado de
-                    Derecho de una Facultad, unos noventa participantes en un taller, más de
-                    dos cohortes graduadas— y ninguna es una medición de efecto. Cuántos
-                    asistieron no dice si algo cambió. Tres rondas de investigación
-                    independientes, con documentos distintos y fuentes que apenas se solapan,
-                    llegaron a esta misma ausencia.
+                  <p className="mt-1 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                    {meta.condition}
                   </p>
-                ) : (
-                  <Disclosure
-                    className="mt-3"
-                    summary={`Qué iniciativas están en el peldaño ${nivel}`}
-                    hint={`${iniciativas.length}`}
-                  >
-                    <ul className="space-y-2.5">
+                  {iniciativas.length > 0 && (
+                    <ul className="mt-2 space-y-1.5">
                       {iniciativas.map((i) => (
                         <li key={i.id} className="text-[0.8125rem] leading-relaxed">
                           <span className="text-foreground">{i.name}</span>
@@ -85,19 +75,24 @@ export function EscaleraInstitucionalizacion() {
                         </li>
                       ))}
                     </ul>
-                  </Disclosure>
-                )}
-              </Surface>
-            </li>
-          );
-        })}
-      </ol>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        }
+      />
 
-      <Notice tone="muted" className="mt-6">
-        El peldaño de una iniciativa no se suma ni se promedia con el de las demás de su
-        universidad. Una institución puede exhibir muchas actividades con baja
-        institucionalización, y otra pocas pero formalizadas: el informe existe para
-        conservar esa diferencia, y un promedio la borraría.
+      <Notice tone="warning">
+        Ninguna de las {total} iniciativas registradas alcanza el cuarto peldaño. Se localizaron
+        métricas de cobertura —cerca del 80 % del profesorado de Derecho de una Facultad, unos
+        noventa participantes en un taller, dos cohortes graduadas— y ninguna es una medición de
+        efecto: cuántos asistieron no dice si algo cambió. Tres rondas de investigación
+        independientes, con documentos distintos y fuentes que apenas se solapan, llegaron a
+        esta misma ausencia. Con todo, la ruta del protocolo que acreditaría una evaluación
+        publicada —repositorios y publicaciones— sólo se recorrió en dos de las once
+        instituciones, de modo que la afirmación es sólida sobre el corpus y todavía no está
+        cerrada sobre cada Facultad. Ver el {vacio.iniciativas.length === 0 ? 'peldaño vacío' : 'peldaño'} en la matriz de capacidades.
       </Notice>
     </div>
   );
@@ -117,42 +112,39 @@ export function MapaDirecciones() {
   const total = informe01Recuento.iniciativas;
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
-      {dist.map((d) => {
-        const pct = Math.round((d.iniciativas.length / total) * 100);
-        return (
-          <Surface key={d.id} className="flex h-full flex-col p-5">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 className="font-serif text-lg leading-snug text-foreground">{d.label}</h3>
-              <Badge tone={d.id === 'ADYACENTE' ? 'muted' : 'signal'}>
-                {d.iniciativas.length} · {pct} %
-              </Badge>
-            </div>
-            <p className="mt-2 flex-1 text-[0.8125rem] leading-relaxed text-muted-foreground">
-              {d.definition}
-            </p>
-            <div
-              className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-muted"
-              role="img"
-              aria-label={`${d.label}: ${d.iniciativas.length} de ${total} iniciativas`}
-            >
-              <div
-                className={cn(
-                  'h-full rounded-full',
-                  d.id === 'ADYACENTE' ? 'bg-muted-foreground/50' : 'bg-signal',
-                )}
-                style={{ width: `${pct}%` }}
-              />
-            </div>
-          </Surface>
-        );
-      })}
-      <p className="sm:col-span-2 text-[0.8125rem] leading-relaxed text-muted-foreground">
-        {DIRECCIONES.length} categorías, {total} iniciativas, sin solapamiento: cada
-        iniciativa recibe una sola dirección, y las que integran las dos de forma sustantiva
-        se registran como <span className="mono text-foreground">AMBOS</span> en vez de
-        contarse dos veces.
-      </p>
-    </div>
+    <Figura
+      pregunta="¿Se está usando la IA para enseñar Derecho, o se la está estudiando como objeto jurídico?"
+      titulo="Tres de cada cuatro iniciativas usan la IA; una minoría la estudia como problema jurídico"
+      svg={direccionesSvg()}
+      nota={
+        <>
+          {DIRECCIONES.length} categorías y {total} iniciativas, sin solapamiento: cada
+          iniciativa recibe una sola dirección, y las que integran las dos de forma sustantiva
+          se registran como <span className="mono text-foreground">AMBOS</span> en vez de
+          contarse dos veces. <span className="mono text-foreground">ADYACENTE</span> existe
+          para lo contrario: tratar como inteligencia artificial una tecnología digital que no
+          lo es —realidad virtual, un laboratorio de innovación legal, una plataforma de
+          búsqueda— es el modo de inflar un mapa sin inventar una sola fuente.
+        </>
+      }
+      alternativa={
+        <ul className="space-y-3">
+          {dist.map((d) => (
+            <li key={d.id}>
+              <p className="text-sm font-medium text-foreground">
+                {d.label}
+                <span className="mono ml-2 text-xs font-normal text-muted-foreground">
+                  {d.iniciativas.length} de {total} ·{' '}
+                  {Math.round((d.iniciativas.length / total) * 100)} %
+                </span>
+              </p>
+              <p className="mt-1 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                {d.definition}
+              </p>
+            </li>
+          ))}
+        </ul>
+      }
+    />
   );
 }

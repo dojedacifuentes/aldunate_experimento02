@@ -1,3 +1,4 @@
+import { CAPACIDADES, celdaCapacidad, distribucionMecanismos } from '@/lib/informe01-capacidades';
 import {
   informe01Afirmaciones,
   informe01Cobertura,
@@ -264,6 +265,7 @@ export function cifrasInforme01(): Record<string, string | number> {
     (e) => e.attribution === 'INSTITUCIONAL_UNIVERSIDAD',
   ).length;
   return {
+    ...cifrasDeCapacidad(),
     corte: CORTE_INFORME_01,
     universidades: r.universidades,
     fuentes: r.fuentes,
@@ -279,5 +281,81 @@ export function cifrasInforme01(): Record<string, string | number> {
     escalon1: r.iniciativasPorEscalon['1'] ?? 0,
     escalon2: r.iniciativasPorEscalon['2'] ?? 0,
     escalon3: r.iniciativasPorEscalon['3'] ?? 0,
+  };
+}
+
+/* ── Cifras derivadas de la capa de capacidades (metodología 2.1) ────────────
+ * Viven aquí y no en `informe01-capacidades.ts` para que la prosa siga teniendo
+ * una sola tabla de marcas. La capa de capacidades calcula; esta función nombra.
+ * Ninguna de estas cifras se escribe a mano en ningún texto del informe.       */
+
+function cifrasDeCapacidad(): Record<string, string | number> {
+  const ids = universidadesOrdenadas.map((u) => u.id);
+  const celdas = ids.flatMap((id) => CAPACIDADES.map((c) => celdaCapacidad(id, c.id)));
+  const cuenta = (e: string) => celdas.filter((c) => c.estado === e).length;
+
+  const enOperacionDe = (cap: string) =>
+    ids.filter((id) => celdaCapacidad(id, cap as never).estado === 'EN_OPERACION').length;
+  const sinConcluirDe = (cap: string) =>
+    ids.filter((id) => celdaCapacidad(id, cap as never).estado === 'NO_CONCLUYENTE').length;
+
+  const mecanismos = distribucionMecanismos();
+  const mec = (id: string) => mecanismos.find((m) => m.id === id)!;
+
+  const conFecha = informe01Iniciativas.filter((i) => i.startDate);
+  const desde2025 = conFecha.filter((i) => Number(i.startDate!.slice(0, 4)) >= 2025).length;
+
+  /* El contraejemplo que prueba que cobertura y capacidad son variables
+     distintas. Se calcula, no se elige: es la institución con menos rutas
+     recorridas, y su par es la que más tiene con la misma cuenta de
+     capacidades. Si la verificación futura cambia el reparto, cambia el texto. */
+  const perfil = ids.map((id) => ({
+    id,
+    nombre: universidadesOrdenadas.find((u) => u.id === id)!.officialName,
+    rutas: informe01Cobertura.find((c) => c.universityId === id)!.routesCompleted,
+    operacion: CAPACIDADES.filter((c) => celdaCapacidad(id, c.id).estado === 'EN_OPERACION')
+      .length,
+  }));
+  const menos = [...perfil].sort((a, b) => a.rutas - b.rutas)[0];
+  const mas = [...perfil].sort((a, b) => b.rutas - a.rutas)[0];
+
+  return {
+    capacidades: CAPACIDADES.length,
+    celdas: celdas.length,
+    celdasOperacion: cuenta('EN_OPERACION'),
+    celdasIncipiente: cuenta('INCIPIENTE'),
+    celdasEntorno: cuenta('SOLO_ENTORNO'),
+    celdasNoLocalizada: cuenta('NO_LOCALIZADA'),
+    celdasNoConcluyente: cuenta('NO_CONCLUYENTE'),
+    unidadOperacion: enOperacionDe('unidad'),
+    normaOperacion: enOperacionDe('norma'),
+    normaSinConcluir: sinConcluirDe('norma'),
+    pregradoOperacion: enOperacionDe('curriculo'),
+    pregradoSinConcluir: sinConcluirDe('curriculo'),
+    formacionOperacion: enOperacionDe('formacion'),
+    investigacionSinConcluir: sinConcluirDe('investigacion'),
+    evaluacionSinConcluir: sinConcluirDe('evaluacion'),
+    transferenciaIncipiente: ids.filter(
+      (id) => celdaCapacidad(id, 'transferencia').estado === 'INCIPIENTE',
+    ).length,
+    mecProgramas: mec('PROGRAMA_FORMATIVO').iniciativas.length,
+    mecProgramasFacultad: mec('PROGRAMA_FORMATIVO').deLaFacultad,
+    mecHerramientas: mec('HERRAMIENTA').iniciativas.length,
+    mecHerramientasEntorno:
+      mec('HERRAMIENTA').iniciativas.length - mec('HERRAMIENTA').deLaFacultad,
+    mecAsignaturas: mec('ASIGNATURA').iniciativas.length,
+    mecUnidades: mec('UNIDAD').iniciativas.length,
+    mecNormas: mec('NORMA').iniciativas.length,
+    mecConvenios: mec('CONVENIO').iniciativas.length,
+    mecActividades: mec('ACTIVIDAD').iniciativas.length,
+    iniciativasFechadas: conFecha.length,
+    iniciativasDesde2025: desde2025,
+    iniciativasSinFecha: informe01Iniciativas.length - conFecha.length,
+    menosInvestigada: menos.nombre,
+    menosInvestigadaRutas: menos.rutas,
+    menosInvestigadaOperacion: menos.operacion,
+    masInvestigada: mas.nombre,
+    masInvestigadaRutas: mas.rutas,
+    masInvestigadaOperacion: mas.operacion,
   };
 }

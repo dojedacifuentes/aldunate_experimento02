@@ -1,83 +1,86 @@
 import { Notice, Surface } from '@/components/common/ui';
 import { informe01Recuento } from '@/data/informe01';
+import { coberturaSvg } from '@/lib/informe01-graficos';
 import { coberturaDe, universidadesOrdenadas } from '@/lib/informe01';
-import { cn } from '@/lib/utils';
+
+import { Figura } from './Figura';
 
 /**
  * Cobertura de investigación: cuánto se investigó cada institución.
  *
  * Es el gráfico que impide leer mal todos los demás, y por eso va antes que
  * ninguna comparación. Mide trabajo de campo —cuántas de las trece rutas del
- * protocolo se recorrieron— y no actividad institucional.
+ * protocolo se recorrieron y qué proporción de sus fuentes se contrastó— y no
+ * actividad institucional.
  *
- * El caso que lo demuestra está en la propia tabla: la Universidad Autónoma es
- * la institución con menos rutas recorridas de las once y aporta la única
- * cobertura docente cuantificada de todo el corpus. Si cobertura y madurez
- * fueran la misma variable, eso sería imposible.
+ * Desde la versión 0.7.0 no carga solo con esa advertencia: la separación entre
+ * cobertura y capacidad está además dentro de cada celda de la matriz, en la
+ * distinción entre «no localizada» y «no concluyente». Aquí se publica el
+ * denominador; allí se aplica.
  */
 export function CoberturaInvestigacion() {
+  const r = informe01Recuento;
   return (
     <div>
       <div className="mb-8 grid gap-4 sm:grid-cols-3">
         <Cifra
-          valor={`${informe01Recuento.coberturaPiloto}`}
-          etiqueta="fuentes de media en el piloto"
-          detalle="PUCV, Universidad Católica y Universidad de Chile"
+          valor={`${r.coberturaPiloto} · ${r.coberturaResto}`}
+          etiqueta="fuentes de media, piloto frente a las otras ocho"
+          detalle={`Razón de ${r.razonCobertura} a 1`}
         />
         <Cifra
-          valor={`${informe01Recuento.coberturaResto}`}
-          etiqueta="fuentes de media en las otras ocho"
-          detalle={`Razón de ${informe01Recuento.razonCobertura}:1`}
-        />
-        <Cifra
-          valor={`${informe01Recuento.rutasPiloto} · ${informe01Recuento.rutasResto}`}
+          valor={`${r.rutasPiloto} · ${r.rutasResto}`}
           etiqueta="rutas del protocolo recorridas, de trece"
           detalle="Piloto frente al resto"
         />
+        <Cifra
+          valor={`${Math.round((r.fuentesVerificadas / r.fuentes) * 100)} %`}
+          etiqueta="de las fuentes con verificación sustantiva"
+          detalle={`${r.fuentesVerificadas} de ${r.fuentes}, y el reparto tampoco es uniforme`}
+        />
       </div>
 
-      <ol className="space-y-2.5">
-        {universidadesOrdenadas.map((u) => {
-          const c = coberturaDe(u.id);
-          if (!c) return null;
-          const pct = c.coveragePercent;
-          return (
-            <li key={u.id} className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-1">
-              <div className="min-w-0">
-                <div className="flex items-baseline gap-2">
-                  <span className="truncate text-sm text-foreground/90">{u.officialName}</span>
-                  {c.inPilot && (
-                    <span className="mono shrink-0 text-[0.5625rem] uppercase tracking-widest text-accent">
-                      piloto
-                    </span>
-                  )}
-                </div>
-                <div
-                  className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-muted"
-                  role="img"
-                  aria-label={`${u.officialName}: ${c.routesCompleted} de ${c.routesTotal} rutas del protocolo recorridas, ${pct} por ciento`}
-                >
-                  <div
-                    className={cn('h-full rounded-full', c.inPilot ? 'bg-accent' : 'bg-signal')}
-                    style={{ width: `${pct}%` }}
-                  />
-                </div>
-              </div>
-              <span className="mono text-xs text-muted-foreground">
-                {c.routesCompleted}/{c.routesTotal} · {c.sources} fuentes
-              </span>
-            </li>
-          );
-        })}
-      </ol>
+      <Figura
+        ancha
+        pregunta="¿Con qué profundidad se investigó cada institución?"
+        titulo="El trabajo de campo es desigual por diseño, y su reparto condiciona todo lo demás"
+        svg={coberturaSvg()}
+        nota={
+          <>
+            Las dos cifras de la derecha miden nuestro trabajo, no el de la institución. El
+            piloto de profundidad son tres universidades observadas con más detalle; se conserva
+            como profundidad y no como universo. La ruta 13 —fuentes externas de contraste—
+            está sin recorrer en las once, de modo que el corpus hereda íntegro el sesgo de
+            autodescripción: mide lo que las instituciones cuentan de sí mismas, y eso no se
+            corrige agregando más fuentes del mismo tipo.
+          </>
+        }
+        alternativa={
+          <ul className="space-y-2">
+            {universidadesOrdenadas.map((u) => {
+              const c = coberturaDe(u.id);
+              if (!c) return null;
+              return (
+                <li key={u.id} className="text-[0.8125rem] leading-relaxed text-muted-foreground">
+                  <span className="text-foreground">{u.officialName}</span> ·{' '}
+                  {c.routesCompleted} de {c.routesTotal} rutas · {c.sources} fuentes ·{' '}
+                  {c.substantivelyVerifiedSources} contrastadas
+                  {c.inPilot && ' · piloto de profundidad'}. Rutas sin recorrer:{' '}
+                  {c.routesMissing.join(', ')}.
+                </li>
+              );
+            })}
+          </ul>
+        }
+      />
 
-      <Notice tone="signal" className="mt-6">
-        La ruta 13 del protocolo —<em>fuentes externas de contraste</em>— está sin recorrer en
-        las once. Las {informe01Recuento.fuentesInstitucionales} fuentes institucionales del
-        corpus son publicaciones de las propias universidades, y las{' '}
-        {informe01Recuento.fuentesUniversoNacional} restantes son bases oficiales. El corpus
-        hereda íntegro el sesgo de autodescripción: mide lo que las instituciones cuentan de
-        sí mismas, y eso no se corrige agregando más fuentes del mismo tipo.
+      <Notice tone="warning">
+        La verificación tiene su propio sesgo, y es de segundo orden. La PUCV llega al 86 % de
+        sus fuentes contrastadas y la Universidad Autónoma al 0 %, de modo que la institución
+        sobre la que este informe debe ser más cuidadoso es también la mejor comprobada. Por eso
+        la marca de verificación de la matriz de capacidades se dibuja aparte del estado y nunca
+        lo modifica: si entrara en el estado, la desigualdad del trabajo de campo se leería como
+        una diferencia entre Facultades.
       </Notice>
     </div>
   );
@@ -94,7 +97,7 @@ function Cifra({
 }) {
   return (
     <Surface className="p-5">
-      <p className="mono text-3xl leading-none text-foreground">{valor}</p>
+      <p className="mono text-2xl leading-none text-foreground">{valor}</p>
       <p className="mt-2 text-sm leading-snug text-foreground/85">{etiqueta}</p>
       <p className="mt-1 text-[0.75rem] leading-snug text-muted-foreground">{detalle}</p>
     </Surface>

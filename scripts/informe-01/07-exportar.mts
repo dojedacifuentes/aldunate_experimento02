@@ -41,6 +41,28 @@ import {
   resolverCifras,
 } from '../../src/data/informe01-borrador.js';
 import {
+  informe01Hallazgos,
+  informe01ResumenEjecutivo,
+} from '../../src/data/informe01-hallazgos.js';
+import {
+  coberturaSvg,
+  coberturaVsCapacidadSvg,
+  direccionesSvg,
+  escaleraSvg,
+  lineaTiempoSvg,
+  mapaDesarrolloSvg,
+  marcaPortadaSvg,
+  matrizCapacidadesSvg,
+  mecanismosSvg,
+} from '../../src/lib/informe01-graficos.js';
+import {
+  CAPACIDADES,
+  celdaCapacidad,
+  ESTADOS_CAPACIDAD,
+  MECANISMOS,
+} from '../../src/lib/informe01-capacidades.js';
+import { cifrasInforme01 } from '../../src/lib/informe01.js';
+import {
   pucvBrechas,
   pucvDobleRevision,
   pucvFavorable,
@@ -48,7 +70,7 @@ import {
   pucvRecomendaciones,
 } from '../../src/data/informe01-pucv.js';
 
-const VERSION = '0.6.0';
+const VERSION = '0.7.0';
 const FECHA_VERSION = '2026-09-04';
 const CORTE = '2026-09-01';
 const BASE = `informe-01-borrador-academico-v${VERSION}`;
@@ -96,6 +118,29 @@ type Bloque =
   | { t: 'nota'; texto: string }
   | { t: 'ul'; items: string[] }
   | { t: 'tabla'; titulo: string; cabecera: string[]; filas: string[][] }
+  /**
+   * Figura. `svg` llega de `src/lib/informe01-graficos.ts`, el mismo módulo que
+   * dibuja las figuras del sitio: no hay dos motores de gráficos, hay uno con dos
+   * huéspedes. En Markdown, que no admite SVG, se escribe la lectura declarada y
+   * la descripción larga de la figura, que es la alternativa textual que el SVG
+   * ya lleva dentro para los lectores de pantalla.
+   */
+  | { t: 'figura'; pregunta: string; titulo: string; svg: string; nota?: string }
+  /**
+   * Portada. Existe como bloque propio porque un documento que se envía a una
+   * persona necesita una primera página, y la versión anterior abría con un
+   * título, dos líneas en negrita y una tabla de metadatos. En Markdown se
+   * degrada a encabezado y lista, que es lo que ese formato admite.
+   */
+  | {
+      t: 'portada';
+      titulo: string;
+      subtitulo: string;
+      estado: string;
+      marca: string;
+      datos: [string, string][];
+      pie: string;
+    }
   | { t: 'hr' };
 
 const doc: Bloque[] = [];
@@ -107,6 +152,16 @@ const ul = (items: string[]) => doc.push({ t: 'ul', items });
 const tabla = (titulo: string, cabecera: string[], filas: string[][]) =>
   doc.push({ t: 'tabla', titulo, cabecera, filas });
 const hr = () => doc.push({ t: 'hr' });
+const figura = (pregunta: string, titulo: string, svg: string, notaFigura?: string) =>
+  doc.push({ t: 'figura', pregunta, titulo, svg, nota: notaFigura });
+const portada = (b: Extract<Bloque, { t: 'portada' }>) => doc.push(b);
+
+/** Extrae la `<desc>` del SVG: es la alternativa textual que va al Markdown. */
+const descripcionDe = (svg: string) =>
+  svg
+    .match(/<desc>([\s\S]*?)<\/desc>/)?.[1]
+    .replaceAll('&amp;', '&')
+    .replaceAll('&quot;', '"') ?? '';
 
 /* ── Cifras que la prosa interpola ──────────────────────────────────────────
  * Se calculan aquí, desde los mismos CSV que alimentan el resto del documento,
@@ -115,6 +170,14 @@ const hr = () => doc.push({ t: 'hr' });
  * voz alta antes de escribir nada.                                           */
 const verificadas = fuentes.filter((f) => f.verified_by).length;
 const cifras: Record<string, string | number> = {
+  /*
+   * Las cifras derivadas de la capa de capacidades se traen de la misma función
+   * que alimenta la web. Podrían recalcularse aquí desde los CSV, y esa fue la
+   * primera tentación; pero dos implementaciones de la misma regla son dos
+   * implementaciones que pueden separarse en silencio, y el punto de esta cadena
+   * es que el documento y el sitio no puedan decir cosas distintas.
+   */
+  ...cifrasInforme01(),
   corte: '1 de septiembre de 2026',
   universidades: universidades.length,
   fuentes: fuentes.length,
@@ -134,9 +197,23 @@ const cifras: Record<string, string | number> = {
 };
 const T = (s: string) => resolverCifras(s, cifras);
 
-h(1, 'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile');
-p('**Mapeo comparado de evidencia pública e institucionalización.**');
-p('**Borrador académico para revisión.** No es un informe de resultados.');
+portada({
+  t: 'portada',
+  titulo:
+    'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
+  subtitulo: 'Mapeo comparado de evidencia pública e institucionalización',
+  estado: 'Borrador académico para revisión · no es un informe de resultados',
+  marca: marcaPortadaSvg(),
+  datos: [
+    ['Versión', `v${VERSION}`],
+    ['Fecha de corte', '1 de septiembre de 2026'],
+    ['Cohorte', `${universidades.length} Escuelas y Facultades de Derecho`],
+    ['Corpus', `${fuentes.length} fuentes · ${verificadas} contrastadas`],
+    ['Autoría', 'Diego Hernán Ojeda Cifuentes'],
+    ['Protocolo', 'METODOLOGIA_IA_DERECHO_V2.1'],
+  ],
+  pie: 'Prototipo académico experimental. No es una publicación oficial de la Pontificia Universidad Católica de Valparaíso ni de su Escuela de Derecho, y no habla en nombre de ninguna persona.',
+});
 
 tabla('Ficha del documento', ['Campo', 'Valor'], [
   ['Versión', `v${VERSION}`],
@@ -145,7 +222,9 @@ tabla('Ficha del documento', ['Campo', 'Valor'], [
   ['Fecha de corte', CORTE],
   ['Autoría', 'Diego Hernán Ojeda Cifuentes'],
   ['Cohorte', 'COHORTE_IA_DERECHO_CHILE_11_V1 · once instituciones, cerrada'],
-  ['Protocolo', 'METODOLOGIA_IA_DERECHO_V2.0'],
+  ['Protocolo', 'METODOLOGIA_IA_DERECHO_V2.1 · enmienda de la V2.0, que se conserva'],
+  ['Capacidades comparadas', String(CAPACIDADES.length)],
+  ['Mecanismos institucionales', String(MECANISMOS.length)],
   ['Universidades', String(universidades.length)],
   ['Fuentes públicas únicas', String(fuentes.length)],
   ['Iniciativas deduplicadas', String(iniciativas.length)],
@@ -185,26 +264,21 @@ p(
 );
 
 hr();
-h(2, 'Qué muestra la evidencia', 'hallazgos');
-ul([
-  'Cuatro Facultades de Derecho crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios, pero **en ninguna de las cuatro se localizó el acto que la constituye**: sólo una tiene respaldo orgánico, en el organigrama de su Facultad.',
-  'El uso interno de IA dejó de ser una casilla vacía: cuatro instituciones documentan herramientas o formación desplegadas dentro de la enseñanza del Derecho.',
-  'La formación continua es el único eje con serie temporal documentada, y la serie es de una sola institución: dos graduaciones consecutivas, de más de 90 y más de 100 titulados. El programa equivalente de otra universidad de la cohorte figura cerrado desde 2022.',
-  'Del corpus, una sola norma sobre uso de IA fue dictada por una Facultad de Derecho, con órgano aprobador identificado y sanción asociada. Los otros dos instrumentos son universitarios y de carácter orientador.',
-  T(
-    '{universitarios} registros corresponden a capacidades de la universidad y no de la Facultad, y quedan atribuidos como tales.',
-  ),
-]);
+h(2, 'Resumen ejecutivo', 'resumen');
+for (const parrafo of informe01ResumenEjecutivo) p(T(parrafo));
 
-h(2, 'Qué no alcanza a mostrar', 'limites');
-ul([
-  'Si algo de esto funciona. **Ninguna de las ' +
-    iniciativas.length +
-    ' iniciativas registradas alcanza evidencia pública de evaluación de efecto sobre el aprendizaje.** Es la tercera ronda independiente de investigación que llega a la misma ausencia.',
-  'Qué se enseña de verdad. No se localizó ningún syllabus de 2026 con obligatoriedad, semestre, créditos y matrícula real, en ninguna de las once.',
-  'Con qué se sostiene. Dos de las ocho dimensiones —recursos y capacidades, y continuidad, cobertura y resultados— no reúnen una sola evidencia en toda la cohorte.',
-  'Qué diría un tercero. Ninguna fuente del corpus proviene de contraste externo: la ruta 13 del protocolo está sin recorrer en las once instituciones.',
-]);
+hr();
+h(2, `Los ${informe01Hallazgos.length} hallazgos principales`, 'hallazgos');
+p(
+  'Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el límite hasta el que llega. **El límite no es un descargo: es parte del hallazgo**, y por eso ninguno se publica sin él.',
+);
+for (const hz of informe01Hallazgos) {
+  h(3, `${hz.id} · ${hz.enunciado}`);
+  p(`**Dato.** ${T(hz.dato)}`);
+  p(`**Lectura.** ${T(hz.lectura)}`);
+  nota(`**Límite.** ${T(hz.limite)}`);
+  p(`*Se apoya en: ${hz.apoyo.join(' · ')}.*`);
+}
 
 hr();
 h(2, '1 · Introducción', 'introduccion');
@@ -227,23 +301,85 @@ h(3, 'Declaración de intereses');
 for (const parrafo of informe01Intereses) nota(T(parrafo));
 
 hr();
+h(2, 'Panorama del conjunto', 'panorama');
+p(
+  'Antes de comparar instituciones conviene ver la forma del conjunto: cuándo empezó, con qué instrumentos se está haciendo y hasta dónde ha llegado.',
+);
+
+figura(
+  '¿Desde cuándo existe este fenómeno en las Facultades chilenas?',
+  T(
+    'El campo entero cabe en dos años: {iniciativasDesde2025} de las {iniciativasFechadas} iniciativas fechadas empiezan en 2025 o después',
+  ),
+  lineaTiempoSvg(),
+  T(
+    'El año es el de inicio declarado por la fuente, no el de su publicación. {iniciativasSinFecha} iniciativas no declaran fecha y no se les inventa una. Las dos anteriores a 2020 son unidades que existían antes de la inteligencia artificial generativa y que incorporaron el tema más tarde: su antigüedad no es antigüedad en esta materia.',
+  ),
+);
+
+figura(
+  '¿Con qué instrumentos institucionales se está incorporando la inteligencia artificial?',
+  'Predominan los programas formativos y las herramientas; los convenios y las publicaciones son marginales',
+  mecanismosSvg(),
+  'El mecanismo es un eje nuevo de la metodología 2.1, ortogonal a la dimensión: la dimensión dice en qué ámbito académico ocurre algo y el mecanismo, con qué instrumento se hace. La clasificación no aporta evidencia nueva —reordena la que ya estaba verificada en el nombre, la unidad responsable y los productos de cada registro— y por eso no reabre la verificación de ninguna fuente.',
+);
+
+tabla(
+  'Vocabulario de mecanismos institucionales',
+  ['Mecanismo', 'Qué comprende', 'Iniciativas', 'De la Facultad'],
+  MECANISMOS.map((m) => {
+    const xs = iniciativas.filter((i) => i.mechanism_type === m.id);
+    const propias = xs.filter((i) =>
+      ['FACULTAD_DERECHO', 'CENTRO_PROGRAMA', 'EQUIPO'].includes(i.institutional_level),
+    );
+    return [m.label, m.definicion, String(xs.length), String(propias.length)];
+  }),
+);
+
+figura(
+  '¿Hasta dónde llega la institucionalización de lo que se hace?',
+  'La escalera se llena hasta el tercer peldaño y se detiene antes del cuarto',
+  escaleraSvg(),
+  'El peldaño se aplica a la iniciativa y nunca a la universidad, y no se promedia: una institución puede exhibir muchas actividades con baja institucionalización y otra pocas pero formalizadas. Un promedio borraría justo esa diferencia.',
+);
+nota(
+  'El cuarto peldaño está vacío. Se localizaron métricas de cobertura —cerca del 80 % del profesorado de Derecho de una Facultad, unos noventa participantes en un taller, dos cohortes graduadas— y ninguna es una medición de efecto: cuántos asistieron no dice si algo cambió. Con todo, la ruta del protocolo que acreditaría una evaluación publicada sólo se recorrió en dos de las once instituciones, de modo que la afirmación es firme sobre el corpus y sigue abierta sobre cada Facultad.',
+);
+
+figura(
+  '¿Se está usando la IA para enseñar Derecho, o se la está estudiando como objeto jurídico?',
+  'Tres de cada cuatro iniciativas usan la IA; una minoría la estudia como problema jurídico',
+  direccionesSvg(),
+  'Cada iniciativa recibe una sola dirección, y las que integran las dos de forma sustantiva se registran como AMBOS en vez de contarse dos veces. La categoría ADYACENTE existe para lo contrario: tratar como inteligencia artificial una tecnología digital que no lo es —realidad virtual, un laboratorio de innovación legal, una plataforma de búsqueda— es el modo de inflar un mapa sin inventar una sola fuente.',
+);
+
+hr();
 h(2, 'Cobertura de la investigación', 'cobertura');
 p(
   'Cuánto se investigó cada institución, que no es lo mismo que cuánto hace. Va antes que cualquier comparación porque sin este denominador la comparación engaña.',
 );
+
+figura(
+  '¿Con qué profundidad se investigó cada institución?',
+  'El trabajo de campo es desigual por diseño, y su reparto condiciona todo lo demás',
+  coberturaSvg(),
+  'Las dos cifras de la derecha miden nuestro trabajo, no el de la institución. La ruta 13 —fuentes externas de contraste— está sin recorrer en las once, de modo que el corpus hereda íntegro el sesgo de autodescripción: mide lo que las instituciones cuentan de sí mismas, y eso no se corrige agregando más fuentes del mismo tipo.',
+);
+
 tabla(
   'Rutas del protocolo recorridas por institución',
-  ['Institución', 'Piloto', 'Rutas de 13', 'Fuentes', 'Iniciativas', 'Evidencias', 'Dimensiones de 8'],
+  ['Institución', 'Piloto', 'Rutas de 13', 'Fuentes', 'Contrastadas', 'Iniciativas', 'Evidencias'],
   ordenadas.map((u) => {
     const c = cobDe(u.university_id);
+    const pct = Math.round((Number(c.substantively_verified_sources) / Number(c.sources)) * 100);
     return [
       u.official_name,
       c.in_pilot === 'si' ? 'sí' : '—',
       `${c.routes_completed}`,
       c.sources,
+      `${c.substantively_verified_sources} (${pct} %)`,
       c.initiatives,
       c.evidence,
-      c.dimensions_covered,
     ];
   }),
 );
@@ -251,98 +387,76 @@ p(
   `Media del piloto: ${mediaPiloto} fuentes y ${media(piloto, (c) => Number(c.routes_completed))} rutas. Media de las otras ocho: ${mediaResto} fuentes y ${media(resto, (c) => Number(c.routes_completed))} rutas. Razón de ${razon}:1.`,
 );
 nota(
-  'La institución con menos rutas recorridas de las once aporta la única cobertura docente cuantificada de todo el corpus. Si cobertura de investigación y madurez institucional fueran la misma variable, eso sería imposible.',
+  'La verificación tiene además su propio sesgo, y es de segundo orden. La PUCV llega al 86 % de sus fuentes contrastadas y la Universidad Autónoma al 0 %, de modo que la institución sobre la que este informe debe ser más cuidadoso es también la mejor comprobada. Por eso la marca de verificación de la matriz de capacidades se dibuja aparte del estado y nunca lo modifica.',
 );
 
 hr();
-h(2, 'Evidencia localizada por universidad y dimensión', 'matriz');
+h(2, 'Capacidades institucionales comparadas', 'capacidades');
 p(
-  'Cada celda indica el número de evidencias localizadas y, entre paréntesis, el escalón más alto que alcanza alguna iniciativa de esa universidad en esa dimensión. **No es un puntaje de madurez y no debe sumarse.** Las filas van en orden alfabético.',
+  'El comparador principal de esta versión. Responde «¿qué capacidad demuestra cada Facultad?» y no «¿cuánta evidencia encontramos de ella?», que es la pregunta que contestaba la matriz de la versión anterior y que hacía leer una fila más poblada como una universidad que hace más.',
 );
+p(
+  T(
+    'Cada celda se calcula con una regla mecánica sobre el dataset. Una capacidad está **en operación** cuando la Facultad, un centro suyo o un equipo académico sostiene un mecanismo en el segundo peldaño de la escalera o más arriba. Las ausencias se separan en dos, y ésa es la corrección metodológica de la versión: **no localizada** significa que se recorrió la ruta del protocolo que la habría encontrado, y **no concluyente**, que esa ruta no se recorrió en esa institución. {celdasNoConcluyente} de las {celdas} celdas son de la segunda clase.',
+  ),
+);
+
+figura(
+  '¿Qué capacidad institucional demuestra cada Facultad, y dónde no podemos saberlo?',
+  T('Diez capacidades, once Facultades, y {celdasNoConcluyente} de {celdas} celdas todavía sin respuesta'),
+  matrizCapacidadesSvg(),
+  'No hay total por fila ni por columna, y la falta es el diseño: sumar capacidades produciría un número por institución, y ese número sería un ranking del trabajo de campo tanto como del trabajo institucional.',
+);
+
 tabla(
-  'Evidencia pública localizada, al corte del ' + CORTE,
-  ['Institución', ...DIMENSIONES.map(([, l]) => l)],
-  ordenadas.map((u) => [
-    u.official_name,
-    ...DIMENSIONES.map(([id]) => {
-      const evs = evidencias.filter(
-        (e) => e.university_id === u.university_id && e.dimension === id,
-      );
-      const inis = iniciativas.filter(
-        (i) => i.university_id === u.university_id && i.primary_dimension === id,
-      );
-      if (evs.length === 0) return '—';
-      const max = Math.max(...inis.map((i) => Number(i.current_status)));
-      return `${evs.length} (niv ${max})`;
-    }),
+  'Las diez capacidades y la pregunta que responde cada una',
+  ['Capacidad', 'Pregunta', 'Rutas del protocolo que la acreditan'],
+  CAPACIDADES.map((c) => [
+    c.label,
+    c.pregunta,
+    c.rutas.length ? c.rutas.join(', ') : 'derivada de los registros, sin ruta propia',
   ]),
 );
 
-hr();
-h(2, 'Escalera de institucionalización', 'escalera');
-p(
-  'La escalera se aplica a la **iniciativa** y no a la universidad, y no se promedia: una institución puede exhibir muchas actividades con baja institucionalización y otra pocas pero formalizadas, y un promedio borraría justo esa diferencia.',
-);
 tabla(
-  'Distribución de las iniciativas por escalón',
-  ['Nivel', 'Nombre', 'Condición mínima', 'Iniciativas'],
-  [
-    ['0', 'Sin evidencia pública', 'El protocolo se recorrió y no se localizó evidencia verificable.', '0'],
-    ['1', 'Exploración', 'Anuncio, evento, piloto o iniciativa aislada.', ''],
-    ['2', 'Operación', 'Actividad recurrente, curso activo o proyecto en ejecución.', ''],
-    ['3', 'Institucionalización', 'Responsable formal, continuidad, cobertura, política, recursos o integración curricular.', ''],
-    ['4', 'Evaluación', 'Productos, resultados o efectos públicamente revisables.', ''],
-  ].map((f) => {
-    const n = iniciativas.filter((i) => i.current_status === f[0]).length;
-    return [f[0], f[1], f[2], String(n)];
-  }),
+  'Estado de cada capacidad por institución',
+  ['Institución', ...CAPACIDADES.map((c) => c.short)],
+  ordenadas.map((u) => [
+    u.official_name,
+    ...CAPACIDADES.map((c) => {
+      const celdaCap = celdaCapacidad(u.university_id, c.id);
+      const corto = ESTADOS_CAPACIDAD.find((e) => e.id === celdaCap.estado)!.corto;
+      return celdaCap.contrastada ? `${corto} ·` : corto;
+    }),
+  ]),
 );
 nota(
-  'El cuarto peldaño está vacío. Se localizaron métricas de cobertura —cerca del 80 % del profesorado de Derecho de una Facultad, unos noventa participantes en un taller, dos cohortes graduadas— y ninguna es una medición de efecto. Cuántos asistieron no dice si algo cambió.',
+  'El punto que sigue al estado marca que al menos una fuente de esa celda pasó la verificación sustantiva. Es una propiedad de esta investigación y no de la institución, y por eso viaja aparte del estado.',
 );
 
-h(3, 'Iniciativas por dirección');
 tabla(
-  'Qué clase de relación con la IA',
-  ['Dirección', 'Iniciativas', 'Qué significa'],
-  [
-    ['IA_PARA_DERECHO', '', 'La IA se usa para enseñar, investigar, redactar, litigar o atender.'],
-    ['DERECHO_DE_IA', '', 'La IA es el objeto jurídico: regulación, responsabilidad, datos, debido proceso.'],
-    ['AMBOS', '', 'La iniciativa integra las dos de forma sustantiva.'],
-    ['ADYACENTE', '', 'Innovación, datos o tecnología donde la IA no es un componente central verificable.'],
-  ].map((f) => [f[0], String(iniciativas.filter((i) => i.direction === f[0]).length), f[2]]),
+  'Los cinco estados',
+  ['Estado', 'Qué significa'],
+  ESTADOS_CAPACIDAD.map((e) => [e.label, e.definicion]),
 );
 
 hr();
-h(2, 'Las once instituciones', 'instituciones');
-for (const u of ordenadas) {
-  const c = cobDe(u.university_id);
-  const inis = iniciativas.filter((i) => i.university_id === u.university_id);
-  const fs = fuentes.filter((f) => f.university_id === u.university_id);
-  h(3, u.official_name, `ficha-${u.university_id}`);
-  p(`**${u.unit_name}** · ${u.notes}`);
-  p(
-    `Cobertura: ${c.routes_completed} de ${c.routes_total} rutas del protocolo · ${fs.length} fuentes · ${inis.length} iniciativas · ${c.dimensions_covered} de ${c.dimensions_total} dimensiones · 0 fuentes con verificación sustantiva.`,
-  );
-  if (c.routes_missing) p(`Rutas sin recorrer: ${c.routes_missing.replaceAll('; ', ', ')}.`);
-  tabla(
-    `Iniciativas registradas · ${u.official_name}`,
-    ['Iniciativa', 'Nivel', 'Atribución', 'Dirección', 'Trayectoria', 'Fuentes'],
-    inis.map((i) => [
-      i.name,
-      i.current_status,
-      i.institutional_level,
-      i.direction,
-      i.temporal_change,
-      lista(i.source_ids).join(', '),
-    ]),
-  );
-  const notas = inis.filter((i) => i.notes);
-  if (notas.length > 0) {
-    h(4, 'Advertencias de lectura');
-    ul(notas.map((i) => `**${i.name}.** ${i.notes}`));
-  }
-}
+h(2, 'La comprobación que impide leer mal todo lo anterior', 'control');
+p(
+  'Si cuánto se investiga y cuánto hacen las Facultades fueran la misma variable, el informe entero estaría midiendo su propio trabajo de campo. La comprobación es directa: se cruzan las dos.',
+);
+
+figura(
+  '¿Cuánto de lo que vemos es lo que hacen las Facultades, y cuánto es dónde miramos?',
+  T('{menosInvestigada} acredita tantas capacidades en operación como {masInvestigada} con una quinta parte del trabajo de campo'),
+  coberturaVsCapacidadSvg(),
+  'El eje vertical no es una nota ni un puntaje: es el recuento de preguntas que el corpus contesta afirmativamente, y está acotado por arriba por lo que se buscó. Cada punto lleva un halo gris proporcional a sus celdas sin concluir; un punto bajo con halo grande no dice «hace poco», dice «no lo sabemos».',
+);
+nota(
+  T(
+    'Este par de valores es la razón concreta por la que el informe no publica ranking. {menosInvestigada} es la institución menos investigada de las once —{menosInvestigadaRutas} de trece rutas, ninguna fuente contrastada— y aporta la única cobertura docente cuantificada de todo el corpus. Si el trabajo de campo y la capacidad institucional fueran la misma variable, ese punto no podría existir.',
+  ),
+);
 
 hr();
 h(2, '4 · Discusión', 'discusion');
@@ -355,6 +469,41 @@ hr();
 h(2, '5 · La PUCV en contexto', 'pucv');
 p(
   'La sección reconoce primero lo que existe. El antecedente describía a la PUCV como un conjunto de iniciativas inconexas y la evidencia de 2026 no sostiene esa lectura.',
+);
+
+figura(
+  '¿Qué capacidades constan hoy en la PUCV y con qué instrumento las resolvieron las Facultades donde ya están en operación?',
+  'Seis de las diez capacidades constan en operación; las otras cuatro no se reparten por igual',
+  mapaDesarrolloSvg('pucv'),
+  'No es un semáforo. La tercera columna no propone una meta: nombra las Facultades donde esa misma capacidad consta en operación, para que la comparación sea con un mecanismo concreto y no con un adjetivo. Que una capacidad quede sin concluir no es un reproche a la institución: es una tarea pendiente de esta investigación.',
+);
+
+h(3, 'Qué falta, y con qué instrumento lo resolvió quien ya lo resolvió');
+p(
+  'Cada fila nombra la capacidad, lo que aquí consta y el mecanismo concreto —con su institución— allí donde la misma capacidad está en operación. No propone qué hacer: pone el referente a la vista. Una capacidad sin referente también aparece, porque que nadie la haya resuelto es tan informativo como que alguien sí.',
+);
+tabla(
+  'Comparador de mecanismos · PUCV',
+  ['Capacidad', 'Estado aquí', 'Lo que consta', 'Mecanismo observado en otras Facultades'],
+  CAPACIDADES.filter((c) => celdaCapacidad('pucv', c.id).estado !== 'EN_OPERACION').map((c) => {
+    const propia = celdaCapacidad('pucv', c.id);
+    const referentes = ordenadas
+      .filter((o) => o.university_id !== 'pucv')
+      .map((o) => ({ o, celda: celdaCapacidad(o.university_id, c.id) }))
+      .filter((x) => x.celda.estado === 'EN_OPERACION');
+    return [
+      c.label,
+      ESTADOS_CAPACIDAD.find((e) => e.id === propia.estado)!.label,
+      propia.iniciativas.length
+        ? propia.iniciativas.map((i) => i.name).join(' · ')
+        : propia.motivo,
+      referentes.length
+        ? referentes
+            .map((r) => `${r.celda.iniciativas.map((i) => i.name).join(', ')} (${r.o.official_name})`)
+            .join(' · ')
+        : 'En ninguna de las otras diez consta en operación.',
+    ];
+  }),
 );
 
 h(3, 'Evidencia favorable localizada');
@@ -392,7 +541,130 @@ for (const r of pucvRecomendaciones) {
 }
 
 hr();
-h(2, 'Doce temas de capacidad institucional', 'pucv-temas');
+h(2, '6 · Conclusiones', 'conclusiones');
+p(
+  'Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información que no aparezca antes en el documento.',
+);
+for (const c of informe01Conclusiones) {
+  h(3, `${c.id} · ${c.titulo}`, c.id.toLowerCase());
+  p(T(c.cuerpo));
+  p(`**${c.clase}.** Se apoya en ${c.apoyo.join(', ')}.`);
+}
+
+hr();
+h(2, '6 bis · Implicancias para la PUCV', 'implicancias');
+p(
+  'Las conclusiones dicen qué muestra la evidencia. Esto dice qué preguntas de gestión abre esa evidencia, que es cosa distinta y no equivale a una recomendación. Ninguno de estos bloques afirma qué debe hacer la institución: enuncia un problema observado, la evidencia que lo sostiene, el referente donde ese mismo problema ya tiene un mecanismo, la decisión que eso abre y el indicador con el que podría comprobarse más adelante si se tomó.',
+);
+tabla(
+  'De la evidencia a la decisión institucional',
+  ['', 'Problema observado', 'Evidencia', 'Referente observado', 'Decisión que abre', 'Indicador'],
+  pucvRecomendaciones.map((r) => [r.id, r.problema, r.evidencia, r.referente, r.accion, r.indicador]),
+);
+
+hr();
+h(2, '7 · Limitaciones', 'limitaciones');
+p('Lo que este método no puede ver, dicho antes de que lo diga un lector.');
+ul(informe01Limitaciones.map(T));
+
+hr();
+h(2, '8 · Agenda de investigación', 'agenda');
+for (const a of informe01Agenda) {
+  h(3, `${a.id} · ${T(a.pregunta)}`, a.id.toLowerCase());
+  p(`**Por qué importa.** ${T(a.porQue)}`);
+  p(`**Cómo se cierra.** ${T(a.comoSeCierra)}`);
+}
+
+hr();
+h(2, 'Anexo A · Las once instituciones, una por una', 'instituciones');
+for (const u of ordenadas) {
+  const c = cobDe(u.university_id);
+  const inis = iniciativas.filter((i) => i.university_id === u.university_id);
+  const fs = fuentes.filter((f) => f.university_id === u.university_id);
+  h(3, u.official_name, `ficha-${u.university_id}`);
+  p(`**${u.unit_name}** · ${u.notes}`);
+  p(
+    `Cobertura: ${c.routes_completed} de ${c.routes_total} rutas del protocolo · ${fs.length} fuentes, ${c.substantively_verified_sources} contrastadas · ${inis.length} iniciativas · ${c.dimensions_covered} de ${c.dimensions_total} dimensiones.`,
+  );
+  if (c.routes_missing) p(`Rutas sin recorrer: ${c.routes_missing.replaceAll('; ', ', ')}.`);
+  tabla(
+    `Iniciativas registradas · ${u.official_name}`,
+    ['Iniciativa', 'Nivel', 'Atribución', 'Dirección', 'Trayectoria', 'Fuentes'],
+    inis.map((i) => [
+      i.name,
+      i.current_status,
+      i.institutional_level,
+      i.direction,
+      i.temporal_change,
+      lista(i.source_ids).join(', '),
+    ]),
+  );
+  const notas = inis.filter((i) => i.notes);
+  if (notas.length > 0) {
+    h(4, 'Advertencias de lectura');
+    ul(notas.map((i) => `**${i.name}.** ${i.notes}`));
+  }
+}
+
+hr();
+h(2, 'Anexo B · Afirmaciones, con su cadena completa', 'afirmaciones');
+p(
+  'Ninguna está aceptada. El nivel epistemológico dice qué clase de cosa es la afirmación; el estado editorial, cuánto ha caminado por el procedimiento.',
+);
+for (const c of afirmaciones) {
+  h(3, c.claim_text, c.claim_id);
+  p(
+    `\`${c.claim_id}\` · **${c.classification}** · ${c.workflow_status} · confianza ${c.confidence}/100 · ` +
+      (c.verified_by ? `contrastada el ${c.last_verified}` : 'verificación sustantiva pendiente'),
+  );
+  p(`**Razonamiento.** ${c.reasoning}`);
+  p(`**Límites.** ${c.limitations}`);
+  if (c.evidence_ids) p(`**Evidencia.** ${c.evidence_ids.replaceAll('; ', ', ')}`);
+  if (c.counterevidence_ids)
+    p(`**Contraevidencia.** ${c.counterevidence_ids.replaceAll('; ', ', ')}`);
+}
+
+hr();
+h(2, 'Anexo C · Lagunas declaradas', 'lagunas');
+p('Quien vaya a citar este informe necesita saber qué no puede citar.');
+for (const l of informe01Lagunas) {
+  h(3, `${l.id} · ${l.titulo}`, l.id);
+  p(l.cuerpo);
+  p(`**Qué la cerraría.** ${l.cierre}`);
+}
+
+hr();
+h(2, 'Anexo D · Matriz de evidencia localizada por dimensión', 'matriz');
+p(
+  'Es el comparador con que se publicó la versión 0.6.0, bajo la metodología 2.0, y se conserva por dos razones. La primera es de trazabilidad: quien leyó la versión anterior debe poder reencontrar lo que leyó. La segunda es de honestidad metodológica: la matriz de capacidades es una propuesta nueva, y hacer desaparecer la anterior impediría comprobar si el cambio de instrumento cambió las conclusiones o sólo su presentación.',
+);
+p(
+  'Cada celda indica el número de evidencias localizadas y, entre paréntesis, el escalón más alto que alcanza alguna iniciativa de esa universidad en esa dimensión. **No es un puntaje de madurez y no debe sumarse.** Las filas van en orden alfabético.',
+);
+tabla(
+  'Evidencia pública localizada, al corte del ' + CORTE,
+  ['Institución', ...DIMENSIONES.map(([, l]) => l)],
+  ordenadas.map((u) => [
+    u.official_name,
+    ...DIMENSIONES.map(([id]) => {
+      const evs = evidencias.filter(
+        (e) => e.university_id === u.university_id && e.dimension === id,
+      );
+      const inis = iniciativas.filter(
+        (i) => i.university_id === u.university_id && i.primary_dimension === id,
+      );
+      if (evs.length === 0) return '—';
+      const max = Math.max(...inis.map((i) => Number(i.current_status)));
+      return `${evs.length} (niv ${max})`;
+    }),
+  ]),
+);
+nota(
+  'Dos de las ocho dimensiones —recursos y capacidades, y continuidad, cobertura y resultados— no reúnen una sola evidencia en toda la cohorte. La metodología 2.1 sostiene que esa doble columna vacía es en parte un artefacto del modelo: no son ámbitos donde una iniciativa ocurra, sino atributos que cualquier iniciativa puede tener, y como el dataset obliga a elegir una dimensión primaria, ninguna cae nunca ahí. El diplomado con dos cohortes graduadas se clasifica en formación continua, y su continuidad —que es el dato— queda invisible.',
+);
+
+hr();
+h(2, 'Anexo E · Doce temas de capacidad institucional en la PUCV', 'pucv-temas');
 nota(
   'La PUCV es una de las tres del piloto: se recorrieron ' +
     cobDe('pucv').routes_completed +
@@ -414,58 +686,7 @@ tabla(
 );
 
 hr();
-h(2, 'Afirmaciones', 'afirmaciones');
-p(
-  'Ninguna está aceptada. El nivel epistemológico dice qué clase de cosa es la afirmación; el estado editorial, cuánto ha caminado por el procedimiento.',
-);
-for (const c of afirmaciones) {
-  h(3, c.claim_text, c.claim_id);
-  p(
-    `\`${c.claim_id}\` · **${c.classification}** · ${c.workflow_status} · confianza ${c.confidence}/100 · ` +
-      (c.verified_by ? `contrastada el ${c.last_verified}` : 'verificación sustantiva pendiente'),
-  );
-  p(`**Razonamiento.** ${c.reasoning}`);
-  p(`**Límites.** ${c.limitations}`);
-  if (c.evidence_ids) p(`**Evidencia.** ${c.evidence_ids.replaceAll('; ', ', ')}`);
-  if (c.counterevidence_ids)
-    p(`**Contraevidencia.** ${c.counterevidence_ids.replaceAll('; ', ', ')}`);
-}
-
-hr();
-h(2, 'Lagunas declaradas', 'lagunas');
-p('Quien vaya a citar este informe necesita saber qué no puede citar.');
-for (const l of informe01Lagunas) {
-  h(3, `${l.id} · ${l.titulo}`, l.id);
-  p(l.cuerpo);
-  p(`**Qué la cerraría.** ${l.cierre}`);
-}
-
-hr();
-h(2, '6 · Conclusiones', 'conclusiones');
-p(
-  'Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información que no aparezca antes en el documento.',
-);
-for (const c of informe01Conclusiones) {
-  h(3, `${c.id} · ${c.titulo}`, c.id.toLowerCase());
-  p(T(c.cuerpo));
-  p(`**${c.clase}.** Se apoya en ${c.apoyo.join(', ')}.`);
-}
-
-hr();
-h(2, '7 · Limitaciones', 'limitaciones');
-p('Lo que este método no puede ver, dicho antes de que lo diga un lector.');
-ul(informe01Limitaciones.map(T));
-
-hr();
-h(2, '8 · Agenda de investigación', 'agenda');
-for (const a of informe01Agenda) {
-  h(3, `${a.id} · ${T(a.pregunta)}`, a.id.toLowerCase());
-  p(`**Por qué importa.** ${T(a.porQue)}`);
-  p(`**Cómo se cierra.** ${T(a.comoSeCierra)}`);
-}
-
-hr();
-h(2, 'Auditoría de la línea base', 'auditoria');
+h(2, 'Anexo F · Auditoría de la línea base de 2025', 'auditoria');
 p(
   'El informe antecedente declaraba cinco dimensiones con un máximo de tres puntos cada una y, a la vez, asignaba valores de 0,25 a 1,50 a actividades individuales. Cuatro de sus totales no salen de sus propias puntuaciones.',
 );
@@ -479,7 +700,7 @@ p(
 );
 
 hr();
-h(2, 'Registro de fuentes', 'fuentes');
+h(2, 'Anexo G · Registro completo de fuentes', 'fuentes');
 p(
   `Las ${fuentes.length} fuentes del corpus, con su estado editorial. La confianza es **documental** y se deriva de la jerarquía de fuentes del protocolo: no es una medida de madurez institucional.`,
 );
@@ -506,8 +727,10 @@ ul([
   '**Un cero heredado no se arrastra.** La ausencia de evidencia pública en una ronda anterior no es evidencia de inexistencia.',
   '**Sin línea base congelada de 2025**, ninguna afirmación de la forma «X aumentó desde 2025» es publicable.',
   '**Las escalas no son comparables.** La del antecedente y la escalera 0–4 miden cosas distintas y no se restan.',
-  '**La verificación sustantiva no se delega.** Ninguna fuente lleva fecha de verificación y ningún registro está aceptado.',
-]);
+  '**Contrastar no es aceptar.** {verificadas} de las {fuentes} fuentes fueron abiertas y contrastadas contra su publicación original, y llevan fecha y firma. Ninguna está **aceptada**: la aceptación exige una decisión humana registrada que el procedimiento todavía no ha recogido.',
+  '**Una ausencia sólo informa si se buscó donde correspondía.** La matriz de capacidades separa «no localizada» de «no concluyente» según se recorriera o no la ruta del protocolo que habría acreditado esa capacidad en esa institución.',
+  '**El mecanismo no es la dimensión.** La dimensión dice en qué ámbito académico ocurre algo; el mecanismo, con qué instrumento se hace. Son ejes ortogonales y se publican por separado.',
+].map(T));
 
 p(
   'Fuente de verdad del documento: los seis CSV de `content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/`, incluidos en este paquete. Los cinco documentos de investigación profunda que lo originaron están versionados en el repositorio y no se editan.',
@@ -534,6 +757,31 @@ const md = doc
           `| ${b.cabecera.join(' | ')} |`,
           `|${b.cabecera.map(() => '---').join('|')}|`,
           ...b.filas.map((f) => `| ${f.map((c) => c.replaceAll('|', '\\|')).join(' | ')} |`),
+        ].join('\n');
+      case 'portada':
+        return [
+          `# ${b.titulo}`,
+          '',
+          `**${b.subtitulo}**`,
+          '',
+          `**${b.estado}**`,
+          '',
+          ...b.datos.map(([k, v]) => `- ${k}: ${v}`),
+          '',
+          `> ${b.pie}`,
+        ].join('\n');
+      case 'figura':
+        // El Markdown no admite SVG. Se escribe la lectura declarada, la
+        // pregunta que la figura responde y su descripción larga, que es la
+        // misma alternativa textual que el SVG lleva dentro para un lector de
+        // pantalla. Quien lea el Markdown recibe el contenido, no un hueco.
+        return [
+          `**${b.titulo}**`,
+          '',
+          `*${b.pregunta}*`,
+          '',
+          descripcionDe(b.svg),
+          ...(b.nota ? ['', `> ${b.nota}`] : []),
         ].join('\n');
       case 'hr':
         return '---';
@@ -569,6 +817,29 @@ const cuerpoHtml = doc
               `<tr>${f.map((c, i) => (i === 0 ? `<th scope="row">${inline(c)}</th>` : `<td>${inline(c)}</td>`)).join('')}</tr>`,
           )
           .join('')}</tbody></table></div></figure>`;
+      case 'portada':
+        return [
+          '<section class="portada">',
+          `<p class="portada-eyebrow">Informe 01 · Prototipo académico experimental</p>`,
+          `<h1>${inline(b.titulo)}</h1>`,
+          `<p class="portada-sub">${inline(b.subtitulo)}</p>`,
+          `<p class="portada-estado">${inline(b.estado)}</p>`,
+          `<div class="portada-marca">${b.marca}</div>`,
+          '<dl class="portada-datos">',
+          b.datos.map(([k, v]) => `<dt>${inline(k)}</dt><dd>${inline(v)}</dd>`).join(''),
+          '</dl>',
+          `<p class="portada-pie">${inline(b.pie)}</p>`,
+          '</section>',
+        ].join('');
+      case 'figura':
+        return [
+          '<figure class="g-figura">',
+          `<figcaption><span class="g-pregunta">${inline(b.pregunta)}</span>`,
+          `<span class="g-titulo">${inline(b.titulo)}</span></figcaption>`,
+          `<div class="g-caja">${b.svg}</div>`,
+          b.nota ? `<p class="g-nota">${inline(b.nota)}</p>` : '',
+          '</figure>',
+        ].join('');
       case 'hr':
         return '<hr>';
     }
@@ -584,8 +855,29 @@ const html = `<!doctype html>
 <title>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile · v${VERSION}</title>
 <style>
   :root { --tinta:#1a1a1a; --papel:#faf8f3; --suave:#5c5c5c; --linea:#dcd8d0; --acento:#8a2432; --azul:#29588c; }
+  /*
+    Paleta del motor de gráficos. Son los mismos nombres que declara
+    src/app/globals.css: el SVG no escribe un solo color, de modo que la misma
+    figura se pinta aquí, en el sitio y en papel sin existir tres veces. Si allá
+    se renombra una variable, aquí hay que renombrarla; es un contrato.
+    (Sin acentos graves: este bloque vive dentro de una plantilla de texto.)
+  */
+  :root {
+    --g-op:#1F5F84; --g-incip:#6FA3C4; --g-incip-fondo:#DCE8F1;
+    --g-entorno:#B78C30; --g-entorno-fondo:#F5EBD5;
+    --g-vacio:#E8E2D6; --g-linea:#C9C0AE; --g-suave:#6A6255; --g-banda:#E5DECF;
+    --g-cebra:rgba(26,24,19,.035); --g-contraste:#8A2432; --g-halo:rgba(106,98,85,.16);
+    --g-esc-1:#BDD5E5; --g-esc-2:#86B2CE; --g-esc-3:#4B87AE; --g-esc-4:#1F5F84;
+  }
   @media (prefers-color-scheme: dark) {
     :root { --tinta:#e8e6e1; --papel:#14161a; --suave:#9a9a9a; --linea:#2c2f36; --acento:#d98b96; --azul:#7aa7d9; }
+    :root {
+      --g-op:#3E9CC4; --g-incip:#2F7191; --g-incip-fondo:#12283A;
+      --g-entorno:#C7A34E; --g-entorno-fondo:#2A2417;
+      --g-vacio:#152735; --g-linea:#2A4256; --g-suave:#9aa6ae; --g-banda:#1c2431;
+      --g-cebra:rgba(255,255,255,.028); --g-contraste:#E08A97; --g-halo:rgba(147,166,181,.18);
+      --g-esc-1:#234A61; --g-esc-2:#2E6C8A; --g-esc-3:#3E9CC4; --g-esc-4:#6FC5E4;
+    }
   }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--papel); color:var(--tinta);
@@ -605,6 +897,61 @@ const html = `<!doctype html>
   figcaption { font-size: .8rem; color: var(--suave); margin-bottom: .5rem;
     font-family: ui-sans-serif, system-ui, sans-serif; text-transform: uppercase; letter-spacing: .06em; }
   .scroll { overflow-x: auto; }
+
+  /* ── Figuras ────────────────────────────────────────────────────────────
+     El SVG sale sin atributos de ancho ni de alto: el viewBox fija la
+     proporción y estas reglas fijan el tamaño. Con un alto declarado como
+     automático el navegador recortaba la matriz de capacidades por abajo, y
+     no avisaba de nada.                                                    */
+  /*
+     Una figura no cabe en la columna de lectura. El cuerpo se mide para la
+     prosa —46rem, unos 75 caracteres— y una matriz de once filas por diez
+     columnas reducida a ese ancho deja de leerse. En pantallas anchas la figura
+     se sale de la columna y se centra sobre el eje del texto; en papel manda el
+     margen de la página y esta regla se apaga sola.
+  */
+  /* ── Portada ───────────────────────────────────────────────────────────── */
+  .portada { min-height: 88vh; display: flex; flex-direction: column; justify-content: center;
+    padding-bottom: 2rem; border-bottom: 1px solid var(--linea); }
+  .portada-eyebrow { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem;
+    text-transform: uppercase; letter-spacing: .12em; color: var(--acento); margin: 0 0 1.5rem; }
+  .portada h1 { font-size: 2.5rem; line-height: 1.12; margin: 0 0 1rem; max-width: 22ch; }
+  .portada-sub { font-style: italic; font-size: 1.15rem; color: var(--suave); margin: 0 0 1.75rem; }
+  .portada-estado { display: inline-block; align-self: flex-start; font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: .78rem; padding: .4rem .8rem; border: 1px solid var(--acento); border-radius: 3px;
+    color: var(--acento); margin: 0 0 2.5rem; }
+  .portada-marca { max-width: 15rem; margin: 0 0 2.5rem; opacity: .92; }
+  .portada-marca .g-fig { width: 100%; }
+  .portada-datos { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1.25rem;
+    font-family: ui-sans-serif, system-ui, sans-serif; font-size: .82rem; margin: 0 0 2rem;
+    border-top: 1px solid var(--linea); padding-top: 1.25rem; }
+  .portada-datos dt { color: var(--suave); text-transform: uppercase; font-size: .68rem;
+    letter-spacing: .07em; padding-top: .15rem; }
+  .portada-datos dd { margin: 0; color: var(--tinta); }
+  .portada-pie { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .72rem;
+    line-height: 1.55; color: var(--suave); margin: 0; max-width: 46ch; }
+
+  .g-figura { margin: 2rem 0; }
+  @media (min-width: 62rem) {
+    .g-figura { width: 58rem; margin-left: 50%; transform: translateX(-50%); }
+  }
+  .g-figura figcaption { display: block; margin-bottom: .75rem;
+    font-family: ui-sans-serif, system-ui, sans-serif; text-transform: none; letter-spacing: 0; }
+  .g-pregunta { display: block; font-size: .68rem; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--acento); }
+  .g-titulo { display: block; margin-top: .3rem; font-family: Georgia, serif;
+    font-size: 1.05rem; line-height: 1.3; color: var(--tinta); }
+  .g-nota { margin-top: .6rem; padding-top: .5rem; border-top: 1px solid var(--linea);
+    font-family: ui-sans-serif, system-ui, sans-serif; font-size: .74rem; line-height: 1.5;
+    color: var(--suave); }
+  .g-caja { overflow-x: auto; overflow-y: hidden; }
+  .g-fig { display: block; width: 100%; height: auto; max-width: 100%;
+    font-family: ui-sans-serif, system-ui, sans-serif; overflow: visible; }
+  .g-t { fill: var(--tinta); }
+  .g-t-fila, .g-t-col, .g-t-punto { fill: var(--tinta); }
+  .g-t-eje, .g-t-leyenda, .g-t-rutas, .g-t-banda { fill: var(--g-suave); }
+  .g-t-cifra { fill: var(--tinta); font-variant-numeric: tabular-nums; }
+  .g-t-cifra-clara { fill: var(--papel); font-variant-numeric: tabular-nums; }
   table { border-collapse: collapse; width: 100%; font-size: .82rem;
     font-family: ui-sans-serif, system-ui, sans-serif; }
   th, td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-bottom: 1px solid var(--linea); }
@@ -622,6 +969,24 @@ const html = `<!doctype html>
       Aquí el desbordamiento se abre y la tabla se reparte el ancho de la página.
     */
     .scroll { overflow: visible; }
+    /* Lo mismo vale para una figura: en papel no hay a dónde desplazarse. */
+    .g-caja { overflow: visible; }
+    /* En papel manda el margen de la página: la figura vuelve a la columna. */
+    .g-figura { width: auto; margin-left: 0; transform: none; }
+    /* La portada ocupa la primera hoja entera y nada se le sube detrás. */
+    .portada { min-height: 0; height: 92vh; break-after: page; border-bottom: 0; }
+    .portada h1 { font-size: 24pt; }
+    .g-figura, .g-fig { break-inside: avoid; }
+    .g-titulo { font-size: 11pt; }
+    /* En papel manda el juego claro, con más contraste y sin tramas tenues. */
+    :root {
+      --g-op:#1a4d80; --g-incip:#5a86a6; --g-incip-fondo:#e6edf3;
+      --g-entorno:#7a5c14; --g-entorno-fondo:#f2ead6;
+      --g-vacio:#eeedea; --g-linea:#9a9a95; --g-suave:#444444; --g-banda:#eceae6;
+      --g-cebra:rgba(0,0,0,.04); --g-contraste:#7a2030; --g-halo:rgba(0,0,0,.09);
+      --g-esc-1:#c5d7e4; --g-esc-2:#8fb0c6; --g-esc-3:#4c7fa3; --g-esc-4:#1a4d80;
+      --tinta:#111; --papel:#fff; --acento:#7a2030;
+    }
     table { table-layout: fixed; width: 100%; font-size: 7pt; }
     th, td { overflow-wrap: anywhere; padding: .28rem .35rem; }
     /* Una tabla de 74 filas no cabe en una página: se parte, pero no por dentro

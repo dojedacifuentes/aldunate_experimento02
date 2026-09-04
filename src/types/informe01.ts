@@ -31,6 +31,85 @@ export type Informe01Dimension =
   | 'continuidad-resultados';
 
 /**
+ * Qué **clase de mecanismo institucional** es la iniciativa (metodología 2.1,
+ * §M-2). Es un eje ortogonal a la dimensión: la dimensión dice en qué ámbito
+ * académico ocurre algo, y el mecanismo dice con qué instrumento se hace.
+ *
+ * Existe porque la pregunta comparativa útil no es «¿cuántas iniciativas tiene
+ * cada Facultad?» sino «¿qué instrumentos ha puesto en pie?». Un diplomado, una
+ * guía ética y un seminario son tres cosas distintas, y sumarlas produce un
+ * recuento que no significa nada.
+ *
+ * La clasificación **no aporta evidencia nueva**: reordena la que ya está
+ * verificada en `name`, `responsible_unit` y `products`. Por eso no reabre la
+ * cadena de verificación de ninguna fuente.
+ */
+export type Informe01Mecanismo =
+  /** Centro, programa, departamento, dirección, laboratorio o núcleo. */
+  | 'UNIDAD'
+  /** Política, guía, lineamiento, decálogo o regla de integridad académica. */
+  | 'NORMA'
+  /** Diplomado, diploma, minor, curso, taller o capacitación. */
+  | 'PROGRAMA_FORMATIVO'
+  /** Actividad dentro de una asignatura o línea declarada de la malla. */
+  | 'ASIGNATURA'
+  /** Sistema, asistente, plataforma o licencia puesta a disposición. */
+  | 'HERRAMIENTA'
+  /** Investigación, I+D o adjudicación de fondo concursable. */
+  | 'PROYECTO'
+  /** Seminario, workshop, jornada o encuentro de una sola ocurrencia. */
+  | 'ACTIVIDAD'
+  /** Acuerdo o alianza con un tercero. */
+  | 'CONVENIO'
+  /** Revista, número monográfico o línea editorial. */
+  | 'PUBLICACION';
+
+/**
+ * Las diez capacidades institucionales de la metodología 2.1 (§M-3). Son un eje
+ * **derivado**: ninguna se registra a mano, todas se calculan desde iniciativas,
+ * atribución, escalón, mecanismo y rutas del protocolo, en
+ * `src/lib/informe01-capacidades.ts`.
+ */
+export type Informe01Capacidad =
+  | 'unidad'
+  | 'norma'
+  | 'curriculo'
+  | 'formacion'
+  | 'herramienta'
+  | 'adopcion'
+  | 'cobertura'
+  | 'investigacion'
+  | 'transferencia'
+  | 'evaluacion';
+
+/**
+ * Estado de una capacidad en una institución (metodología 2.1 §M-4).
+ *
+ * Los cinco valores responden **una sola pregunta**: qué capacidad demuestra la
+ * Facultad. Cuánto hemos comprobado nosotros ese registro es una pregunta
+ * distinta y viaja aparte, en `CeldaCapacidad.contrastada`. Un primer diseño de
+ * esta escala metía la verificación dentro del estado, y el resultado premiaba a
+ * la institución con más fuentes contrastadas —la PUCV— por una propiedad del
+ * trabajo de campo. Era el mismo error de la matriz de la v0.6.0 con otra ropa.
+ *
+ * Los dos últimos valores son la razón de ser de la escala. `NO_LOCALIZADA` dice
+ * que se buscó y no había; `NO_CONCLUYENTE` dice que no se buscó. Una cruz que
+ * signifique las dos cosas a la vez convierte la desigualdad de cobertura en un
+ * juicio sobre la institución, que es el error que ISSUE-018 describe.
+ */
+export type Informe01CapacidadEstado =
+  /** Mecanismo de la Facultad, en operación o institucionalizado (escalón ≥ 2). */
+  | 'EN_OPERACION'
+  /** Mecanismo de la Facultad en exploración: actividad aislada o anuncio (escalón 1). */
+  | 'INCIPIENTE'
+  /** Lo que consta es capacidad de la universidad, de un individuo o del centro de alumnos. */
+  | 'SOLO_ENTORNO'
+  /** Se recorrieron las rutas que la habrían encontrado y no se localizó evidencia. */
+  | 'NO_LOCALIZADA'
+  /** La ruta del protocolo que la acreditaría no se recorrió en esta institución. */
+  | 'NO_CONCLUYENTE';
+
+/**
  * A quién pertenece la capacidad. Es el campo que impide el error más frecuente
  * del corpus: contar una licencia de toda la universidad como capacidad de su
  * Facultad de Derecho.
@@ -135,6 +214,7 @@ export interface Informe01Iniciativa {
   attribution: Informe01Atribucion;
   direction: Informe01Direccion;
   dimension: Informe01Dimension;
+  mechanism: Informe01Mecanismo;
   startDate?: string;
   endDate?: string;
   ladder: Informe01Escalon;
