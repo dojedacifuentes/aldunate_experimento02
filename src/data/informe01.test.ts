@@ -1,3 +1,7 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { describe, expect, it } from 'vitest';
 
 import {
@@ -369,5 +373,48 @@ describe('informe 01 · el borrador, atado a sus datos', () => {
     for (const r of pucvRecomendaciones)
       for (const [k, v] of Object.entries(r))
         expect(String(v).length, `${r.id}.${k}`).toBeGreaterThan(k === 'id' ? 2 : 30);
+  });
+});
+
+/**
+ * El paquete de descargas publica un manifiesto de integridad. Que falle es
+ * peor que no tenerlo: enseña a ignorarlo.
+ *
+ * Falló una vez, y no por un error de cálculo. `core.autocrlf` convertía los
+ * CSV a LF al guardarlos en git mientras el manifiesto describía los CRLF que
+ * escribió el exportador, de modo que el paquete verificaba en el equipo del
+ * autor y fallaba en producción. Lo arregla `.gitattributes`; esto lo vigila.
+ */
+describe('informe 01 · el paquete de descargas dice la verdad sobre sí mismo', () => {
+  const dir = join(process.cwd(), 'public', 'descargas', 'informe-01-borrador-academico-v0.6.0');
+  const manifiesto = readFileSync(join(dir, 'checksums.sha256'), 'utf8')
+    .split('\n')
+    .filter(Boolean)
+    .map((l) => {
+      const [hash, ...resto] = l.trim().split(/\s+/);
+      return { hash, archivo: resto.join(' ') };
+    });
+
+  it('publica un checksum por cada archivo del paquete', () => {
+    expect(manifiesto.length).toBeGreaterThanOrEqual(11);
+  });
+
+  it('cuadra cada checksum con el archivo que describe', () => {
+    for (const { hash, archivo } of manifiesto) {
+      const ruta = join(dir, ...archivo.split('/'));
+      const real = createHash('sha256').update(readFileSync(ruta)).digest('hex');
+      expect(real, archivo).toBe(hash);
+    }
+  });
+
+  it('publica el paquete con un solo final de línea, para que sea portable', () => {
+    // Un CRLF aquí significa que el exportador copió el CSV canónico sin
+    // normalizar, y que el manifiesto describe bytes que dependen del sistema
+    // operativo de quien lo generó.
+    for (const { archivo } of manifiesto) {
+      if (!/\.(csv|md|json|sha256)$/.test(archivo)) continue;
+      const texto = readFileSync(join(dir, ...archivo.split('/')), 'utf8');
+      expect(texto.includes('\r\n'), `${archivo} lleva CRLF`).toBe(false);
+    }
   });
 });

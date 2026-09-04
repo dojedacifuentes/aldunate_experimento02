@@ -1,0 +1,17 @@
+# Los artefactos publicados se guardan tal cual se generan.
+#
+# `core.autocrlf` está activo en el equipo del autor, de modo que git convertía
+# los CSV del paquete de descargas a LF al guardarlos. El manifiesto de
+# integridad, en cambio, se calcula sobre los bytes que escribe el exportador.
+# Resultado: los seis CSV de la v0.6.0 se publicaron con checksums que no
+# cuadraban con lo que Vercel servía, y sólo se vio descargando el paquete de
+# producción y ejecutando `sha256sum -c`.
+#
+# Un control de integridad que falla es peor que no tenerlo: enseña a
+# ignorarlo. Aquí se desactiva toda conversión para lo que se publica.
+public/descargas/** -text
+
+# El dataset canónico se edita en este equipo y conserva CRLF en el árbol de
+# trabajo. Marcarlo evita que un clon en otro sistema operativo produzca un
+# diff de archivo entero la primera vez que alguien lo toque.
+content/reports/**/canonical/dataset/*.csv -text

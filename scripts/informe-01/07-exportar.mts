@@ -668,7 +668,15 @@ const CSVS = [
   'cobertura.csv',
   'afirmaciones.csv',
 ];
-for (const csv of CSVS) escribir(join('dataset', csv), readFileSync(join(DATASET, csv)));
+// Los CSV canónicos se editan en Windows y llevan CRLF. El paquete se publica
+// con un solo final de línea —el mismo del Markdown, el HTML y el JSON— para
+// que sea portable y para que su manifiesto de integridad describa unos bytes
+// que no dependan del sistema operativo de quien lo genere.
+for (const csv of CSVS)
+  escribir(
+    join('dataset', csv),
+    Buffer.from(readFileSync(join(DATASET, csv), 'utf8').replace(/\r\n/g, '\n'), 'utf8'),
+  );
 
 escribir(
   `${BASE}.json`,
