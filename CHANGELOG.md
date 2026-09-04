@@ -76,10 +76,13 @@ ejecutando `sha256sum -c`. Ahora `.gitattributes` desactiva toda conversión baj
 sea portable, y tres pruebas comprueban que cada checksum cuadre con su archivo.
 Un control de integridad que falla es peor que no tenerlo: enseña a ignorarlo.
 
+**Corregido · el tablero de la portada prometía una tarea ya empezada.** Su siguiente paso decía «verificar una por una las 74 fuentes» cuando 38 estaban hechas. Ahora nombra la tanda concreta que sigue y la institución que va a cero.
+
 **Añadido · ocho pruebas que atan la prosa a los datos**: ninguna conclusión
 puede afirmar inexistencia, cada una debe citar afirmaciones que existan, la
 prosa no puede escribir a mano un número que el dataset ya conoce, y la sección
-PUCV debe reconocer al menos tantos hechos favorables como brechas. 124 en total.
+PUCV debe reconocer al menos tantos hechos favorables como brechas. Con las tres
+que vigilan la integridad del paquete, **127 en total**.
 
 ---
 

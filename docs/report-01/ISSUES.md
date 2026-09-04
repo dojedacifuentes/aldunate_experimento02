@@ -309,3 +309,82 @@ quede ningún CRLF en el paquete.
 **Lección.** Comprobar el paquete en el disco donde se generó no comprueba nada:
 hay que descargarlo de producción y ejecutar `sha256sum -c`. Un control de
 integridad que falla es peor que no tenerlo, porque enseña a ignorarlo.
+
+---
+
+## ISSUE-018 — La verificación tiene su propio sesgo de cobertura
+
+**Estado:** OPEN · **Impacto:** alto
+
+Se verificaron 38 de 74 fuentes, pero **no repartidas**. El reparto real:
+
+| Institución | Verificadas | Total | |
+|---|---:|---:|---|
+| pucv | 12 | 14 | 86% |
+| udec | 3 | 4 | 75% |
+| puc-chile | 8 | 12 | 67% |
+| udp | 2 | 3 | 67% |
+| ucentral | 2 | 4 | 50% |
+| unab | 2 | 4 | 50% |
+| uchile | 5 | 16 | 31% |
+| uai | 1 | 3 | 33% |
+| udd | 1 | 4 | 25% |
+| uandes | 1 | 5 | 20% |
+| **uautonoma** | **0** | **3** | **0%** |
+
+El orden lo fijó la cola de prioridad, que es defendible: se contrastaron primero
+las fuentes que sostienen afirmaciones con número explícito y las iniciativas del
+peldaño 3. Pero el efecto compuesto no lo es tanto.
+
+**Por qué importa, y es incómodo.** La PUCV ya estaba sobrerrepresentada por el
+piloto de profundidad —14 fuentes frente a una media de 3,8 fuera de él— y ahora
+además es la institución con mayor proporción verificada. Si un lector interpreta
+«verificado» como «sólido», la PUCV aparece doblemente favorecida por decisiones
+de método, no por evidencia.
+
+La Universidad Autónoma no tiene ninguna fuente contrastada. Cualquier afirmación
+que la involucre descansa íntegramente en la investigación previa.
+
+**Qué hacer.** Antes de que la próxima versión publique cualquier comparación
+institucional, o bien se equilibra la verificación —las diez restantes por encima
+del 50%—, o bien el porcentaje verificado por institución se publica junto a la
+comparación, del mismo modo que ya se publica la cobertura. Un indicador que
+influye en cómo se lee una tabla no puede quedarse en un cuaderno interno.
+
+**Siguientes por prioridad:** las tres de `uautonoma`, y después `uandes`, `udd`
+y `uai`, que son las de menor proporción.
+
+---
+
+## ISSUE-019 — Verificación asistida frente a validación humana
+
+**Estado:** OPEN · **Impacto:** alto · *decisión editorial pendiente*
+
+DEC-108 sostenía que «la verificación sustantiva no se delega». DEC-111 la enmendó
+apoyándose en el kit canónico, que define `CONTRASTADO` como una segunda revisión
+de atribución, alcance y contraevidencia (§22) y encarga precisamente esa función
+al auditor metodológico (§23). Bajo esa lectura, el contraste ejecutado en la
+v0.6.0 es conforme al protocolo.
+
+**Lo que la enmienda no resuelve.** Los 38 registros llevan `verified_by` con el
+nombre del investigador firmante, por decisión del autor, pero quien abrió las
+páginas y contrastó los siete campos fue un modelo. El dato es exacto en cuanto a
+responsabilidad editorial y ambiguo en cuanto a ejecución. Nada en el dataset
+permite hoy distinguir un registro contrastado por una persona de uno contrastado
+con asistencia.
+
+**Propuesta para la próxima sesión, a decidir por el autor:**
+
+Un modelo puede abrir, leer, contrastar, registrar observaciones y proponer
+correcciones. Lo que no debe es aparentar una validación humana que no ocurrió.
+La forma limpia de sostener las dos cosas es separar el campo en dos:
+
+- `contrasted_by` — quién ejecutó el contraste, con su naturaleza declarada.
+- `accepted_by` — quién lo refrendó editorialmente, que sigue siendo humano y
+  sigue siendo lo único que habilita `ACEPTADO`.
+
+Con eso, la portada podría declarar dos cifras en lugar de una: cuántas fuentes
+están contrastadas y cuántas refrendadas. Es más honesto y no cuesta rigor.
+
+**No resolver esto en silencio.** Cambiar el significado de `verified_by` sin
+declararlo reescribiría hacia atrás lo que afirma el corpus sobre sí mismo.

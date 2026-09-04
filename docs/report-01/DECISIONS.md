@@ -245,3 +245,85 @@ dura?, ¿demasiado indulgente?— dejando constancia de ambas.
 
 **No hacer:** no suprimir del corpus las fuentes que involucran al autor. Se
 declaran, no se esconden.
+
+---
+
+## DEC-114 — El informe interpreta, y la prudencia no es excusa para no concluir
+
+**Fecha:** 04-09-2026
+**Decisión:** el Informe 01 deja de limitarse a mapear evidencia. Distingue cuatro
+niveles y publica los cuatro: **hallazgo**, **inferencia**, **limitación** y
+**conclusión provisional**.
+
+**Motivo:** la v0.5.0 era metodológicamente sólida y editorialmente muda. Un
+expediente de evidencia que no dice qué significa su propia evidencia traslada
+al lector un trabajo que le corresponde a quien investiga, y en la práctica se
+lee como si no hubiera nada que concluir. La cautela metodológica impide afirmar
+más de lo que sostiene la evidencia; no impide afirmar lo que sí sostiene.
+
+**Consecuencia:** cada conclusión declara su clase —`HECHO` o `INFERENCIA`— y
+cita las afirmaciones del dataset que la sostienen. Una prueba comprueba que las
+citas existan y que ninguna conclusión afirme inexistencia donde sólo hay
+ausencia de evidencia.
+
+**No hacer:** no publicar una conclusión sin apoyo declarado. No degradar todo a
+«pendiente» para evitar comprometerse: eso también es una decisión editorial, y
+peor fundada.
+
+---
+
+## DEC-115 — Se comparan capacidades, no volumen de fuentes
+
+**Fecha:** 04-09-2026
+**Decisión:** la visualización principal de la comparación institucional debe
+distinguir **capacidades** —estructura especializada, gobernanza, integración
+curricular, formación recurrente, adopción docente, herramientas, cobertura,
+recursos, continuidad y evaluación—, no cantidad de fuentes ni de iniciativas.
+
+**Motivo:** el número de fuentes de una institución mide dónde se buscó. Usarlo
+como aproximación a su desarrollo institucional convierte el sesgo de cobertura
+en un hallazgo, y produce exactamente el ranking que DEC-102 prohíbe, sólo que
+disfrazado de tabla descriptiva.
+
+**Consecuencia:** cualquier comparador nuevo debe poder responder «¿qué capacidad
+demuestra esta institución?» y no «¿cuántas fuentes encontramos de ella?».
+
+**No hacer:** no sumar estas variables en un puntaje agregado. La metodología no
+lo justifica y DEC-109 lo prohíbe para la escalera.
+
+---
+
+## DEC-116 — La sección PUCV compara mecanismos, no adjetivos
+
+**Fecha:** 04-09-2026
+**Decisión:** la sección PUCV se construye contrastando **mecanismos observables
+en otras Facultades** con lo que la evidencia pública demuestra en la PUCV. La
+incomodidad, si aparece, debe surgir de la comparación y no de la calificación.
+
+**Motivo:** el propósito no es favorecer ni perjudicar a la institución, sino
+hacer discutible una pregunta: si una base de iniciativas relevante y sostenida
+se ha convertido en capacidad transversal, formalizada y evaluable. Un adjetivo
+no es discutible; un mecanismo que otra Facultad publica y ésta no, sí.
+
+**Consecuencia:** cada brecha declara su comparador concreto y si alcanza también
+a las otras diez instituciones. Cada recomendación declara problema, evidencia,
+referente, acción e indicador.
+
+---
+
+## DEC-117 — La fuerza visual del antecedente, sin su metodología
+
+**Fecha:** 04-09-2026
+**Decisión:** la presentación puede rediseñarse libremente —nuevas
+visualizaciones, reorganización de secciones, tablas convertidas en gráficos,
+detalle técnico a anexos— siempre que no cambien los datos, no se fabriquen
+rankings, no se distorsionen escalas, se preserve la accesibilidad y la
+impresión, y todo derive de los datasets.
+
+**Motivo:** el informe antecedente se leía rápido y comunicaba; su método era
+débil. La v0.5.0 invirtió ambas cosas. Las dos propiedades son independientes y
+no hay razón para elegir.
+
+**No hacer:** no recuperar puntajes agregados ni tablas de posiciones para ganar
+legibilidad. La claridad se consigue con jerarquía editorial y mejores gráficos,
+no bajando el estándar metodológico.
