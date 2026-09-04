@@ -3,7 +3,7 @@
 Documento de relevo entre sesiones. **Léelo entero antes de tocar nada.** Está
 escrito para que no necesites la conversación que lo produjo.
 
-Actualizado: **04-09-2026** · versión **v0.7.0** · rama `informe-01/v0.7.0`
+Actualizado: **04-09-2026** · versión **v0.8.0** · rama `informe-01/v0.8.0`
 
 ---
 
@@ -30,15 +30,20 @@ La pregunta que el informe existe para hacer discutible:
 
 ## B · Estado actual
 
-**v0.7.0, borrador académico para revisión.** **Fusionada en `main` y publicada
-en producción** el 04-09-2026.
+**v0.8.0, borrador académico para revisión.** En rama, **sin fusionar**. En
+producción sigue la **v0.7.0**, que está publicada y **no se sobrescribe**: su
+paquete se restauró byte a byte desde `main` al cortar esta versión (CLAUDE.md §8).
+
+**Esta versión responde a un encargo de revisión mayor que está a medio camino.**
+Lo que se hizo y lo que falta están en §C y en §H, y conviene leer las dos antes
+de decidir nada: lo hecho cambia el método y lo que falta cambia el documento.
 
 | | |
 |---|---|
-| Rama | `informe-01/v0.7.0` |
-| Base | `d9b968e`, punta de `main` al empezar |
+| Rama | `informe-01/v0.8.0` |
+| Base | `e746963`, punta de `main` al empezar |
 | HEAD | consúltalo con `git rev-parse HEAD`. Fijarlo aquí lo deja obsoleto en la fusión siguiente |
-| Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **v0.7.0** |
+| Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **v0.7.0**, no la 0.8.0 |
 | Fichas | `/informes/ia-escuelas-derecho-chile/instituciones` |
 | **Preview** | uno por commit · se consulta, no se fija aquí |
 
@@ -76,7 +81,7 @@ mismo build.
 | 0 | registros `ACEPTADO` |
 | 19 / 21 / 13 / **0** | iniciativas por peldaño 1 / 2 / 3 / **4** |
 | **10 × 11 = 110** | **celdas de la matriz de capacidades** |
-| 33 / 11 / 12 / 7 / **47** | en operación / incipiente / sólo entorno / no localizada / **no concluyente** |
+| 31 / 10 / 12 / **3** / 7 / **47** | en operación / incipiente / sólo entorno / **sólo adyacente** / no localizada / **no concluyente** |
 | 3,7 : 1 | razón de cobertura piloto frente al resto |
 
 **Validaciones al cierre:** typecheck en verde · lint 0 errores y 8 avisos
@@ -88,6 +93,20 @@ es la comprobación que vale: en el disco donde se generó el paquete no prueba 
 ---
 
 ## C · Qué se hizo en esta sesión
+
+### La revisión mayor, primera mitad
+
+1. **Una iniciativa adyacente ya no acredita una capacidad de IA**, y hay un
+   estado nuevo para decirlo sin fingir una ausencia: `SOLO_ADYACENTE`. Cinco
+   celdas se mueven, ninguna de la PUCV. Lee la regla entera en
+   `src/lib/informe01-capacidades.ts`: está documentada donde se aplica.
+2. **La prosa dejó de exponer el proceso privado de elaboración.** El conflicto
+   de interés se conserva en primera persona; el destinatario y los terceros
+   nombrados, no. Una prueba lo vigila.
+3. **El documento descargable adoptó el sistema editorial del Informe 02.**
+4. **Se cortó la v0.8.0** y la v0.7.0 se restauró intacta.
+
+### Lo anterior, de la v0.7.0
 
 Sólo lo terminado.
 
@@ -235,41 +254,36 @@ doble revisión.
 
 ---
 
-## H · Misión recomendada para la próxima sesión
+## H · Misión: terminar la revisión mayor
 
-> **Verificar, no rediseñar.**
+> **Falta la mitad, y es la mitad que se ve.**
 >
-> El instrumento ya está. Lo que falta son datos, y en un orden que el propio
-> instrumento ahora indica:
+> Lo hecho cambió el método y el envoltorio. Lo que falta cambia el documento, y
+> el encargo lo enumera:
 >
-> 1. recorrer `repositorios-publicaciones` en las nueve instituciones que la
->    tienen pendiente: cierra la conclusión C-5, que es la principal;
-> 2. contrastar las tres fuentes de `uautonoma`, única institución con cero;
-> 3. subir `uandes` (1/5), `udd` (1/4) y `uai` (1/3);
-> 4. recorrer `centros-laboratorios` en la UAI y cerrar ISSUE-020;
-> 5. incluir `routes_missing` en el protocolo de verificación (ISSUE-021).
+> 1. **Simplificar el modelo de diez capacidades a cinco o siete.** Hay una
+>    consolidación natural en las cinco bandas que ya existen —estructura,
+>    docencia, adopción, conocimiento, resultado—, y hay una trampa: fundir
+>    `unidad` con `norma` destruye el hallazgo H-2, que dice que la estructura
+>    se crea antes que la regla, y fundir `herramienta` con `adopcion` destruye
+>    el H-4, que distingue disponer de adoptar. El modelo más parsimonioso es el
+>    menor que conserve los hallazgos que la evidencia sostiene, no el menor.
+> 2. **Reescribir la arquitectura editorial** para que la narrativa llegue antes
+>    a las conclusiones y el aparato metodológico baje a anexos. El resumen
+>    ejecutivo debe leerse en cinco minutos.
+> 3. **Títulos declarativos en todas las figuras** y revisión de las tablas del
+>    cuerpo: sintéticas arriba, completas en anexo.
+> 4. **Llevar el sistema visual a la página del sitio**, que sigue con el tema
+>    oscuro espacial mientras el documento ya es claro y editorial. Hoy no
+>    parecen la misma publicación.
 >
-> Y después, con datos nuevos, **reescribir la discusión y revisar las siete
-> conclusiones** contra la capa de capacidades.
+> Y sigue pendiente lo de siempre, que ninguna de estas cuatro resuelve: **el
+> corpus no ha crecido**. 38 fuentes contrastadas de 74, y 47 celdas sin concluir
+> porque su ruta no se recorrió. Ver ISSUE-022.
 
-**Dos hipótesis editoriales que siguen abiertas.** No se publican
-automáticamente: se comprueban contra los datos.
-
-> El fenómeno se desplaza desde actividades aisladas hacia formas de
-> institucionalización más complejas. **Esta versión aporta evidencia a favor**:
-> cinco unidades especializadas en operación frente a una sola norma propia, y 41
-> de 49 iniciativas fechadas iniciadas en 2025 o después. **Y evidencia en
-> contra**: 19 de las 53 iniciativas siguen en el primer peldaño y la
-> transferencia es incipiente en seis de las once.
-
-> La evidencia corrige la idea de que la PUCV parte de cero. **Esta versión la
-> sostiene con más fuerza que la anterior**: seis de diez capacidades en
-> operación, el perfil más completo de la cohorte junto con la UC. La pregunta
-> estratégica —si esa base se convirtió en capacidad transversal, formalizada y
-> evaluable— queda intacta, y ahora tiene dos respuestas concretas: la norma y la
-> adopción documentada constan sólo en el entorno universitario.
-
----
+**Antes de tocar la matriz, lee ISSUE-024.** El campo `direction` acaba de
+volverse normativo y en al menos un registro no responde la pregunta que dice
+responder.
 
 ## I · Qué NO tocar sin causa declarada
 

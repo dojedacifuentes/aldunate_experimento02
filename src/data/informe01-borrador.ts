@@ -18,6 +18,12 @@ export interface Informe01Conclusion {
   /** Afirmaciones del dataset en que se apoya. Sin esto no es conclusión. */
   readonly apoyo: readonly string[];
   readonly clase: 'HECHO' | 'INFERENCIA';
+  /**
+   * El análisis de sensibilidad de la metodología 2.1 la dejó más restringida
+   * que en la versión anterior. Se publica en la figura de conclusiones para
+   * que el alcance viaje con la conclusión y no en un párrafo aparte.
+   */
+  readonly acotada?: boolean;
 }
 
 export interface Informe01Recomendacion {
@@ -183,7 +189,7 @@ export const informe01MetodologiaRelato: readonly {
 /* ── Declaración de intereses ───────────────────────────────────────────── */
 
 export const informe01Intereses: readonly string[] = [
-  'Una de las fuentes del corpus identifica como conductores del Programa de Derecho, Inteligencia Artificial y Tecnología de la PUCV a Johann Benfeld, **Eduardo Aldunate** y **Diego Ojeda**. El destinatario de este borrador y su autor figuran, por tanto, en una iniciativa que el informe evalúa.',
+  '**El autor de este informe participa en una de las iniciativas que el informe evalúa**: el Programa de Derecho, Inteligencia Artificial y Tecnología de la PUCV, cuya conducción consta en una fuente pública del corpus. La iniciativa se registra, se clasifica y se somete a las mismas reglas que las otras cincuenta y dos.',
   'La declaración no resuelve el conflicto: lo hace visible. Las medidas adoptadas son tres. Las fuentes que involucran al autor permanecen en el corpus y no se retiran. La sección dedicada a la PUCV se somete a una doble revisión explícita —si el juicio resulta demasiado severo y si resulta demasiado indulgente— cuyo resultado se publica. Y ninguna afirmación sobre la PUCV se sostiene en una fuente única.',
   'El lector debe saber además que este informe se produjo con asistencia de sistemas de inteligencia artificial en la localización de fuentes, en el contraste de cada publicación original contra su registro y en la redacción. La responsabilidad editorial es humana y está firmada; el protocolo que rige esa asistencia, los estados por los que pasa cada registro y el punto exacto en que se exige decisión humana están publicados junto con los datos.',
 ];
@@ -282,6 +288,7 @@ export const informe01Conclusiones: readonly Informe01Conclusion[] = [
       'No se localizó en ninguna institución de la cohorte evidencia pública de una asignatura obligatoria en inteligencia artificial con syllabus, semestre, créditos y matrícula. Lo que existe son talleres, electivos y experiencias acotadas a una asignatura. La afirmación registra una ausencia de evidencia pública y no una inexistencia: puede existir integración curricular no publicada.',
     apoyo: ['clm-cohorte-006'],
     clase: 'HECHO',
+    acotada: true,
   },
   {
     id: 'C-5',
@@ -290,6 +297,7 @@ export const informe01Conclusiones: readonly Informe01Conclusion[] = [
       'Ninguna de las {iniciativas} iniciativas alcanza el peldaño de evaluación de la escala. La única medición de resultado del corpus la publica una vicerrectoría de transformación digital sobre el conjunto de su universidad, es correlacional y no distingue estudiantes de Derecho. La capacidad de medir el aprendizaje mediado por estas herramientas está hoy fuera de las Facultades.',
     apoyo: ['clm-cohorte-001'],
     clase: 'HECHO',
+    acotada: true,
   },
   {
     id: 'C-6',
@@ -319,7 +327,7 @@ export const informe01Limitaciones: readonly string[] = [
   '**Dos dimensiones del protocolo están vacías.** Recursos y capacidades, y continuidad, cobertura y resultados, no reúnen evidencia en ninguna institución. El informe no puede pronunciarse sobre financiamiento, dotación ni sostenibilidad.',
   '**Falta el acto formal de casi todas las unidades.** De las estructuras creadas entre 2025 y 2026, sólo una tiene respaldo orgánico publicado. El informe distingue creación anunciada de creación acreditada, pero no puede resolver la diferencia con las fuentes disponibles.',
   '**La ausencia de evidencia pública no es inexistencia.** Toda afirmación negativa de este informe se refiere a lo que no fue localizado recorriendo un protocolo definido, no a lo que no ocurre.',
-  '**El autor y el destinatario participan de una iniciativa evaluada.** Ver la declaración de intereses. Ninguna afirmación sobre la PUCV se sostiene en fuente única, y la sección correspondiente publica su doble revisión.',
+  '**El autor participa en una de las iniciativas evaluadas.** Ver la declaración de intereses. Ninguna afirmación sobre la PUCV se sostiene en fuente única, y la sección correspondiente publica su doble revisión.',
 ];
 
 /* ── 7 · Agenda de investigación ────────────────────────────────────────── */

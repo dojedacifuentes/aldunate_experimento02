@@ -1,4 +1,7 @@
 import { Notice, Section, Surface } from '@/components/common/ui';
+import { conclusionesSvg } from '@/lib/informe01-graficos';
+
+import { Figura } from './Figura';
 import {
   informe01Agenda,
   informe01Conclusiones,
@@ -69,7 +72,8 @@ function Bloque({ titulo, parrafos }: { titulo: string; parrafos: readonly strin
 export function Informe01BorradorApertura() {
   return (
     <>
-      <Section eyebrow="1" title="Introducción" className="scroll-mt-20">
+      <Section id="introduccion"
+        eyebrow="1" title="Introducción" className="scroll-mt-20">
         <div className="max-w-prose space-y-4">
           {informe01Introduccion.map((p, i) => (
             <Prosa key={i} className={i === 0 ? 'text-base text-foreground' : ''}>
@@ -79,7 +83,8 @@ export function Informe01BorradorApertura() {
         </div>
       </Section>
 
-      <Section eyebrow="2" title="Objetivos" className="scroll-mt-20">
+      <Section id="objetivos"
+        eyebrow="2" title="Objetivos" className="scroll-mt-20">
         <Surface className="max-w-prose p-5">
           <h3 className="meta mb-2">Objetivo general</h3>
           <Prosa className="text-foreground">{informe01ObjetivoGeneral}</Prosa>
@@ -95,6 +100,7 @@ export function Informe01BorradorApertura() {
       </Section>
 
       <Section
+        id="metodologia-relato"
         eyebrow="3"
         title="Metodología"
         description="Cómo se construyó cada dato, qué se excluyó y por qué. Es la parte del documento que permite discutirlo."
@@ -124,6 +130,7 @@ export function Informe01BorradorCierre() {
   return (
     <>
       <Section
+        id="discusion"
         eyebrow="4"
         title="Discusión"
         description="Qué significan los registros leídos en conjunto. Separa lo comprobado de lo inferido."
@@ -206,17 +213,37 @@ export function Informe01BorradorCierre() {
       </Section>
 
       <Section
+        id="conclusiones"
         eyebrow="6"
         title="Conclusiones"
         description="Cada una cita las afirmaciones del dataset que la sostienen. Ninguna introduce información nueva."
         className="scroll-mt-20"
       >
-        <div className="space-y-5">
+        <Figura
+          pregunta="¿Qué puede sostener este estudio, y con qué firmeza?"
+          titulo="Las siete conclusiones, con la clase de afirmación que son y la confianza declarada de lo que las sostiene"
+          svg={conclusionesSvg()}
+          nota={
+            <>
+              La barra es la confianza de la afirmación más débil en que se apoya cada
+              conclusión: una conclusión no es más firme que su apoyo más flojo. La escala
+              arranca en 50 y no en 0 porque ninguna baja de 70, y la referencia se dibuja
+              para que esa elección quede a la vista. El orden es el del documento y no el
+              de la confianza: ordenar por firmeza invitaría a leer la lista como un ranking
+              de solidez y a descartar el final, que es donde está la única inferencia.
+            </>
+          }
+        />
+
+        <div className="mt-8 space-y-5">
           {informe01Conclusiones.map((c) => (
             <Surface key={c.id} className="p-5">
               <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span className="meta">{c.id}</span>
-                <span className="meta text-subtle">{c.clase}</span>
+                <span className="meta text-subtle">
+                  {c.clase === 'HECHO' ? 'Hecho sobre el corpus' : 'Inferencia'}
+                  {c.acotada ? ' · alcance acotado' : ''}
+                </span>
               </div>
               <h3 className="font-serif text-lg leading-snug text-foreground">{c.titulo}</h3>
               <Prosa className="mt-2">{c.cuerpo}</Prosa>
@@ -227,6 +254,7 @@ export function Informe01BorradorCierre() {
       </Section>
 
       <Section
+        id="implicancias"
         eyebrow="6 bis"
         title="Implicancias para la PUCV"
         description="Las conclusiones dicen qué muestra la evidencia. Esto dice qué preguntas de gestión abre esa evidencia, que es cosa distinta y no equivale a una recomendación."
@@ -265,6 +293,7 @@ export function Informe01BorradorCierre() {
       </Section>
 
       <Section
+        id="limitaciones"
         eyebrow="7"
         title="Limitaciones"
         description="Lo que este método no puede ver, dicho antes de que lo diga un lector."
@@ -280,6 +309,7 @@ export function Informe01BorradorCierre() {
       </Section>
 
       <Section
+        id="agenda"
         eyebrow="8"
         title="Agenda de investigación"
         description="Preguntas abiertas, con la razón por la que importan y lo que las cerraría."

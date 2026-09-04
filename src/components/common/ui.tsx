@@ -249,6 +249,7 @@ export function PageHeader({
  * está en pantalla cuando se carga.
  */
 export function Section({
+  id,
   title,
   eyebrow,
   description,
@@ -256,6 +257,13 @@ export function Section({
   reveal = true,
   children,
 }: {
+  /**
+   * Ancla de la sección. Sin esto no hay índice posible: un documento largo que
+   * no se puede enlazar por dentro obliga a recorrerlo entero para volver a un
+   * capítulo. `scroll-mt` lo pone la propia sección para que la cabecera fija
+   * no tape el título al saltar.
+   */
+  id?: string;
   title?: string;
   eyebrow?: string;
   description?: string;
@@ -265,8 +273,9 @@ export function Section({
 }) {
   return (
     <section
+      id={id}
       {...(reveal ? { 'data-reveal': '' } : {})}
-      className={cn('py-12 sm:py-16', className)}
+      className={cn('py-12 sm:py-16', id && 'scroll-mt-24', className)}
     >
       <Container>
         {(eyebrow || title || description) && (

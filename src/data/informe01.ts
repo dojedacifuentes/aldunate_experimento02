@@ -2532,7 +2532,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "universityId": "udec",
     "name": "[genIA]",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
-    "direction": "ADYACENTE",
+    "direction": "IA_PARA_DERECHO",
     "dimension": "uso-institucional",
     "mechanism": "HERRAMIENTA",
     "startDate": "2026-02-10",
@@ -2547,7 +2547,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "sourceIds": [
       "src-udec-004"
     ],
-    "notes": "Programa interdisciplinario de toda la universidad. No es una estructura de Derecho: reclasificado ADYACENTE."
+    "notes": "Reverificada 04-09-2026 (ISSUE-024). Programa interdisciplinario de toda la universidad"
   }
 ];
 
@@ -4347,7 +4347,7 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
       "ev-pucv-015",
       "ev-pucv-016"
     ],
-    "reasoning": "A favor de la capacidad: el Núcleo DIAT se oficializó en 2020 y en 2026 opera como Programa; LMIL existe desde 2022; ScribeClaroPUCV es una herramienta de IA nacida para estudiantes de Derecho; el Taller de IA y Prompting Jurídico se ejecutó en 2025 con cerca de 90 participantes y obtuvo financiamiento competitivo de Vinculación con el Medio en 2025 y de nuevo en 2026; y el decálogo institucional de IA lo lideró una profesora de Derecho. En contra de la institucionalización: no se localizó línea curricular obligatoria, dotación académica específicamente asignada, presupuesto basal propio, adopción cuantificada dentro de la Facultad ni evaluación pública de resultados.",
+    "reasoning": "A favor de la capacidad: el Núcleo DIAT se oficializó en 2020 y en 2026 opera como Programa; ScribeClaroPUCV es una herramienta de IA nacida para estudiantes de Derecho; el Taller de IA y Prompting Jurídico se ejecutó en 2025 con cerca de 90 participantes y obtuvo financiamiento competitivo de Vinculación con el Medio en 2025 y de nuevo en 2026; y el decálogo institucional de IA lo lideró una profesora de Derecho. En contra de la institucionalización: no se localizó línea curricular obligatoria, dotación académica específicamente asignada, presupuesto basal propio, adopción cuantificada dentro de la Facultad ni evaluación pública de resultados.",
     "limitations": "Arrastra íntegra la advertencia de clm-metodo-001: la PUCV es una de las tres del piloto, con 14 fuentes y nueve rutas recorridas, de modo que se la observa desde una posición de información privilegiada. Lo que se afirma es una diferencia en la evidencia localizada, no una diferencia demostrada en la actividad. Las cuatro carencias que se enumeran tampoco están demostradas en las otras diez: sólo se han buscado con este detalle en tres.",
     "confidence": 55,
     "lastVerified": "2026-09-04",
@@ -4402,8 +4402,8 @@ export const informe01Recuento: Informe01Recuento = {
   },
   "iniciativasPorDireccion": {
     "AMBOS": 11,
-    "ADYACENTE": 7,
-    "IA_PARA_DERECHO": 28,
+    "ADYACENTE": 6,
+    "IA_PARA_DERECHO": 29,
     "DERECHO_DE_IA": 7
   },
   "dimensionesConEvidencia": 6,

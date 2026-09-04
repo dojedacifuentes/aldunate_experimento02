@@ -34,6 +34,7 @@ import {
   pucvRecomendaciones,
 } from './informe01-pucv';
 import { informe01Hallazgos, informe01ResumenEjecutivo } from './informe01-hallazgos';
+import { INFORME_01_INDICE } from '../components/informe01/Indice';
 import { cifrasInforme01, universidadesOrdenadas } from '@/lib/informe01';
 import {
   CAPACIDADES,
@@ -367,10 +368,39 @@ describe('informe 01 · el borrador, atado a sus datos', () => {
         expect(`${c.titulo} ${c.cuerpo}`, `${c.id} afirma inexistencia`).not.toMatch(p);
   });
 
-  it('declara el conflicto de interés y nombra a quienes lo tienen', () => {
+  it('declara el conflicto de interés sin exponer el proceso privado', () => {
     const intereses = informe01Intereses.join(' ');
-    expect(intereses).toMatch(/Aldunate/);
-    expect(intereses).toMatch(/Ojeda/);
+    // El conflicto se declara: es practica academica y se conserva.
+    expect(intereses).toMatch(/autor/i);
+    expect(intereses).toMatch(/particip/i);
+  });
+
+  /*
+   * El documento es publico y debe bastarse solo. Quien lo recibe, de quien es
+   * el encargo y que se converso durante su elaboracion son datos del proceso,
+   * no del objeto de estudio, y nombran a personas que no lo han escrito.
+   *
+   * No alcanza a las fuentes: el corpus cita noticias institucionales cuyo
+   * titulo nombra a un profesor, y esas se conservan porque son la referencia
+   * bibliografica. La regla mira la prosa que el informe escribe, no la que
+   * cita.
+   */
+  it('la prosa no expone el proceso privado de elaboración', () => {
+    const prosa = [
+      ...informe01Intereses,
+      ...informe01Limitaciones,
+      ...informe01Conclusiones.map((c) => `${c.titulo} ${c.cuerpo}`),
+      ...informe01ResumenEjecutivo,
+      ...informe01Hallazgos.map((h) => `${h.enunciado} ${h.dato} ${h.lectura} ${h.limite}`),
+    ].join(' ');
+    for (const marca of [
+      /destinatario/i,
+      /encargo del profesor/i,
+      /seg[uú]n conversaci[oó]n/i,
+      /lectura privada/i,
+      /nota para /i,
+    ])
+      expect(prosa, `la prosa contiene ${marca}`).not.toMatch(marca);
   });
 
   it('reconoce evidencia favorable de la PUCV antes de exponer brechas', () => {
@@ -601,6 +631,51 @@ describe('informe 01 · el motor de gráficos', () => {
  * el texto está en el DOM, lo lee un lector de pantalla y sale en el buscador.
  * Ciento cincuenta y dos elementos del informe estuvieron así.
  */
+/*
+ * El indice de la web.
+ *
+ * El documento descargable deriva el suyo recorriendo sus propios encabezados y
+ * no puede desincronizarse. La web es un arbol de componentes montado en varios
+ * archivos, de modo que alli la lista se declara a mano, y una lista declarada a
+ * mano es una lista que se queda vieja: basta que alguien renombre un ancla o
+ * mueva una seccion para que una entrada del indice deje de llevar a ninguna
+ * parte, sin que falle nada.
+ */
+describe('informe 01 · el índice lleva a alguna parte', () => {
+  const fuentes = [
+    'Publicacion.tsx',
+    'Borrador.tsx',
+    'Pucv.tsx',
+    'Matriz.tsx',
+    'Cobertura.tsx',
+    'Capacidades.tsx',
+    'Anexos.tsx',
+  ]
+    .map((n) => {
+      try {
+        return readFileSync(join('src', 'components', 'informe01', n), 'utf8');
+      } catch {
+        return '';
+      }
+    })
+    .join('\n');
+  const pagina = readFileSync(join('src', 'app', 'informes', '[slug]', 'page.tsx'), 'utf8');
+  const todo = fuentes + pagina;
+
+  it('cada entrada declara un ancla que existe en la página', () => {
+    for (const e of INFORME_01_INDICE)
+      expect(
+        todo.includes(`id="${e.id}"`) || todo.includes(`id={'${e.id}'}`),
+        `el índice enlaza #${e.id} y ninguna sección lo declara`,
+      ).toBe(true);
+  });
+
+  it('no repite anclas', () => {
+    const ids = INFORME_01_INDICE.map((e) => e.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+});
+
 describe('informe 01 · la prosa se ve', () => {
   const componentes = [
     'Borrador.tsx',

@@ -104,6 +104,8 @@ export type Informe01CapacidadEstado =
   | 'INCIPIENTE'
   /** Lo que consta es capacidad de la universidad, de un individuo o del centro de alumnos. */
   | 'SOLO_ENTORNO'
+  /** Hay estructura o programa, pero su documentación pública no acredita componente de IA. */
+  | 'SOLO_ADYACENTE'
   /** Se recorrieron las rutas que la habrían encontrado y no se localizó evidencia. */
   | 'NO_LOCALIZADA'
   /** La ruta del protocolo que la acreditaría no se recorrió en esta institución. */

@@ -89,6 +89,21 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '0.8.0',
+        date: '2026-09-04',
+        status: 'borrador',
+        pdf: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.pdf',
+        html: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.html',
+        changelog: [
+          'Una iniciativa adyacente deja de acreditar una capacidad de inteligencia artificial. El registro ya distinguía en «dirección» si una iniciativa usa IA, la estudia como objeto jurídico, hace las dos cosas o pertenece al ámbito vecino de la tecnología y la innovación sin componente de IA documentado; la capa de capacidades ignoraba esa distinción, y un laboratorio de innovación legal acreditaba «unidad especializada» igual que un programa de Derecho e Inteligencia Artificial.',
+          'La corrección alcanza a siete iniciativas repartidas en cinco instituciones —no sólo a la PUCV—, porque una regla que se aplicara a una sola sería el método escrito para un resultado. Cinco de las 110 celdas se mueven: la unidad de la Universidad Católica y la de la Universidad de Chile, la formación de la Universidad Andrés Bello, y la herramienta y el alcance de la Universidad de Concepción. Ninguna de las diez celdas de la PUCV cambia: su unidad la sostenía el Programa DIAT, que sí es de inteligencia artificial.',
+          'Estado nuevo, «sólo adyacente». Descontar la iniciativa y dejar caer la celda en «no localizada» habría afirmado que se buscó una estructura y no se encontró ninguna, y es falso: se encontró una, y lo que no consta es su componente de IA. El estado dice eso y no más, y se dibuja con relleno propio y contorno continuo, como los estados que afirman algo, y no con la trama de los dos estados de ausencia.',
+          'Que la única unidad específicamente de inteligencia artificial localizada sea la de la PUCV dice tanto de cómo se nombran y describen públicamente estas estructuras como de lo que hacen. No es un hallazgo sobre quién va primero.',
+          'El documento adopta el sistema editorial del Informe 02: papel claro con oscuro disponible y recordado, Spectral para la prosa, IBM Plex Sans para los títulos y Plex Mono para los metadatos, raíl de navegación con el índice derivado de los propios encabezados, barra de progreso y una paleta de cinco tintas de la que ahora derivan también los colores de las figuras.',
+          'La declaración de intereses deja de exponer el proceso privado de elaboración. El conflicto se conserva —es práctica académica— en primera persona del autor; se retiran el destinatario del borrador y los terceros nombrados, que no han escrito el informe. El manifiesto declaraba además el protocolo 2.0 cuando el vigente es el 2.1.',
+        ],
+      },
+      {
         version: '0.7.0',
         date: '2026-09-04',
         status: 'borrador',
@@ -231,27 +246,27 @@ export const reports: Report[] = [
       {
         format: 'PDF',
         label: 'Leer o imprimir',
-        href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.pdf',
+        href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.pdf',
         description:
           'A4 de 72 páginas, con portada, encabezado, pie y numeración, y con las nueve figuras del informe en vector. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
       },
       {
         format: 'HTML',
         label: 'Leer la versión web',
-        href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.html',
+        href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.html',
         description:
           'Documento completo y autónomo, preparado para impresión: portada, resumen ejecutivo, hallazgos, metodología, panorama, capacidades comparadas, discusión, sección PUCV, conclusiones, implicancias, limitaciones y siete anexos.',
       },
       {
         format: 'Markdown',
         label: 'Usar como fuente editorial',
-        href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.md',
+        href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.md',
         description: 'El mismo documento en texto plano, reutilizable por personas y por modelos.',
       },
       {
         format: 'ZIP',
         label: 'Descargar el paquete reproducible',
-        href: '/descargas/informe-01-borrador-academico-v0.7.0.zip',
+        href: '/descargas/informe-01-borrador-academico-v0.8.0.zip',
         description:
           'Documento en PDF, HTML y Markdown, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
       },

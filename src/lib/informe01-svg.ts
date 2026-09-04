@@ -82,12 +82,20 @@ function hash(s: string): number {
 /**
  * Tramas compartidas. Son lo que permite distinguir los estados sin color: la
  * diagonal fina marca «no se buscó» y la diagonal gruesa marca «incipiente».
+ *
+ * La fina lleva tinta propia —`--g-trama`— y no la de los filetes. Compartirla
+ * funcionaba sobre el papel oscuro anterior y dejo de funcionar sobre el claro:
+ * una linea de un pixel al color de una regla de tabla desaparece sobre blanco,
+ * y el estado «no concluyente» quedaba indistinguible de una celda vacia. Es la
+ * diferencia entre «no se busco» y «se busco y no habia», que es justamente la
+ * distincion que esta capa existe para sostener.
  */
 function defs(): string {
   return [
     '<defs>',
     '<pattern id="g-tramaFina" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">',
-    '<line x1="0" y1="0" x2="0" y2="6" stroke="var(--g-linea, #cfcac1)" stroke-width="1"/>',
+    '<rect width="6" height="6" fill="var(--g-trama-fondo, #f2f5f7)"/>',
+    '<line x1="0" y1="0" x2="0" y2="6" stroke="var(--g-trama, #a9b6c1)" stroke-width="1.4"/>',
     '</pattern>',
     '<pattern id="g-tramaGruesa" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">',
     '<rect width="5" height="5" fill="var(--g-incip-fondo, #dbeaef)"/>',

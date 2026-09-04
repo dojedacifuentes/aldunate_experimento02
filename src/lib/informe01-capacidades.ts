@@ -158,6 +158,13 @@ export const ESTADOS_CAPACIDAD: {
       'Lo que consta pertenece a la universidad, a una persona o al centro de alumnos, no a la Facultad de Derecho. Es contexto disponible, no capacidad propia (DEC-105).',
   },
   {
+    id: 'SOLO_ADYACENTE',
+    label: 'Sólo adyacente',
+    corto: 'Adyacente',
+    definicion:
+      'La Facultad sostiene una estructura o un programa del ámbito —tecnología, innovación, transformación digital—, pero su documentación pública no acredita un componente de inteligencia artificial. No es una ausencia: es una presencia que no prueba lo que esta capacidad pregunta.',
+  },
+  {
     id: 'NO_LOCALIZADA',
     label: 'No localizada',
     corto: 'No localizada',
@@ -318,6 +325,39 @@ export const BLOQUES_CAPACIDAD: { id: DefinicionCapacidad['bloque']; label: stri
  */
 const DE_LA_FACULTAD = new Set(['FACULTAD_DERECHO', 'CENTRO_PROGRAMA', 'EQUIPO']);
 
+/**
+ * Una iniciativa **adyacente** no acredita una capacidad de inteligencia
+ * artificial, y tampoco equivale a no haber encontrado nada.
+ *
+ * `direction` distingue si una iniciativa usa IA, la estudia como objeto
+ * jurídico, hace las dos cosas o es `ADYACENTE`: tecnología, innovación o
+ * transformación digital sin componente de IA documentado. El registro hacía esa
+ * distinción y esta capa la ignoraba, de modo que un laboratorio de innovación
+ * legal acreditaba «unidad especializada» igual que un programa de Derecho e
+ * Inteligencia Artificial.
+ *
+ * **La corrección es simétrica y conviene decir a quién alcanza**, porque no es
+ * a quien podría suponerse. Siete iniciativas del corpus son adyacentes y están
+ * repartidas: el Legal Management Innovation Lab y el Innova Day de la PUCV, el
+ * Programa de Derecho, Ciencia y Tecnología y el Departamento de Derecho y
+ * Tecnología de la UC, el CE3 de la Universidad de Chile, el diplomado en
+ * Derecho, Innovación y Tecnología de la UNAB y la herramienta [genIA] de la
+ * Universidad de Concepción. Aplicar la regla sólo a la PUCV habría sido
+ * escribir el método para un resultado.
+ *
+ * **Y no se resuelve como ausencia.** Descontar la iniciativa y dejar que la
+ * celda cayera en `NO_LOCALIZADA` afirmaría que se buscó una estructura y no
+ * se encontró ninguna, que es falso: se encontró una, y lo que no consta es su
+ * componente de IA. Por eso existe `SOLO_ADYACENTE`, que dice exactamente eso
+ * y no más. La diferencia importa sobre todo en la UC y en la Universidad de
+ * Chile, donde la unidad existe y está publicada.
+ *
+ * La iniciativa **no se retira del corpus**: sigue registrada, sigue contándose
+ * entre las 53 y sigue apareciendo en el reparto por dirección, que es donde la
+ * adyacencia es precisamente el dato.
+ */
+const ADYACENTE = 'ADYACENTE';
+
 const fuentesContrastadas = new Set(
   informe01Fuentes.filter((f) => f.verifiedBy).map((f) => f.id),
 );
@@ -352,7 +392,11 @@ export function celdaCapacidad(
   const candidatas = informe01Iniciativas.filter(
     (i) => i.universityId === universityId && def.selector(i),
   );
-  const propias = candidatas.filter((i) => DE_LA_FACULTAD.has(i.attribution));
+  /* Las adyacentes se apartan aquí y se recuperan al final: no acreditan la
+   * capacidad, pero su existencia impide afirmar que no se localizó nada.     */
+  const deIa = candidatas.filter((i) => i.direction !== ADYACENTE);
+  const adyacentes = candidatas.filter((i) => i.direction === ADYACENTE);
+  const propias = deIa.filter((i) => DE_LA_FACULTAD.has(i.attribution));
   const enOperacion = propias.filter((i) => i.ladder >= def.escalonMinimo);
   const contrastada = (xs: Informe01Iniciativa[]) =>
     xs.some((i) => i.sourceIds.some((s) => fuentesContrastadas.has(s)));
@@ -377,14 +421,29 @@ export function celdaCapacidad(
       motivo: `${plural(propias.length, 'mecanismo', 'mecanismos')} de la Facultad, ${propias.length === 1 ? 'todavía en el primer peldaño' : 'todos en el primer peldaño'}: actividad aislada, piloto o anuncio.`,
     };
 
-  if (candidatas.length)
+  if (deIa.length)
     return {
       ...base,
       estado: 'SOLO_ENTORNO',
-      contrastada: contrastada(candidatas),
-      iniciativas: candidatas,
+      contrastada: contrastada(deIa),
+      iniciativas: deIa,
       motivo:
         'Lo que consta pertenece a la universidad, a una persona o al centro de alumnos, no a la Facultad de Derecho.',
+    };
+
+  /* Hay estructura del ámbito, sin componente de IA acreditado. Va antes que
+   * los dos estados de ausencia porque no es una ausencia.                    */
+  if (adyacentes.length)
+    return {
+      ...base,
+      estado: 'SOLO_ADYACENTE',
+      contrastada: contrastada(adyacentes),
+      iniciativas: adyacentes,
+      motivo: `${plural(adyacentes.length, 'mecanismo', 'mecanismos')} ${
+        adyacentes.some((i) => DE_LA_FACULTAD.has(i.attribution))
+          ? 'de la Facultad'
+          : 'del entorno universitario'
+      } en el ámbito de la tecnología o la innovación, sin componente de inteligencia artificial en su documentación pública.`,
     };
 
   if (rutasSinRecorrer.length)
