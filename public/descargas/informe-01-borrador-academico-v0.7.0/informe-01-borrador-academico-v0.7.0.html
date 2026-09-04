@@ -4,158 +4,275 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
 <title>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile · v0.7.0</title>
 <style>
-  :root { --tinta:#1a1a1a; --papel:#faf8f3; --suave:#5c5c5c; --linea:#dcd8d0; --acento:#8a2432; --azul:#29588c; }
+  :root{
+    --paper:#FBFCFD; --surface:#F1F5F7; --surface-2:#E8EEF2; --plate:#FFFFFF;
+    --ink:#0F1720; --ink-2:#3A4654; --muted:#5F6E7C; --rule:#DDE4EA; --rule-2:#C7D2DA;
+    --navy:#1B3A5C; --teal:#276E7C; --ochre:#8A5E13; --brick:#93372A; --sage:#3F6444;
+    --navy-soft:#E6EDF4; --teal-soft:#E0EEF1; --ochre-soft:#F6EEDD; --brick-soft:#F7E7E4; --sage-soft:#E6EFE7;
+    --shadow:0 1px 2px rgba(15,23,32,.05), 0 8px 24px -12px rgba(15,23,32,.18);
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --serif:"Spectral",Georgia,"Times New Roman",serif;
+    --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+    --rail:272px; --measure:68ch; --wide:1040px;
+  }
   /*
-    Paleta del motor de gráficos. Son los mismos nombres que declara
-    src/app/globals.css: el SVG no escribe un solo color, de modo que la misma
-    figura se pinta aquí, en el sitio y en papel sin existir tres veces. Si allá
-    se renombra una variable, aquí hay que renombrarla; es un contrato.
+    Paleta del motor de graficos. Son los mismos nombres que declara
+    src/app/globals.css y los valores derivan ahora de las cinco tintas de
+    arriba, de modo que una figura pertenece a la misma familia que el texto que
+    la rodea. Si alla se renombra una variable, aqui hay que renombrarla.
     (Sin acentos graves: este bloque vive dentro de una plantilla de texto.)
   */
-  :root {
-    --g-op:#1F5F84; --g-incip:#6FA3C4; --g-incip-fondo:#DCE8F1;
-    --g-entorno:#B78C30; --g-entorno-fondo:#F5EBD5;
-    --g-vacio:#E8E2D6; --g-linea:#C9C0AE; --g-suave:#6A6255; --g-banda:#E5DECF;
-    --g-cebra:rgba(26,24,19,.035); --g-contraste:#8A2432; --g-halo:rgba(106,98,85,.16);
-    --g-esc-1:#BDD5E5; --g-esc-2:#86B2CE; --g-esc-3:#4B87AE; --g-esc-4:#1F5F84;
+  :root{
+    --g-op:#1B3A5C; --g-incip:#6E93B4; --g-incip-fondo:#E6EDF4;
+    --g-entorno:#8A5E13; --g-entorno-fondo:#F6EEDD;
+    --g-adyacente:#3F6444; --g-adyacente-fondo:#E6EFE7;
+    --g-vacio:#EDF1F4; --g-linea:#C7D2DA; --g-suave:#5F6E7C; --g-banda:#E8EEF2;
+    --g-cebra:rgba(15,23,32,.028); --g-contraste:#93372A; --g-halo:rgba(95,110,124,.15);
+    --g-esc-1:#CBDCE8; --g-esc-2:#93B4CB; --g-esc-3:#4A7C9A; --g-esc-4:#1B3A5C;
+    --g-tinta-op:#FBFCFD; --g-tinta-esc-3:#0F1720; --g-tinta-esc-2:#0F1720;
   }
-  @media (prefers-color-scheme: dark) {
-    :root { --tinta:#e8e6e1; --papel:#14161a; --suave:#9a9a9a; --linea:#2c2f36; --acento:#d98b96; --azul:#7aa7d9; }
-    :root {
-      --g-op:#3E9CC4; --g-incip:#2F7191; --g-incip-fondo:#12283A;
-      --g-entorno:#C7A34E; --g-entorno-fondo:#2A2417;
-      --g-vacio:#152735; --g-linea:#2A4256; --g-suave:#9aa6ae; --g-banda:#1c2431;
-      --g-cebra:rgba(255,255,255,.028); --g-contraste:#E08A97; --g-halo:rgba(147,166,181,.18);
-      --g-esc-1:#234A61; --g-esc-2:#2E6C8A; --g-esc-3:#3E9CC4; --g-esc-4:#6FC5E4;
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0D1319; --surface:#151D25; --surface-2:#1C262F; --plate:#141C24;
+      --ink:#E8EEF3; --ink-2:#B4C0CA; --muted:#8A98A4; --rule:#243039; --rule-2:#324150;
+      --navy:#8FB3D4; --teal:#63B7C6; --ochre:#D8A852; --brick:#DD8375; --sage:#93BC94;
+      --navy-soft:#182838; --teal-soft:#142C31; --ochre-soft:#2C2416; --brick-soft:#301C19; --sage-soft:#1A281B;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+      --g-op:#5E9BC4; --g-incip:#31607F; --g-incip-fondo:#152634;
+      --g-entorno:#D8A852; --g-entorno-fondo:#2C2416;
+      --g-adyacente:#93BC94; --g-adyacente-fondo:#1A281B;
+      --g-vacio:#18222B; --g-linea:#324150; --g-suave:#8A98A4; --g-banda:#1C262F;
+      --g-cebra:rgba(255,255,255,.026); --g-contraste:#DD8375; --g-halo:rgba(138,152,164,.18);
+      --g-esc-1:#25455C; --g-esc-2:#356986; --g-esc-3:#5E9BC4; --g-esc-4:#8FC4E4;
+      --g-tinta-op:#0D1319; --g-tinta-esc-3:#0D1319; --g-tinta-esc-2:#FBFCFD;
     }
   }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--papel); color:var(--tinta);
-    font: 16px/1.65 Georgia, 'Times New Roman', serif; }
-  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 6rem; }
-  h1 { font-size: 1.9rem; line-height:1.2; margin: 0 0 .75rem; }
-  h2 { font-size: 1.4rem; margin: 3rem 0 .75rem; padding-top: .5rem; border-top: 1px solid var(--linea); }
-  h3 { font-size: 1.1rem; margin: 2rem 0 .5rem; }
-  h4 { font-size: .95rem; margin: 1.25rem 0 .4rem; color: var(--suave); }
-  p, li { margin: 0 0 .9rem; }
-  aside { margin: 1.25rem 0; padding: .85rem 1.1rem; border-left: 3px solid var(--acento);
-    background: color-mix(in srgb, var(--acento) 7%, transparent); font-size: .95rem; }
-  code { font: .85em ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }
-  a { color: var(--azul); overflow-wrap: anywhere; }
-  hr { border:0; border-top:1px solid var(--linea); margin: 2.5rem 0; }
-  figure { margin: 1.5rem 0; }
-  figcaption { font-size: .8rem; color: var(--suave); margin-bottom: .5rem;
-    font-family: ui-sans-serif, system-ui, sans-serif; text-transform: uppercase; letter-spacing: .06em; }
-  .scroll { overflow-x: auto; }
 
-  /* ── Figuras ────────────────────────────────────────────────────────────
-     El SVG sale sin atributos de ancho ni de alto: el viewBox fija la
-     proporción y estas reglas fijan el tamaño. Con un alto declarado como
-     automático el navegador recortaba la matriz de capacidades por abajo, y
-     no avisaba de nada.                                                    */
-  /*
-     Una figura no cabe en la columna de lectura. El cuerpo se mide para la
-     prosa —46rem, unos 75 caracteres— y una matriz de once filas por diez
-     columnas reducida a ese ancho deja de leerse. En pantallas anchas la figura
-     se sale de la columna y se centra sobre el eje del texto; en papel manda el
-     margen de la página y esta regla se apaga sola.
-  */
-  /* ── Portada ───────────────────────────────────────────────────────────── */
-  .portada { min-height: 88vh; display: flex; flex-direction: column; justify-content: center;
-    padding-bottom: 2rem; border-bottom: 1px solid var(--linea); }
-  .portada-eyebrow { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .7rem;
-    text-transform: uppercase; letter-spacing: .12em; color: var(--acento); margin: 0 0 1.5rem; }
-  .portada h1 { font-size: 2.5rem; line-height: 1.12; margin: 0 0 1rem; max-width: 22ch; }
-  .portada-sub { font-style: italic; font-size: 1.15rem; color: var(--suave); margin: 0 0 1.75rem; }
-  .portada-estado { display: inline-block; align-self: flex-start; font-family: ui-sans-serif, system-ui, sans-serif;
-    font-size: .78rem; padding: .4rem .8rem; border: 1px solid var(--acento); border-radius: 3px;
-    color: var(--acento); margin: 0 0 2.5rem; }
-  .portada-marca { max-width: 15rem; margin: 0 0 2.5rem; opacity: .92; }
-  .portada-marca .g-fig { width: 100%; }
-  .portada-datos { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1.25rem;
-    font-family: ui-sans-serif, system-ui, sans-serif; font-size: .82rem; margin: 0 0 2rem;
-    border-top: 1px solid var(--linea); padding-top: 1.25rem; }
-  .portada-datos dt { color: var(--suave); text-transform: uppercase; font-size: .68rem;
-    letter-spacing: .07em; padding-top: .15rem; }
-  .portada-datos dd { margin: 0; color: var(--tinta); }
-  .portada-pie { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .72rem;
-    line-height: 1.55; color: var(--suave); margin: 0; max-width: 46ch; }
-
-  .g-figura { margin: 2rem 0; }
-  @media (min-width: 62rem) {
-    .g-figura { width: 58rem; margin-left: 50%; transform: translateX(-50%); }
+  :root[data-theme="dark"]{
+    --paper:#0D1319; --surface:#151D25; --surface-2:#1C262F; --plate:#141C24;
+    --ink:#E8EEF3; --ink-2:#B4C0CA; --muted:#8A98A4; --rule:#243039; --rule-2:#324150;
+    --navy:#8FB3D4; --teal:#63B7C6; --ochre:#D8A852; --brick:#DD8375; --sage:#93BC94;
+    --navy-soft:#182838; --teal-soft:#142C31; --ochre-soft:#2C2416; --brick-soft:#301C19; --sage-soft:#1A281B;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+    --g-op:#5E9BC4; --g-incip:#31607F; --g-incip-fondo:#152634;
+    --g-entorno:#D8A852; --g-entorno-fondo:#2C2416;
+    --g-adyacente:#93BC94; --g-adyacente-fondo:#1A281B;
+    --g-vacio:#18222B; --g-linea:#324150; --g-suave:#8A98A4; --g-banda:#1C262F;
+    --g-cebra:rgba(255,255,255,.026); --g-contraste:#DD8375; --g-halo:rgba(138,152,164,.18);
+    --g-esc-1:#25455C; --g-esc-2:#356986; --g-esc-3:#5E9BC4; --g-esc-4:#8FC4E4;
+    --g-tinta-op:#0D1319; --g-tinta-esc-3:#0D1319; --g-tinta-esc-2:#FBFCFD;
   }
-  .g-figura figcaption { display: block; margin-bottom: .75rem;
-    font-family: ui-sans-serif, system-ui, sans-serif; text-transform: none; letter-spacing: 0; }
-  .g-pregunta { display: block; font-size: .68rem; text-transform: uppercase;
-    letter-spacing: .08em; color: var(--acento); }
-  .g-titulo { display: block; margin-top: .3rem; font-family: Georgia, serif;
-    font-size: 1.05rem; line-height: 1.3; color: var(--tinta); }
-  .g-nota { margin-top: .6rem; padding-top: .5rem; border-top: 1px solid var(--linea);
-    font-family: ui-sans-serif, system-ui, sans-serif; font-size: .74rem; line-height: 1.5;
-    color: var(--suave); }
-  .g-caja { overflow-x: auto; overflow-y: hidden; }
-  /* Una figura densa no se encoge por debajo de lo legible: se desplaza. */
-  .g-caja .g-fig { min-width: 34rem; }
-  .g-fig { display: block; width: 100%; height: auto; max-width: 100%;
-    font-family: ui-sans-serif, system-ui, sans-serif; overflow: visible; }
-  .g-t { fill: var(--tinta); }
-  .g-t-fila, .g-t-col, .g-t-punto { fill: var(--tinta); }
-  .g-t-eje, .g-t-leyenda, .g-t-rutas, .g-t-banda { fill: var(--g-suave); }
-  .g-t-cifra { fill: var(--tinta); font-variant-numeric: tabular-nums; }
-  .g-t-cifra-clara { fill: var(--papel); font-variant-numeric: tabular-nums; }
-  table { border-collapse: collapse; width: 100%; font-size: .82rem;
-    font-family: ui-sans-serif, system-ui, sans-serif; }
-  th, td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-bottom: 1px solid var(--linea); }
-  thead th { border-bottom: 1px solid var(--tinta); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; }
-  tbody th { font-weight: 600; }
-  @media print {
-    body { background: #fff; color: #000; font-size: 10.5pt; }
-    main { max-width: none; padding: 0; }
-    a { color: #000; text-decoration: none; }
-    aside { border-left-color: #000; background: none; break-inside: avoid; }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:17px; line-height:1.66;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--teal-soft); color:var(--ink)}
+  a{color:var(--teal); text-underline-offset:.18em; text-decoration-thickness:.06em; overflow-wrap:anywhere}
+  :focus-visible{outline:2px solid var(--teal); outline-offset:3px; border-radius:2px}
+
+  #prog{position:fixed; top:0; left:0; height:2px; width:0; background:var(--teal); z-index:60; transition:width .1s linear}
+
+  /* ---------- armazon ---------- */
+  .shell{display:grid; grid-template-columns:var(--rail) minmax(0,1fr); max-width:1440px; margin:0 auto}
+  .rail{
+    position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto; overscroll-behavior:contain;
+    border-right:1px solid var(--rule); padding:34px 20px 40px 32px; background:var(--paper);
+  }
+  .rail::-webkit-scrollbar{width:6px}
+  .rail::-webkit-scrollbar-thumb{background:var(--rule-2); border-radius:3px}
+  .rail .brandmark{font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); font-weight:600; margin-bottom:6px}
+  .rail .brandttl{font-family:var(--sans); font-size:14px; font-weight:600; line-height:1.32; color:var(--ink); margin:0 0 4px; text-wrap:balance}
+  .rail .brandsub{font-family:var(--mono); font-size:10px; color:var(--muted); letter-spacing:.04em; margin:0 0 20px}
+  .rail nav{border-top:1px solid var(--rule); padding-top:16px}
+  .rail nav a{
+    display:block; font-family:var(--sans); font-size:12.6px; line-height:1.4; color:var(--ink-2);
+    text-decoration:none; padding:5px 0 5px 11px; border-left:2px solid transparent;
+  }
+  .rail nav a:hover{color:var(--ink); border-left-color:var(--rule-2)}
+  .rail nav a.on{color:var(--navy); border-left-color:var(--navy); font-weight:600}
+  .railfoot{margin-top:26px; padding-top:16px; border-top:1px solid var(--rule); font-family:var(--mono); font-size:9.6px; line-height:1.7; color:var(--muted)}
+  main{min-width:0; padding:0 clamp(20px,4vw,64px) 110px}
+
+  /* ---------- portada ---------- */
+  .portada{padding:clamp(48px,8vh,92px) 0 40px; max-width:var(--wide); border-bottom:1px solid var(--rule); margin-bottom:8px}
+  .portada-eyebrow{font-family:var(--mono); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); font-weight:600; margin:0}
+  .portada h1{
+    font-family:var(--sans); font-weight:700; letter-spacing:-.021em; line-height:1.08;
+    font-size:clamp(2.1rem,4.6vw,3.4rem); margin:16px 0 0; text-wrap:balance; color:var(--ink); max-width:17ch;
+  }
+  .portada-sub{font-size:clamp(1.04rem,1.7vw,1.2rem); color:var(--ink-2); font-weight:300; font-style:normal; line-height:1.55; margin:20px 0 0; max-width:58ch}
+  .portada-estado{
+    display:inline-block; font-family:var(--mono); font-size:9.8px; font-weight:600; letter-spacing:.075em;
+    text-transform:uppercase; padding:4px 9px; border-radius:2px; margin:24px 0 0;
+    background:var(--ochre-soft); color:var(--ochre); border:1px solid color-mix(in srgb,var(--ochre) 30%,transparent);
+  }
+  .portada-marca{max-width:15rem; margin:30px 0 0; opacity:.95}
+  .portada-marca .g-fig{width:100%}
+  .portada-datos{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; background:var(--rule);
+    border:1px solid var(--rule); margin:34px 0 0; font-family:var(--sans);
+  }
+  .portada-datos > div{background:var(--paper); padding:14px}
+  .portada-datos dt{
+    font-family:var(--mono); font-size:9.5px; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .portada-datos dd{margin:5px 0 0; color:var(--ink-2); font-size:13.4px; line-height:1.45}
+  .portada-pie{font-family:var(--sans); font-size:12.4px; line-height:1.6; color:var(--muted); margin:26px 0 0; max-width:70ch}
+
+  /* ---------- tipografia del cuerpo ---------- */
+  h2{
+    font-family:var(--sans); font-weight:700; font-size:clamp(1.6rem,2.9vw,2.15rem);
+    line-height:1.13; letter-spacing:-.018em; color:var(--ink); text-wrap:balance;
+    max-width:var(--measure); margin:78px 0 0; padding-top:0; border:0; scroll-margin-top:20px;
+  }
+  h2::after{content:""; display:block; border-top:2px solid var(--navy); width:52px; margin:18px 0 24px}
+  h3{font-family:var(--sans); font-weight:600; font-size:1.22rem; line-height:1.3; letter-spacing:-.008em; color:var(--navy); margin:42px 0 12px; max-width:var(--measure); text-wrap:balance}
+  h4{font-family:var(--mono); font-weight:600; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); margin:26px 0 8px; max-width:var(--measure)}
+  p{margin:0 0 18px; max-width:var(--measure)}
+  strong{font-weight:600; color:var(--ink)}
+  code{font-family:var(--mono); font-size:.85em; background:var(--surface); padding:.1em .34em; border-radius:2px; color:var(--navy)}
+  ul{max-width:var(--measure); margin:0 0 22px; padding:0; list-style:none}
+  ul li{position:relative; padding-left:22px; margin-bottom:11px}
+  ul li::before{content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; background:var(--teal)}
+  hr{border:0; border-top:1px solid var(--rule); margin:44px 0; max-width:var(--measure)}
+
+  aside{
+    margin:32px 0; padding:20px 24px; background:var(--surface);
+    border-left:3px solid var(--ochre); max-width:var(--measure);
+    font-family:var(--sans); font-size:14.6px; line-height:1.6; color:var(--ink-2);
+  }
+  aside strong{color:var(--ink)}
+
+  /* ---------- tablas ---------- */
+  figure{margin:38px 0; max-width:min(100%,var(--wide))}
+  figure > figcaption{
+    font-family:var(--mono); font-size:10.2px; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--navy); font-weight:600; margin:0 0 11px;
+  }
+  .scroll{overflow-x:auto; border-top:2px solid var(--navy); border-bottom:2px solid var(--navy)}
+  table{border-collapse:collapse; width:100%; min-width:620px; font-family:var(--sans); font-size:13.2px; line-height:1.48}
+  thead th{
+    background:var(--surface-2); color:var(--navy); font-weight:600; text-align:left;
+    padding:11px 12px; vertical-align:bottom; border-bottom:1px solid var(--navy);
+    font-size:12.1px; text-transform:none; letter-spacing:.005em;
+  }
+  tbody td, tbody th{padding:10px 12px; vertical-align:top; border-bottom:1px solid var(--rule); color:var(--ink-2); text-align:left}
+  tbody th{font-weight:600; color:var(--ink)}
+  tbody tr:nth-child(even) td, tbody tr:nth-child(even) th{background:var(--surface)}
+  tbody tr:last-child td, tbody tr:last-child th{border-bottom:0}
+
+  /* ---------- figuras ----------
+     El SVG sale sin atributos de ancho ni de alto: el viewBox fija la
+     proporcion y estas reglas fijan el tamano. Con un alto automatico el
+     navegador recortaba la matriz por abajo sin avisar de nada.            */
+  .g-figura{margin:48px 0; max-width:min(100%,var(--wide))}
+  .g-figura figcaption{display:block; margin:0 0 14px; font-family:var(--sans); text-transform:none; letter-spacing:0; color:inherit}
+  .g-pregunta{display:block; font-family:var(--mono); font-size:10.2px; text-transform:uppercase; letter-spacing:.15em; color:var(--teal); font-weight:600}
+  .g-titulo{display:block; margin-top:8px; font-family:var(--sans); font-weight:600; font-size:1.18rem; line-height:1.32; letter-spacing:-.01em; color:var(--ink); text-wrap:balance; max-width:56ch}
+  .g-caja{overflow-x:auto; overflow-y:hidden; background:var(--plate); border:1px solid var(--rule); box-shadow:var(--shadow); padding:14px; border-radius:2px}
+  .g-caja .g-fig{min-width:34rem}
+  .g-nota{margin:12px 0 0; font-family:var(--sans); font-size:12.4px; line-height:1.55; color:var(--muted); max-width:78ch}
+  .g-fig{display:block; width:100%; height:auto; max-width:100%; font-family:var(--sans); overflow:visible}
+  .g-t{fill:var(--ink)}
+  .g-t-fila,.g-t-col,.g-t-punto{fill:var(--ink)}
+  .g-t-eje,.g-t-leyenda,.g-t-rutas,.g-t-banda{fill:var(--g-suave)}
+  .g-t-cifra{fill:var(--ink); font-variant-numeric:tabular-nums}
+  .g-t-sobre-op{fill:var(--g-tinta-op); font-variant-numeric:tabular-nums}
+  .g-t-sobre-esc-3{fill:var(--g-tinta-esc-3); font-variant-numeric:tabular-nums}
+  .g-t-sobre-esc-2{fill:var(--g-tinta-esc-2); font-variant-numeric:tabular-nums}
+
+  /* ---------- toggle de tema ---------- */
+  .tt{
+    position:fixed; right:18px; top:16px; z-index:55; width:34px; height:34px;
+    display:grid; place-items:center; border:1px solid var(--rule); background:var(--paper);
+    color:var(--muted); border-radius:50%; cursor:pointer; padding:0;
+  }
+  .tt:hover{color:var(--ink); border-color:var(--rule-2)}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1080px){
+    :root{--rail:0px}
+    .shell{grid-template-columns:1fr}
+    .rail{display:none}
+    main{padding:0 clamp(18px,5vw,40px) 84px}
+    body{font-size:16.4px}
+    .tt{top:10px; right:10px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important; transition:none!important; scroll-behavior:auto!important}
+  }
+  html{scroll-behavior:smooth}
+
+  @media print{
+    :root{
+      --paper:#fff; --plate:#fff; --surface:#f4f6f8; --surface-2:#eef2f5;
+      --ink:#111; --ink-2:#333; --muted:#555; --rule:#c9cfd5; --rule-2:#aab3bb;
+      --navy:#17324f; --teal:#215c68; --ochre:#7a5211; --brick:#7a2d22; --sage:#365539;
+      --shadow:none;
+      --g-op:#17324f; --g-incip:#7d9db8; --g-incip-fondo:#e9eff5;
+      --g-entorno:#7a5211; --g-entorno-fondo:#f4ecda;
+      --g-adyacente:#365539; --g-adyacente-fondo:#e8efe9;
+      --g-vacio:#f0f3f5; --g-linea:#aab3bb; --g-suave:#444; --g-banda:#eef2f5;
+      --g-cebra:rgba(0,0,0,.04); --g-contraste:#7a2d22; --g-halo:rgba(0,0,0,.09);
+      --g-esc-1:#ccdae6; --g-esc-2:#93b2c9; --g-esc-3:#3f6d92; --g-esc-4:#17324f;
+      --g-tinta-op:#fff; --g-tinta-esc-3:#111; --g-tinta-esc-2:#111;
+    }
+    body{background:#fff; color:#111; font-size:10.5pt}
+    .shell{display:block; max-width:none}
+    .rail,.tt,#prog{display:none}
+    main{padding:0; max-width:none}
+    a{color:#111; text-decoration:none}
+    h2{margin-top:26pt; font-size:16pt}
+    h3{font-size:12.5pt}
+    aside{border-left-color:#111; background:none; break-inside:avoid}
     /*
       En pantalla las tablas anchas se desplazan dentro de su caja. En papel no
-      hay a dónde desplazarse: overflow auto recorta la columna de la derecha
-      y el lector no se entera. El registro de 74 fuentes perdía así su URL.
-      Aquí el desbordamiento se abre y la tabla se reparte el ancho de la página.
+      hay a donde desplazarse: overflow auto recorta la columna de la derecha y
+      el lector no se entera. El registro de 74 fuentes perdia asi su URL.
     */
-    .scroll { overflow: visible; }
-    /* Lo mismo vale para una figura: en papel no hay a dónde desplazarse. */
-    .g-caja { overflow: visible; }
-    .g-caja .g-fig { min-width: 0; }
-    /* En papel manda el margen de la página: la figura vuelve a la columna. */
-    .g-figura { width: auto; margin-left: 0; transform: none; }
-    /* La portada ocupa la primera hoja entera y nada se le sube detrás. */
-    .portada { min-height: 0; height: 92vh; break-after: page; border-bottom: 0; }
-    .portada h1 { font-size: 24pt; }
-    .g-figura, .g-fig { break-inside: avoid; }
-    .g-titulo { font-size: 11pt; }
-    /* En papel manda el juego claro, con más contraste y sin tramas tenues. */
-    :root {
-      --g-op:#1a4d80; --g-incip:#5a86a6; --g-incip-fondo:#e6edf3;
-      --g-entorno:#7a5c14; --g-entorno-fondo:#f2ead6;
-      --g-vacio:#eeedea; --g-linea:#9a9a95; --g-suave:#444444; --g-banda:#eceae6;
-      --g-cebra:rgba(0,0,0,.04); --g-contraste:#7a2030; --g-halo:rgba(0,0,0,.09);
-      --g-esc-1:#c5d7e4; --g-esc-2:#8fb0c6; --g-esc-3:#4c7fa3; --g-esc-4:#1a4d80;
-      --tinta:#111; --papel:#fff; --acento:#7a2030;
-    }
-    table { table-layout: fixed; width: 100%; font-size: 7pt; }
-    th, td { overflow-wrap: anywhere; padding: .28rem .35rem; }
-    /* Una tabla de 74 filas no cabe en una página: se parte, pero no por dentro
-       de una fila. Reservar la tabla entera dejaba páginas casi vacías. */
-    figure { break-inside: auto; }
-    tr { break-inside: avoid; }
-    thead { display: table-header-group; }
-    h2, h3 { break-after: avoid; }
+    .scroll{overflow:visible}
+    .g-caja{overflow:visible; border:0; box-shadow:none; padding:0}
+    .g-caja .g-fig{min-width:0}
+    .portada{min-height:0; height:92vh; break-after:page; border-bottom:0; padding-top:0}
+    .portada h1{font-size:24pt}
+    .g-figura,.g-fig{break-inside:avoid}
+    .g-titulo{font-size:11pt}
+    table{table-layout:fixed; width:100%; min-width:0; font-size:7pt}
+    th,td{overflow-wrap:anywhere; padding:.28rem .35rem}
+    /* Una tabla de 74 filas no cabe en una pagina: se parte, pero no por dentro
+       de una fila. Reservar la tabla entera dejaba paginas casi vacias. */
+    figure{break-inside:auto}
+    tr{break-inside:avoid}
+    thead{display:table-header-group}
+    h2,h3{break-after:avoid}
   }
 </style>
 </head>
 <body>
+<div id="prog"></div>
+<button class="tt" id="tt" type="button" aria-label="Cambiar entre claro y oscuro">
+  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/>
+  <path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M6.1 6.1 4.6 4.6M19.4 19.4l-1.5-1.5M17.9 6.1l1.5-1.5M4.6 19.4l1.5-1.5"/></svg>
+</button>
+<div class="shell">
+<aside class="rail">
+  <p class="brandmark">Informe 01</p>
+  <p class="brandttl">Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile</p>
+  <p class="brandsub">v0.7.0 · corte 2026-09-01</p>
+  <nav aria-label="Índice del documento"><a href="#como-leer">Cómo leer este documento</a><a href="#resumen">Resumen ejecutivo</a><a href="#hallazgos">Los siete hallazgos principales</a><a href="#introduccion">1 · Introducción</a><a href="#objetivos">2 · Objetivos</a><a href="#metodologia">3 · Metodología</a><a href="#panorama">Panorama del conjunto</a><a href="#cobertura">Cobertura de la investigación</a><a href="#capacidades">Capacidades institucionales comparadas</a><a href="#control">La comprobación que impide leer mal todo lo anterior</a><a href="#discusion">4 · Discusión</a><a href="#pucv">5 · La PUCV en contexto</a><a href="#conclusiones">6 · Conclusiones</a><a href="#implicancias">6 bis · Implicancias para la PUCV</a><a href="#limitaciones">7 · Limitaciones</a><a href="#agenda">8 · Agenda de investigación</a><a href="#instituciones">Anexo A · Las once instituciones, una por una</a><a href="#afirmaciones">Anexo B · Afirmaciones, con su cadena completa</a><a href="#lagunas">Anexo C · Lagunas declaradas</a><a href="#matriz">Anexo D · Matriz de evidencia localizada por dimensión</a><a href="#pucv-temas">Anexo E · Doce temas de capacidad institucional en la PUCV</a><a href="#auditoria">Anexo F · Auditoría de la línea base de 2025</a><a href="#fuentes">Anexo G · Registro completo de fuentes</a><a href="#metodo">Nota metodológica</a></nav>
+  <p class="railfoot">Prototipo académico experimental.<br>No es un sitio oficial de la PUCV.<br>Documento generado el 2026-09-04.</p>
+</aside>
 <main>
-<section class="portada"><p class="portada-eyebrow">Informe 01 · Prototipo académico experimental</p><h1>Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile</h1><p class="portada-sub">Mapeo comparado de evidencia pública e institucionalización</p><p class="portada-estado">Borrador académico para revisión · no es un informe de resultados</p><div class="portada-marca"><svg viewBox="0 0 173 157" preserveAspectRatio="xMidYMin meet" role="img" aria-labelledby="t231630946" class="g-fig g-marca" xmlns="http://www.w3.org/2000/svg"><title id="t231630946">Marca de portada</title><desc>Retícula de 10 capacidades por 11 instituciones, con el estado de cada celda en color. Es la matriz de capacidades del informe, reducida y sin rótulos.</desc><defs><pattern id="g-tramaFina" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--g-linea, #cfcac1)" stroke-width="1"/></pattern><pattern id="g-tramaGruesa" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="var(--g-incip-fondo, #dbeaef)"/><line x1="0" y1="0" x2="0" y2="5" stroke="var(--g-incip, #5c9ead)" stroke-width="2"/></pattern></defs><rect x="0" y="0" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="16" y="0" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="0" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="0" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="112" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="0" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="0" y="16" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="16" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="16" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="112" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="32" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="32" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="32" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="112" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="32" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="160" y="32" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="0" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="48" y="48" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="64" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="48" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="112" y="48" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="128" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="144" y="48" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="48" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="64" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="64" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="64" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="48" y="64" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="64" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="64" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="64" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="112" y="64" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="128" y="64" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="64" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="64" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="80" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="80" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="80" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="80" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="80" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="80" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="112" y="80" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="128" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="96" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="48" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="112" y="96" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="128" y="96" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="144" y="96" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="160" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="0" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="112" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="112" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="112" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="112" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="112" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="144" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="16" y="128" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="48" y="128" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="128" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="128" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="112" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="128" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="144" y="128" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="0" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="144" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="96" y="144" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="112" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/></svg></div><dl class="portada-datos"><dt>Versión</dt><dd>v0.7.0</dd><dt>Fecha de corte</dt><dd>1 de septiembre de 2026</dd><dt>Cohorte</dt><dd>11 Escuelas y Facultades de Derecho</dd><dt>Corpus</dt><dd>74 fuentes · 38 contrastadas</dd><dt>Autoría</dt><dd>Diego Hernán Ojeda Cifuentes</dd><dt>Protocolo</dt><dd>METODOLOGIA_IA_DERECHO_V2.1</dd></dl><p class="portada-pie">Prototipo académico experimental. No es una publicación oficial de la Pontificia Universidad Católica de Valparaíso ni de su Escuela de Derecho, y no habla en nombre de ninguna persona.</p></section>
+<section class="portada"><p class="portada-eyebrow">Informe 01 · Prototipo académico experimental</p><h1>Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile</h1><p class="portada-sub">Mapeo comparado de evidencia pública e institucionalización</p><p class="portada-estado">Borrador académico para revisión · no es un informe de resultados</p><div class="portada-marca"><svg viewBox="0 0 173 157" preserveAspectRatio="xMidYMin meet" role="img" aria-labelledby="t231630946" class="g-fig g-marca" xmlns="http://www.w3.org/2000/svg"><title id="t231630946">Marca de portada</title><desc>Retícula de 10 capacidades por 11 instituciones, con el estado de cada celda en color. Es la matriz de capacidades del informe, reducida y sin rótulos.</desc><defs><pattern id="g-tramaFina" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="var(--g-linea, #cfcac1)" stroke-width="1"/></pattern><pattern id="g-tramaGruesa" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="var(--g-incip-fondo, #dbeaef)"/><line x1="0" y1="0" x2="0" y2="5" stroke="var(--g-incip, #5c9ead)" stroke-width="2"/></pattern></defs><rect x="0" y="0" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="16" y="0" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="0" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="0" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="112" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="0" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="0" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="0" y="16" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="16" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="16" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="112" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="16" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="32" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="32" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="32" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="112" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="32" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="32" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="160" y="32" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="0" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="48" y="48" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="64" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="48" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="112" y="48" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="128" y="48" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="144" y="48" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="48" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="64" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="64" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="64" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="48" y="64" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="64" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="64" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="64" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="112" y="64" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="128" y="64" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="64" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="64" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="80" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="80" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="80" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="80" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="80" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="80" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="112" y="80" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="128" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="80" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="16" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="96" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="48" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="80" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="112" y="96" width="13" height="13" fill="var(--g-adyacente-fondo, #ece4f2)" stroke="var(--g-adyacente, #7a5ba6)" stroke-width="0.75" rx="1.5"/><rect x="128" y="96" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="144" y="96" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="160" y="96" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="0" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="112" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="112" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="96" y="112" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="112" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="112" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="144" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="112" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="0" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="16" y="128" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="32" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="48" y="128" width="13" height="13" fill="var(--g-op, #1b5e76)" stroke="var(--g-op, #1b5e76)" stroke-width="0.75" rx="1.5"/><rect x="64" y="128" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="128" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="96" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="112" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="128" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="144" y="128" width="13" height="13" fill="var(--g-entorno-fondo, #f6ecd2)" stroke="var(--g-entorno, #c9a227)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="128" width="13" height="13" fill="url(#g-tramaGruesa)" stroke="var(--g-incip, #5c9ead)" stroke-width="0.75" rx="1.5"/><rect x="0" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="16" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="32" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="48" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="64" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="80" y="144" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="96" y="144" width="13" height="13" fill="var(--g-vacio, #ece9e3)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" rx="1.5"/><rect x="112" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="128" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="144" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/><rect x="160" y="144" width="13" height="13" fill="url(#g-tramaFina)" stroke="var(--g-linea, #cfcac1)" stroke-width="0.75" stroke-dasharray="2 1.5" rx="1.5"/></svg></div><dl class="portada-datos"><div><dt>Versión</dt><dd>v0.7.0</dd></div><div><dt>Fecha de corte</dt><dd>1 de septiembre de 2026</dd></div><div><dt>Cohorte</dt><dd>11 Escuelas y Facultades de Derecho</dd></div><div><dt>Corpus</dt><dd>74 fuentes · 38 contrastadas</dd></div><div><dt>Autoría</dt><dd>Diego Hernán Ojeda Cifuentes</dd></div><div><dt>Protocolo</dt><dd>METODOLOGIA_IA_DERECHO_V2.1</dd></div></dl><p class="portada-pie">Prototipo académico experimental. No es una publicación oficial de la Pontificia Universidad Católica de Valparaíso ni de su Escuela de Derecho, y no habla en nombre de ninguna persona.</p></section>
 <figure><figcaption>Ficha del documento</figcaption><div class="scroll"><table><thead><tr><th scope="col">Campo</th><th scope="col">Valor</th></tr></thead><tbody><tr><th scope="row">Versión</th><td>v0.7.0</td></tr><tr><th scope="row">Estado</th><td>Borrador académico para revisión</td></tr><tr><th scope="row">Fecha de publicación</th><td>2026-09-04</td></tr><tr><th scope="row">Fecha de corte</th><td>2026-09-01</td></tr><tr><th scope="row">Autoría</th><td>Diego Hernán Ojeda Cifuentes</td></tr><tr><th scope="row">Cohorte</th><td>COHORTE_IA_DERECHO_CHILE_11_V1 · once instituciones, cerrada</td></tr><tr><th scope="row">Protocolo</th><td>METODOLOGIA_IA_DERECHO_V2.1 · enmienda de la V2.0, que se conserva</td></tr><tr><th scope="row">Capacidades comparadas</th><td>10</td></tr><tr><th scope="row">Mecanismos institucionales</th><td>9</td></tr><tr><th scope="row">Universidades</th><td>11</td></tr><tr><th scope="row">Fuentes públicas únicas</th><td>74</td></tr><tr><th scope="row">Iniciativas deduplicadas</th><td>53</td></tr><tr><th scope="row">Evidencias</th><td>75</td></tr><tr><th scope="row">Afirmaciones</th><td>14</td></tr><tr><th scope="row">Fuentes con verificación sustantiva</th><td>38 de 74 (51%)</td></tr><tr><th scope="row">Iniciativas con evaluación de efecto</th><td>0</td></tr><tr><th scope="row">URL del informe</th><td><a href="https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile">https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile</a></td></tr></tbody></table></div></figure>
 <hr>
 <h2 id="como-leer">Cómo leer este documento</h2>
@@ -649,5 +766,43 @@
 <code>dojedacifuentes/aldunate_experimento02</code>. Prototipo académico experimental: no es un
 sitio oficial de la PUCV ni de su Escuela de Derecho, y no habla en nombre de ninguna persona.</small></p>
 </main>
+</div>
+<script>
+(function(){
+  /* Barra de progreso y capitulo activo. Sin dependencias: el documento tiene
+     que abrirse desde un disco, sin red y sin nada instalado.               */
+  var prog=document.getElementById('prog');
+  var enlaces=[].slice.call(document.querySelectorAll('.rail nav a'));
+  var destinos=enlaces.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  function alDesplazar(){
+    var h=document.documentElement;
+    var alto=h.scrollHeight-h.clientHeight;
+    if(prog) prog.style.width=(alto>0?(h.scrollTop/alto)*100:0)+'%';
+    var activo=-1;
+    for(var i=0;i<destinos.length;i++){
+      var d=destinos[i];
+      if(d&&d.getBoundingClientRect().top<=140) activo=i;
+    }
+    enlaces.forEach(function(a,i){a.classList.toggle('on',i===activo)});
+  }
+  addEventListener('scroll',alDesplazar,{passive:true});
+  addEventListener('resize',alDesplazar,{passive:true});
+  alDesplazar();
+
+  /* El tema arranca en el del sistema y el boton lo fija. Se recuerda, porque
+     quien elige claro para leer sesenta paginas no quiere volver a elegirlo. */
+  var raiz=document.documentElement, clave='informe01-tema';
+  try{ var g=localStorage.getItem(clave); if(g) raiz.setAttribute('data-theme',g); }catch(e){}
+  var b=document.getElementById('tt');
+  if(b) b.addEventListener('click',function(){
+    var oscuroAhora = raiz.getAttribute('data-theme')
+      ? raiz.getAttribute('data-theme')==='dark'
+      : matchMedia('(prefers-color-scheme: dark)').matches;
+    var nuevo = oscuroAhora ? 'light' : 'dark';
+    raiz.setAttribute('data-theme',nuevo);
+    try{ localStorage.setItem(clave,nuevo); }catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
