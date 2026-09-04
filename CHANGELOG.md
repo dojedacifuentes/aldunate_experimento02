@@ -2,6 +2,52 @@
 
 ## No publicado
 
+### Informe 01 · v0.8.0 · el instrumento se aplica a todos por igual
+
+**Publicada en producción el 04-09-2026.** La v0.7.0 sigue en su URL, intacta.
+
+**Añadido · una iniciativa adyacente no acredita una capacidad de IA.** El
+registro ya distinguía en `direction` si una iniciativa usa inteligencia
+artificial, la estudia como objeto jurídico, hace las dos cosas o pertenece al
+ámbito vecino de la tecnología sin componente de IA documentado. La capa de
+capacidades ignoraba esa distinción. Con un estado nuevo, `SOLO_ADYACENTE`, para
+no convertir una presencia en una ausencia.
+
+**Corregido · los siete registros adyacentes, abiertos contra sus fuentes.** Tres
+se reclasificaron: el Departamento de Derecho y Tecnología de la UC y el CE3 de
+la Universidad de Chile acreditan evidencia propia de inteligencia artificial y
+vuelven a constar con unidad en operación; el programa [genIA] de la Universidad
+de Concepción figuraba como adyacente a la IA por una razón que pertenece a otro
+campo del registro. El diplomado de la UNAB se reclasificó por el ámbito
+declarado y **no por evidencia de contenido**, y encabeza la cola de
+verificación. Ninguna celda queda hoy en `SOLO_ADYACENTE`.
+
+**Añadido · índice.** El documento abre por él y después por el resumen
+ejecutivo. En el documento se deriva de sus propios encabezados; en la web se
+declara, y una prueba comprueba que cada entrada lleve a una sección que existe.
+
+**Añadido · figura de conclusiones.** Siete barras con la clase de afirmación y
+la confianza del apoyo más débil, y marca en las dos que el análisis de
+sensibilidad dejó acotadas.
+
+**Añadido · frecuencia de capacidades.** La matriz leída por filas: en cuántas de
+las once consta cada capacidad. No nombra ninguna institución.
+
+**Cambiado · el documento adopta el sistema editorial del Informe 02.** Papel
+claro con oscuro recordado, Spectral y IBM Plex, raíl de navegación, barra de
+progreso y una paleta de cinco tintas de la que derivan los colores de las
+figuras.
+
+**Cambiado · las tablas de once por once bajan al anexo D.** El cuerpo pasa de
+cinco tablas largas a tres.
+
+**Corregido · la prosa deja de exponer el proceso privado de elaboración.** El
+conflicto de interés se conserva en primera persona del autor; el destinatario
+del borrador y los terceros nombrados, no. Una prueba lo vigila.
+
+DEC-124 a DEC-126 · ISSUE-023 · ISSUE-024 cerrado.
+
+
 ### Informe 01 · v0.7.0 · el instrumento se revisa contra el fenómeno
 
 **Cambiado · la metodología 2.0 se enmienda, y la enmienda es aditiva.** La 2.0

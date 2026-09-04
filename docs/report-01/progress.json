@@ -6,7 +6,7 @@
   "version": "0.8.0",
   "editorial_status": "borrador académico para revisión",
   "cutoff_date": "2026-09-01",
-  "updated_at": "2026-09-04T13:10:00-04:00",
+  "updated_at": "2026-09-04T14:05:00-04:00",
   "protocol": {
     "id": "METODOLOGIA_IA_DERECHO_V2.1",
     "supersedes": "METODOLOGIA_IA_DERECHO_V2.0",
@@ -18,7 +18,7 @@
     "base": "e746963",
     "head": "consúltalo con git rev-parse HEAD; fijarlo aquí caduca en la fusión siguiente",
     "pushed": true,
-    "merged": false,
+    "merged": true,
     "note": "v0.7.0 fusionada en main el 04-09-2026 y desplegada en produccion. Varias sesiones escriben este repositorio: consultar el remoto con `git ls-remote origin`, nunca `origin/main` local.",
     "preserved_branches": {
       "informe-01/v0.5.0": "a1cc758105eb61d6bd9c7a780be97f9af8d3e538",
@@ -27,14 +27,14 @@
   },
   "urls": {
     "production": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile",
-    "production_version": "0.7.0 · la 0.8.0 vive en rama y no esta fusionada",
+    "production_version": "0.8.0",
     "institutions": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile/instituciones",
     "package": "/descargas/informe-01-borrador-academico-v0.8.0/",
     "preview_note": "Vercel emite un preview inmutable por commit, de modo que la URL cambia con cada push y no se fija aqui. Se consulta en la API de despliegues de GitHub —el repositorio es publico—: /deployments y luego /deployments/<id>/statuses. Esta detras de la proteccion SSO de Vercel: se abre con la sesion del autor, no con una peticion anonima."
   },
   "current_phase": "instrumento_revisado_datos_pendientes",
-  "last_completed_task": "T-042_adjacency_records_reverified",
-  "next_task": "T-043_simplify_capability_model",
+  "last_completed_task": "T-044_adjacency_records_reclassified_on_source",
+  "next_task": "T-045_verify_unab_diploma_syllabus_then_simplify_model",
   "counts": {
     "universities": 11,
     "sources": 74,
@@ -64,10 +64,10 @@
     "capabilities": 10,
     "capability_cells": 110,
     "capability_cells_by_state": {
-      "EN_OPERACION": 31,
-      "INCIPIENTE": 10,
+      "EN_OPERACION": 33,
+      "INCIPIENTE": 11,
       "SOLO_ENTORNO": 12,
-      "SOLO_ADYACENTE": 3,
+      "SOLO_ADYACENTE": 0,
       "NO_LOCALIZADA": 7,
       "NO_CONCLUYENTE": 47
     },
@@ -192,7 +192,8 @@
     "T-039_adjacency_rule_and_privacy_scrub",
     "T-040_editorial_system_from_report_02",
     "T-041_indice_conclusiones_graficos",
-    "T-042_adjacency_records_reverified"
+    "T-042_adjacency_records_reverified",
+    "T-044_adjacency_records_reclassified_on_source"
   ],
   "in_progress": [
     "T-026_substantive_verification_38_sources · 38 de 74, sin avance en la v0.7.0"
@@ -255,5 +256,6 @@
     "integrity_verified_from_production": false,
     "note": "v0.7.0 se restauro byte a byte desde main: una version publicada no se sobrescribe (CLAUDE.md §8)."
   },
-  "next_session_mission": "Queda la mitad del encargo de revision mayor. Hecho: la regla de adyacencia con su estado nuevo, el barrido de referencias privadas, el sistema editorial del Informe 02 en el documento descargable y el corte de la v0.8.0. Pendiente y en este orden: (1) simplificar el modelo de diez capacidades a cinco o siete sin perder los hallazgos que dependen de distinguir unidad de norma y herramienta de adopcion; (2) reescribir la arquitectura editorial para que la narrativa llegue antes a las conclusiones y el aparato metodologico baje a anexos; (3) titulos declarativos en las figuras y revision de las tablas del cuerpo; (4) llevar el mismo sistema visual a la pagina del sitio, que sigue con el tema oscuro espacial. Ver docs/report-01/HANDOFF.md §H."
+  "next_session_mission": "El prompt entero esta en docs/report-01/CONTINUAR.md; copialo en la ventana nueva. En orden: (1) verificar el temario del diplomado de la UNAB, unico registro clasificado sin evidencia de contenido; (2) simplificar el modelo de diez capacidades a cinco o siete sin destruir H-2 ni H-4; (3) arquitectura editorial, que la narrativa llegue antes a las conclusiones; (4) llevar el sistema visual del documento a la pagina del sitio. Y lo que ninguna resuelve: el corpus no ha crecido, 38 de 74 contrastadas.",
+  "continuation_prompt": "docs/report-01/CONTINUAR.md"
 }

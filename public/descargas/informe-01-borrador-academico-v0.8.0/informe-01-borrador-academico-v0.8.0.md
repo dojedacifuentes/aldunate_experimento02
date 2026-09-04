@@ -73,7 +73,7 @@ Este documento mapea la evidencia pública disponible sobre uso y enseñanza de 
 
 El método separa cuatro cosas que la discusión pública mezcla: la fuente, la evidencia que esa fuente prueba, la iniciativa que agrupa varias evidencias y la afirmación que se sostiene sobre ellas. Separa además a quién pertenece cada capacidad —una licencia disponible para toda la universidad no es una capacidad de su Facultad de Derecho— y en qué peldaño de institucionalización se encuentra, desde el anuncio aislado hasta el resultado públicamente revisable. Esta versión añade dos instrumentos: la clase de **mecanismo** con que se hace cada cosa —una unidad, una norma, un programa formativo, una herramienta, un convenio— y una matriz de **diez capacidades institucionales** que reemplaza al recuento de evidencia como comparador principal.
 
-Lo que aparece tiene una forma reconocible y reciente. **41 de las 49 iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En tres de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —doce programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: siete de once.
+Lo que aparece tiene una forma reconocible y reciente. **41 de las 49 iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En cinco de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —doce programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: siete de once.
 
 La lectura que el conjunto permite es que el campo está construyendo estructura antes que reglas, y actividad antes que resultados. Se crean órganos, se abren programas y se anuncian herramientas; **ninguna de las 53 iniciativas registradas acredita haber medido su efecto sobre el aprendizaje jurídico**, y tres rondas independientes de investigación llegaron por separado a esa misma ausencia. Es la conclusión más sólida del informe y también la más fácil de revertir: bastaría una Facultad que evaluara una sola de las actividades que ya realiza y lo publicara.
 
@@ -101,7 +101,7 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-2 · La estructura se crea antes que la regla.
 
-**Dato.** En tres de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en una sola. El corpus registra siete unidades frente a cuatro normas, y de esas cuatro normas sólo dos son de una Facultad.
+**Dato.** En cinco de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en una sola. El corpus registra siete unidades frente a cuatro normas, y de esas cuatro normas sólo dos son de una Facultad.
 
 **Lectura.** La institucionalización avanza por creación de órganos y no por producción de reglas. Es un orden posible y no el único: crear una unidad es un acto de una autoridad, y dictar una norma sobre uso de inteligencia artificial obliga antes a decidir qué se permite en una evaluación, qué se declara y qué consecuencia tiene no declararlo. Lo segundo es más difícil y más comprometedor que lo primero.
 
@@ -141,7 +141,7 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-6 · Cuánto se investigó y cuánto se hace son variables distintas, y el corpus lo demuestra.
 
-**Dato.** La Universidad Autónoma de Chile es la institución menos investigada de las once —2 de trece rutas recorridas, ninguna fuente contrastada— y acredita 4 capacidades en operación. La Universidad de Chile recorrió 11 rutas y acredita 3.
+**Dato.** La Universidad Autónoma de Chile es la institución menos investigada de las once —2 de trece rutas recorridas, ninguna fuente contrastada— y acredita 4 capacidades en operación. La Universidad de Chile recorrió 11 rutas y acredita 4.
 
 **Lectura.** Si el trabajo de campo y la capacidad institucional fueran la misma variable, ese par de valores no podría existir. Es la razón concreta —y no una cautela genérica— por la que este informe no publica ranking: una tabla ordenada por evidencia localizada ordenaría a los investigadores antes que a las Facultades.
 
@@ -350,7 +350,7 @@ Reparto de las 53 iniciativas por peldaño de institucionalización: 1 19, 2 21,
 
 *¿Se está usando la IA para enseñar Derecho, o se la está estudiando como objeto jurídico?*
 
-Reparto de las 53 iniciativas por dirección: IA para el Derecho 29, Derecho de la IA 7, Ambas direcciones 11, Adyacente 6.
+Reparto de las 53 iniciativas por dirección: IA para el Derecho 30, Derecho de la IA 9, Ambas direcciones 11, Adyacente 3.
 
 > Cada iniciativa recibe una sola dirección, y las que integran las dos de forma sustantiva se registran como AMBOS en vez de contarse dos veces. La categoría ADYACENTE existe para lo contrario: tratar como inteligencia artificial una tecnología digital que no lo es —realidad virtual, un laboratorio de innovación legal, una plataforma de búsqueda— es el modo de inflar un mapa sin inventar una sola fuente.
 
@@ -384,7 +384,7 @@ Cada celda se calcula con una regla mecánica sobre el dataset. Una capacidad es
 
 *¿Qué capacidad institucional demuestra cada Facultad, y dónde no podemos saberlo?*
 
-Matriz de 11 instituciones por 10 capacidades, 110 celdas: 31 en operación, 10 incipiente, 12 sólo en el entorno, 3 sólo adyacente, 7 no localizada, 47 no concluyente. Las filas van en orden alfabético y no hay puntaje agregado.
+Matriz de 11 instituciones por 10 capacidades, 110 celdas: 33 en operación, 11 incipiente, 12 sólo en el entorno, 0 sólo adyacente, 7 no localizada, 47 no concluyente. Las filas van en orden alfabético y no hay puntaje agregado.
 
 > No hay total por fila ni por columna, y la falta es el diseño: sumar capacidades produciría un número por institución, y ese número sería un ranking del trabajo de campo tanto como del trabajo institucional.
 
@@ -392,7 +392,7 @@ Matriz de 11 instituciones por 10 capacidades, 110 celdas: 31 en operación, 10 
 
 *¿Qué capacidades están extendidas y cuáles son todavía excepcionales?*
 
-Alcance declarado: 7 de 11 en operación. Formación estructurada: 6 de 11 en operación. Unidad especializada: 3 de 11 en operación. Presencia en pregrado: 3 de 11 en operación. Herramienta desplegada: 3 de 11 en operación. Adopción en la enseñanza: 3 de 11 en operación. Investigación: 3 de 11 en operación. Transferencia: 2 de 11 en operación. Norma propia: 1 de 11 en operación. Evaluación de efecto: 0 de 11 en operación.
+Alcance declarado: 7 de 11 en operación. Formación estructurada: 6 de 11 en operación. Unidad especializada: 5 de 11 en operación. Presencia en pregrado: 3 de 11 en operación. Herramienta desplegada: 3 de 11 en operación. Adopción en la enseñanza: 3 de 11 en operación. Investigación: 3 de 11 en operación. Transferencia: 2 de 11 en operación. Norma propia: 1 de 11 en operación. Evaluación de efecto: 0 de 11 en operación.
 
 > La parte gris de cada barra importa tanto como la azul: una capacidad puede parecer rara porque lo es o porque no se buscó, y aquí las dos cosas se leen a la vez. Se ordena por capacidades en operación, que es lo único que la barra permite comparar sin ambigüedad; no hay ninguna institución nombrada, de modo que no ordena Facultades sino cuánto se ha extendido cada cosa.
 
@@ -417,7 +417,7 @@ Si cuánto se investiga y cuánto hacen las Facultades fueran la misma variable,
 
 *¿Cuánto de lo que vemos es lo que hacen las Facultades, y cuánto es dónde miramos?*
 
-Dispersión de las once instituciones. En horizontal, rutas del protocolo recorridas, de trece; en vertical, capacidades en operación, de diez. Universidad Autónoma de Chile recorre 2 rutas y acredita 4 capacidades; Universidad de Chile recorre 11 y acredita 3. El halo gris de cada punto es proporcional a sus celdas no concluyentes.
+Dispersión de las once instituciones. En horizontal, rutas del protocolo recorridas, de trece; en vertical, capacidades en operación, de diez. Universidad Autónoma de Chile recorre 2 rutas y acredita 4 capacidades; Universidad de Chile recorre 11 y acredita 4. El halo gris de cada punto es proporcional a sus celdas no concluyentes.
 
 > El eje vertical no es una nota ni un puntaje: es el recuento de preguntas que el corpus contesta afirmativamente, y está acotado por arriba por lo que se buscó. Cada punto lleva un halo gris proporcional a sus celdas sin concluir; un punto bajo con halo grande no dice «hace poco», dice «no lo sabemos».
 
@@ -756,7 +756,7 @@ Rutas sin recorrer: fuentes-externas-contraste, malla-curricular, proyectos-fond
 |---|---|---|---|---|---|
 | Programa de Derecho, Ciencia y Tecnología | 3 | CENTRO_PROGRAMA | ADYACENTE | CONTINUA | src-puc-chile-001, src-puc-chile-009 |
 | Diplomado en Derecho e Inteligencia Artificial | 3 | CENTRO_PROGRAMA | AMBOS | CONTINUA | src-puc-chile-002, src-puc-chile-003, src-puc-chile-011 |
-| Departamento de Derecho y Tecnología | 3 | FACULTAD_DERECHO | ADYACENTE | NUEVA | src-puc-chile-004, src-puc-chile-005, src-puc-chile-007 |
+| Departamento de Derecho y Tecnología | 3 | FACULTAD_DERECHO | DERECHO_DE_IA | NUEVA | src-puc-chile-004, src-puc-chile-005, src-puc-chile-007 |
 | Guía ética para el uso de IA generativa | 3 | FACULTAD_DERECHO | IA_PARA_DERECHO | NUEVA | src-puc-chile-008 |
 | Opción declarable de IA en el formulario de condiciones y evaluaciones | 2 | FACULTAD_DERECHO | IA_PARA_DERECHO | NUEVA | src-puc-chile-006 |
 | AyudantIA UC | 2 | INSTITUCIONAL_UNIVERSIDAD | IA_PARA_DERECHO | DESCONOCIDA | src-puc-chile-012 |
@@ -766,7 +766,7 @@ Rutas sin recorrer: fuentes-externas-contraste, malla-curricular, proyectos-fond
 
 - **Programa de Derecho, Ciencia y Tecnología.** Estructura matriz con iniciativas de IA específicas. Fecha de inicio no determinada en las fuentes revisadas.
 - **Diplomado en Derecho e Inteligencia Artificial.** Único eje del corpus con serie temporal: dos graduaciones sucesivas más una cohorte en curso.
-- **Departamento de Derecho y Tecnología.** Unidad orgánica con mandato que incluye IA. Consta en la estructura orgánica publicada; falta el documento constitutivo (L-6).
+- **Departamento de Derecho y Tecnología.** Reclasificada 04-09-2026 (ISSUE-024). Unidad orgánica con mandato publicado que incluye inteligencia artificial
 - **Guía ética para el uso de IA generativa.** Gobernanza dictada por la propia Facultad, no por la universidad. Es el caso más claro del corpus de política facultativa.
 - **Opción declarable de IA en el formulario de condiciones y evaluaciones.** Prueba el mecanismo, no su uso. Cuántos cursos lo activaron queda pendiente.
 - **AyudantIA UC.** La fuente no identifica a la Facultad de Derecho: se atribuye a la universidad. Su alcance sobre Derecho está pendiente.
@@ -843,14 +843,14 @@ Rutas sin recorrer: centros-laboratorios, fuentes-externas-contraste, integridad
 | Asistentes de IA generativa integrados en Canvas | 2 | FACULTAD_DERECHO | IA_PARA_DERECHO | DESCONOCIDA | src-unab-001 |
 | Asesor Virtual de Insolvencia | 2 | FACULTAD_DERECHO | IA_PARA_DERECHO | NUEVA | src-unab-002 |
 | MIAsistentes | 1 | INSTITUCIONAL_UNIVERSIDAD | IA_PARA_DERECHO | NUEVA | src-unab-003 |
-| Diplomado en Derecho, Innovación y Tecnología | 1 | FACULTAD_DERECHO | ADYACENTE | DESCONOCIDA | src-unab-004 |
+| Diplomado en Derecho, Innovación y Tecnología | 1 | FACULTAD_DERECHO | IA_PARA_DERECHO | DESCONOCIDA | src-unab-004 |
 
 #### Advertencias de lectura
 
 - **Asistentes de IA generativa integrados en Canvas.** La cuenta pública es la institución describiéndose a sí misma. Asignaturas nombradas es más de lo que consta en el resto del corpus.
 - **Asesor Virtual de Insolvencia.** Transferencia a un servicio público con IA aplicada al Derecho.
 - **MIAsistentes.** Capacidad de toda la universidad. No se atribuye adicionalmente a Derecho.
-- **Diplomado en Derecho, Innovación y Tecnología.** Recuperada en la ronda 3. Falta comprobar si la IA es componente sustantivo: por ahora ADYACENTE.
+- **Diplomado en Derecho, Innovación y Tecnología.** Reclasificada 04-09-2026 (ISSUE-024) por decisión editorial
 
 ### Universidad Autónoma de Chile
 
@@ -909,7 +909,7 @@ Rutas sin recorrer: fuentes-externas-contraste, malla-curricular.
 
 | Iniciativa | Nivel | Atribución | Dirección | Trayectoria | Fuentes |
 |---|---|---|---|---|---|
-| Centro de Estudios en Derecho, Tecnología y Sociedad (CE3) | 3 | CENTRO_PROGRAMA | ADYACENTE | CONTINUA | src-uchile-001, src-uchile-007, src-uchile-011, src-uchile-010, src-uchile-012 |
+| Centro de Estudios en Derecho, Tecnología y Sociedad (CE3) | 3 | CENTRO_PROGRAMA | DERECHO_DE_IA | CONTINUA | src-uchile-001, src-uchile-007, src-uchile-011, src-uchile-010, src-uchile-012 |
 | Diploma en Derecho e Inteligencia Artificial | 2 | CENTRO_PROGRAMA | AMBOS | DESCONOCIDA | src-uchile-002, src-uchile-003 |
 | Proyecto sobre IA, responsabilidad civil y derecho del consumo | 2 | EQUIPO | DERECHO_DE_IA | CONTINUA | src-uchile-004, src-uchile-008, src-uchile-009 |
 | Línea de tesis sobre inteligencia artificial | 2 | CENTRO_PROGRAMA | AMBOS | CONTINUA | src-uchile-005, src-uchile-006 |
@@ -920,7 +920,7 @@ Rutas sin recorrer: fuentes-externas-contraste, malla-curricular.
 
 #### Advertencias de lectura
 
-- **Centro de Estudios en Derecho, Tecnología y Sociedad (CE3).** Centro histórico de derecho y tecnología; adoptó el nombre CE3 el 01-01-2025. Su especificidad en IA se evalúa aparte.
+- **Centro de Estudios en Derecho, Tecnología y Sociedad (CE3).** Reclasificado 04-09-2026 (ISSUE-024). Centro histórico de derecho y tecnología; adoptó el nombre CE3 el 01-01-2025. Su especificidad en IA consta en el corpus con dos evidencias propias: ev-uchile-004
 - **Diploma en Derecho e Inteligencia Artificial.** Verificada 04-09-2026: baja del nivel 3 al 2. La edición 2022 está cerrada («Diploma 2022 Cerrado») y la de 2026 es un anuncio que la propia página declara referencial, con reserva de suspensión. Entre ambas no hay edición localizada y cambia la unidad que lo dicta: Centro de Estudios en Derecho Informático en 2022, CE3 en 2026. Sin continuidad no hay institucionalización (kit §11).
 - **Proyecto sobre IA, responsabilidad civil y derecho del consumo.** Proyecto de internacionalización adjudicado al Departamento; monto no localizado.
 - **Línea de tesis sobre inteligencia artificial.** Categoría específica de IA dentro del repositorio del centro.
@@ -1265,13 +1265,13 @@ La matriz del cuerpo en texto, para quien quiera el dato exacto, imprima en blan
 
 | Institución | Unidad | Norma | Pregrado | Formación | Herramienta | Adopción | Alcance | I+D | Transferencia | Evaluación |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Pontificia Universidad Católica de Chile | Adyacente · | Operación · | No concluyente | Operación · | Entorno · | Operación | Operación · | No concluyente | Incipiente | No concluyente |
+| Pontificia Universidad Católica de Chile | Operación · | Operación · | No concluyente | Operación · | Entorno · | Operación | Operación · | No concluyente | Incipiente | No concluyente |
 | Pontificia Universidad Católica de Valparaíso | Operación · | Entorno · | Operación · | Operación · | Operación · | Entorno · | Operación · | No concluyente | Operación · | No concluyente |
 | Universidad Adolfo Ibáñez | No concluyente | No concluyente | No concluyente | Operación | No localizada | No concluyente | No localizada | Entorno | Incipiente · | No concluyente |
-| Universidad Andrés Bello | No concluyente | No concluyente | Operación | Adyacente · | Operación | Entorno · | Operación | No concluyente | Operación | No concluyente |
+| Universidad Andrés Bello | No concluyente | No concluyente | Operación | Incipiente · | Operación | Entorno · | Operación | No concluyente | Operación | No concluyente |
 | Universidad Autónoma de Chile | No concluyente | No concluyente | Operación | Operación | No concluyente | Operación | Operación | No concluyente | No concluyente | No concluyente |
 | Universidad Central de Chile | Operación · | No concluyente | No concluyente | No concluyente | Operación | Operación | Operación · | Operación | No concluyente | No localizada |
-| Universidad de Chile | Adyacente | Entorno · | No concluyente | Operación · | No localizada | Entorno · | Operación | Operación | Incipiente · | No localizada |
+| Universidad de Chile | Operación | Entorno · | No concluyente | Operación · | No localizada | Entorno · | Operación | Operación | Incipiente · | No localizada |
 | Universidad de Concepción | No concluyente | No concluyente | No concluyente | Incipiente | Entorno · | Incipiente | Entorno · | No concluyente | Incipiente · | No concluyente |
 | Universidad de los Andes | No concluyente | No concluyente | No concluyente | Operación | Entorno · | No concluyente | No localizada | Operación | Incipiente | No concluyente |
 | Universidad del Desarrollo | No concluyente | No concluyente | Incipiente · | No concluyente | Entorno | No concluyente | No localizada | No concluyente | Entorno | No concluyente |

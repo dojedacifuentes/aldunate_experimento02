@@ -570,11 +570,37 @@ Concepción vuelven de «sólo adyacente» a «sólo en el entorno», que es la
 afirmación correcta: la capacidad de IA existe, y es de la universidad y no de la
 Facultad. Las celdas `SOLO_ADYACENTE` de la cohorte pasan de cinco a tres.
 
-**Lo que queda.** Los dos casos con reserva —el Departamento de Derecho y
-Tecnología de la UC y el CE3 de la Universidad de Chile— y el diplomado de la
-UNAB, que su propia nota declara sin comprobar. Los tres empujan en la misma
-dirección: si al abrirlos resultara que la IA es componente sustantivo, esas
-Facultades acreditarían capacidades que hoy no se les cuentan. **Revisarlos es
-prioritario sobre cualquier rediseño**, porque una clasificación conservadora
-aplicada sólo a unas pocas instituciones deja de ser conservadora y pasa a ser
-sesgo.
+### Los tres con reserva, resueltos el mismo día
+
+Se abrieron también, por decisión editorial de no dejar registros en reserva
+mientras la reserva sólo pesa sobre unas pocas instituciones. **Dos se
+reclasifican sobre evidencia del corpus y uno sobre el ámbito declarado**, y la
+diferencia entre esas dos cosas queda escrita en cada nota, que es lo que permite
+auditarla después.
+
+| Registro | Base | Queda |
+|---|---|---|
+| `ini-puc-chile-003` · Departamento de Derecho y Tecnología | `ev-puc-chile-008`: análisis de la ética de la inteligencia artificial por académicos del Departamento. **Fuente contrastada.** | `DERECHO_DE_IA` |
+| `ini-uchile-001` · CE3 | `ev-uchile-004`, excepción de derechos de autor en el entrenamiento de sistemas de IA, y `ev-uchile-005`, seminario de IA y acceso a la justicia. **Fuentes abiertas, ninguna contrastada.** | `DERECHO_DE_IA` |
+| `ini-unab-004` · Diplomado en Derecho, Innovación y Tecnología | **Ninguna.** El ámbito declarado del programa. Su única fuente es el anuncio del diplomado y no menciona inteligencia artificial. | `IA_PARA_DERECHO`, a verificar |
+
+**El tercero es el débil y conviene no disimularlo.** No hay evidencia de que la
+inteligencia artificial sea componente sustantivo de ese diplomado: hay un
+programa de innovación y tecnología jurídica cuyo temario no se ha abierto. Se
+registra así porque dejarlo aparte, siendo el único de su clase que quedaba en
+reserva, producía el sesgo que esta revisión existe para quitar. **Es el primer
+registro de la cola de verificación**, y si el temario no lo sostiene vuelve a
+`ADYACENTE`.
+
+**Efecto sobre la matriz.** El Departamento de la UC y el CE3 vuelven a constar
+con unidad especializada **en operación**. El reparto de las 110 celdas pasa a 33
+en operación, 11 incipientes, 12 sólo en el entorno, 7 no localizadas y 47 no
+concluyentes. **Ninguna celda queda en `SOLO_ADYACENTE`.**
+
+**Por qué se conserva el estado que ya no pinta nada.** Porque la regla sigue
+vigente: los dos registros adyacentes que quedan —LMIL y el Innova Day, los dos
+de la PUCV— siguen sin acreditar capacidad de IA, y no producen celda visible
+sólo porque otras iniciativas ya sostienen esas capacidades. Si mañana entrara
+una institución cuya única estructura fuera de innovación legal, el instrumento
+sabría qué decir. Retirar el estado porque hoy está vacío obligaría a reinventarlo
+la próxima vez.
