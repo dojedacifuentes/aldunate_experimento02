@@ -278,3 +278,34 @@ de la redacción afortunada de su propia afirmación.
 **Próximo paso:** buscar la ficha metodológica de esa medición. Sin diseño,
 muestra y control declarados, la cifra no es publicable como evidencia de efecto
 ni siquiera fuera del ámbito jurídico.
+
+---
+
+## ISSUE-017 — El manifiesto de integridad fallaba al descargarlo de producción
+
+**Estado:** CERRADO el 04-09-2026 · **Impacto:** alto
+
+Los seis CSV del paquete v0.6.0 se publicaron con checksums que no cuadraban con
+los bytes que servía Vercel. El paquete verificaba en el equipo del autor y
+fallaba en cuanto alguien lo descargaba.
+
+**Causa.** `core.autocrlf` está activo en este equipo. El exportador escribía los
+CSV copiándolos del dataset canónico, que lleva CRLF, y calculaba el checksum
+sobre esos bytes. Git los convertía a LF al guardarlos, y Vercel servía LF.
+2568 bytes contra 2556: doce líneas, doce retornos de carro.
+
+**Por qué no se vio antes.** El paquete de la v0.5.0 llegó a este repositorio
+dentro de un *bundle*, que transporta los blobs tal cual: sus CSV conservaron
+CRLF y su manifiesto cuadraba. El defecto apareció al regenerar el paquete y
+guardarlo con git en un equipo con conversión activa.
+
+**Cierre.** `.gitattributes` desactiva la conversión bajo `public/descargas/` y
+en el dataset canónico. El exportador normaliza los CSV a LF al copiarlos, de
+modo que el paquete usa un solo final de línea —el mismo del Markdown, el HTML y
+el JSON— y su manifiesto describe bytes que no dependen del sistema operativo.
+Tres pruebas nuevas comprueban que cada checksum cuadre con su archivo y que no
+quede ningún CRLF en el paquete.
+
+**Lección.** Comprobar el paquete en el disco donde se generó no comprueba nada:
+hay que descargarlo de producción y ejecutar `sha256sum -c`. Un control de
+integridad que falla es peor que no tenerlo, porque enseña a ignorarlo.

@@ -65,6 +65,17 @@ las fuentes verificadas, el estado y la nota de cita. Ahora se derivan.
 **Corregido · la página tenía dos secciones «Metodología» y dos sobre la PUCV**,
 y el bloque de descargas seguía sirviendo los archivos de la v0.5.0.
 
+**Corregido · el manifiesto de integridad fallaba en producción.** Los seis CSV
+del paquete se publicaron con checksums que no cuadraban con lo que Vercel
+servía. No era un error de cálculo: `core.autocrlf` convertía los archivos a LF
+al guardarlos en git mientras el manifiesto describía los CRLF que había escrito
+el exportador, de modo que el paquete verificaba en el equipo del autor y
+fallaba al descargarlo. Sólo se vio bajando el paquete de producción y
+ejecutando `sha256sum -c`. Ahora `.gitattributes` desactiva toda conversión bajo
+`public/descargas/`, el exportador normaliza los CSV a LF para que el paquete
+sea portable, y tres pruebas comprueban que cada checksum cuadre con su archivo.
+Un control de integridad que falla es peor que no tenerlo: enseña a ignorarlo.
+
 **Añadido · ocho pruebas que atan la prosa a los datos**: ninguna conclusión
 puede afirmar inexistencia, cada una debe citar afirmaciones que existan, la
 prosa no puede escribir a mano un número que el dataset ya conoce, y la sección
