@@ -2532,7 +2532,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "universityId": "udec",
     "name": "[genIA]",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
-    "direction": "ADYACENTE",
+    "direction": "IA_PARA_DERECHO",
     "dimension": "uso-institucional",
     "mechanism": "HERRAMIENTA",
     "startDate": "2026-02-10",
@@ -2547,7 +2547,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "sourceIds": [
       "src-udec-004"
     ],
-    "notes": "Programa interdisciplinario de toda la universidad. No es una estructura de Derecho: reclasificado ADYACENTE."
+    "notes": "Reverificada 04-09-2026 (ISSUE-024). Programa interdisciplinario de toda la universidad"
   }
 ];
 
@@ -4402,8 +4402,8 @@ export const informe01Recuento: Informe01Recuento = {
   },
   "iniciativasPorDireccion": {
     "AMBOS": 11,
-    "ADYACENTE": 7,
-    "IA_PARA_DERECHO": 28,
+    "ADYACENTE": 6,
+    "IA_PARA_DERECHO": 29,
     "DERECHO_DE_IA": 7
   },
   "dimensionesConEvidencia": 6,

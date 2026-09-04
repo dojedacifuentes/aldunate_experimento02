@@ -2538,7 +2538,7 @@
       "university_id": "udec",
       "name": "[genIA]",
       "institutional_level": "INSTITUCIONAL_UNIVERSIDAD",
-      "direction": "ADYACENTE",
+      "direction": "IA_PARA_DERECHO",
       "primary_dimension": "uso-institucional",
       "mechanism_type": "HERRAMIENTA",
       "start_date": "2026-02-10",
@@ -2552,7 +2552,7 @@
       "outcomes": "No publicados",
       "workflow_status": "PROPUESTO",
       "source_ids": "src-udec-004",
-      "notes": "Programa interdisciplinario de toda la universidad. No es una estructura de Derecho: reclasificado ADYACENTE."
+      "notes": "Reverificada 04-09-2026 (ISSUE-024). Programa interdisciplinario de toda la universidad"
     }
   ],
   "evidencias": [

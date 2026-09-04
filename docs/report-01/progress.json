@@ -6,7 +6,7 @@
   "version": "0.8.0",
   "editorial_status": "borrador académico para revisión",
   "cutoff_date": "2026-09-01",
-  "updated_at": "2026-09-04T11:30:00-04:00",
+  "updated_at": "2026-09-04T13:10:00-04:00",
   "protocol": {
     "id": "METODOLOGIA_IA_DERECHO_V2.1",
     "supersedes": "METODOLOGIA_IA_DERECHO_V2.0",
@@ -33,8 +33,8 @@
     "preview_note": "Vercel emite un preview inmutable por commit, de modo que la URL cambia con cada push y no se fija aqui. Se consulta en la API de despliegues de GitHub —el repositorio es publico—: /deployments y luego /deployments/<id>/statuses. Esta detras de la proteccion SSO de Vercel: se abre con la sesion del autor, no con una peticion anonima."
   },
   "current_phase": "instrumento_revisado_datos_pendientes",
-  "last_completed_task": "T-040_editorial_system_from_report_02",
-  "next_task": "T-041_simplify_capability_model_and_editorial_architecture",
+  "last_completed_task": "T-042_adjacency_records_reverified",
+  "next_task": "T-043_simplify_capability_model",
   "counts": {
     "universities": 11,
     "sources": 74,
@@ -66,8 +66,8 @@
     "capability_cells_by_state": {
       "EN_OPERACION": 31,
       "INCIPIENTE": 10,
-      "SOLO_ENTORNO": 10,
-      "SOLO_ADYACENTE": 5,
+      "SOLO_ENTORNO": 12,
+      "SOLO_ADYACENTE": 3,
       "NO_LOCALIZADA": 7,
       "NO_CONCLUYENTE": 47
     },
@@ -85,7 +85,7 @@
     "figures": 9,
     "initiatives_dated": 49,
     "initiatives_started_2025_or_later": 41,
-    "tests": 145
+    "tests": 147
   },
   "verification_by_university": {
     "pucv": [
@@ -190,7 +190,9 @@
     "T-037_typographic_pass_and_preview",
     "T-038_contrast_fix_and_production_release",
     "T-039_adjacency_rule_and_privacy_scrub",
-    "T-040_editorial_system_from_report_02"
+    "T-040_editorial_system_from_report_02",
+    "T-041_indice_conclusiones_graficos",
+    "T-042_adjacency_records_reverified"
   ],
   "in_progress": [
     "T-026_substantive_verification_38_sources · 38 de 74, sin avance en la v0.7.0"
@@ -202,8 +204,7 @@
     "ISSUE-022_c4_c5_open_where_route_not_walked · exige recorrer repositorios-publicaciones",
     "ISSUE-003_cned_403 · exige descarga manual desde navegador",
     "ISSUE-009_frozen_2025_baseline · requiere decisión humana",
-    "ISSUE-011_docx_chain_requires_word · sólo en el equipo del autor",
-    "ISSUE-024_direction_overloaded_genIA · «ADYACENTE» se uso para decir «no es de Derecho», que es otro eje"
+    "ISSUE-011_docx_chain_requires_word · sólo en el equipo del autor"
   ],
   "canonical_files": [
     "content/reports/01_ia_escuelas_derecho_chile/canonical/kit-canonico-v1.0.0.md",

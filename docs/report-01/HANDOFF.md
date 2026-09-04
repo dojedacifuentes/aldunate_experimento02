@@ -81,7 +81,7 @@ mismo build.
 | 0 | registros `ACEPTADO` |
 | 19 / 21 / 13 / **0** | iniciativas por peldaño 1 / 2 / 3 / **4** |
 | **10 × 11 = 110** | **celdas de la matriz de capacidades** |
-| 31 / 10 / 10 / **5** / 7 / **47** | en operación / incipiente / sólo entorno / **sólo adyacente** / no localizada / **no concluyente** |
+| 31 / 10 / 12 / **3** / 7 / **47** | en operación / incipiente / sólo entorno / **sólo adyacente** / no localizada / **no concluyente** |
 | 3,7 : 1 | razón de cobertura piloto frente al resto |
 
 **Validaciones al cierre:** typecheck en verde · lint 0 errores y 8 avisos

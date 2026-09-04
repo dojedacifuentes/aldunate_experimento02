@@ -504,9 +504,9 @@ modo que la corrección alcanza a la web, al HTML y al PDF a la vez.
 
 ---
 
-## ISSUE-024 — El campo `direction` carga dos preguntas distintas
+## ISSUE-024 — El campo `direction` cargaba dos preguntas distintas
 
-**Estado:** OPEN · **Impacto:** medio · **Afecta a la matriz de capacidades**
+**Estado:** CERRADO el 04-09-2026 · **Impacto:** medio · **Afectaba a la matriz**
 
 `direction` responde a «¿qué relación tiene esta iniciativa con la inteligencia
 artificial?», con cuatro valores: la usa, la estudia como objeto jurídico, ambas,
@@ -539,3 +539,42 @@ artificial y no a la pregunta sobre pertenencia a Derecho. Empezar por
 **No hacer.** No reclasificar en bloque sin abrir las fuentes. El reparto actual
 —siete registros en cinco instituciones— es lo que hace que la regla no favorezca
 a nadie, y tocarlo a ojo es justamente el riesgo que la regla existe para evitar.
+
+
+### Cierre · los siete registros, uno por uno
+
+Se abrieron los siete `ADYACENTE` contra sus fuentes. **Seis estaban bien
+clasificados y uno no**, y conviene dejar dicho el criterio con el que se
+revisaron, porque no es obvio: la pregunta de `direction` no es «¿esto es de
+Derecho?» —eso lo responde `institutional_level`— sino «¿esto tiene que ver con
+la inteligencia artificial?».
+
+| Registro | Veredicto |
+|---|---|
+| `ini-pucv-002` · LMIL | **Correcto.** Laboratorio de innovación y gestión legal. Que comparta una adjudicación con el Programa de IA no lo vuelve un programa de IA. |
+| `ini-pucv-009` · Innova Day | **Correcto.** La nota ya razonaba el caso: sólo un panel del certamen trata automatización e IA, y un panel no reclasifica el conjunto. |
+| `ini-puc-chile-001` · Programa de Derecho, Ciencia y Tecnología | **Correcto.** Estructura matriz más amplia que la IA, con iniciativas de IA específicas colgando de ella, que sí se registran aparte. |
+| `ini-puc-chile-003` · Departamento de Derecho y Tecnología | **Correcto**, y es el más discutible de los seis: su mandato publicado incluye IA, pero la unidad es de tecnología en general. |
+| `ini-uchile-001` · CE3 | **Correcto**, con la misma reserva. El centro produce trabajo específico de IA —dos fuentes del corpus— y su objeto declarado es más ancho. |
+| `ini-unab-004` · Diplomado en Derecho, Innovación y Tecnología | **Correcto y provisional.** La propia nota lo declara: «falta comprobar si la IA es componente sustantivo». Sigue pendiente de verificación. |
+| `ini-udec-004` · [genIA] | **Mal clasificado. Corregido.** |
+
+**El que estaba mal.** La nota decía: «Programa interdisciplinario de toda la
+universidad. No es una estructura de Derecho: reclasificado ADYACENTE». El
+motivo es cierto y pertenece a otro campo: `institutional_level` ya declaraba
+`INSTITUCIONAL_UNIVERSIDAD`. Un programa de IA generativa no es adyacente a la
+inteligencia artificial. Pasa a `IA_PARA_DERECHO`.
+
+**Efecto.** Las celdas de herramienta y de alcance declarado de la Universidad de
+Concepción vuelven de «sólo adyacente» a «sólo en el entorno», que es la
+afirmación correcta: la capacidad de IA existe, y es de la universidad y no de la
+Facultad. Las celdas `SOLO_ADYACENTE` de la cohorte pasan de cinco a tres.
+
+**Lo que queda.** Los dos casos con reserva —el Departamento de Derecho y
+Tecnología de la UC y el CE3 de la Universidad de Chile— y el diplomado de la
+UNAB, que su propia nota declara sin comprobar. Los tres empujan en la misma
+dirección: si al abrirlos resultara que la IA es componente sustantivo, esas
+Facultades acreditarían capacidades que hoy no se les cuentan. **Revisarlos es
+prioritario sobre cualquier rediseño**, porque una clasificación conservadora
+aplicada sólo a unas pocas instituciones deja de ser conservadora y pasa a ser
+sesgo.

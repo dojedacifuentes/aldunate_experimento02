@@ -121,7 +121,7 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-4 · Buena parte de lo que se atribuye a las Facultades pertenece a sus universidades.
 
-**Dato.** De las once herramientas del corpus, siete son capacidades de la universidad y no de la Facultad de Derecho. En total, 10 de las 110 celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.
+**Dato.** De las once herramientas del corpus, siete son capacidades de la universidad y no de la Facultad de Derecho. En total, 12 de las 110 celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.
 
 **Lectura.** Existe una capa de infraestructura universitaria —licencias generales, asistentes institucionales, lineamientos de rectoría— disponible para Derecho pero no desarrollada por Derecho. Confundir disponibilidad con adopción es el error más frecuente al leer estos anuncios, y es un error que se comete de buena fe: la nota de prensa que anuncia una licencia para toda la universidad no distingue quién la usará.
 
@@ -350,7 +350,7 @@ Reparto de las 53 iniciativas por peldaño de institucionalización: 1 19, 2 21,
 
 *¿Se está usando la IA para enseñar Derecho, o se la está estudiando como objeto jurídico?*
 
-Reparto de las 53 iniciativas por dirección: IA para el Derecho 28, Derecho de la IA 7, Ambas direcciones 11, Adyacente 7.
+Reparto de las 53 iniciativas por dirección: IA para el Derecho 29, Derecho de la IA 7, Ambas direcciones 11, Adyacente 6.
 
 > Cada iniciativa recibe una sola dirección, y las que integran las dos de forma sustantiva se registran como AMBOS en vez de contarse dos veces. La categoría ADYACENTE existe para lo contrario: tratar como inteligencia artificial una tecnología digital que no lo es —realidad virtual, un laboratorio de innovación legal, una plataforma de búsqueda— es el modo de inflar un mapa sin inventar una sola fuente.
 
@@ -384,7 +384,7 @@ Cada celda se calcula con una regla mecánica sobre el dataset. Una capacidad es
 
 *¿Qué capacidad institucional demuestra cada Facultad, y dónde no podemos saberlo?*
 
-Matriz de 11 instituciones por 10 capacidades, 110 celdas: 31 en operación, 10 incipiente, 10 sólo en el entorno, 5 sólo adyacente, 7 no localizada, 47 no concluyente. Las filas van en orden alfabético y no hay puntaje agregado.
+Matriz de 11 instituciones por 10 capacidades, 110 celdas: 31 en operación, 10 incipiente, 12 sólo en el entorno, 3 sólo adyacente, 7 no localizada, 47 no concluyente. Las filas van en orden alfabético y no hay puntaje agregado.
 
 > No hay total por fila ni por columna, y la falta es el diseño: sumar capacidades produciría un número por institución, y ese número sería un ranking del trabajo de campo tanto como del trabajo institucional.
 
@@ -944,13 +944,13 @@ Rutas sin recorrer: centros-laboratorios, fuentes-externas-contraste, integridad
 | Seminario «IA para Abogados» | 1 | FACULTAD_DERECHO | IA_PARA_DERECHO | NUEVA | src-udec-001 |
 | Seminario «Derecho en la Smart Era» | 1 | ESTUDIANTIL | AMBOS | DESCONOCIDA | src-udec-002 |
 | Taller de inteligencia artificial para académicos | 1 | FACULTAD_DERECHO | IA_PARA_DERECHO | DESCONOCIDA | src-udec-003 |
-| [genIA] | 2 | INSTITUCIONAL_UNIVERSIDAD | ADYACENTE | DESCONOCIDA | src-udec-004 |
+| [genIA] | 2 | INSTITUCIONAL_UNIVERSIDAD | IA_PARA_DERECHO | DESCONOCIDA | src-udec-004 |
 
 #### Advertencias de lectura
 
 - **Seminario «Derecho en la Smart Era».** Verificada 04-09-2026: ISSUE-002 cerrado, la página carga. Reatribuida de FACULTAD_DERECHO a ESTUDIANTIL: la organiza el Centro de Alumnas y Alumnos, no la Facultad. El año 2025 se infiere del día de la semana declarado, no está en la página.
 - **Taller de inteligencia artificial para académicos.** La fuente no declara fecha de publicación.
-- **[genIA].** Programa interdisciplinario de toda la universidad. No es una estructura de Derecho: reclasificado ADYACENTE.
+- **[genIA].** Reverificada 04-09-2026 (ISSUE-024). Programa interdisciplinario de toda la universidad
 
 ### Universidad de los Andes
 
@@ -1272,7 +1272,7 @@ La matriz del cuerpo en texto, para quien quiera el dato exacto, imprima en blan
 | Universidad Autónoma de Chile | No concluyente | No concluyente | Operación | Operación | No concluyente | Operación | Operación | No concluyente | No concluyente | No concluyente |
 | Universidad Central de Chile | Operación · | No concluyente | No concluyente | No concluyente | Operación | Operación | Operación · | Operación | No concluyente | No localizada |
 | Universidad de Chile | Adyacente | Entorno · | No concluyente | Operación · | No localizada | Entorno · | Operación | Operación | Incipiente · | No localizada |
-| Universidad de Concepción | No concluyente | No concluyente | No concluyente | Incipiente | Adyacente · | Incipiente | Adyacente · | No concluyente | Incipiente · | No concluyente |
+| Universidad de Concepción | No concluyente | No concluyente | No concluyente | Incipiente | Entorno · | Incipiente | Entorno · | No concluyente | Incipiente · | No concluyente |
 | Universidad de los Andes | No concluyente | No concluyente | No concluyente | Operación | Entorno · | No concluyente | No localizada | Operación | Incipiente | No concluyente |
 | Universidad del Desarrollo | No concluyente | No concluyente | Incipiente · | No concluyente | Entorno | No concluyente | No localizada | No concluyente | Entorno | No concluyente |
 | Universidad Diego Portales | Operación · | No concluyente | Incipiente · | No concluyente | No concluyente | No concluyente | Operación · | No concluyente | Incipiente | No concluyente |
