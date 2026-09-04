@@ -26,9 +26,25 @@ anunciado frente a ejecutado, y advertencia de lectura en `notes`.
 
 ---
 
-## ISSUE-002 — `src-udec-002` tiene el certificado TLS mal configurado
+## ISSUE-002 — `src-udec-002` tenía el certificado TLS mal configurado
 
-**Estado:** OPEN · **Impacto:** medio
+**Estado:** CERRADO el 04-09-2026 · **Impacto:** ninguno
+
+**Cierre.** Al abrir la fuente en la verificación sustantiva, la página carga sin
+error de certificado. El problema no se reproduce y `document_status` pasa de
+`inaccesible` a `vigente`.
+
+El cierre trajo un hallazgo mayor que el propio incidente: la organiza el **Centro
+de Alumnas y Alumnos de Derecho Concepción**, no la Facultad. `ini-udec-002` se
+reatribuye de `FACULTAD_DERECHO` a `ESTUDIANTIL`. Y la página declara «jueves 2 de
+octubre» sin año, de modo que el 2025 del registro es inferencia a partir del día
+de la semana, no dato publicado.
+
+De paso quedó aclarada una confusión del relevo anterior: el respaldo en
+`jur.udec.cl` que proponía buscar **es otra fuente**, `src-udec-001`, no un espejo
+de ésta. Ambas quedan verificadas y son hechos distintos.
+
+<details><summary>Diagnóstico original</summary>
 
 `juridicasysociales.udec.cl` presenta un certificado que no cubre el nombre de
 host (`SEC_E_WRONG_PRINCIPAL`). El dominio raíz falla igual. Con la verificación
@@ -40,6 +56,8 @@ advertencia de seguridad, y es una de las cuatro fuentes de la UdeC.
 
 **Próximo intento:** buscar el mismo hecho en `jur.udec.cl`, que sí responde
 correctamente, y usarlo como fuente principal dejando ésta como respaldo.
+
+</details>
 
 ---
 
@@ -172,3 +190,91 @@ un bloque de más arriba, arrastrando el ancho del documento.
 **Resuelto** con `relative` en los tres contenedores de tabla. Comprobado con
 capturas a 390 y 1280 px y en modo impresión, en las dos rutas: desbordamiento
 horizontal cero.
+
+---
+
+## ISSUE-013 — Cinco títulos del registro no eran los de la página
+
+**Estado:** CERRADO el 04-09-2026 · **Impacto:** medio
+
+La verificación encontró cinco fuentes cuyo `title` no coincidía con el titular
+publicado. Dos de ellas cambiaban el sentido del registro:
+
+- **`src-pucv-007`** figuraba como «Universidad presentó decálogo para el uso ético
+  de la inteligencia artificial». La página se titula «Con gran participación de
+  académicas y académicos se realizó Día de la IA»: el decálogo se presenta dentro
+  de un evento y no es el objeto de la publicación. Y «sugiere recomendaciones»:
+  es lineamiento, no política.
+- **`src-ucentral-003`** figuraba por su URL, `legal-tech`. La página se titula
+  «Programa de IA y LegalTech» y nombra la IA de forma explícita y reiterada. El
+  registro subestimaba a la Universidad Central.
+
+Los otros tres —`src-uchile-016`, `src-uandes-003`, `src-pucv-010`— eran títulos
+truncados o parafraseados. Todos corregidos.
+
+**Lección para el protocolo:** clasificar una unidad por el segmento de su URL es
+una fuente de error sistemático, y el sesgo que produce no es aleatorio: penaliza
+a las instituciones cuya página se investigó con menos detalle.
+
+---
+
+## ISSUE-014 — Cuatro fechas del registro no constaban en la fuente
+
+**Estado:** CERRADO el 04-09-2026 · **Impacto:** medio
+
+- `src-udec-004` (GenIA UdeC) traía `2026-02-10`. **La página no declara ninguna
+  fecha.** Las actividades datadas que muestra son de enero de 2025.
+- `src-uchile-015` (lineamientos de tesis) traía `2026` con precisión de año. **La
+  página no declara fecha.**
+- `src-ucentral-004` traía `FECHA_NO_DECLARADA`. La página **sí** declara
+  27-08-2025: la precisión sube.
+- `src-unab-004` traía `FECHA_NO_DECLARADA`. La página declara inicio el
+  28-08-2026.
+
+Dos fechas se borraron por falta de respaldo y dos se ganaron. El kit §14 es
+explícito —«no se inventan día ni mes»— y el corpus lo había incumplido en dos
+registros.
+
+---
+
+## ISSUE-015 — El LMIL cambió de unidad de dependencia entre 2022 y 2025
+
+**Estado:** OPEN · **Impacto:** medio
+
+`src-pucv-001` (2022) sitúa el Legal Management Innovation Lab en la **Dirección
+de Incubación y Negocios de la PUCV**, una unidad central, y no menciona la
+inteligencia artificial ni una vez: habla de transformación digital e innovación
+legal. `src-pucv-011` (2025) lo describe como laboratorio «de la Escuela de
+Derecho PUCV».
+
+No es un error del registro: es un traslado orgánico documentado por dos fuentes
+en fechas distintas, y el informe debe narrarlo como trayectoria en lugar de
+elegir una de las dos versiones.
+
+**Lo que falta:** el acto que formaliza el traslado. Sin él, la fecha en que el
+LMIL pasa a depender de Derecho es desconocida.
+
+---
+
+## ISSUE-016 — La única medición de efecto del corpus está fuera de las Facultades
+
+**Estado:** OPEN · **Impacto:** alto
+
+`src-unab-003` publica, sobre MIAsistentes, «20% más aprobación» en estudiantes
+que usaron la herramienta más de 30 veces, sobre más de 15.000 estudiantes y
+450.000 interacciones desde 2024. Es la única de las 74 fuentes con una medición
+de resultado.
+
+No mueve `clm-cohorte-001` —que habla de evaluación de efecto sobre el
+**aprendizaje jurídico**, y ésta es universitaria y no jurídica—, y además es
+correlacional y no causal: quien usa una herramienta treinta veces ya se
+diferencia de quien no la usa.
+
+**Por qué importa igual:** lo más cercano al nivel 4 de la escalera que existe en
+el corpus lo produjo una vicerrectoría de transformación digital, no una Facultad
+de Derecho. El informe está obligado a discutirlo en lugar de esconderlo detrás
+de la redacción afortunada de su propia afirmación.
+
+**Próximo paso:** buscar la ficha metodológica de esa medición. Sin diseño,
+muestra y control declarados, la cifra no es publicable como evidencia de efecto
+ni siquiera fuera del ámbito jurídico.

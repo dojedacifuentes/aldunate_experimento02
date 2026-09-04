@@ -148,10 +148,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "inaccesible",
     "confidence": 80,
-    "workflowStatus": "PROPUESTO",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
-    "notes": "Devuelve 403 a petición automatizada; el sitio es consultable desde navegador. Corte declarado de la base: 08-01-2026."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: devuelve HTTP 403 Forbidden a petición automatizada. ISSUE-003 confirmado y abierto. Consultable sólo desde navegador."
   },
   {
     "id": "src-puc-chile-001",
@@ -181,10 +181,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
-    "notes": "Acredita ejecución efectiva de la cohorte 2024, no sólo su oferta."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. «Más de 90 estudiantes de la generación 2024» en tres diplomados, uno de ellos el de Derecho e Inteligencia Artificial, por Educación Continua de la Facultad de Derecho UC."
   },
   {
     "id": "src-puc-chile-003",
@@ -198,10 +198,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3b",
-    "verifiedBy": "",
-    "notes": "Junto con src-puc-chile-002 forma serie temporal de dos cohortes."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. «Más de 100 estudiantes de la generación 2025» en dos diplomados, uno de ellos el de Derecho e IA. Con src-puc-chile-002 forma la única serie de dos cohortes con cifras publicadas del corpus. Ninguna de las dos páginas declara el año de inicio del programa."
   },
   {
     "id": "src-puc-chile-004",
@@ -215,10 +215,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3a; intento-3b",
-    "verifiedBy": "",
-    "notes": "Anuncio de creación. El acto formal —resolución u organigrama constitutivo— no se ha localizado (L-6)."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. NO se localiza acto formal: la página no cita decreto, acuerdo ni resolución. «Primero de esta temática en el país» es cita textual del decano, no hecho verificado, y no puede publicarse como dato. Es Departamento de Derecho y Tecnología, no de IA."
   },
   {
     "id": "src-puc-chile-005",
@@ -231,10 +231,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 70,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
-    "notes": "Lista el Departamento de Derecho y Tecnología como unidad formal. Es el respaldo orgánico de src-puc-chile-004."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. El organigrama publicado lista el Departamento de Derecho y Tecnología entre once departamentos, con director Raúl Madrid R. Es el respaldo estructural más fuerte del corpus. Pero no declara fecha de actualización, no cita decreto y ninguna unidad del organigrama lleva «inteligencia artificial» en el nombre."
   },
   {
     "id": "src-puc-chile-006",
@@ -265,10 +265,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
-    "notes": "Identifica a Raúl Madrid como director del Departamento de Derecho y Tecnología."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Seminario realizado el 10-04-2026. Confirma el Departamento: Raúl Madrid es «director del recientemente creado Departamento de Derecho y Tecnología». Actividad puntual, no línea permanente. Sin cifras de asistencia."
   },
   {
     "id": "src-puc-chile-008",
@@ -282,10 +282,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 85,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a; intento-3b",
-    "verifiedBy": "",
-    "notes": "Gobernanza específica de Facultad, no universitaria. Localizada por dos rondas independientes."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Único instrumento del corpus con órgano aprobador identificado —Comité Directivo y Consejo de la Facultad— y con sanción: el incumplimiento «constituirá infracción grave a los deberes de probidad académica». Matiz: «el profesor podrá determinar libremente los usos permitidos» en su curso."
   },
   {
     "id": "src-puc-chile-009",
@@ -332,10 +332,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 75,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
-    "notes": "Cohorte en ejecución entre el 04-08-2026 y el 10-12-2026, 180 horas, Facultad de Derecho como unidad responsable."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Unidad que dicta: Facultad de Derecho. La IA es el eje central, no un tema entre otros. 180 horas totales, arancel $2.390.000. Pero «Fecha de inicio: fecha por definir»: la ficha no acredita versión vigente ni serie."
   },
   {
     "id": "src-puc-chile-012",
@@ -348,10 +348,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 70,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
-    "notes": "Infraestructura central de la universidad. La fuente no identifica a la Facultad de Derecho ni cursos jurídicos: se atribuye a la universidad, no a la Facultad."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Centro de Desarrollo Docente, con la Universidad de Sídney y Microsoft sobre tecnología Cogniti. Sin mención de Derecho. Dato que faltaba: «actualmente está en FASE PILOTO con despliegue gradual». No es capacidad desplegada."
   },
   {
     "id": "src-uchile-001",
@@ -381,10 +381,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "historico",
     "confidence": 75,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
-    "notes": "No es duplicado de src-uchile-003: la URL difiere en una partícula y corresponde a la edición 2022. Juntas prueban continuidad."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. La página declara «Diploma 2022 Cerrado» y postulaciones cerradas: es archivo histórico. Lo dictaba el Centro de Estudios en Derecho Informático (Álvarez Valenzuela, Cerda Silva), no el CE3. Tres meses, 75 horas lectivas, 219 totales, 60 UF. No consta ninguna otra versión."
   },
   {
     "id": "src-uchile-003",
@@ -398,10 +398,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 75,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a",
-    "verifiedBy": "",
-    "notes": "Sustituye la dependencia en las versiones 2022 y 2023 como única prueba de continuidad."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Anuncio para el segundo semestre de 2026 bajo el CE3, coordinación de Danielle Zaror. La propia página advierte que «los datos informados en esta web son referenciales» y reserva la suspensión si no se alcanza un mínimo de estudiantes. No declara versiones anteriores. Entre 2022 y 2026 no hay edición localizada."
   },
   {
     "id": "src-uchile-004",
@@ -564,10 +564,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
-    "notes": "Estadías de cuatro a seis semanas con colaboración en proyectos, publicaciones y cursos."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Convocatoria abierta: «seleccionará a dos personas», estadías de 4 a 6 semanas entre julio de 2026 y mayo de 2027. Nada ejecutado. Además no es de IA sino de «temas que relacionen derecho y tecnologías digitales»: ADYACENTE."
   },
   {
     "id": "src-uchile-014",
@@ -592,20 +592,19 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "publisher": "Universidad de Chile",
     "type": "politica",
     "url": "https://uchile.cl/informacion-y-bibliotecas/lineamientos-uso-ia-en-tesis",
-    "publishedDate": "2026",
-    "datePrecision": "anio",
+    "datePrecision": "FECHA_NO_DECLARADA",
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 85,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
-    "notes": "Política universitaria aplicable a Derecho, no dictada por la Facultad de Derecho."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: la página no declara fecha; el año 2026 que traía el registro no tiene respaldo. Dictados por las Vicerrectorías de Asuntos Académicos y de Tecnologías de la Información. Alcance universitario, sin mención de Derecho."
   },
   {
     "id": "src-uchile-016",
     "universityId": "uchile",
-    "title": "Curso institucional sobre IA generativa en línea",
+    "title": "¡Atrévete a dar el salto con la IA Generativa!",
     "publisher": "Vicerrectoría de Tecnologías de la Información, Universidad de Chile",
     "type": "pagina-institucional",
     "url": "https://vti.uchile.cl/curso-sobre-ia-online",
@@ -614,10 +613,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 70,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
-    "notes": "Capacitación de 27 horas dirigida a toda la comunidad universitaria. Atribución a la universidad, no a Derecho."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: título corregido. Oficina de Inteligencia Artificial de la Vicerrectoría de Tecnologías de la Información. 27 horas. Toda la comunidad universitaria, sin mención de Derecho."
   },
   {
     "id": "src-udp-001",
@@ -631,10 +630,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
-    "notes": "El nombramiento y la creación de la Dirección están documentados; los cambios de malla que anuncia, no. El registro se parte en dos en vez de promediarse."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Sin acto formal declarado. Contenido de plan: «le hemos pedido a Rafael que asuma una nueva Dirección», con taller y curso por implementar."
   },
   {
     "id": "src-udp-002",
@@ -647,10 +646,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 70,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
-    "notes": "Anuncia trabajo desde el primer semestre, un taller de IA en escritura legal y formación posterior. Anuncio, no ejecución acreditada (L-3)."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. La página no declara fecha, no nombra un solo curso con semestre, créditos ni matrícula, y no menciona evaluación. Enuncia propósitos."
   },
   {
     "id": "src-udp-003",
@@ -706,7 +705,7 @@ export const informe01Fuentes: Informe01Fuente[] = [
   {
     "id": "src-uandes-003",
     "universityId": "uandes",
-    "title": "IA al servicio de la edificación: prototipo del CET e Ingeniería fue finalista en concurso del Gobierno y el BID",
+    "title": "Domus AI: la plataforma «anti permisología» que pone la inteligencia artificial al servicio de la construcción",
     "publisher": "Universidad de los Andes",
     "type": "noticia-institucional",
     "url": "https://uandes.cl/actualidad/noticias/ia-al-servicio-de-la-edificacion-prototipo-del-cet-e-ingenieria-fue-finalista-en-concurso-del-gobierno-y-el-bid",
@@ -715,10 +714,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
-    "notes": "DOMus AI lo desarrollan el CET e Ingeniería: la unidad principal no es Derecho. Se atribuye a la universidad."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: título corregido. Centro de Estudios Territoriales y Facultad de Ingeniería; la Facultad de Derecho no aparece. Finalista, no ganador, de Impacta GovTech. Objeto: permisos de edificación ante Direcciones de Obras Municipales. Materia administrativa, no enseñanza jurídica: ADYACENTE."
   },
   {
     "id": "src-uandes-004",
@@ -782,10 +781,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
-    "notes": "Convenio firmado el 06-01-2026. No hay evidencia pública de cobertura estudiantil, productos ni resultados: existir no es funcionar (L-3)."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. La página dice «el martes 6 de enero SE FIRMÓ un convenio de cooperación»: el acto está ejecutado. Lo que carece de evidencia pública es la actividad derivada —cobertura, cursos, productos—, no la firma."
   },
   {
     "id": "src-uai-003",
@@ -850,10 +849,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
-    "notes": "Capacidad de toda la universidad. No se atribuye a Derecho sin datos de aplicación específica."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Vicerrectorías de Transformación Digital y Académica; sin mención de Derecho. Única fuente de las 74 que publica una medición de resultado: «20% más aprobación» en quienes usaron la herramienta más de 30 veces, sobre más de 15.000 estudiantes y 450.000 interacciones desde 2024. Es universitaria y no jurídica, y correlacional, no causal. «Comenzó la implementación progresiva» en el segundo semestre de 2026."
   },
   {
     "id": "src-unab-004",
@@ -862,14 +861,15 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "publisher": "Postgrado UNAB",
     "type": "programa-postgrado",
     "url": "https://postgrado.unab.cl/programas/diplomado-en-derecho-innovacion-y-tecnologia",
-    "datePrecision": "FECHA_NO_DECLARADA",
+    "publishedDate": "2026-08-28",
+    "datePrecision": "dia",
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 75,
-    "workflowStatus": "PROPUESTO",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
-    "notes": "RECUPERADA EN LA RONDA 3: citada en la tabla-resumen de intento-2b sin registro propio, quedó fuera del inventario de 72. Falta comprobar si la IA es componente sustantivo o si el programa es ADYACENTE."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: inicio declarado 28-08-2026. Facultad de Derecho UNAB, dirección de Renzo Gandolfi. Un semestre, arancel $1.733.000. La IA es uno de seis temas y no tiene módulo propio publicado: no debe elevar madurez en IA."
   },
   {
     "id": "src-udd-001",
@@ -882,10 +882,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 75,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
-    "notes": "La malla declara «LegalTech + IA» con talleres propios, pero la página está orientada a Admisión 2027: prueba diseño curricular anunciado, no curso dictado (L-3)."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. La malla no se publica en la página. Aparecen «Talleres de Herramientas Digitales e Inteligencia Artificial en Derecho», sin créditos, semestre, matrícula ni constancia de obligatoriedad. Encuadre de promesa: «nueva malla que mira al futuro»."
   },
   {
     "id": "src-udd-002",
@@ -1026,7 +1026,7 @@ export const informe01Fuentes: Informe01Fuente[] = [
   {
     "id": "src-ucentral-003",
     "universityId": "ucentral",
-    "title": "Programa de IA & LegalTech · FACDEH",
+    "title": "Programa de IA y LegalTech · Facultad de Derecho y Humanidades",
     "publisher": "Facultad de Ciencias Jurídicas y Sociales, Universidad Central",
     "type": "pagina-institucional",
     "url": "https://facdeh.ucentral.cl/legal-tech",
@@ -1034,10 +1034,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 70,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
-    "notes": "La unidad vigente es Programa IA & LegalTech; sustituye la denominación «Cátedra LegalTech» del antecedente, que se conserva como antecedente."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. El registro anterior nombraba la unidad por su URL. La página se titula «Programa de IA y LegalTech» y nombra la IA de forma explícita y reiterada. Actividad fechada: Bélgica y España 23-07-2026, convenio con la Cámara de Comercio de Sevilla 10-07-2026, III Congreso Chileno de Tecnología y Derecho 2026. Sin director, dotación ni acto de creación publicados."
   },
   {
     "id": "src-ucentral-004",
@@ -1046,14 +1046,15 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "publisher": "Universidad Central de Chile",
     "type": "noticia-institucional",
     "url": "https://noticias.ucentral.cl/noticias/universidad-central-presenta-idea-ucen-nueva-plataforma-de-busqueda",
-    "datePrecision": "FECHA_NO_DECLARADA",
+    "publishedDate": "2025-08-27",
+    "datePrecision": "dia",
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "PROPUESTO",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
-    "notes": "RECUPERADA EN LA RONDA 3: citada en la tabla-resumen de intento-2b sin registro propio, quedó fuera del inventario de 72. Infraestructura de la universidad; falta comprobar vigencia en 2026 (L-10)."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: la página declara 27-08-2025; la precisión sube de no declarada a día. Dirección de Gestión de la Docencia y Unidad de Bibliotecas, con Clarivate. Sin mención de Derecho."
   },
   {
     "id": "src-pucv-001",
@@ -1067,10 +1068,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
-    "notes": "LMIL nace como laboratorio de transformación digital e innovación legal: ADYACENTE, no IA específica."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. En esta fuente de 2022 el LMIL depende de la Dirección de Incubación y Negocios de la PUCV, no de la Facultad, y la página NO menciona inteligencia artificial: habla de transformación digital e innovación legal. En src-pucv-011 (2025) el LMIL ya aparece como unidad de la Escuela de Derecho. Es un traslado orgánico, y el informe debe narrarlo."
   },
   {
     "id": "src-pucv-002",
@@ -1084,10 +1085,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
-    "notes": "Afirma que el Núcleo se oficializó en 2020. En 2026 la unidad es Programa DIAT, no «Centro DIAT»."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. En 2023 la unidad se llama NÚCLEO de Derecho, Inteligencia Artificial y Tecnología, no Programa; en 2024 ya aparece como Programa DIAT. Director: Johann Benfeld. La página afirma que es «iniciativa que se oficializa en el 2020» sin citar instrumento: es la única mención localizada a una oficialización y sigue sin documento."
   },
   {
     "id": "src-pucv-003",
@@ -1101,10 +1102,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3a",
-    "verifiedBy": "",
-    "notes": "Prompts Socráticos y chatbot en Filosofía del Derecho: IA aplicada dentro de una asignatura jurídica."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Ejecución, no anuncio: narra dos sesiones realizadas. Caso «Los Exploradores de Cavernas», ChatGPT 3.5, chatbot «Jaime». La página identifica como líderes del programa a Johann Benfeld, EDUARDO ALDUNATE y Diego Ojeda: obliga a declarar el conflicto de interés en la metodología. Sin matrícula, semestre ni evaluación."
   },
   {
     "id": "src-pucv-004",
@@ -1118,10 +1119,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
-    "notes": "Herramienta creada inicialmente para estudiantes de Derecho, con apoyo del Programa de Desarrollo Docente."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. ScribeClaroPUCV está desplegada y operativa, sin registro previo y con URL propia. Dirección de la profesora Claudia Poblete, coordinadora de Integridad Académica, Escuela de Derecho. Para estudiantes de Derecho desde primer año. Sin cifras de uso ni evaluación."
   },
   {
     "id": "src-pucv-005",
@@ -1135,10 +1136,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3a; intento-3b",
-    "verifiedBy": "",
-    "notes": "Edición 2025: tres jornadas y cerca de 90 participantes. Cuántos asistieron no dice si algo cambió."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Tres sesiones el 3, 10 y 24 de septiembre de 2025. «Cerca de 90 participantes», pero son «estudiantes de derecho de distintas universidades, egresados y profesionales»: mide alcance de la actividad, no cobertura de la Facultad."
   },
   {
     "id": "src-pucv-006",
@@ -1152,15 +1153,15 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a; intento-3b",
-    "verifiedBy": "",
-    "notes": "Adjudicación competitiva interna. Financiamiento concursable, no basal."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Fondos Concursables 2026 de Vinculación con el Medio, dos proyectos, con IA explícita. Dato nuevo: Innova Day va en su QUINTA versión y existe desde 2022. Colabora con la Facultad de Ingeniería."
   },
   {
     "id": "src-pucv-007",
     "universityId": "pucv",
-    "title": "Universidad presentó decálogo para el uso ético de la inteligencia artificial",
+    "title": "Con gran participación de académicas y académicos se realizó Día de la IA",
     "publisher": "Pontificia Universidad Católica de Valparaíso",
     "type": "noticia-institucional",
     "url": "https://pucv.cl/pucv/noticias/destacadas/universidad-presento-decalogo-para-el-uso-etico-de-la-inteligencia",
@@ -1169,10 +1170,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a; intento-3b",
-    "verifiedBy": "",
-    "notes": "Lineamiento universitario liderado desde la Unidad de Integridad Académica, con liderazgo de una profesora de Derecho. No es política propia de la Escuela de Derecho."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. El decálogo se presenta dentro del Día de la IA; no es el objeto de la publicación. La página dice que el decálogo «sugiere recomendaciones»: es lineamiento, no política. Elaborado por la Unidad de Integridad Académica, liderado por la profesora Claudia Poblete, de la Escuela de Derecho."
   },
   {
     "id": "src-pucv-008",
@@ -1186,10 +1187,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
-    "notes": "Workshop para alumni sobre manejo, gobernanza e implementación responsable de IA."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Workshop realizado, del profesor James M. Cooper (California Western School of Law), sobre gobernanza de IA en el ámbito legal. Escuela de Derecho PUCV con la Fundación R.P. Eduardo Lobos. Sin cifras."
   },
   {
     "id": "src-pucv-009",
@@ -1203,15 +1204,15 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
-    "notes": "FDI financiado por Mineduc para un componente ADYACENTE, no para IA específica."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Fondo de Desarrollo Institucional del Mineduc para internacionalización con metodología COIL. La página NO menciona inteligencia artificial: habla de Legal Tech y Legal Design. Y es anuncio: «inscribieron su participación». No sostiene financiamiento de IA."
   },
   {
     "id": "src-pucv-010",
     "universityId": "pucv",
-    "title": "Laboratorio de Innovación Legal y Programa de Derecho e Inteligencia Artificial se adjudican fondos",
+    "title": "Laboratorio de Innovación Legal y Programa de Derecho e Inteligencia Artificial se adjudican Fondos Concursables de Vinculación con el Medio PUCV",
     "publisher": "Facultad de Derecho PUCV",
     "type": "noticia-institucional",
     "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/laboratorio-de-innovacion-legal-y-programa-de-derecho-e-inteligencia",
@@ -1220,10 +1221,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
-    "notes": "Adjudicación 2025. Junto con src-pucv-006 documenta financiamiento competitivo en dos años consecutivos."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Adjudicación recibida el 04-08-2025 por el académico Adolfo Silva Walbaum. Declara destinatario: estudiantes de tercer a quinto año. Verificada 04-09-2026: título completado."
   },
   {
     "id": "src-pucv-011",
@@ -1236,10 +1237,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
-    "notes": "La actividad general es ADYACENTE; sólo el panel sobre automatización e IA genera evidencia específica. No reclasificar todo Innova Day como iniciativa de IA."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. IV versión de Innova Day; con src-pucv-006 documenta cinco versiones entre 2022 y 2026, la serie de continuidad más fuerte del corpus PUCV. Cifras: 9 proyectos estudiantiles, 10 profesionales, 326 y 809 votantes, participantes de seis países. Aquí el LMIL es «de la Escuela de Derecho PUCV»."
   },
   {
     "id": "src-pucv-012",
@@ -1269,10 +1270,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
-    "notes": "Demuestra acceso institucional desde marzo de 2026, no adopción efectiva en Derecho. Infraestructura, participación y uso son tres cosas distintas."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026. Habilitado por la Dirección de Servicios de Informática y Comunicaciones como estrategia institucional, para «la comunidad universitaria». Sin mención de Derecho y sin número de licencias."
   },
   {
     "id": "src-pucv-014",
@@ -1301,10 +1302,10 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
-    "notes": "Actividad del 21-04-2026: demostraciones de modelos de lenguaje para lectura, investigación y redacción jurídica."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026 en jur.udec.cl. Seminario realizado, «Inteligencia Artificial para Abogados: Leer, Investigar, Redactar y Argumentar con IA», con el fiscal José Aravena López. IA aplicada al Derecho, atribuida a la Facultad. La página no declara fecha ni cifras de asistencia."
   },
   {
     "id": "src-udec-002",
@@ -1316,12 +1317,12 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "publishedDate": "2025-10-02",
     "datePrecision": "dia",
     "accessedDate": "2026-09-01",
-    "documentStatus": "inaccesible",
+    "documentStatus": "vigente",
     "confidence": 50,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
-    "notes": "El certificado del servidor no cubre el nombre de host: el navegador mostrará una advertencia de seguridad. El contenido existe. Antes de publicar conviene buscar el mismo hecho en jur.udec.cl."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: ISSUE-002 cerrado, la página carga sin error de certificado. Organiza el Centro de Alumnas y Alumnos de Derecho Concepción: atribución ESTUDIANTIL, no de la Facultad. La página dice «jueves 2 de octubre» sin año; 2025 es inferencia a partir del día de la semana, no dato declarado."
   },
   {
     "id": "src-udec-003",
@@ -1346,15 +1347,14 @@ export const informe01Fuentes: Informe01Fuente[] = [
     "publisher": "Universidad de Concepción",
     "type": "pagina-institucional",
     "url": "https://genia.udec.cl",
-    "publishedDate": "2026-02-10",
-    "datePrecision": "dia",
+    "datePrecision": "FECHA_NO_DECLARADA",
     "accessedDate": "2026-09-01",
     "documentStatus": "vigente",
     "confidence": 70,
-    "workflowStatus": "FUENTE_ABIERTA",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
-    "notes": "Capacidad de toda la universidad, no estructura de Derecho. Reclasificada como ADYACENTE para la Facultad."
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
+    "notes": "Verificada 04-09-2026: la fecha 10-02-2026 que traía el registro NO figura en la página. GenIA es iniciativa transversal de la universidad, liderada desde la Vicerrectoría por Paulina Rincón; proyecto UCO 24101 y un MOOC. Actividades datadas: enero de 2025. Sin mención de Derecho."
   }
 ];
 
@@ -1395,7 +1395,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "trajectory": "CONTINUA",
     "audience": "Estudiantes y profesionales",
     "coverage": "No publicada",
-    "responsibleUnit": "Facultad de Derecho PUCV con Thomson Reuters",
+    "responsibleUnit": "LMIL · Dirección de Incubación y Negocios PUCV (2022) a Escuela de Derecho PUCV (2025)",
     "products": "Diplomado LMP; actividades de innovación legal",
     "outcomes": "No publicados",
     "workflowStatus": "PROPUESTO",
@@ -1404,7 +1404,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
       "src-pucv-009",
       "src-pucv-010"
     ],
-    "notes": "Laboratorio de transformación digital e innovación legal. ADYACENTE: la IA no es su componente sustantivo verificable."
+    "notes": "Verificada 04-09-2026. La fuente de 2022 lo sitúa en la Dirección de Incubación y Negocios y no menciona IA; la de 2025 lo describe como laboratorio de la Escuela de Derecho. Traslado orgánico documentado, no error de registro. Innova Day, su certamen, acredita cinco versiones entre 2022 y 2026."
   },
   {
     "id": "ini-pucv-003",
@@ -1740,8 +1740,8 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "direction": "AMBOS",
     "dimension": "formacion-continua",
     "startDate": "2022",
-    "ladder": 3,
-    "trajectory": "CONTINUA",
+    "ladder": 2,
+    "trajectory": "DESCONOCIDA",
     "audience": "Profesionales",
     "coverage": "No publicada",
     "responsibleUnit": "CE3, antes CEDI",
@@ -1752,7 +1752,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
       "src-uchile-002",
       "src-uchile-003"
     ],
-    "notes": "Dos URL distintas prueban dos ediciones. Fundirlas habría borrado la prueba de continuidad."
+    "notes": "Verificada 04-09-2026: baja del nivel 3 al 2. La edición 2022 está cerrada («Diploma 2022 Cerrado») y la de 2026 es un anuncio que la propia página declara referencial, con reserva de suspensión. Entre ambas no hay edición localizada y cambia la unidad que lo dicta: Centro de Estudios en Derecho Informático en 2022, CE3 en 2026. Sin continuidad no hay institucionalización (kit §11)."
   },
   {
     "id": "ini-uchile-003",
@@ -2437,7 +2437,7 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "id": "ini-udec-002",
     "universityId": "udec",
     "name": "Seminario «Derecho en la Smart Era»",
-    "attribution": "FACULTAD_DERECHO",
+    "attribution": "ESTUDIANTIL",
     "direction": "AMBOS",
     "dimension": "vinculacion",
     "startDate": "2025-10-02",
@@ -2446,14 +2446,14 @@ export const informe01Iniciativas: Informe01Iniciativa[] = [
     "trajectory": "DESCONOCIDA",
     "audience": "Comunidad jurídica",
     "coverage": "No publicada",
-    "responsibleUnit": "Facultad de Ciencias Jurídicas y Sociales UdeC",
+    "responsibleUnit": "Centro de Alumnas y Alumnos de Derecho Concepción",
     "products": "Seminario",
     "outcomes": "No publicados",
     "workflowStatus": "PROPUESTO",
     "sourceIds": [
       "src-udec-002"
     ],
-    "notes": "Su única fuente tiene el certificado del servidor mal configurado."
+    "notes": "Verificada 04-09-2026: ISSUE-002 cerrado, la página carga. Reatribuida de FACULTAD_DERECHO a ESTUDIANTIL: la organiza el Centro de Alumnas y Alumnos, no la Facultad. El año 2025 se infiere del día de la semana declarado, no está en la página."
   },
   {
     "id": "ini-udec-003",
@@ -2509,10 +2509,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La fuente oficial afirma que el Núcleo de Derecho, Inteligencia Artificial y Tecnología se oficializó en 2020, con objetivos regulatorios y de aplicación de IA a la docencia y la profesión.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "En 2026 la unidad es Programa, no Centro. El presupuesto basal no está públicamente determinado."
   },
   {
@@ -2525,10 +2525,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El Programa DIAT integra IA en Filosofía del Derecho mediante prompting y un chatbot de asignatura, con apoyo de un proyecto de innovación docente.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Experiencia acotada a una asignatura. Fuente única: no hay prueba pública de continuidad."
   },
   {
@@ -2541,10 +2541,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El Laboratorio de Innovación Legal y el Programa de Derecho e IA se adjudican fondos internos en 2025.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Junto con la adjudicación de 2026 documenta financiamiento competitivo en dos años consecutivos."
   },
   {
@@ -2557,10 +2557,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad y la Escuela de Derecho se adjudican dos proyectos de Vinculación con el Medio en 2026.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Financiamiento concursable, no basal. Los montos no están publicados."
   },
   {
@@ -2573,10 +2573,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad crea el Legal Management Innovation Lab como laboratorio de transformación digital, innovación legal y gestión de proyectos, en colaboración con Thomson Reuters.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "LMIL nace como innovación legal, no como IA específica: la clasificación es ADYACENTE."
   },
   {
@@ -2589,10 +2589,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El Legal Management Program y LMIL participan de un FDI financiado por el Ministerio de Educación.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Financiamiento de un componente adyacente, no de IA específica."
   },
   {
@@ -2605,10 +2605,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El Laboratorio de Innovación Legal y el Programa de Derecho e IA se adjudican fondos internos en 2025.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Junto con la adjudicación de 2026 documenta financiamiento competitivo en dos años consecutivos."
   },
   {
@@ -2621,10 +2621,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El Programa DIAT integra IA en Filosofía del Derecho mediante prompting y un chatbot de asignatura, con apoyo de un proyecto de innovación docente.",
     "attribution": "EQUIPO",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Experiencia acotada a una asignatura. Fuente única: no hay prueba pública de continuidad."
   },
   {
@@ -2637,10 +2637,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "ScribeClaroPUCV es una herramienta web creada inicialmente para estudiantes de Derecho, con apoyo del Programa de Desarrollo Docente.",
     "attribution": "EQUIPO",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "No informa número de usuarios ni resultados de aprendizaje."
   },
   {
@@ -2653,10 +2653,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La edición 2025 del Taller de IA y Prompting Jurídico se ejecuta en tres jornadas con cerca de 90 participantes.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3a; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Recuento de participantes. Cuántos asistieron no dice si algo cambió."
   },
   {
@@ -2669,10 +2669,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad y la Escuela de Derecho se adjudican dos proyectos de Vinculación con el Medio en 2026.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Financiamiento concursable, no basal. Los montos no están publicados."
   },
   {
@@ -2685,10 +2685,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El Laboratorio de Innovación Legal y el Programa de Derecho e IA se adjudican fondos internos en 2025.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Junto con la adjudicación de 2026 documenta financiamiento competitivo en dos años consecutivos."
   },
   {
@@ -2701,10 +2701,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La universidad presenta un decálogo para el uso ético de la IA en docencia, elaborado por la Unidad de Integridad Académica y liderado por una profesora de Derecho.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Lineamiento universitario. No es política propia de la Escuela de Derecho."
   },
   {
@@ -2717,10 +2717,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "Desde marzo de 2026 la universidad habilita Gemini integrado a su entorno institucional para la comunidad académica y administrativa.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Demuestra acceso institucional, no adopción efectiva en Derecho."
   },
   {
@@ -2733,10 +2733,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad ejecuta un workshop internacional para alumni sobre manejo, gobernanza e implementación responsable de IA en el ámbito legal.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Actividad puntual con expositor internacional."
   },
   {
@@ -2749,10 +2749,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La cuarta versión de Innova Day incluye un panel sobre automatización e inteligencia artificial.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "La actividad general es ADYACENTE: sólo el panel aporta evidencia específica de IA."
   },
   {
@@ -2797,10 +2797,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad documenta la graduación de la generación 2024 de los diplomados del Programa.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Acredita ejecución de una cohorte; no informa matrícula, deserción ni resultados de aprendizaje."
   },
   {
@@ -2813,10 +2813,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad documenta la graduación de la generación 2025 de los diplomados del Programa.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Segunda cohorte documentada: es serie temporal, no evaluación."
   },
   {
@@ -2829,10 +2829,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El Diplomado en Derecho e Inteligencia Artificial está en ejecución entre el 04-08-2026 y el 10-12-2026, con 180 horas y la Facultad de Derecho como unidad responsable.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Prueba oferta y duración; no informa matrícula real."
   },
   {
@@ -2845,10 +2845,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad anuncia la creación del Departamento de Derecho y Tecnología, dirigido por Raúl Madrid.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-3a; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Es el anuncio de creación. El acto formal —resolución o documento constitutivo— no se ha localizado."
   },
   {
@@ -2861,10 +2861,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La estructura orgánica publicada de la Facultad lista el Departamento de Derecho y Tecnología como unidad formal.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Es el único respaldo orgánico publicado de todo el corpus para una unidad nueva."
   },
   {
@@ -2877,10 +2877,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La fuente identifica a Raúl Madrid como director del Departamento de Derecho y Tecnología recientemente creado.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Es una noticia de seminario: corrobora la existencia del Departamento de forma incidental."
   },
   {
@@ -2893,10 +2893,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad establece una guía ética que regula autonomía docente, transparencia, conservación de registros, infracciones y verificación oral en el uso de IA generativa.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Gobernanza dictada por la Facultad. No consta su aplicación ni su supervisión."
   },
   {
@@ -2925,10 +2925,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La universidad ofrece AyudantIA, que permite crear agentes de IA generativa por curso e integrarlos con sus plataformas.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "La fuente no identifica a la Facultad de Derecho ni cursos jurídicos: la atribución es a la universidad."
   },
   {
@@ -3037,10 +3037,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La página del Diploma en Derecho e Inteligencia Artificial de 2022 describe fundamentos de IA, regulación, ética, propiedad intelectual, responsabilidad y derechos fundamentales.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Página histórica: prueba la edición 2022, no la oferta vigente."
   },
   {
@@ -3053,10 +3053,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad ofrece el Diploma en Derecho e IA en el segundo semestre de 2026, con el CE3 como unidad académica.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "CONTINUA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2a; intento-2b; intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Sustituye la dependencia en las ediciones 2022 y 2023 como única prueba de continuidad."
   },
   {
@@ -3149,10 +3149,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El CE3 convoca un Programa de Visitas Académicas latinoamericano con estadías de cuatro a seis semanas.",
     "attribution": "CENTRO_PROGRAMA",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Convocatoria abierta al corte: programada, no ejecutada."
   },
   {
@@ -3181,10 +3181,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La universidad adopta lineamientos que obligan a declarar el uso de IA en todos los trabajos de titulación.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Política universitaria aplicable a Derecho, no dictada por la Facultad."
   },
   {
@@ -3197,10 +3197,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Vicerrectoría de Tecnologías de la Información ofrece una capacitación institucional de 27 horas en IA generativa.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3a",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Dirigida a toda la comunidad: no informa participación de Derecho."
   },
   {
@@ -3213,10 +3213,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad crea una Dirección de Inteligencia Artificial y Derecho y nombra a Rafael Mery como su director.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Lo orgánico está documentado; los cambios curriculares que la misma fuente anuncia, no."
   },
   {
@@ -3229,10 +3229,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La presentación institucional de la Dirección anuncia trabajo desde el primer semestre, un taller de IA en escritura legal y formación posterior sobre tecnología en la profesión.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Anuncio. No consta ejecución, obligatoriedad ni matrícula."
   },
   {
@@ -3245,10 +3245,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La presentación institucional de la Dirección anuncia trabajo desde el primer semestre, un taller de IA en escritura legal y formación posterior sobre tecnología en la profesión.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Anuncio. No consta ejecución, obligatoriedad ni matrícula."
   },
   {
@@ -3309,10 +3309,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El CET e Ingeniería desarrollan DOMus AI, plataforma de revisión automatizada de normas y formularios de permisos de edificación.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "La unidad principal no es Derecho: la atribución es a la universidad."
   },
   {
@@ -3373,10 +3373,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad de Derecho firma un convenio con la legaltech Legu para ampliar el acceso a información y servicios jurídicos mediante IA.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Convenio firmado y fechado. Sin cobertura, productos ni resultados públicos."
   },
   {
@@ -3437,10 +3437,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La universidad inicia la implementación progresiva de MIAsistentes, un ecosistema institucional de asistentes virtuales.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Capacidad de toda la universidad: no se atribuye adicionalmente a Derecho."
   },
   {
@@ -3453,10 +3453,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "El postgrado ofrece un Diplomado en Derecho, Innovación y Tecnología.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Recuperada en la ronda 3. Falta comprobar si la IA es componente sustantivo: por ahora ADYACENTE."
   },
   {
@@ -3469,10 +3469,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La malla de Derecho declara una línea LegalTech e IA e incluye talleres de herramientas digitales e inteligencia artificial y de análisis de datos.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "La página está orientada a Admisión 2027: diseño curricular anunciado, no curso dictado."
   },
   {
@@ -3597,10 +3597,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad mantiene la página oficial del Programa de IA & LegalTech, cuya misión declarada integra investigación aplicada, productos, educación avanzada e innovación.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "INSTITUCIONALIZADA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Sustituye la denominación «Cátedra LegalTech». Falta el acto formal de creación."
   },
   {
@@ -3629,10 +3629,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La universidad presenta IDEA UCEN, plataforma institucional de búsqueda con IA.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Recuperada en la ronda 3. Herramienta heredada: falta comprobar vigencia en 2026."
   },
   {
@@ -3645,10 +3645,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad realiza una sesión con demostraciones de modelos de lenguaje para lectura, investigación, redacción y argumentación jurídica.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "NUEVA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b; intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Actividad puntual."
   },
   {
@@ -3661,10 +3661,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "La Facultad realiza un seminario interdisciplinario sobre IA, regulación, práctica jurídica, cibercrimen e innovación.",
     "attribution": "FACULTAD_DERECHO",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-2b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Su dominio tiene el certificado mal configurado: el enlace mostrará una advertencia de seguridad."
   },
   {
@@ -3693,10 +3693,10 @@ export const informe01Evidencias: Informe01Evidencia[] = [
     "statement": "[genIA] es un programa interdisciplinario institucional con roadmap 2026, formación, tecnología y ética.",
     "attribution": "INSTITUCIONAL_UNIVERSIDAD",
     "temporalStatus": "DESCONOCIDA",
-    "lastVerified": "",
-    "workflowStatus": "FUENTE_ABIERTA",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "intento-3b",
-    "verifiedBy": "",
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes",
     "limitations": "Acredita una capacidad de toda la universidad, no una estructura de Derecho."
   }
 ];
@@ -3719,7 +3719,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "proyectos-fondos",
       "repositorios-publicaciones"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 8,
     "notes": "Del piloto de profundidad: se la observa desde información privilegiada."
   },
   {
@@ -3737,7 +3737,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "fuentes-externas-contraste",
       "malla-curricular"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 5,
     "notes": "Del piloto de profundidad: se la observa desde información privilegiada."
   },
   {
@@ -3762,7 +3762,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "proyectos-fondos",
       "repositorios-publicaciones"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 2,
     "notes": "Fuera del piloto: su cobertura es menor por diseño de la investigación, no por menor actividad."
   },
   {
@@ -3786,7 +3786,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "repositorios-publicaciones",
       "sitio-facultad"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 1,
     "notes": "Fuera del piloto: su cobertura es menor por diseño de la investigación, no por menor actividad."
   },
   {
@@ -3811,7 +3811,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "repositorios-publicaciones",
       "sitio-facultad"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 1,
     "notes": "Fuera del piloto: su cobertura es menor por diseño de la investigación, no por menor actividad."
   },
   {
@@ -3835,7 +3835,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "proyectos-fondos",
       "repositorios-publicaciones"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 2,
     "notes": "Fuera del piloto: su cobertura es menor por diseño de la investigación, no por menor actividad."
   },
   {
@@ -3861,7 +3861,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "repositorios-publicaciones",
       "vinculacion-transferencia"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 1,
     "notes": "Fuera del piloto: su cobertura es menor por diseño de la investigación, no por menor actividad."
   },
   {
@@ -3912,7 +3912,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "proyectos-fondos",
       "vinculacion-transferencia"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 2,
     "notes": "Fuera del piloto: su cobertura es menor por diseño de la investigación, no por menor actividad."
   },
   {
@@ -3932,7 +3932,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "programas-syllabus",
       "repositorios-publicaciones"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 12,
     "notes": "Del piloto de profundidad: se la observa desde información privilegiada."
   },
   {
@@ -3957,7 +3957,7 @@ export const informe01Cobertura: Informe01Cobertura[] = [
       "proyectos-fondos",
       "repositorios-publicaciones"
     ],
-    "substantivelyVerifiedSources": 0,
+    "substantivelyVerifiedSources": 3,
     "notes": "Fuera del piloto: su cobertura es menor por diseño de la investigación, no por menor actividad."
   }
 ];
@@ -4075,10 +4075,10 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     "reasoning": "Departamento de Derecho y Tecnología en la UC, Dirección de Inteligencia Artificial y Derecho en la UDP, Programa de IA & LegalTech en la Universidad Central y Programa DIAT en la PUCV. Son señales distintas de una sucesión de seminarios: hay nombre, conducción y unidad.",
     "limitations": "Sólo la UC tiene respaldo orgánico publicado. De las otras tres falta el acto formal de creación —resolución, organigrama o documento constitutivo—, de modo que consta el nombre comunicacional y no la unidad administrativa (ISSUE-006).",
     "confidence": 70,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-cohorte-003",
@@ -4092,12 +4092,12 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     ],
     "counterevidenceIds": [],
     "reasoning": "La guía ética de Derecho UC la aprueba la propia Facultad con su Comité Directivo y su Consejo. El decálogo de la PUCV lo elabora la Unidad de Integridad Académica de la universidad, aunque lo lidere una profesora de Derecho, y los lineamientos de tesis de la Universidad de Chile son de la universidad. Quién dicta la regla importa tanto como la regla.",
-    "limitations": "Una política universitaria aplicable a Derecho sí demuestra capacidad institucional disponible; lo que no demuestra es capacidad desarrollada por la Facultad. La distinción es de atribución, no de calidad de la política.",
+    "limitations": "Una política universitaria aplicable a Derecho sí demuestra capacidad institucional disponible; lo que no demuestra es capacidad desarrollada por la Facultad. La distinción es de atribución, no de calidad de la política. Verificado el 04-09-2026: de los tres instrumentos, sólo la guía de Derecho UC tiene órgano aprobador identificado —Comité Directivo y Consejo de la Facultad— y sanción asociada. El decálogo de la PUCV «sugiere recomendaciones» y es lineamiento, no política; los lineamientos de la Universidad de Chile los dictan dos Vicerrectorías y no mencionan Derecho. La palabra «política» sólo es exacta para el instrumento de la UC.",
     "confidence": 80,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-cohorte-004",
@@ -4114,15 +4114,15 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     "reasoning": "UNAB informa asistentes generativos en asignaturas nombradas de primer ciclo; la Universidad Central desarrolló Docente iLex dentro de la Facultad; la Autónoma capacitó a cerca del 80 % de sus docentes de Derecho en tres sedes; la UdeC realizó un taller propio para sus académicos.",
     "limitations": "Tres de las cuatro fuentes son la institución describiéndose a sí misma, sin verificación externa ni métricas de uso. Capacitar no es adoptar y desplegar no es usar: cuántos docentes cambiaron efectivamente su curso no consta en ninguna.",
     "confidence": 60,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-cohorte-005",
     "universityId": "",
-    "text": "La formación continua es el único eje del corpus con serie temporal documentada.",
+    "text": "La formación continua es el único eje del corpus con serie temporal documentada, y la serie es de una sola institución.",
     "classification": "FACT",
     "evidenceIds": [
       "ev-puc-chile-003",
@@ -4132,13 +4132,13 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
       "ev-uchile-007"
     ],
     "counterevidenceIds": [],
-    "reasoning": "Los diplomados de la UC y de la Universidad de Chile acreditan ejecución en años sucesivos: dos graduaciones documentadas más una cohorte en curso en la UC, y ediciones de 2022 y 2026 en la Universidad de Chile. En el resto de los ejes hay fuentes fechadas, pero no repetición probada de la misma iniciativa.",
-    "limitations": "Serie temporal no es evaluación: que un programa se repita no dice qué aprendieron sus egresados. Tampoco consta la matrícula real de ninguna cohorte.",
-    "confidence": 80,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "reasoning": "Verificado el 04-09-2026 abriendo las cinco fuentes. La serie existe y es de la UC: dos graduaciones consecutivas del Programa de Derecho, Ciencia y Tecnología, con cifras publicadas —más de 90 titulados de la generación 2024 y más de 100 de la 2025—, ambas incluyendo el Diplomado en Derecho e Inteligencia Artificial, por Educación Continua de la Facultad de Derecho. La Universidad de Chile NO aporta serie: su diploma de 2022 figura cerrado y archivado, la ficha de 2026 se declara referencial y reserva la suspensión, entre ambas no hay edición localizada, y cambia la unidad que lo dicta. Es una discontinuidad con reapertura anunciada, no una serie.",
+    "limitations": "Ninguna de las páginas de la UC declara el año de inicio del programa ni menciona generaciones anteriores: la serie documentada es de dos puntos. La ficha del diplomado UC dice «fecha de inicio por definir», de modo que la continuidad la sostienen las graduaciones y no la oferta vigente.",
+    "confidence": 85,
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-cohorte-006",
@@ -4155,10 +4155,10 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     "reasoning": "Hay mallas y anuncios: la malla de la UDD declara una línea LegalTech e IA en una página de admisión 2027, la Dirección de la UDP anuncia innovación curricular, la página de Derecho de la PUCV declara competencia en TIC sin trayectoria explícita en IA, y el Minor de la Autónoma es la única trayectoria con una cohorte egresada. En ninguna aparece el documento que separa un taller optativo de una línea obligatoria.",
     "limitations": "Es ausencia de evidencia pública, no evidencia de ausencia: los syllabus pueden existir y no estar publicados. La afirmación alcanza a las once precisamente para no convertir en defecto de una universidad lo que es un límite del método (DEC-110).",
     "confidence": 75,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-cohorte-007",
@@ -4180,15 +4180,15 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     "reasoning": "AyudantIA y MIAsistentes, la habilitación de Gemini y el decálogo de la PUCV, los lineamientos de tesis y el curso institucional de la Universidad de Chile, IDEA UCEN, DOMus AI y [genIA]. En los nueve la fuente identifica una unidad que no es Derecho, o no identifica ninguna.",
     "limitations": "Contarlos como capacidad de Derecho es el modo más frecuente de inflar un mapa sin inventar una sola fuente. Excluirlos del todo sería el error simétrico: son capacidad institucional disponible, y como tal se registran.",
     "confidence": 85,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-cohorte-008",
     "universityId": "",
-    "text": "Cinco iniciativas del corpus prueban anuncio y no ejecución.",
+    "text": "Cinco iniciativas del corpus acreditan su constitución o su anuncio, pero no cobertura, productos ni resultados públicos.",
     "classification": "FACT",
     "evidenceIds": [
       "ev-uai-002",
@@ -4198,13 +4198,13 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
       "ev-unab-003"
     ],
     "counterevidenceIds": [],
-    "reasoning": "La malla de la UDD está orientada a Admisión 2027; la innovación curricular de la UDP se anuncia en la presentación de su Dirección; el convenio de la UAI con Legu está firmado y fechado sin cobertura ni productos públicos; el programa de visitas del CE3 es una convocatoria abierta al corte; MIAsistentes está en implementación progresiva. Existir no es funcionar.",
+    "reasoning": "Redactada de nuevo el 04-09-2026 tras verificar las cinco fuentes. La formulación anterior —«prueban anuncio y no ejecución»— es más fuerte de lo que la evidencia admite en un caso: la UAI documenta que «el martes 6 de enero SE FIRMÓ un convenio de cooperación» con Legu, y una firma es acto ejecutado. Lo que ninguna de las cinco acredita es lo que viene después: la malla de la UDD ofrece talleres sin créditos, semestre ni obligatoriedad; la Dirección de la UDP no nombra un solo curso con semestre ni matrícula; el convenio de la UAI no publica cobertura ni productos; el programa de visitas del CE3 es convocatoria abierta que «seleccionará a dos personas»; y MIAsistentes de la UNAB «comenzó la implementación progresiva» en el segundo semestre de 2026. El recuento de cinco se mantiene; lo que cambia es qué se afirma de ellas.",
     "limitations": "Verificar ejecución es la ronda siguiente. Que hoy sea anuncio no permite anticipar que no se ejecute.",
-    "confidence": 80,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "confidence": 85,
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-metodo-001",
@@ -4249,10 +4249,10 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     "reasoning": "La re-extracción mecánica de URL sobre los cinco documentos de investigación profunda arroja 74 direcciones únicas tras normalizar host, prefijo www y barra final, y excluir tres del propio sitio del laboratorio. Las dos que faltaban aparecen citadas en la tabla-resumen de intento-2b —IDEA UCEN y el Diplomado en Derecho, Innovación y Tecnología de la UNAB— y nunca recibieron registro propio, de modo que quedaron fuera del inventario.",
     "limitations": "Es el mismo defecto que el proyecto detectó en el documento antecedente, ahora encontrado en su propio corpus. La versión 0.4.0 no se reescribe: se corrige con fe de erratas.",
     "confidence": 95,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-metodo-004",
@@ -4297,10 +4297,10 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     "reasoning": "A favor de la capacidad: el Núcleo DIAT se oficializó en 2020 y en 2026 opera como Programa; LMIL existe desde 2022; ScribeClaroPUCV es una herramienta de IA nacida para estudiantes de Derecho; el Taller de IA y Prompting Jurídico se ejecutó en 2025 con cerca de 90 participantes y obtuvo financiamiento competitivo de Vinculación con el Medio en 2025 y de nuevo en 2026; y el decálogo institucional de IA lo lideró una profesora de Derecho. En contra de la institucionalización: no se localizó línea curricular obligatoria, dotación académica específicamente asignada, presupuesto basal propio, adopción cuantificada dentro de la Facultad ni evaluación pública de resultados.",
     "limitations": "Arrastra íntegra la advertencia de clm-metodo-001: la PUCV es una de las tres del piloto, con 14 fuentes y nueve rutas recorridas, de modo que se la observa desde una posición de información privilegiada. Lo que se afirma es una diferencia en la evidencia localizada, no una diferencia demostrada en la actividad. Las cuatro carencias que se enumeran tampoco están demostradas en las otras diez: sólo se han buscado con este detalle en tres.",
     "confidence": 55,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   },
   {
     "id": "clm-pucv-002",
@@ -4319,10 +4319,10 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
     "reasoning": "Las adjudicaciones documentadas son fondos internos de Vinculación con el Medio en 2025 y 2026, y un FDI del Ministerio de Educación en 2023 para un componente adyacente. La fuente oficial del Núcleo declara expresamente que su presupuesto basal no está públicamente determinado.",
     "limitations": "Que el presupuesto basal no esté publicado no significa que no exista: significa que no se localizó. Financiar proyectos demuestra interés; sobre financiar capacidad, la evidencia pública no dice nada en ninguna de las once.",
     "confidence": 50,
-    "lastVerified": "",
-    "workflowStatus": "PROPUESTO",
+    "lastVerified": "2026-09-04",
+    "workflowStatus": "CONTRASTADO",
     "createdBy": "fusion-ronda-3",
-    "verifiedBy": ""
+    "verifiedBy": "Diego Hernán Ojeda Cifuentes"
   }
 ];
 
@@ -4334,7 +4334,7 @@ export const informe01Recuento: Informe01Recuento = {
   "iniciativas": 53,
   "evidencias": 75,
   "afirmaciones": 14,
-  "fuentesVerificadas": 0,
+  "fuentesVerificadas": 38,
   "iniciativasEvaluadas": 0,
   "afirmacionesPorNivel": {
     "FACT": 10,
@@ -4344,8 +4344,8 @@ export const informe01Recuento: Informe01Recuento = {
   },
   "iniciativasPorEscalon": {
     "1": 19,
-    "2": 20,
-    "3": 14
+    "2": 21,
+    "3": 13
   },
   "iniciativasPorDireccion": {
     "AMBOS": 11,

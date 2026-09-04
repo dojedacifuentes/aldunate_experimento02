@@ -107,11 +107,35 @@ describe('informe 01 · integridad referencial', () => {
 });
 
 describe('informe 01 · el método, comprobado sobre los datos', () => {
-  it('no declara ninguna verificación sustantiva, porque no existe', () => {
-    for (const f of informe01Fuentes) expect(f.verifiedBy, f.id).toBe('');
-    for (const e of informe01Evidencias) expect(e.lastVerified, e.id).toBe('');
-    for (const c of informe01Afirmaciones) expect(c.lastVerified, c.id).toBe('');
-    expect(informe01Recuento.fuentesVerificadas).toBe(0);
+  // Hasta la v0.5.0 esta prueba exigía que no hubiera ninguna verificación. Desde
+  // el 04-09-2026 la hay, y lo que la prueba defiende ya no es la ausencia sino la
+  // coherencia: una firma sin estado, o un estado sin firma, es peor que un
+  // registro sin verificar, porque miente sobre su propia trazabilidad.
+  it('declara la verificación sustantiva de forma coherente, o no la declara', () => {
+    for (const f of informe01Fuentes) {
+      if (f.verifiedBy) expect(f.workflowStatus, f.id).toBe('CONTRASTADO');
+      if (f.workflowStatus === 'CONTRASTADO') expect(f.verifiedBy, f.id).not.toBe('');
+    }
+    for (const e of informe01Evidencias) {
+      expect(Boolean(e.lastVerified), e.id).toBe(Boolean(e.verifiedBy));
+      // La cadena fuente → evidencia no admite que el eslabón verificado cuelgue
+      // de uno que no lo está.
+      if (e.lastVerified) {
+        const fuente = informe01Fuentes.find((f) => f.id === e.sourceId);
+        expect(fuente?.verifiedBy, `${e.id} → ${e.sourceId}`).not.toBe('');
+      }
+    }
+    for (const c of informe01Afirmaciones)
+      expect(Boolean(c.lastVerified), c.id).toBe(Boolean(c.verifiedBy));
+  });
+
+  it('cuenta las fuentes verificadas desde el dataset y no desde una constante', () => {
+    const verificadas = informe01Fuentes.filter((f) => f.verifiedBy !== '').length;
+    expect(informe01Recuento.fuentesVerificadas).toBe(verificadas);
+    // Mientras quede corpus sin contrastar, el informe no puede presentarse como
+    // informe de resultados. La prueba lo hace explícito para que el día que se
+    // complete la verificación alguien tenga que venir aquí a cambiarlo a mano.
+    expect(verificadas).toBeLessThan(informe01Fuentes.length);
   });
 
   it('no acepta ningún registro: sólo ACEPTADO alimenta conclusiones publicadas', () => {

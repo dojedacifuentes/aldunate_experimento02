@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# CONGELADO el 04-09-2026 (DEC-112). Este script NO debe ejecutarse: los CSV
+# canonicos son la fuente de verdad y contienen la verificacion sustantiva de 38
+# fuentes que este generador no conoce. Queda como registro auditable de la
+# construccion inicial del dataset. Integridad: 06-compilar-a-typescript.mjs.
 """evidencias.csv y universidades.csv del Informe 01.
 
 Una evidencia es lo que UNA fuente prueba sobre UNA iniciativa. Varias fuentes

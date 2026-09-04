@@ -168,3 +168,80 @@ ninguna afirmación por sí sola.
 **No hacer:** no crear una iniciativa de nivel 0 para la PUCV mientras no se
 cree la equivalente para las diez restantes. Registrar la ausencia sólo donde se
 buscó con más detalle es el sesgo que DEC-102 existe para evitar.
+
+---
+
+## DEC-111 — La verificación sustantiva se ejecuta, y DEC-108 se enmienda
+
+**Fecha:** 04-09-2026
+**Decisión:** DEC-108 —«la verificación sustantiva no se delega y no está
+hecha»— queda enmendada. La verificación se ejecuta abriendo cada fuente y
+contrastando siete campos contra el registro: existencia, título literal, fecha
+declarada, unidad responsable, anuncio frente a ejecución, cifras de población o
+cobertura, y respaldo de la afirmación. El resultado se escribe como
+`CONTRASTADO`, con `verified_by` y `last_verified`.
+
+**Motivo:** DEC-108 era más restrictiva que el protocolo canónico que dice
+aplicar. El kit §22 define `CONTRASTADO` como «una segunda revisión examinó
+atribución, alcance y contraevidencia», y §23 asigna esa función explícitamente
+a un auditor metodológico. Lo que el kit reserva a la decisión humana no es
+contrastar: es **aceptar**. `ACEPTADO` sigue exigiendo firma humana, y ninguna
+conclusión se publica sin ella.
+
+**Consecuencia:** 38 de las 74 fuentes pasan a `CONTRASTADO`. Las guardas de
+`06-compilar-a-typescript.mjs` dejan de prohibir la verificación y pasan a
+exigir su coherencia: una fuente no puede declarar quién la verificó sin estar
+contrastada, ni decirse contrastada sin decir quién; fecha y firma viajan
+juntas; y una evidencia no puede estar verificada si su fuente no lo está. La
+prueba que exigía cero verificaciones se reescribe con el mismo criterio y no se
+borra.
+
+**No hacer:** no marcar `ACEPTADO` ningún registro. No presentar el documento
+como informe de resultados: 36 fuentes siguen sin contrastar y el porcentaje
+debe ir escrito en la portada.
+
+---
+
+## DEC-112 — Los cinco constructores en Python quedan congelados
+
+**Fecha:** 04-09-2026
+**Decisión:** `scripts/informe-01/01` a `05` dejan de ser ejecutables como
+generadores y quedan como registro auditable de la construcción inicial del
+dataset. Los CSV canónicos son la única fuente de verdad, y se editan
+directamente.
+
+**Motivo:** el README de los scripts ofrecía dos caminos al editar un CSV a
+mano: trasladar el cambio al script, o dejar de usarlo y anotarlo aquí. El
+primero no es verificable en el equipo del autor, donde no hay intérprete de
+Python. Mantener un generador que nadie puede ejecutar ni comprobar es
+exactamente la segunda fuente de verdad que la cadena de informes existe para
+evitar.
+
+**Consecuencia:** la integridad referencial la comprueba
+`06-compilar-a-typescript.mjs`, que sí se ejecuta, y las 116 pruebas de
+`informe01.test.ts`. Cada script lleva un aviso en su cabecera.
+
+**No hacer:** no ejecutar `python3 scripts/informe-01/0[1-5]-*.py`. Sobrescribiría
+la verificación del 04-09-2026 con el estado del 03-09-2026.
+
+---
+
+## DEC-113 — El conflicto de interés se declara en la metodología
+
+**Fecha:** 04-09-2026
+**Decisión:** el informe declara expresamente que el destinatario del documento
+y su autor figuran, en una fuente del propio corpus, como conductores de una de
+las iniciativas evaluadas.
+
+**Motivo:** `src-pucv-003` identifica a los líderes del Programa DIAT como
+«Johann Benfeld, Eduardo Aldunate y Diego Ojeda». Un informe que compara la
+institucionalización de once Facultades y dedica una sección a la PUCV no puede
+omitir que quien lo escribe y quien lo recibe participan de la actividad
+evaluada. La omisión no protege al documento: lo hace refutable de un golpe.
+
+**Consecuencia:** la sección de metodología incorpora una declaración de
+intereses, y la sección PUCV se somete a la doble revisión de rigor —¿demasiado
+dura?, ¿demasiado indulgente?— dejando constancia de ambas.
+
+**No hacer:** no suprimir del corpus las fuentes que involucran al autor. Se
+declaran, no se esconden.

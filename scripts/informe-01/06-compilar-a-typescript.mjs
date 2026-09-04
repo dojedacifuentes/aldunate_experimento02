@@ -188,8 +188,14 @@ for (const f of fuentes) {
   if (!/^https:\/\//.test(f.url)) errores.push(`${f.id} tiene una URL que no es https`);
   if (f.publishedDate && !/^\d{4}(-\d{2}(-\d{2})?)?$/.test(f.publishedDate))
     errores.push(`${f.id} tiene una fecha mal formada: ${f.publishedDate}`);
-  if (f.verifiedBy)
-    errores.push(`${f.id} declara verificación sustantiva, que no está hecha (DEC-108)`);
+  // DEC-108 (enmendada el 04-09-2026): la verificación sustantiva ya existe, de
+  // modo que la guarda deja de prohibirla y pasa a exigir que sea coherente. Un
+  // registro no puede declarar quién lo contrastó sin estar contrastado, ni
+  // decirse contrastado sin decir quién lo hizo.
+  if (f.verifiedBy && !['CONTRASTADO', 'ACEPTADO'].includes(f.workflowStatus))
+    errores.push(`${f.id} declara verified_by pero su estado es ${f.workflowStatus}`);
+  if (f.workflowStatus === 'CONTRASTADO' && !f.verifiedBy)
+    errores.push(`${f.id} está CONTRASTADO sin declarar quién lo verificó`);
 }
 for (const i of iniciativas) {
   if (!idUniversidades.has(i.universityId))
@@ -203,8 +209,13 @@ for (const e of evidencias) {
   if (!idFuentes.has(e.sourceId)) errores.push(`${e.id} cita una fuente inexistente`);
   if (!idIniciativas.has(e.initiativeId))
     errores.push(`${e.id} cita una iniciativa inexistente`);
-  if (e.lastVerified)
-    errores.push(`${e.id} declara last_verified, que no puede existir todavía (DEC-108)`);
+  // Fecha y firma de la verificación viajan juntas o no viajan. Y una evidencia
+  // no puede estar verificada si la fuente que la sostiene no lo está: la cadena
+  // fuente → evidencia no admite que el eslabón débil sea el primero.
+  if (Boolean(e.lastVerified) !== Boolean(e.verifiedBy))
+    errores.push(`${e.id} declara last_verified y verified_by de forma desigual`);
+  if (e.lastVerified && !fuentes.find((f) => f.id === e.sourceId)?.verifiedBy)
+    errores.push(`${e.id} se declara verificada pero su fuente ${e.sourceId} no lo está`);
 }
 for (const c of afirmaciones) {
   for (const e of [...c.evidenceIds, ...c.counterevidenceIds])
@@ -213,8 +224,13 @@ for (const c of afirmaciones) {
   // metodológicas hablan del corpus, no de universidades, y por eso no la citan.
   if (c.evidenceIds.length === 0 && !c.id.startsWith('clm-metodo-'))
     errores.push(`${c.id} no cita ninguna evidencia y no es metodológica`);
+  // `ACEPTADO` sigue exigiendo decisión humana (kit §22): que una afirmación esté
+  // contrastada no la habilita para publicarse como resultado. Y ninguna puede
+  // aceptarse mientras alguna de sus evidencias siga sin verificar.
   if (c.workflowStatus === 'ACEPTADO')
-    errores.push(`${c.id} está ACEPTADO sin verificación sustantiva (DEC-108)`);
+    errores.push(`${c.id} está ACEPTADO, y aceptar exige decisión humana registrada (kit §22)`);
+  if (c.verifiedBy && c.workflowStatus !== 'CONTRASTADO')
+    errores.push(`${c.id} declara verified_by pero su estado es ${c.workflowStatus}`);
 }
 if (errores.length > 0) {
   console.error('Integridad referencial rota. No se escribió nada:\n');

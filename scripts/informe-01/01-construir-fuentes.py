@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# CONGELADO el 04-09-2026 (DEC-112). Este script NO debe ejecutarse: los CSV
+# canonicos son la fuente de verdad y contienen la verificacion sustantiva de 38
+# fuentes que este generador no conoce. Queda como registro auditable de la
+# construccion inicial del dataset. Integridad: 06-compilar-a-typescript.mjs.
 """Genera fuentes.csv del Informe 01 desde la curaduría de los cinco documentos
 de investigación profunda versionados en sources/investigacion-profunda/."""
 import csv, io, os
