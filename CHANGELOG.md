@@ -81,7 +81,8 @@ Un control de integridad que falla es peor que no tenerlo: enseña a ignorarlo.
 **Añadido · ocho pruebas que atan la prosa a los datos**: ninguna conclusión
 puede afirmar inexistencia, cada una debe citar afirmaciones que existan, la
 prosa no puede escribir a mano un número que el dataset ya conoce, y la sección
-PUCV debe reconocer al menos tantos hechos favorables como brechas. 124 en total.
+PUCV debe reconocer al menos tantos hechos favorables como brechas. Con las tres
+que vigilan la integridad del paquete, **127 en total**.
 
 ---
 
