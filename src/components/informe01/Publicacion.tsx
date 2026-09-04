@@ -4,6 +4,8 @@ import { informe01Hallazgos, informe01ResumenEjecutivo } from '@/data/informe01-
 import { resolverCifras } from '@/data/informe01-borrador';
 import { cifrasInforme01, enPalabras } from '@/lib/informe01';
 
+import { Informe01Indice } from './Indice';
+
 import {
   CoberturaFrenteACapacidad,
   LineaDeTiempo,
@@ -52,6 +54,8 @@ const t = (s: string) => resolverCifras(s, cifras);
 export function Informe01Apertura() {
   return (
     <>
+      <Informe01Indice />
+
       <Section
         eyebrow="Resumen"
         title="Qué se investigó, qué apareció y qué queda abierto"

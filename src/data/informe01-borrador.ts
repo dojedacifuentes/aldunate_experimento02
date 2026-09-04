@@ -18,6 +18,12 @@ export interface Informe01Conclusion {
   /** Afirmaciones del dataset en que se apoya. Sin esto no es conclusión. */
   readonly apoyo: readonly string[];
   readonly clase: 'HECHO' | 'INFERENCIA';
+  /**
+   * El análisis de sensibilidad de la metodología 2.1 la dejó más restringida
+   * que en la versión anterior. Se publica en la figura de conclusiones para
+   * que el alcance viaje con la conclusión y no en un párrafo aparte.
+   */
+  readonly acotada?: boolean;
 }
 
 export interface Informe01Recomendacion {
@@ -282,6 +288,7 @@ export const informe01Conclusiones: readonly Informe01Conclusion[] = [
       'No se localizó en ninguna institución de la cohorte evidencia pública de una asignatura obligatoria en inteligencia artificial con syllabus, semestre, créditos y matrícula. Lo que existe son talleres, electivos y experiencias acotadas a una asignatura. La afirmación registra una ausencia de evidencia pública y no una inexistencia: puede existir integración curricular no publicada.',
     apoyo: ['clm-cohorte-006'],
     clase: 'HECHO',
+    acotada: true,
   },
   {
     id: 'C-5',
@@ -290,6 +297,7 @@ export const informe01Conclusiones: readonly Informe01Conclusion[] = [
       'Ninguna de las {iniciativas} iniciativas alcanza el peldaño de evaluación de la escala. La única medición de resultado del corpus la publica una vicerrectoría de transformación digital sobre el conjunto de su universidad, es correlacional y no distingue estudiantes de Derecho. La capacidad de medir el aprendizaje mediado por estas herramientas está hoy fuera de las Facultades.',
     apoyo: ['clm-cohorte-001'],
     clase: 'HECHO',
+    acotada: true,
   },
   {
     id: 'C-6',

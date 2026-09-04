@@ -35,15 +35,34 @@
 | Iniciativas con evaluación de efecto | 0 |
 | URL del informe | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile |
 
----
+## Índice
+- [Resumen ejecutivo](#resumen)
+- [Los siete hallazgos principales](#hallazgos)
+- [Cómo leer este documento](#como-leer)
+- [1 · Introducción](#introduccion)
+- [2 · Objetivos](#objetivos)
+- [3 · Metodología](#metodologia)
+- [Panorama del conjunto](#panorama)
+- [Cobertura de la investigación](#cobertura)
+- [Capacidades institucionales comparadas](#capacidades)
+- [La comprobación que impide leer mal todo lo anterior](#control)
+- [4 · Discusión](#discusion)
+- [5 · La PUCV en contexto](#pucv)
+- [6 · Conclusiones](#conclusiones)
+- [6 bis · Implicancias para la PUCV](#implicancias)
+- [7 · Limitaciones](#limitaciones)
+- [8 · Agenda de investigación](#agenda)
+- [Nota metodológica](#metodo)
 
-## Cómo leer este documento
+**Anexos**
 
-> Este documento es un borrador para revisión y no debe citarse como informe de resultados. De sus 74 fuentes, 38 fueron abiertas y contrastadas contra su publicación original —el 51% del corpus—, y once de ellas no decían lo que el registro les atribuía. Las 36 restantes conservan el contenido que les asignó la investigación previa. Ningún registro está aceptado: la aceptación exige decisión humana registrada.
-
-El documento tampoco publica ranking, tabla de posiciones ni puntaje agregado por universidad. La razón está medida: la cobertura de investigación es 3,7 veces mayor en las tres instituciones del piloto de profundidad que en las otras ocho. Ordenar sobre esa base produciría un ranking del trabajo de campo disfrazado de ranking de universidades.
-
-Lo que sí publica es una cadena completa y recorrible hacia atrás: fuente → evidencia → iniciativa → afirmación. Cada afirmación trae su razonamiento, su contraevidencia, sus límites y su confianza, y cada evidencia dice qué prueba exactamente su fuente y qué no alcanza a probar.
+- [Anexo A · Las once instituciones, una por una](#instituciones)
+- [Anexo B · Afirmaciones, con su cadena completa](#afirmaciones)
+- [Anexo C · Lagunas declaradas](#lagunas)
+- [Anexo D · Matriz de evidencia localizada por dimensión](#matriz)
+- [Anexo E · Doce temas de capacidad institucional en la PUCV](#pucv-temas)
+- [Anexo F · Auditoría de la línea base de 2025](#auditoria)
+- [Anexo G · Registro completo de fuentes](#fuentes)
 
 ---
 
@@ -138,6 +157,16 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 > **Límite.** Un convenio firmado es acto ejecutado, pero de los dos registrados no consta actividad derivada. Y la ruta de vinculación y transferencia no se recorrió en dos instituciones.
 
 *Se apoya en: clm-cohorte-008 · Mecanismos institucionales.*
+
+---
+
+## Cómo leer este documento
+
+> Este documento es un borrador para revisión y no debe citarse como informe de resultados. De sus 74 fuentes, 38 fueron abiertas y contrastadas contra su publicación original —el 51% del corpus—, y once de ellas no decían lo que el registro les atribuía. Las 36 restantes conservan el contenido que les asignó la investigación previa. Ningún registro está aceptado: la aceptación exige decisión humana registrada.
+
+El documento tampoco publica ranking, tabla de posiciones ni puntaje agregado por universidad. La razón está medida: la cobertura de investigación es 3,7 veces mayor en las tres instituciones del piloto de profundidad que en las otras ocho. Ordenar sobre esa base produciría un ranking del trabajo de campo disfrazado de ranking de universidades.
+
+Lo que sí publica es una cadena completa y recorrible hacia atrás: fuente → evidencia → iniciativa → afirmación. Cada afirmación trae su razonamiento, su contraevidencia, sus límites y su confianza, y cada evidencia dice qué prueba exactamente su fuente y qué no alcanza a probar.
 
 ---
 
@@ -620,49 +649,57 @@ La formulación que la evidencia sostiene es, entonces, la siguiente: **el desaf
 
 ## 6 · Conclusiones
 
-Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información que no aparezca antes en el documento.
+**Las siete conclusiones, con la clase de afirmación que son y la confianza declarada de lo que las sostiene**
+
+*¿Qué puede sostener este estudio, y con qué firmeza?*
+
+C-1: La institucionalización avanza por denominación, no por constitución. Hecho, confianza 70. C-2: Del corpus, una sola Facultad dictó una norma propia con consecuencia jurídica. Hecho, confianza 80. C-3: La continuidad documentada existe en un solo eje y en una sola institución. Hecho, confianza 85. C-4: No hay línea curricular obligatoria documentada en ninguna de las once. Hecho, confianza 75, acotada. C-5: Ninguna iniciativa acredita evaluación de efecto sobre el aprendizaje jurídico. Hecho, confianza 85, acotada. C-6: La cobertura desigual impide toda comparación ordinal. Hecho, confianza 90. C-7: El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado. Inferencia, confianza 70.
+
+> La barra es la confianza de la afirmación más débil en que se apoya cada conclusión: una conclusión no es más firme que su apoyo más flojo. La escala arranca en 50 y no en 0 porque ninguna baja de 70; la referencia se dibuja para que esa elección quede a la vista. El orden es el del documento y no el de la confianza: ordenar por firmeza invitaría a leer la lista como un ranking de solidez y a descartar el final, que es donde está la única inferencia.
+
+Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información que no aparezca antes en el documento. Las dos marcadas quedaron **acotadas por el análisis de sensibilidad**: siguen siendo hechos sobre el corpus, y como afirmación sobre cada Facultad quedan abiertas allí donde la ruta que las acreditaría no se recorrió.
 
 ### C-1 · La institucionalización avanza por denominación, no por constitución
 
 Cuatro Facultades de Derecho crearon entre 2025 y 2026 unidades dedicadas a tecnología o inteligencia artificial, y en ninguna de las cuatro se localizó el acto formal que la constituye. Sólo una tiene respaldo orgánico publicado: figura en la estructura de la Facultad, con director identificado. Las otras tres se acreditan mediante noticias de creación y nombramientos. La afirmación registra lo que no fue localizado recorriendo el protocolo, no que los actos no existan: dos de las cuatro instituciones están fuera del piloto de profundidad.
 
-**HECHO.** Se apoya en clm-cohorte-002.
+**Hecho sobre el corpus.** Se apoya en clm-cohorte-002.
 
 ### C-2 · Del corpus, una sola Facultad dictó una norma propia con consecuencia jurídica
 
 De los tres instrumentos sobre uso de inteligencia artificial localizados, dos son universitarios y de carácter orientador. El tercero fue aprobado por los órganos de una Facultad de Derecho, impone deberes de declaración y registro, y califica su incumplimiento como infracción grave sancionable conforme al régimen del plagio. La regulación del uso ha avanzado más que la enseñanza del uso.
 
-**HECHO.** Se apoya en clm-cohorte-003.
+**Hecho sobre el corpus.** Se apoya en clm-cohorte-003.
 
 ### C-3 · La continuidad documentada existe en un solo eje y en una sola institución
 
 La formación continua es el único eje con serie temporal, y la serie consiste en dos graduaciones consecutivas de una misma institución, con más de noventa y más de cien titulados, incluyendo un diplomado específicamente de Derecho e Inteligencia Artificial. El programa equivalente de otra institución de la cohorte figura cerrado desde 2022, con una reapertura anunciada para 2026 bajo otra unidad y declarada referencial por la propia página.
 
-**HECHO.** Se apoya en clm-cohorte-005.
+**Hecho sobre el corpus.** Se apoya en clm-cohorte-005.
 
 ### C-4 · No hay línea curricular obligatoria documentada en ninguna de las once
 
 No se localizó en ninguna institución de la cohorte evidencia pública de una asignatura obligatoria en inteligencia artificial con syllabus, semestre, créditos y matrícula. Lo que existe son talleres, electivos y experiencias acotadas a una asignatura. La afirmación registra una ausencia de evidencia pública y no una inexistencia: puede existir integración curricular no publicada.
 
-**HECHO.** Se apoya en clm-cohorte-006.
+**Hecho sobre el corpus, de alcance acotado.** Se apoya en clm-cohorte-006.
 
 ### C-5 · Ninguna iniciativa acredita evaluación de efecto sobre el aprendizaje jurídico
 
 Ninguna de las 53 iniciativas alcanza el peldaño de evaluación de la escala. La única medición de resultado del corpus la publica una vicerrectoría de transformación digital sobre el conjunto de su universidad, es correlacional y no distingue estudiantes de Derecho. La capacidad de medir el aprendizaje mediado por estas herramientas está hoy fuera de las Facultades.
 
-**HECHO.** Se apoya en clm-cohorte-001.
+**Hecho sobre el corpus, de alcance acotado.** Se apoya en clm-cohorte-001.
 
 ### C-6 · La cobertura desigual impide toda comparación ordinal
 
 La investigación alcanzó una cobertura 3,7 veces mayor en tres instituciones que en las ocho restantes. Cualquier ordenamiento construido sobre esa base mediría el trabajo de campo. La verificación sustantiva confirmó el sesgo en su forma menos evidente: al abrir las fuentes de una institución fuera del piloto, el registro la subestimaba.
 
-**HECHO.** Se apoya en clm-metodo-001.
+**Hecho sobre el corpus.** Se apoya en clm-metodo-001.
 
 ### C-7 · El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado
 
 La distribución de las 53 iniciativas en la escalera describe un campo a medio camino, no uno que ya cambió de fase: 19 siguen siendo actividades aisladas o anuncios, 21 acreditan operación recurrente, 13 alcanzan alguna señal de institucionalización, y 0 llegan a evaluación. La secuencia actividad → operación → institucionalización → evaluación está poblada en sus tres primeros tramos y vacía en el cuarto, y lo está en las once instituciones a la vez. Que la ausencia sea simultánea sugiere una causa común —el costo de medir aprendizaje— antes que una diferencia de mérito entre Facultades, aunque la evidencia disponible no permite distinguir entre ambas explicaciones.
 
-**INFERENCIA.** Se apoya en clm-cohorte-001, clm-cohorte-002, clm-cohorte-006.
+**Inferencia.** Se apoya en clm-cohorte-001, clm-cohorte-002, clm-cohorte-006.
 
 ---
 

@@ -1,4 +1,5 @@
-import { informe01Iniciativas, informe01Recuento } from '@/data/informe01';
+import { informe01Afirmaciones, informe01Iniciativas, informe01Recuento } from '@/data/informe01';
+import { informe01Conclusiones } from '@/data/informe01-borrador';
 import {
   CAPACIDADES,
   BLOQUES_CAPACIDAD,
@@ -932,6 +933,133 @@ export function mapaDesarrolloSvg(universityId: string): string {
  * sale del mismo cálculo que la matriz, no puede quedar desactualizada respecto
  * de ella ni decir una cosa distinta.
  */
+/* ── 10 · Las conclusiones ─────────────────────────────────────────────────── */
+
+/**
+ * Qué puede sostener el estudio, y con qué firmeza.
+ *
+ * Es la unica figura que no habla de las Facultades sino del propio informe. La
+ * barra es la confianza declarada de la afirmacion que sostiene cada conclusion
+ * —un numero que ya estaba en el dataset y que hasta ahora solo se leia abriendo
+ * el anexo—, y el color separa lo que es un hecho sobre el corpus de lo que es
+ * una inferencia. La marca lateral señala las dos que el analisis de sensibilidad
+ * dejo mas restringidas al cambiar de instrumento.
+ *
+ * No se ordena por confianza a proposito: el orden es el del documento, porque
+ * ordenar por firmeza invitaria a leer la lista como un ranking de solidez y a
+ * descartar el final, que es justo donde esta la unica inferencia.
+ */
+export function conclusionesSvg(): string {
+  const datos = informe01Conclusiones.map((c) => {
+    const apoyos = c.apoyo
+      .map((id) => informe01Afirmaciones.find((a) => a.id === id))
+      .filter((a): a is NonNullable<typeof a> => !!a);
+    /* La mas floja manda: una conclusion no es mas firme que su apoyo mas debil. */
+    const confianza = apoyos.length ? Math.min(...apoyos.map((a) => a.confidence)) : 0;
+    return { ...c, confianza, apoyos: apoyos.length };
+  });
+
+  const rotulo = 300;
+  const barra = 300;
+  const fila = 46;
+  const ancho = rotulo + barra + 72;
+  const alto = datos.length * fila + 74;
+  const partes: string[] = [];
+
+  /* Eje: la confianza declarada va de 0 a 100 y ninguna baja de 70, de modo que
+   * la escala arranca en 50. Empezar en cero aplastaria las diferencias; empezar
+   * en 70 las exageraria hasta sugerir que una de 90 vale el triple que una de
+   * 75. La referencia se dibuja para que la eleccion quede a la vista.        */
+  const min = 50;
+  const escala = (v: number) => ((v - min) / (100 - min)) * barra;
+
+  for (const v of [50, 75, 100]) {
+    const x = rotulo + escala(v);
+    partes.push(
+      linea(x, 4, x, datos.length * fila + 14, {
+        stroke: 'var(--g-linea, #cfcac1)',
+        'stroke-width': 1,
+        'stroke-dasharray': v === 100 ? '0' : '2 3',
+      }),
+      texto(x, datos.length * fila + 28, String(v), {
+        tam: 9.5,
+        ancla: 'middle',
+        clase: 'g-t g-t-eje',
+      }),
+    );
+  }
+  partes.push(
+    texto(rotulo + barra / 2, datos.length * fila + 44, 'confianza declarada de la afirmación que la sostiene', {
+      tam: 9.5,
+      ancla: 'middle',
+      clase: 'g-t g-t-eje',
+    }),
+  );
+
+  datos.forEach((d, i) => {
+    const y = 12 + i * fila;
+    const esHecho = d.clase === 'HECHO';
+    const w = escala(d.confianza);
+
+    partes.push(
+      texto(0, y + 11, d.id, { tam: 10.5, clase: 'g-t g-t-eje', peso: 600 }),
+      textoMulti(34, y + 8, partir(d.titulo, 46).slice(0, 2), 13, {
+        tam: 11,
+        clase: 'g-t g-t-fila',
+      }),
+      rect(rotulo, y + 1, w, 15, {
+        fill: esHecho ? 'var(--g-op, #1b5e76)' : 'url(#g-tramaGruesa)',
+        stroke: esHecho ? 'none' : 'var(--g-incip, #5c9ead)',
+        'stroke-width': esHecho ? 0 : 1,
+        rx: 2,
+      }),
+      texto(rotulo + w + 8, y + 13, String(d.confianza), { tam: 11, clase: 'g-t g-t-cifra' }),
+      d.acotada
+        ? rect(rotulo - 6, y + 1, 3, 15, { fill: 'var(--g-contraste, #8a2432)', rx: 1 })
+        : '',
+      `<rect x="0" y="${y - 4}" width="${ancho}" height="${fila - 6}" fill="transparent"><title>${esc(
+        `${d.id}. ${d.titulo}. ${esHecho ? 'Hecho sobre el corpus' : 'Inferencia'}, confianza ${d.confianza} sobre 100, apoyada en ${d.apoyos === 1 ? 'una afirmación' : `${d.apoyos} afirmaciones`}.${d.acotada ? ' El análisis de sensibilidad la dejó acotada.' : ''}`,
+      )}</title></rect>`,
+    );
+  });
+
+  const yl = 12 + datos.length * fila + 56;
+  partes.push(
+    rect(0, yl - 9, 14, 12, { fill: 'var(--g-op, #1b5e76)', rx: 2 }),
+    texto(19, yl + 1, 'Hecho sobre el corpus', { tam: 10, clase: 'g-t g-t-leyenda' }),
+    rect(168, yl - 9, 14, 12, {
+      fill: 'url(#g-tramaGruesa)',
+      stroke: 'var(--g-incip, #5c9ead)',
+      'stroke-width': 1,
+      rx: 2,
+    }),
+    texto(187, yl + 1, 'Inferencia', { tam: 10, clase: 'g-t g-t-leyenda' }),
+    rect(268, yl - 9, 3, 12, { fill: 'var(--g-contraste, #8a2432)', rx: 1 }),
+    texto(278, yl + 1, 'acotada por el análisis de sensibilidad', {
+      tam: 10,
+      clase: 'g-t g-t-leyenda',
+    }),
+  );
+
+  const hechos = datos.filter((d) => d.clase === 'HECHO').length;
+  const acotadas = datos.filter((d) => d.acotada).length;
+
+  return figura(partes.join(''), {
+    ancho,
+    alto: alto + 20,
+    titulo: `${hechos} de las ${datos.length} conclusiones son hechos sobre el corpus; ${
+      datos.length - hechos === 1 ? 'la otra es una inferencia' : 'las otras son inferencias'
+    }, y ${acotadas} quedan acotadas por lo que no se recorrió`,
+    descripcion: datos
+      .map(
+        (d) =>
+          `${d.id}: ${d.titulo}. ${d.clase === 'HECHO' ? 'Hecho' : 'Inferencia'}, confianza ${d.confianza}${d.acotada ? ', acotada' : ''}.`,
+      )
+      .join(' '),
+    clase: 'g-conclusiones',
+  });
+}
+
 export function marcaPortadaSvg(): string {
   const cols = universidadesOrdenadas.map((u) => u.id);
   const lado = 13;

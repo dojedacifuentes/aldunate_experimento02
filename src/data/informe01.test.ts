@@ -34,6 +34,7 @@ import {
   pucvRecomendaciones,
 } from './informe01-pucv';
 import { informe01Hallazgos, informe01ResumenEjecutivo } from './informe01-hallazgos';
+import { INFORME_01_INDICE } from '../components/informe01/Indice';
 import { cifrasInforme01, universidadesOrdenadas } from '@/lib/informe01';
 import {
   CAPACIDADES,
@@ -630,6 +631,51 @@ describe('informe 01 · el motor de gráficos', () => {
  * el texto está en el DOM, lo lee un lector de pantalla y sale en el buscador.
  * Ciento cincuenta y dos elementos del informe estuvieron así.
  */
+/*
+ * El indice de la web.
+ *
+ * El documento descargable deriva el suyo recorriendo sus propios encabezados y
+ * no puede desincronizarse. La web es un arbol de componentes montado en varios
+ * archivos, de modo que alli la lista se declara a mano, y una lista declarada a
+ * mano es una lista que se queda vieja: basta que alguien renombre un ancla o
+ * mueva una seccion para que una entrada del indice deje de llevar a ninguna
+ * parte, sin que falle nada.
+ */
+describe('informe 01 · el índice lleva a alguna parte', () => {
+  const fuentes = [
+    'Publicacion.tsx',
+    'Borrador.tsx',
+    'Pucv.tsx',
+    'Matriz.tsx',
+    'Cobertura.tsx',
+    'Capacidades.tsx',
+    'Anexos.tsx',
+  ]
+    .map((n) => {
+      try {
+        return readFileSync(join('src', 'components', 'informe01', n), 'utf8');
+      } catch {
+        return '';
+      }
+    })
+    .join('\n');
+  const pagina = readFileSync(join('src', 'app', 'informes', '[slug]', 'page.tsx'), 'utf8');
+  const todo = fuentes + pagina;
+
+  it('cada entrada declara un ancla que existe en la página', () => {
+    for (const e of INFORME_01_INDICE)
+      expect(
+        todo.includes(`id="${e.id}"`) || todo.includes(`id={'${e.id}'}`),
+        `el índice enlaza #${e.id} y ninguna sección lo declara`,
+      ).toBe(true);
+  });
+
+  it('no repite anclas', () => {
+    const ids = INFORME_01_INDICE.map((e) => e.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+});
+
 describe('informe 01 · la prosa se ve', () => {
   const componentes = [
     'Borrador.tsx',

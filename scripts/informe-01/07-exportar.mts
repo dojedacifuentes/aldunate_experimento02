@@ -52,6 +52,7 @@ import {
   lineaTiempoSvg,
   mapaDesarrolloSvg,
   marcaPortadaSvg,
+  conclusionesSvg,
   matrizCapacidadesSvg,
   mecanismosSvg,
 } from '../../src/lib/informe01-graficos.js';
@@ -144,6 +145,13 @@ type Bloque =
       datos: [string, string][];
       pie: string;
     }
+  /**
+   * Indice. Es un marcador: cuando se empuja no existe todavia el documento que
+   * tiene que listar. Los dos renderizadores lo resuelven al final, recorriendo
+   * los encabezados que ya llevan `id`, de modo que no hay una lista que
+   * mantener a mano y no puede quedarse vieja al mover un capitulo.
+   */
+  | { t: 'indice' }
   | { t: 'hr' };
 
 const doc: Bloque[] = [];
@@ -155,6 +163,7 @@ const ul = (items: string[]) => doc.push({ t: 'ul', items });
 const tabla = (titulo: string, cabecera: string[], filas: string[][]) =>
   doc.push({ t: 'tabla', titulo, cabecera, filas });
 const hr = () => doc.push({ t: 'hr' });
+const indice = () => doc.push({ t: 'indice' });
 const figura = (pregunta: string, titulo: string, svg: string, notaFigura?: string) =>
   doc.push({ t: 'figura', pregunta, titulo, svg, nota: notaFigura });
 const portada = (b: Extract<Bloque, { t: 'portada' }>) => doc.push(b);
@@ -244,6 +253,25 @@ tabla('Ficha del documento', ['Campo', 'Valor'], [
   ['URL del informe', 'https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile'],
 ]);
 
+indice();
+
+hr();
+h(2, 'Resumen ejecutivo', 'resumen');
+for (const parrafo of informe01ResumenEjecutivo) p(T(parrafo));
+
+hr();
+h(2, `Los ${enPalabras(informe01Hallazgos.length)} hallazgos principales`, 'hallazgos');
+p(
+  'Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el límite hasta el que llega. **El límite no es un descargo: es parte del hallazgo**, y por eso ninguno se publica sin él.',
+);
+for (const hz of informe01Hallazgos) {
+  h(3, `${hz.id} · ${hz.enunciado}`);
+  p(`**Dato.** ${T(hz.dato)}`);
+  p(`**Lectura.** ${T(hz.lectura)}`);
+  nota(`**Límite.** ${T(hz.limite)}`);
+  p(`*Se apoya en: ${hz.apoyo.join(' · ')}.*`);
+}
+
 hr();
 h(2, 'Cómo leer este documento', 'como-leer');
 nota(
@@ -265,23 +293,6 @@ p(
 p(
   'Lo que sí publica es una cadena completa y recorrible hacia atrás: fuente → evidencia → iniciativa → afirmación. Cada afirmación trae su razonamiento, su contraevidencia, sus límites y su confianza, y cada evidencia dice qué prueba exactamente su fuente y qué no alcanza a probar.',
 );
-
-hr();
-h(2, 'Resumen ejecutivo', 'resumen');
-for (const parrafo of informe01ResumenEjecutivo) p(T(parrafo));
-
-hr();
-h(2, `Los ${enPalabras(informe01Hallazgos.length)} hallazgos principales`, 'hallazgos');
-p(
-  'Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el límite hasta el que llega. **El límite no es un descargo: es parte del hallazgo**, y por eso ninguno se publica sin él.',
-);
-for (const hz of informe01Hallazgos) {
-  h(3, `${hz.id} · ${hz.enunciado}`);
-  p(`**Dato.** ${T(hz.dato)}`);
-  p(`**Lectura.** ${T(hz.lectura)}`);
-  nota(`**Límite.** ${T(hz.limite)}`);
-  p(`*Se apoya en: ${hz.apoyo.join(' · ')}.*`);
-}
 
 hr();
 h(2, '1 · Introducción', 'introduccion');
@@ -545,13 +556,21 @@ for (const r of pucvRecomendaciones) {
 
 hr();
 h(2, '6 · Conclusiones', 'conclusiones');
+figura(
+  '¿Qué puede sostener este estudio, y con qué firmeza?',
+  'Las siete conclusiones, con la clase de afirmación que son y la confianza declarada de lo que las sostiene',
+  conclusionesSvg(),
+  'La barra es la confianza de la afirmación más débil en que se apoya cada conclusión: una conclusión no es más firme que su apoyo más flojo. La escala arranca en 50 y no en 0 porque ninguna baja de 70; la referencia se dibuja para que esa elección quede a la vista. El orden es el del documento y no el de la confianza: ordenar por firmeza invitaría a leer la lista como un ranking de solidez y a descartar el final, que es donde está la única inferencia.',
+);
 p(
-  'Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información que no aparezca antes en el documento.',
+  'Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información que no aparezca antes en el documento. Las dos marcadas quedaron **acotadas por el análisis de sensibilidad**: siguen siendo hechos sobre el corpus, y como afirmación sobre cada Facultad quedan abiertas allí donde la ruta que las acreditaría no se recorrió.',
 );
 for (const c of informe01Conclusiones) {
   h(3, `${c.id} · ${c.titulo}`, c.id.toLowerCase());
   p(T(c.cuerpo));
-  p(`**${c.clase}.** Se apoya en ${c.apoyo.join(', ')}.`);
+  p(
+    `**${c.clase === 'HECHO' ? 'Hecho sobre el corpus' : 'Inferencia'}${c.acotada ? ', de alcance acotado' : ''}.** Se apoya en ${c.apoyo.join(', ')}.`,
+  );
 }
 
 hr();
@@ -741,6 +760,17 @@ p(
 
 /* ── Renderizado ───────────────────────────────────────────────────────────── */
 
+/**
+ * Entradas del indice: los capitulos de nivel 2 que declararon `id`.
+ *
+ * Se separa el cuerpo de los anexos porque son dos cosas distintas para quien
+ * decide que leer: lo primero es el argumento y lo segundo el aparato que lo
+ * sostiene. La marca es el propio titulo, que ya empieza por «Anexo».
+ */
+const entradasIndice = doc
+  .filter((b): b is Extract<Bloque, { t: 'h' }> => b.t === 'h' && b.nivel === 2 && !!b.id)
+  .map((b) => ({ id: b.id!, texto: b.texto, anexo: /^Anexo\b/.test(b.texto) }));
+
 const enlaceMd = (s: string) => s;
 const md = doc
   .map((b) => {
@@ -786,6 +816,20 @@ const md = doc
           descripcionDe(b.svg),
           ...(b.nota ? ['', `> ${b.nota}`] : []),
         ].join('\n');
+      case 'indice': {
+        const linea = (e: (typeof entradasIndice)[number]) =>
+          `- [${e.texto}](#${e.id})`;
+        const cuerpo = entradasIndice.filter((e) => !e.anexo).map(linea);
+        const anexos = entradasIndice.filter((e) => e.anexo).map(linea);
+        return [
+          '## Índice',
+          '',
+          cuerpo.join('\n'),
+          anexos.length ? `\n**Anexos**\n\n${anexos.join('\n')}` : '',
+        ]
+          .filter(Boolean)
+          .join('\n');
+      }
       case 'hr':
         return '---';
     }
@@ -845,15 +889,31 @@ const cuerpoHtml = doc
           b.nota ? `<p class="g-nota">${inline(b.nota)}</p>` : '',
           '</figure>',
         ].join('');
+      case 'indice': {
+        const lista = (xs: typeof entradasIndice) =>
+          xs
+            .map((e) => `<li><a href="#${e.id}">${esc(e.texto)}</a></li>`)
+            .join('');
+        const cuerpo = entradasIndice.filter((e) => !e.anexo);
+        const anexos = entradasIndice.filter((e) => e.anexo);
+        return [
+          '<nav class="indice" id="indice" aria-labelledby="indice-t">',
+          '<h2 id="indice-t">Índice</h2>',
+          `<ol class="indice-lista">${lista(cuerpo)}</ol>`,
+          anexos.length
+            ? `<p class="indice-rotulo">Anexos</p><ol class="indice-lista indice-anexos">${lista(anexos)}</ol>`
+            : '',
+          '</nav>',
+        ].join('');
+      }
       case 'hr':
         return '<hr>';
     }
   })
   .join('\n');
 
-const indice = doc
-  .filter((b): b is Extract<Bloque, { t: 'h' }> => b.t === 'h' && b.nivel === 2 && !!b.id)
-  .map((b) => `<a href="#${b.id}">${esc(b.texto)}</a>`)
+const indiceRail = entradasIndice
+  .map((e) => `<a href="#${e.id}">${esc(e.texto)}</a>`)
   .join('');
 
 const html = `<!doctype html>
@@ -985,6 +1045,35 @@ const html = `<!doctype html>
   .portada-datos dd{margin:5px 0 0; color:var(--ink-2); font-size:13.4px; line-height:1.45}
   .portada-pie{font-family:var(--sans); font-size:12.4px; line-height:1.6; color:var(--muted); margin:26px 0 0; max-width:70ch}
 
+  /* ---------- indice ----------
+     Dos columnas en pantalla ancha: veinticuatro capitulos en una sola columna
+     obligan a desplazarse para ver el mapa entero, que es justo lo que el
+     indice existe para evitar. El numero va fuera del texto, en mono, para que
+     los titulos queden alineados entre si.                                   */
+  .indice{max-width:var(--wide); margin:0; padding:44px 0 8px}
+  .indice h2{margin:0; font-size:clamp(1.3rem,2.2vw,1.6rem)}
+  .indice h2::after{margin:14px 0 22px}
+  .indice-lista{list-style:none; margin:0; padding:0; counter-reset:ix;
+    columns:2; column-gap:44px}
+  .indice-anexos{counter-reset:ax}
+  .indice-lista li{
+    break-inside:avoid; position:relative; padding-left:34px; margin:0 0 9px;
+    font-family:var(--sans); font-size:14.2px; line-height:1.42;
+  }
+  .indice-lista li::before{
+    counter-increment:ix; content:counter(ix,decimal-leading-zero);
+    position:absolute; left:0; top:.18em; font-family:var(--mono); font-size:10.5px;
+    color:var(--muted); letter-spacing:.04em;
+  }
+  .indice-anexos li::before{counter-increment:ax; content:counter(ax,upper-alpha)}
+  .indice-lista a{color:var(--ink-2); text-decoration:none; border-bottom:1px solid transparent}
+  .indice-lista a:hover{color:var(--navy); border-bottom-color:var(--rule-2)}
+  .indice-rotulo{
+    font-family:var(--mono); font-size:10.2px; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--teal); font-weight:600; margin:26px 0 12px; padding-top:16px;
+    border-top:1px solid var(--rule); max-width:none;
+  }
+
   /* ---------- tipografia del cuerpo ---------- */
   h2{
     font-family:var(--sans); font-weight:700; font-size:clamp(1.6rem,2.9vw,2.15rem);
@@ -1061,6 +1150,7 @@ const html = `<!doctype html>
     .shell{grid-template-columns:1fr}
     .rail{display:none}
     main{padding:0 clamp(18px,5vw,40px) 84px}
+    .indice-lista{columns:1}
     body{font-size:16.4px}
     .tt{top:10px; right:10px}
   }
@@ -1100,6 +1190,9 @@ const html = `<!doctype html>
     .g-caja{overflow:visible; border:0; box-shadow:none; padding:0}
     .g-caja .g-fig{min-width:0}
     .portada{min-height:0; height:92vh; break-after:page; border-bottom:0; padding-top:0}
+    .indice{break-after:page; padding-top:0}
+    .indice-lista{columns:2; column-gap:30px}
+    .indice-lista li{font-size:9.5pt; margin-bottom:5px}
     .portada h1{font-size:24pt}
     .g-figura,.g-fig{break-inside:avoid}
     .g-titulo{font-size:11pt}
@@ -1126,7 +1219,7 @@ const html = `<!doctype html>
   <p class="brandmark">Informe 01</p>
   <p class="brandttl">Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile</p>
   <p class="brandsub">v${VERSION} · corte ${CORTE}</p>
-  <nav aria-label="Índice del documento">${indice}</nav>
+  <nav aria-label="Índice del documento">${indiceRail}</nav>
   <p class="railfoot">Prototipo académico experimental.<br>No es un sitio oficial de la PUCV.<br>Documento generado el ${FECHA_VERSION}.</p>
 </aside>
 <main>
