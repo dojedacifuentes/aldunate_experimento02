@@ -30,8 +30,7 @@
     "production_version": "0.6.0 · la 0.7.0 vive en rama y no está desplegada",
     "institutions": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile/instituciones",
     "package": "/descargas/informe-01-borrador-academico-v0.7.0/",
-    "preview": "https://aldunateexperimento02-2095wtihl-dojedacifuentes-projects.vercel.app",
-    "preview_note": "Despliegue de la rama informe-01/v0.7.0 en el commit 29c9172. Detras de la proteccion SSO de Vercel: se abre con la sesion del autor, no con una peticion anonima."
+    "preview_note": "Vercel emite un preview inmutable por commit, de modo que la URL cambia con cada push y no se fija aqui. Se consulta en la API de despliegues de GitHub —el repositorio es publico—: /deployments y luego /deployments/<id>/statuses. Esta detras de la proteccion SSO de Vercel: se abre con la sesion del autor, no con una peticion anonima."
   },
   "current_phase": "instrumento_revisado_datos_pendientes",
   "last_completed_task": "T-037_typographic_pass_and_preview",

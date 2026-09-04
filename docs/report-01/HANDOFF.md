@@ -40,13 +40,25 @@ y **publicado como preview de Vercel** para que el autor lo revise antes de segu
 | HEAD | consúltalo con `git rev-parse HEAD`. Fijarlo aquí lo deja obsoleto en la fusión siguiente |
 | Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **todavía en v0.6.0** |
 | Fichas | `/informes/ia-escuelas-derecho-chile/instituciones` |
-| **Preview** | `aldunateexperimento02-2095wtihl-dojedacifuentes-projects.vercel.app` · commit `29c9172` |
+| **Preview** | uno por commit · se consulta, no se fija aquí |
 
-**El preview está detrás de la protección SSO de Vercel.** Se abre con la sesión
-del autor; una petición anónima recibe un 302 a `vercel.com/sso-api`. Para
-comprobarlo desde una sesión sin navegador autenticado, sirve el build de
-producción en local —`npx next start -p 3100`— y adjunta el preview por URL: es
-el mismo commit y el mismo build.
+**La URL del preview cambia con cada push**, porque Vercel emite un despliegue
+inmutable por commit. Fijar una aquí la deja caduca en el push siguiente, que es
+el mismo error que el HEAD de esta tabla. Se consulta así, sin necesidad de
+credenciales de Vercel —el repositorio es público y GitHub guarda el despliegue—:
+
+```bash
+curl -s "https://api.github.com/repos/dojedacifuentes/aldunate_experimento02/deployments?per_page=5"
+curl -s "https://api.github.com/repos/dojedacifuentes/aldunate_experimento02/deployments/<id>/statuses"
+```
+
+El `environment_url` del estado `success` es el preview de ese commit.
+
+**Está detrás de la protección SSO de Vercel.** Se abre con la sesión del autor;
+una petición anónima recibe un 302 a `vercel.com/sso-api`. Para comprobarlo desde
+una sesión sin navegador autenticado, sirve el build de producción en local
+—`npx next start -p 3100`— y adjunta el preview por URL: es el mismo commit y el
+mismo build.
 
 **Ramas preservadas en el remoto**, no borrar: `informe-01/v0.5.0` (`a1cc758`) y
 `informe-01/borrador-aldunate` (`6dffd0f`).
