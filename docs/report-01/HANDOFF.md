@@ -3,7 +3,7 @@
 Documento de relevo entre sesiones. **Léelo entero antes de tocar nada.** Está
 escrito para que no necesites la conversación que lo produjo.
 
-Actualizado: **04-09-2026** · versión **v0.6.0** · `main` en `d329c86`
+Actualizado: **04-09-2026** · versión **v0.6.0** · rama `main`
 
 ---
 
@@ -35,11 +35,11 @@ La pregunta que el informe existe para hacer discutible:
 | | |
 |---|---|
 | Rama | `main` |
-| HEAD | `d329c86f18496394baa4c22a207461e8e436e1ca` |
+| HEAD | consúltalo con `git rev-parse HEAD`. Fijarlo aquí lo deja obsoleto en la fusión siguiente, incluida la de este mismo relevo |
 | Base heredada | `057ad4b` |
 | Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile |
 | Fichas | `/informes/ia-escuelas-derecho-chile/instituciones` |
-| PR fusionados | [#20](https://github.com/dojedacifuentes/aldunate_experimento02/pull/20) · [#21](https://github.com/dojedacifuentes/aldunate_experimento02/pull/21) |
+| PR fusionados | [#20](https://github.com/dojedacifuentes/aldunate_experimento02/pull/20) · [#21](https://github.com/dojedacifuentes/aldunate_experimento02/pull/21) · [#22](https://github.com/dojedacifuentes/aldunate_experimento02/pull/22) |
 
 **Ramas preservadas en el remoto**, no borrar sin motivo: `informe-01/v0.5.0`
 (`a1cc758`, el estado heredado intacto) y `informe-01/borrador-aldunate`
