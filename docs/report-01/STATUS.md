@@ -74,7 +74,7 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 - [x] QA editorial de expresiones peligrosas, ejecutable y ya con dos capturas reales
 - [x] Contadores del sitio calculados desde los datos, nunca escritos a mano
 - [x] `npm run verify` completo, en verde al 04-09-2026
-- [~] Responsive e impresión — el HTML exportado trae hoja de impresión; falta prueba visual
+- [x] Responsive e impresión — capturas a 390 y 1280 px y en modo impresión; desbordamiento cero
 
 ## Fase 8 — Entrega
 

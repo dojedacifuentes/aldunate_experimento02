@@ -86,7 +86,7 @@ export function AuditoriaLineaBase() {
         </p>
       </div>
 
-      <div className="-mx-4 mt-6 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+      <div className="relative -mx-4 mt-6 overflow-x-auto px-4 sm:mx-0 sm:px-0">
         <table className="w-full min-w-[36rem] border-collapse text-sm">
           <caption className="sr-only">
             Cuatro totales del informe antecedente que no coinciden con la suma de sus propias

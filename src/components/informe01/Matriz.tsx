@@ -54,7 +54,7 @@ export function MatrizEvidencia() {
         trabajo de campo disfrazado de ranking de universidades.
       </Notice>
 
-      <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+      <div className="relative -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
         <table className="w-full min-w-[54rem] border-collapse text-sm">
           <caption className="sr-only">
             Evidencia pública localizada por universidad y dimensión, al corte del 1 de

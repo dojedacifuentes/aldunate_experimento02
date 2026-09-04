@@ -152,3 +152,19 @@ generan en cualquier entorno.
 
 **Consecuencia:** mientras el PDF no exista, el botón de descarga no aparece.
 Un botón que promete un archivo inexistente es peor que no tener botón.
+
+---
+
+## ISSUE-012 — El móvil desbordaba por los `sr-only` de la matriz
+
+**Estado:** CERRADO · 04-09-2026 · **Impacto:** medio
+
+A 390 px la página del informe se desplazaba 363 px en horizontal. La causa no
+era la tabla ancha, que ya vivía en un contenedor con desplazamiento propio,
+sino los `sr-only` de sus celdas: se implementan con `position: absolute` y sin
+un ancestro posicionado dentro del contenedor cada uno se colocaba respecto de
+un bloque de más arriba, arrastrando el ancho del documento.
+
+**Resuelto** con `relative` en los tres contenedores de tabla. Comprobado con
+capturas a 390 y 1280 px y en modo impresión, en las dos rutas: desbordamiento
+horizontal cero.
