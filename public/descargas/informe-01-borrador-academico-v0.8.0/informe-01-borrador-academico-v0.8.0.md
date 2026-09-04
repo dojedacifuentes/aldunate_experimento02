@@ -59,7 +59,8 @@
 - [Anexo A · Las once instituciones, una por una](#instituciones)
 - [Anexo B · Afirmaciones, con su cadena completa](#afirmaciones)
 - [Anexo C · Lagunas declaradas](#lagunas)
-- [Anexo D · Matriz de evidencia localizada por dimensión](#matriz)
+- [Anexo D · Las capacidades, celda por celda](#capacidades-tabla)
+- [Anexo E · Matriz de evidencia localizada por dimensión](#matriz)
 - [Anexo E · Doce temas de capacidad institucional en la PUCV](#pucv-temas)
 - [Anexo F · Auditoría de la línea base de 2025](#auditoria)
 - [Anexo G · Registro completo de fuentes](#fuentes)
@@ -367,22 +368,6 @@ Rutas del protocolo recorridas por institución, de trece, con la proporción de
 
 > Las dos cifras de la derecha miden nuestro trabajo, no el de la institución. La ruta 13 —fuentes externas de contraste— está sin recorrer en las once, de modo que el corpus hereda íntegro el sesgo de autodescripción: mide lo que las instituciones cuentan de sí mismas, y eso no se corrige agregando más fuentes del mismo tipo.
 
-**Rutas del protocolo recorridas por institución**
-
-| Institución | Piloto | Rutas de 13 | Fuentes | Contrastadas | Iniciativas | Evidencias |
-|---|---|---|---|---|---|---|
-| Pontificia Universidad Católica de Chile | sí | 9 | 12 | 8 (67 %) | 7 | 12 |
-| Pontificia Universidad Católica de Valparaíso | sí | 9 | 14 | 12 (86 %) | 9 | 16 |
-| Universidad Adolfo Ibáñez | — | 4 | 3 | 1 (33 %) | 3 | 3 |
-| Universidad Andrés Bello | — | 5 | 4 | 2 (50 %) | 4 | 4 |
-| Universidad Autónoma de Chile | — | 2 | 3 | 0 (0 %) | 3 | 3 |
-| Universidad Central de Chile | — | 5 | 4 | 2 (50 %) | 4 | 4 |
-| Universidad de Chile | sí | 11 | 16 | 5 (31 %) | 8 | 16 |
-| Universidad de Concepción | — | 4 | 4 | 3 (75 %) | 4 | 4 |
-| Universidad de los Andes | — | 5 | 5 | 1 (20 %) | 4 | 5 |
-| Universidad del Desarrollo | — | 3 | 4 | 1 (25 %) | 4 | 4 |
-| Universidad Diego Portales | — | 4 | 3 | 2 (67 %) | 3 | 4 |
-
 Media del piloto: 14 fuentes y 9,7 rutas. Media de las otras ocho: 3,8 fuentes y 4 rutas. Razón de 3,7 a 1.
 
 > La verificación tiene además su propio sesgo, y es de segundo orden. La PUCV llega al 86 % de sus fuentes contrastadas y la Universidad Autónoma al 0 %, de modo que la institución sobre la que este informe debe ser más cuidadoso es también la mejor comprobada. Por eso la marca de verificación de la matriz de capacidades se dibuja aparte del estado y nunca lo modifica.
@@ -403,40 +388,15 @@ Matriz de 11 instituciones por 10 capacidades, 110 celdas: 31 en operación, 10 
 
 > No hay total por fila ni por columna, y la falta es el diseño: sumar capacidades produciría un número por institución, y ese número sería un ranking del trabajo de campo tanto como del trabajo institucional.
 
-**Las diez capacidades y la pregunta que responde cada una**
+**La misma matriz, leída por filas: en cuántas de las once Facultades consta cada capacidad**
 
-| Capacidad | Pregunta | Rutas del protocolo que la acreditan |
-|---|---|---|
-| Unidad especializada | ¿Existe una estructura dedicada dentro de la Facultad? | centros-laboratorios |
-| Norma propia | ¿La Facultad dictó reglas sobre el uso de inteligencia artificial? | politicas-ia, integridad-evaluacion |
-| Presencia en pregrado | ¿La inteligencia artificial aparece dentro de la enseñanza de pregrado? | malla-curricular, programas-syllabus |
-| Formación estructurada | ¿Hay diplomados, minors, cursos o capacitaciones con IA? | postgrado-formacion-continua |
-| Herramienta desplegada | ¿Hay un sistema de IA efectivamente a disposición? | herramientas-licencias-convenios |
-| Adopción en la enseñanza | ¿Consta que la IA se usa dentro de la enseñanza del Derecho? | herramientas-licencias-convenios, integridad-evaluacion |
-| Alcance declarado | ¿El registro declara a quién alcanza lo que se hace? | derivada de los registros, sin ruta propia |
-| Investigación | ¿Hay proyectos o publicaciones sobre inteligencia artificial? | proyectos-fondos, repositorios-publicaciones |
-| Transferencia | ¿Hay convenios o servicios hacia fuera de la Facultad? | vinculacion-transferencia |
-| Evaluación de efecto | ¿Se midió si algo de esto mejoró el aprendizaje jurídico? | repositorios-publicaciones |
+*¿Qué capacidades están extendidas y cuáles son todavía excepcionales?*
 
-**Estado de cada capacidad por institución**
+Alcance declarado: 7 de 11 en operación. Formación estructurada: 6 de 11 en operación. Unidad especializada: 3 de 11 en operación. Presencia en pregrado: 3 de 11 en operación. Herramienta desplegada: 3 de 11 en operación. Adopción en la enseñanza: 3 de 11 en operación. Investigación: 3 de 11 en operación. Transferencia: 2 de 11 en operación. Norma propia: 1 de 11 en operación. Evaluación de efecto: 0 de 11 en operación.
 
-| Institución | Unidad | Norma | Pregrado | Formación | Herramienta | Adopción | Alcance | I+D | Transferencia | Evaluación |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Pontificia Universidad Católica de Chile | Adyacente · | Operación · | No concluyente | Operación · | Entorno · | Operación | Operación · | No concluyente | Incipiente | No concluyente |
-| Pontificia Universidad Católica de Valparaíso | Operación · | Entorno · | Operación · | Operación · | Operación · | Entorno · | Operación · | No concluyente | Operación · | No concluyente |
-| Universidad Adolfo Ibáñez | No concluyente | No concluyente | No concluyente | Operación | No localizada | No concluyente | No localizada | Entorno | Incipiente · | No concluyente |
-| Universidad Andrés Bello | No concluyente | No concluyente | Operación | Adyacente · | Operación | Entorno · | Operación | No concluyente | Operación | No concluyente |
-| Universidad Autónoma de Chile | No concluyente | No concluyente | Operación | Operación | No concluyente | Operación | Operación | No concluyente | No concluyente | No concluyente |
-| Universidad Central de Chile | Operación · | No concluyente | No concluyente | No concluyente | Operación | Operación | Operación · | Operación | No concluyente | No localizada |
-| Universidad de Chile | Adyacente | Entorno · | No concluyente | Operación · | No localizada | Entorno · | Operación | Operación | Incipiente · | No localizada |
-| Universidad de Concepción | No concluyente | No concluyente | No concluyente | Incipiente | Adyacente · | Incipiente | Adyacente · | No concluyente | Incipiente · | No concluyente |
-| Universidad de los Andes | No concluyente | No concluyente | No concluyente | Operación | Entorno · | No concluyente | No localizada | Operación | Incipiente | No concluyente |
-| Universidad del Desarrollo | No concluyente | No concluyente | Incipiente · | No concluyente | Entorno | No concluyente | No localizada | No concluyente | Entorno | No concluyente |
-| Universidad Diego Portales | Operación · | No concluyente | Incipiente · | No concluyente | No concluyente | No concluyente | Operación · | No concluyente | Incipiente | No concluyente |
+> La parte gris de cada barra importa tanto como la azul: una capacidad puede parecer rara porque lo es o porque no se buscó, y aquí las dos cosas se leen a la vez. Se ordena por capacidades en operación, que es lo único que la barra permite comparar sin ambigüedad; no hay ninguna institución nombrada, de modo que no ordena Facultades sino cuánto se ha extendido cada cosa.
 
-> El punto que sigue al estado marca que al menos una fuente de esa celda pasó la verificación sustantiva. Es una propiedad de esta investigación y no de la institución, y por eso viaja aparte del estado.
-
-**Los cinco estados**
+**Los seis estados**
 
 | Estado | Qué significa |
 |---|---|
@@ -1282,7 +1242,64 @@ Recursos y capacidades, y continuidad, cobertura y resultados no reúnen una sol
 
 ---
 
-## Anexo D · Matriz de evidencia localizada por dimensión
+## Anexo D · Las capacidades, celda por celda
+
+La matriz del cuerpo en texto, para quien quiera el dato exacto, imprima en blanco y negro o llegue con un lector de pantalla. Es la misma información que dibuja la figura y sale de la misma función: no puede decir otra cosa.
+
+**Las diez capacidades y la pregunta que responde cada una**
+
+| Capacidad | Pregunta | Rutas del protocolo que la acreditan |
+|---|---|---|
+| Unidad especializada | ¿Existe una estructura dedicada dentro de la Facultad? | centros-laboratorios |
+| Norma propia | ¿La Facultad dictó reglas sobre el uso de inteligencia artificial? | politicas-ia, integridad-evaluacion |
+| Presencia en pregrado | ¿La inteligencia artificial aparece dentro de la enseñanza de pregrado? | malla-curricular, programas-syllabus |
+| Formación estructurada | ¿Hay diplomados, minors, cursos o capacitaciones con IA? | postgrado-formacion-continua |
+| Herramienta desplegada | ¿Hay un sistema de IA efectivamente a disposición? | herramientas-licencias-convenios |
+| Adopción en la enseñanza | ¿Consta que la IA se usa dentro de la enseñanza del Derecho? | herramientas-licencias-convenios, integridad-evaluacion |
+| Alcance declarado | ¿El registro declara a quién alcanza lo que se hace? | derivada de los registros, sin ruta propia |
+| Investigación | ¿Hay proyectos o publicaciones sobre inteligencia artificial? | proyectos-fondos, repositorios-publicaciones |
+| Transferencia | ¿Hay convenios o servicios hacia fuera de la Facultad? | vinculacion-transferencia |
+| Evaluación de efecto | ¿Se midió si algo de esto mejoró el aprendizaje jurídico? | repositorios-publicaciones |
+
+**Estado de cada capacidad por institución**
+
+| Institución | Unidad | Norma | Pregrado | Formación | Herramienta | Adopción | Alcance | I+D | Transferencia | Evaluación |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Pontificia Universidad Católica de Chile | Adyacente · | Operación · | No concluyente | Operación · | Entorno · | Operación | Operación · | No concluyente | Incipiente | No concluyente |
+| Pontificia Universidad Católica de Valparaíso | Operación · | Entorno · | Operación · | Operación · | Operación · | Entorno · | Operación · | No concluyente | Operación · | No concluyente |
+| Universidad Adolfo Ibáñez | No concluyente | No concluyente | No concluyente | Operación | No localizada | No concluyente | No localizada | Entorno | Incipiente · | No concluyente |
+| Universidad Andrés Bello | No concluyente | No concluyente | Operación | Adyacente · | Operación | Entorno · | Operación | No concluyente | Operación | No concluyente |
+| Universidad Autónoma de Chile | No concluyente | No concluyente | Operación | Operación | No concluyente | Operación | Operación | No concluyente | No concluyente | No concluyente |
+| Universidad Central de Chile | Operación · | No concluyente | No concluyente | No concluyente | Operación | Operación | Operación · | Operación | No concluyente | No localizada |
+| Universidad de Chile | Adyacente | Entorno · | No concluyente | Operación · | No localizada | Entorno · | Operación | Operación | Incipiente · | No localizada |
+| Universidad de Concepción | No concluyente | No concluyente | No concluyente | Incipiente | Adyacente · | Incipiente | Adyacente · | No concluyente | Incipiente · | No concluyente |
+| Universidad de los Andes | No concluyente | No concluyente | No concluyente | Operación | Entorno · | No concluyente | No localizada | Operación | Incipiente | No concluyente |
+| Universidad del Desarrollo | No concluyente | No concluyente | Incipiente · | No concluyente | Entorno | No concluyente | No localizada | No concluyente | Entorno | No concluyente |
+| Universidad Diego Portales | Operación · | No concluyente | Incipiente · | No concluyente | No concluyente | No concluyente | Operación · | No concluyente | Incipiente | No concluyente |
+
+> El punto que sigue al estado marca que al menos una fuente de esa celda pasó la verificación sustantiva. Es una propiedad de esta investigación y no de la institución, y por eso viaja aparte del estado.
+
+**Rutas del protocolo recorridas por institución**
+
+| Institución | Piloto | Rutas de 13 | Fuentes | Contrastadas | Iniciativas | Evidencias |
+|---|---|---|---|---|---|---|
+| Pontificia Universidad Católica de Chile | sí | 9 | 12 | 8 (67 %) | 7 | 12 |
+| Pontificia Universidad Católica de Valparaíso | sí | 9 | 14 | 12 (86 %) | 9 | 16 |
+| Universidad Adolfo Ibáñez | — | 4 | 3 | 1 (33 %) | 3 | 3 |
+| Universidad Andrés Bello | — | 5 | 4 | 2 (50 %) | 4 | 4 |
+| Universidad Autónoma de Chile | — | 2 | 3 | 0 (0 %) | 3 | 3 |
+| Universidad Central de Chile | — | 5 | 4 | 2 (50 %) | 4 | 4 |
+| Universidad de Chile | sí | 11 | 16 | 5 (31 %) | 8 | 16 |
+| Universidad de Concepción | — | 4 | 4 | 3 (75 %) | 4 | 4 |
+| Universidad de los Andes | — | 5 | 5 | 1 (20 %) | 4 | 5 |
+| Universidad del Desarrollo | — | 3 | 4 | 1 (25 %) | 4 | 4 |
+| Universidad Diego Portales | — | 4 | 3 | 2 (67 %) | 3 | 4 |
+
+Media del piloto: 14 fuentes y 9,7 rutas. Media de las otras ocho: 3,8 fuentes y 4 rutas. Razón de 3,7 a 1.
+
+---
+
+## Anexo E · Matriz de evidencia localizada por dimensión
 
 Es el comparador con que se publicó la versión 0.6.0, bajo la metodología 2.0, y se conserva por dos razones. La primera es de trazabilidad: quien leyó la versión anterior debe poder reencontrar lo que leyó. La segunda es de honestidad metodológica: la matriz de capacidades es una propuesta nueva, y hacer desaparecer la anterior impediría comprobar si el cambio de instrumento cambió las conclusiones o sólo su presentación.
 

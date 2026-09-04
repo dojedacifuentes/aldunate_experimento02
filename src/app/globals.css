@@ -1056,6 +1056,8 @@ html[data-lectura] .stage-live {
 
   /* Tinta de las cifras escritas encima de una banda. Ver «Capa de gráficos». */
   --g-adyacente: #7A5BA6;
+  --g-trama: #A9B6C1;
+  --g-trama-fondo: #F2F5F7;
   --g-adyacente-fondo: #EFE9F6;
 
   --g-tinta-op: #F7F4EE;    /* sobre #1F5F84 · 6,3 */
@@ -1087,6 +1089,8 @@ html[data-lectura] .stage-live {
   /* Aqui «--g-esc-3» es un azul medio claro y pide tinta oscura, al revés que
    * en el tema claro. Es la razón de que estos tres tokens existan.          */
   --g-adyacente: #B69BDD;
+  --g-trama: #46586A;
+  --g-trama-fondo: #131C25;
   --g-adyacente-fondo: #241C33;
 
   --g-tinta-op: #09131D;    /* sobre #3E9CC4 · 6,0 */
@@ -1182,6 +1186,8 @@ html[data-lectura] .stage-live {
     --g-esc-4: #1a4d80;
 
     --g-adyacente: #5b4a75;
+    --g-trama: #8d8d88;
+    --g-trama-fondo: #f4f4f2;
     --g-adyacente-fondo: #efecf4;
 
     --g-tinta-op: #ffffff;

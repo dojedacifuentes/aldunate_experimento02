@@ -933,6 +933,140 @@ export function mapaDesarrolloSvg(universityId: string): string {
  * sale del mismo cálculo que la matriz, no puede quedar desactualizada respecto
  * de ella ni decir una cosa distinta.
  */
+/* ── 9 bis · Frecuencia de cada capacidad ──────────────────────────────────── */
+
+/**
+ * Qué capacidades están extendidas y cuáles son todavía excepcionales.
+ *
+ * La matriz responde «qué demuestra cada Facultad»; ésta responde la pregunta
+ * transpuesta, que es la del panorama nacional: de las once instituciones, en
+ * cuántas consta cada capacidad. Es una barra apilada y no un recuento porque
+ * la parte gris importa tanto como la azul: una capacidad puede parecer rara
+ * porque lo es o porque no se buscó, y las dos cosas se leen aquí a la vez.
+ *
+ * Se ordena por capacidades en operación, que es lo único que la barra permite
+ * comparar sin ambigüedad. No es un ranking de instituciones —no hay ninguna
+ * nombrada— sino de cuánto se ha extendido cada cosa en el sistema.
+ */
+export function frecuenciaCapacidadesSvg(): string {
+  const ids = universidadesOrdenadas.map((u) => u.id);
+  const orden: Informe01CapacidadEstado[] = [
+    'EN_OPERACION',
+    'INCIPIENTE',
+    'SOLO_ENTORNO',
+    'SOLO_ADYACENTE',
+    'NO_LOCALIZADA',
+    'NO_CONCLUYENTE',
+  ];
+
+  const datos = CAPACIDADES.map((c) => {
+    const cuenta: Record<string, number> = {};
+    for (const id of ids) {
+      const e = celdaCapacidad(id, c.id).estado;
+      cuenta[e] = (cuenta[e] ?? 0) + 1;
+    }
+    return { label: c.label, pregunta: c.pregunta, cuenta, op: cuenta.EN_OPERACION ?? 0 };
+  }).sort((a, b) => b.op - a.op);
+
+  const rotulo = 168;
+  const barra = 396;
+  const fila = 30;
+  const ancho = rotulo + barra + 40;
+  const alto = datos.length * fila + 96;
+  const unidad = barra / ids.length;
+  const partes: string[] = [];
+
+  /* Reglas verticales cada dos instituciones: dan la escala sin numerar cada
+   * segmento, que en una barra apilada de seis colores seria ilegible.        */
+  for (let n = 0; n <= ids.length; n += 2) {
+    const x = rotulo + n * unidad;
+    partes.push(
+      linea(x, 6, x, datos.length * fila + 10, {
+        stroke: 'var(--g-linea, #cfcac1)',
+        'stroke-width': 1,
+        'stroke-dasharray': '2 3',
+      }),
+      texto(x, datos.length * fila + 24, String(n), {
+        tam: 9.5,
+        ancla: 'middle',
+        clase: 'g-t g-t-eje',
+      }),
+    );
+  }
+  partes.push(
+    texto(rotulo + barra / 2, datos.length * fila + 40, 'instituciones, de once', {
+      tam: 9.5,
+      ancla: 'middle',
+      clase: 'g-t g-t-eje',
+    }),
+  );
+
+  datos.forEach((d, i) => {
+    const y = 10 + i * fila;
+    let x = rotulo;
+    partes.push(
+      texto(rotulo - 10, y + 13, d.label, { tam: 11, ancla: 'end', clase: 'g-t g-t-fila' }),
+    );
+    for (const estado of orden) {
+      const n = d.cuenta[estado] ?? 0;
+      if (!n) continue;
+      const w = n * unidad;
+      const pin = PINTURA[estado];
+      partes.push(
+        rect(x, y + 3, w, 16, {
+          fill: pin.relleno,
+          stroke: pin.borde,
+          'stroke-width': 1,
+          ...(pin.discontinuo ? { 'stroke-dasharray': '3 2' } : {}),
+        }),
+        `<rect x="${x}" y="${y + 3}" width="${w}" height="16" fill="transparent"><title>${esc(
+          `${d.label}: ${n} de ${ids.length} en «${ESTADOS_CAPACIDAD.find((e) => e.id === estado)!.label.toLowerCase()}».`,
+        )}</title></rect>`,
+      );
+      x += w;
+    }
+    partes.push(
+      texto(rotulo + barra + 8, y + 15, String(d.op), { tam: 11, clase: 'g-t g-t-cifra' }),
+    );
+  });
+
+  /* Leyenda en dos filas: seis estados en una sola no caben legibles. */
+  const yl = 10 + datos.length * fila + 58;
+  orden.forEach((estado, i) => {
+    const col = i % 3;
+    const linea2 = Math.floor(i / 3);
+    const x = col * 190;
+    const y = yl + linea2 * 18;
+    const pin = PINTURA[estado];
+    partes.push(
+      rect(x, y - 9, 13, 12, {
+        fill: pin.relleno,
+        stroke: pin.borde,
+        'stroke-width': 1,
+        ...(pin.discontinuo ? { 'stroke-dasharray': '3 2' } : {}),
+        rx: 2,
+      }),
+      texto(x + 18, y + 1, ESTADOS_CAPACIDAD.find((e) => e.id === estado)!.label, {
+        tam: 10,
+        clase: 'g-t g-t-leyenda',
+      }),
+    );
+  });
+
+  const masExtendida = datos[0];
+  const menos = datos[datos.length - 1];
+
+  return figura(partes.join(''), {
+    ancho,
+    alto: alto + 20,
+    titulo: `${masExtendida.label} consta en ${masExtendida.op} de las once Facultades; ${menos.label.toLowerCase()}, en ${menos.op}`,
+    descripcion: datos
+      .map((d) => `${d.label}: ${d.op} de ${ids.length} en operación.`)
+      .join(' '),
+    clase: 'g-frecuencia',
+  });
+}
+
 /* ── 10 · Las conclusiones ─────────────────────────────────────────────────── */
 
 /**

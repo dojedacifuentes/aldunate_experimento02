@@ -53,6 +53,7 @@ import {
   mapaDesarrolloSvg,
   marcaPortadaSvg,
   conclusionesSvg,
+  frecuenciaCapacidadesSvg,
   matrizCapacidadesSvg,
   mecanismosSvg,
 } from '../../src/lib/informe01-graficos.js';
@@ -380,23 +381,6 @@ figura(
   'Las dos cifras de la derecha miden nuestro trabajo, no el de la institución. La ruta 13 —fuentes externas de contraste— está sin recorrer en las once, de modo que el corpus hereda íntegro el sesgo de autodescripción: mide lo que las instituciones cuentan de sí mismas, y eso no se corrige agregando más fuentes del mismo tipo.',
 );
 
-tabla(
-  'Rutas del protocolo recorridas por institución',
-  ['Institución', 'Piloto', 'Rutas de 13', 'Fuentes', 'Contrastadas', 'Iniciativas', 'Evidencias'],
-  ordenadas.map((u) => {
-    const c = cobDe(u.university_id);
-    const pct = Math.round((Number(c.substantively_verified_sources) / Number(c.sources)) * 100);
-    return [
-      u.official_name,
-      c.in_pilot === 'si' ? 'sí' : '—',
-      `${c.routes_completed}`,
-      c.sources,
-      `${c.substantively_verified_sources} (${pct} %)`,
-      c.initiatives,
-      c.evidence,
-    ];
-  }),
-);
 p(
   `Media del piloto: ${dec(mediaPiloto)} fuentes y ${dec(media(piloto, (c) => Number(c.routes_completed)))} rutas. Media de las otras ocho: ${dec(mediaResto)} fuentes y ${dec(media(resto, (c) => Number(c.routes_completed)))} rutas. Razón de ${dec(razon)} a 1.`,
 );
@@ -422,34 +406,15 @@ figura(
   'No hay total por fila ni por columna, y la falta es el diseño: sumar capacidades produciría un número por institución, y ese número sería un ranking del trabajo de campo tanto como del trabajo institucional.',
 );
 
-tabla(
-  'Las diez capacidades y la pregunta que responde cada una',
-  ['Capacidad', 'Pregunta', 'Rutas del protocolo que la acreditan'],
-  CAPACIDADES.map((c) => [
-    c.label,
-    c.pregunta,
-    c.rutas.length ? c.rutas.join(', ') : 'derivada de los registros, sin ruta propia',
-  ]),
+figura(
+  '¿Qué capacidades están extendidas y cuáles son todavía excepcionales?',
+  'La misma matriz, leída por filas: en cuántas de las once Facultades consta cada capacidad',
+  frecuenciaCapacidadesSvg(),
+  'La parte gris de cada barra importa tanto como la azul: una capacidad puede parecer rara porque lo es o porque no se buscó, y aquí las dos cosas se leen a la vez. Se ordena por capacidades en operación, que es lo único que la barra permite comparar sin ambigüedad; no hay ninguna institución nombrada, de modo que no ordena Facultades sino cuánto se ha extendido cada cosa.',
 );
 
 tabla(
-  'Estado de cada capacidad por institución',
-  ['Institución', ...CAPACIDADES.map((c) => c.short)],
-  ordenadas.map((u) => [
-    u.official_name,
-    ...CAPACIDADES.map((c) => {
-      const celdaCap = celdaCapacidad(u.university_id, c.id);
-      const corto = ESTADOS_CAPACIDAD.find((e) => e.id === celdaCap.estado)!.corto;
-      return celdaCap.contrastada ? `${corto} ·` : corto;
-    }),
-  ]),
-);
-nota(
-  'El punto que sigue al estado marca que al menos una fuente de esa celda pasó la verificación sustantiva. Es una propiedad de esta investigación y no de la institución, y por eso viaja aparte del estado.',
-);
-
-tabla(
-  'Los cinco estados',
+  'Los seis estados',
   ['Estado', 'Qué significa'],
   ESTADOS_CAPACIDAD.map((e) => [e.label, e.definicion]),
 );
@@ -656,7 +621,61 @@ for (const l of informe01Lagunas) {
 }
 
 hr();
-h(2, 'Anexo D · Matriz de evidencia localizada por dimensión', 'matriz');
+h(2, 'Anexo D · Las capacidades, celda por celda', 'capacidades-tabla');
+p(
+  'La matriz del cuerpo en texto, para quien quiera el dato exacto, imprima en blanco y negro o llegue con un lector de pantalla. Es la misma información que dibuja la figura y sale de la misma función: no puede decir otra cosa.',
+);
+
+tabla(
+  'Las diez capacidades y la pregunta que responde cada una',
+  ['Capacidad', 'Pregunta', 'Rutas del protocolo que la acreditan'],
+  CAPACIDADES.map((c) => [
+    c.label,
+    c.pregunta,
+    c.rutas.length ? c.rutas.join(', ') : 'derivada de los registros, sin ruta propia',
+  ]),
+);
+
+tabla(
+  'Estado de cada capacidad por institución',
+  ['Institución', ...CAPACIDADES.map((c) => c.short)],
+  ordenadas.map((u) => [
+    u.official_name,
+    ...CAPACIDADES.map((c) => {
+      const celdaCap = celdaCapacidad(u.university_id, c.id);
+      const corto = ESTADOS_CAPACIDAD.find((e) => e.id === celdaCap.estado)!.corto;
+      return celdaCap.contrastada ? `${corto} ·` : corto;
+    }),
+  ]),
+);
+nota(
+  'El punto que sigue al estado marca que al menos una fuente de esa celda pasó la verificación sustantiva. Es una propiedad de esta investigación y no de la institución, y por eso viaja aparte del estado.',
+);
+
+tabla(
+  'Rutas del protocolo recorridas por institución',
+  ['Institución', 'Piloto', 'Rutas de 13', 'Fuentes', 'Contrastadas', 'Iniciativas', 'Evidencias'],
+  ordenadas.map((u) => {
+    const c = cobDe(u.university_id);
+    const pct = Math.round((Number(c.substantively_verified_sources) / Number(c.sources)) * 100);
+    return [
+      u.official_name,
+      c.in_pilot === 'si' ? 'sí' : '—',
+      `${c.routes_completed}`,
+      c.sources,
+      `${c.substantively_verified_sources} (${pct} %)`,
+      c.initiatives,
+      c.evidence,
+    ];
+  }),
+);
+
+p(
+  `Media del piloto: ${dec(mediaPiloto)} fuentes y ${dec(media(piloto, (c) => Number(c.routes_completed)))} rutas. Media de las otras ocho: ${dec(mediaResto)} fuentes y ${dec(media(resto, (c) => Number(c.routes_completed)))} rutas. Razón de ${dec(razon)} a 1.`,
+);
+
+hr();
+h(2, 'Anexo E · Matriz de evidencia localizada por dimensión', 'matriz');
 p(
   'Es el comparador con que se publicó la versión 0.6.0, bajo la metodología 2.0, y se conserva por dos razones. La primera es de trazabilidad: quien leyó la versión anterior debe poder reencontrar lo que leyó. La segunda es de honestidad metodológica: la matriz de capacidades es una propuesta nueva, y hacer desaparecer la anterior impediría comprobar si el cambio de instrumento cambió las conclusiones o sólo su presentación.',
 );
@@ -949,6 +968,8 @@ const html = `<!doctype html>
     --g-op:#1B3A5C; --g-incip:#6E93B4; --g-incip-fondo:#E6EDF4;
     --g-entorno:#8A5E13; --g-entorno-fondo:#F6EEDD;
     --g-adyacente:#3F6444; --g-adyacente-fondo:#E6EFE7;
+    --g-trama:#A9B6C1;
+    --g-trama-fondo:#F2F5F7;
     --g-vacio:#EDF1F4; --g-linea:#C7D2DA; --g-suave:#5F6E7C; --g-banda:#E8EEF2;
     --g-cebra:rgba(15,23,32,.028); --g-contraste:#93372A; --g-halo:rgba(95,110,124,.15);
     --g-esc-1:#CBDCE8; --g-esc-2:#93B4CB; --g-esc-3:#4A7C9A; --g-esc-4:#1B3A5C;
@@ -964,6 +985,8 @@ const html = `<!doctype html>
       --g-op:#5E9BC4; --g-incip:#31607F; --g-incip-fondo:#152634;
       --g-entorno:#D8A852; --g-entorno-fondo:#2C2416;
       --g-adyacente:#93BC94; --g-adyacente-fondo:#1A281B;
+      --g-trama:#46586A;
+      --g-trama-fondo:#131C25;
       --g-vacio:#18222B; --g-linea:#324150; --g-suave:#8A98A4; --g-banda:#1C262F;
       --g-cebra:rgba(255,255,255,.026); --g-contraste:#DD8375; --g-halo:rgba(138,152,164,.18);
       --g-esc-1:#25455C; --g-esc-2:#356986; --g-esc-3:#5E9BC4; --g-esc-4:#8FC4E4;
@@ -1168,6 +1191,8 @@ const html = `<!doctype html>
       --g-op:#17324f; --g-incip:#7d9db8; --g-incip-fondo:#e9eff5;
       --g-entorno:#7a5211; --g-entorno-fondo:#f4ecda;
       --g-adyacente:#365539; --g-adyacente-fondo:#e8efe9;
+      --g-trama:#8d8d88;
+      --g-trama-fondo:#f4f4f2;
       --g-vacio:#f0f3f5; --g-linea:#aab3bb; --g-suave:#444; --g-banda:#eef2f5;
       --g-cebra:rgba(0,0,0,.04); --g-contraste:#7a2d22; --g-halo:rgba(0,0,0,.09);
       --g-esc-1:#ccdae6; --g-esc-2:#93b2c9; --g-esc-3:#3f6d92; --g-esc-4:#17324f;
