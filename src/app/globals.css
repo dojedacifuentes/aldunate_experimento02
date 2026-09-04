@@ -84,7 +84,7 @@
   --card: #FFFFFF;
   --card-foreground: #1A1813;
   --muted: #EDE8DD;
-  --muted-foreground: #6A6255;
+  --muted-foreground: #5C5548;
   --border: #DDD5C6;
   --input: #FFFFFF;
   --ring: #29588C;
@@ -1044,7 +1044,7 @@ html[data-lectura] .stage-live {
   --g-entorno-fondo: #F5EBD5;
   --g-vacio: #E8E2D6;
   --g-linea: #C9C0AE;
-  --g-suave: #6A6255;
+  --g-suave: #5C5548;
   --g-banda: #E5DECF;
   --g-cebra: rgba(26, 24, 19, 0.035);
   --g-contraste: #8A2432;
@@ -1053,6 +1053,11 @@ html[data-lectura] .stage-live {
   --g-esc-2: #86B2CE;
   --g-esc-3: #4B87AE;
   --g-esc-4: #1F5F84;
+
+  /* Tinta de las cifras escritas encima de una banda. Ver «Capa de gráficos». */
+  --g-tinta-op: #F7F4EE;    /* sobre #1F5F84 · 6,3 */
+  --g-tinta-esc-3: #14120E; /* sobre #4B87AE · 4,9 */
+  --g-tinta-esc-2: #14120E; /* sobre #86B2CE · 8,4 */
 }
 
 .dark {
@@ -1075,6 +1080,12 @@ html[data-lectura] .stage-live {
   --g-esc-2: #2E6C8A;
   --g-esc-3: #3E9CC4;
   --g-esc-4: #6FC5E4;
+
+  /* Aqui «--g-esc-3» es un azul medio claro y pide tinta oscura, al revés que
+   * en el tema claro. Es la razón de que estos tres tokens existan.          */
+  --g-tinta-op: #09131D;    /* sobre #3E9CC4 · 6,0 */
+  --g-tinta-esc-3: #09131D; /* sobre #3E9CC4 · 6,0 */
+  --g-tinta-esc-2: #F2F7FA; /* sobre #2E6C8A · 5,4 */
 }
 
 /*
@@ -1098,7 +1109,15 @@ html[data-lectura] .stage-live {
 .g-t-fila, .g-t-col, .g-t-punto { fill: var(--foreground); }
 .g-t-eje, .g-t-leyenda, .g-t-rutas, .g-t-banda { fill: var(--g-suave); }
 .g-t-cifra { fill: var(--foreground); font-variant-numeric: tabular-nums; }
-.g-t-cifra-clara { fill: var(--background); font-variant-numeric: tabular-nums; }
+/*
+ * Una cifra escrita encima de una banda toma su tinta de la banda y no del
+ * tema. `--background` solo acierta cuando la banda contrasta con el papel, y
+ * sobre los tonos medios de la escalera no lo hace: daba 2,06 en el tema claro.
+ * Cada clase nombra el tono sobre el que se dibuja.
+ */
+.g-t-sobre-op { fill: var(--g-tinta-op); font-variant-numeric: tabular-nums; }
+.g-t-sobre-esc-3 { fill: var(--g-tinta-esc-3); font-variant-numeric: tabular-nums; }
+.g-t-sobre-esc-2 { fill: var(--g-tinta-esc-2); font-variant-numeric: tabular-nums; }
 
 /*
  * Una figura ancha no puede empujar la página. Se desplaza dentro de su caja en
@@ -1155,6 +1174,10 @@ html[data-lectura] .stage-live {
     --g-esc-2: #8fb0c6;
     --g-esc-3: #4c7fa3;
     --g-esc-4: #1a4d80;
+
+    --g-tinta-op: #ffffff;
+    --g-tinta-esc-3: #111111;
+    --g-tinta-esc-2: #111111;
   }
 
   /* Una figura partida entre dos páginas deja de decir lo que dice. */

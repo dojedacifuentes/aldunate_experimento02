@@ -590,6 +590,49 @@ describe('informe 01 · el motor de gráficos', () => {
   });
 });
 
+/*
+ * Legibilidad del color.
+ *
+ * `--muted` es la superficie sobre la que se apoyan las tarjetas y `--muted-foreground`
+ * es la tinta que se lee encima. Los nombres se parecen y la clase de Tailwind que
+ * sale de cada uno se parece más: `text-muted` frente a `text-muted-foreground`.
+ * Escribir la primera pinta la prosa del color del papel —1,11 de contraste en el
+ * tema claro y 1,20 en el oscuro, es decir, invisible en los dos— y no falla nada:
+ * el texto está en el DOM, lo lee un lector de pantalla y sale en el buscador.
+ * Ciento cincuenta y dos elementos del informe estuvieron así.
+ */
+describe('informe 01 · la prosa se ve', () => {
+  const componentes = [
+    'Borrador.tsx',
+    'Publicacion.tsx',
+    'Pucv.tsx',
+    'Matriz.tsx',
+    'Cobertura.tsx',
+  ];
+
+  it('no pinta texto con un token de superficie', () => {
+    for (const nombre of componentes) {
+      const fuente = readFileSync(join('src', 'components', 'informe01', nombre), 'utf8');
+      // `text-muted-foreground` sí; `text-muted` a secas, no.
+      const sueltos = fuente.match(/text-muted(?!-foreground)/g) ?? [];
+      expect(sueltos, `${nombre} usa text-muted como color de letra`).toEqual([]);
+    }
+  });
+
+  /*
+   * La cifra que va escrita encima de una banda de color toma su tinta de la
+   * banda. `--background` sólo acierta cuando la banda contrasta con el papel, y
+   * sobre los tonos medios de la escalera no lo hace.
+   */
+  it('no escribe cifras sobre banda con el color del papel', () => {
+    const motor = readFileSync(join('src', 'lib', 'informe01-graficos.ts'), 'utf8');
+    expect(motor.includes('g-t-cifra-clara')).toBe(false);
+    const hoja = readFileSync(join('src', 'app', 'globals.css'), 'utf8');
+    for (const clase of ['g-t-sobre-op', 'g-t-sobre-esc-3', 'g-t-sobre-esc-2'])
+      expect(hoja.includes(`.${clase}`), `falta ${clase} en globals.css`).toBe(true);
+  });
+});
+
 /**
  * Los hallazgos principales. Van antes que todo lo demás en el documento, de
  * modo que un hallazgo mal formado es lo primero que un lector encuentra.

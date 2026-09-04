@@ -33,7 +33,7 @@ const t = (s: string) => resolverCifras(s, cifras);
 function Prosa({ children, className = '' }: { children: string; className?: string }) {
   const partes = t(children).split(/(\*\*[^*]+\*\*)/g);
   return (
-    <p className={`text-pretty leading-relaxed text-muted ${className}`}>
+    <p className={`text-pretty leading-relaxed text-muted-foreground ${className}`}>
       {partes.map((parte, i) =>
         parte.startsWith('**') && parte.endsWith('**') ? (
           <strong key={i} className="font-medium text-foreground">
@@ -150,14 +150,14 @@ export function Informe01BorradorCierre() {
             {pucvFavorable.map((f) => (
               <Surface key={f.fuente + f.hecho.slice(0, 20)} className="p-4">
                 <Prosa className="text-foreground">{f.hecho}</Prosa>
-                <p className="mt-2 text-sm text-muted">{f.fuerza}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{f.fuerza}</p>
                 <p className="meta mt-3">{f.fuente}</p>
               </Surface>
             ))}
           </div>
 
           <h3 className="meta mb-2 mt-10">Qué falta, y con qué instrumento lo resolvió quien ya lo resolvió</h3>
-          <p className="mb-5 max-w-prose text-sm leading-relaxed text-muted">
+          <p className="mb-5 max-w-prose text-sm leading-relaxed text-muted-foreground">
             Cada bloque nombra la capacidad, lo que aquí consta y el mecanismo concreto —con su
             institución— allí donde la misma capacidad está en operación. No propone qué hacer:
             pone el referente a la vista. Una capacidad sin referente también aparece, porque que
@@ -175,8 +175,8 @@ export function Informe01BorradorCierre() {
                     <span className="meta ml-2 align-middle text-subtle">alcanza a las once</span>
                   )}
                 </p>
-                <p className="mt-1 text-sm text-muted">{b.evidencia}</p>
-                <p className="mt-2 text-sm text-muted">
+                <p className="mt-1 text-sm text-muted-foreground">{b.evidencia}</p>
+                <p className="mt-2 text-sm text-muted-foreground">
                   <span className="meta">Comparador · </span>
                   {b.comparador}
                 </p>
@@ -255,7 +255,7 @@ export function Informe01BorradorCierre() {
                 ).map(([k, v]) => (
                   <div key={k} className="sm:flex sm:gap-3">
                     <dt className="meta shrink-0 sm:w-36">{k}</dt>
-                    <dd className="text-muted">{v}</dd>
+                    <dd className="text-muted-foreground">{v}</dd>
                   </div>
                 ))}
               </dl>
@@ -293,11 +293,11 @@ export function Informe01BorradorCierre() {
               <dl className="mt-3 space-y-2 text-sm">
                 <div className="sm:flex sm:gap-3">
                   <dt className="meta shrink-0 sm:w-28">Por qué importa</dt>
-                  <dd className="text-muted">{t(a.porQue)}</dd>
+                  <dd className="text-muted-foreground">{t(a.porQue)}</dd>
                 </div>
                 <div className="sm:flex sm:gap-3">
                   <dt className="meta shrink-0 sm:w-28">Cómo se cierra</dt>
-                  <dd className="text-muted">{t(a.comoSeCierra)}</dd>
+                  <dd className="text-muted-foreground">{t(a.comoSeCierra)}</dd>
                 </div>
               </dl>
             </Surface>

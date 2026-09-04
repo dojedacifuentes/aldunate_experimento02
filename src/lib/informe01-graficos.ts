@@ -726,7 +726,7 @@ export function direccionesSvg(): string {
         ? texto(x + w / 2, 38, String(d.n), {
             tam: 13,
             ancla: 'middle',
-            clase: i === 3 ? 'g-t g-t-cifra' : 'g-t g-t-cifra-clara',
+            clase: `g-t ${['g-t-sobre-op', 'g-t-sobre-esc-3', 'g-t-sobre-esc-2', 'g-t-cifra'][i]}`,
           })
         : '',
       `<rect x="${x}" y="16" width="${w}" height="34" fill="transparent"><title>${esc(`${d.label}: ${d.n} iniciativas. ${d.definition}`)}</title></rect>`,
