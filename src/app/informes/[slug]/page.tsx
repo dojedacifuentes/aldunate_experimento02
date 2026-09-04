@@ -87,6 +87,7 @@ export default async function InformeDetallePage({
   const primaryKitArtifact = report.researchKit?.artifacts.find(
     (artifact) => artifact.format === 'PDF',
   );
+  const esInforme01 = report.slug === 'ia-escuelas-derecho-chile';
 
   return (
     <>
@@ -206,9 +207,22 @@ export default async function InformeDetallePage({
                 }
               />
               <MetaRow label="Ejes" value={String(report.axes.length)} />
+              {/*
+                El contador se lee del registro real y no de `sourceIds`.
+                `sourceIds` alimenta la lista de fuentes verificadas, y el
+                Informe 01 tiene registro poblado con verificación sustantiva
+                pendiente: mostrar «0» aquí contradecía las 74 que declara el
+                propio informe unas pantallas más abajo.
+              */}
               <MetaRow
                 label="Fuentes registradas"
-                value={hasSources ? String(reportSources.length) : '0 · en registro'}
+                value={
+                  esInforme01
+                    ? `${informe01Recuento.fuentes} en el registro · ${informe01Recuento.fuentesVerificadas} verificadas`
+                    : hasSources
+                      ? String(reportSources.length)
+                      : '0 · en registro'
+                }
               />
               <MetaRow
                 label="Carpeta"
@@ -261,7 +275,7 @@ export default async function InformeDetallePage({
         documento completo y no necesita esta capa, y hacer genérica una sección
         que sólo un informe usa habría producido una abstracción con un solo caso.
       */}
-      {report.slug === 'ia-escuelas-derecho-chile' && <Informe01Publicacion />}
+      {esInforme01 && <Informe01Publicacion />}
 
       {report.researchKit && (
         <Section
@@ -501,21 +515,29 @@ export default async function InformeDetallePage({
             <div className="space-y-8">
               <div className="rounded-lg border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
                 <p className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
-                  Registro vacío
+                  {esInforme01 ? 'Registro poblado · verificación pendiente' : 'Registro vacío'}
                 </p>
                 <h3 className="mt-3 font-serif text-xl text-foreground">
-                  Todavía no hay fuentes incorporadas
+                  {esInforme01
+                    ? `${informe01Recuento.fuentes} fuentes registradas, ninguna verificada una a una`
+                    : 'Todavía no hay fuentes incorporadas'}
                 </h3>
                 <p className="mx-auto mt-2.5 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                  El informe está en fase de definición de alcance. Las fuentes
-                  entran al registro antes de convertirse en dato, y el registro
-                  se publica junto con el documento.
+                  {esInforme01
+                    ? 'El registro está publicado y cada fuente aparece en la ficha de su institución, con su estado editorial y sus advertencias de lectura. Ninguna entra a esta lista todavía: que una URL responda no prueba que diga lo que se le atribuye, y la verificación sustantiva es responsabilidad de quien firma.'
+                    : 'El informe está en fase de definición de alcance. Las fuentes entran al registro antes de convertirse en dato, y el registro se publica junto con el documento.'}
                 </p>
                 <Link
-                  href="/investigacion"
+                  href={
+                    esInforme01
+                      ? `/informes/${report.slug}/instituciones`
+                      : '/investigacion'
+                  }
                   className="mt-5 inline-block text-sm font-medium text-primary hover:underline"
                 >
-                  Ver el método de investigación
+                  {esInforme01
+                    ? 'Ver el registro en las fichas institucionales'
+                    : 'Ver el método de investigación'}
                 </Link>
               </div>
 

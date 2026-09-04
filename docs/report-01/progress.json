@@ -6,9 +6,9 @@
   "branch": "informe-01/v0.5.0",
   "base_commit": "057ad4b5a19e58905f434a414ef1b87cc9858bce",
   "cutoff_date": "2026-09-01",
-  "phase": "publication_components",
-  "last_completed_task": "T-019_editorial_blocks",
-  "next_task": "T-020_report_card_v0_5_0",
+  "phase": "exports",
+  "last_completed_task": "T-022_dataset_tests",
+  "next_task": "T-021_exports_and_manifest",
   "completed": [
     "T-001_repo_audit",
     "T-002_research_corpus_inventory",
@@ -26,11 +26,12 @@
     "T-015_directions_map",
     "T-017_institution_pages",
     "T-018_pucv_section",
-    "T-019_editorial_blocks"
+    "T-019_editorial_blocks",
+    "T-009_bias_control_tests",
+    "T-020_report_card_v0_5_0",
+    "T-022_dataset_tests"
   ],
-  "in_progress": [
-    "T-009_bias_control_tests"
-  ],
+  "in_progress": [],
   "blocked": [
     "ISSUE-001_substantive_source_verification",
     "ISSUE-009_frozen_2025_baseline",
@@ -57,7 +58,7 @@
   ],
   "last_lint": "pass_9_preexisting_warnings",
   "last_typecheck": "pass",
-  "last_test": "pass_97",
+  "last_test": "pass_115",
   "last_build": "pass_18_routes",
-  "updated_at": "2026-09-04T00:15:00-04:00"
+  "updated_at": "2026-09-04T00:25:00-04:00"
 }

@@ -4257,7 +4257,7 @@ export const informe01Afirmaciones: Informe01Afirmacion[] = [
   {
     "id": "clm-metodo-004",
     "universityId": "",
-    "text": "Ninguna afirmación de la forma «X aumentó desde 2025» es publicable, porque no existe una línea base congelada de 2025.",
+    "text": "Ninguna afirmación de la forma «X aumentó desde 2025» es publicable: no se dispone de una línea base congelada de 2025.",
     "classification": "FACT",
     "evidenceIds": [],
     "counterevidenceIds": [],

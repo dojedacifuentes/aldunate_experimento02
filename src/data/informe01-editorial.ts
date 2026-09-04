@@ -113,7 +113,7 @@ export const informe01Lagunas: Informe01Laguna[] = [
   },
   {
     id: 'L-9',
-    titulo: 'No existe una línea base congelada de 2025',
+    titulo: 'Falta una línea base congelada de 2025',
     cuerpo:
       'El documento tratado como línea base histórica contiene actividades fechadas en abril, junio, agosto y septiembre de 2026. Una comparación mecánica mezclaría cambios reales con incorporaciones hechas retrospectivamente sobre el propio archivo.',
     cierre:

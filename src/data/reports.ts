@@ -89,6 +89,23 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '0.5.0',
+        date: '2026-09-04',
+        status: 'en-investigacion',
+        changelog: [
+          'El corpus deja de ser una lista dentro de cinco documentos y pasa a ser un dataset canónico: seis CSV con universidades, fuentes, iniciativas, evidencias, cobertura y afirmaciones.',
+          'Fe de erratas de la v0.4.0: el corpus tiene 74 fuentes públicas únicas y no 72. La re-extracción mecánica de URL encontró dos que intento-2b cita en su tabla-resumen y nunca convirtió en registro —IDEA UCEN y el Diplomado en Derecho, Innovación y Tecnología de la UNAB—. La v0.4.0 no se reescribe.',
+          '53 iniciativas deduplicadas y 75 evidencias, cada una atribuida a la unidad que su fuente identifica. Nueve resultan ser capacidades de universidad y no de Facultad de Derecho.',
+          'Ninguna de las 53 iniciativas alcanza el cuarto peldaño de la escalera. Es la tercera ronda independiente que llega a la misma ausencia de evaluación de efecto.',
+          'La cobertura de investigación se publica como indicador propio, separado de la evidencia: 9,7 de trece rutas del protocolo recorridas en el piloto frente a 4,0 en las otras ocho, y una razón de 3,7:1 en fuentes.',
+          'Dos lagunas nuevas. L-11: ninguna fuente del corpus proviene de contraste externo, de modo que hereda íntegro el sesgo de autodescripción. L-12: dos de las ocho dimensiones —recursos y capacidades, y continuidad y resultados— están vacías en las once instituciones.',
+          '14 afirmaciones con razonamiento, contraevidencia, límites y confianza declarados. Ninguna está aceptada.',
+          'La ficha publica matriz de evidencia localizada, cobertura, escalera de institucionalización, mapa de direcciones, sección PUCV, lagunas y auditoría de la línea base, además de once fichas institucionales en página propia.',
+          'La matriz no ordena por nada: filas alfabéticas y ningún puntaje agregado por universidad. Con la cobertura actual, ordenar produciría un ranking del trabajo de campo.',
+          'Todos los contadores del informe se calculan desde el dataset. El compilador falla y no escribe nada si una referencia queda huérfana o si algún registro declara una verificación sustantiva que no existe.',
+        ],
+      },
+      {
         version: '0.4.0',
         date: '2026-09-02',
         status: 'en-investigacion',
@@ -139,6 +156,9 @@ export const reports: Report[] = [
         ],
       },
     ],
+    // Vacíos a propósito, y así siguen. El registro existe y se publica desde el
+    // dataset canónico, pero `sourceIds` alimenta la lista de fuentes verificadas
+    // del sitio, y ninguna de las 74 tiene verificación sustantiva todavía.
     sourceIds: [],
     claimIds: [],
     openQuestions: [
@@ -152,6 +172,8 @@ export const reports: Report[] = [
       '¿Qué dicen los syllabus 2026 sobre obligatoriedad, semestre, créditos y matrícula real de los cursos de IA?',
       '¿Se sostienen en ANID los proyectos Fondecyt y FONDEF que hoy constan por noticia universitaria?',
       '¿Puede reconstruirse una línea base de 2025 auténticamente congelada? La heredada contiene actividades de 2026.',
+      '¿Qué diría una fuente de contraste externo? Las 74 del corpus son institucionales, de modo que hoy el informe mide lo que las universidades cuentan de sí mismas.',
+      '¿Existe alguna Facultad chilena que haya medido el efecto de una de sus actividades de IA? Ninguna lo ha publicado, y bastaría una para cambiar la lectura del informe.',
     ],
     researchKit: {
       title: 'Kit canónico de investigación inter-IA',
@@ -193,7 +215,7 @@ export const reports: Report[] = [
         },
       ],
     },
-    updatedAt: '2026-09-02',
+    updatedAt: '2026-09-04',
   },
   {
     slug: 'transformacion-ensenanza-derecho',

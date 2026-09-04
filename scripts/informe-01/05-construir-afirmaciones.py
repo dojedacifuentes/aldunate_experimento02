@@ -84,7 +84,7 @@ c('clm-metodo-003','','El corpus contiene 74 fuentes públicas únicas y no las 
   'La re-extracción mecánica de URL sobre los cinco documentos de investigación profunda arroja 74 direcciones únicas tras normalizar host, prefijo www y barra final, y excluir tres del propio sitio del laboratorio. Las dos que faltaban aparecen citadas en la tabla-resumen de intento-2b —IDEA UCEN y el Diplomado en Derecho, Innovación y Tecnología de la UNAB— y nunca recibieron registro propio, de modo que quedaron fuera del inventario.',
   'Es el mismo defecto que el proyecto detectó en el documento antecedente, ahora encontrado en su propio corpus. La versión 0.4.0 no se reescribe: se corrige con fe de erratas.',95)
 
-c('clm-metodo-004','','Ninguna afirmación de la forma «X aumentó desde 2025» es publicable, porque no existe una línea base congelada de 2025.','FACT',
+c('clm-metodo-004','','Ninguna afirmación de la forma «X aumentó desde 2025» es publicable: no se dispone de una línea base congelada de 2025.','FACT',
   '','',
   'El documento tratado como línea base histórica contiene actividades fechadas en abril, junio, agosto y septiembre de 2026. Una comparación mecánica entre ese archivo y el corte de septiembre de 2026 mezclaría cambios reales con incorporaciones hechas retrospectivamente sobre el propio archivo.',
   'Reconstruir un corte auténticamente congelado exige decidir qué se considera público al 31-12-2025, y esa decisión no puede tomarla un proceso automático sobre un archivo ya editado (ISSUE-009).',90)

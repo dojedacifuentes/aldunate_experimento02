@@ -48,7 +48,7 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 - [x] Bloque de lagunas, ampliado a doce con L-11 y L-12
 - [x] Auditoría de la línea base como bloque propio
 - [x] Página de fichas institucionales en `/informes/[slug]/instituciones`
-- [ ] Reescribir la ficha del informe en `src/data/reports.ts` para la v0.5.0
+- [x] Ficha del informe en `src/data/reports.ts` con la v0.5.0 y su fe de erratas
 
 ## Fase 5 — Visualizaciones
 
@@ -69,14 +69,14 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 ## Fase 7 — QA
 
 - [x] Validadores de integridad referencial en el compilador de datos
-- [ ] Los mismos validadores como prueba de vitest, para que fallen en `verify`
-- [ ] QA editorial de expresiones peligrosas
-- [ ] Contadores del sitio calculados desde los datos, nunca escritos a mano
+- [x] Los mismos validadores como prueba de vitest: 18 pruebas nuevas, 115 en total
+- [x] QA editorial de expresiones peligrosas, ejecutable y ya con dos capturas reales
+- [x] Contadores del sitio calculados desde los datos, nunca escritos a mano
 - [~] `npm run verify` completo — typecheck, lint, tests y build pasan al 04-09-2026
 - [ ] Responsive e impresión
 
 ## Fase 8 — Entrega
 
-- [ ] Changelog de la v0.5.0 y fe de erratas de la v0.4.0
-- [ ] Comprobar `src/data/trabajos.ts` (regla permanente de `CLAUDE.md` §12)
+- [x] Changelog de la v0.5.0 y fe de erratas de la v0.4.0
+- [x] `src/data/trabajos.ts` actualizado: decía 43 fuentes y la asimetría antigua
 - [ ] Bundle de git y comandos de publicación
