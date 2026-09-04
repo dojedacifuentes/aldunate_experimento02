@@ -28,11 +28,30 @@ import {
   informe01Lagunas,
   informe01TemasPucv,
 } from '../../src/data/informe01-editorial.js';
+import {
+  informe01Agenda,
+  informe01Conclusiones,
+  informe01Discusion,
+  informe01Intereses,
+  informe01Introduccion,
+  informe01Limitaciones,
+  informe01MetodologiaRelato,
+  informe01ObjetivoGeneral,
+  informe01ObjetivosEspecificos,
+  resolverCifras,
+} from '../../src/data/informe01-borrador.js';
+import {
+  pucvBrechas,
+  pucvDobleRevision,
+  pucvFavorable,
+  pucvLectura,
+  pucvRecomendaciones,
+} from '../../src/data/informe01-pucv.js';
 
-const VERSION = '0.5.0';
+const VERSION = '0.6.0';
 const FECHA_VERSION = '2026-09-04';
 const CORTE = '2026-09-01';
-const BASE = `informe-01-mapeo-evidencia-v${VERSION}`;
+const BASE = `informe-01-borrador-academico-v${VERSION}`;
 const DESTINO = join('public', 'descargas', BASE);
 const DATASET = 'content/reports/01_ia_escuelas_derecho_chile/canonical/dataset';
 
@@ -89,12 +108,36 @@ const tabla = (titulo: string, cabecera: string[], filas: string[][]) =>
   doc.push({ t: 'tabla', titulo, cabecera, filas });
 const hr = () => doc.push({ t: 'hr' });
 
+/* ── Cifras que la prosa interpola ──────────────────────────────────────────
+ * Se calculan aquí, desde los mismos CSV que alimentan el resto del documento,
+ * para que el paquete no dependa de la capa compilada de la web. Si un número
+ * de la prosa dejara de cuadrar con el dataset, `resolverCifras` fallaría en
+ * voz alta antes de escribir nada.                                           */
+const verificadas = fuentes.filter((f) => f.verified_by).length;
+const cifras: Record<string, string | number> = {
+  corte: '1 de septiembre de 2026',
+  universidades: universidades.length,
+  fuentes: fuentes.length,
+  iniciativas: iniciativas.length,
+  evidencias: evidencias.length,
+  afirmaciones: afirmaciones.length,
+  verificadas,
+  noVerificadas: fuentes.length - verificadas,
+  porcentajeVerificado: Math.round((verificadas / fuentes.length) * 100),
+  razonCobertura: razon,
+  universitarios: evidencias.filter((e) => e.institutional_level === 'INSTITUCIONAL_UNIVERSIDAD')
+    .length,
+  evaluadas: iniciativas.filter((i) => i.current_status === '4').length,
+};
+const T = (s: string) => resolverCifras(s, cifras);
+
 h(1, 'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile');
-p('**Mapeo de evidencia pública.** No es un informe de resultados.');
+p('**Mapeo comparado de evidencia pública e institucionalización.**');
+p('**Borrador académico para revisión.** No es un informe de resultados.');
 
 tabla('Ficha del documento', ['Campo', 'Valor'], [
   ['Versión', `v${VERSION}`],
-  ['Estado', 'En investigación'],
+  ['Estado', 'Borrador académico para revisión'],
   ['Fecha de publicación', FECHA_VERSION],
   ['Fecha de corte', CORTE],
   ['Autoría', 'Diego Hernán Ojeda Cifuentes'],
@@ -105,17 +148,29 @@ tabla('Ficha del documento', ['Campo', 'Valor'], [
   ['Iniciativas deduplicadas', String(iniciativas.length)],
   ['Evidencias', String(evidencias.length)],
   ['Afirmaciones', String(afirmaciones.length)],
-  ['Fuentes con verificación sustantiva', '0'],
-  ['Iniciativas con evaluación de efecto', '0'],
+  [
+    'Fuentes con verificación sustantiva',
+    `${verificadas} de ${fuentes.length} (${cifras.porcentajeVerificado}%)`,
+  ],
+  [
+    'Iniciativas con evaluación de efecto',
+    String(iniciativas.filter((i) => i.current_status === '4').length),
+  ],
   ['URL del informe', 'https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile'],
 ]);
 
 hr();
 h(2, 'Cómo leer este documento', 'como-leer');
 nota(
-  'Nada de este documento debe citarse todavía como resultado. Las ' +
+  'Este documento es un borrador para revisión y no debe citarse como informe de resultados. De sus ' +
     fuentes.length +
-    ' fuentes fueron abiertas por los modelos que produjeron los documentos de investigación profunda, no por quien firma. La verificación sustantiva —abrir cada una y contrastar lo que dice contra lo que se le atribuye— sigue pendiente y no se delega.',
+    ' fuentes, ' +
+    verificadas +
+    ' fueron abiertas y contrastadas contra su publicación original —el ' +
+    cifras.porcentajeVerificado +
+    '% del corpus—, y once de ellas no decían lo que el registro les atribuía. Las ' +
+    (fuentes.length - verificadas) +
+    ' restantes conservan el contenido que les asignó la investigación previa. Ningún registro está aceptado: la aceptación exige decisión humana registrada.',
 );
 p(
   'El documento tampoco publica ranking, tabla de posiciones ni puntaje agregado por universidad. La razón está medida: la cobertura de investigación es ' +
@@ -129,11 +184,13 @@ p(
 hr();
 h(2, 'Qué muestra la evidencia', 'hallazgos');
 ul([
-  'Cuatro Facultades de Derecho formalizaron entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Son señales distintas de una sucesión de seminarios.',
+  'Cuatro Facultades de Derecho crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios, pero **ninguna de las cuatro publica el acto que la constituye**: sólo una tiene respaldo orgánico, en el organigrama de su Facultad.',
   'El uso interno de IA dejó de ser una casilla vacía: cuatro instituciones documentan herramientas o formación desplegadas dentro de la enseñanza del Derecho.',
-  'La formación continua es el único eje del corpus con serie temporal: dos diplomados con cohortes graduadas en años sucesivos.',
-  'Del corpus, una sola política sobre uso de IA fue dictada por una Facultad de Derecho. Las demás son universitarias y sólo resultan aplicables a Derecho.',
-  'Nueve registros corresponden a capacidades de la universidad y no de la Facultad, y quedan atribuidos como tales.',
+  'La formación continua es el único eje con serie temporal documentada, y la serie es de una sola institución: dos graduaciones consecutivas, de más de 90 y más de 100 titulados. El programa equivalente de otra universidad de la cohorte figura cerrado desde 2022.',
+  'Del corpus, una sola norma sobre uso de IA fue dictada por una Facultad de Derecho, con órgano aprobador identificado y sanción asociada. Los otros dos instrumentos son universitarios y de carácter orientador.',
+  T(
+    '{universitarios} registros corresponden a capacidades de la universidad y no de la Facultad, y quedan atribuidos como tales.',
+  ),
 ]);
 
 h(2, 'Qué no alcanza a mostrar', 'limites');
@@ -145,6 +202,26 @@ ul([
   'Con qué se sostiene. Dos de las ocho dimensiones —recursos y capacidades, y continuidad, cobertura y resultados— no reúnen una sola evidencia en toda la cohorte.',
   'Qué diría un tercero. Ninguna fuente del corpus proviene de contraste externo: la ruta 13 del protocolo está sin recorrer en las once instituciones.',
 ]);
+
+hr();
+h(2, '1 · Introducción', 'introduccion');
+for (const parrafo of informe01Introduccion) p(T(parrafo));
+
+hr();
+h(2, '2 · Objetivos', 'objetivos');
+h(3, 'Objetivo general');
+p(T(informe01ObjetivoGeneral));
+h(3, 'Objetivos específicos');
+ul(informe01ObjetivosEspecificos.map(T));
+
+hr();
+h(2, '3 · Metodología', 'metodologia');
+for (const bloque of informe01MetodologiaRelato) {
+  h(3, bloque.titulo);
+  for (const parrafo of bloque.parrafos) p(T(parrafo));
+}
+h(3, 'Declaración de intereses');
+for (const parrafo of informe01Intereses) nota(T(parrafo));
 
 hr();
 h(2, 'Cobertura de la investigación', 'cobertura');
@@ -265,10 +342,54 @@ for (const u of ordenadas) {
 }
 
 hr();
-h(2, 'PUCV: de las iniciativas a la capacidad institucional', 'pucv');
+h(2, '4 · Discusión', 'discusion');
+for (const bloque of informe01Discusion) {
+  h(3, bloque.titulo);
+  for (const parrafo of bloque.parrafos) p(T(parrafo));
+}
+
+hr();
+h(2, '5 · La PUCV en contexto', 'pucv');
 p(
   'La sección reconoce primero lo que existe. El antecedente describía a la PUCV como un conjunto de iniciativas inconexas y la evidencia de 2026 no sostiene esa lectura.',
 );
+
+h(3, 'Evidencia favorable localizada');
+tabla(
+  'Siete hechos verificados',
+  ['Hecho', 'Por qué cuenta', 'Fuente'],
+  pucvFavorable.map((f) => [f.hecho, f.fuerza, f.fuente]),
+);
+
+h(3, 'Brechas');
+tabla(
+  'Seis brechas, con su comparador',
+  ['Brecha', 'Alcance', 'Evidencia', 'Comparador'],
+  pucvBrechas.map((b) => [
+    b.brecha,
+    b.esDeCohorte ? 'Alcanza a las once' : 'Propia de la PUCV',
+    b.evidencia,
+    b.comparador,
+  ]),
+);
+
+h(3, 'Lectura');
+for (const parrafo of pucvLectura) p(T(parrafo));
+
+h(3, 'Doble revisión de la sección');
+for (const d of pucvDobleRevision) nota(`**${d.pregunta}** ${T(d.respuesta)}`);
+
+h(3, 'Recomendaciones de desarrollo institucional');
+for (const r of pucvRecomendaciones) {
+  h(4, `${r.id} · ${r.problema}`);
+  p(`**Evidencia.** ${r.evidencia}`);
+  p(`**Referente.** ${r.referente}`);
+  p(`**Acción.** ${r.accion}`);
+  p(`**Indicador.** ${r.indicador}`);
+}
+
+hr();
+h(2, 'Doce temas de capacidad institucional', 'pucv-temas');
 nota(
   'La PUCV es una de las tres del piloto: se recorrieron ' +
     cobDe('pucv').routes_completed +
@@ -297,7 +418,8 @@ p(
 for (const c of afirmaciones) {
   h(3, c.claim_text, c.claim_id);
   p(
-    `\`${c.claim_id}\` · **${c.classification}** · ${c.workflow_status} · confianza ${c.confidence}/100 · verificación sustantiva pendiente`,
+    `\`${c.claim_id}\` · **${c.classification}** · ${c.workflow_status} · confianza ${c.confidence}/100 · ` +
+      (c.verified_by ? `contrastada el ${c.last_verified}` : 'verificación sustantiva pendiente'),
   );
   p(`**Razonamiento.** ${c.reasoning}`);
   p(`**Límites.** ${c.limitations}`);
@@ -313,6 +435,30 @@ for (const l of informe01Lagunas) {
   h(3, `${l.id} · ${l.titulo}`, l.id);
   p(l.cuerpo);
   p(`**Qué la cerraría.** ${l.cierre}`);
+}
+
+hr();
+h(2, '6 · Conclusiones', 'conclusiones');
+p(
+  'Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información que no aparezca antes en el documento.',
+);
+for (const c of informe01Conclusiones) {
+  h(3, `${c.id} · ${c.titulo}`, c.id.toLowerCase());
+  p(T(c.cuerpo));
+  p(`**${c.clase}.** Se apoya en ${c.apoyo.join(', ')}.`);
+}
+
+hr();
+h(2, '7 · Limitaciones', 'limitaciones');
+p('Lo que este método no puede ver, dicho antes de que lo diga un lector.');
+ul(informe01Limitaciones.map(T));
+
+hr();
+h(2, '8 · Agenda de investigación', 'agenda');
+for (const a of informe01Agenda) {
+  h(3, `${a.id} · ${T(a.pregunta)}`, a.id.toLowerCase());
+  p(`**Por qué importa.** ${T(a.porQue)}`);
+  p(`**Cómo se cierra.** ${T(a.comoSeCierra)}`);
 }
 
 hr();
@@ -612,14 +758,15 @@ const manifiesto = {
   report_id: 'informe-01',
   report_title:
     'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
-  report_subtitle: 'Mapeo de evidencia pública',
+  report_subtitle:
+    'Mapeo comparado de evidencia pública e institucionalización · borrador académico para revisión',
   version: VERSION,
   release_date: FECHA_VERSION,
   cutoff_date: CORTE,
   author: 'Diego Hernán Ojeda Cifuentes',
   primary_recipient: 'Profesor Eduardo Aldunate Lizana',
   official: false,
-  status: 'en-investigacion',
+  status: 'borrador',
   methodology_version: 'METODOLOGIA_IA_DERECHO_V2.0',
   cohort_version: 'COHORTE_IA_DERECHO_CHILE_11_V1',
   universities_count: universidades.length,
@@ -627,10 +774,13 @@ const manifiesto = {
   initiatives_count: iniciativas.length,
   evidence_count: evidencias.length,
   claims_count: afirmaciones.length,
-  accepted_claims: 0,
-  pending_claims: afirmaciones.length,
-  substantively_verified_sources: 0,
-  initiatives_at_evaluation_level: 0,
+  // Ninguno de estos números se escribe a mano: si el dataset cambia, el
+  // manifiesto cambia con él o el paquete queda mintiendo sobre su contenido.
+  accepted_claims: afirmaciones.filter((c) => c.workflow_status === 'ACEPTADO').length,
+  pending_claims: afirmaciones.filter((c) => c.workflow_status !== 'ACEPTADO').length,
+  substantively_verified_sources: verificadas,
+  substantively_verified_percent: cifras.porcentajeVerificado,
+  initiatives_at_evaluation_level: iniciativas.filter((i) => i.current_status === '4').length,
   coverage_ratio_pilot_to_rest: razon,
   formats: ['md', 'html', ...(pdf ? ['pdf'] : []), 'csv', 'json', 'zip'],
   formats_missing: {
@@ -649,7 +799,7 @@ const manifiesto = {
   source_documents:
     'content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda/',
   citation_note:
-    'Documento en investigación. Ninguna afirmación está aceptada y ninguna fuente tiene verificación sustantiva: no debe citarse como resultado.',
+    `Borrador académico para revisión. ${verificadas} de ${fuentes.length} fuentes (${cifras.porcentajeVerificado}%) fueron contrastadas contra su publicación original; las ${fuentes.length - verificadas} restantes conservan el contenido que les asignó la investigación previa. Ninguna afirmación está aceptada: aceptar exige decisión humana registrada. Cítese siempre con el número de versión, la fecha de consulta y la indicación de que es un borrador.`,
 };
 escribir('manifest.json', JSON.stringify(manifiesto, null, 2));
 

@@ -4,6 +4,7 @@ import {
   informe01Evidencias,
   informe01Fuentes,
   informe01Iniciativas,
+  informe01Recuento,
   informe01Universidades,
 } from '@/data/informe01';
 import type {
@@ -246,4 +247,34 @@ export function hitos() {
 
 export function fuentesSinFecha() {
   return informe01Fuentes.filter((f) => !f.publishedDate);
+}
+
+/* ── Cifras para la capa narrativa ──────────────────────────────────────────
+ * La prosa del borrador cita números con marcas `{clave}` y nunca a mano. Esta
+ * es la única tabla que las resuelve, de modo que la web, el Markdown, el HTML
+ * y el PDF no puedan decir cifras distintas, y de modo que una verificación
+ * futura que cambie el recuento cambie también el texto.                     */
+
+export const CORTE_INFORME_01 = '1 de septiembre de 2026';
+
+export function cifrasInforme01(): Record<string, string | number> {
+  const r = informe01Recuento;
+  const noVerificadas = r.fuentes - r.fuentesVerificadas;
+  const universitarios = informe01Evidencias.filter(
+    (e) => e.attribution === 'INSTITUCIONAL_UNIVERSIDAD',
+  ).length;
+  return {
+    corte: CORTE_INFORME_01,
+    universidades: r.universidades,
+    fuentes: r.fuentes,
+    iniciativas: r.iniciativas,
+    evidencias: r.evidencias,
+    afirmaciones: r.afirmaciones,
+    verificadas: r.fuentesVerificadas,
+    noVerificadas,
+    porcentajeVerificado: Math.round((r.fuentesVerificadas / r.fuentes) * 100),
+    razonCobertura: r.razonCobertura,
+    universitarios,
+    evaluadas: r.iniciativasEvaluadas,
+  };
 }

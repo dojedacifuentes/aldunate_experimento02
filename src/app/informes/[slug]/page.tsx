@@ -15,6 +15,10 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
+import {
+  Informe01BorradorApertura,
+  Informe01BorradorCierre,
+} from '@/components/informe01/Borrador';
 import { Informe01Publicacion } from '@/components/informe01/Publicacion';
 import { informe01Recuento } from '@/data/informe01';
 import {
@@ -210,9 +214,9 @@ export default async function InformeDetallePage({
               {/*
                 El contador se lee del registro real y no de `sourceIds`.
                 `sourceIds` alimenta la lista de fuentes verificadas, y el
-                Informe 01 tiene registro poblado con verificación sustantiva
-                pendiente: mostrar «0» aquí contradecía las 74 que declara el
-                propio informe unas pantallas más abajo.
+                Informe 01 tiene registro poblado y verificación en curso:
+                mostrar «0» aquí contradecía las que declara el propio informe
+                unas pantallas más abajo.
               */}
               <MetaRow
                 label="Fuentes registradas"
@@ -275,7 +279,9 @@ export default async function InformeDetallePage({
         documento completo y no necesita esta capa, y hacer genérica una sección
         que sólo un informe usa habría producido una abstracción con un solo caso.
       */}
+      {esInforme01 && <Informe01BorradorApertura />}
       {esInforme01 && <Informe01Publicacion />}
+      {esInforme01 && <Informe01BorradorCierre />}
 
       {report.downloads && report.downloads.length > 0 && (
         <Section
@@ -559,16 +565,18 @@ export default async function InformeDetallePage({
             <div className="space-y-8">
               <div className="rounded-lg border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
                 <p className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
-                  {esInforme01 ? 'Registro poblado · verificación pendiente' : 'Registro vacío'}
+                  {esInforme01
+                    ? 'Registro poblado · verificación en curso'
+                    : 'Registro vacío'}
                 </p>
                 <h3 className="mt-3 font-serif text-xl text-foreground">
                   {esInforme01
-                    ? `${informe01Recuento.fuentes} fuentes registradas, ninguna verificada una a una`
+                    ? `${informe01Recuento.fuentes} fuentes registradas, ${informe01Recuento.fuentesVerificadas} contrastadas contra su original`
                     : 'Todavía no hay fuentes incorporadas'}
                 </h3>
                 <p className="mx-auto mt-2.5 max-w-lg text-sm leading-relaxed text-muted-foreground">
                   {esInforme01
-                    ? 'El registro está publicado y cada fuente aparece en la ficha de su institución, con su estado editorial y sus advertencias de lectura. Ninguna entra a esta lista todavía: que una URL responda no prueba que diga lo que se le atribuye, y la verificación sustantiva es responsabilidad de quien firma.'
+                    ? 'El registro está publicado y cada fuente aparece en la ficha de su institución, con su estado editorial y sus advertencias de lectura. Ninguna entra a esta lista todavía porque esta lista es de fuentes aceptadas, y aceptar exige decisión humana registrada: contrastar no es aceptar.'
                     : 'El informe está en fase de definición de alcance. Las fuentes entran al registro antes de convertirse en dato, y el registro se publica junto con el documento.'}
                 </p>
                 <Link

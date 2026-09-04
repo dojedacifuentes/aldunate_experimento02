@@ -45,11 +45,11 @@ export const reports: Report[] = [
     code: 'INFORME 01',
     title:
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
-    subtitle: 'Mapeo de evidencia pública',
+    subtitle: 'Mapeo comparado de evidencia pública e institucionalización · borrador académico para revisión',
     executiveSummary:
-      'Mapeo sistemático de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en Escuelas y Facultades de Derecho chilenas. El informe se construye por acumulación verificada: cada institución incorporada exige documento público, fecha de consulta y nivel de confianza declarado. Hasta que ese registro alcance cobertura suficiente, este documento no emite conclusiones sobre tendencias nacionales.',
+      'Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, al 1 de septiembre de 2026. De las 74 fuentes del corpus, 38 fueron abiertas y contrastadas contra su publicación original: es el 51%, y once registros no decían lo que su página dice. Lo que el corpus muestra es un campo que dejó atrás los eventos aislados y entró en una fase de creación de unidades, normas y programas permanentes, sin haber alcanzado en ningún punto la fase de medición: cuatro Facultades crearon estructuras dedicadas y ninguna publica el acto que las constituye; una sola dictó una norma propia con consecuencia jurídica; ninguna de las once acredita una línea curricular obligatoria; y ninguna de las 53 iniciativas registradas alcanza evidencia pública de evaluación de efecto sobre el aprendizaje jurídico. El documento no publica ranking: la cobertura de investigación es 3,7 veces mayor en tres instituciones que en las ocho restantes, y ordenar sobre esa base mediría el trabajo de campo. Es un borrador para revisión, no un informe de resultados.',
     authors: [autor.name],
-    status: 'en-investigacion',
+    status: 'borrador',
     folder: 'content/reports/01_ia_escuelas_derecho_chile/',
     axes: [
       'Universidades y unidades académicas',
@@ -88,6 +88,26 @@ export const reports: Report[] = [
       'El campo cambia más rápido que el ciclo de verificación: toda cifra tiene fecha.',
     ],
     versions: [
+      {
+        version: '0.6.0',
+        date: '2026-09-04',
+        status: 'borrador',
+        pdf: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
+        html: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
+        changelog: [
+          'Primera verificación sustantiva del corpus. Se abrieron 38 de las 74 fuentes y se contrastaron siete campos contra la publicación original: existencia y título literal, fecha declarada, unidad responsable, condición de anuncio o ejecución, cifras de cobertura, límites y respaldo efectivo de la afirmación. Es el 51% del corpus, y la portada lo dice.',
+          'Once registros no decían lo que su página dice. El decálogo de la PUCV «sugiere recomendaciones» y es lineamiento, no política. El «primer Departamento de Derecho y Tecnología en Chile» es cita textual del decano de la UC, no un hecho verificado, y ninguna de las cuatro unidades creadas entre 2025 y 2026 publica su acto de creación. El convenio de la UAI con Legu se firmó: es acto ejecutado.',
+          'La serie temporal de formación continua cambia de titular. El diploma de la Universidad de Chile figura cerrado desde 2022 y su reapertura de 2026 se declara referencial bajo otra unidad; la serie documentada es de la UC, con dos graduaciones consecutivas de más de 90 y más de 100 titulados.',
+          'El LMIL de la PUCV dependía en 2022 de la Dirección de Incubación y Negocios, no de la Facultad, y su fuente fundacional no menciona la inteligencia artificial. En 2025 ya es de la Escuela de Derecho. Es un traslado orgánico, y así se registra.',
+          'La verificación corrigió en las dos direcciones. El Programa de IA y LegalTech de la Universidad Central estaba subestimado porque el registro lo nombraba por el segmento de su URL: tiene IA explícita y actividad fechada. El sesgo de cobertura no sólo infla a los observados.',
+          'Dos fechas se retiraron por no constar en la fuente —GenIA UdeC y los lineamientos de la Universidad de Chile— y dos se ganaron. El seminario «Derecho en la Smart Era» lo organiza el centro de alumnos y se reatribuye a ESTUDIANTIL.',
+          'El documento incorpora su capa académica: introducción, objetivos, relato metodológico en nueve apartados, discusión en seis, siete conclusiones que citan las afirmaciones que las sostienen, ocho limitaciones y una agenda de siete preguntas con su condición de cierre.',
+          'Declaración de intereses. Una fuente del corpus identifica al destinatario del informe y a su autor como conductores del Programa DIAT. La sección PUCV publica su doble revisión: si es demasiado severa y si es demasiado indulgente.',
+          'DEC-108 queda enmendada. Prohibía verificar, pero el kit canónico define «contrastado» como segunda revisión y se la encarga al auditor metodológico; lo que reserva a la firma humana es «aceptado», que sigue vacío en los 227 registros.',
+          'Ningún número de la prosa se escribe a mano: los textos citan marcas que se resuelven desde el dataset, de modo que web, Markdown, HTML y PDF no puedan decir cifras distintas.',
+          'ISSUE-002 cerrado: la fuente de la UdeC carga sin error de certificado. ISSUE-003 confirmado: el CNED devuelve 403. Tres incidencias nuevas registradas.',
+        ],
+      },
       {
         version: '0.5.0',
         date: '2026-09-04',

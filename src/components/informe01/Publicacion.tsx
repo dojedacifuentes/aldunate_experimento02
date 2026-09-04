@@ -58,7 +58,7 @@ export function Informe01Publicacion() {
             valor={String(r.fuentesVerificadas)}
             de={`de ${r.fuentes}`}
             etiqueta="fuentes con verificación sustantiva"
-            nota="Que una URL responda no prueba que diga lo que se le atribuye. Esta cifra es la que impide llamar resultados a lo que hay."
+            nota="Que una URL responda no prueba que diga lo que se le atribuye. De las abiertas y contrastadas, once no decían lo que el registro les asignaba. Mientras la cifra no alcance el total, esto es un borrador y no un informe de resultados."
             destacada
           />
         </div>
@@ -68,10 +68,10 @@ export function Informe01Publicacion() {
             <h3 className="meta mb-4">Lo que vemos</h3>
             <ul className="space-y-3">
               {[
-                'Cuatro Facultades formalizaron entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Son señales distintas de una sucesión de seminarios.',
+                'Cuatro Facultades crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Ninguna de las cuatro publica el acto que la constituye; sólo una figura en el organigrama de su Facultad.',
                 'El uso interno de IA dejó de ser una casilla vacía: cuatro instituciones documentan herramientas o formación desplegadas dentro de la enseñanza del Derecho.',
-                'La formación continua es el único eje con serie temporal: dos diplomados con cohortes graduadas en años sucesivos.',
-                'Una sola política sobre IA del corpus la dictó una Facultad de Derecho. Las demás son universitarias y sólo resultan aplicables a Derecho.',
+                'La formación continua es el único eje con serie temporal documentada, y la serie es de una sola institución: dos graduaciones consecutivas, de más de 90 y más de 100 titulados.',
+                'Una sola norma sobre IA del corpus la dictó una Facultad de Derecho, con órgano aprobador y sanción. Los otros dos instrumentos son universitarios y orientadores.',
               ].map((t) => (
                 <li
                   key={t}

@@ -160,7 +160,7 @@ export interface Informe01Evidencia {
   statement: string;
   attribution: Informe01Atribucion;
   temporalStatus: Informe01Trayectoria;
-  /** Vacío en las 75: la verificación sustantiva sigue pendiente. */
+  /** Fecha del contraste contra la publicación original. Vacío mientras no exista. */
   lastVerified: string;
   workflowStatus: Informe01EstadoEditorial;
   createdBy: string;
@@ -221,7 +221,7 @@ export interface Informe01Recuento {
   iniciativas: number;
   evidencias: number;
   afirmaciones: number;
-  /** Cuántas fuentes tienen verificación sustantiva. Hoy es cero, y se muestra. */
+  /** Cuántas fuentes tienen verificación sustantiva. Se muestra siempre, verificadas y no. */
   fuentesVerificadas: number;
   /** Cuántas iniciativas alcanzan el nivel 4 de la escalera. Hoy es cero. */
   iniciativasEvaluadas: number;
