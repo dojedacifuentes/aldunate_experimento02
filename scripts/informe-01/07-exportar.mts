@@ -70,7 +70,7 @@ import {
   pucvRecomendaciones,
 } from '../../src/data/informe01-pucv.js';
 
-const VERSION = '0.7.0';
+const VERSION = '0.8.0';
 const FECHA_VERSION = '2026-09-04';
 const CORTE = '2026-09-01';
 const BASE = `informe-01-borrador-academico-v${VERSION}`;

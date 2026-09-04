@@ -4,7 +4,7 @@
 
 **Borrador académico para revisión · no es un informe de resultados**
 
-- Versión: v0.7.0
+- Versión: v0.8.0
 - Fecha de corte: 1 de septiembre de 2026
 - Cohorte: 11 Escuelas y Facultades de Derecho
 - Corpus: 74 fuentes · 38 contrastadas
@@ -17,7 +17,7 @@
 
 | Campo | Valor |
 |---|---|
-| Versión | v0.7.0 |
+| Versión | v0.8.0 |
 | Estado | Borrador académico para revisión |
 | Fecha de publicación | 2026-09-04 |
 | Fecha de corte | 2026-09-01 |
@@ -53,7 +53,7 @@ Este documento mapea la evidencia pública disponible sobre uso y enseñanza de 
 
 El método separa cuatro cosas que la discusión pública mezcla: la fuente, la evidencia que esa fuente prueba, la iniciativa que agrupa varias evidencias y la afirmación que se sostiene sobre ellas. Separa además a quién pertenece cada capacidad —una licencia disponible para toda la universidad no es una capacidad de su Facultad de Derecho— y en qué peldaño de institucionalización se encuentra, desde el anuncio aislado hasta el resultado públicamente revisable. Esta versión añade dos instrumentos: la clase de **mecanismo** con que se hace cada cosa —una unidad, una norma, un programa formativo, una herramienta, un convenio— y una matriz de **diez capacidades institucionales** que reemplaza al recuento de evidencia como comparador principal.
 
-Lo que aparece tiene una forma reconocible y reciente. **41 de las 49 iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En cinco de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —doce programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: siete de once.
+Lo que aparece tiene una forma reconocible y reciente. **41 de las 49 iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En tres de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —doce programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: siete de once.
 
 La lectura que el conjunto permite es que el campo está construyendo estructura antes que reglas, y actividad antes que resultados. Se crean órganos, se abren programas y se anuncian herramientas; **ninguna de las 53 iniciativas registradas acredita haber medido su efecto sobre el aprendizaje jurídico**, y tres rondas independientes de investigación llegaron por separado a esa misma ausencia. Es la conclusión más sólida del informe y también la más fácil de revertir: bastaría una Facultad que evaluara una sola de las actividades que ya realiza y lo publicara.
 
@@ -81,7 +81,7 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-2 · La estructura se crea antes que la regla.
 
-**Dato.** En cinco de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en una sola. El corpus registra siete unidades frente a cuatro normas, y de esas cuatro normas sólo dos son de una Facultad.
+**Dato.** En tres de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en una sola. El corpus registra siete unidades frente a cuatro normas, y de esas cuatro normas sólo dos son de una Facultad.
 
 **Lectura.** La institucionalización avanza por creación de órganos y no por producción de reglas. Es un orden posible y no el único: crear una unidad es un acto de una autoridad, y dictar una norma sobre uso de inteligencia artificial obliga antes a decidir qué se permite en una evaluación, qué se declara y qué consecuencia tiene no declararlo. Lo segundo es más difícil y más comprometedor que lo primero.
 
@@ -101,7 +101,7 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-4 · Buena parte de lo que se atribuye a las Facultades pertenece a sus universidades.
 
-**Dato.** De las once herramientas del corpus, siete son capacidades de la universidad y no de la Facultad de Derecho. En total, 12 de las 110 celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.
+**Dato.** De las once herramientas del corpus, siete son capacidades de la universidad y no de la Facultad de Derecho. En total, 10 de las 110 celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.
 
 **Lectura.** Existe una capa de infraestructura universitaria —licencias generales, asistentes institucionales, lineamientos de rectoría— disponible para Derecho pero no desarrollada por Derecho. Confundir disponibilidad con adopción es el error más frecuente al leer estos anuncios, y es un error que se comete de buena fe: la nota de prensa que anuncia una licencia para toda la universidad no distingue quién la usará.
 
@@ -121,7 +121,7 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-6 · Cuánto se investigó y cuánto se hace son variables distintas, y el corpus lo demuestra.
 
-**Dato.** La Universidad Autónoma de Chile es la institución menos investigada de las once —2 de trece rutas recorridas, ninguna fuente contrastada— y acredita 4 capacidades en operación. La Universidad de Chile recorrió 11 rutas y acredita 4.
+**Dato.** La Universidad Autónoma de Chile es la institución menos investigada de las once —2 de trece rutas recorridas, ninguna fuente contrastada— y acredita 4 capacidades en operación. La Universidad de Chile recorrió 11 rutas y acredita 3.
 
 **Lectura.** Si el trabajo de campo y la capacidad institucional fueran la misma variable, ese par de valores no podría existir. Es la razón concreta —y no una cautela genérica— por la que este informe no publica ranking: una tabla ordenada por evidencia localizada ordenaría a los investigadores antes que a las Facultades.
 
@@ -264,7 +264,7 @@ La metodología 2.0 se conserva íntegra, su matriz se publica en anexo y ningun
 
 ### Declaración de intereses
 
-> Una de las fuentes del corpus identifica como conductores del Programa de Derecho, Inteligencia Artificial y Tecnología de la PUCV a Johann Benfeld, **Eduardo Aldunate** y **Diego Ojeda**. El destinatario de este borrador y su autor figuran, por tanto, en una iniciativa que el informe evalúa.
+> **El autor de este informe participa en una de las iniciativas que el informe evalúa**: el Programa de Derecho, Inteligencia Artificial y Tecnología de la PUCV, cuya conducción consta en una fuente pública del corpus. La iniciativa se registra, se clasifica y se somete a las mismas reglas que las otras cincuenta y dos.
 
 > La declaración no resuelve el conflicto: lo hace visible. Las medidas adoptadas son tres. Las fuentes que involucran al autor permanecen en el corpus y no se retiran. La sección dedicada a la PUCV se somete a una doble revisión explícita —si el juicio resulta demasiado severo y si resulta demasiado indulgente— cuyo resultado se publica. Y ninguna afirmación sobre la PUCV se sostiene en una fuente única.
 
@@ -370,7 +370,7 @@ Cada celda se calcula con una regla mecánica sobre el dataset. Una capacidad es
 
 *¿Qué capacidad institucional demuestra cada Facultad, y dónde no podemos saberlo?*
 
-Matriz de 11 instituciones por 10 capacidades, 110 celdas: 33 en operación, 11 incipiente, 12 sólo en el entorno, 7 no localizada, 47 no concluyente. Las filas van en orden alfabético y no hay puntaje agregado.
+Matriz de 11 instituciones por 10 capacidades, 110 celdas: 31 en operación, 10 incipiente, 10 sólo en el entorno, 5 sólo adyacente, 7 no localizada, 47 no concluyente. Las filas van en orden alfabético y no hay puntaje agregado.
 
 > No hay total por fila ni por columna, y la falta es el diseño: sumar capacidades produciría un número por institución, y ese número sería un ranking del trabajo de campo tanto como del trabajo institucional.
 
@@ -393,14 +393,14 @@ Matriz de 11 instituciones por 10 capacidades, 110 celdas: 33 en operación, 11 
 
 | Institución | Unidad | Norma | Pregrado | Formación | Herramienta | Adopción | Alcance | I+D | Transferencia | Evaluación |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Pontificia Universidad Católica de Chile | Operación · | Operación · | No concluyente | Operación · | Entorno · | Operación | Operación · | No concluyente | Incipiente | No concluyente |
+| Pontificia Universidad Católica de Chile | Adyacente · | Operación · | No concluyente | Operación · | Entorno · | Operación | Operación · | No concluyente | Incipiente | No concluyente |
 | Pontificia Universidad Católica de Valparaíso | Operación · | Entorno · | Operación · | Operación · | Operación · | Entorno · | Operación · | No concluyente | Operación · | No concluyente |
 | Universidad Adolfo Ibáñez | No concluyente | No concluyente | No concluyente | Operación | No localizada | No concluyente | No localizada | Entorno | Incipiente · | No concluyente |
-| Universidad Andrés Bello | No concluyente | No concluyente | Operación | Incipiente · | Operación | Entorno · | Operación | No concluyente | Operación | No concluyente |
+| Universidad Andrés Bello | No concluyente | No concluyente | Operación | Adyacente · | Operación | Entorno · | Operación | No concluyente | Operación | No concluyente |
 | Universidad Autónoma de Chile | No concluyente | No concluyente | Operación | Operación | No concluyente | Operación | Operación | No concluyente | No concluyente | No concluyente |
 | Universidad Central de Chile | Operación · | No concluyente | No concluyente | No concluyente | Operación | Operación | Operación · | Operación | No concluyente | No localizada |
-| Universidad de Chile | Operación | Entorno · | No concluyente | Operación · | No localizada | Entorno · | Operación | Operación | Incipiente · | No localizada |
-| Universidad de Concepción | No concluyente | No concluyente | No concluyente | Incipiente | Entorno · | Incipiente | Entorno · | No concluyente | Incipiente · | No concluyente |
+| Universidad de Chile | Adyacente | Entorno · | No concluyente | Operación · | No localizada | Entorno · | Operación | Operación | Incipiente · | No localizada |
+| Universidad de Concepción | No concluyente | No concluyente | No concluyente | Incipiente | Adyacente · | Incipiente | Adyacente · | No concluyente | Incipiente · | No concluyente |
 | Universidad de los Andes | No concluyente | No concluyente | No concluyente | Operación | Entorno · | No concluyente | No localizada | Operación | Incipiente | No concluyente |
 | Universidad del Desarrollo | No concluyente | No concluyente | Incipiente · | No concluyente | Entorno | No concluyente | No localizada | No concluyente | Entorno | No concluyente |
 | Universidad Diego Portales | Operación · | No concluyente | Incipiente · | No concluyente | No concluyente | No concluyente | Operación · | No concluyente | Incipiente | No concluyente |
@@ -414,6 +414,7 @@ Matriz de 11 instituciones por 10 capacidades, 110 celdas: 33 en operación, 11 
 | En operación | La Facultad, un centro suyo o un equipo académico sostiene un mecanismo que ya funciona: actividad recurrente, unidad constituida, programa activo o instrumento vigente. |
 | Incipiente | Hay un mecanismo de la Facultad, pero en el primer peldaño: una actividad aislada, un piloto o un anuncio. Existe y no está en operación, que son cosas distintas. |
 | Sólo en el entorno | Lo que consta pertenece a la universidad, a una persona o al centro de alumnos, no a la Facultad de Derecho. Es contexto disponible, no capacidad propia (DEC-105). |
+| Sólo adyacente | La Facultad sostiene una estructura o un programa del ámbito —tecnología, innovación, transformación digital—, pero su documentación pública no acredita un componente de inteligencia artificial. No es una ausencia: es una presencia que no prueba lo que esta capacidad pregunta. |
 | No localizada | Se recorrieron las rutas del protocolo que la habrían encontrado y no se halló evidencia pública. No significa que la capacidad no exista. |
 | No concluyente | La ruta del protocolo que acreditaría esta capacidad no se recorrió en esta institución. La celda no habla de la Facultad: habla del trabajo de campo. |
 
@@ -427,7 +428,7 @@ Si cuánto se investiga y cuánto hacen las Facultades fueran la misma variable,
 
 *¿Cuánto de lo que vemos es lo que hacen las Facultades, y cuánto es dónde miramos?*
 
-Dispersión de las once instituciones. En horizontal, rutas del protocolo recorridas, de trece; en vertical, capacidades en operación, de diez. Universidad Autónoma de Chile recorre 2 rutas y acredita 4 capacidades; Universidad de Chile recorre 11 y acredita 4. El halo gris de cada punto es proporcional a sus celdas no concluyentes.
+Dispersión de las once instituciones. En horizontal, rutas del protocolo recorridas, de trece; en vertical, capacidades en operación, de diez. Universidad Autónoma de Chile recorre 2 rutas y acredita 4 capacidades; Universidad de Chile recorre 11 y acredita 3. El halo gris de cada punto es proporcional a sus celdas no concluyentes.
 
 > El eje vertical no es una nota ni un puntaje: es el recuento de preguntas que el corpus contesta afirmativamente, y está acotado por arriba por lo que se buscó. Cada punto lleva un halo gris proporcional a sus celdas sin concluir; un punto bajo con halo grande no dice «hace poco», dice «no lo sabemos».
 
@@ -692,7 +693,7 @@ Lo que este método no puede ver, dicho antes de que lo diga un lector.
 - **Dos dimensiones del protocolo están vacías.** Recursos y capacidades, y continuidad, cobertura y resultados, no reúnen evidencia en ninguna institución. El informe no puede pronunciarse sobre financiamiento, dotación ni sostenibilidad.
 - **Falta el acto formal de casi todas las unidades.** De las estructuras creadas entre 2025 y 2026, sólo una tiene respaldo orgánico publicado. El informe distingue creación anunciada de creación acreditada, pero no puede resolver la diferencia con las fuentes disponibles.
 - **La ausencia de evidencia pública no es inexistencia.** Toda afirmación negativa de este informe se refiere a lo que no fue localizado recorriendo un protocolo definido, no a lo que no ocurre.
-- **El autor y el destinatario participan de una iniciativa evaluada.** Ver la declaración de intereses. Ninguna afirmación sobre la PUCV se sostiene en fuente única, y la sección correspondiente publica su doble revisión.
+- **El autor participa en una de las iniciativas evaluadas.** Ver la declaración de intereses. Ninguna afirmación sobre la PUCV se sostiene en fuente única, y la sección correspondiente publica su doble revisión.
 
 ---
 
@@ -1146,7 +1147,7 @@ Ninguna está aceptada. El nivel epistemológico dice qué clase de cosa es la a
 
 `clm-pucv-001` · **INFERENCE** · CONTRASTADO · confianza 55/100 · contrastada el 2026-09-04
 
-**Razonamiento.** A favor de la capacidad: el Núcleo DIAT se oficializó en 2020 y en 2026 opera como Programa; LMIL existe desde 2022; ScribeClaroPUCV es una herramienta de IA nacida para estudiantes de Derecho; el Taller de IA y Prompting Jurídico se ejecutó en 2025 con cerca de 90 participantes y obtuvo financiamiento competitivo de Vinculación con el Medio en 2025 y de nuevo en 2026; y el decálogo institucional de IA lo lideró una profesora de Derecho. En contra de la institucionalización: no se localizó línea curricular obligatoria, dotación académica específicamente asignada, presupuesto basal propio, adopción cuantificada dentro de la Facultad ni evaluación pública de resultados.
+**Razonamiento.** A favor de la capacidad: el Núcleo DIAT se oficializó en 2020 y en 2026 opera como Programa; ScribeClaroPUCV es una herramienta de IA nacida para estudiantes de Derecho; el Taller de IA y Prompting Jurídico se ejecutó en 2025 con cerca de 90 participantes y obtuvo financiamiento competitivo de Vinculación con el Medio en 2025 y de nuevo en 2026; y el decálogo institucional de IA lo lideró una profesora de Derecho. En contra de la institucionalización: no se localizó línea curricular obligatoria, dotación académica específicamente asignada, presupuesto basal propio, adopción cuantificada dentro de la Facultad ni evaluación pública de resultados.
 
 **Límites.** Arrastra íntegra la advertencia de clm-metodo-001: la PUCV es una de las tres del piloto, con 14 fuentes y nueve rutas recorridas, de modo que se la observa desde una posición de información privilegiada. Lo que se afirma es una diferencia en la evidencia localizada, no una diferencia demostrada en la actividad. Las cuatro carencias que se enumeran tampoco están demostradas en las otras diez: sólo se han buscado con este detalle en tres.
 

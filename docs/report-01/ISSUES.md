@@ -500,3 +500,42 @@ del punto. Vive en el motor de gráficos —`src/lib/informe01-graficos.ts`—, 
 modo que la corrección alcanza a la web, al HTML y al PDF a la vez.
 
 **No hacer.** No mover los puntos: sus coordenadas son los datos.
+
+
+---
+
+## ISSUE-024 — El campo `direction` carga dos preguntas distintas
+
+**Estado:** OPEN · **Impacto:** medio · **Afecta a la matriz de capacidades**
+
+`direction` responde a «¿qué relación tiene esta iniciativa con la inteligencia
+artificial?», con cuatro valores: la usa, la estudia como objeto jurídico, ambas,
+o `ADYACENTE`.
+
+Desde la v0.8.0 ese campo es normativo: decide si una iniciativa puede acreditar
+una capacidad. Y al recorrer los siete registros adyacentes aparece que en al
+menos uno el valor no responde esa pregunta sino otra. La nota de `[genIA]`, de
+la Universidad de Concepción, lo dice con todas sus letras:
+
+> «Programa interdisciplinario de toda la universidad. No es una estructura de
+> Derecho: reclasificado ADYACENTE.»
+
+«No es una estructura de Derecho» es un juicio sobre el **nivel institucional**,
+que el registro ya guarda en `institutional_level` —y que ahí figura como
+`INSTITUCIONAL_UNIVERSIDAD`—. Una herramienta que se llama *genIA* es
+difícilmente adyacente a la inteligencia artificial.
+
+**Consecuencia.** La celda de herramienta de la Universidad de Concepción dice
+«sólo adyacente» cuando probablemente debería decir «sólo en el entorno». Las dos
+son estados prudentes y ninguna afirma una ausencia, de modo que el error no
+produce una afirmación falsa sobre la institución; pero clasifica mal, y con el
+campo ya convertido en normativo eso importa más que antes.
+
+**Qué hacer.** Revisar los siete registros `ADYACENTE` contra su fuente y
+comprobar, uno por uno, que el valor responde a la pregunta sobre inteligencia
+artificial y no a la pregunta sobre pertenencia a Derecho. Empezar por
+`[genIA]`.
+
+**No hacer.** No reclasificar en bloque sin abrir las fuentes. El reparto actual
+—siete registros en cinco instituciones— es lo que hace que la regla no favorezca
+a nadie, y tocarlo a ojo es justamente el riesgo que la regla existe para evitar.
