@@ -80,4 +80,4 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 
 - [x] Changelog de la v0.5.0 y fe de erratas de la v0.4.0
 - [x] `src/data/trabajos.ts` actualizado: decía 43 fuentes y la asimetría antigua
-- [ ] Bundle de git y comandos de publicación
+- [x] Bundle de git y comandos de publicación

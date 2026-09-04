@@ -62,21 +62,33 @@ declarando la v0.4.0 con 72 fuentes.
 
 ## Último punto completado
 
-Componentes de la publicación implementados y montados. `npm run verify`
-completo en verde: typecheck, lint (0 errores, 9 avisos preexistentes del código
-donado), 97 pruebas y build de 18 rutas.
+Publicación de la v0.5.0 cerrada de extremo a extremo: dataset, capa tipada,
+componentes, ficha del informe, descargas con manifiesto y controles de
+integridad, pruebas de integridad y de control editorial, y un defecto de
+maquetación en móvil encontrado con capturas y corregido (ISSUE-012).
+
+`npm run verify` en verde: typecheck, lint (0 errores, 8 avisos preexistentes
+del código donado del juego), 115 pruebas y build de 18 rutas.
 
 ---
 
 ## Próxima tarea exacta
 
-T-020: actualizar la ficha del informe en `src/data/reports.ts`. Agregar la
-versión `0.5.0` con fecha `2026-09-04` al principio de `versions`, sin tocar las
-entradas anteriores, con un changelog que incluya la fe de erratas del cambio de
-72 a 74 fuentes (DEC-106). Mantener `sourceIds` y `claimIds` **vacíos**. Después
-comprobar que el contador de fuentes que muestra la ficha se lee de
-`informe01Recuento` y no de una constante escrita a mano, y revisar
-`src/data/trabajos.ts` por la regla permanente de `CLAUDE.md` §12.
+Empezar la verificación sustantiva por la Universidad de Concepción, que es la
+tanda más corta y la que tiene el problema más concreto: abrir sus cuatro
+fuentes —`src-udec-001` a `src-udec-004`—, contrastar la evidencia extraída
+contra lo que cada página dice, y buscar en `jur.udec.cl` un respaldo para
+`src-udec-002`, cuya única URL tiene el certificado mal configurado (ISSUE-002).
+
+Para cada fuente verificada: escribir `verified_by` y la fecha en
+`canonical/dataset/fuentes.csv`, `last_verified` en las evidencias que sostiene,
+y subir su `workflow_status` a `CONTRASTADO`. Después
+`node scripts/informe-01/06-compilar-a-typescript.mjs` y `npm run verify`.
+
+**Ojo:** dos pruebas de `src/data/informe01.test.ts` fallarán a propósito en
+cuanto exista la primera verificación —comprueban que hoy no hay ninguna—.
+Cuando eso ocurra, la prueba se actualiza para exigir coherencia entre
+`verified_by` y `last_verified`, no se borra.
 
 ---
 
@@ -148,11 +160,14 @@ Las diez están en `DECISIONS.md`. Las cuatro que más veces se rompen:
 
 ## Pendientes, por prioridad
 
-1. Ficha del informe con la versión 0.5.0 y la fe de erratas (T-020).
-2. Exportaciones y manifiesto (T-021).
-3. Los validadores del compilador, también como prueba de vitest (T-022).
-4. Línea de tiempo de hitos, la única visualización que falta.
-5. Bundle de entrega (T-023).
+1. **Verificación sustantiva de las 74 fuentes** (ISSUE-001). Es lo único que
+   desbloquea el paso de mapeo de evidencia a informe de resultados.
+2. Los tres `.json` de contenido para la cadena PowerShell, y con ellos Word y
+   PDF (ISSUE-011).
+3. Línea de tiempo de hitos: la única visualización declarada que falta.
+4. Cerrar ISSUE-002 a ISSUE-008, que son comprobaciones concretas y acotadas.
+5. Igualar la cobertura de las ocho universidades fuera del piloto. Sin eso no
+   habrá comparación nacional por muchas fuentes que se acumulen.
 
 ---
 
@@ -172,10 +187,12 @@ Al corte de este relevo, sobre la rama `informe-01/v0.5.0`:
 
 | | Estado | Cuándo |
 |---|---|---|
-| lint | 0 errores · 9 avisos preexistentes | 04-09-2026 |
+| lint | 0 errores · 8 avisos preexistentes | 04-09-2026 |
 | typecheck | pasa | 04-09-2026 |
-| tests | 97 pruebas en 7 archivos, todas pasan | 04-09-2026 |
+| tests | 115 pruebas en 8 archivos, todas pasan | 04-09-2026 |
 | build | pasa · 18 rutas, 3 de ellas del Informe 01 | 04-09-2026 |
+| responsive | capturas a 390 y 1280 px · desbordamiento horizontal cero | 04-09-2026 |
+| impresión | comprobada con `emulateMedia('print')` | 04-09-2026 |
 
 Los nueve avisos de lint son los del código donado del juego y uno de
 `useSpriteAnimation`. Están documentados en `CLAUDE.md` §10 y no se tocan.
@@ -202,5 +219,5 @@ git log --oneline -5
 cat docs/report-01/progress.json
 ```
 
-Después, T-020 de `TASKS.md`. No repitas las fases 0 a 3: están cerradas y sus
+Después, la verificación sustantiva por tandas. No repitas las fases 0 a 3: están cerradas y sus
 decisiones están registradas en `DECISIONS.md`.
