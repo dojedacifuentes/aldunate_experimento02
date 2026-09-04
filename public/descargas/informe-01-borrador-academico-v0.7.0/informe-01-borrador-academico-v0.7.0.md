@@ -1194,11 +1194,11 @@ Todo el corpus documenta existencia, implementación y adopción. Nada mide si f
 
 **Qué la cerraría.** Es el vacío que el Informe 02 cubre con evidencia internacional, y la costura por la que los dos informes se enlazan en vez de duplicarse.
 
-### L-5 · La verificación sustantiva de las fuentes sigue pendiente y no se delega
+### L-5 · La verificación sustantiva está a medias, y su reparto tiene su propio sesgo
 
-Las URL fueron abiertas por los modelos que produjeron los documentos de investigación, no por quien firma. Que una URL responda no prueba que diga lo que se le atribuye.
+38 de las 74 fuentes fueron abiertas y contrastadas contra su publicación original; once no decían lo que el registro les atribuía. Las 36 restantes conservan el contenido que les asignó la investigación previa, y que una URL responda no prueba que diga lo que se le atribuye. El reparto además no es uniforme: la PUCV llega al 86 % de sus fuentes contrastadas y la Universidad Autónoma al 0 %, de modo que la institución sobre la que este informe debe ser más cuidadoso es también aquella cuyos registros están más comprobados.
 
-**Qué la cerraría.** Abrir cada fuente y contrastar cinco cosas: lo que dice de verdad, la fecha del hecho frente a la de publicación, la unidad a la que se atribuye, lo anunciado frente a lo ejecutado, y qué mide exactamente. Sólo entonces una fuente recibe fecha de verificación.
+**Qué la cerraría.** Contrastar las 36 restantes, empezando por las instituciones con menor proporción verificada, y no por las que ya la tienen alta. Y resolver expresamente si «verificado» significa responsabilidad editorial o ejecución material del contraste, que hoy es una ambigüedad declarada y no resuelta.
 
 ### L-6 · Falta el acto formal de creación de casi todas las unidades
 

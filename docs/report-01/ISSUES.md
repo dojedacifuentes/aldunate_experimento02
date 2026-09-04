@@ -388,3 +388,87 @@ están contrastadas y cuántas refrendadas. Es más honesto y no cuesta rigor.
 
 **No resolver esto en silencio.** Cambiar el significado de `verified_by` sin
 declararlo reescribiría hacia atrás lo que afirma el corpus sobre sí mismo.
+
+---
+
+## ISSUE-020 — La clasificación de mecanismo es un juicio, y en un caso cambia el resultado
+
+**Estado:** OPEN · **Impacto:** medio
+
+`mechanism_type` reordena información ya verificada y no aporta evidencia nueva,
+pero clasificar sigue siendo decidir. El caso que lo muestra es `ini-uai-001`.
+
+El registro se llama «Laboratorio de Justicia Centrada en las Personas · curso de
+IA para la Academia Judicial» y su `responsible_unit` es ese laboratorio, dentro
+de la Facultad de Derecho UAI. La iniciativa registrada es **el curso**, no el
+laboratorio, de modo que se clasifica como `PROGRAMA_FORMATIVO`.
+
+**Consecuencia.** La UAI no tiene ninguna iniciativa `UNIDAD`, y como la ruta
+`centros-laboratorios` tampoco se recorrió allí, su celda de «unidad
+especializada» queda `NO_CONCLUYENTE`. El registro nombra el laboratorio y el
+informe no puede acreditarlo como capacidad sin haberlo buscado.
+
+El comportamiento es el correcto —el modelo hace exactamente lo que declara— y la
+consecuencia es informativa. Pero un lector puede leer la celda como si el
+laboratorio no constara, cuando consta en el campo de unidad responsable.
+
+**Qué hacer.** Recorrer `centros-laboratorios` en la UAI y, si el laboratorio
+tiene página propia o acto de creación, registrarlo como iniciativa `UNIDAD` con
+su fuente. Es una consulta, no una decisión metodológica.
+
+**Regla que no se toca mientras tanto:** no se crea una iniciativa a partir de un
+campo de otra iniciativa. Eso fabricaría un registro sin fuente.
+
+---
+
+## ISSUE-021 — La regla de las rutas hereda la calidad de `routes_missing`
+
+**Estado:** OPEN · **Impacto:** medio
+
+DEC-119 hace que `routes_missing` deje de ser descriptivo y pase a ser normativo:
+decide si una celda dice «no localizada» o «no concluyente», que son dos
+afirmaciones distintas sobre una institución.
+
+Ese registro proviene de la investigación previa y **no ha sido reverificado**. Si
+una ruta figura como recorrida sin haberlo sido, la matriz declara una ausencia
+que no puede sostener; si figura como pendiente habiéndose recorrido, la matriz
+se calla donde podría hablar.
+
+**Qué hacer.** Incluir `routes_missing` en el protocolo de verificación
+sustantiva, como campo número ocho, y registrar en el cuaderno la consulta y el
+dominio con que se recorrió cada ruta declarada como completa. Hoy el cuaderno
+registra fuentes, no rutas.
+
+**Mientras tanto:** la nota metodológica y el anexo del informe declaran que la
+regla depende de este registro.
+
+---
+
+## ISSUE-022 — Dos conclusiones quedan abiertas donde su ruta no se recorrió
+
+**Estado:** OPEN · **Impacto:** alto · **Es una autocorrección, no un defecto nuevo**
+
+Aplicada DEC-119, dos de las siete conclusiones publicadas en la v0.6.0 dejan de
+poder sostenerse con el mismo alcance:
+
+| | Conclusión | Alcance que se mantiene | Alcance que se abre |
+|---|---|---|---|
+| C-4 | No hay línea curricular obligatoria documentada en ninguna de las once | Hecho sobre el corpus | `NO_CONCLUYENTE` en 6 de 11: no se recorrieron `malla-curricular` ni `programas-syllabus` |
+| C-5 | Ninguna iniciativa acredita evaluación de efecto | Hecho sobre el corpus, con tres rondas independientes | `NO_CONCLUYENTE` en 9 de 11: no se recorrió `repositorios-publicaciones` |
+
+C-5 es la conclusión principal del informe, de modo que conviene ser preciso
+sobre qué se sostiene y qué no. **Se sostiene** que ninguna de las 53 iniciativas
+registradas alcanza el cuarto peldaño, y eso es un hecho sobre el corpus que tres
+rondas de investigación con documentos distintos confirmaron por separado. Se
+sostiene además que la ruta 12 —noticias institucionales— se recorrió en las once,
+y una Facultad que hubiera medido y publicado sus resultados casi con seguridad lo
+habría anunciado. **No se sostiene**, en cambio, la forma institucional de la
+afirmación: «esta Facultad no ha evaluado» exige haber mirado donde una evaluación
+se publica.
+
+**Qué hacer.** Recorrer `repositorios-publicaciones` en las nueve instituciones
+que la tienen pendiente. Es la ruta con mayor rendimiento del protocolo en este
+momento: cierra la conclusión principal del informe.
+
+**No hacer.** No retirar C-5 ni rebajarla a hipótesis. El hecho sobre el corpus no
+depende de las rutas: depende de los registros, y los registros están.

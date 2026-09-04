@@ -12,6 +12,7 @@ import {
 } from '@/lib/informe01';
 import { formatSourceDate } from '@/lib/utils';
 import { ListaAfirmaciones } from './Afirmaciones';
+import { MapaDesarrollo } from './Capacidades';
 import type { Informe01Iniciativa } from '@/types';
 
 /**
@@ -61,6 +62,15 @@ export function FichaInstitucional({ universityId }: { universityId: string }) {
           </p>
         )}
       </header>
+
+      {/*
+        El mapa de capacidades va antes que el detalle por dimensión. La ficha
+        anterior empezaba por la lista de lo localizado, y esa lista no permite
+        ver de un vistazo qué distingue a esta institución de las otras diez.
+      */}
+      <div className="mt-8">
+        <MapaDesarrollo universityId={universityId} />
+      </div>
 
       <div className="mt-6 grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
         <div>

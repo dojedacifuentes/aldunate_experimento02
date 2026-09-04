@@ -629,8 +629,8 @@ h(2, 'Anexo C · Lagunas declaradas', 'lagunas');
 p('Quien vaya a citar este informe necesita saber qué no puede citar.');
 for (const l of informe01Lagunas) {
   h(3, `${l.id} · ${l.titulo}`, l.id);
-  p(l.cuerpo);
-  p(`**Qué la cerraría.** ${l.cierre}`);
+  p(T(l.cuerpo));
+  p(`**Qué la cerraría.** ${T(l.cierre)}`);
 }
 
 hr();

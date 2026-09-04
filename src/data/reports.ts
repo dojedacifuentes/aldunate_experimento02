@@ -47,7 +47,7 @@ export const reports: Report[] = [
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
     subtitle: 'Mapeo comparado de evidencia pública e institucionalización · borrador académico para revisión',
     executiveSummary:
-      'Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, al 1 de septiembre de 2026. De las 74 fuentes del corpus, 38 fueron abiertas y contrastadas contra su publicación original: es el 51%, y once registros no decían lo que su página dice. Lo que el corpus muestra es un campo que dejó atrás los eventos aislados y entró en una fase de creación de unidades, normas y programas permanentes, sin haber alcanzado en ningún punto la fase de medición: cuatro Facultades crearon estructuras dedicadas y en ninguna se localizó el acto que las constituye; una sola dictó una norma propia con consecuencia jurídica; ninguna de las once acredita una línea curricular obligatoria; y ninguna de las 53 iniciativas registradas alcanza evidencia pública de evaluación de efecto sobre el aprendizaje jurídico. El documento no publica ranking: la cobertura de investigación es 3,7 veces mayor en tres instituciones que en las ocho restantes, y ordenar sobre esa base mediría el trabajo de campo. Es un borrador para revisión, no un informe de resultados.',
+      'Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, al 1 de septiembre de 2026. El campo entero cabe en dos años: 41 de las 49 iniciativas fechadas empiezan en 2025 o después. Lo que se observa es una fase de construcción de estructura —cinco Facultades sostienen una unidad especializada en funcionamiento— que va por delante de la producción de reglas, con una sola norma propia sobre uso de inteligencia artificial dictada por una Facultad, y muy por delante de cualquier resultado: ninguna de las 53 iniciativas registradas acredita haber medido su efecto sobre el aprendizaje jurídico. La inteligencia artificial entra además por el diplomado y el taller antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a su Facultad de Derecho. El informe no publica ranking, y no por cautela genérica: la institución menos investigada de la cohorte acredita tantas capacidades en funcionamiento como la más investigada, de modo que ordenar mediría el trabajo de campo. De las 110 celdas de su matriz de capacidades, 47 quedan sin concluir porque la ruta del protocolo que las habría acreditado no se recorrió. Es un borrador para revisión, no un informe de resultados.',
     authors: [autor.name],
     status: 'borrador',
     folder: 'content/reports/01_ia_escuelas_derecho_chile/',
@@ -88,6 +88,28 @@ export const reports: Report[] = [
       'El campo cambia más rápido que el ciclo de verificación: toda cifra tiene fecha.',
     ],
     versions: [
+      {
+        version: '0.7.0',
+        date: '2026-09-04',
+        status: 'borrador',
+        pdf: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.pdf',
+        html: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.html',
+        changelog: [
+          'Enmienda metodológica 2.1, aditiva y documentada. La 2.0 comparaba ocho dimensiones —ámbitos académicos donde una iniciativa puede ocurrir—, y dos de ellas no eran ámbitos sino atributos: como el registro obliga a elegir una dimensión primaria, ninguna iniciativa caía nunca ahí. La doble columna vacía que la v0.6.0 publicó como hallazgo era en parte un artefacto del modelo. La 2.0 se conserva íntegra y su matriz se publica en anexo.',
+          'Eje nuevo de mecanismo institucional: qué clase de instrumento es cada iniciativa —unidad, norma, programa formativo, asignatura, herramienta, proyecto, actividad, convenio, publicación—. Es una clasificación de lo que el registro ya contenía en su nombre, su unidad responsable y sus productos, de modo que no aporta evidencia nueva y no reabre la verificación de ninguna fuente.',
+          'Matriz de diez capacidades institucionales, derivada por reglas mecánicas sobre campos ya verificados. Responde «¿qué capacidad demuestra cada Facultad?» y no «¿cuánta evidencia encontramos de ella?», que era la pregunta que contestaba la matriz anterior.',
+          'Una ausencia sólo informa si se recorrió la ruta del protocolo que la habría encontrado. Cada capacidad declara sus rutas: sin evidencia y con la ruta recorrida, la celda dice «no localizada»; sin recorrerla, «no concluyente». 47 de las 110 celdas son de la segunda clase. La desigualdad de cobertura deja de ser un aviso al pie y pasa a estar dentro de cada celda (ISSUE-018).',
+          'Un primer diseño de la escala metía la verificación dentro del estado, y el efecto medido fue premiar a la PUCV por tener el 86 % de sus fuentes contrastadas, que es una propiedad del trabajo de campo. La marca de verificación viaja aparte y no modifica el estado.',
+          'Análisis de sensibilidad publicado. El corpus es el mismo de la v0.6.0 —74 fuentes, 53 iniciativas, 38 contrastadas—, así que un cambio de lectura sólo puede venir del método. De las siete conclusiones, cinco se sostienen sin variación y dos se matizan: la ausencia de evaluación de efecto y la de línea curricular obligatoria quedan abiertas en las instituciones donde su ruta no se recorrió. Ninguna conclusión se hizo más fuerte por efecto del cambio.',
+          'Motor de gráficos propio: funciones puras que devuelven SVG y que consumen dos huéspedes, el sitio y el exportador. La v0.6.0 dibujaba con tablas de HTML y el PDF que se envía al destinatario no tenía ni una figura; ahora las nueve figuras son las mismas en la web, en el HTML y en papel, porque salen de la misma función.',
+          'Cada figura declara la pregunta que responde, un título que es su lectura y no un rótulo, su fuente, su nota metodológica y su alternativa textual. El color nunca va solo: cada estado lleva además trama o glifo, de modo que la figura sobrevive a una impresión en blanco y negro.',
+          'Línea de tiempo, la única visualización declarada que faltaba. 41 de las 49 iniciativas fechadas empiezan en 2025 o después: el campo entero cabe en dos años.',
+          'Arquitectura editorial rehecha. Resumen ejecutivo de siete párrafos y siete hallazgos —con dato, lectura y límite— antes de la introducción. Las once fichas, la matriz de la 2.0, las afirmaciones, las lagunas y el registro de fuentes bajan a anexos.',
+          'La sección PUCV compara mecanismos y no adjetivos: para cada capacidad que aquí no consta en funcionamiento, nombra el instrumento concreto —con su institución y su fuente— allí donde sí. Las implicancias se separan de las conclusiones y se enuncian como decisiones que la evidencia abre, no como recomendaciones.',
+          'El PDF pasa de 56 a 72 páginas y estrena portada, con una marca gráfica que es la propia matriz de capacidades reducida a su retícula.',
+          'Fe de erratas de la v0.6.0: la ficha de cada institución declaraba «0 fuentes con verificación sustantiva» y la nota metodológica sostenía que ninguna fuente llevaba fecha de verificación. Las dos afirmaciones eran ciertas en la v0.5.0 y dejaron de serlo con 38 fuentes contrastadas.',
+        ],
+      },
       {
         version: '0.6.0',
         date: '2026-09-04',
@@ -180,8 +202,10 @@ export const reports: Report[] = [
       },
     ],
     // Vacíos a propósito, y así siguen. El registro existe y se publica desde el
-    // dataset canónico, pero `sourceIds` alimenta la lista de fuentes verificadas
-    // del sitio, y ninguna de las 74 tiene verificación sustantiva todavía.
+    // dataset canónico —74 fuentes, 38 de ellas contrastadas—, pero `sourceIds`
+    // alimenta la lista de fuentes **aceptadas** del sitio, y aceptar es un estado
+    // editorial distinto de contrastar: exige una decisión humana registrada que
+    // el procedimiento todavía no ha recogido. Ninguna de las 74 la tiene.
     sourceIds: [],
     claimIds: [],
     openQuestions: [
@@ -189,7 +213,7 @@ export const reports: Report[] = [
       '¿Existen asignaturas específicas o el contenido aparece integrado en cursos existentes?',
       '¿Cómo se distribuye la actividad entre docencia, investigación y gestión?',
       '¿Qué diferencia hay entre lo declarado institucionalmente y lo observable en programas de curso?',
-      '¿Cuáles de las iniciativas anunciadas llegaron a ejecutarse? Cuatro fuentes prueban anuncio y no ejecución.',
+      '¿Cuáles de las iniciativas anunciadas llegaron a ejecutarse? Cinco acreditan su constitución o su anuncio, y no cobertura, productos ni resultados.',
       '¿Puede igualarse la cobertura de las ocho universidades fuera del piloto, sin la cual no hay comparación posible?',
       '¿Existe acto formal de creación —resolución, organigrama— de las unidades que hoy constan solo por su nombre comunicacional?',
       '¿Qué dicen los syllabus 2026 sobre obligatoriedad, semestre, créditos y matrícula real de los cursos de IA?',
@@ -197,6 +221,8 @@ export const reports: Report[] = [
       '¿Puede reconstruirse una línea base de 2025 auténticamente congelada? La heredada contiene actividades de 2026.',
       '¿Qué diría una fuente de contraste externo? Las 74 del corpus son institucionales, de modo que hoy el informe mide lo que las universidades cuentan de sí mismas.',
       '¿Existe alguna Facultad chilena que haya medido el efecto de una de sus actividades de IA? Ninguna lo ha publicado, y bastaría una para cambiar la lectura del informe.',
+      '¿Qué diría la matriz de capacidades si se recorrieran las rutas que faltan? 47 de sus 110 celdas están sin concluir, y no por lo que hagan las Facultades sino por dónde alcanzó a buscar esta investigación.',
+      '¿Debe «verificado» significar responsabilidad editorial o ejecución material del contraste? Los registros llevan la firma de quien responde por ellos, y el contraste lo ejecutó un modelo bajo ese encargo.',
     ],
     // Word no aparece porque no existe: su generador es PowerShell 5.1 con Word
     // por COM y sólo corre en el equipo del autor. Un botón que promete un
@@ -205,27 +231,27 @@ export const reports: Report[] = [
       {
         format: 'PDF',
         label: 'Leer o imprimir',
-        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
+        href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.pdf',
         description:
-          'A4 de 56 páginas, con encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
+          'A4 de 72 páginas, con portada, encabezado, pie y numeración, y con las nueve figuras del informe en vector. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
       },
       {
         format: 'HTML',
         label: 'Leer la versión web',
-        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
+        href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.html',
         description:
-          'Documento completo y autónomo, preparado para impresión: introducción, metodología, discusión, fichas, matriz, afirmaciones, conclusiones, limitaciones y registro de fuentes.',
+          'Documento completo y autónomo, preparado para impresión: portada, resumen ejecutivo, hallazgos, metodología, panorama, capacidades comparadas, discusión, sección PUCV, conclusiones, implicancias, limitaciones y siete anexos.',
       },
       {
         format: 'Markdown',
         label: 'Usar como fuente editorial',
-        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.md',
+        href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.md',
         description: 'El mismo documento en texto plano, reutilizable por personas y por modelos.',
       },
       {
         format: 'ZIP',
         label: 'Descargar el paquete reproducible',
-        href: '/descargas/informe-01-borrador-academico-v0.6.0.zip',
+        href: '/descargas/informe-01-borrador-academico-v0.7.0.zip',
         description:
           'Documento en PDF, HTML y Markdown, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
       },
