@@ -45,11 +45,11 @@ export const reports: Report[] = [
     code: 'INFORME 01',
     title:
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
-    subtitle: 'Mapeo de evidencia pública',
+    subtitle: 'Mapeo comparado de evidencia pública e institucionalización · borrador académico para revisión',
     executiveSummary:
-      'Mapeo sistemático de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en Escuelas y Facultades de Derecho chilenas. El informe se construye por acumulación verificada: cada institución incorporada exige documento público, fecha de consulta y nivel de confianza declarado. Hasta que ese registro alcance cobertura suficiente, este documento no emite conclusiones sobre tendencias nacionales.',
+      'Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, al 1 de septiembre de 2026. De las 74 fuentes del corpus, 38 fueron abiertas y contrastadas contra su publicación original: es el 51%, y once registros no decían lo que su página dice. Lo que el corpus muestra es un campo que dejó atrás los eventos aislados y entró en una fase de creación de unidades, normas y programas permanentes, sin haber alcanzado en ningún punto la fase de medición: cuatro Facultades crearon estructuras dedicadas y en ninguna se localizó el acto que las constituye; una sola dictó una norma propia con consecuencia jurídica; ninguna de las once acredita una línea curricular obligatoria; y ninguna de las 53 iniciativas registradas alcanza evidencia pública de evaluación de efecto sobre el aprendizaje jurídico. El documento no publica ranking: la cobertura de investigación es 3,7 veces mayor en tres instituciones que en las ocho restantes, y ordenar sobre esa base mediría el trabajo de campo. Es un borrador para revisión, no un informe de resultados.',
     authors: [autor.name],
-    status: 'en-investigacion',
+    status: 'borrador',
     folder: 'content/reports/01_ia_escuelas_derecho_chile/',
     axes: [
       'Universidades y unidades académicas',
@@ -88,6 +88,46 @@ export const reports: Report[] = [
       'El campo cambia más rápido que el ciclo de verificación: toda cifra tiene fecha.',
     ],
     versions: [
+      {
+        version: '0.6.0',
+        date: '2026-09-04',
+        status: 'borrador',
+        pdf: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
+        html: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
+        changelog: [
+          'Primera verificación sustantiva del corpus. Se abrieron 38 de las 74 fuentes y se contrastaron siete campos contra la publicación original: existencia y título literal, fecha declarada, unidad responsable, condición de anuncio o ejecución, cifras de cobertura, límites y respaldo efectivo de la afirmación. Es el 51% del corpus, y la portada lo dice.',
+          'Once registros no decían lo que su página dice. El decálogo de la PUCV «sugiere recomendaciones» y es lineamiento, no política. El «primer Departamento de Derecho y Tecnología en Chile» es cita textual del decano de la UC, no un hecho verificado, y ninguna de las cuatro unidades creadas entre 2025 y 2026 publica su acto de creación. El convenio de la UAI con Legu se firmó: es acto ejecutado.',
+          'La serie temporal de formación continua cambia de titular. El diploma de la Universidad de Chile figura cerrado desde 2022 y su reapertura de 2026 se declara referencial bajo otra unidad; la serie documentada es de la UC, con dos graduaciones consecutivas de más de 90 y más de 100 titulados.',
+          'El LMIL de la PUCV dependía en 2022 de la Dirección de Incubación y Negocios, no de la Facultad, y su fuente fundacional no menciona la inteligencia artificial. En 2025 ya es de la Escuela de Derecho. Es un traslado orgánico, y así se registra.',
+          'La verificación corrigió en las dos direcciones. El Programa de IA y LegalTech de la Universidad Central estaba subestimado porque el registro lo nombraba por el segmento de su URL: tiene IA explícita y actividad fechada. El sesgo de cobertura no sólo infla a los observados.',
+          'Dos fechas se retiraron por no constar en la fuente —GenIA UdeC y los lineamientos de la Universidad de Chile— y dos se ganaron. El seminario «Derecho en la Smart Era» lo organiza el centro de alumnos y se reatribuye a ESTUDIANTIL.',
+          'El documento incorpora su capa académica: introducción, objetivos, relato metodológico en nueve apartados, discusión en seis, siete conclusiones que citan las afirmaciones que las sostienen, ocho limitaciones y una agenda de siete preguntas con su condición de cierre.',
+          'Declaración de intereses. Una fuente del corpus identifica al destinatario del informe y a su autor como conductores del Programa DIAT. La sección PUCV publica su doble revisión: si es demasiado severa y si es demasiado indulgente.',
+          'DEC-108 queda enmendada. Prohibía verificar, pero el kit canónico define «contrastado» como segunda revisión y se la encarga al auditor metodológico; lo que reserva a la firma humana es «aceptado», que sigue vacío en los 227 registros.',
+          'Ningún número de la prosa se escribe a mano: los textos citan marcas que se resuelven desde el dataset, de modo que web, Markdown, HTML y PDF no puedan decir cifras distintas.',
+          'ISSUE-002 cerrado: la fuente de la UdeC carga sin error de certificado. ISSUE-003 confirmado: el CNED devuelve 403. Tres incidencias nuevas registradas.',
+        ],
+      },
+      {
+        version: '0.5.0',
+        date: '2026-09-04',
+        status: 'en-investigacion',
+        pdf: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.pdf',
+        html: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
+        changelog: [
+          'El corpus deja de ser una lista dentro de cinco documentos y pasa a ser un dataset canónico: seis CSV con universidades, fuentes, iniciativas, evidencias, cobertura y afirmaciones.',
+          'Fe de erratas de la v0.4.0: el corpus tiene 74 fuentes públicas únicas y no 72. La re-extracción mecánica de URL encontró dos que intento-2b cita en su tabla-resumen y nunca convirtió en registro —IDEA UCEN y el Diplomado en Derecho, Innovación y Tecnología de la UNAB—. La v0.4.0 no se reescribe.',
+          '53 iniciativas deduplicadas y 75 evidencias, cada una atribuida a la unidad que su fuente identifica. Nueve resultan ser capacidades de universidad y no de Facultad de Derecho.',
+          'Ninguna de las 53 iniciativas alcanza el cuarto peldaño de la escalera. Es la tercera ronda independiente que llega a la misma ausencia de evaluación de efecto.',
+          'La cobertura de investigación se publica como indicador propio, separado de la evidencia: 9,7 de trece rutas del protocolo recorridas en el piloto frente a 4,0 en las otras ocho, y una razón de 3,7:1 en fuentes.',
+          'Dos lagunas nuevas. L-11: ninguna fuente del corpus proviene de contraste externo, de modo que hereda íntegro el sesgo de autodescripción. L-12: dos de las ocho dimensiones —recursos y capacidades, y continuidad y resultados— están vacías en las once instituciones.',
+          '14 afirmaciones con razonamiento, contraevidencia, límites y confianza declarados. Ninguna está aceptada.',
+          'La ficha publica matriz de evidencia localizada, cobertura, escalera de institucionalización, mapa de direcciones, sección PUCV, lagunas y auditoría de la línea base, además de once fichas institucionales en página propia.',
+          'Descargas en PDF, HTML, Markdown, CSV y JSON, con manifiesto y controles de integridad. El PDF se imprime del mismo HTML, de modo que documento y web no pueden divergir.',
+          'La matriz no ordena por nada: filas alfabéticas y ningún puntaje agregado por universidad. Con la cobertura actual, ordenar produciría un ranking del trabajo de campo.',
+          'Todos los contadores del informe se calculan desde el dataset. El compilador falla y no escribe nada si una referencia queda huérfana o si algún registro declara una verificación sustantiva que no existe.',
+        ],
+      },
       {
         version: '0.4.0',
         date: '2026-09-02',
@@ -139,6 +179,9 @@ export const reports: Report[] = [
         ],
       },
     ],
+    // Vacíos a propósito, y así siguen. El registro existe y se publica desde el
+    // dataset canónico, pero `sourceIds` alimenta la lista de fuentes verificadas
+    // del sitio, y ninguna de las 74 tiene verificación sustantiva todavía.
     sourceIds: [],
     claimIds: [],
     openQuestions: [
@@ -152,6 +195,40 @@ export const reports: Report[] = [
       '¿Qué dicen los syllabus 2026 sobre obligatoriedad, semestre, créditos y matrícula real de los cursos de IA?',
       '¿Se sostienen en ANID los proyectos Fondecyt y FONDEF que hoy constan por noticia universitaria?',
       '¿Puede reconstruirse una línea base de 2025 auténticamente congelada? La heredada contiene actividades de 2026.',
+      '¿Qué diría una fuente de contraste externo? Las 74 del corpus son institucionales, de modo que hoy el informe mide lo que las universidades cuentan de sí mismas.',
+      '¿Existe alguna Facultad chilena que haya medido el efecto de una de sus actividades de IA? Ninguna lo ha publicado, y bastaría una para cambiar la lectura del informe.',
+    ],
+    // Word no aparece porque no existe: su generador es PowerShell 5.1 con Word
+    // por COM y sólo corre en el equipo del autor. Un botón que promete un
+    // archivo inexistente es peor que no tener botón.
+    downloads: [
+      {
+        format: 'PDF',
+        label: 'Leer o imprimir',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
+        description:
+          'A4 de 56 páginas, con encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
+      },
+      {
+        format: 'HTML',
+        label: 'Leer la versión web',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
+        description:
+          'Documento completo y autónomo, preparado para impresión: introducción, metodología, discusión, fichas, matriz, afirmaciones, conclusiones, limitaciones y registro de fuentes.',
+      },
+      {
+        format: 'Markdown',
+        label: 'Usar como fuente editorial',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.md',
+        description: 'El mismo documento en texto plano, reutilizable por personas y por modelos.',
+      },
+      {
+        format: 'ZIP',
+        label: 'Descargar el paquete reproducible',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0.zip',
+        description:
+          'Documento en PDF, HTML y Markdown, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
+      },
     ],
     researchKit: {
       title: 'Kit canónico de investigación inter-IA',
@@ -193,7 +270,7 @@ export const reports: Report[] = [
         },
       ],
     },
-    updatedAt: '2026-09-02',
+    updatedAt: '2026-09-04',
   },
   {
     slug: 'transformacion-ensenanza-derecho',

@@ -16,6 +16,12 @@ import {
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
 import {
+  Informe01BorradorApertura,
+  Informe01BorradorCierre,
+} from '@/components/informe01/Borrador';
+import { Informe01Publicacion } from '@/components/informe01/Publicacion';
+import { informe01Recuento } from '@/data/informe01';
+import {
   claimChangeLabel,
   getReport,
   reports,
@@ -85,6 +91,7 @@ export default async function InformeDetallePage({
   const primaryKitArtifact = report.researchKit?.artifacts.find(
     (artifact) => artifact.format === 'PDF',
   );
+  const esInforme01 = report.slug === 'ia-escuelas-derecho-chile';
 
   return (
     <>
@@ -204,9 +211,22 @@ export default async function InformeDetallePage({
                 }
               />
               <MetaRow label="Ejes" value={String(report.axes.length)} />
+              {/*
+                El contador se lee del registro real y no de `sourceIds`.
+                `sourceIds` alimenta la lista de fuentes verificadas, y el
+                Informe 01 tiene registro poblado y verificación en curso:
+                mostrar «0» aquí contradecía las que declara el propio informe
+                unas pantallas más abajo.
+              */}
               <MetaRow
                 label="Fuentes registradas"
-                value={hasSources ? String(reportSources.length) : '0 · en registro'}
+                value={
+                  esInforme01
+                    ? `${informe01Recuento.fuentes} en el registro · ${informe01Recuento.fuentesVerificadas} verificadas`
+                    : hasSources
+                      ? String(reportSources.length)
+                      : '0 · en registro'
+                }
               />
               <MetaRow
                 label="Carpeta"
@@ -252,6 +272,60 @@ export default async function InformeDetallePage({
           </div>
         )}
       </Section>
+
+      {/*
+        La publicación del Informe 01.
+        Vive en sus propios componentes y se monta sólo aquí: el informe 02 tiene
+        documento completo y no necesita esta capa, y hacer genérica una sección
+        que sólo un informe usa habría producido una abstracción con un solo caso.
+      */}
+      {esInforme01 && <Informe01BorradorApertura />}
+      {esInforme01 && <Informe01Publicacion />}
+      {esInforme01 && <Informe01BorradorCierre />}
+
+      {report.downloads && report.downloads.length > 0 && (
+        <Section
+          eyebrow="Descargas"
+          title="El informe, fuera de esta página"
+          description="Mismo contenido, mismos números: el documento y el dataset salen del mismo origen y no pueden divergir. El paquete incluye controles de integridad."
+          className="scroll-mt-20"
+        >
+          <div id="descargas">
+            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {report.downloads.map((artifact) => (
+                <li key={artifact.format}>
+                  <Surface className="flex h-full flex-col p-5">
+                    <Badge tone={artifact.format === 'ZIP' ? 'accent' : 'muted'}>
+                      {artifact.format}
+                    </Badge>
+                    <h3 className="mt-3 font-serif text-lg leading-snug text-foreground">
+                      {artifact.label}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {artifact.description}
+                    </p>
+                    <ButtonLink
+                      href={artifact.href}
+                      variant={artifact.format === 'ZIP' ? 'accent' : 'outline'}
+                      size="sm"
+                      external
+                      className="mt-4 self-start"
+                    >
+                      <Download className="h-3.5 w-3.5" aria-hidden />
+                      {artifact.format === 'HTML' ? 'Abrir' : 'Descargar'}
+                    </ButtonLink>
+                  </Surface>
+                </li>
+              ))}
+            </ul>
+            <Notice tone="muted" className="mt-6">
+              Word y PDF no figuran porque los archivos no existen todavía: la cadena que los
+              produce es PowerShell con Word por COM y sólo corre en el equipo del autor. Los
+              botones aparecerán cuando los archivos estén, y no antes.
+            </Notice>
+          </div>
+        </Section>
+      )}
 
       {report.researchKit && (
         <Section
@@ -306,7 +380,13 @@ export default async function InformeDetallePage({
         </Section>
       )}
 
-      {/* ── Capa 2 · Metodología y límites ── */}
+      {/*
+        Capa 2 · Metodología y límites.
+        El Informe 01 la sustituye por su §3, que cuenta lo mismo con nueve
+        apartados y una declaración de intereses, y por su §7. Mantener las dos
+        dejaría dos secciones llamadas «Metodología» en el mismo documento.
+      */}
+      {!esInforme01 && (
       <Section eyebrow="Capa 2" title="Metodología" className="scroll-mt-20">
         <div id="metodologia" className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
@@ -342,8 +422,10 @@ export default async function InformeDetallePage({
           </div>
         </div>
       </Section>
+      )}
 
-      {/* ── Preguntas abiertas ── */}
+      {/* Igual que arriba: la agenda del §8 del Informe 01 sustituye a esta lista. */}
+      {!esInforme01 && (
       <Section
         eyebrow="Trabajo pendiente"
         title="Preguntas abiertas"
@@ -359,6 +441,7 @@ export default async function InformeDetallePage({
           ))}
         </ul>
       </Section>
+      )}
 
       {/* ── Capa 3 · Historial ── */}
       <Section eyebrow="Capa 3" title="Historial de versiones">
@@ -491,21 +574,31 @@ export default async function InformeDetallePage({
             <div className="space-y-8">
               <div className="rounded-lg border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
                 <p className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
-                  Registro vacío
+                  {esInforme01
+                    ? 'Registro poblado · verificación en curso'
+                    : 'Registro vacío'}
                 </p>
                 <h3 className="mt-3 font-serif text-xl text-foreground">
-                  Todavía no hay fuentes incorporadas
+                  {esInforme01
+                    ? `${informe01Recuento.fuentes} fuentes registradas, ${informe01Recuento.fuentesVerificadas} contrastadas contra su original`
+                    : 'Todavía no hay fuentes incorporadas'}
                 </h3>
                 <p className="mx-auto mt-2.5 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                  El informe está en fase de definición de alcance. Las fuentes
-                  entran al registro antes de convertirse en dato, y el registro
-                  se publica junto con el documento.
+                  {esInforme01
+                    ? 'El registro está publicado y cada fuente aparece en la ficha de su institución, con su estado editorial y sus advertencias de lectura. Ninguna entra a esta lista todavía porque esta lista es de fuentes aceptadas, y aceptar exige decisión humana registrada: contrastar no es aceptar.'
+                    : 'El informe está en fase de definición de alcance. Las fuentes entran al registro antes de convertirse en dato, y el registro se publica junto con el documento.'}
                 </p>
                 <Link
-                  href="/investigacion"
+                  href={
+                    esInforme01
+                      ? `/informes/${report.slug}/instituciones`
+                      : '/investigacion'
+                  }
                   className="mt-5 inline-block text-sm font-medium text-primary hover:underline"
                 >
-                  Ver el método de investigación
+                  {esInforme01
+                    ? 'Ver el registro en las fichas institucionales'
+                    : 'Ver el método de investigación'}
                 </Link>
               </div>
 

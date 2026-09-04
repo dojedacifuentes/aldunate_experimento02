@@ -11,6 +11,26 @@ los mismos de siempre, justificados en `docs/DECISIONS.md` D-022.
 
 ---
 
+## 04-09-2026 · Informe 01 · el móvil dejaba de contener las tablas anchas
+
+Las tres tablas de la publicación del Informe 01 viven dentro de un contenedor
+`overflow-x-auto`, que es lo correcto: la matriz de once universidades por ocho
+dimensiones no cabe en un teléfono y debe desplazarse dentro de sí misma. Aun
+así, a 390 px la página entera se desplazaba 363 px hacia el lado.
+
+La causa no era la tabla. Eran los ochenta y nueve `sr-only` de sus celdas: la
+utilidad se implementa con `position: absolute`, y sin un ancestro posicionado
+dentro del contenedor de desplazamiento, cada uno se colocaba respecto del
+bloque contenedor de más arriba y arrastraba consigo el ancho del documento. El
+texto era invisible y el desbordamiento, no.
+
+Se arregla añadiendo `relative` a los tres contenedores. Es una línea, y la
+lección es la que vale: **una etiqueta accesible mal contenida rompe la
+maquetación de quien no la necesita.** Comprobado con capturas a 390 y 1280 px y
+en modo impresión, en las dos rutas del informe: desbordamiento horizontal cero.
+
+---
+
 ## Fase 1 · Datos falsos publicados y marca institucional
 
 `a4a35ae`

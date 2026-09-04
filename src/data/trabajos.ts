@@ -122,11 +122,11 @@ export const workItems: WorkItem[] = [
       'Mapeo de evidencia pública sobre once universidades chilenas: qué enseñan, qué usan y qué han publicado.',
     reportSlug: 'ia-escuelas-derecho-chile',
     nextStep:
-      'Verificar una por una las 43 fuentes del corpus: abrirlas y contrastar lo que dicen contra lo que se les atribuye. Es lo que desbloquea todo lo demás.',
+      'Verificar una por una las 74 fuentes del corpus: abrirlas y contrastar lo que dicen contra lo que se les atribuye. Es lo que desbloquea todo lo demás.',
     caveat:
-      'La cobertura es desigual por diseño —nueve fuentes en cada universidad del piloto y dos en las otras ocho—, así que no se publica ninguna comparación nacional.',
+      'La cobertura es desigual por diseño —catorce fuentes de media en las tres universidades del piloto y 3,8 en las otras ocho—, así que no se publica ninguna comparación nacional.',
     href: '/informes/ia-escuelas-derecho-chile',
-    updatedAt: '2026-09-02',
+    updatedAt: '2026-09-04',
   },
   {
     id: 'informe-02',
