@@ -1,0 +1,679 @@
+[
+ {
+  "sid": "src-pucv-010",
+  "razones": [
+   "clm-cohorte-002",
+   "clm-pucv-001",
+   "clm-pucv-002",
+   "N3:ini-pucv-001",
+   "N3:ini-pucv-002"
+  ],
+  "peso": 64,
+  "univ": "pucv",
+  "title": "Laboratorio de Innovación Legal y Programa de Derecho e Inteligencia Artificial se adjudican fondos",
+  "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/laboratorio-de-innovacion-legal-y-programa-de-derecho-e-inteligencia",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-08-11",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-006",
+  "razones": [
+   "clm-cohorte-002",
+   "clm-pucv-001",
+   "clm-pucv-002",
+   "N3:ini-pucv-001"
+  ],
+  "peso": 41,
+  "univ": "pucv",
+  "title": "Facultad y Escuela de Derecho PUCV se adjudican dos proyectos de Vinculación con el Medio",
+  "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/facultad-y-escuela-de-derecho-pucv-se-adjudican-dos-proyectos-de",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-06-03",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-007",
+  "razones": [
+   "clm-cohorte-003",
+   "clm-cohorte-007",
+   "clm-pucv-001",
+   "N3:ini-pucv-006"
+  ],
+  "peso": 35,
+  "univ": "pucv",
+  "title": "Universidad presentó decálogo para el uso ético de la inteligencia artificial",
+  "url": "https://pucv.cl/pucv/noticias/destacadas/universidad-presento-decalogo-para-el-uso-etico-de-la-inteligencia",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-01-09",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-003",
+  "razones": [
+   "clm-cohorte-002",
+   "clm-pucv-001",
+   "N3:ini-pucv-001"
+  ],
+  "peso": 33,
+  "univ": "pucv",
+  "title": "Tecnología jurídica en acción: el Programa DIAT PUCV integra la inteligencia artificial",
+  "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/tecnologia-juridica-en-accion-programa-diat-pucv-integra-la",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2024-04-24",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uchile-015",
+  "razones": [
+   "clm-cohorte-003",
+   "clm-cohorte-007",
+   "N3:ini-uchile-007"
+  ],
+  "peso": 27,
+  "univ": "uchile",
+  "title": "Lineamientos para el uso de IA en trabajos de titulación",
+  "url": "https://uchile.cl/informacion-y-bibliotecas/lineamientos-uso-ia-en-tesis",
+  "estado": "vigente",
+  "conf": "85",
+  "pub": "2026",
+  "tipo": "politica"
+ },
+ {
+  "sid": "src-udp-002",
+  "razones": [
+   "clm-cohorte-002",
+   "clm-cohorte-008",
+   "N3:ini-udp-001"
+  ],
+  "peso": 27,
+  "univ": "udp",
+  "title": "Dirección de Inteligencia Artificial y Derecho",
+  "url": "https://derecho.udp.cl/direccion-de-inteligencia-artificial-y-derecho",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-pucv-002",
+  "razones": [
+   "clm-cohorte-002",
+   "clm-pucv-001",
+   "N3:ini-pucv-001"
+  ],
+  "peso": 25,
+  "univ": "pucv",
+  "title": "Núcleo de Derecho, Inteligencia Artificial y Tecnología PUCV",
+  "url": "https://pucv.cl/uuaa/derecho/noticias/nucleo-de-derecho-inteligencia-artificial-y-tecnologia-pucv-desarrolla",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2023-11-20",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-001",
+  "razones": [
+   "clm-pucv-001",
+   "clm-pucv-002",
+   "N3:ini-pucv-002"
+  ],
+  "peso": 23,
+  "univ": "pucv",
+  "title": "Legal Management Innovation Lab: nuevo laboratorio de innovación",
+  "url": "https://pucv.cl/uuaa/derecho/noticias/legal-management-innovation-lab-nuevo-laboratorio-de-innovacion",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2022-01-06",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-009",
+  "razones": [
+   "clm-pucv-001",
+   "clm-pucv-002",
+   "N3:ini-pucv-002"
+  ],
+  "peso": 23,
+  "univ": "pucv",
+  "title": "Diplomado Legal Management Program y Legal Management Innovation Lab",
+  "url": "https://pucv.cl/uuaa/derecho/noticias/diplomado-legal-management-program-y-legal-management-innovation-lab",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2023-04-18",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-ucentral-004",
+  "razones": [
+   "clm-cohorte-007",
+   "clm-metodo-003"
+  ],
+  "peso": 20,
+  "univ": "ucentral",
+  "title": "Universidad Central presenta IDEA UCEN, nueva plataforma de búsqueda",
+  "url": "https://noticias.ucentral.cl/noticias/universidad-central-presenta-idea-ucen-nueva-plataforma-de-busqueda",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-unab-003",
+  "razones": [
+   "clm-cohorte-007",
+   "clm-cohorte-008"
+  ],
+  "peso": 20,
+  "univ": "unab",
+  "title": "UNAB impulsa MIAsistentes, un ecosistema de inteligencia artificial para acompañar el aprendizaje",
+  "url": "https://noticias.unab.cl/unab-impulsa-miasistentes-un-ecosistema-de-inteligencia-artificial-para-acompanar-el-aprendizaje-y-la-experiencia-universitaria",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-08-31",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-013",
+  "razones": [
+   "clm-cohorte-007",
+   "clm-pucv-001"
+  ],
+  "peso": 18,
+  "univ": "pucv",
+  "title": "Universidad habilita la herramienta Gemini IA para fortalecer el trabajo académico",
+  "url": "https://pucv.cl/pucv/noticias/vida-universitaria/universidad-habilita-herramienta-gemini-ia-para-fortalecer-el-trabajo",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-03-19",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-puc-chile-004",
+  "razones": [
+   "clm-cohorte-002",
+   "N3:ini-puc-chile-003"
+  ],
+  "peso": 17,
+  "univ": "puc-chile",
+  "title": "Derecho UC formaliza la creación del primer Departamento de Derecho y Tecnología en Chile",
+  "url": "https://derecho.uc.cl/derecho-uc-formaliza-la-creacion-del-primer-departamento-de-derecho-y-tecnologia-en-chile",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-12-31",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-puc-chile-005",
+  "razones": [
+   "clm-cohorte-002",
+   "N3:ini-puc-chile-003"
+  ],
+  "peso": 17,
+  "univ": "puc-chile",
+  "title": "Estructura orgánica · Derecho UC Transparente",
+  "url": "https://derecho.uc.cl/facultad/derecho-uc-transparente/estructura-organica",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-puc-chile-007",
+  "razones": [
+   "clm-cohorte-002",
+   "N3:ini-puc-chile-003"
+  ],
+  "peso": 17,
+  "univ": "puc-chile",
+  "title": "Expertos extranjeros y académicos de Derecho UC analizaron la ética en la inteligencia artificial",
+  "url": "https://derecho.uc.cl/expertos-extranjeros-y-academicos-de-derecho-uc-analizaron-la-etica-en-la-inteligencia-artificial",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-04-10",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-puc-chile-008",
+  "razones": [
+   "clm-cohorte-003",
+   "N3:ini-puc-chile-004"
+  ],
+  "peso": 17,
+  "univ": "puc-chile",
+  "title": "Facultad de Derecho UC establece guía ética para uso de inteligencia artificial generativa",
+  "url": "https://derecho.uc.cl/facultad-de-derecho-uc-establece-guia-etica-para-uso-de-inteligencia-artificial-generativa",
+  "estado": "vigente",
+  "conf": "85",
+  "pub": "2026-08-21",
+  "tipo": "politica"
+ },
+ {
+  "sid": "src-ucentral-003",
+  "razones": [
+   "clm-cohorte-002",
+   "N3:ini-ucentral-002"
+  ],
+  "peso": 17,
+  "univ": "ucentral",
+  "title": "Programa de IA & LegalTech · FACDEH",
+  "url": "https://facdeh.ucentral.cl/legal-tech",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-udp-001",
+  "razones": [
+   "clm-cohorte-002",
+   "N3:ini-udp-001"
+  ],
+  "peso": 17,
+  "univ": "udp",
+  "title": "Académico Rafael Mery es nombrado director de Inteligencia Artificial y Derecho UDP",
+  "url": "https://derecho.udp.cl/academico-rafael-mery-es-nombrado-director-de-inteligencia-artificial-y-derecho-udp",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-09-12",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-005",
+  "razones": [
+   "clm-pucv-001",
+   "clm-pucv-002"
+  ],
+  "peso": 16,
+  "univ": "pucv",
+  "title": "Destacada participación de estudiantes en la jornada de cierre del Taller de IA y Prompting Jurídico",
+  "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/destacada-participacion-de-estudiantes-en-la-jornada-de-cierre-del",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-10-07",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uchile-002",
+  "razones": [
+   "N3:ini-uchile-002",
+   "ESTADO:historico"
+  ],
+  "peso": 13,
+  "univ": "uchile",
+  "title": "Diploma en Derecho e Inteligencia Artificial · edición 2022",
+  "url": "https://postgrados.derecho.uchile.cl/diploma-en-derecho-e-inteligencia-artificial",
+  "estado": "historico",
+  "conf": "75",
+  "pub": "2022",
+  "tipo": "programa-postgrado"
+ },
+ {
+  "sid": "src-puc-chile-012",
+  "razones": [
+   "clm-cohorte-007"
+  ],
+  "peso": 10,
+  "univ": "puc-chile",
+  "title": "AyudantIA UC",
+  "url": "https://docencia.ia.uc.cl/ayudantia",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-uai-002",
+  "razones": [
+   "clm-cohorte-008"
+  ],
+  "peso": 10,
+  "univ": "uai",
+  "title": "Facultad de Derecho firma convenio con Legu, legaltech que impulsa el acceso al derecho mediante IA",
+  "url": "https://alumni.uai.cl/news/noticias-uai/905/905-Facultad-de-Derecho-firma-convenio-con-Legu-legaltech-que-impulsa-el-acceso-al-derecho-mediante-IA",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-01-12",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uandes-003",
+  "razones": [
+   "clm-cohorte-007"
+  ],
+  "peso": 10,
+  "univ": "uandes",
+  "title": "IA al servicio de la edificación: prototipo del CET e Ingeniería fue finalista en concurso del Gobierno y el BID",
+  "url": "https://uandes.cl/actualidad/noticias/ia-al-servicio-de-la-edificacion-prototipo-del-cet-e-ingenieria-fue-finalista-en-concurso-del-gobierno-y-el-bid",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-10-27",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uchile-013",
+  "razones": [
+   "clm-cohorte-008"
+  ],
+  "peso": 10,
+  "univ": "uchile",
+  "title": "CE3 convoca a Programa de Visitas Académicas de América Latina y el Caribe",
+  "url": "https://derecho.uchile.cl/noticias/238418/ce3-convoca-a-programa-de-visitas-academicas-de-america-latina-y-el-caribe",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-04-02",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uchile-016",
+  "razones": [
+   "clm-cohorte-007"
+  ],
+  "peso": 10,
+  "univ": "uchile",
+  "title": "Curso institucional sobre IA generativa en línea",
+  "url": "https://vti.uchile.cl/curso-sobre-ia-online",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "2025-09-09",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-udd-001",
+  "razones": [
+   "clm-cohorte-008"
+  ],
+  "peso": 10,
+  "univ": "udd",
+  "title": "Carrera de Derecho · malla y admisión",
+  "url": "https://derecho.udd.cl/carrera/derecho",
+  "estado": "vigente",
+  "conf": "75",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "curricular"
+ },
+ {
+  "sid": "src-udec-004",
+  "razones": [
+   "clm-cohorte-007"
+  ],
+  "peso": 10,
+  "univ": "udec",
+  "title": "[genIA] · programa interdisciplinario UdeC",
+  "url": "https://genia.udec.cl",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "2026-02-10",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-unab-004",
+  "razones": [
+   "clm-metodo-003"
+  ],
+  "peso": 10,
+  "univ": "unab",
+  "title": "Diplomado en Derecho, Innovación y Tecnología",
+  "url": "https://postgrado.unab.cl/programas/diplomado-en-derecho-innovacion-y-tecnologia",
+  "estado": "vigente",
+  "conf": "75",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "programa-postgrado"
+ },
+ {
+  "sid": "src-pucv-004",
+  "razones": [
+   "clm-pucv-001"
+  ],
+  "peso": 8,
+  "univ": "pucv",
+  "title": "ScribeClaroPUCV, herramienta para una redacción jurídica clara",
+  "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/scribeclaropucv-innovadora-herramienta-para-una-redaccion-juridica-clara",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-01-30",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-008",
+  "razones": [
+   "clm-pucv-001"
+  ],
+  "peso": 8,
+  "univ": "pucv",
+  "title": "Profesor James M. Cooper encabezó workshop internacional sobre manejo de IA en el ámbito legal",
+  "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/profesor-james-m-cooper-encabezo-workshop-internacional-sobre-manejo-de",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-06-18",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-pucv-011",
+  "razones": [
+   "clm-pucv-001"
+  ],
+  "peso": 8,
+  "univ": "pucv",
+  "title": "IV versión de Innova Day 2025",
+  "url": "https://pucv.cl/uuaa/derecho-pucv/noticias/exitosa-iv-version-de-innova-day-2025-fomentando-la-innovacion-legal",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-puc-chile-001",
+  "razones": [
+   "N3:ini-puc-chile-001"
+  ],
+  "peso": 7,
+  "univ": "puc-chile",
+  "title": "Programa de Derecho, Ciencia y Tecnología UC",
+  "url": "https://derechocienciaytecnologia.uc.cl",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-puc-chile-002",
+  "razones": [
+   "N3:ini-puc-chile-002"
+  ],
+  "peso": 7,
+  "univ": "puc-chile",
+  "title": "Graduación de la generación 2024 de los diplomados del Programa de Derecho, Ciencia y Tecnología UC",
+  "url": "https://derechocienciaytecnologia.uc.cl/2025/01/08/graduacion-de-la-generacion-2024-de-los-diplomados-del-programa-de-derecho-ciencia-y-tecnologia-uc",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-01-08",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-puc-chile-003",
+  "razones": [
+   "N3:ini-puc-chile-002"
+  ],
+  "peso": 7,
+  "univ": "puc-chile",
+  "title": "Graduación de la generación 2025 de los diplomados del Programa de Derecho, Ciencia y Tecnología UC",
+  "url": "https://derechocienciaytecnologia.uc.cl/2026/01/16/graduacion-de-la-generacion-2025-de-los-diplomados-del-programa-de-derecho-ciencia-y-tecnologia-uc",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-01-16",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-puc-chile-009",
+  "razones": [
+   "N3:ini-puc-chile-001"
+  ],
+  "peso": 7,
+  "univ": "puc-chile",
+  "title": "Matías Aránguiz asume como nuevo director del Programa de Derecho, Ciencia y Tecnología",
+  "url": "https://derecho.uc.cl/matias-aranguiz-asume-como-nuevo-director-del-programa-de-derecho-ciencia-y-tecnologia",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-01-13",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-puc-chile-011",
+  "razones": [
+   "N3:ini-puc-chile-002"
+  ],
+  "peso": 7,
+  "univ": "puc-chile",
+  "title": "Diplomado en Derecho e Inteligencia Artificial · Educación Continua UC",
+  "url": "https://educacioncontinua.uc.cl/programas/diplomado-en-derecho-e-inteligencia-artificial",
+  "estado": "vigente",
+  "conf": "75",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "programa-postgrado"
+ },
+ {
+  "sid": "src-uautonoma-001",
+  "razones": [
+   "N3:ini-uautonoma-001"
+  ],
+  "peso": 7,
+  "univ": "uautonoma",
+  "title": "Alfabetización en IA generativa en Derecho alcanza al 80 % de docentes y se amplía a estudiantes",
+  "url": "https://uautonoma.cl/noticias/alfabetizacion-en-ia-generativa-en-derecho-alcanza-al-80-de-docentes-y-se-amplia-a-estudiantes",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-05-27",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uautonoma-003",
+  "razones": [
+   "N3:ini-uautonoma-003"
+  ],
+  "peso": 7,
+  "univ": "uautonoma",
+  "title": "Estudiantes de Derecho egresan del Minor en Inteligencia Artificial y Derecho",
+  "url": "https://uautonoma.cl/noticias/estudiantes-de-derecho-egresan-del-minor-en-inteligencia-artificial-y-derecho",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-01-09",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uchile-001",
+  "razones": [
+   "N3:ini-uchile-001"
+  ],
+  "peso": 7,
+  "univ": "uchile",
+  "title": "Historia · Centro de Estudios en Derecho, Tecnología y Sociedad (CE3)",
+  "url": "https://derecho.uchile.cl/centro-estudios-derecho-tecnologia-sociedad/quienes-somos/historia",
+  "estado": "vigente",
+  "conf": "70",
+  "pub": "FECHA_NO_DECLARADA",
+  "tipo": "pagina-institucional"
+ },
+ {
+  "sid": "src-uchile-003",
+  "razones": [
+   "N3:ini-uchile-002"
+  ],
+  "peso": 7,
+  "univ": "uchile",
+  "title": "Diploma en Derecho e Inteligencia Artificial · segundo semestre de 2026",
+  "url": "https://postgrados.derecho.uchile.cl/diploma-derecho-e-inteligencia-artificial",
+  "estado": "vigente",
+  "conf": "75",
+  "pub": "2026-08-01",
+  "tipo": "programa-postgrado"
+ },
+ {
+  "sid": "src-uchile-007",
+  "razones": [
+   "N3:ini-uchile-001"
+  ],
+  "peso": 7,
+  "univ": "uchile",
+  "title": "CE3 consolida liderazgo en el país y en Latinoamérica",
+  "url": "https://derecho.uchile.cl/noticias/236453/ce3-consolida-liderazgo-en-el-pais-y-en-latinoamerica",
+  "estado": "vigente",
+  "conf": "60",
+  "pub": "2026-01-08",
+  "tipo": "resultado-institucional"
+ },
+ {
+  "sid": "src-uchile-010",
+  "razones": [
+   "N3:ini-uchile-001"
+  ],
+  "peso": 7,
+  "univ": "uchile",
+  "title": "Consideraciones para una excepción de derechos de autor en la formación de sistemas de IA",
+  "url": "https://derecho.uchile.cl/agenda/241228/consideraciones-para-una-excepcion-de-derechos-de-autor-en-la",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2026-06-16",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uchile-011",
+  "razones": [
+   "N3:ini-uchile-001"
+  ],
+  "peso": 7,
+  "univ": "uchile",
+  "title": "Profesor Alberto Cerda asume como director del CE3",
+  "url": "https://derecho.uchile.cl/noticias/224204/profesor-alberto-cerda-asume-como-director-del-ce3",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-01-03",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-uchile-012",
+  "razones": [
+   "N3:ini-uchile-001"
+  ],
+  "peso": 7,
+  "univ": "uchile",
+  "title": "Seminario Inteligencia Artificial y acceso a la justicia",
+  "url": "https://derecho.uchile.cl/agenda/227755/seminario-inteligencia-artificial--acceso-a-la-justicia",
+  "estado": "vigente",
+  "conf": "50",
+  "pub": "2025-05-14",
+  "tipo": "noticia-institucional"
+ },
+ {
+  "sid": "src-nacional-002",
+  "razones": [
+   "ESTADO:inaccesible"
+  ],
+  "peso": 6,
+  "univ": "",
+  "title": "INDICES · Bases de datos de oferta académica de pregrado 2026",
+  "url": "https://cned.cl/institucional/bases-de-datos",
+  "estado": "inaccesible",
+  "conf": "80",
+  "pub": "2026-01-08",
+  "tipo": "base-oficial"
+ },
+ {
+  "sid": "src-udec-002",
+  "razones": [
+   "ESTADO:inaccesible"
+  ],
+  "peso": 6,
+  "univ": "udec",
+  "title": "Seminario «Derecho en la Smart Era»",
+  "url": "https://juridicasysociales.udec.cl/content/seminario-%E2%80%9Cderecho-en-la-smart-era%E2%80%9D-reuni%C3%B3-destacados-expositores-y-una-gran-audiencia-en-la",
+  "estado": "inaccesible",
+  "conf": "50",
+  "pub": "2025-10-02",
+  "tipo": "noticia-institucional"
+ }
+]

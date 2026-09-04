@@ -1,0 +1,318 @@
+FUENTES A VERIFICAR: 30 
+
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-010  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Laboratorio de Innovación Legal y Programa de Derecho e Inteligencia Artificial se adjudican fondos
+EDITOR: Facultad de Derecho PUCV  |  FECHA REGISTRADA: 2025-08-11 (dia)
+URL: https://pucv.cl/uuaa/derecho-pucv/noticias/laboratorio-de-innovacion-legal-y-programa-de-derecho-e-inteligencia
+NOTA: Adjudicación 2025. Junto con src-pucv-006 documenta financiamiento competitivo en dos años consecutivos.
+  · ev-pucv-003 → ini-pucv-001 [gobernanza/AMBOS/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: El Laboratorio de Innovación Legal y el Programa de Derecho e IA se adjudican fondos internos en 2025.
+    LIMITE: Junto con la adjudicación de 2026 documenta financiamiento competitivo en dos años consecutivos.
+    INI "Programa Derecho, Inteligencia Artificial y Tecnología (DIAT)" | unidad=Escuela de Derecho PUCV | 2020→— | CONTINUA
+  · ev-pucv-007 → ini-pucv-002 [vinculacion/ADYACENTE/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: El Laboratorio de Innovación Legal y el Programa de Derecho e IA se adjudican fondos internos en 2025.
+    LIMITE: Junto con la adjudicación de 2026 documenta financiamiento competitivo en dos años consecutivos.
+    INI "Legal Management Innovation Lab (LMIL)" | unidad=Facultad de Derecho PUCV con Thomson Reuters | 2022→— | CONTINUA
+  · ev-pucv-012 → ini-pucv-005 [vinculacion/AMBOS/CENTRO_PROGRAMA] escalera=2
+    AFIRMA: El Laboratorio de Innovación Legal y el Programa de Derecho e IA se adjudican fondos internos en 2025.
+    LIMITE: Junto con la adjudicación de 2026 documenta financiamiento competitivo en dos años consecutivos.
+    INI "Taller de IA Generativa y Prompting Jurídico" | unidad=DIAT y LMIL | 2025→— | CONTINUA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-006  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Facultad y Escuela de Derecho PUCV se adjudican dos proyectos de Vinculación con el Medio
+EDITOR: Facultad de Derecho PUCV  |  FECHA REGISTRADA: 2026-06-03 (dia)
+URL: https://pucv.cl/uuaa/derecho-pucv/noticias/facultad-y-escuela-de-derecho-pucv-se-adjudican-dos-proyectos-de
+NOTA: Adjudicación competitiva interna. Financiamiento concursable, no basal.
+  · ev-pucv-004 → ini-pucv-001 [gobernanza/AMBOS/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: La Facultad y la Escuela de Derecho se adjudican dos proyectos de Vinculación con el Medio en 2026.
+    LIMITE: Financiamiento concursable, no basal. Los montos no están publicados.
+    INI "Programa Derecho, Inteligencia Artificial y Tecnología (DIAT)" | unidad=Escuela de Derecho PUCV | 2020→— | CONTINUA
+  · ev-pucv-011 → ini-pucv-005 [vinculacion/AMBOS/CENTRO_PROGRAMA] escalera=2
+    AFIRMA: La Facultad y la Escuela de Derecho se adjudican dos proyectos de Vinculación con el Medio en 2026.
+    LIMITE: Financiamiento concursable, no basal. Los montos no están publicados.
+    INI "Taller de IA Generativa y Prompting Jurídico" | unidad=DIAT y LMIL | 2025→— | CONTINUA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-007  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Universidad presentó decálogo para el uso ético de la inteligencia artificial
+EDITOR: Pontificia Universidad Católica de Valparaíso  |  FECHA REGISTRADA: 2026-01-09 (dia)
+URL: https://pucv.cl/pucv/noticias/destacadas/universidad-presento-decalogo-para-el-uso-etico-de-la-inteligencia
+NOTA: Lineamiento universitario liderado desde la Unidad de Integridad Académica, con liderazgo de una profesora de Derecho. No es política propia de la Escuela de Derecho.
+  · ev-pucv-013 → ini-pucv-006 [gobernanza/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=3
+    AFIRMA: La universidad presenta un decálogo para el uso ético de la IA en docencia, elaborado por la Unidad de Integridad Académica y liderado por una profesora de Derecho.
+    LIMITE: Lineamiento universitario. No es política propia de la Escuela de Derecho.
+    INI "Decálogo institucional para el uso ético de la IA" | unidad=Unidad de Integridad Académica y Vicerrectoría Académica | 2026-01-09→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-003  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Tecnología jurídica en acción: el Programa DIAT PUCV integra la inteligencia artificial
+EDITOR: Facultad de Derecho PUCV  |  FECHA REGISTRADA: 2024-04-24 (dia)
+URL: https://pucv.cl/uuaa/derecho-pucv/noticias/tecnologia-juridica-en-accion-programa-diat-pucv-integra-la
+NOTA: Prompts Socráticos y chatbot en Filosofía del Derecho: IA aplicada dentro de una asignatura jurídica.
+  · ev-pucv-002 → ini-pucv-001 [gobernanza/AMBOS/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: El Programa DIAT integra IA en Filosofía del Derecho mediante prompting y un chatbot de asignatura, con apoyo de un proyecto de innovación docente.
+    LIMITE: Experiencia acotada a una asignatura. Fuente única: no hay prueba pública de continuidad.
+    INI "Programa Derecho, Inteligencia Artificial y Tecnología (DIAT)" | unidad=Escuela de Derecho PUCV | 2020→— | CONTINUA
+  · ev-pucv-008 → ini-pucv-003 [pregrado/IA_PARA_DERECHO/EQUIPO] escalera=1
+    AFIRMA: El Programa DIAT integra IA en Filosofía del Derecho mediante prompting y un chatbot de asignatura, con apoyo de un proyecto de innovación docente.
+    LIMITE: Experiencia acotada a una asignatura. Fuente única: no hay prueba pública de continuidad.
+    INI "Prompts Socráticos y chatbot en Filosofía del Derecho" | unidad=Escuela de Derecho y DIAT | 2024→— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-uchile-015  [uchile]  tipo=politica  estado=vigente  conf=85
+TITULO REGISTRADO: Lineamientos para el uso de IA en trabajos de titulación
+EDITOR: Universidad de Chile  |  FECHA REGISTRADA: 2026 (anio)
+URL: https://uchile.cl/informacion-y-bibliotecas/lineamientos-uso-ia-en-tesis
+NOTA: Política universitaria aplicable a Derecho, no dictada por la Facultad de Derecho.
+  · ev-uchile-015 → ini-uchile-007 [gobernanza/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=3
+    AFIRMA: La universidad adopta lineamientos que obligan a declarar el uso de IA en todos los trabajos de titulación.
+    LIMITE: Política universitaria aplicable a Derecho, no dictada por la Facultad.
+    INI "Lineamientos sobre uso de IA en trabajos de titulación" | unidad=Universidad de Chile | 2026→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-udp-002  [udp]  tipo=pagina-institucional  estado=vigente  conf=70
+TITULO REGISTRADO: Dirección de Inteligencia Artificial y Derecho
+EDITOR: Facultad de Derecho UDP  |  FECHA REGISTRADA: FECHA_NO_DECLARADA (FECHA_NO_DECLARADA)
+URL: https://derecho.udp.cl/direccion-de-inteligencia-artificial-y-derecho
+NOTA: Anuncia trabajo desde el primer semestre, un taller de IA en escritura legal y formación posterior. Anuncio, no ejecución acreditada (L-3).
+  · ev-udp-002 → ini-udp-001 [gobernanza/IA_PARA_DERECHO/FACULTAD_DERECHO] escalera=3
+    AFIRMA: La presentación institucional de la Dirección anuncia trabajo desde el primer semestre, un taller de IA en escritura legal y formación posterior sobre tecnología en la profesión.
+    LIMITE: Anuncio. No consta ejecución, obligatoriedad ni matrícula.
+    INI "Dirección de Inteligencia Artificial y Derecho" | unidad=Facultad de Derecho UDP | 2025-09-12→— | NUEVA
+  · ev-udp-003 → ini-udp-002 [pregrado/IA_PARA_DERECHO/FACULTAD_DERECHO] escalera=1
+    AFIRMA: La presentación institucional de la Dirección anuncia trabajo desde el primer semestre, un taller de IA en escritura legal y formación posterior sobre tecnología en la profesión.
+    LIMITE: Anuncio. No consta ejecución, obligatoriedad ni matrícula.
+    INI "Innovación curricular anunciada por la Dirección de IA y Derecho" | unidad=Facultad de Derecho UDP | 2026→— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-002  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Núcleo de Derecho, Inteligencia Artificial y Tecnología PUCV
+EDITOR: Facultad de Derecho PUCV  |  FECHA REGISTRADA: 2023-11-20 (dia)
+URL: https://pucv.cl/uuaa/derecho/noticias/nucleo-de-derecho-inteligencia-artificial-y-tecnologia-pucv-desarrolla
+NOTA: Afirma que el Núcleo se oficializó en 2020. En 2026 la unidad es Programa DIAT, no «Centro DIAT».
+  · ev-pucv-001 → ini-pucv-001 [gobernanza/AMBOS/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: La fuente oficial afirma que el Núcleo de Derecho, Inteligencia Artificial y Tecnología se oficializó en 2020, con objetivos regulatorios y de aplicación de IA a la docencia y la profesión.
+    LIMITE: En 2026 la unidad es Programa, no Centro. El presupuesto basal no está públicamente determinado.
+    INI "Programa Derecho, Inteligencia Artificial y Tecnología (DIAT)" | unidad=Escuela de Derecho PUCV | 2020→— | CONTINUA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-001  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Legal Management Innovation Lab: nuevo laboratorio de innovación
+EDITOR: Facultad de Derecho PUCV  |  FECHA REGISTRADA: 2022-01-06 (dia)
+URL: https://pucv.cl/uuaa/derecho/noticias/legal-management-innovation-lab-nuevo-laboratorio-de-innovacion
+NOTA: LMIL nace como laboratorio de transformación digital e innovación legal: ADYACENTE, no IA específica.
+  · ev-pucv-005 → ini-pucv-002 [vinculacion/ADYACENTE/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: La Facultad crea el Legal Management Innovation Lab como laboratorio de transformación digital, innovación legal y gestión de proyectos, en colaboración con Thomson Reuters.
+    LIMITE: LMIL nace como innovación legal, no como IA específica: la clasificación es ADYACENTE.
+    INI "Legal Management Innovation Lab (LMIL)" | unidad=Facultad de Derecho PUCV con Thomson Reuters | 2022→— | CONTINUA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-009  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Diplomado Legal Management Program y Legal Management Innovation Lab
+EDITOR: Facultad de Derecho PUCV  |  FECHA REGISTRADA: 2023-04-18 (dia)
+URL: https://pucv.cl/uuaa/derecho/noticias/diplomado-legal-management-program-y-legal-management-innovation-lab
+NOTA: FDI financiado por Mineduc para un componente ADYACENTE, no para IA específica.
+  · ev-pucv-006 → ini-pucv-002 [vinculacion/ADYACENTE/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: El Legal Management Program y LMIL participan de un FDI financiado por el Ministerio de Educación.
+    LIMITE: Financiamiento de un componente adyacente, no de IA específica.
+    INI "Legal Management Innovation Lab (LMIL)" | unidad=Facultad de Derecho PUCV con Thomson Reuters | 2022→— | CONTINUA
+──────────────────────────────────────────────────────────────────────────────
+src-ucentral-004  [ucentral]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Universidad Central presenta IDEA UCEN, nueva plataforma de búsqueda
+EDITOR: Universidad Central de Chile  |  FECHA REGISTRADA: FECHA_NO_DECLARADA (FECHA_NO_DECLARADA)
+URL: https://noticias.ucentral.cl/noticias/universidad-central-presenta-idea-ucen-nueva-plataforma-de-busqueda
+NOTA: RECUPERADA EN LA RONDA 3: citada en la tabla-resumen de intento-2b sin registro propio, quedó fuera del inventario de 72. Infraestructura de la universidad; falta comprobar vigencia en 2026 (L-10).
+  · ev-ucentral-004 → ini-ucentral-004 [uso-institucional/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=1
+    AFIRMA: La universidad presenta IDEA UCEN, plataforma institucional de búsqueda con IA.
+    LIMITE: Recuperada en la ronda 3. Herramienta heredada: falta comprobar vigencia en 2026.
+    INI "IDEA UCEN" | unidad=Universidad Central de Chile | →— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-unab-003  [unab]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: UNAB impulsa MIAsistentes, un ecosistema de inteligencia artificial para acompañar el aprendizaje
+EDITOR: Universidad Andrés Bello  |  FECHA REGISTRADA: 2026-08-31 (dia)
+URL: https://noticias.unab.cl/unab-impulsa-miasistentes-un-ecosistema-de-inteligencia-artificial-para-acompanar-el-aprendizaje-y-la-experiencia-universitaria
+NOTA: Capacidad de toda la universidad. No se atribuye a Derecho sin datos de aplicación específica.
+  · ev-unab-003 → ini-unab-003 [uso-institucional/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=1
+    AFIRMA: La universidad inicia la implementación progresiva de MIAsistentes, un ecosistema institucional de asistentes virtuales.
+    LIMITE: Capacidad de toda la universidad: no se atribuye adicionalmente a Derecho.
+    INI "MIAsistentes" | unidad=Universidad Andrés Bello | 2026-08-31→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-013  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Universidad habilita la herramienta Gemini IA para fortalecer el trabajo académico
+EDITOR: Pontificia Universidad Católica de Valparaíso  |  FECHA REGISTRADA: 2026-03-19 (dia)
+URL: https://pucv.cl/pucv/noticias/vida-universitaria/universidad-habilita-herramienta-gemini-ia-para-fortalecer-el-trabajo
+NOTA: Demuestra acceso institucional desde marzo de 2026, no adopción efectiva en Derecho. Infraestructura, participación y uso son tres cosas distintas.
+  · ev-pucv-014 → ini-pucv-007 [uso-institucional/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=2
+    AFIRMA: Desde marzo de 2026 la universidad habilita Gemini integrado a su entorno institucional para la comunidad académica y administrativa.
+    LIMITE: Demuestra acceso institucional, no adopción efectiva en Derecho.
+    INI "Habilitación institucional de Gemini" | unidad=Pontificia Universidad Católica de Valparaíso | 2026-03→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-puc-chile-004  [puc-chile]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Derecho UC formaliza la creación del primer Departamento de Derecho y Tecnología en Chile
+EDITOR: Facultad de Derecho UC  |  FECHA REGISTRADA: 2025-12-31 (dia)
+URL: https://derecho.uc.cl/derecho-uc-formaliza-la-creacion-del-primer-departamento-de-derecho-y-tecnologia-en-chile
+NOTA: Anuncio de creación. El acto formal —resolución u organigrama constitutivo— no se ha localizado (L-6).
+  · ev-puc-chile-006 → ini-puc-chile-003 [gobernanza/ADYACENTE/FACULTAD_DERECHO] escalera=3
+    AFIRMA: La Facultad anuncia la creación del Departamento de Derecho y Tecnología, dirigido por Raúl Madrid.
+    LIMITE: Es el anuncio de creación. El acto formal —resolución o documento constitutivo— no se ha localizado.
+    INI "Departamento de Derecho y Tecnología" | unidad=Facultad de Derecho UC | 2025-12-31→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-puc-chile-005  [puc-chile]  tipo=pagina-institucional  estado=vigente  conf=70
+TITULO REGISTRADO: Estructura orgánica · Derecho UC Transparente
+EDITOR: Facultad de Derecho UC  |  FECHA REGISTRADA: FECHA_NO_DECLARADA (FECHA_NO_DECLARADA)
+URL: https://derecho.uc.cl/facultad/derecho-uc-transparente/estructura-organica
+NOTA: Lista el Departamento de Derecho y Tecnología como unidad formal. Es el respaldo orgánico de src-puc-chile-004.
+  · ev-puc-chile-007 → ini-puc-chile-003 [gobernanza/ADYACENTE/FACULTAD_DERECHO] escalera=3
+    AFIRMA: La estructura orgánica publicada de la Facultad lista el Departamento de Derecho y Tecnología como unidad formal.
+    LIMITE: Es el único respaldo orgánico publicado de todo el corpus para una unidad nueva.
+    INI "Departamento de Derecho y Tecnología" | unidad=Facultad de Derecho UC | 2025-12-31→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-puc-chile-007  [puc-chile]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Expertos extranjeros y académicos de Derecho UC analizaron la ética en la inteligencia artificial
+EDITOR: Facultad de Derecho UC  |  FECHA REGISTRADA: 2026-04-10 (dia)
+URL: https://derecho.uc.cl/expertos-extranjeros-y-academicos-de-derecho-uc-analizaron-la-etica-en-la-inteligencia-artificial
+NOTA: Identifica a Raúl Madrid como director del Departamento de Derecho y Tecnología.
+  · ev-puc-chile-008 → ini-puc-chile-003 [gobernanza/ADYACENTE/FACULTAD_DERECHO] escalera=3
+    AFIRMA: La fuente identifica a Raúl Madrid como director del Departamento de Derecho y Tecnología recientemente creado.
+    LIMITE: Es una noticia de seminario: corrobora la existencia del Departamento de forma incidental.
+    INI "Departamento de Derecho y Tecnología" | unidad=Facultad de Derecho UC | 2025-12-31→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-puc-chile-008  [puc-chile]  tipo=politica  estado=vigente  conf=85
+TITULO REGISTRADO: Facultad de Derecho UC establece guía ética para uso de inteligencia artificial generativa
+EDITOR: Facultad de Derecho UC  |  FECHA REGISTRADA: 2026-08-21 (dia)
+URL: https://derecho.uc.cl/facultad-de-derecho-uc-establece-guia-etica-para-uso-de-inteligencia-artificial-generativa
+NOTA: Gobernanza específica de Facultad, no universitaria. Localizada por dos rondas independientes.
+  · ev-puc-chile-009 → ini-puc-chile-004 [gobernanza/IA_PARA_DERECHO/FACULTAD_DERECHO] escalera=3
+    AFIRMA: La Facultad establece una guía ética que regula autonomía docente, transparencia, conservación de registros, infracciones y verificación oral en el uso de IA generativa.
+    LIMITE: Gobernanza dictada por la Facultad. No consta su aplicación ni su supervisión.
+    INI "Guía ética para el uso de IA generativa" | unidad=Facultad de Derecho UC | 2026-08-21→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-ucentral-003  [ucentral]  tipo=pagina-institucional  estado=vigente  conf=70
+TITULO REGISTRADO: Programa de IA & LegalTech · FACDEH
+EDITOR: Facultad de Ciencias Jurídicas y Sociales, Universidad Central  |  FECHA REGISTRADA: FECHA_NO_DECLARADA (FECHA_NO_DECLARADA)
+URL: https://facdeh.ucentral.cl/legal-tech
+NOTA: La unidad vigente es Programa IA & LegalTech; sustituye la denominación «Cátedra LegalTech» del antecedente, que se conserva como antecedente.
+  · ev-ucentral-002 → ini-ucentral-002 [gobernanza/AMBOS/FACULTAD_DERECHO] escalera=3
+    AFIRMA: La Facultad mantiene la página oficial del Programa de IA & LegalTech, cuya misión declarada integra investigación aplicada, productos, educación avanzada e innovación.
+    LIMITE: Sustituye la denominación «Cátedra LegalTech». Falta el acto formal de creación.
+    INI "Programa de IA & LegalTech" | unidad=Facultad de Ciencias Jurídicas y Sociales, Universidad Central | 2026→— | INSTITUCIONALIZADA
+──────────────────────────────────────────────────────────────────────────────
+src-udp-001  [udp]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Académico Rafael Mery es nombrado director de Inteligencia Artificial y Derecho UDP
+EDITOR: Facultad de Derecho UDP  |  FECHA REGISTRADA: 2025-09-12 (dia)
+URL: https://derecho.udp.cl/academico-rafael-mery-es-nombrado-director-de-inteligencia-artificial-y-derecho-udp
+NOTA: El nombramiento y la creación de la Dirección están documentados; los cambios de malla que anuncia, no. El registro se parte en dos en vez de promediarse.
+  · ev-udp-001 → ini-udp-001 [gobernanza/IA_PARA_DERECHO/FACULTAD_DERECHO] escalera=3
+    AFIRMA: La Facultad crea una Dirección de Inteligencia Artificial y Derecho y nombra a Rafael Mery como su director.
+    LIMITE: Lo orgánico está documentado; los cambios curriculares que la misma fuente anuncia, no.
+    INI "Dirección de Inteligencia Artificial y Derecho" | unidad=Facultad de Derecho UDP | 2025-09-12→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-pucv-005  [pucv]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Destacada participación de estudiantes en la jornada de cierre del Taller de IA y Prompting Jurídico
+EDITOR: Facultad de Derecho PUCV  |  FECHA REGISTRADA: 2025-10-07 (dia)
+URL: https://pucv.cl/uuaa/derecho-pucv/noticias/destacada-participacion-de-estudiantes-en-la-jornada-de-cierre-del
+NOTA: Edición 2025: tres jornadas y cerca de 90 participantes. Cuántos asistieron no dice si algo cambió.
+  · ev-pucv-010 → ini-pucv-005 [vinculacion/AMBOS/CENTRO_PROGRAMA] escalera=2
+    AFIRMA: La edición 2025 del Taller de IA y Prompting Jurídico se ejecuta en tres jornadas con cerca de 90 participantes.
+    LIMITE: Recuento de participantes. Cuántos asistieron no dice si algo cambió.
+    INI "Taller de IA Generativa y Prompting Jurídico" | unidad=DIAT y LMIL | 2025→— | CONTINUA
+──────────────────────────────────────────────────────────────────────────────
+src-uchile-002  [uchile]  tipo=programa-postgrado  estado=historico  conf=75
+TITULO REGISTRADO: Diploma en Derecho e Inteligencia Artificial · edición 2022
+EDITOR: Postgrados Derecho, Universidad de Chile  |  FECHA REGISTRADA: 2022 (anio)
+URL: https://postgrados.derecho.uchile.cl/diploma-en-derecho-e-inteligencia-artificial
+NOTA: No es duplicado de src-uchile-003: la URL difiere en una partícula y corresponde a la edición 2022. Juntas prueban continuidad.
+  · ev-uchile-006 → ini-uchile-002 [formacion-continua/AMBOS/CENTRO_PROGRAMA] escalera=3
+    AFIRMA: La página del Diploma en Derecho e Inteligencia Artificial de 2022 describe fundamentos de IA, regulación, ética, propiedad intelectual, responsabilidad y derechos fundamentales.
+    LIMITE: Página histórica: prueba la edición 2022, no la oferta vigente.
+    INI "Diploma en Derecho e Inteligencia Artificial" | unidad=CE3, antes CEDI | 2022→— | CONTINUA
+──────────────────────────────────────────────────────────────────────────────
+src-puc-chile-012  [puc-chile]  tipo=pagina-institucional  estado=vigente  conf=70
+TITULO REGISTRADO: AyudantIA UC
+EDITOR: Pontificia Universidad Católica de Chile  |  FECHA REGISTRADA: FECHA_NO_DECLARADA (FECHA_NO_DECLARADA)
+URL: https://docencia.ia.uc.cl/ayudantia
+NOTA: Infraestructura central de la universidad. La fuente no identifica a la Facultad de Derecho ni cursos jurídicos: se atribuye a la universidad, no a la Facultad.
+  · ev-puc-chile-011 → ini-puc-chile-006 [uso-institucional/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=2
+    AFIRMA: La universidad ofrece AyudantIA, que permite crear agentes de IA generativa por curso e integrarlos con sus plataformas.
+    LIMITE: La fuente no identifica a la Facultad de Derecho ni cursos jurídicos: la atribución es a la universidad.
+    INI "AyudantIA UC" | unidad=Pontificia Universidad Católica de Chile | 2025→— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-uai-002  [uai]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: Facultad de Derecho firma convenio con Legu, legaltech que impulsa el acceso al derecho mediante IA
+EDITOR: Universidad Adolfo Ibáñez  |  FECHA REGISTRADA: 2026-01-12 (dia)
+URL: https://alumni.uai.cl/news/noticias-uai/905/905-Facultad-de-Derecho-firma-convenio-con-Legu-legaltech-que-impulsa-el-acceso-al-derecho-mediante-IA
+NOTA: Convenio firmado el 06-01-2026. No hay evidencia pública de cobertura estudiantil, productos ni resultados: existir no es funcionar (L-3).
+  · ev-uai-002 → ini-uai-002 [vinculacion/IA_PARA_DERECHO/FACULTAD_DERECHO] escalera=1
+    AFIRMA: La Facultad de Derecho firma un convenio con la legaltech Legu para ampliar el acceso a información y servicios jurídicos mediante IA.
+    LIMITE: Convenio firmado y fechado. Sin cobertura, productos ni resultados públicos.
+    INI "Convenio con la legaltech Legu" | unidad=Facultad de Derecho UAI | 2026-01-06→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-uandes-003  [uandes]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: IA al servicio de la edificación: prototipo del CET e Ingeniería fue finalista en concurso del Gobierno y el BID
+EDITOR: Universidad de los Andes  |  FECHA REGISTRADA: 2025-10-27 (dia)
+URL: https://uandes.cl/actualidad/noticias/ia-al-servicio-de-la-edificacion-prototipo-del-cet-e-ingenieria-fue-finalista-en-concurso-del-gobierno-y-el-bid
+NOTA: DOMus AI lo desarrollan el CET e Ingeniería: la unidad principal no es Derecho. Se atribuye a la universidad.
+  · ev-uandes-003 → ini-uandes-002 [investigacion/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=1
+    AFIRMA: El CET e Ingeniería desarrollan DOMus AI, plataforma de revisión automatizada de normas y formularios de permisos de edificación.
+    LIMITE: La unidad principal no es Derecho: la atribución es a la universidad.
+    INI "DOMus AI" | unidad=CET e Ingeniería | 2025-10-27→— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-uchile-013  [uchile]  tipo=noticia-institucional  estado=vigente  conf=50
+TITULO REGISTRADO: CE3 convoca a Programa de Visitas Académicas de América Latina y el Caribe
+EDITOR: Facultad de Derecho, Universidad de Chile  |  FECHA REGISTRADA: 2026-04-02 (dia)
+URL: https://derecho.uchile.cl/noticias/238418/ce3-convoca-a-programa-de-visitas-academicas-de-america-latina-y-el-caribe
+NOTA: Estadías de cuatro a seis semanas con colaboración en proyectos, publicaciones y cursos.
+  · ev-uchile-013 → ini-uchile-005 [vinculacion/AMBOS/CENTRO_PROGRAMA] escalera=1
+    AFIRMA: El CE3 convoca un Programa de Visitas Académicas latinoamericano con estadías de cuatro a seis semanas.
+    LIMITE: Convocatoria abierta al corte: programada, no ejecutada.
+    INI "Programa de Visitas Académicas de América Latina y el Caribe" | unidad=CE3 | 2026-04-02→— | NUEVA
+──────────────────────────────────────────────────────────────────────────────
+src-uchile-016  [uchile]  tipo=pagina-institucional  estado=vigente  conf=70
+TITULO REGISTRADO: Curso institucional sobre IA generativa en línea
+EDITOR: Vicerrectoría de Tecnologías de la Información, Universidad de Chile  |  FECHA REGISTRADA: 2025-09-09 (dia)
+URL: https://vti.uchile.cl/curso-sobre-ia-online
+NOTA: Capacitación de 27 horas dirigida a toda la comunidad universitaria. Atribución a la universidad, no a Derecho.
+  · ev-uchile-016 → ini-uchile-008 [uso-institucional/IA_PARA_DERECHO/INSTITUCIONAL_UNIVERSIDAD] escalera=2
+    AFIRMA: La Vicerrectoría de Tecnologías de la Información ofrece una capacitación institucional de 27 horas en IA generativa.
+    LIMITE: Dirigida a toda la comunidad: no informa participación de Derecho.
+    INI "Capacitación institucional en IA generativa" | unidad=Vicerrectoría de Tecnologías de la Información | 2025-09-09→— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-udd-001  [udd]  tipo=curricular  estado=vigente  conf=75
+TITULO REGISTRADO: Carrera de Derecho · malla y admisión
+EDITOR: Facultad de Derecho UDD  |  FECHA REGISTRADA: FECHA_NO_DECLARADA (FECHA_NO_DECLARADA)
+URL: https://derecho.udd.cl/carrera/derecho
+NOTA: La malla declara «LegalTech + IA» con talleres propios, pero la página está orientada a Admisión 2027: prueba diseño curricular anunciado, no curso dictado (L-3).
+  · ev-udd-001 → ini-udd-001 [pregrado/IA_PARA_DERECHO/FACULTAD_DERECHO] escalera=1
+    AFIRMA: La malla de Derecho declara una línea LegalTech e IA e incluye talleres de herramientas digitales e inteligencia artificial y de análisis de datos.
+    LIMITE: La página está orientada a Admisión 2027: diseño curricular anunciado, no curso dictado.
+    INI "Malla de Derecho con línea LegalTech e IA" | unidad=Facultad de Derecho UDD | 2027→— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-udec-004  [udec]  tipo=pagina-institucional  estado=vigente  conf=70
+TITULO REGISTRADO: [genIA] · programa interdisciplinario UdeC
+EDITOR: Universidad de Concepción  |  FECHA REGISTRADA: 2026-02-10 (dia)
+URL: https://genia.udec.cl
+NOTA: Capacidad de toda la universidad, no estructura de Derecho. Reclasificada como ADYACENTE para la Facultad.
+  · ev-udec-004 → ini-udec-004 [uso-institucional/ADYACENTE/INSTITUCIONAL_UNIVERSIDAD] escalera=2
+    AFIRMA: [genIA] es un programa interdisciplinario institucional con roadmap 2026, formación, tecnología y ética.
+    LIMITE: Acredita una capacidad de toda la universidad, no una estructura de Derecho.
+    INI "[genIA]" | unidad=Universidad de Concepción | 2026-02-10→— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-unab-004  [unab]  tipo=programa-postgrado  estado=vigente  conf=75
+TITULO REGISTRADO: Diplomado en Derecho, Innovación y Tecnología
+EDITOR: Postgrado UNAB  |  FECHA REGISTRADA: FECHA_NO_DECLARADA (FECHA_NO_DECLARADA)
+URL: https://postgrado.unab.cl/programas/diplomado-en-derecho-innovacion-y-tecnologia
+NOTA: RECUPERADA EN LA RONDA 3: citada en la tabla-resumen de intento-2b sin registro propio, quedó fuera del inventario de 72. Falta comprobar si la IA es componente sustantivo o si el programa es ADYACENTE.
+  · ev-unab-004 → ini-unab-004 [formacion-continua/ADYACENTE/FACULTAD_DERECHO] escalera=1
+    AFIRMA: El postgrado ofrece un Diplomado en Derecho, Innovación y Tecnología.
+    LIMITE: Recuperada en la ronda 3. Falta comprobar si la IA es componente sustantivo: por ahora ADYACENTE.
+    INI "Diplomado en Derecho, Innovación y Tecnología" | unidad=Postgrado UNAB | →— | DESCONOCIDA
+──────────────────────────────────────────────────────────────────────────────
+src-nacional-002  [nacional]  tipo=base-oficial  estado=inaccesible  conf=80
+TITULO REGISTRADO: INDICES · Bases de datos de oferta académica de pregrado 2026
+EDITOR: Consejo Nacional de Educación  |  FECHA REGISTRADA: 2026-01-08 (dia)
+URL: https://cned.cl/institucional/bases-de-datos
+NOTA: Devuelve 403 a petición automatizada; el sitio es consultable desde navegador. Corte declarado de la base: 08-01-2026.
+──────────────────────────────────────────────────────────────────────────────
+src-udec-002  [udec]  tipo=noticia-institucional  estado=inaccesible  conf=50
+TITULO REGISTRADO: Seminario «Derecho en la Smart Era»
+EDITOR: Facultad de Ciencias Jurídicas y Sociales UdeC  |  FECHA REGISTRADA: 2025-10-02 (dia)
+URL: https://juridicasysociales.udec.cl/content/seminario-%E2%80%9Cderecho-en-la-smart-era%E2%80%9D-reuni%C3%B3-destacados-expositores-y-una-gran-audiencia-en-la
+NOTA: El certificado del servidor no cubre el nombre de host: el navegador mostrará una advertencia de seguridad. El contenido existe. Antes de publicar conviene buscar el mismo hecho en jur.udec.cl.
+  · ev-udec-002 → ini-udec-002 [vinculacion/AMBOS/FACULTAD_DERECHO] escalera=1
+    AFIRMA: La Facultad realiza un seminario interdisciplinario sobre IA, regulación, práctica jurídica, cibercrimen e innovación.
+    LIMITE: Su dominio tiene el certificado mal configurado: el enlace mostrará una advertencia de seguridad.
+    INI "Seminario «Derecho en la Smart Era»" | unidad=Facultad de Ciencias Jurídicas y Sociales UdeC | 2025-10-02→2025-10-02 | DESCONOCIDA
