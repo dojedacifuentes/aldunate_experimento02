@@ -2,6 +2,76 @@
 
 ## No publicado
 
+### Informe 01 · v0.6.0 · el mapeo se somete a su propia exigencia
+
+**Añadido · la verificación sustantiva existe, y llega al 51%.** Se abrieron 38
+de las 74 fuentes y se contrastaron siete campos contra la publicación original:
+existencia y título literal, fecha declarada, unidad responsable, condición de
+anuncio o ejecución, cifras de población, límites y respaldo efectivo de la
+afirmación que sostiene. El contraste fuente por fuente queda versionado en
+`tools/informes/informe-01/verificacion-p1-2026-09-04.md`, y la cola de
+prioridad —calculada recorriendo la cadena afirmación → evidencia → fuente— en
+`prioridad-verificacion.json`.
+
+**Corregido · once registros no decían lo que su página dice.** Es un tercio de
+lo verificado, y varias correcciones tocan afirmaciones ya publicadas.
+
+- El decálogo de la PUCV «sugiere recomendaciones»: es lineamiento y no
+  política, y se presenta dentro de un Día de la IA que el título del registro
+  no mencionaba.
+- El «primer Departamento de Derecho y Tecnología en Chile» es cita textual del
+  decano de la UC, no un hecho verificado. Y en ninguna de las cuatro unidades
+  creadas entre 2025 y 2026 se localizó su acto de creación. Lo que sí existe,
+  en un caso, es el organigrama: evidencia más fuerte que la noticia.
+- El diploma de la Universidad de Chile figura cerrado desde 2022, y su
+  reapertura de 2026 se declara referencial bajo otra unidad. La serie temporal
+  de formación continua es de la UC: dos graduaciones consecutivas con más de 90
+  y más de 100 titulados.
+- El convenio de la UAI con Legu «se firmó»: es acto ejecutado. La afirmación
+  que lo contaba como anuncio se reescribió.
+- El LMIL de la PUCV dependía en 2022 de la Dirección de Incubación y Negocios y
+  su fuente fundacional no menciona la IA. En 2025 ya es de la Escuela de
+  Derecho: es un traslado orgánico, y así se registra.
+- El Programa de IA y LegalTech de la Universidad Central estaba subestimado
+  porque el registro lo nombraba por el segmento de su URL. El sesgo de cobertura
+  no sólo infla a los observados: deprime a los no observados.
+- El seminario «Derecho en la Smart Era» lo organiza el centro de alumnos:
+  atribución `ESTUDIANTIL`, no de la Facultad.
+- Dos fechas se retiraron por no constar en la fuente y dos se ganaron.
+
+**Añadido · la capa académica.** Introducción, objetivos, relato metodológico en
+nueve apartados, discusión en seis, sección PUCV rehecha con su doble revisión
+publicada, siete conclusiones que citan las afirmaciones que las sostienen, ocho
+limitaciones y una agenda de siete preguntas con su condición de cierre.
+
+**Añadido · declaración de intereses.** Una fuente del corpus identifica al
+destinatario del informe y a su autor como conductores del Programa DIAT. Se
+declara en la metodología, y la sección PUCV publica las dos preguntas de
+control con su respuesta.
+
+**Cambiado · DEC-108 queda enmendada.** Prohibía verificar, pero el kit canónico
+define «contrastado» como segunda revisión y se la encarga al auditor
+metodológico. Lo que reserva a la firma humana es «aceptado», y no hay ni un
+registro aceptado. Las guardas del compilador y la prueba que exigía cero
+verificaciones no se borraron: pasaron a exigir coherencia.
+
+**Cambiado · los cinco constructores en Python quedan congelados.** No hay
+intérprete en el equipo del autor, y un generador que nadie puede ejecutar ni
+comprobar es la segunda fuente de verdad que esta cadena existe para evitar.
+
+**Corregido · el manifiesto tenía tres valores fijados a mano que ya mentían**:
+las fuentes verificadas, el estado y la nota de cita. Ahora se derivan.
+
+**Corregido · la página tenía dos secciones «Metodología» y dos sobre la PUCV**,
+y el bloque de descargas seguía sirviendo los archivos de la v0.5.0.
+
+**Añadido · ocho pruebas que atan la prosa a los datos**: ninguna conclusión
+puede afirmar inexistencia, cada una debe citar afirmaciones que existan, la
+prosa no puede escribir a mano un número que el dataset ya conoce, y la sección
+PUCV debe reconocer al menos tantos hechos favorables como brechas. 124 en total.
+
+---
+
 ### Informe 01 · v0.5.0 · el corpus deja de ser una lista y pasa a ser un dataset
 
 **Añadido.** El Informe 01 tiene por primera vez datos publicados. Seis CSV
