@@ -6,7 +6,7 @@
   "version": "0.7.0",
   "editorial_status": "borrador académico para revisión",
   "cutoff_date": "2026-09-01",
-  "updated_at": "2026-09-04T09:05:00-04:00",
+  "updated_at": "2026-09-04T09:45:00-04:00",
   "protocol": {
     "id": "METODOLOGIA_IA_DERECHO_V2.1",
     "supersedes": "METODOLOGIA_IA_DERECHO_V2.0",
@@ -18,8 +18,8 @@
     "base": "d9b968e5b7c8ceb4ea795647b750893d39411919",
     "head": "consúltalo con git rev-parse HEAD; fijarlo aquí caduca en la fusión siguiente",
     "pushed": true,
-    "merged": false,
-    "note": "Varias sesiones escriben este repositorio: consultar el remoto con `git ls-remote origin`, nunca `origin/main` local.",
+    "merged": true,
+    "note": "v0.7.0 fusionada en main el 04-09-2026 y desplegada en produccion. Varias sesiones escriben este repositorio: consultar el remoto con `git ls-remote origin`, nunca `origin/main` local.",
     "preserved_branches": {
       "informe-01/v0.5.0": "a1cc758105eb61d6bd9c7a780be97f9af8d3e538",
       "informe-01/borrador-aldunate": "6dffd0f340bd89650105583e3f16cf4085eeb1e4"
@@ -27,14 +27,14 @@
   },
   "urls": {
     "production": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile",
-    "production_version": "0.6.0 · la 0.7.0 vive en rama y no está desplegada",
+    "production_version": "0.7.0",
     "institutions": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile/instituciones",
     "package": "/descargas/informe-01-borrador-academico-v0.7.0/",
     "preview_note": "Vercel emite un preview inmutable por commit, de modo que la URL cambia con cada push y no se fija aqui. Se consulta en la API de despliegues de GitHub —el repositorio es publico—: /deployments y luego /deployments/<id>/statuses. Esta detras de la proteccion SSO de Vercel: se abre con la sesion del autor, no con una peticion anonima."
   },
   "current_phase": "instrumento_revisado_datos_pendientes",
-  "last_completed_task": "T-037_typographic_pass_and_preview",
-  "next_task": "T-038_merge_v0_7_0_then_verify_repositorios_publicaciones",
+  "last_completed_task": "T-038_contrast_fix_and_production_release",
+  "next_task": "T-039_verify_repositorios_publicaciones_nine_institutions",
   "counts": {
     "universities": 11,
     "sources": 74,
@@ -83,7 +83,8 @@
     },
     "figures": 9,
     "initiatives_dated": 49,
-    "initiatives_started_2025_or_later": 41
+    "initiatives_started_2025_or_later": 41,
+    "tests": 144
   },
   "verification_by_university": {
     "pucv": [
@@ -185,7 +186,8 @@
     "T-034_svg_chart_engine",
     "T-035_editorial_architecture_findings_first",
     "T-036_consistency_audit",
-    "T-037_typographic_pass_and_preview"
+    "T-037_typographic_pass_and_preview",
+    "T-038_contrast_fix_and_production_release"
   ],
   "in_progress": [
     "T-026_substantive_verification_38_sources · 38 de 74, sin avance en la v0.7.0"
@@ -197,8 +199,7 @@
     "ISSUE-022_c4_c5_open_where_route_not_walked · exige recorrer repositorios-publicaciones",
     "ISSUE-003_cned_403 · exige descarga manual desde navegador",
     "ISSUE-009_frozen_2025_baseline · requiere decisión humana",
-    "ISSUE-011_docx_chain_requires_word · sólo en el equipo del autor",
-    "ISSUE-023_scatter_label_collision · estetico, en el motor de graficos"
+    "ISSUE-011_docx_chain_requires_word · sólo en el equipo del autor"
   ],
   "canonical_files": [
     "content/reports/01_ia_escuelas_derecho_chile/canonical/kit-canonico-v1.0.0.md",
@@ -230,7 +231,7 @@
     "date": "2026-09-04",
     "typecheck": "pass",
     "lint": "pass · 0 errores · 8 avisos preexistentes del codigo donado del juego",
-    "tests": "pass · 142 en 8 archivos",
+    "tests": "pass · 144 en 8 archivos",
     "build": "pass · 18 rutas"
   },
   "last_export": {
@@ -251,8 +252,8 @@
       "docx": "ISSUE-011 · cadena PowerShell + Word por COM, sólo en el equipo del autor"
     },
     "integrity_verified_over_http": true,
-    "integrity_verified_from_production": false,
+    "integrity_verified_from_production": true,
     "regenerated_after_typographic_pass": true
   },
-  "next_session_mission": "Verificar, no rediseñar. Sigue valiendo la mision de la v0.7.0: el instrumento esta, los datos son la deuda. Antes de eso hay una revision visual del autor sobre el preview de Vercel pendiente de respuesta. Despues, en este orden: recorrer repositorios-publicaciones en las nueve instituciones pendientes —cierra la conclusion principal—, contrastar las tres fuentes de uautonoma, subir uandes, udd y uai, y meter routes_missing en el protocolo de verificacion. Solo con datos nuevos tiene sentido reescribir la discusion y revisar las siete conclusiones. Ver docs/report-01/HANDOFF.md §H."
+  "next_session_mission": "Verificar, no rediseñar. La v0.7.0 ya esta en produccion y sus once checksums verifican descargando del sitio publico. El instrumento esta; los datos son la deuda. En este orden: recorrer repositorios-publicaciones en las nueve instituciones pendientes —cierra C-5, la conclusion principal—, contrastar las tres fuentes de uautonoma, subir uandes, udd y uai, recorrer centros-laboratorios en la UAI para cerrar ISSUE-020, y meter routes_missing en el protocolo de verificacion. Solo con datos nuevos tiene sentido reescribir la discusion y revisar las siete conclusiones. Ver docs/report-01/HANDOFF.md §H."
 }

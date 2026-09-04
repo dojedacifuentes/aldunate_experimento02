@@ -120,6 +120,21 @@ ahora una marca con inicial mayúscula —`{MecProgramasPalabra}`— y devuelve 
 mismo valor capitalizado. La alternativa era duplicar la clave en el recuento, y
 dos claves para una cifra es dejar que un día digan cosas distintas.
 
+**Corregido · la prosa del informe se pintaba con el color del papel.** `--muted`
+es la superficie sobre la que se apoyan las tarjetas y `--muted-foreground` es la
+tinta que se lee encima; `Borrador.tsx` escribía la primera en ocho sitios, uno de
+ellos el párrafo base. Medido: **1,11 de contraste en el tema claro y 1,20 en el
+oscuro, sobre 152 elementos** —la prosa entera, invisible en los dos temas—. No
+fallaba nada, que es lo que lo hizo durar: el texto estaba en el DOM, lo leía un
+lector de pantalla y salía en el buscador.
+
+Con la misma medición se corrigieron tres defectos más: las cifras escritas encima
+de una banda usaban `--background`, que sólo acierta cuando la banda contrasta con
+el papel —2,06 sobre los tonos medios—, y ahora cada una nombra el tono sobre el
+que se dibuja; `--muted-foreground` del tema claro baja de #6A6255 a #5C5548, que
+sube los chips de metadato de 5,2 a 6,3; y `--g-suave` acompaña al mismo valor.
+Dos pruebas nuevas lo vigilan, 144 en total.
+
 DEC-118 a DEC-123 · ISSUE-020 a ISSUE-022.
 
 ### Informe 01 · v0.6.0 · el mapeo se somete a su propia exigencia

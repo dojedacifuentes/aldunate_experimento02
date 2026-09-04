@@ -30,15 +30,15 @@ La pregunta que el informe existe para hacer discutible:
 
 ## B · Estado actual
 
-**v0.7.0, borrador académico para revisión.** Trabajo en rama, **sin fusionar**,
-y **publicado como preview de Vercel** para que el autor lo revise antes de seguir.
+**v0.7.0, borrador académico para revisión.** **Fusionada en `main` y publicada
+en producción** el 04-09-2026.
 
 | | |
 |---|---|
 | Rama | `informe-01/v0.7.0` |
 | Base | `d9b968e`, punta de `main` al empezar |
 | HEAD | consúltalo con `git rev-parse HEAD`. Fijarlo aquí lo deja obsoleto en la fusión siguiente |
-| Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **todavía en v0.6.0** |
+| Producción | https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile · **v0.7.0** |
 | Fichas | `/informes/ia-escuelas-derecho-chile/instituciones` |
 | **Preview** | uno por commit · se consulta, no se fija aquí |
 
@@ -82,7 +82,8 @@ mismo build.
 **Validaciones al cierre:** typecheck en verde · lint 0 errores y 8 avisos
 preexistentes del código donado del juego · **142 pruebas** · build de 18 rutas ·
 paquete con PDF A4 de **72 páginas**, HTML, Markdown, seis CSV, JSON, manifiesto,
-checksums y ZIP · **los once checksums verifican descargando por HTTP.**
+checksums y ZIP · **los once checksums verifican descargando desde producción**, que
+es la comprobación que vale: en el disco donde se generó el paquete no prueba nada.
 
 ---
 
@@ -112,6 +113,12 @@ Sólo lo terminado.
 10. **Fe de erratas de la v0.6.0**: la ficha de cada institución declaraba «0
     fuentes con verificación sustantiva» y la nota metodológica sostenía que
     ninguna fuente llevaba fecha de verificación.
+12. **Corrección de contraste.** La prosa del informe se pintaba con
+    `text-muted`, que resuelve a `--muted`: el token de la superficie sobre la
+    que se apoyan las tarjetas, no el de la tinta. 1,11 de contraste en el tema
+    claro y 1,20 en el oscuro, sobre 152 elementos. Ver §J. De paso, las cifras
+    escritas encima de una banda dejaron de usar `--background` y ahora nombran
+    el tono sobre el que se dibujan.
 11. **Pasada tipográfica sobre las cifras de la prosa**, terminada en la sesión
     siguiente. Cardinales en palabras hasta veinte, coma decimal y artículo
     delante del nombre institucional. Ninguna cifra deja de venir del dataset:
@@ -308,6 +315,18 @@ Cuestan tiempo y no son evidentes.
 - **Varias sesiones escriben este repositorio.** Consulta el remoto con
   `git ls-remote origin`, nunca `origin/main` local.
 - **Matar el shell de `npm run dev` no mata Node.** Deja el puerto 3000 ocupado.
+- **`text-muted` no es el color de un texto.** `--muted` es la superficie sobre
+  la que se apoyan las tarjetas —#EDE8DD en claro, #142534 en oscuro— y
+  `--muted-foreground` es la tinta. Las clases de Tailwind que salen de los dos
+  se distinguen en un sufijo, y escribir la primera pinta la letra del color del
+  papel: 1,11 de contraste. **No rompe nada**: el texto sigue en el DOM, lo lee
+  un lector de pantalla y sale en el buscador; sólo no se ve, y ni el typecheck
+  ni el lint ni las pruebas lo notan. Estuvo así toda la prosa del informe. Hay
+  una prueba que lo vigila en los cinco componentes; no la quites.
+- **El contraste se mide, no se mira.** Un color se juzga contra el fondo
+  *efectivo*, y media interfaz usa fondos translúcidos —`bg-muted/60`— que hay
+  que componer antes de calcular. Medir contra el fondo declarado da falsos
+  positivos a montones.
 
 ---
 
