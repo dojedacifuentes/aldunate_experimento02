@@ -92,6 +92,7 @@ export const reports: Report[] = [
         version: '0.5.0',
         date: '2026-09-04',
         status: 'en-investigacion',
+        pdf: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.pdf',
         html: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
         changelog: [
           'El corpus deja de ser una lista dentro de cinco documentos y pasa a ser un dataset canónico: seis CSV con universidades, fuentes, iniciativas, evidencias, cobertura y afirmaciones.',
@@ -102,6 +103,7 @@ export const reports: Report[] = [
           'Dos lagunas nuevas. L-11: ninguna fuente del corpus proviene de contraste externo, de modo que hereda íntegro el sesgo de autodescripción. L-12: dos de las ocho dimensiones —recursos y capacidades, y continuidad y resultados— están vacías en las once instituciones.',
           '14 afirmaciones con razonamiento, contraevidencia, límites y confianza declarados. Ninguna está aceptada.',
           'La ficha publica matriz de evidencia localizada, cobertura, escalera de institucionalización, mapa de direcciones, sección PUCV, lagunas y auditoría de la línea base, además de once fichas institucionales en página propia.',
+          'Descargas en PDF, HTML, Markdown, CSV y JSON, con manifiesto y controles de integridad. El PDF se imprime del mismo HTML, de modo que documento y web no pueden divergir.',
           'La matriz no ordena por nada: filas alfabéticas y ningún puntaje agregado por universidad. Con la cobertura actual, ordenar produciría un ranking del trabajo de campo.',
           'Todos los contadores del informe se calculan desde el dataset. El compilador falla y no escribe nada si una referencia queda huérfana o si algún registro declara una verificación sustantiva que no existe.',
         ],
@@ -176,10 +178,17 @@ export const reports: Report[] = [
       '¿Qué diría una fuente de contraste externo? Las 74 del corpus son institucionales, de modo que hoy el informe mide lo que las universidades cuentan de sí mismas.',
       '¿Existe alguna Facultad chilena que haya medido el efecto de una de sus actividades de IA? Ninguna lo ha publicado, y bastaría una para cambiar la lectura del informe.',
     ],
-    // Word y PDF no aparecen porque no existen: su cadena de producción es
-    // PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor. Un
-    // botón que promete un archivo inexistente es peor que no tener botón.
+    // Word no aparece porque no existe: su generador es PowerShell 5.1 con Word
+    // por COM y sólo corre en el equipo del autor. Un botón que promete un
+    // archivo inexistente es peor que no tener botón.
     downloads: [
+      {
+        format: 'PDF',
+        label: 'Leer o imprimir',
+        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.pdf',
+        description:
+          'A4 de 39 páginas, con encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
+      },
       {
         format: 'HTML',
         label: 'Leer la versión web',
@@ -198,7 +207,7 @@ export const reports: Report[] = [
         label: 'Descargar el paquete reproducible',
         href: '/descargas/informe-01-mapeo-evidencia-v0.5.0.zip',
         description:
-          'Documento, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
+          'Documento en PDF, HTML y Markdown, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
       },
     ],
     researchKit: {

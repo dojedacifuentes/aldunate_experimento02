@@ -36,9 +36,23 @@
   @media print {
     body { background: #fff; color: #000; font-size: 10.5pt; }
     main { max-width: none; padding: 0; }
-    h2 { break-after: avoid; } figure, table { break-inside: avoid; }
     a { color: #000; text-decoration: none; }
-    aside { border-left-color:#000; background:none; }
+    aside { border-left-color: #000; background: none; break-inside: avoid; }
+    /*
+      En pantalla las tablas anchas se desplazan dentro de su caja. En papel no
+      hay a dónde desplazarse: overflow auto recorta la columna de la derecha
+      y el lector no se entera. El registro de 74 fuentes perdía así su URL.
+      Aquí el desbordamiento se abre y la tabla se reparte el ancho de la página.
+    */
+    .scroll { overflow: visible; }
+    table { table-layout: fixed; width: 100%; font-size: 7pt; }
+    th, td { overflow-wrap: anywhere; padding: .28rem .35rem; }
+    /* Una tabla de 74 filas no cabe en una página: se parte, pero no por dentro
+       de una fila. Reservar la tabla entera dejaba páginas casi vacías. */
+    figure { break-inside: auto; }
+    tr { break-inside: avoid; }
+    thead { display: table-header-group; }
+    h2, h3 { break-after: avoid; }
   }
 </style>
 </head>

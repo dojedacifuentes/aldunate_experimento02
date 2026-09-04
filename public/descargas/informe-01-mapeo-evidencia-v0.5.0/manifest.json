@@ -24,14 +24,15 @@
   "formats": [
     "md",
     "html",
+    "pdf",
     "csv",
     "json",
     "zip"
   ],
   "formats_missing": {
-    "docx": "La cadena de documentos del repositorio es PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor.",
-    "pdf": "Idem. Mientras el archivo no exista, el sitio no muestra el botón."
+    "docx": "La cadena de documentos del repositorio es PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor. Mientras el archivo no exista, el sitio no muestra el botón."
   },
+  "pdf_note": "El PDF es una impresión del HTML de este mismo paquete, no un documento redactado aparte: los dos salen del mismo modelo y no pueden divergir.",
   "files": [
     "informe-01-mapeo-evidencia-v0.5.0.md",
     "informe-01-mapeo-evidencia-v0.5.0.html",
@@ -41,7 +42,8 @@
     "dataset/evidencias.csv",
     "dataset/cobertura.csv",
     "dataset/afirmaciones.csv",
-    "informe-01-mapeo-evidencia-v0.5.0.json"
+    "informe-01-mapeo-evidencia-v0.5.0.json",
+    "informe-01-mapeo-evidencia-v0.5.0.pdf"
   ],
   "canonical_dataset": "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/",
   "source_documents": "content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda/",

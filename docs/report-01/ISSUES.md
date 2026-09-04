@@ -141,17 +141,21 @@ obligatoria se confunden. Alcanza a las once instituciones, no a una.
 
 ---
 
-## ISSUE-011 — La cadena de documentos es PowerShell y no corre fuera de Windows
+## ISSUE-011 — Word sigue dependiendo del equipo del autor
 
-**Estado:** OPEN · **Impacto:** medio
+**Estado:** OPEN · **Impacto:** bajo · *reducido el 04-09-2026*
 
-`tools/informes/motor/` usa PowerShell 5.1, System.Drawing y Word por COM. Word
-y PDF sólo pueden generarse en el equipo del autor. Los `.json` de contenido y
-los formatos que no dependen de Windows —Markdown, HTML, CSV, JSON, ZIP— sí se
-generan en cualquier entorno.
+`tools/informes/motor/` usa PowerShell 5.1, System.Drawing y Word por COM, y por
+tanto sólo corre en Windows con Word instalado.
 
-**Consecuencia:** mientras el PDF no exista, el botón de descarga no aparece.
-Un botón que promete un archivo inexistente es peor que no tener botón.
+**El PDF dejó de depender de eso.** Se imprime del HTML del propio paquete con
+Chromium, desde `scripts/informe-01/07-exportar.mts`, de modo que documento y web
+salen del mismo modelo y no pueden divergir. `playwright-core` es dependencia de
+desarrollo y el navegador se toma del sistema —Chrome o Edge— o de
+`CHROMIUM_PATH`. Si no hay ninguno, el paquete sale sin PDF, el manifiesto lo
+declara y el sitio no dibuja el botón.
+
+**Queda Word**, que es el único formato que aún exige el equipo del autor.
 
 ---
 

@@ -41,10 +41,23 @@ fuentes verificadas y el Informe 01 no tiene ninguna. El registro se publica
 igualmente, desde su propio dataset y con el estado editorial de cada fuente a
 la vista.
 
-**Descargas.** Markdown, HTML, los seis CSV, una representación JSON completa,
-manifiesto de publicación y `checksums.sha256`, más un ZIP determinista que los
-reúne. Word y PDF no aparecen porque no existen: su cadena es PowerShell 5.1 con
-Word por COM y sólo corre en el equipo del autor.
+**Descargas.** PDF, Markdown, HTML, los seis CSV, una representación JSON
+completa, manifiesto de publicación y `checksums.sha256`, más un ZIP determinista
+que los reúne.
+
+El PDF —A4 de 39 páginas, con encabezado, pie y numeración— se imprime del mismo
+HTML con Chromium desde el propio exportador. No es una segunda cadena de
+producción: es la misma, renderizada, así que documento y web no pueden divergir.
+El navegador se toma del sistema, y si no hay ninguno el paquete sale sin PDF, el
+manifiesto lo declara y el sitio no dibuja el botón. Word sigue fuera: su
+generador es PowerShell 5.1 con Word por COM.
+
+Al imprimir apareció un defecto que en pantalla no se ve: las tablas anchas viven
+en un contenedor con desplazamiento horizontal, y en papel no hay a dónde
+desplazarse, de modo que `overflow: auto` recortaba la columna de la derecha. El
+registro de 74 fuentes perdía así su URL, en silencio. Con el desbordamiento
+abierto y la tabla repartiéndose el ancho de la página, el documento pasó de 99
+páginas con columnas cortadas a 39 completas.
 
 **Límites conocidos.** Ninguna de las 53 iniciativas alcanza el cuarto peldaño de
 la escalera —evaluación de efecto—, y es la tercera ronda independiente que

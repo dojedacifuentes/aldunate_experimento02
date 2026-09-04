@@ -65,7 +65,8 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 - [x] Paquete ZIP determinista con manifiesto y `checksums.sha256`
 - [x] Descargas enlazadas en la ficha del informe
 - [ ] `.json` de contenido listos para la cadena PowerShell — ver ISSUE-011
-- [!] Word y PDF: requieren el equipo del autor
+- [x] PDF A4 de 39 páginas, impreso del mismo HTML
+- [!] Word: requiere el equipo del autor
 
 ## Fase 7 — QA
 

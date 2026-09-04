@@ -8,14 +8,18 @@
  * problema que la cadena de informes del repositorio resuelve para Word y PDF,
  * aplicado aquí.
  *
- * Word y PDF **no** se generan desde este script: la cadena del repositorio usa
- * PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor. El
- * paquete sale sin ellos y el sitio no muestra un botón que prometa un archivo
- * inexistente.
+ * El PDF se imprime desde ese mismo HTML con Chromium, si hay un navegador
+ * disponible. No es una segunda cadena de producción: es la misma, renderizada.
+ * Si no lo hay, el script lo dice y el paquete sale sin PDF —el manifiesto lo
+ * declara y el sitio no dibuja un botón que prometa un archivo inexistente—.
+ *
+ * Word sigue fuera: su generador es PowerShell 5.1 con Word por COM y sólo corre
+ * en el equipo del autor.
  */
 import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 import { leerCsv, lista } from './csv.mjs';
 import { crearZip } from './zip.mjs';
@@ -460,9 +464,23 @@ const html = `<!doctype html>
   @media print {
     body { background: #fff; color: #000; font-size: 10.5pt; }
     main { max-width: none; padding: 0; }
-    h2 { break-after: avoid; } figure, table { break-inside: avoid; }
     a { color: #000; text-decoration: none; }
-    aside { border-left-color:#000; background:none; }
+    aside { border-left-color: #000; background: none; break-inside: avoid; }
+    /*
+      En pantalla las tablas anchas se desplazan dentro de su caja. En papel no
+      hay a dónde desplazarse: overflow auto recorta la columna de la derecha
+      y el lector no se entera. El registro de 74 fuentes perdía así su URL.
+      Aquí el desbordamiento se abre y la tabla se reparte el ancho de la página.
+    */
+    .scroll { overflow: visible; }
+    table { table-layout: fixed; width: 100%; font-size: 7pt; }
+    th, td { overflow-wrap: anywhere; padding: .28rem .35rem; }
+    /* Una tabla de 74 filas no cabe en una página: se parte, pero no por dentro
+       de una fila. Reservar la tabla entera dejaba páginas casi vacías. */
+    figure { break-inside: auto; }
+    tr { break-inside: avoid; }
+    thead { display: table-header-group; }
+    h2, h3 { break-after: avoid; }
   }
 </style>
 </head>
@@ -529,6 +547,67 @@ escribir(
   ),
 );
 
+/* ── PDF, impreso del mismo HTML ───────────────────────────────────────────── */
+
+/**
+ * Imprime el HTML ya escrito. Devuelve `true` si el archivo quedó en disco.
+ *
+ * Chromium es opcional a propósito: `npm run verify` no debe depender de que
+ * haya un navegador. Si falta, se avisa y el paquete sale sin PDF en vez de
+ * fallar la construcción entera por un formato de salida.
+ */
+async function imprimirPdf(): Promise<Buffer | null> {
+  let chromium: typeof import('playwright-core').chromium;
+  try {
+    ({ chromium } = await import('playwright-core'));
+  } catch {
+    console.warn('  playwright-core no está disponible: el paquete sale sin PDF.');
+    return null;
+  }
+  const cabecera =
+    'font-family: Georgia, serif; font-size: 7.5pt; color: #666; width: 100%; padding: 0 14mm;';
+  // `playwright-core` no trae navegador. Se prueban, en orden, el que indique el
+  // entorno, el Chrome del sistema y el Edge del sistema: en Windows casi
+  // siempre hay uno de los dos, y así el PDF no exige instalar nada.
+  const intentos = [
+    process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : null,
+    { channel: 'chrome' as const },
+    { channel: 'msedge' as const },
+    {},
+  ].filter((x) => x !== null);
+  let navegador = null;
+  for (const opcion of intentos) {
+    try {
+      navegador = await chromium.launch({ ...opcion, args: ['--no-sandbox'] });
+      break;
+    } catch {
+      /* se prueba el siguiente */
+    }
+  }
+  if (!navegador) {
+    console.warn('  No se encontró Chrome, Edge ni Chromium: el paquete sale sin PDF.');
+    return null;
+  }
+  try {
+    const pagina = await navegador.newPage();
+    await pagina.goto(pathToFileURL(join(DESTINO, `${BASE}.html`)).href, { waitUntil: 'load' });
+    await pagina.emulateMedia({ media: 'print', colorScheme: 'light' });
+    return await pagina.pdf({
+      format: 'A4',
+      printBackground: true,
+      displayHeaderFooter: true,
+      headerTemplate: `<div style="${cabecera}"><span style="float:left">Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span style="float:right">v${VERSION} · corte ${CORTE.split('-').reverse().join('-')}</span></div>`,
+      footerTemplate: `<div style="${cabecera}"><span style="float:left">Mapeo de evidencia pública · no es un informe de resultados</span><span style="float:right"><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
+      margin: { top: '18mm', bottom: '18mm', left: '16mm', right: '16mm' },
+    });
+  } finally {
+    await navegador.close();
+  }
+}
+
+const pdf = await imprimirPdf();
+if (pdf) escribir(`${BASE}.pdf`, pdf);
+
 const manifiesto = {
   report_id: 'informe-01',
   report_title:
@@ -553,11 +632,18 @@ const manifiesto = {
   substantively_verified_sources: 0,
   initiatives_at_evaluation_level: 0,
   coverage_ratio_pilot_to_rest: razon,
-  formats: ['md', 'html', 'csv', 'json', 'zip'],
+  formats: ['md', 'html', ...(pdf ? ['pdf'] : []), 'csv', 'json', 'zip'],
   formats_missing: {
-    docx: 'La cadena de documentos del repositorio es PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor.',
-    pdf: 'Idem. Mientras el archivo no exista, el sitio no muestra el botón.',
+    docx: 'La cadena de documentos del repositorio es PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor. Mientras el archivo no exista, el sitio no muestra el botón.',
+    ...(pdf
+      ? {}
+      : {
+          pdf: 'No se encontró un Chromium con el que imprimir el HTML. El PDF se genera con el mismo script cuando lo hay.',
+        }),
   },
+  pdf_note: pdf
+    ? 'El PDF es una impresión del HTML de este mismo paquete, no un documento redactado aparte: los dos salen del mismo modelo y no pueden divergir.'
+    : undefined,
   files: archivos.map((a) => a.nombre.replace(/\\/g, '/')),
   canonical_dataset: `${DATASET}/`,
   source_documents:
@@ -582,3 +668,4 @@ console.log(`Paquete escrito en ${DESTINO}/`);
 for (const a of archivos) console.log(`  · ${a.nombre.replace(/\\/g, '/')}`);
 console.log(`ZIP: public/descargas/${BASE}.zip · ${(zip.length / 1024).toFixed(0)} KB`);
 console.log(`Markdown: ${(md.length / 1024).toFixed(0)} KB · HTML: ${(html.length / 1024).toFixed(0)} KB`);
+console.log(pdf ? `PDF: ${(pdf.length / 1024).toFixed(0)} KB` : 'PDF: no generado (sin Chromium)');
