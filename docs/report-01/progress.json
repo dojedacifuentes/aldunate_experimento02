@@ -6,9 +6,9 @@
   "branch": "informe-01/v0.5.0",
   "base_commit": "057ad4b5a19e58905f434a414ef1b87cc9858bce",
   "cutoff_date": "2026-09-01",
-  "phase": "exports",
-  "last_completed_task": "T-022_dataset_tests",
-  "next_task": "T-021_exports_and_manifest",
+  "phase": "delivery",
+  "last_completed_task": "T-021_exports_and_manifest",
+  "next_task": "T-023_git_bundle_and_handoff",
   "completed": [
     "T-001_repo_audit",
     "T-002_research_corpus_inventory",
@@ -29,7 +29,8 @@
     "T-019_editorial_blocks",
     "T-009_bias_control_tests",
     "T-020_report_card_v0_5_0",
-    "T-022_dataset_tests"
+    "T-022_dataset_tests",
+    "T-021_exports_and_manifest"
   ],
   "in_progress": [],
   "blocked": [
@@ -56,9 +57,9 @@
     "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/afirmaciones.csv",
     "content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda"
   ],
-  "last_lint": "pass_9_preexisting_warnings",
+  "last_lint": "pass_8_preexisting_warnings",
   "last_typecheck": "pass",
   "last_test": "pass_115",
   "last_build": "pass_18_routes",
-  "updated_at": "2026-09-04T00:25:00-04:00"
+  "updated_at": "2026-09-04T00:45:00-04:00"
 }

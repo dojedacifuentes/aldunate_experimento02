@@ -61,10 +61,11 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 
 ## Fase 6 — Exportaciones
 
-- [ ] Markdown, HTML, CSV y JSON en `public/descargas/`
-- [ ] Paquete ZIP con manifiesto y controles de integridad
+- [x] Markdown, HTML, CSV y JSON en `public/descargas/`
+- [x] Paquete ZIP determinista con manifiesto y `checksums.sha256`
+- [x] Descargas enlazadas en la ficha del informe
 - [ ] `.json` de contenido listos para la cadena PowerShell — ver ISSUE-011
-- [ ] Word y PDF (requieren el equipo del autor)
+- [!] Word y PDF: requieren el equipo del autor
 
 ## Fase 7 — QA
 
@@ -72,8 +73,8 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 - [x] Los mismos validadores como prueba de vitest: 18 pruebas nuevas, 115 en total
 - [x] QA editorial de expresiones peligrosas, ejecutable y ya con dos capturas reales
 - [x] Contadores del sitio calculados desde los datos, nunca escritos a mano
-- [~] `npm run verify` completo — typecheck, lint, tests y build pasan al 04-09-2026
-- [ ] Responsive e impresión
+- [x] `npm run verify` completo, en verde al 04-09-2026
+- [~] Responsive e impresión — el HTML exportado trae hoja de impresión; falta prueba visual
 
 ## Fase 8 — Entrega
 

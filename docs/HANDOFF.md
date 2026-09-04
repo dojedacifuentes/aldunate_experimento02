@@ -1,11 +1,23 @@
 # Handoff · estado del sitio
 
-**Última actualización:** 02-09-2026
+**Última actualización:** 04-09-2026
 **Quien lea esto primero:** `CLAUDE.md` y `AGENTS.md` mandan sobre este documento.
 
-**Estado de esta sesión:** el kit canónico `v1.0.0` del Informe 01 está
-desplegado en producción. La ficha y sus descargas PDF, Word, HTML, Markdown y
-ZIP responden `200` en el dominio público.
+**Estado de esta sesión:** el Informe 01 pasa a `v0.5.0` en la rama
+`informe-01/v0.5.0`. Por primera vez tiene datos publicados: seis CSV canónicos,
+un compilador que los proyecta a `src/data/informe01.ts` y una publicación que
+los enseña, más once fichas institucionales en página propia y descargas en
+Markdown, HTML, CSV, JSON y ZIP. `npm run verify` en verde.
+
+**El relevo detallado del Informe 01 vive en `docs/report-01/`** —HANDOFF,
+STATUS, TASKS, DECISIONS, ISSUES y `progress.json`—. Quien continúe ese trabajo
+debe leer esos archivos antes de tocar nada; este documento sólo registra el
+estado del sitio.
+
+**Lo que sigue sin estar hecho, y es lo que importa:** la verificación sustantiva
+de las 74 fuentes. Ninguna lleva fecha de verificación, ningún registro está
+`ACEPTADO`, y `sourceIds` y `claimIds` de `reports.ts` siguen vacíos a
+propósito.
 
 ---
 

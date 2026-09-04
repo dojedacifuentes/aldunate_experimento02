@@ -277,6 +277,50 @@ export default async function InformeDetallePage({
       */}
       {esInforme01 && <Informe01Publicacion />}
 
+      {report.downloads && report.downloads.length > 0 && (
+        <Section
+          eyebrow="Descargas"
+          title="El informe, fuera de esta página"
+          description="Mismo contenido, mismos números: el documento y el dataset salen del mismo origen y no pueden divergir. El paquete incluye controles de integridad."
+          className="scroll-mt-20"
+        >
+          <div id="descargas">
+            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {report.downloads.map((artifact) => (
+                <li key={artifact.format}>
+                  <Surface className="flex h-full flex-col p-5">
+                    <Badge tone={artifact.format === 'ZIP' ? 'accent' : 'muted'}>
+                      {artifact.format}
+                    </Badge>
+                    <h3 className="mt-3 font-serif text-lg leading-snug text-foreground">
+                      {artifact.label}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {artifact.description}
+                    </p>
+                    <ButtonLink
+                      href={artifact.href}
+                      variant={artifact.format === 'ZIP' ? 'accent' : 'outline'}
+                      size="sm"
+                      external
+                      className="mt-4 self-start"
+                    >
+                      <Download className="h-3.5 w-3.5" aria-hidden />
+                      {artifact.format === 'HTML' ? 'Abrir' : 'Descargar'}
+                    </ButtonLink>
+                  </Surface>
+                </li>
+              ))}
+            </ul>
+            <Notice tone="muted" className="mt-6">
+              Word y PDF no figuran porque los archivos no existen todavía: la cadena que los
+              produce es PowerShell con Word por COM y sólo corre en el equipo del autor. Los
+              botones aparecerán cuando los archivos estén, y no antes.
+            </Notice>
+          </div>
+        </Section>
+      )}
+
       {report.researchKit && (
         <Section
           eyebrow="Para comenzar"

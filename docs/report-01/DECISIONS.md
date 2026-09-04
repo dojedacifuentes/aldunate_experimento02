@@ -158,5 +158,13 @@ afirmación que alcanza a las once.
 exactamente el sesgo que DEC-102 intenta evitar. Ninguna institución de la
 cohorte tiene syllabus 2026 públicos con obligatoriedad, semestre, créditos y
 matrícula.
-**Consecuencia:** `src-pucv-012` sostiene una afirmación de cohorte, no una
-iniciativa con nivel 0.
+**Consecuencia:** la afirmación `clm-cohorte-006` se apoya en las cuatro
+evidencias curriculares que sí existen —UDD, UDP y Universidad Autónoma— y
+alcanza a las once. `src-pucv-012` queda registrada como **fuente de contexto**,
+sin evidencia asociada, igual que las dos bases de universo nacional: consta en
+el registro, se lee en la ficha de la PUCV con su advertencia, y no sostiene
+ninguna afirmación por sí sola.
+
+**No hacer:** no crear una iniciativa de nivel 0 para la PUCV mientras no se
+cree la equivalente para las diez restantes. Registrar la ausencia sólo donde se
+buscó con más detalle es el sesgo que DEC-102 existe para evitar.

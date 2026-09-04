@@ -294,6 +294,15 @@ export interface ReportResearchKit {
   artifacts: ReportArtifact[];
 }
 
+/**
+ * Artefactos descargables del propio informe, distintos de los de su kit.
+ *
+ * Existe como lista y no como campos sueltos porque los formatos entran de a
+ * uno: hoy hay Markdown, HTML, CSV, JSON y ZIP, y faltan Word y PDF porque su
+ * cadena de producción sólo corre en Windows. Un campo `pdf` vacío obliga a
+ * decidir en cada pantalla si se pinta un botón muerto; una lista que sólo
+ * contiene lo que existe, no.
+ */
 export interface Report {
   slug: string;
   code: string;
@@ -315,6 +324,8 @@ export interface Report {
   claimIds: string[];
   openQuestions: string[];
   researchKit?: ReportResearchKit;
+  /** Descargas del informe. Sólo se listan formatos cuyo archivo existe. */
+  downloads?: ReportArtifact[];
   updatedAt: string;
 }
 

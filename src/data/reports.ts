@@ -92,6 +92,7 @@ export const reports: Report[] = [
         version: '0.5.0',
         date: '2026-09-04',
         status: 'en-investigacion',
+        html: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
         changelog: [
           'El corpus deja de ser una lista dentro de cinco documentos y pasa a ser un dataset canónico: seis CSV con universidades, fuentes, iniciativas, evidencias, cobertura y afirmaciones.',
           'Fe de erratas de la v0.4.0: el corpus tiene 74 fuentes públicas únicas y no 72. La re-extracción mecánica de URL encontró dos que intento-2b cita en su tabla-resumen y nunca convirtió en registro —IDEA UCEN y el Diplomado en Derecho, Innovación y Tecnología de la UNAB—. La v0.4.0 no se reescribe.',
@@ -174,6 +175,31 @@ export const reports: Report[] = [
       '¿Puede reconstruirse una línea base de 2025 auténticamente congelada? La heredada contiene actividades de 2026.',
       '¿Qué diría una fuente de contraste externo? Las 74 del corpus son institucionales, de modo que hoy el informe mide lo que las universidades cuentan de sí mismas.',
       '¿Existe alguna Facultad chilena que haya medido el efecto de una de sus actividades de IA? Ninguna lo ha publicado, y bastaría una para cambiar la lectura del informe.',
+    ],
+    // Word y PDF no aparecen porque no existen: su cadena de producción es
+    // PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor. Un
+    // botón que promete un archivo inexistente es peor que no tener botón.
+    downloads: [
+      {
+        format: 'HTML',
+        label: 'Leer la versión web',
+        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
+        description:
+          'Documento completo, autónomo y preparado para impresión: fichas, matriz, afirmaciones, lagunas y registro de fuentes.',
+      },
+      {
+        format: 'Markdown',
+        label: 'Usar como fuente editorial',
+        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.md',
+        description: 'El mismo documento en texto plano, reutilizable por personas y por modelos.',
+      },
+      {
+        format: 'ZIP',
+        label: 'Descargar el paquete reproducible',
+        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0.zip',
+        description:
+          'Documento, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
+      },
     ],
     researchKit: {
       title: 'Kit canónico de investigación inter-IA',

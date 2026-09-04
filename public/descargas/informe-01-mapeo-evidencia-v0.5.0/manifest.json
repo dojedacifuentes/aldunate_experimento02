@@ -1,0 +1,49 @@
+{
+  "report_id": "informe-01",
+  "report_title": "Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile",
+  "report_subtitle": "Mapeo de evidencia pública",
+  "version": "0.5.0",
+  "release_date": "2026-09-04",
+  "cutoff_date": "2026-09-01",
+  "author": "Diego Hernán Ojeda Cifuentes",
+  "primary_recipient": "Profesor Eduardo Aldunate Lizana",
+  "official": false,
+  "status": "en-investigacion",
+  "methodology_version": "METODOLOGIA_IA_DERECHO_V2.0",
+  "cohort_version": "COHORTE_IA_DERECHO_CHILE_11_V1",
+  "universities_count": 11,
+  "sources_count": 74,
+  "initiatives_count": 53,
+  "evidence_count": 75,
+  "claims_count": 14,
+  "accepted_claims": 0,
+  "pending_claims": 14,
+  "substantively_verified_sources": 0,
+  "initiatives_at_evaluation_level": 0,
+  "coverage_ratio_pilot_to_rest": 3.7,
+  "formats": [
+    "md",
+    "html",
+    "csv",
+    "json",
+    "zip"
+  ],
+  "formats_missing": {
+    "docx": "La cadena de documentos del repositorio es PowerShell 5.1 con Word por COM y sólo corre en el equipo del autor.",
+    "pdf": "Idem. Mientras el archivo no exista, el sitio no muestra el botón."
+  },
+  "files": [
+    "informe-01-mapeo-evidencia-v0.5.0.md",
+    "informe-01-mapeo-evidencia-v0.5.0.html",
+    "dataset/universidades.csv",
+    "dataset/fuentes.csv",
+    "dataset/iniciativas.csv",
+    "dataset/evidencias.csv",
+    "dataset/cobertura.csv",
+    "dataset/afirmaciones.csv",
+    "informe-01-mapeo-evidencia-v0.5.0.json"
+  ],
+  "canonical_dataset": "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/",
+  "source_documents": "content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda/",
+  "citation_note": "Documento en investigación. Ninguna afirmación está aceptada y ninguna fuente tiene verificación sustantiva: no debe citarse como resultado."
+}

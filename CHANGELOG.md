@@ -2,6 +2,64 @@
 
 ## No publicado
 
+### Informe 01 · v0.5.0 · el corpus deja de ser una lista y pasa a ser un dataset
+
+**Añadido.** El Informe 01 tiene por primera vez datos publicados. Seis CSV
+canónicos en `content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/`
+—once universidades, 74 fuentes, 53 iniciativas, 75 evidencias, cobertura y 14
+afirmaciones—, un compilador que los proyecta a `src/data/informe01.ts` y una
+publicación en el sitio que los enseña: matriz, cobertura, escalera de
+institucionalización, mapa de direcciones, sección PUCV, lagunas, auditoría de
+la línea base y once fichas institucionales en página propia.
+
+**Corregido · el corpus tenía 74 fuentes y no 72.** La re-extracción mecánica de
+URL sobre los cinco documentos de investigación profunda encontró dos que
+`intento-2b` cita en su tabla-resumen y nunca convirtió en registro `PROP-*`:
+IDEA UCEN y el Diplomado en Derecho, Innovación y Tecnología de la UNAB. Es el
+mismo defecto que este proyecto detectó en el documento antecedente, ahora en su
+propio corpus. La v0.4.0 no se reescribe: se corrige por delante, con fe de
+erratas en el changelog del informe.
+
+**Corregido · dos contadores que se contradecían.** La ficha del informe decía
+«0 fuentes · en registro» mientras el propio informe declaraba setenta y pico
+unas pantallas más abajo. Ahora lee del registro real y distingue las
+registradas de las verificadas, que son cero. Y el tablero de la portada seguía
+diciendo 43 fuentes y la asimetría de cobertura de la primera ronda.
+
+**Metodología.** Diez decisiones cerradas y registradas en
+`docs/report-01/DECISIONS.md`. Las cuatro que más consecuencias tienen: no se
+publica ranking ni puntaje agregado mientras la cobertura sea 3,7 veces mayor en
+el piloto; la escalera 0–4 se aplica a la iniciativa y nunca se promedia por
+universidad; toda evidencia se atribuye a la unidad que la fuente identifica, y
+nueve registros resultaron ser capacidades de universidad y no de Derecho; y
+ninguna fuente recibe fecha de verificación mientras la verificación sustantiva
+no exista.
+
+**Fuentes.** Ninguna verificada una a una todavía. `sourceIds` y `claimIds` de
+`reports.ts` siguen vacíos a propósito: `src/data/research.ts` es la capa de
+fuentes verificadas y el Informe 01 no tiene ninguna. El registro se publica
+igualmente, desde su propio dataset y con el estado editorial de cada fuente a
+la vista.
+
+**Descargas.** Markdown, HTML, los seis CSV, una representación JSON completa,
+manifiesto de publicación y `checksums.sha256`, más un ZIP determinista que los
+reúne. Word y PDF no aparecen porque no existen: su cadena es PowerShell 5.1 con
+Word por COM y sólo corre en el equipo del autor.
+
+**Límites conocidos.** Ninguna de las 53 iniciativas alcanza el cuarto peldaño de
+la escalera —evaluación de efecto—, y es la tercera ronda independiente que
+llega a esa ausencia. Ninguna de las 74 fuentes proviene de contraste externo.
+Dos de las ocho dimensiones no reúnen una sola evidencia en las once
+instituciones. Las doce lagunas están declaradas en la publicación, cada una con
+su condición de cierre.
+
+**Verificación.** `npm run verify` ejecutado y en verde el 04-09-2026: typecheck,
+lint sin errores, 115 pruebas y build de 18 rutas. Dieciocho de esas pruebas son
+nuevas y varias son metodológicas antes que técnicas —que ningún registro
+declare una verificación que no existe, que toda inferencia sobre una institución
+lleve contraevidencia enlazada, que ningún texto publicado convierta una ausencia
+de evidencia en una afirmación de inexistencia—.
+
 ### La portada ofrece el informe terminado y el juego jugable
 
 **Corregido · dato falso en la acción principal.** El botón primario de la
