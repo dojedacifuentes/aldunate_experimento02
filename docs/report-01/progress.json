@@ -3,50 +3,37 @@
   "report_slug": "ia-escuelas-derecho-chile",
   "recipient": "Profesor Eduardo Aldunate Lizana",
   "author": "Diego Hernán Ojeda Cifuentes",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "editorial_status": "borrador académico para revisión",
   "cutoff_date": "2026-09-01",
-  "updated_at": "2026-09-04T07:20:00-04:00",
+  "updated_at": "2026-09-04T08:20:00-04:00",
+  "protocol": {
+    "id": "METODOLOGIA_IA_DERECHO_V2.1",
+    "supersedes": "METODOLOGIA_IA_DERECHO_V2.0",
+    "amendment_type": "aditiva · ningún registro recodificado, ningún vocabulario retirado",
+    "document": "content/reports/01_ia_escuelas_derecho_chile/canonical/metodologia-v2.1.md"
+  },
   "git": {
-    "branch": "main",
+    "branch": "informe-01/v0.7.0",
+    "base": "d9b968e5b7c8ceb4ea795647b750893d39411919",
     "head": "consúltalo con git rev-parse HEAD; fijarlo aquí caduca en la fusión siguiente",
-    "base_inherited": "057ad4b5a19e58905f434a414ef1b87cc9858bce",
-    "pushed": true,
-    "pull_requests": [
-      {
-        "number": 20,
-        "title": "Informe 01 v0.6.0",
-        "state": "merged",
-        "squashed_into": "d4abe1c"
-      },
-      {
-        "number": 21,
-        "title": "Integridad del paquete",
-        "state": "merged",
-        "squashed_into": "d329c86"
-      },
-      {
-        "number": 22,
-        "title": "Relevo de cierre v0.6.0",
-        "state": "merged",
-        "squashed_into": "32e79bb"
-      }
-    ],
+    "pushed": false,
+    "merged": false,
+    "note": "Varias sesiones escriben este repositorio: consultar el remoto con `git ls-remote origin`, nunca `origin/main` local.",
     "preserved_branches": {
       "informe-01/v0.5.0": "a1cc758105eb61d6bd9c7a780be97f9af8d3e538",
       "informe-01/borrador-aldunate": "6dffd0f340bd89650105583e3f16cf4085eeb1e4"
-    },
-    "note": "Varias sesiones escriben este repositorio: consultar el remoto con `git ls-remote origin`, nunca `origin/main` local."
+    }
   },
   "urls": {
     "production": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile",
+    "production_version": "0.6.0 · la 0.7.0 vive en rama y no está desplegada",
     "institutions": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile/instituciones",
-    "package": "https://aldunateexperimento02.vercel.app/descargas/informe-01-borrador-academico-v0.6.0/",
-    "preview": "generada por Vercel en cada PR; la de #21 quedó en verde antes de fusionar"
+    "package": "/descargas/informe-01-borrador-academico-v0.7.0/"
   },
-  "current_phase": "editorial_architecture_and_capability_visualisation",
-  "last_completed_task": "T-032_package_integrity_fix",
-  "next_task": "T-033_findings_before_institution_profiles",
+  "current_phase": "instrumento_revisado_datos_pendientes",
+  "last_completed_task": "T-036_consistency_audit",
+  "next_task": "T-037_merge_v0_7_0_then_verify_repositorios_publicaciones",
   "counts": {
     "universities": 11,
     "sources": 74,
@@ -54,73 +41,59 @@
     "sources_national_universe": 2,
     "sources_verified_substantively": 38,
     "sources_verified_percent": 51,
-    "records_corrected_by_verification": 11,
     "initiatives": 53,
     "evidence": 75,
     "claims": 14,
     "claims_accepted": 0,
-    "initiatives_by_ladder": {
-      "1": 19,
-      "2": 21,
-      "3": 13,
-      "4": 0
-    },
-    "claims_by_level": {
-      "FACT": 10,
-      "SIGNAL": 2,
-      "INFERENCE": 1,
-      "PENDING": 1
-    },
+    "initiatives_by_ladder": { "1": 19, "2": 21, "3": 13, "4": 0 },
+    "claims_by_level": { "FACT": 10, "SIGNAL": 2, "INFERENCE": 1, "PENDING": 1 },
     "dimensions_with_evidence": 6,
     "dimensions_total": 8,
-    "coverage_ratio_pilot_to_rest": 3.7
+    "coverage_ratio_pilot_to_rest": 3.7,
+    "capabilities": 10,
+    "capability_cells": 110,
+    "capability_cells_by_state": {
+      "EN_OPERACION": 33,
+      "INCIPIENTE": 11,
+      "SOLO_ENTORNO": 12,
+      "NO_LOCALIZADA": 7,
+      "NO_CONCLUYENTE": 47
+    },
+    "mechanisms": {
+      "PROGRAMA_FORMATIVO": 12,
+      "HERRAMIENTA": 11,
+      "ACTIVIDAD": 8,
+      "UNIDAD": 7,
+      "NORMA": 4,
+      "ASIGNATURA": 4,
+      "PROYECTO": 3,
+      "CONVENIO": 2,
+      "PUBLICACION": 2
+    },
+    "figures": 9,
+    "initiatives_dated": 49,
+    "initiatives_started_2025_or_later": 41
   },
   "verification_by_university": {
-    "pucv": [
-      12,
-      14
-    ],
-    "udec": [
-      3,
-      4
-    ],
-    "puc-chile": [
-      8,
-      12
-    ],
-    "udp": [
-      2,
-      3
-    ],
-    "ucentral": [
-      2,
-      4
-    ],
-    "unab": [
-      2,
-      4
-    ],
-    "uai": [
-      1,
-      3
-    ],
-    "uchile": [
-      5,
-      16
-    ],
-    "udd": [
-      1,
-      4
-    ],
-    "uandes": [
-      1,
-      5
-    ],
-    "uautonoma": [
-      0,
-      3
-    ],
-    "_warning": "Reparto sesgado. Ver ISSUE-018 antes de publicar comparación institucional."
+    "pucv": [12, 14],
+    "udec": [3, 4],
+    "puc-chile": [8, 12],
+    "udp": [2, 3],
+    "ucentral": [2, 4],
+    "unab": [2, 4],
+    "uai": [1, 3],
+    "uchile": [5, 16],
+    "udd": [1, 4],
+    "uandes": [1, 5],
+    "uautonoma": [0, 3],
+    "_warning": "Reparto sesgado. DEC-119 lo neutraliza dentro de la matriz; no lo resuelve. Ver ISSUE-018."
+  },
+  "sensitivity_analysis": {
+    "corpus_changed": false,
+    "conclusions_unchanged": ["C-1", "C-2", "C-3", "C-6", "C-7"],
+    "conclusions_qualified": ["C-4", "C-5"],
+    "conclusions_strengthened": [],
+    "note": "Ninguna conclusión ganó fuerza por efecto del cambio de método. Las dos que se movieron se volvieron más restrictivas."
   },
   "completed": [
     "T-001_repo_audit",
@@ -154,25 +127,36 @@
     "T-029_pucv_section_rewrite",
     "T-030_prose_dataset_tests",
     "T-031_academic_draft_v0_6_0",
-    "T-032_package_integrity_fix"
+    "T-032_package_integrity_fix",
+    "T-033_methodology_2_1_capability_layer",
+    "T-034_svg_chart_engine",
+    "T-035_editorial_architecture_findings_first",
+    "T-036_consistency_audit"
   ],
   "in_progress": [
-    "T-026_substantive_verification_38_sources · 38 de 74"
+    "T-026_substantive_verification_38_sources · 38 de 74, sin avance en la v0.7.0"
   ],
   "blocked": [
-    "ISSUE-018_verification_coverage_bias · bloquea publicar comparación institucional",
+    "ISSUE-018_verification_coverage_bias · neutralizado visualmente por DEC-119, no resuelto",
     "ISSUE-019_assisted_vs_human_validation · requiere decisión editorial del autor",
+    "ISSUE-021_routes_missing_not_verified · el campo pasó a ser normativo sin estar verificado",
+    "ISSUE-022_c4_c5_open_where_route_not_walked · exige recorrer repositorios-publicaciones",
     "ISSUE-003_cned_403 · exige descarga manual desde navegador",
     "ISSUE-009_frozen_2025_baseline · requiere decisión humana",
     "ISSUE-011_docx_chain_requires_word · sólo en el equipo del autor"
   ],
   "canonical_files": [
     "content/reports/01_ia_escuelas_derecho_chile/canonical/kit-canonico-v1.0.0.md",
+    "content/reports/01_ia_escuelas_derecho_chile/canonical/metodologia-v2.1.md",
     "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/*.csv",
     "src/data/informe01-borrador.ts",
+    "src/data/informe01-hallazgos.ts",
     "src/data/informe01-pucv.ts",
     "src/data/informe01-editorial.ts",
     "src/lib/informe01.ts",
+    "src/lib/informe01-capacidades.ts",
+    "src/lib/informe01-svg.ts",
+    "src/lib/informe01-graficos.ts",
     "src/data/reports.ts",
     "scripts/informe-01/06-compilar-a-typescript.mjs",
     "scripts/informe-01/07-exportar.mts",
@@ -182,7 +166,7 @@
   ],
   "generated_do_not_edit_by_hand": [
     "src/data/informe01.ts",
-    "public/descargas/informe-01-borrador-academico-v0.6.0/"
+    "public/descargas/informe-01-borrador-academico-v0.7.0/"
   ],
   "frozen": {
     "scripts/informe-01/01..05-*.py": "DEC-112 · no hay intérprete de Python; ejecutarlos sobrescribiría la verificación"
@@ -191,26 +175,21 @@
     "date": "2026-09-04",
     "typecheck": "pass",
     "lint": "pass · 0 errores · 8 avisos preexistentes del código donado del juego",
-    "tests": "pass · 127 en 8 archivos",
+    "tests": "pass · 142 en 8 archivos",
     "build": "pass · 18 rutas"
   },
   "last_export": {
     "date": "2026-09-04",
-    "package": "public/descargas/informe-01-borrador-academico-v0.6.0/",
-    "formats": [
-      "pdf",
-      "html",
-      "md",
-      "csv",
-      "json",
-      "zip"
-    ],
-    "pdf_pages": 56,
-    "zip_kb": 489,
+    "package": "public/descargas/informe-01-borrador-academico-v0.7.0/",
+    "formats": ["pdf", "html", "md", "csv", "json", "zip"],
+    "pdf_pages": 72,
+    "zip_kb": 977,
+    "figures_in_pdf": 9,
     "missing": {
       "docx": "ISSUE-011 · cadena PowerShell + Word por COM, sólo en el equipo del autor"
     },
-    "integrity_verified_from_production": true
+    "integrity_verified_over_http": true,
+    "integrity_verified_from_production": false
   },
-  "next_session_mission": "Convertir la v0.6.0 en un borrador analítico y visualmente fuerte: hallazgos antes de las fichas, una visualización de capacidad institucional que no sea ranking, separación visual entre cobertura de investigación y desarrollo institucional, y una sección PUCV construida sobre comparación de mecanismos. Ver docs/report-01/HANDOFF.md §H."
+  "next_session_mission": "Verificar, no rediseñar. El instrumento ya está; los datos son la deuda. Primero fusionar la v0.7.0 y comprobar los checksums desde producción. Después, en este orden: recorrer repositorios-publicaciones en las nueve instituciones pendientes —cierra la conclusión principal—, contrastar las tres fuentes de uautonoma, subir uandes, udd y uai, y meter routes_missing en el protocolo de verificación. Sólo con datos nuevos tiene sentido reescribir la discusión y revisar las siete conclusiones. Ver docs/report-01/HANDOFF.md §H."
 }

@@ -57,7 +57,7 @@ export function Figura({
       </figcaption>
 
       <div
-        className={ancha ? 'g-caja -mx-4 px-4 sm:mx-0 sm:px-0' : undefined}
+        className={ancha ? 'g-caja g-caja--ancha -mx-4 px-4 sm:mx-0 sm:px-0' : undefined}
         // El SVG llega como cadena desde una función pura del dataset. No hay
         // entrada de usuario en ninguna parte de esa cadena y todo texto pasa por
         // `esc()` antes de entrar: es contenido propio, generado en el servidor.

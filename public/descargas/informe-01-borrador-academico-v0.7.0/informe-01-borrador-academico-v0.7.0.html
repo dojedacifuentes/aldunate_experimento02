@@ -97,6 +97,8 @@
     font-family: ui-sans-serif, system-ui, sans-serif; font-size: .74rem; line-height: 1.5;
     color: var(--suave); }
   .g-caja { overflow-x: auto; overflow-y: hidden; }
+  /* Una figura densa no se encoge por debajo de lo legible: se desplaza. */
+  .g-caja .g-fig { min-width: 34rem; }
   .g-fig { display: block; width: 100%; height: auto; max-width: 100%;
     font-family: ui-sans-serif, system-ui, sans-serif; overflow: visible; }
   .g-t { fill: var(--tinta); }
@@ -123,6 +125,7 @@
     .scroll { overflow: visible; }
     /* Lo mismo vale para una figura: en papel no hay a dónde desplazarse. */
     .g-caja { overflow: visible; }
+    .g-caja .g-fig { min-width: 0; }
     /* En papel manda el margen de la página: la figura vuelve a la columna. */
     .g-figura { width: auto; margin-left: 0; transform: none; }
     /* La portada ocupa la primera hoja entera y nada se le sube detrás. */

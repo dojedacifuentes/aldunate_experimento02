@@ -1111,6 +1111,27 @@ html[data-lectura] .stage-live {
   overflow-y: hidden;
 }
 
+/*
+ * Una figura densa no se encoge por debajo de lo legible.
+ *
+ * Con sólo `width: 100%`, la matriz de once filas por diez columnas cabía en un
+ * teléfono de 375 px y sus rótulos quedaban en cuatro píxeles de alto: técnicamente
+ * no desbordaba y no se podía leer. Aquí se le da un ancho mínimo y se deja que la
+ * caja se desplace, que es lo que hacen las tablas anchas del mismo documento.
+ *
+ * En papel se apaga: allí no hay a dónde desplazarse y la figura debe repartirse
+ * el ancho de la hoja (misma corrección que salvó a las tablas, ISSUE-012).
+ */
+.g-caja--ancha .g-fig {
+  min-width: 40rem;
+}
+
+@media print {
+  .g-caja--ancha .g-fig {
+    min-width: 0;
+  }
+}
+
 @media print {
   .g-caja { overflow: visible; }
 
