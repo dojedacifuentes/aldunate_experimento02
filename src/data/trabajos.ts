@@ -119,10 +119,10 @@ export const workItems: WorkItem[] = [
     kind: 'informe',
     title: 'IA en Escuelas y Facultades de Derecho de Chile',
     summary:
-      'Mapeo de evidencia pública sobre once universidades chilenas: qué enseñan, qué usan y qué han publicado.',
+      'Mapeo comparado de evidencia pública sobre once universidades chilenas: qué enseñan, qué usan, qué han institucionalizado y qué no puede demostrarse todavía.',
     reportSlug: 'ia-escuelas-derecho-chile',
     nextStep:
-      'Verificar una por una las 74 fuentes del corpus: abrirlas y contrastar lo que dicen contra lo que se les atribuye. Es lo que desbloquea todo lo demás.',
+      'Contrastar las 36 fuentes que faltan, empezando por las tres de la Universidad Autónoma, que es la única sin ninguna verificada. Van 38 de 74, y once registros no decían lo que su página dice.',
     caveat:
       'La cobertura es desigual por diseño —catorce fuentes de media en las tres universidades del piloto y 3,8 en las otras ocho—, así que no se publica ninguna comparación nacional.',
     href: '/informes/ia-escuelas-derecho-chile',

@@ -1,76 +1,133 @@
 {
   "project": "Informe 01 · IA en Escuelas y Facultades de Derecho en Chile",
   "report_slug": "ia-escuelas-derecho-chile",
-  "target_version": "0.6.0",
-  "published_version": "0.6.0",
-  "branch": "informe-01/borrador-aldunate",
-  "base_commit": "057ad4b5a19e58905f434a414ef1b87cc9858bce",
+  "recipient": "Profesor Eduardo Aldunate Lizana",
+  "author": "Diego Hernán Ojeda Cifuentes",
+  "version": "0.6.0",
+  "editorial_status": "borrador académico para revisión",
   "cutoff_date": "2026-09-01",
-  "phase": "source_verification_partial",
-  "last_completed_task": "T-030_academic_draft",
-  "next_task": "verify_remaining_36_sources",
-  "completed": [
-    "T-001_repo_audit",
-    "T-002_research_corpus_inventory",
-    "T-003_populate_source_registry",
-    "T-004_normalize_initiatives",
-    "T-005_complete_universities_csv",
-    "T-006_build_evidence_matrix",
-    "T-007_research_coverage",
-    "T-008_build_claims",
-    "T-010_typed_data_layer",
-    "T-011_ficha_component",
-    "T-012_evidence_matrix",
-    "T-013_coverage",
-    "T-014_ladder",
-    "T-015_directions_map",
-    "T-017_institution_pages",
-    "T-018_pucv_section",
-    "T-019_editorial_blocks",
-    "T-009_bias_control_tests",
-    "T-020_report_card_v0_5_0",
-    "T-022_dataset_tests",
-    "T-021_exports_and_manifest",
-    "T-022_responsive_and_print_qa",
-    "T-023_delivery_bundle",
-    "T-024_verification_queue",
-    "T-025_substantive_verification_p1",
-    "T-026_dataset_corrections",
-    "T-027_narrative_layer",
-    "T-028_pucv_section",
-    "T-029_prose_dataset_tests",
-    "T-030_academic_draft"
-  ],
-  "in_progress": [],
-  "blocked": [
-    "ISSUE-003_cned_403",
-    "ISSUE-009_frozen_2025_baseline",
-    "ISSUE-011_docx_chain_requires_word"
-  ],
+  "updated_at": "2026-09-04T07:20:00-04:00",
+
+  "git": {
+    "branch": "main",
+    "head": "d329c86f18496394baa4c22a207461e8e436e1ca",
+    "base_inherited": "057ad4b5a19e58905f434a414ef1b87cc9858bce",
+    "pushed": true,
+    "pull_requests": [
+      { "number": 20, "title": "Informe 01 v0.6.0", "state": "merged", "squashed_into": "d4abe1c" },
+      { "number": 21, "title": "Integridad del paquete", "state": "merged", "squashed_into": "d329c86" }
+    ],
+    "preserved_branches": {
+      "informe-01/v0.5.0": "a1cc758105eb61d6bd9c7a780be97f9af8d3e538",
+      "informe-01/borrador-aldunate": "6dffd0f340bd89650105583e3f16cf4085eeb1e4"
+    },
+    "note": "Varias sesiones escriben este repositorio: consultar el remoto con `git ls-remote origin`, nunca `origin/main` local."
+  },
+
+  "urls": {
+    "production": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile",
+    "institutions": "https://aldunateexperimento02.vercel.app/informes/ia-escuelas-derecho-chile/instituciones",
+    "package": "https://aldunateexperimento02.vercel.app/descargas/informe-01-borrador-academico-v0.6.0/",
+    "preview": "generada por Vercel en cada PR; la de #21 quedó en verde antes de fusionar"
+  },
+
+  "current_phase": "editorial_architecture_and_capability_visualisation",
+  "last_completed_task": "T-032_package_integrity_fix",
+  "next_task": "T-033_findings_before_institution_profiles",
+
   "counts": {
+    "universities": 11,
     "sources": 74,
+    "sources_institutional": 72,
+    "sources_national_universe": 2,
+    "sources_verified_substantively": 38,
+    "sources_verified_percent": 51,
+    "records_corrected_by_verification": 11,
     "initiatives": 53,
     "evidence": 75,
     "claims": 14,
-    "universities": 11,
-    "sources_verified_substantively": 38,
-    "sources_verified_percent": 51,
-    "records_corrected_by_verification": 11
+    "claims_accepted": 0,
+    "initiatives_by_ladder": { "1": 19, "2": 21, "3": 13, "4": 0 },
+    "claims_by_level": { "FACT": 10, "SIGNAL": 2, "INFERENCE": 1, "PENDING": 1 },
+    "dimensions_with_evidence": 6,
+    "dimensions_total": 8,
+    "coverage_ratio_pilot_to_rest": 3.7
   },
+
+  "verification_by_university": {
+    "pucv": [12, 14], "udec": [3, 4], "puc-chile": [8, 12], "udp": [2, 3],
+    "ucentral": [2, 4], "unab": [2, 4], "uai": [1, 3], "uchile": [5, 16],
+    "udd": [1, 4], "uandes": [1, 5], "uautonoma": [0, 3],
+    "_warning": "Reparto sesgado. Ver ISSUE-018 antes de publicar comparación institucional."
+  },
+
+  "completed": [
+    "T-001_repo_audit", "T-002_research_corpus_inventory", "T-003_populate_source_registry",
+    "T-004_normalize_initiatives", "T-005_complete_universities_csv", "T-006_build_evidence_matrix",
+    "T-007_research_coverage", "T-008_build_claims", "T-009_bias_control_tests",
+    "T-010_typed_data_layer", "T-011_ficha_component", "T-012_evidence_matrix",
+    "T-013_coverage", "T-014_ladder", "T-015_directions_map", "T-017_institution_pages",
+    "T-018_pucv_section", "T-019_editorial_blocks", "T-020_report_card_v0_5_0",
+    "T-021_exports_and_manifest", "T-022_dataset_tests", "T-022_responsive_and_print_qa",
+    "T-023_delivery_bundle", "T-024_restore_and_push_v0_5_0", "T-025_verification_queue",
+    "T-026_substantive_verification_38_sources", "T-027_dataset_corrections",
+    "T-028_narrative_layer", "T-029_pucv_section_rewrite", "T-030_prose_dataset_tests",
+    "T-031_academic_draft_v0_6_0", "T-032_package_integrity_fix"
+  ],
+
+  "in_progress": [
+    "T-026_substantive_verification_38_sources · 38 de 74"
+  ],
+
+  "blocked": [
+    "ISSUE-018_verification_coverage_bias · bloquea publicar comparación institucional",
+    "ISSUE-019_assisted_vs_human_validation · requiere decisión editorial del autor",
+    "ISSUE-003_cned_403 · exige descarga manual desde navegador",
+    "ISSUE-009_frozen_2025_baseline · requiere decisión humana",
+    "ISSUE-011_docx_chain_requires_word · sólo en el equipo del autor"
+  ],
+
   "canonical_files": [
     "content/reports/01_ia_escuelas_derecho_chile/canonical/kit-canonico-v1.0.0.md",
-    "content/reports/01_ia_escuelas_derecho_chile/canonical/manifest.json",
-    "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/universidades.csv",
-    "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/fuentes.csv",
-    "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/iniciativas.csv",
-    "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/evidencias.csv",
-    "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/cobertura.csv",
-    "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/afirmaciones.csv",
-    "content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda"
+    "content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/*.csv",
+    "src/data/informe01-borrador.ts",
+    "src/data/informe01-pucv.ts",
+    "src/data/informe01-editorial.ts",
+    "src/lib/informe01.ts",
+    "src/data/reports.ts",
+    "scripts/informe-01/06-compilar-a-typescript.mjs",
+    "scripts/informe-01/07-exportar.mts",
+    "tools/informes/informe-01/verificacion-p1-2026-09-04.md",
+    "tools/informes/informe-01/prioridad-verificacion.json",
+    "content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda/"
   ],
-  "last_lint": "pass_8_preexisting_warnings",
-  "last_typecheck": "pass",
-  "last_test": "pass_124",
-  "last_build": "pass_18_routes",
-  "updated_at": "2026-09-04T06:10:00-04:00"
+
+  "generated_do_not_edit_by_hand": [
+    "src/data/informe01.ts",
+    "public/descargas/informe-01-borrador-academico-v0.6.0/"
+  ],
+
+  "frozen": {
+    "scripts/informe-01/01..05-*.py": "DEC-112 · no hay intérprete de Python; ejecutarlos sobrescribiría la verificación"
+  },
+
+  "last_verify": {
+    "date": "2026-09-04",
+    "typecheck": "pass",
+    "lint": "pass · 0 errores · 8 avisos preexistentes del código donado del juego",
+    "tests": "pass · 127 en 8 archivos",
+    "build": "pass · 18 rutas"
+  },
+
+  "last_export": {
+    "date": "2026-09-04",
+    "package": "public/descargas/informe-01-borrador-academico-v0.6.0/",
+    "formats": ["pdf", "html", "md", "csv", "json", "zip"],
+    "pdf_pages": 56,
+    "zip_kb": 489,
+    "missing": { "docx": "ISSUE-011 · cadena PowerShell + Word por COM, sólo en el equipo del autor" },
+    "integrity_verified_from_production": true
+  },
+
+  "next_session_mission": "Convertir la v0.6.0 en un borrador analítico y visualmente fuerte: hallazgos antes de las fichas, una visualización de capacidad institucional que no sea ranking, separación visual entre cobertura de investigación y desarrollo institucional, y una sección PUCV construida sobre comparación de mecanismos. Ver docs/report-01/HANDOFF.md §H."
 }

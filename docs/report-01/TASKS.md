@@ -1,142 +1,87 @@
 # TASKS — Informe 01
 
-Tareas pequeñas y retomables. Cada una declara entradas, salidas, archivos y
-criterio de terminado. Una tarea que no cabe entre dos checkpoints se divide.
+Tareas para la siguiente versión. Están dichas por **qué debe conseguirse**, no
+por cómo: la solución concreta es criterio de quien la ejecute.
+
+Actualizado 04-09-2026 · sobre v0.6.0
 
 ---
 
-## Terminadas
+## Prioridad 1 · Arquitectura editorial
 
-### T-001 · Auditar el repositorio · `[x]`
-Salida: mapa de rutas, componentes y cadena de informes. Sin archivos nuevos.
+Es lo que más separa el documento actual de uno que el destinatario lea entero.
 
-### T-002 · Inventariar el corpus de investigación · `[x]`
-**Entradas:** los cinco documentos de `sources/investigacion-profunda/`.
-**Salidas:** 74 URL únicas normalizadas; discrepancia con las 72 declaradas
-identificada y explicada (DEC-106).
-**Terminado:** cada URL extraída tiene registro y ningún registro carece de URL.
+- [ ] Revisar la estructura y proponer una narrativa donde **los hallazgos
+      aparezcan antes de las once fichas institucionales**. Hoy el lector recorre
+      once perfiles antes de saber por qué debería importarle.
+- [ ] Reescribir el resumen ejecutivo con hallazgos, inferencias, limitaciones y
+      relevancia para la PUCV. El actual describe el método más que los
+      resultados.
+- [ ] Decidir qué detalle técnico baja a anexos. Candidatos: el registro completo
+      de fuentes, la matriz de ocho dimensiones, la auditoría de la línea base.
+- [ ] Comprobar contra los datos las dos hipótesis editoriales del HANDOFF §H.
+      Si no resisten, degradarlas o descartarlas: son hipótesis, no conclusiones.
 
-### T-003 · Poblar el registro de fuentes · `[x]`
-**Salidas:** `canonical/dataset/fuentes.csv`, 74 filas.
-**Terminado:** IDs y URL únicos, correspondencia 1:1 con la extracción, ningún
-`verified_by` relleno.
+## Prioridad 1 · Visualización de capacidades
 
-### T-004 · Normalizar iniciativas · `[x]`
-**Salidas:** `canonical/dataset/iniciativas.csv`, 53 iniciativas deduplicadas.
-**Terminado:** toda `source_id` citada existe y ninguna iniciativa alcanza el
-nivel 4 de la escalera.
+- [ ] Diseñar la **visualización principal de capacidad institucional**. Debe
+      responder «¿qué capacidad demuestra cada institución?» y no «¿cuántas
+      fuentes encontramos de ella?». No ranking, no suma de peldaños (DEC-115).
+      Las capacidades declaradas: estructura especializada, gobernanza,
+      integración curricular, formación recurrente, adopción docente,
+      herramientas, cobertura, recursos, continuidad y evaluación.
+- [ ] **Separar visualmente cobertura de investigación y desarrollo
+      institucional.** Es el riesgo estructural del documento: hoy nada impide
+      leer una fila más poblada como una universidad que hace más.
+- [ ] Revisar si la matriz de ocho dimensiones debe dividirse, simplificarse o
+      pasar parcialmente a anexos.
+- [ ] Mejorar la legibilidad de las matrices en web y en A4. Comprobar impresión
+      después de cualquier cambio: hay un defecto ya resuelto que no debe volver.
+- [ ] Línea de tiempo de hitos, la única visualización declarada que falta.
 
-### T-005 · Completar `universidades.csv` · `[x]`
-Once filas con `unit_name` tomado de la propia fuente institucional y `status`
-en `PENDIENTE_VERIFICACION`.
+## Prioridad 1 · PUCV en contexto
 
-### T-006 · Construir `evidencias.csv` · `[x]`
-75 evidencias, una por par fuente–iniciativa, con enunciado factual acotado y
-limitación propia. Sin evidencias huérfanas, sin `last_verified`.
+- [ ] Construir la sección comparativa sobre **mecanismos observados en otras
+      Facultades**, no sobre recuento de iniciativas. Qué hace otra institución
+      que aquí no consta, y con qué instrumento lo acredita.
+- [ ] Neutralizar el sesgo de sobrerrepresentación. La PUCV tiene más fuentes por
+      el piloto **y** la mayor proporción verificada. Ver ISSUE-018.
 
-### T-007 · Calcular cobertura de investigación · `[x]`
-`cobertura.csv` sobre las trece rutas del protocolo. Piloto: 9,7 rutas y 14
-fuentes de media. Las otras ocho: 4,0 rutas y 3,8 fuentes. Razón 3,7:1.
+## Prioridad 2 · Verificación
 
-### T-008 · Construir `afirmaciones.csv` · `[x]`
-14 afirmaciones: 10 `FACT`, 2 `SIGNAL`, 1 `INFERENCE`, 1 `PENDING`. Las
-`evidence_ids` se consultan sobre `evidencias.csv`, no se escriben a mano.
+- [ ] Verificar las tres fuentes de `uautonoma`. **Es la única institución con
+      cero fuentes contrastadas** y hay afirmaciones que dependen de ella.
+- [ ] Subir `uandes` (1/5), `udd` (1/4) y `uai` (1/3), que son las de menor
+      proporción.
+- [ ] Continuar por la cola de `tools/informes/informe-01/prioridad-verificacion.json`.
+- [ ] O bien equilibrar la verificación por encima del 50% en las once, o bien
+      publicar el porcentaje verificado por institución junto a cualquier
+      comparación. Un indicador que cambia cómo se lee una tabla no puede quedar
+      en un cuaderno interno.
 
----
+## Prioridad 2 · Decisión editorial pendiente
 
-## Pendientes, en orden
+- [ ] Resolver **ISSUE-019**: separar `contrasted_by` de `accepted_by`, o
+      declarar expresamente que `verified_by` significa responsabilidad editorial
+      y no ejecución. Requiere decisión del autor. **No resolver en silencio.**
 
-### T-009 · Prueba A y prueba B de control de sesgo · `[~]`
-**Entradas:** `afirmaciones.csv`, en especial `clm-pucv-001` y `clm-pucv-002`.
-**Terminado cuando:** toda conclusión desfavorable a la PUCV tenga
-contraevidencia enlazada, y ninguna capacidad de otra universidad esté atribuida
-a su Facultad de Derecho sin que la fuente lo diga.
+## Prioridad 3 · Cerrar lo que la verificación dejó abierto
 
-### T-010 · Compilar los CSV a datos tipados · `[ ]`
-**Entradas:** los seis CSV del dataset.
-**Salidas:** script de compilación y módulo tipado en `src/data/`, más los tipos
-en `src/types/`.
-**Archivos:** `scripts/informe-01/`, `src/data/`, `src/types/index.ts`.
-**Terminado cuando:** `npm run typecheck` pasa y ningún contador del sitio está
-escrito a mano.
+- [ ] **ISSUE-006** · el acto formal de las cuatro unidades creadas en 2025–2026.
+      Es lo que decide la conclusión C-1, la principal del informe.
+- [ ] **ISSUE-015** · el acto que traslada el LMIL a la Escuela de Derecho PUCV.
+- [ ] **ISSUE-016** · la ficha metodológica de la medición de la UNAB. Sin
+      diseño, muestra y control, la única cifra de efecto del corpus no es
+      citable.
+- [ ] **ISSUE-003** · descargar la base del CNED desde un navegador y versionar
+      el archivo, no la URL.
+- [ ] Recorrer la **ruta 13** del protocolo —contraste externo— en las once. El
+      corpus no tiene ni una sola fuente de terceros.
 
-### T-011 · Componente base de ficha institucional · `[ ]`
-Reutilizando `Surface`, `Badge`, `MetaRow`, `EpistemicTag` y los tokens de
-`globals.css`. Sin colores hardcodeados.
+## Al cerrar cualquier tanda
 
-### T-012 · Matriz de evidencia localizada · `[ ]`
-Universidades × ocho dimensiones. Cada celda declara evidencias localizadas y
-cobertura, **nunca** un puntaje de madurez ni un orden (DEC-102). Con
-alternativa tabular y valor textual además del color.
-
-### T-013 · Cobertura de investigación · `[ ]`
-Visualización separada de la matriz, que haga visible que la asimetría mide
-esfuerzo de investigación.
-
-### T-014 · Escalera de institucionalización · `[ ]`
-Distribuye **iniciativas**, no universidades (DEC-109). El nivel 4 aparece vacío
-y esa casilla vacía es el hallazgo.
-
-### T-015 · Mapa de direcciones · `[ ]`
-`IA_PARA_DERECHO` · `DERECHO_DE_IA` · `AMBOS` · `ADYACENTE`.
-
-### T-016 · Línea de tiempo · `[ ]`
-Hitos fechados. Las fuentes sin fecha declarada no se inventan: se omiten y se
-declara cuántas son.
-
-### T-017 · Fichas de las once instituciones · `[ ]`
-Una tarea por institución si es necesario. Cada ficha distingue verificado,
-parcial y pendiente, y declara su cobertura.
-
-### T-018 · Sección «PUCV: de las iniciativas a la capacidad» · `[ ]`
-Matriz existe / parcial / no demostrado públicamente / próximo salto. Reconoce
-la evidencia favorable antes de contrastar.
-
-### T-019 · Bloques de lagunas y auditoría de línea base · `[ ]`
-L-1 a L-10 y la auditoría aritmética del antecedente, sin corregirlo en
-silencio.
-
-### T-020 · Ficha del informe en `src/data/reports.ts` · `[ ]`
-Versión 0.5.0, changelog, fe de erratas de la v0.4.0, contadores derivados.
-
-### T-021 · Exportaciones · `[ ]`
-Markdown, HTML, CSV, JSON y ZIP con manifiesto y controles de integridad. Word
-y PDF quedan fuera del entorno: ISSUE-011.
-
-### T-022 · Validadores y QA · `[ ]`
-Integridad referencial en vitest, QA editorial de expresiones peligrosas,
-`npm run verify`, responsive e impresión.
-
-### T-023 · Entrega · `[ ]`
-Revisión de `src/data/trabajos.ts` (`CLAUDE.md` §12) y bundle de git con los
-comandos de publicación.
-
----
-
-## Tanda siguiente · verificación 39 a 74
-
-Orden calculado en `tools/informes/informe-01/prioridad-verificacion.json`.
-
-- [ ] `src-uautonoma-001` · uso interno de IA · sostiene `clm-cohorte-004`
-- [ ] `src-uautonoma-003` · currículo · sostiene `clm-cohorte-006`
-- [ ] `src-ucentral-001` · uso interno · sostiene `clm-cohorte-004`
-- [ ] `src-unab-001` · uso interno · sostiene `clm-cohorte-004`
-- [ ] `src-puc-chile-001`, `-009` · nivel 3 · `ini-puc-chile-001`
-- [ ] `src-uchile-001`, `-007`, `-010`, `-011`, `-012` · nivel 3 · `ini-uchile-001`
-- [ ] Las 25 restantes, de peso 0
-
-Para cada una, los siete campos: existencia y título literal, fecha declarada,
-unidad responsable, anuncio frente a ejecución, cifras, límites y respaldo de la
-afirmación. Después `verified_by` y `CONTRASTADO` en la fuente, `last_verified`
-en sus evidencias, la divergencia anotada en el cuaderno, y `npm run verify`.
-
-## Cerrar lo que la verificación dejó abierto
-
-- [ ] ISSUE-006 · acto formal de las cuatro unidades creadas en 2025–2026. Es lo
-      que decide la conclusión C-1
-- [ ] ISSUE-015 · acto que traslada el LMIL a la Escuela de Derecho PUCV
-- [ ] ISSUE-016 · ficha metodológica de la medición de la UNAB. Sin diseño,
-      muestra y control, la única cifra de efecto del corpus no es citable
-- [ ] ISSUE-003 · descargar la base del CNED desde un navegador y versionar el
-      archivo, no la URL
-- [ ] Ruta 13 del protocolo: contraste externo, sin recorrer en las once
+- [ ] Revisar la consistencia de las conclusiones contra las afirmaciones y el
+      dataset. Hay pruebas que lo comprueban, pero no sustituyen la lectura.
+- [ ] Regenerar el paquete y **verificar los checksums descargando de
+      producción**, no en local.
+- [ ] `npm run verify`, changelog, y los seis archivos de continuidad.
