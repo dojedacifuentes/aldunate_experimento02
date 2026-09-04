@@ -44,6 +44,7 @@ const ORDEN_ESTADOS: Informe01CapacidadEstado[] = [
   'EN_OPERACION',
   'INCIPIENTE',
   'SOLO_ENTORNO',
+  'SOLO_ADYACENTE',
   'NO_LOCALIZADA',
   'NO_CONCLUYENTE',
 ];
@@ -65,6 +66,12 @@ const PINTURA: Record<
     discontinuo: true,
     glifo: '◇',
     tinta: 'var(--g-entorno, #c9a227)',
+  },
+  SOLO_ADYACENTE: {
+    relleno: 'var(--g-adyacente-fondo, #ece4f2)',
+    borde: 'var(--g-adyacente, #7a5ba6)',
+    glifo: '▵',
+    tinta: 'var(--g-adyacente, #7a5ba6)',
   },
   NO_LOCALIZADA: {
     relleno: 'var(--g-vacio, #ece9e3)',

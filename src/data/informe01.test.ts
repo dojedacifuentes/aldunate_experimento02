@@ -367,10 +367,39 @@ describe('informe 01 · el borrador, atado a sus datos', () => {
         expect(`${c.titulo} ${c.cuerpo}`, `${c.id} afirma inexistencia`).not.toMatch(p);
   });
 
-  it('declara el conflicto de interés y nombra a quienes lo tienen', () => {
+  it('declara el conflicto de interés sin exponer el proceso privado', () => {
     const intereses = informe01Intereses.join(' ');
-    expect(intereses).toMatch(/Aldunate/);
-    expect(intereses).toMatch(/Ojeda/);
+    // El conflicto se declara: es practica academica y se conserva.
+    expect(intereses).toMatch(/autor/i);
+    expect(intereses).toMatch(/particip/i);
+  });
+
+  /*
+   * El documento es publico y debe bastarse solo. Quien lo recibe, de quien es
+   * el encargo y que se converso durante su elaboracion son datos del proceso,
+   * no del objeto de estudio, y nombran a personas que no lo han escrito.
+   *
+   * No alcanza a las fuentes: el corpus cita noticias institucionales cuyo
+   * titulo nombra a un profesor, y esas se conservan porque son la referencia
+   * bibliografica. La regla mira la prosa que el informe escribe, no la que
+   * cita.
+   */
+  it('la prosa no expone el proceso privado de elaboración', () => {
+    const prosa = [
+      ...informe01Intereses,
+      ...informe01Limitaciones,
+      ...informe01Conclusiones.map((c) => `${c.titulo} ${c.cuerpo}`),
+      ...informe01ResumenEjecutivo,
+      ...informe01Hallazgos.map((h) => `${h.enunciado} ${h.dato} ${h.lectura} ${h.limite}`),
+    ].join(' ');
+    for (const marca of [
+      /destinatario/i,
+      /encargo del profesor/i,
+      /seg[uú]n conversaci[oó]n/i,
+      /lectura privada/i,
+      /nota para /i,
+    ])
+      expect(prosa, `la prosa contiene ${marca}`).not.toMatch(marca);
   });
 
   it('reconoce evidencia favorable de la PUCV antes de exponer brechas', () => {

@@ -183,7 +183,7 @@ export const informe01MetodologiaRelato: readonly {
 /* ── Declaración de intereses ───────────────────────────────────────────── */
 
 export const informe01Intereses: readonly string[] = [
-  'Una de las fuentes del corpus identifica como conductores del Programa de Derecho, Inteligencia Artificial y Tecnología de la PUCV a Johann Benfeld, **Eduardo Aldunate** y **Diego Ojeda**. El destinatario de este borrador y su autor figuran, por tanto, en una iniciativa que el informe evalúa.',
+  '**El autor de este informe participa en una de las iniciativas que el informe evalúa**: el Programa de Derecho, Inteligencia Artificial y Tecnología de la PUCV, cuya conducción consta en una fuente pública del corpus. La iniciativa se registra, se clasifica y se somete a las mismas reglas que las otras cincuenta y dos.',
   'La declaración no resuelve el conflicto: lo hace visible. Las medidas adoptadas son tres. Las fuentes que involucran al autor permanecen en el corpus y no se retiran. La sección dedicada a la PUCV se somete a una doble revisión explícita —si el juicio resulta demasiado severo y si resulta demasiado indulgente— cuyo resultado se publica. Y ninguna afirmación sobre la PUCV se sostiene en una fuente única.',
   'El lector debe saber además que este informe se produjo con asistencia de sistemas de inteligencia artificial en la localización de fuentes, en el contraste de cada publicación original contra su registro y en la redacción. La responsabilidad editorial es humana y está firmada; el protocolo que rige esa asistencia, los estados por los que pasa cada registro y el punto exacto en que se exige decisión humana están publicados junto con los datos.',
 ];
@@ -319,7 +319,7 @@ export const informe01Limitaciones: readonly string[] = [
   '**Dos dimensiones del protocolo están vacías.** Recursos y capacidades, y continuidad, cobertura y resultados, no reúnen evidencia en ninguna institución. El informe no puede pronunciarse sobre financiamiento, dotación ni sostenibilidad.',
   '**Falta el acto formal de casi todas las unidades.** De las estructuras creadas entre 2025 y 2026, sólo una tiene respaldo orgánico publicado. El informe distingue creación anunciada de creación acreditada, pero no puede resolver la diferencia con las fuentes disponibles.',
   '**La ausencia de evidencia pública no es inexistencia.** Toda afirmación negativa de este informe se refiere a lo que no fue localizado recorriendo un protocolo definido, no a lo que no ocurre.',
-  '**El autor y el destinatario participan de una iniciativa evaluada.** Ver la declaración de intereses. Ninguna afirmación sobre la PUCV se sostiene en fuente única, y la sección correspondiente publica su doble revisión.',
+  '**El autor participa en una de las iniciativas evaluadas.** Ver la declaración de intereses. Ninguna afirmación sobre la PUCV se sostiene en fuente única, y la sección correspondiente publica su doble revisión.',
 ];
 
 /* ── 7 · Agenda de investigación ────────────────────────────────────────── */
