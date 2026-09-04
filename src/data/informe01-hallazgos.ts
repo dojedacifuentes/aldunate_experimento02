@@ -46,28 +46,28 @@ export const informe01Hallazgos: readonly Informe01Hallazgo[] = [
   {
     id: 'H-2',
     enunciado: 'La estructura se crea antes que la regla.',
-    dato: 'En {unidadOperacion} de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en {normaOperacion}. El corpus registra {mecUnidades} unidades frente a {mecNormas} normas, y de esas cuatro normas sólo dos son de una Facultad.',
+    dato: 'En {unidadOperacionPalabra} de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en una sola. El corpus registra {mecUnidadesPalabra} unidades frente a {mecNormasPalabra} normas, y de esas cuatro normas sólo dos son de una Facultad.',
     lectura:
       'La institucionalización avanza por creación de órganos y no por producción de reglas. Es un orden posible y no el único: crear una unidad es un acto de una autoridad, y dictar una norma sobre uso de inteligencia artificial obliga antes a decidir qué se permite en una evaluación, qué se declara y qué consecuencia tiene no declararlo. Lo segundo es más difícil y más comprometedor que lo primero.',
     limite:
-      'La ruta del protocolo que acredita políticas propias no se recorrió en {normaSinConcluir} de las once instituciones. La asimetría entre unidades y normas es firme sobre lo hallado, y sobre lo no hallado el informe no puede pronunciarse.',
+      'La ruta del protocolo que acredita políticas propias no se recorrió en {normaSinConcluirPalabra} de las once instituciones. La asimetría entre unidades y normas es firme sobre lo hallado, y sobre lo no hallado el informe no puede pronunciarse.',
     apoyo: ['clm-cohorte-002', 'clm-cohorte-003', 'Matriz de capacidades'],
   },
   {
     id: 'H-3',
     enunciado: 'La inteligencia artificial entra por la formación continua, no por la malla.',
-    dato: '{mecProgramas} iniciativas son programas formativos —diplomados, minors, cursos, talleres—, {mecProgramasFacultad} de ellos sostenidos por la propia Facultad, frente a {mecAsignaturas} que ocurren dentro de una asignatura o de una línea de malla. La formación estructurada consta en operación en {formacionOperacion} de las once; la presencia en pregrado, en {pregradoOperacion}.',
+    dato: '{MecProgramasPalabra} iniciativas son programas formativos —diplomados, minors, cursos, talleres—, {mecProgramasFacultadPalabra} de ellos sostenidos por la propia Facultad, frente a {mecAsignaturasPalabra} que ocurren dentro de una asignatura o de una línea de malla. La formación estructurada consta en operación en {formacionOperacionPalabra} de las once; la presencia en pregrado, en {pregradoOperacionPalabra}.',
     lectura:
       'La formación continua y el postgrado son los espacios donde una Facultad puede decidir en un semestre. La malla exige comités, acreditación y acuerdo de claustro, y responde en años. La distribución observada es exactamente la que produciría esa diferencia de velocidad, y no requiere suponer desinterés curricular.',
     limite:
-      'Las rutas de malla y de programas de asignatura quedaron sin recorrer en {pregradoSinConcluir} de las once. Que el pregrado aparezca menos poblado es compatible con que se haya buscado menos, y ninguna de las dos explicaciones puede descartarse con lo disponible.',
+      'Las rutas de malla y de programas de asignatura quedaron sin recorrer en {pregradoSinConcluirPalabra} de las once. Que el pregrado aparezca menos poblado es compatible con que se haya buscado menos, y ninguna de las dos explicaciones puede descartarse con lo disponible.',
     apoyo: ['clm-cohorte-005', 'clm-cohorte-006', 'Mecanismos institucionales'],
   },
   {
     id: 'H-4',
     enunciado:
       'Buena parte de lo que se atribuye a las Facultades pertenece a sus universidades.',
-    dato: 'De las {mecHerramientas} herramientas del corpus, {mecHerramientasEntorno} son capacidades de la universidad y no de la Facultad de Derecho. En total, {celdasEntorno} de las {celdas} celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.',
+    dato: 'De las {mecHerramientasPalabra} herramientas del corpus, {mecHerramientasEntornoPalabra} son capacidades de la universidad y no de la Facultad de Derecho. En total, {celdasEntorno} de las {celdas} celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.',
     lectura:
       'Existe una capa de infraestructura universitaria —licencias generales, asistentes institucionales, lineamientos de rectoría— disponible para Derecho pero no desarrollada por Derecho. Confundir disponibilidad con adopción es el error más frecuente al leer estos anuncios, y es un error que se comete de buena fe: la nota de prensa que anuncia una licencia para toda la universidad no distingue quién la usará.',
     limite:
@@ -81,13 +81,13 @@ export const informe01Hallazgos: readonly Informe01Hallazgo[] = [
     lectura:
       'El campo produce actividad y estructura, y todavía no produce conocimiento sobre sus propios efectos. Las cifras que existen son de cobertura —cuánta gente participó— y contar asistentes no dice si alguien aprendió mejor. Bastaría una Facultad que midiera el efecto de una sola actividad que ya realiza y lo publicara para que este hallazgo dejara de ser cierto.',
     limite:
-      'Es un hecho firme sobre el corpus y una pregunta abierta sobre cada Facultad. La ruta que acreditaría una medición publicada —repositorios y producción académica— quedó sin recorrer en {evaluacionSinConcluir} de las once instituciones. La versión anterior de este informe presentaba la ausencia sin esta salvedad.',
+      'Es un hecho firme sobre el corpus y una pregunta abierta sobre cada Facultad. La ruta que acreditaría una medición publicada —repositorios y producción académica— quedó sin recorrer en {evaluacionSinConcluirPalabra} de las once instituciones. La versión anterior de este informe presentaba la ausencia sin esta salvedad.',
     apoyo: ['clm-cohorte-001', 'Escalera de institucionalización'],
   },
   {
     id: 'H-6',
     enunciado: 'Cuánto se investigó y cuánto se hace son variables distintas, y el corpus lo demuestra.',
-    dato: '{menosInvestigada} es la institución menos investigada de las once —{menosInvestigadaRutas} de trece rutas recorridas, ninguna fuente contrastada— y acredita {menosInvestigadaOperacion} capacidades en operación. {masInvestigada} recorrió {masInvestigadaRutas} rutas y acredita {masInvestigadaOperacion}.',
+    dato: 'La {menosInvestigada} es la institución menos investigada de las once —{menosInvestigadaRutas} de trece rutas recorridas, ninguna fuente contrastada— y acredita {menosInvestigadaOperacion} capacidades en operación. La {masInvestigada} recorrió {masInvestigadaRutas} rutas y acredita {masInvestigadaOperacion}.',
     lectura:
       'Si el trabajo de campo y la capacidad institucional fueran la misma variable, ese par de valores no podría existir. Es la razón concreta —y no una cautela genérica— por la que este informe no publica ranking: una tabla ordenada por evidencia localizada ordenaría a los investigadores antes que a las Facultades.',
     limite:
@@ -97,7 +97,7 @@ export const informe01Hallazgos: readonly Informe01Hallazgo[] = [
   {
     id: 'H-7',
     enunciado: 'La relación con el mundo externo es conversación, no todavía vínculo estable.',
-    dato: 'La capacidad de transferencia aparece como incipiente en {transferenciaIncipiente} de las once: lo registrado son {mecActividades} actividades de una sola ocurrencia —seminarios, jornadas, workshops— frente a {mecConvenios} convenios con terceros en todo el corpus.',
+    dato: 'La capacidad de transferencia aparece como incipiente en {transferenciaIncipientePalabra} de las once: lo registrado son {mecActividadesPalabra} actividades de una sola ocurrencia —seminarios, jornadas, workshops— frente a {mecConveniosPalabra} convenios con terceros en todo el corpus.',
     lectura:
       'Las Facultades están discutiendo el asunto en público mucho más de lo que lo están incorporando a relaciones institucionales duraderas. Un seminario acredita interés y capacidad de convocatoria; un convenio acredita que alguien de fuera comprometió recursos, que es un hecho de otra naturaleza.',
     limite:
@@ -119,13 +119,13 @@ export const informe01Hallazgos: readonly Informe01Hallazgo[] = [
 export const informe01ResumenEjecutivo: readonly string[] = [
   'Este documento mapea la evidencia pública disponible sobre uso y enseñanza de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, con fecha de corte al {corte}. Reúne {fuentes} fuentes públicas únicas —{verificadas} de ellas abiertas y contrastadas contra su publicación original— y deriva {iniciativas} iniciativas, {evidencias} evidencias y {afirmaciones} afirmaciones trazables una por una hasta su fuente. **No es un informe de resultados sino un borrador para revisión**, y las {noVerificadas} fuentes todavía sin contrastar son la razón exacta de esa distinción.',
 
-  'El método separa cuatro cosas que la discusión pública mezcla: la fuente, la evidencia que esa fuente prueba, la iniciativa que agrupa varias evidencias y la afirmación que se sostiene sobre ellas. Separa además a quién pertenece cada capacidad —una licencia disponible para toda la universidad no es una capacidad de su Facultad de Derecho— y en qué peldaño de institucionalización se encuentra, desde el anuncio aislado hasta el resultado públicamente revisable. Esta versión añade dos instrumentos: la clase de **mecanismo** con que se hace cada cosa —una unidad, una norma, un programa formativo, una herramienta, un convenio— y una matriz de **{capacidades} capacidades institucionales** que reemplaza al recuento de evidencia como comparador principal.',
+  'El método separa cuatro cosas que la discusión pública mezcla: la fuente, la evidencia que esa fuente prueba, la iniciativa que agrupa varias evidencias y la afirmación que se sostiene sobre ellas. Separa además a quién pertenece cada capacidad —una licencia disponible para toda la universidad no es una capacidad de su Facultad de Derecho— y en qué peldaño de institucionalización se encuentra, desde el anuncio aislado hasta el resultado públicamente revisable. Esta versión añade dos instrumentos: la clase de **mecanismo** con que se hace cada cosa —una unidad, una norma, un programa formativo, una herramienta, un convenio— y una matriz de **{capacidadesPalabra} capacidades institucionales** que reemplaza al recuento de evidencia como comparador principal.',
 
-  'Lo que aparece tiene una forma reconocible y reciente. **{iniciativasDesde2025} de las {iniciativasFechadas} iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En {unidadOperacion} de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —{mecProgramas} programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: {mecHerramientasEntorno} de {mecHerramientas}.',
+  'Lo que aparece tiene una forma reconocible y reciente. **{iniciativasDesde2025} de las {iniciativasFechadas} iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En {unidadOperacionPalabra} de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —{mecProgramasPalabra} programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: {mecHerramientasEntornoPalabra} de {mecHerramientasPalabra}.',
 
   'La lectura que el conjunto permite es que el campo está construyendo estructura antes que reglas, y actividad antes que resultados. Se crean órganos, se abren programas y se anuncian herramientas; **ninguna de las {iniciativas} iniciativas registradas acredita haber medido su efecto sobre el aprendizaje jurídico**, y tres rondas independientes de investigación llegaron por separado a esa misma ausencia. Es la conclusión más sólida del informe y también la más fácil de revertir: bastaría una Facultad que evaluara una sola de las actividades que ya realiza y lo publicara.',
 
-  'Lo que no puede concluirse es tan importante como lo anterior, y esta versión lo lleva dentro de cada celda en vez de al pie. De las {celdas} celdas de la matriz de capacidades, **{celdasNoConcluyente} quedan sin concluir porque la ruta del protocolo que las habría acreditado no se recorrió en esa institución**. Una ausencia sólo informa cuando se buscó donde correspondía, y por eso el informe distingue «no localizada» de «no concluyente». Tampoco hay ranking, ni lo habrá mientras el trabajo de campo sea {razonCobertura} veces más profundo en tres instituciones que en las ocho restantes: el propio corpus muestra que {menosInvestigada}, la menos investigada de todas, acredita tantas capacidades en operación como {masInvestigada}, que es la más investigada.',
+  'Lo que no puede concluirse es tan importante como lo anterior, y esta versión lo lleva dentro de cada celda en vez de al pie. De las {celdas} celdas de la matriz de capacidades, **{celdasNoConcluyente} quedan sin concluir porque la ruta del protocolo que las habría acreditado no se recorrió en esa institución**. Una ausencia sólo informa cuando se buscó donde correspondía, y por eso el informe distingue «no localizada» de «no concluyente». Tampoco hay ranking, ni lo habrá mientras el trabajo de campo sea {razonCobertura} veces más profundo en tres instituciones que en las ocho restantes: el propio corpus muestra que la {menosInvestigada}, la menos investigada de todas, acredita tantas capacidades en operación como la {masInvestigada}, que es la más investigada.',
 
   'Para la Pontificia Universidad Católica de Valparaíso, la evidencia corrige de entrada una idea que el documento antecedente podía sugerir: no parte de cero. Tiene una unidad especializada con continuidad desde 2020, un laboratorio propio, presencia de la inteligencia artificial en la enseñanza de pregrado, una herramienta desarrollada en casa y actividad formativa con cobertura declarada. Es, en número de capacidades observadas en funcionamiento, uno de los perfiles más completos de la cohorte.',
 

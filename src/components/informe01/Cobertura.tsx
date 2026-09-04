@@ -1,7 +1,7 @@
 import { Notice, Surface } from '@/components/common/ui';
 import { informe01Recuento } from '@/data/informe01';
 import { coberturaSvg } from '@/lib/informe01-graficos';
-import { coberturaDe, universidadesOrdenadas } from '@/lib/informe01';
+import { coberturaDe, decimal, universidadesOrdenadas } from '@/lib/informe01';
 
 import { Figura } from './Figura';
 
@@ -24,12 +24,12 @@ export function CoberturaInvestigacion() {
     <div>
       <div className="mb-8 grid gap-4 sm:grid-cols-3">
         <Cifra
-          valor={`${r.coberturaPiloto} · ${r.coberturaResto}`}
+          valor={`${decimal(r.coberturaPiloto)} · ${decimal(r.coberturaResto)}`}
           etiqueta="fuentes de media, piloto frente a las otras ocho"
-          detalle={`Razón de ${r.razonCobertura} a 1`}
+          detalle={`Razón de ${decimal(r.razonCobertura)} a 1`}
         />
         <Cifra
-          valor={`${r.rutasPiloto} · ${r.rutasResto}`}
+          valor={`${decimal(r.rutasPiloto)} · ${decimal(r.rutasResto)}`}
           etiqueta="rutas del protocolo recorridas, de trece"
           detalle="Piloto frente al resto"
         />

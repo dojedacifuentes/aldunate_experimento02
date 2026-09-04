@@ -61,7 +61,7 @@ import {
   ESTADOS_CAPACIDAD,
   MECANISMOS,
 } from '../../src/lib/informe01-capacidades.js';
-import { cifrasInforme01 } from '../../src/lib/informe01.js';
+import { cifrasInforme01, enPalabras } from '../../src/lib/informe01.js';
 import {
   pucvBrechas,
   pucvDobleRevision,
@@ -109,6 +109,9 @@ const resto = cobertura.filter((c) => c.in_pilot !== 'si');
 const mediaPiloto = media(piloto, (c) => Number(c.sources));
 const mediaResto = media(resto, (c) => Number(c.sources));
 const razon = Math.round((mediaPiloto / mediaResto) * 10) / 10;
+
+/** Decimal en castellano: coma, no punto. */
+const dec = (n: number) => String(n).replace('.', ',');
 
 /* ── Modelo de documento ───────────────────────────────────────────────────── */
 
@@ -187,7 +190,7 @@ const cifras: Record<string, string | number> = {
   verificadas,
   noVerificadas: fuentes.length - verificadas,
   porcentajeVerificado: Math.round((verificadas / fuentes.length) * 100),
-  razonCobertura: razon,
+  razonCobertura: dec(razon),
   universitarios: evidencias.filter((e) => e.institutional_level === 'INSTITUCIONAL_UNIVERSIDAD')
     .length,
   evaluadas: iniciativas.filter((i) => i.current_status === '4').length,
@@ -256,7 +259,7 @@ nota(
 );
 p(
   'El documento tampoco publica ranking, tabla de posiciones ni puntaje agregado por universidad. La razón está medida: la cobertura de investigación es ' +
-    razon +
+    dec(razon) +
     ' veces mayor en las tres instituciones del piloto de profundidad que en las otras ocho. Ordenar sobre esa base produciría un ranking del trabajo de campo disfrazado de ranking de universidades.',
 );
 p(
@@ -268,7 +271,7 @@ h(2, 'Resumen ejecutivo', 'resumen');
 for (const parrafo of informe01ResumenEjecutivo) p(T(parrafo));
 
 hr();
-h(2, `Los ${informe01Hallazgos.length} hallazgos principales`, 'hallazgos');
+h(2, `Los ${enPalabras(informe01Hallazgos.length)} hallazgos principales`, 'hallazgos');
 p(
   'Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el límite hasta el que llega. **El límite no es un descargo: es parte del hallazgo**, y por eso ninguno se publica sin él.',
 );
@@ -384,7 +387,7 @@ tabla(
   }),
 );
 p(
-  `Media del piloto: ${mediaPiloto} fuentes y ${media(piloto, (c) => Number(c.routes_completed))} rutas. Media de las otras ocho: ${mediaResto} fuentes y ${media(resto, (c) => Number(c.routes_completed))} rutas. Razón de ${razon}:1.`,
+  `Media del piloto: ${dec(mediaPiloto)} fuentes y ${dec(media(piloto, (c) => Number(c.routes_completed)))} rutas. Media de las otras ocho: ${dec(mediaResto)} fuentes y ${dec(media(resto, (c) => Number(c.routes_completed)))} rutas. Razón de ${dec(razon)} a 1.`,
 );
 nota(
   'La verificación tiene además su propio sesgo, y es de segundo orden. La PUCV llega al 86 % de sus fuentes contrastadas y la Universidad Autónoma al 0 %, de modo que la institución sobre la que este informe debe ser más cuidadoso es también la mejor comprobada. Por eso la marca de verificación de la matriz de capacidades se dibuja aparte del estado y nunca lo modifica.',

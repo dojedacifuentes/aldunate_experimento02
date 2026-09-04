@@ -275,7 +275,10 @@ export function cifrasInforme01(): Record<string, string | number> {
     verificadas: r.fuentesVerificadas,
     noVerificadas,
     porcentajeVerificado: Math.round((r.fuentesVerificadas / r.fuentes) * 100),
-    razonCobertura: r.razonCobertura,
+    // Coma decimal. `String(3.7)` escribe «3.7», y un informe en castellano que
+    // publica «3.7 veces» delata que el número salió de un programa sin pasar
+    // por nadie.
+    razonCobertura: String(r.razonCobertura).replace('.', ','),
     universitarios,
     evaluadas: r.iniciativasEvaluadas,
     escalon1: r.iniciativasPorEscalon['1'] ?? 0,
@@ -288,6 +291,33 @@ export function cifrasInforme01(): Record<string, string | number> {
  * Viven aquí y no en `informe01-capacidades.ts` para que la prosa siga teniendo
  * una sola tabla de marcas. La capa de capacidades calcula; esta función nombra.
  * Ninguna de estas cifras se escribe a mano en ningún texto del informe.       */
+
+/**
+ * Cardinales en palabras, del cero al veinte.
+ *
+ * La prosa académica escribe «en cinco de las once Facultades» y no «en 5 de las
+ * once»; mezclar dígito y palabra en la misma frase delata la interpolación. Con
+ * esto la cifra sigue viniendo del dataset y el texto sigue leyéndose como texto.
+ * Por encima de veinte se escribe el dígito, que es también lo que hace un
+ * editor humano.
+ */
+const PALABRAS = [
+  'cero', 'una', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho',
+  'nueve', 'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis',
+  'diecisiete', 'dieciocho', 'diecinueve', 'veinte',
+];
+
+export const enPalabras = (n: number): string =>
+  n >= 0 && n <= 20 ? PALABRAS[n] : String(n);
+
+/**
+ * Decimal en castellano: coma, no punto.
+ *
+ * `String(3.7)` escribe «3.7», y un informe en castellano que publica «3.7 veces
+ * mayor» delata que el número salió de un programa sin pasar por nadie. Todo
+ * componente que imprima una cifra con decimales del recuento pasa por aquí.
+ */
+export const decimal = (n: number): string => String(n).replace('.', ',');
 
 function cifrasDeCapacidad(): Record<string, string | number> {
   const ids = universidadesOrdenadas.map((u) => u.id);
@@ -319,7 +349,36 @@ function cifrasDeCapacidad(): Record<string, string | number> {
   const menos = [...perfil].sort((a, b) => a.rutas - b.rutas)[0];
   const mas = [...perfil].sort((a, b) => b.rutas - a.rutas)[0];
 
+  /* Las mismas cifras en palabras, para la prosa que las necesita así. */
+  const enLetra = {
+    capacidadesPalabra: enPalabras(CAPACIDADES.length),
+    unidadOperacionPalabra: enPalabras(enOperacionDe('unidad')),
+    normaOperacionPalabra: enPalabras(enOperacionDe('norma')),
+    pregradoOperacionPalabra: enPalabras(enOperacionDe('curriculo')),
+    formacionOperacionPalabra: enPalabras(enOperacionDe('formacion')),
+    normaSinConcluirPalabra: enPalabras(sinConcluirDe('norma')),
+    pregradoSinConcluirPalabra: enPalabras(sinConcluirDe('curriculo')),
+    evaluacionSinConcluirPalabra: enPalabras(sinConcluirDe('evaluacion')),
+    investigacionSinConcluirPalabra: enPalabras(sinConcluirDe('investigacion')),
+    transferenciaIncipientePalabra: enPalabras(
+      ids.filter((id) => celdaCapacidad(id, 'transferencia').estado === 'INCIPIENTE').length,
+    ),
+    mecProgramasPalabra: enPalabras(mec('PROGRAMA_FORMATIVO').iniciativas.length),
+    mecUnidadesPalabra: enPalabras(mec('UNIDAD').iniciativas.length),
+    mecNormasPalabra: enPalabras(mec('NORMA').iniciativas.length),
+    mecAsignaturasPalabra: enPalabras(mec('ASIGNATURA').iniciativas.length),
+    mecConveniosPalabra: enPalabras(mec('CONVENIO').iniciativas.length),
+    mecActividadesPalabra: enPalabras(mec('ACTIVIDAD').iniciativas.length),
+    mecHerramientasPalabra: enPalabras(mec('HERRAMIENTA').iniciativas.length),
+    mecHerramientasEntornoPalabra: enPalabras(
+      mec('HERRAMIENTA').iniciativas.length - mec('HERRAMIENTA').deLaFacultad,
+    ),
+    mecProgramasFacultadPalabra: enPalabras(mec('PROGRAMA_FORMATIVO').deLaFacultad),
+    universidadesPalabra: enPalabras(ids.length),
+  };
+
   return {
+    ...enLetra,
     capacidades: CAPACIDADES.length,
     celdas: celdas.length,
     celdasOperacion: cuenta('EN_OPERACION'),

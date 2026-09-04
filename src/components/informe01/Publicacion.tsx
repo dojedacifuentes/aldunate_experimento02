@@ -2,7 +2,7 @@ import { ButtonLink, Disclosure, Notice, Section, Surface } from '@/components/c
 import { informe01Recuento } from '@/data/informe01';
 import { informe01Hallazgos, informe01ResumenEjecutivo } from '@/data/informe01-hallazgos';
 import { resolverCifras } from '@/data/informe01-borrador';
-import { cifrasInforme01 } from '@/lib/informe01';
+import { cifrasInforme01, enPalabras } from '@/lib/informe01';
 
 import {
   CoberturaFrenteACapacidad,
@@ -69,7 +69,7 @@ export function Informe01Apertura() {
 
       <Section
         eyebrow="Hallazgos"
-        title={`Los ${informe01Hallazgos.length} hallazgos principales`}
+        title={`Los ${enPalabras(informe01Hallazgos.length)} hallazgos principales`}
         description="Cada uno declara el dato que lo sostiene, la lectura que permite y el límite hasta el que llega. El límite no es un descargo de responsabilidad: es parte del hallazgo."
         className="scroll-mt-20"
       >

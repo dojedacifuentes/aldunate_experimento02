@@ -41,7 +41,7 @@
 
 > Este documento es un borrador para revisión y no debe citarse como informe de resultados. De sus 74 fuentes, 38 fueron abiertas y contrastadas contra su publicación original —el 51% del corpus—, y once de ellas no decían lo que el registro les atribuía. Las 36 restantes conservan el contenido que les asignó la investigación previa. Ningún registro está aceptado: la aceptación exige decisión humana registrada.
 
-El documento tampoco publica ranking, tabla de posiciones ni puntaje agregado por universidad. La razón está medida: la cobertura de investigación es 3.7 veces mayor en las tres instituciones del piloto de profundidad que en las otras ocho. Ordenar sobre esa base produciría un ranking del trabajo de campo disfrazado de ranking de universidades.
+El documento tampoco publica ranking, tabla de posiciones ni puntaje agregado por universidad. La razón está medida: la cobertura de investigación es 3,7 veces mayor en las tres instituciones del piloto de profundidad que en las otras ocho. Ordenar sobre esa base produciría un ranking del trabajo de campo disfrazado de ranking de universidades.
 
 Lo que sí publica es una cadena completa y recorrible hacia atrás: fuente → evidencia → iniciativa → afirmación. Cada afirmación trae su razonamiento, su contraevidencia, sus límites y su confianza, y cada evidencia dice qué prueba exactamente su fuente y qué no alcanza a probar.
 
@@ -51,13 +51,13 @@ Lo que sí publica es una cadena completa y recorrible hacia atrás: fuente → 
 
 Este documento mapea la evidencia pública disponible sobre uso y enseñanza de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, con fecha de corte al 1 de septiembre de 2026. Reúne 74 fuentes públicas únicas —38 de ellas abiertas y contrastadas contra su publicación original— y deriva 53 iniciativas, 75 evidencias y 14 afirmaciones trazables una por una hasta su fuente. **No es un informe de resultados sino un borrador para revisión**, y las 36 fuentes todavía sin contrastar son la razón exacta de esa distinción.
 
-El método separa cuatro cosas que la discusión pública mezcla: la fuente, la evidencia que esa fuente prueba, la iniciativa que agrupa varias evidencias y la afirmación que se sostiene sobre ellas. Separa además a quién pertenece cada capacidad —una licencia disponible para toda la universidad no es una capacidad de su Facultad de Derecho— y en qué peldaño de institucionalización se encuentra, desde el anuncio aislado hasta el resultado públicamente revisable. Esta versión añade dos instrumentos: la clase de **mecanismo** con que se hace cada cosa —una unidad, una norma, un programa formativo, una herramienta, un convenio— y una matriz de **10 capacidades institucionales** que reemplaza al recuento de evidencia como comparador principal.
+El método separa cuatro cosas que la discusión pública mezcla: la fuente, la evidencia que esa fuente prueba, la iniciativa que agrupa varias evidencias y la afirmación que se sostiene sobre ellas. Separa además a quién pertenece cada capacidad —una licencia disponible para toda la universidad no es una capacidad de su Facultad de Derecho— y en qué peldaño de institucionalización se encuentra, desde el anuncio aislado hasta el resultado públicamente revisable. Esta versión añade dos instrumentos: la clase de **mecanismo** con que se hace cada cosa —una unidad, una norma, un programa formativo, una herramienta, un convenio— y una matriz de **diez capacidades institucionales** que reemplaza al recuento de evidencia como comparador principal.
 
-Lo que aparece tiene una forma reconocible y reciente. **41 de las 49 iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En 5 de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —12 programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: 7 de 11.
+Lo que aparece tiene una forma reconocible y reciente. **41 de las 49 iniciativas fechadas comienzan en 2025 o después**: no se observa la maduración de un proceso largo sino su apertura. En cinco de las once Facultades consta una unidad especializada en funcionamiento, y en una sola un instrumento normativo propio sobre uso de inteligencia artificial. La formación entra por el diplomado, el minor y el taller —doce programas formativos— antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a la Facultad: siete de once.
 
 La lectura que el conjunto permite es que el campo está construyendo estructura antes que reglas, y actividad antes que resultados. Se crean órganos, se abren programas y se anuncian herramientas; **ninguna de las 53 iniciativas registradas acredita haber medido su efecto sobre el aprendizaje jurídico**, y tres rondas independientes de investigación llegaron por separado a esa misma ausencia. Es la conclusión más sólida del informe y también la más fácil de revertir: bastaría una Facultad que evaluara una sola de las actividades que ya realiza y lo publicara.
 
-Lo que no puede concluirse es tan importante como lo anterior, y esta versión lo lleva dentro de cada celda en vez de al pie. De las 110 celdas de la matriz de capacidades, **47 quedan sin concluir porque la ruta del protocolo que las habría acreditado no se recorrió en esa institución**. Una ausencia sólo informa cuando se buscó donde correspondía, y por eso el informe distingue «no localizada» de «no concluyente». Tampoco hay ranking, ni lo habrá mientras el trabajo de campo sea 3.7 veces más profundo en tres instituciones que en las ocho restantes: el propio corpus muestra que Universidad Autónoma de Chile, la menos investigada de todas, acredita tantas capacidades en operación como Universidad de Chile, que es la más investigada.
+Lo que no puede concluirse es tan importante como lo anterior, y esta versión lo lleva dentro de cada celda en vez de al pie. De las 110 celdas de la matriz de capacidades, **47 quedan sin concluir porque la ruta del protocolo que las habría acreditado no se recorrió en esa institución**. Una ausencia sólo informa cuando se buscó donde correspondía, y por eso el informe distingue «no localizada» de «no concluyente». Tampoco hay ranking, ni lo habrá mientras el trabajo de campo sea 3,7 veces más profundo en tres instituciones que en las ocho restantes: el propio corpus muestra que la Universidad Autónoma de Chile, la menos investigada de todas, acredita tantas capacidades en operación como la Universidad de Chile, que es la más investigada.
 
 Para la Pontificia Universidad Católica de Valparaíso, la evidencia corrige de entrada una idea que el documento antecedente podía sugerir: no parte de cero. Tiene una unidad especializada con continuidad desde 2020, un laboratorio propio, presencia de la inteligencia artificial en la enseñanza de pregrado, una herramienta desarrollada en casa y actividad formativa con cobertura declarada. Es, en número de capacidades observadas en funcionamiento, uno de los perfiles más completos de la cohorte.
 
@@ -65,7 +65,7 @@ La pregunta que el informe deja planteada es por eso otra, y es de gestión ante
 
 ---
 
-## Los 7 hallazgos principales
+## Los siete hallazgos principales
 
 Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el límite hasta el que llega. **El límite no es un descargo: es parte del hallazgo**, y por eso ninguno se publica sin él.
 
@@ -81,27 +81,27 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-2 · La estructura se crea antes que la regla.
 
-**Dato.** En 5 de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en 1. El corpus registra 7 unidades frente a 4 normas, y de esas cuatro normas sólo dos son de una Facultad.
+**Dato.** En cinco de las once Facultades consta una unidad especializada en operación —centro, programa, departamento o dirección—. Instrumento normativo propio dictado por la Facultad, en una sola. El corpus registra siete unidades frente a cuatro normas, y de esas cuatro normas sólo dos son de una Facultad.
 
 **Lectura.** La institucionalización avanza por creación de órganos y no por producción de reglas. Es un orden posible y no el único: crear una unidad es un acto de una autoridad, y dictar una norma sobre uso de inteligencia artificial obliga antes a decidir qué se permite en una evaluación, qué se declara y qué consecuencia tiene no declararlo. Lo segundo es más difícil y más comprometedor que lo primero.
 
-> **Límite.** La ruta del protocolo que acredita políticas propias no se recorrió en 8 de las once instituciones. La asimetría entre unidades y normas es firme sobre lo hallado, y sobre lo no hallado el informe no puede pronunciarse.
+> **Límite.** La ruta del protocolo que acredita políticas propias no se recorrió en ocho de las once instituciones. La asimetría entre unidades y normas es firme sobre lo hallado, y sobre lo no hallado el informe no puede pronunciarse.
 
 *Se apoya en: clm-cohorte-002 · clm-cohorte-003 · Matriz de capacidades.*
 
 ### H-3 · La inteligencia artificial entra por la formación continua, no por la malla.
 
-**Dato.** 12 iniciativas son programas formativos —diplomados, minors, cursos, talleres—, 11 de ellos sostenidos por la propia Facultad, frente a 4 que ocurren dentro de una asignatura o de una línea de malla. La formación estructurada consta en operación en 6 de las once; la presencia en pregrado, en 3.
+**Dato.** Doce iniciativas son programas formativos —diplomados, minors, cursos, talleres—, once de ellos sostenidos por la propia Facultad, frente a cuatro que ocurren dentro de una asignatura o de una línea de malla. La formación estructurada consta en operación en seis de las once; la presencia en pregrado, en tres.
 
 **Lectura.** La formación continua y el postgrado son los espacios donde una Facultad puede decidir en un semestre. La malla exige comités, acreditación y acuerdo de claustro, y responde en años. La distribución observada es exactamente la que produciría esa diferencia de velocidad, y no requiere suponer desinterés curricular.
 
-> **Límite.** Las rutas de malla y de programas de asignatura quedaron sin recorrer en 6 de las once. Que el pregrado aparezca menos poblado es compatible con que se haya buscado menos, y ninguna de las dos explicaciones puede descartarse con lo disponible.
+> **Límite.** Las rutas de malla y de programas de asignatura quedaron sin recorrer en seis de las once. Que el pregrado aparezca menos poblado es compatible con que se haya buscado menos, y ninguna de las dos explicaciones puede descartarse con lo disponible.
 
 *Se apoya en: clm-cohorte-005 · clm-cohorte-006 · Mecanismos institucionales.*
 
 ### H-4 · Buena parte de lo que se atribuye a las Facultades pertenece a sus universidades.
 
-**Dato.** De las 11 herramientas del corpus, 7 son capacidades de la universidad y no de la Facultad de Derecho. En total, 12 de las 110 celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.
+**Dato.** De las once herramientas del corpus, siete son capacidades de la universidad y no de la Facultad de Derecho. En total, 12 de las 110 celdas de la matriz de capacidades muestran una capacidad presente sólo en el entorno institucional.
 
 **Lectura.** Existe una capa de infraestructura universitaria —licencias generales, asistentes institucionales, lineamientos de rectoría— disponible para Derecho pero no desarrollada por Derecho. Confundir disponibilidad con adopción es el error más frecuente al leer estos anuncios, y es un error que se comete de buena fe: la nota de prensa que anuncia una licencia para toda la universidad no distingue quién la usará.
 
@@ -115,13 +115,13 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 **Lectura.** El campo produce actividad y estructura, y todavía no produce conocimiento sobre sus propios efectos. Las cifras que existen son de cobertura —cuánta gente participó— y contar asistentes no dice si alguien aprendió mejor. Bastaría una Facultad que midiera el efecto de una sola actividad que ya realiza y lo publicara para que este hallazgo dejara de ser cierto.
 
-> **Límite.** Es un hecho firme sobre el corpus y una pregunta abierta sobre cada Facultad. La ruta que acreditaría una medición publicada —repositorios y producción académica— quedó sin recorrer en 9 de las once instituciones. La versión anterior de este informe presentaba la ausencia sin esta salvedad.
+> **Límite.** Es un hecho firme sobre el corpus y una pregunta abierta sobre cada Facultad. La ruta que acreditaría una medición publicada —repositorios y producción académica— quedó sin recorrer en nueve de las once instituciones. La versión anterior de este informe presentaba la ausencia sin esta salvedad.
 
 *Se apoya en: clm-cohorte-001 · Escalera de institucionalización.*
 
 ### H-6 · Cuánto se investigó y cuánto se hace son variables distintas, y el corpus lo demuestra.
 
-**Dato.** Universidad Autónoma de Chile es la institución menos investigada de las once —2 de trece rutas recorridas, ninguna fuente contrastada— y acredita 4 capacidades en operación. Universidad de Chile recorrió 11 rutas y acredita 4.
+**Dato.** La Universidad Autónoma de Chile es la institución menos investigada de las once —2 de trece rutas recorridas, ninguna fuente contrastada— y acredita 4 capacidades en operación. La Universidad de Chile recorrió 11 rutas y acredita 4.
 
 **Lectura.** Si el trabajo de campo y la capacidad institucional fueran la misma variable, ese par de valores no podría existir. Es la razón concreta —y no una cautela genérica— por la que este informe no publica ranking: una tabla ordenada por evidencia localizada ordenaría a los investigadores antes que a las Facultades.
 
@@ -131,7 +131,7 @@ Cada hallazgo declara el dato que lo sostiene, la lectura que permite y el lími
 
 ### H-7 · La relación con el mundo externo es conversación, no todavía vínculo estable.
 
-**Dato.** La capacidad de transferencia aparece como incipiente en 6 de las once: lo registrado son 8 actividades de una sola ocurrencia —seminarios, jornadas, workshops— frente a 2 convenios con terceros en todo el corpus.
+**Dato.** La capacidad de transferencia aparece como incipiente en seis de las once: lo registrado son ocho actividades de una sola ocurrencia —seminarios, jornadas, workshops— frente a dos convenios con terceros en todo el corpus.
 
 **Lectura.** Las Facultades están discutiendo el asunto en público mucho más de lo que lo están incorporando a relaciones institucionales duraderas. Un seminario acredita interés y capacidad de convocatoria; un convenio acredita que alguien de fuera comprometió recursos, que es un hecho de otra naturaleza.
 
@@ -226,7 +226,7 @@ Las fuentes verificadas pasan al estado contrastado, que en el protocolo signifi
 
 Para cada institución se recorren las mismas trece rutas del protocolo, y se registra cuántas se completaron. La cobertura se publica aparte de la madurez porque miden cosas distintas: una es el trabajo hecho por quien investiga y la otra el trabajo hecho por la institución.
 
-La asimetría es grande y está medida: la cobertura en fuentes es 3.7 veces mayor en las tres instituciones del piloto de profundidad que en las ocho restantes. Mientras esa desproporción exista, ninguna comparación ordinal es publicable, porque ordenaría el esfuerzo de investigación y no la capacidad institucional.
+La asimetría es grande y está medida: la cobertura en fuentes es 3,7 veces mayor en las tres instituciones del piloto de profundidad que en las ocho restantes. Mientras esa desproporción exista, ninguna comparación ordinal es publicable, porque ordenaría el esfuerzo de investigación y no la capacidad institucional.
 
 La verificación aportó una comprobación empírica de ese sesgo, y en la dirección menos cómoda: al abrir la fuente que sostenía el programa de una institución fuera del piloto, resultó que el registro la había clasificado por el segmento de su URL y subestimaba su actividad, que estaba fechada y documentada. El sesgo de cobertura no sólo infla a los observados: deprime a los no observados.
 
@@ -248,17 +248,17 @@ La versión anterior comparaba **dimensiones**: ocho ámbitos académicos donde 
 
 El primero es de validez de constructo. Dos de las ocho dimensiones —recursos y capacidades, y continuidad, cobertura y resultados— no son ámbitos donde algo ocurra, sino **atributos** que cualquier iniciativa puede tener. Como el registro obliga a elegir una dimensión primaria, ninguna iniciativa cae nunca ahí: el diplomado con dos cohortes graduadas se clasifica en formación continua y su continuidad, que es precisamente el dato, queda invisible. La doble columna vacía de la versión anterior es, en parte, un artefacto del modelo y no sólo un hallazgo sobre las Facultades.
 
-El segundo es de lectura. La intensidad de una celda indicaba cuánta evidencia se había localizado, y como el trabajo de campo es 3.7 veces más profundo en tres instituciones, una fila más poblada señalaba dónde se había buscado más. La versión anterior lo advertía con un aviso al pie. Un aviso no corrige una lectura visual.
+El segundo es de lectura. La intensidad de una celda indicaba cuánta evidencia se había localizado, y como el trabajo de campo es 3,7 veces más profundo en tres instituciones, una fila más poblada señalaba dónde se había buscado más. La versión anterior lo advertía con un aviso al pie. Un aviso no corrige una lectura visual.
 
 El tercero es de utilidad comparativa. Un diplomado, una guía ética y un seminario contaban como una iniciativa cada uno, y sumarlos produce un recuento sin significado institucional. La pregunta que un lector con responsabilidad de gestión se hace no es cuántas iniciativas tiene cada Facultad, sino qué instrumentos ha puesto en pie.
 
-La enmienda añade dos ejes y no recodifica ningún registro. El primero es el **mecanismo**: qué clase de instrumento institucional es cada iniciativa —unidad, norma, programa formativo, asignatura, herramienta, proyecto, actividad, convenio o publicación—. Es una clasificación de lo que el registro ya contenía en su nombre, su unidad responsable y sus productos, de modo que no aporta evidencia nueva y no reabre la verificación de ninguna fuente. El segundo son las **10 capacidades**, cada una derivada por una regla mecánica sobre campos ya verificados, y cada una con la pregunta que responde escrita al lado.
+La enmienda añade dos ejes y no recodifica ningún registro. El primero es el **mecanismo**: qué clase de instrumento institucional es cada iniciativa —unidad, norma, programa formativo, asignatura, herramienta, proyecto, actividad, convenio o publicación—. Es una clasificación de lo que el registro ya contenía en su nombre, su unidad responsable y sus productos, de modo que no aporta evidencia nueva y no reabre la verificación de ninguna fuente. El segundo son las **diez capacidades**, cada una derivada por una regla mecánica sobre campos ya verificados, y cada una con la pregunta que responde escrita al lado.
 
 La regla que hace el trabajo de fondo es de una línea: **una ausencia sólo informa si se recorrió la ruta del protocolo que la habría encontrado**. Cada capacidad declara qué rutas de las trece la acreditarían; si no hay evidencia y esas rutas se recorrieron, la celda dice que la capacidad no se localizó, y si no se recorrieron, dice que la celda no es concluyente. Así la desigualdad de cobertura deja de ser una advertencia al pie y pasa a estar dentro de cada celda, que es donde el lector la necesita. De las 110 celdas de la matriz, 47 son de esa segunda clase.
 
 Un primer diseño de esta escala metía la verificación dentro del estado: una capacidad con fuente contrastada valía más que la misma capacidad sin contrastar. El efecto era premiar a la institución con mayor proporción de fuentes verificadas —la PUCV, con el 86 %— por una propiedad del trabajo de campo, que es el mismo error de la matriz anterior con otra ropa. La verificación viaja por eso aparte del estado, como una marca que no lo modifica.
 
-**Análisis de sensibilidad.** Sustituir un instrumento por otro obliga a preguntar si las conclusiones cambian porque hay evidencia nueva o porque cambió la forma de medir. Aquí no hay evidencia nueva: el corpus es el mismo de la versión anterior, con las mismas 74 fuentes y las mismas 53 iniciativas. De las siete conclusiones publicadas, cinco se sostienen sin variación. Las otras dos se matizan, y en las dos el matiz es más restrictivo que la versión previa: la ausencia de evaluación de efecto sigue siendo un hecho firme sobre el corpus, pero como afirmación sobre cada Facultad queda abierta en 9 de las once, porque la ruta que la acreditaría no se recorrió; y la ausencia de línea curricular obligatoria queda igualmente abierta en 6. Ninguna conclusión se hizo más fuerte por efecto del cambio de método, y ésa era la comprobación que importaba.
+**Análisis de sensibilidad.** Sustituir un instrumento por otro obliga a preguntar si las conclusiones cambian porque hay evidencia nueva o porque cambió la forma de medir. Aquí no hay evidencia nueva: el corpus es el mismo de la versión anterior, con las mismas 74 fuentes y las mismas 53 iniciativas. De las siete conclusiones publicadas, cinco se sostienen sin variación. Las otras dos se matizan, y en las dos el matiz es más restrictivo que la versión previa: la ausencia de evaluación de efecto sigue siendo un hecho firme sobre el corpus, pero como afirmación sobre cada Facultad queda abierta en nueve de las once, porque la ruta que la acreditaría no se recorrió; y la ausencia de línea curricular obligatoria queda igualmente abierta en seis. Ninguna conclusión se hizo más fuerte por efecto del cambio de método, y ésa era la comprobación que importaba.
 
 La metodología 2.0 se conserva íntegra, su matriz se publica en anexo y ninguno de sus vocabularios se ha modificado. Una versión nueva del protocolo no autoriza a hacer desaparecer la anterior: quien leyó el documento de septiembre debe poder reencontrar lo que leyó y comprobar por sí mismo qué cambió.
 
@@ -354,7 +354,7 @@ Rutas del protocolo recorridas por institución, de trece, con la proporción de
 | Universidad del Desarrollo | — | 3 | 4 | 1 (25 %) | 4 | 4 |
 | Universidad Diego Portales | — | 4 | 3 | 2 (67 %) | 3 | 4 |
 
-Media del piloto: 14 fuentes y 9.7 rutas. Media de las otras ocho: 3.8 fuentes y 4 rutas. Razón de 3.7:1.
+Media del piloto: 14 fuentes y 9,7 rutas. Media de las otras ocho: 3,8 fuentes y 4 rutas. Razón de 3,7 a 1.
 
 > La verificación tiene además su propio sesgo, y es de segundo orden. La PUCV llega al 86 % de sus fuentes contrastadas y la Universidad Autónoma al 0 %, de modo que la institución sobre la que este informe debe ser más cuidadoso es también la mejor comprobada. Por eso la marca de verificación de la matriz de capacidades se dibuja aparte del estado y nunca lo modifica.
 
@@ -653,7 +653,7 @@ Ninguna de las 53 iniciativas alcanza el peldaño de evaluación de la escala. L
 
 ### C-6 · La cobertura desigual impide toda comparación ordinal
 
-La investigación alcanzó una cobertura 3.7 veces mayor en tres instituciones que en las ocho restantes. Cualquier ordenamiento construido sobre esa base mediría el trabajo de campo. La verificación sustantiva confirmó el sesgo en su forma menos evidente: al abrir las fuentes de una institución fuera del piloto, el registro la subestimaba.
+La investigación alcanzó una cobertura 3,7 veces mayor en tres instituciones que en las ocho restantes. Cualquier ordenamiento construido sobre esa base mediría el trabajo de campo. La verificación sustantiva confirmó el sesgo en su forma menos evidente: al abrir las fuentes de una institución fuera del piloto, el registro la subestimaba.
 
 **HECHO.** Se apoya en clm-metodo-001.
 
