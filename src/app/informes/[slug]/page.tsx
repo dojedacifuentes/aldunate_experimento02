@@ -380,7 +380,13 @@ export default async function InformeDetallePage({
         </Section>
       )}
 
-      {/* ── Capa 2 · Metodología y límites ── */}
+      {/*
+        Capa 2 · Metodología y límites.
+        El Informe 01 la sustituye por su §3, que cuenta lo mismo con nueve
+        apartados y una declaración de intereses, y por su §7. Mantener las dos
+        dejaría dos secciones llamadas «Metodología» en el mismo documento.
+      */}
+      {!esInforme01 && (
       <Section eyebrow="Capa 2" title="Metodología" className="scroll-mt-20">
         <div id="metodologia" className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
@@ -416,8 +422,10 @@ export default async function InformeDetallePage({
           </div>
         </div>
       </Section>
+      )}
 
-      {/* ── Preguntas abiertas ── */}
+      {/* Igual que arriba: la agenda del §8 del Informe 01 sustituye a esta lista. */}
+      {!esInforme01 && (
       <Section
         eyebrow="Trabajo pendiente"
         title="Preguntas abiertas"
@@ -433,6 +441,7 @@ export default async function InformeDetallePage({
           ))}
         </ul>
       </Section>
+      )}
 
       {/* ── Capa 3 · Historial ── */}
       <Section eyebrow="Capa 3" title="Historial de versiones">

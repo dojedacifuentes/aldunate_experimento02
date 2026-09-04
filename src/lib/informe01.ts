@@ -276,5 +276,8 @@ export function cifrasInforme01(): Record<string, string | number> {
     razonCobertura: r.razonCobertura,
     universitarios,
     evaluadas: r.iniciativasEvaluadas,
+    escalon1: r.iniciativasPorEscalon['1'] ?? 0,
+    escalon2: r.iniciativasPorEscalon['2'] ?? 0,
+    escalon3: r.iniciativasPorEscalon['3'] ?? 0,
   };
 }

@@ -5,7 +5,7 @@ Tablero de fases. `[ ]` pendiente · `[~]` en curso · `[x]` terminada ·
 
 **Nunca marcar `[x]` algo parcialmente terminado.**
 
-Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
+Rama de trabajo: `informe-01/borrador-aldunate` · v0.6.0 · Corte: 04-09-2026
 
 ---
 
@@ -24,7 +24,7 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 - [x] Deduplicar y arbitrar lecturas divergentes
 - [x] Poblar `canonical/dataset/fuentes.csv` con las 74 fuentes
 - [x] Comprobar correspondencia 1:1 entre URL extraídas y registro
-- [ ] Verificación sustantiva fuente por fuente — ver ISSUE-001
+- [~] Verificación sustantiva fuente por fuente — **38 de 74 (51%)** al 04-09-2026. Cola en `tools/informes/informe-01/prioridad-verificacion.json`; contraste en `verificacion-p1-2026-09-04.md`
 
 ## Fase 2 — Evidencia
 
@@ -82,3 +82,42 @@ Rama de trabajo: `informe-01/v0.5.0` · Corte: 03-09-2026
 - [x] Changelog de la v0.5.0 y fe de erratas de la v0.4.0
 - [x] `src/data/trabajos.ts` actualizado: decía 43 fuentes y la asimetría antigua
 - [x] Bundle de git y comandos de publicación
+
+---
+
+## Fase 7 — Verificación sustantiva · v0.6.0
+
+- [x] Calcular la cola de prioridad desde la cadena claim → evidencia → fuente
+- [x] Contrastar las 38 fuentes que sostienen afirmaciones numéricas y nivel 3
+- [x] Corregir los once registros cuya página no decía lo que se le atribuía
+- [x] Reescribir `clm-cohorte-005` y `clm-cohorte-008`; matizar `clm-cohorte-003`
+- [x] Bajar `ini-uchile-002` del peldaño 3 al 2 y reatribuir `ini-udec-002`
+- [x] Enmendar DEC-108: las guardas pasan de prohibir a exigir coherencia
+- [x] Cerrar ISSUE-002 · confirmar ISSUE-003 · abrir ISSUE-013 a ISSUE-016
+- [~] **Quedan 36 fuentes.** Siguientes: `src-uautonoma-001`, `src-uautonoma-003`,
+      `src-ucentral-001`, `src-unab-001`
+- [!] ISSUE-003 · el CNED devuelve 403 y exige descarga manual
+
+## Fase 8 — Borrador académico · v0.6.0
+
+- [x] Introducción, objetivos y relato metodológico en nueve apartados
+- [x] Declaración de intereses (DEC-113)
+- [x] Discusión en seis bloques, separando hecho de inferencia
+- [x] Sección PUCV: siete hechos favorables, seis brechas, doble revisión publicada
+- [x] Cinco recomendaciones con problema, evidencia, referente, acción e indicador
+- [x] Siete conclusiones, cada una citando las afirmaciones que la sostienen
+- [x] Ocho limitaciones y agenda de siete preguntas con condición de cierre
+- [x] Marcas `{clave}` resueltas desde el dataset: la prosa no escribe cifras
+- [x] Ocho pruebas nuevas que atan la prosa a los datos (124 en total)
+
+## Fase 9 — QA · v0.6.0
+
+- [x] Auditoría adversarial de las siete conclusiones. Tres se reescribieron:
+      C-1 y C-2 afirmaban inexistencia donde sólo hay ausencia de evidencia, y
+      C-7 daba por superada una fase que 19 de 53 iniciativas no han superado
+- [x] Duplicación de secciones resuelta: había dos «Metodología» y dos de PUCV
+- [x] Descargas apuntando a v0.6.0; los siete artefactos responden 200
+- [x] Responsive a 375 px · desbordamiento horizontal cero
+- [x] Impresión comprobada en el CSSOM del HTML exportado
+- [x] `npm run verify` en verde
+- [ ] Word · sigue dependiendo del equipo del autor (ISSUE-011)

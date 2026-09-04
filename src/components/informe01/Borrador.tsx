@@ -98,7 +98,8 @@ export function Informe01BorradorApertura() {
         description="Cómo se construyó cada dato, qué se excluyó y por qué. Es la parte del documento que permite discutirlo."
         className="scroll-mt-20"
       >
-        <div className="max-w-prose space-y-8">
+        {/* El ancla del botón «Ver metodología» de la cabecera apunta aquí. */}
+        <div id="metodologia" className="max-w-prose space-y-8">
           {informe01MetodologiaRelato.map((b) => (
             <Bloque key={b.titulo} titulo={b.titulo} parrafos={b.parrafos} />
           ))}

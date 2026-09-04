@@ -47,7 +47,7 @@ export const reports: Report[] = [
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
     subtitle: 'Mapeo comparado de evidencia pública e institucionalización · borrador académico para revisión',
     executiveSummary:
-      'Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, al 1 de septiembre de 2026. De las 74 fuentes del corpus, 38 fueron abiertas y contrastadas contra su publicación original: es el 51%, y once registros no decían lo que su página dice. Lo que el corpus muestra es un campo que dejó atrás los eventos aislados y entró en una fase de creación de unidades, normas y programas permanentes, sin haber alcanzado en ningún punto la fase de medición: cuatro Facultades crearon estructuras dedicadas y ninguna publica el acto que las constituye; una sola dictó una norma propia con consecuencia jurídica; ninguna de las once acredita una línea curricular obligatoria; y ninguna de las 53 iniciativas registradas alcanza evidencia pública de evaluación de efecto sobre el aprendizaje jurídico. El documento no publica ranking: la cobertura de investigación es 3,7 veces mayor en tres instituciones que en las ocho restantes, y ordenar sobre esa base mediría el trabajo de campo. Es un borrador para revisión, no un informe de resultados.',
+      'Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, al 1 de septiembre de 2026. De las 74 fuentes del corpus, 38 fueron abiertas y contrastadas contra su publicación original: es el 51%, y once registros no decían lo que su página dice. Lo que el corpus muestra es un campo que dejó atrás los eventos aislados y entró en una fase de creación de unidades, normas y programas permanentes, sin haber alcanzado en ningún punto la fase de medición: cuatro Facultades crearon estructuras dedicadas y en ninguna se localizó el acto que las constituye; una sola dictó una norma propia con consecuencia jurídica; ninguna de las once acredita una línea curricular obligatoria; y ninguna de las 53 iniciativas registradas alcanza evidencia pública de evaluación de efecto sobre el aprendizaje jurídico. El documento no publica ranking: la cobertura de investigación es 3,7 veces mayor en tres instituciones que en las ocho restantes, y ordenar sobre esa base mediría el trabajo de campo. Es un borrador para revisión, no un informe de resultados.',
     authors: [autor.name],
     status: 'borrador',
     folder: 'content/reports/01_ia_escuelas_derecho_chile/',
@@ -205,27 +205,27 @@ export const reports: Report[] = [
       {
         format: 'PDF',
         label: 'Leer o imprimir',
-        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.pdf',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
         description:
-          'A4 de 39 páginas, con encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
+          'A4 de 56 páginas, con encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
       },
       {
         format: 'HTML',
         label: 'Leer la versión web',
-        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
         description:
-          'Documento completo, autónomo y preparado para impresión: fichas, matriz, afirmaciones, lagunas y registro de fuentes.',
+          'Documento completo y autónomo, preparado para impresión: introducción, metodología, discusión, fichas, matriz, afirmaciones, conclusiones, limitaciones y registro de fuentes.',
       },
       {
         format: 'Markdown',
         label: 'Usar como fuente editorial',
-        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.md',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.md',
         description: 'El mismo documento en texto plano, reutilizable por personas y por modelos.',
       },
       {
         format: 'ZIP',
         label: 'Descargar el paquete reproducible',
-        href: '/descargas/informe-01-mapeo-evidencia-v0.5.0.zip',
+        href: '/descargas/informe-01-borrador-academico-v0.6.0.zip',
         description:
           'Documento en PDF, HTML y Markdown, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
       },

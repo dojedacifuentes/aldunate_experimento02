@@ -1,14 +1,14 @@
 {
   "project": "Informe 01 · IA en Escuelas y Facultades de Derecho en Chile",
   "report_slug": "ia-escuelas-derecho-chile",
-  "target_version": "0.5.0",
-  "published_version": "0.4.0",
-  "branch": "informe-01/v0.5.0",
+  "target_version": "0.6.0",
+  "published_version": "0.6.0",
+  "branch": "informe-01/borrador-aldunate",
   "base_commit": "057ad4b5a19e58905f434a414ef1b87cc9858bce",
   "cutoff_date": "2026-09-01",
-  "phase": "source_verification",
-  "last_completed_task": "T-023_delivery_bundle",
-  "next_task": "verify_udec_sources",
+  "phase": "source_verification_partial",
+  "last_completed_task": "T-030_academic_draft",
+  "next_task": "verify_remaining_36_sources",
   "completed": [
     "T-001_repo_audit",
     "T-002_research_corpus_inventory",
@@ -32,13 +32,20 @@
     "T-022_dataset_tests",
     "T-021_exports_and_manifest",
     "T-022_responsive_and_print_qa",
-    "T-023_delivery_bundle"
+    "T-023_delivery_bundle",
+    "T-024_verification_queue",
+    "T-025_substantive_verification_p1",
+    "T-026_dataset_corrections",
+    "T-027_narrative_layer",
+    "T-028_pucv_section",
+    "T-029_prose_dataset_tests",
+    "T-030_academic_draft"
   ],
   "in_progress": [],
   "blocked": [
-    "ISSUE-001_substantive_source_verification",
+    "ISSUE-003_cned_403",
     "ISSUE-009_frozen_2025_baseline",
-    "ISSUE-011_docx_pdf_chain_requires_windows"
+    "ISSUE-011_docx_chain_requires_word"
   ],
   "counts": {
     "sources": 74,
@@ -46,7 +53,9 @@
     "evidence": 75,
     "claims": 14,
     "universities": 11,
-    "sources_verified_substantively": 0
+    "sources_verified_substantively": 38,
+    "sources_verified_percent": 51,
+    "records_corrected_by_verification": 11
   },
   "canonical_files": [
     "content/reports/01_ia_escuelas_derecho_chile/canonical/kit-canonico-v1.0.0.md",
@@ -61,7 +70,7 @@
   ],
   "last_lint": "pass_8_preexisting_warnings",
   "last_typecheck": "pass",
-  "last_test": "pass_115",
+  "last_test": "pass_124",
   "last_build": "pass_18_routes",
-  "updated_at": "2026-09-04T01:20:00-04:00"
+  "updated_at": "2026-09-04T06:10:00-04:00"
 }

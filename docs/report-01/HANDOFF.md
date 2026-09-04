@@ -3,210 +3,207 @@
 **Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho
 en Chile.** Documento de relevo entre sesiones. Léelo entero antes de tocar nada.
 
-Actualizado: **03-09-2026**
+Actualizado: **04-09-2026** · versión **v0.6.0** · rama `informe-01/borrador-aldunate`
 
 ---
 
 ## Objetivo
 
-Convertir el Informe 01 de una ficha con método declarado y registro vacío en
-una publicación digital con datos canónicos poblados, trazables y descargables,
-sin cruzar la línea que el propio método prohíbe: **no hay informe de
-resultados mientras la verificación sustantiva de las fuentes no exista.**
+Convertir el Informe 01 en un borrador académico presentable al profesor Eduardo
+Aldunate Lizana, sin cruzar la línea que el propio método prohíbe: **no hay
+informe de resultados mientras la verificación sustantiva del corpus no esté
+completa.** Está al 51%, y el documento lo dice en portada.
 
 ---
 
 ## Estado actual
 
-Existe, por primera vez, un **dataset canónico poblado y reproducible** del
-Informe 01 en `content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/`:
+La v0.6.0 hace dos cosas que la v0.5.0 no hacía.
 
-| Archivo | Filas | Qué contiene |
-|---|---:|---|
-| `universidades.csv` | 11 | Cohorte cerrada, con el nombre real de cada unidad |
-| `fuentes.csv` | 74 | Fuentes públicas únicas con estado editorial real |
-| `iniciativas.csv` | 53 | Iniciativas deduplicadas, con escalera, atribución y trayectoria |
-| `evidencias.csv` | 75 | Una por par fuente–iniciativa, con su límite propio |
-| `cobertura.csv` | 11 | Rutas del protocolo recorridas, separado de la madurez |
-| `afirmaciones.csv` | 14 | 10 FACT · 2 SIGNAL · 1 INFERENCE · 1 PENDING |
+**Verificó 38 de las 74 fuentes.** Se abrió cada publicación original y se
+contrastaron siete campos contra el registro: existencia y título literal, fecha
+declarada, unidad responsable, condición de anuncio o ejecución, cifras de
+cobertura, límites y respaldo efectivo de la afirmación que sostiene. El detalle
+fuente por fuente está en `tools/informes/informe-01/verificacion-p1-2026-09-04.md`,
+y la cola de prioridad calculada, en `prioridad-verificacion.json`.
 
-Los cinco scripts de `scripts/informe-01/` reconstruyen el dataset entero y
-fallan si la integridad referencial se rompe.
+**Once registros no decían lo que su página dice.** No es una anécdota: es un
+tercio de lo verificado, y varias correcciones tocan afirmaciones publicadas.
 
-**Los tres números que hay que conocer antes de tocar nada:**
+| Registro | Qué decía | Qué dice la fuente |
+|---|---|---|
+| `src-pucv-007` | «Universidad presentó decálogo…» | «…se realizó Día de la IA». Y el decálogo «sugiere recomendaciones»: es lineamiento, no política |
+| `src-puc-chile-004` | «primer Departamento… en Chile» | Es cita textual del decano, no hecho verificado. Sin acto formal |
+| `src-uchile-002` | Edición de un diploma en serie | «Diploma 2022 Cerrado». La serie es de la UC, no de la UChile |
+| `src-uai-002` | Anuncio sin ejecución | «El martes 6 de enero **se firmó** un convenio» |
+| `src-pucv-001` | LMIL de la Facultad de Derecho | Dirección de Incubación y Negocios, y no menciona IA |
+| `src-ucentral-003` | `legal-tech`, subestimada | «Programa de IA y LegalTech», con actividad fechada |
+| `src-udec-002` | Inaccesible por certificado | Carga bien. Y la organiza el centro de alumnos: `ESTUDIANTIL` |
+| `src-udec-004`, `src-uchile-015` | Fechas 2026 | Las páginas no declaran fecha: retiradas |
+| `src-ucentral-004`, `src-unab-004` | Sin fecha | Las páginas sí la declaran: ganadas |
 
-- Ninguna de las 53 iniciativas alcanza el nivel 4 de la escalera. Es la tercera
-  ronda independiente que llega a la misma ausencia.
-- La cobertura del piloto es 3,7 veces la del resto en fuentes y 2,4 veces en
-  rutas del protocolo recorridas. Por eso no hay comparación nacional.
-- Ninguna de las 74 fuentes es contraste externo: la ruta 13 del protocolo está
-  sin recorrer en las once.
+**Y añadió la capa académica.** Introducción, objetivos, un relato metodológico
+en nueve apartados, discusión en seis, la sección PUCV rehecha con doble revisión
+publicada, siete conclusiones que citan las afirmaciones que las sostienen, ocho
+limitaciones y una agenda de siete preguntas.
 
-Ninguna afirmación es publicable todavía. `sourceIds` y `claimIds` de
-`src/data/reports.ts` **siguen vacíos** y deben seguirlo hasta que la
-verificación sustantiva exista (DEC-108, ISSUE-001).
+**Los números, recalculados desde el dataset:** 11 universidades · 74 fuentes ·
+53 iniciativas · 75 evidencias · 14 afirmaciones · **38 fuentes contrastadas** ·
+0 iniciativas en el peldaño de evaluación · escalera 19/21/13/0.
 
-El sitio **ya consume el dataset**. `/informes/ia-escuelas-derecho-chile` monta
-la publicación completa —hallazgos, cobertura, matriz, escalera, taxonomía,
-sección PUCV, afirmaciones, lagunas y auditoría de la línea base— y
-`/informes/ia-escuelas-derecho-chile/instituciones` sirve las once fichas.
+---
 
-Todo se renderiza en el servidor: ni un componente de cliente, ni un gráfico que
-necesite hidratarse. Lo que se pliega usa `<details>` nativo, de modo que la
-página funciona impresa y con el JavaScript apagado.
+## Lo que hay que saber antes de tocar nada
 
-Lo que falta para publicar la v0.5.0: la ficha de `src/data/reports.ts` sigue
-declarando la v0.4.0 con 72 fuentes.
+**Python no existe en este equipo.** Los cinco constructores de
+`scripts/informe-01/0[1-5]-*.py` quedan **congelados** (DEC-112) y llevan un
+aviso en su cabecera. Ejecutarlos sobrescribiría la verificación con el estado
+del 03-09-2026. Los CSV son la fuente de verdad; la integridad la comprueban
+`06-compilar-a-typescript.mjs` y las 124 pruebas.
+
+**Los CSV usan CRLF.** Un script que los reescriba con LF produce un diff de
+archivo entero que oculta el cambio real.
+
+**Ningún número de la prosa se escribe a mano.** Los textos citan marcas
+`{clave}` que resuelven `cifrasInforme01()` en la web y una tabla equivalente en
+el exportador. Una prueba falla si alguien escribe «74» en un párrafo.
+
+**DEC-108 está enmendada (DEC-111).** Verificar ya no está prohibido; lo que
+sigue exigiendo firma humana es `ACEPTADO`, y no hay ni un registro aceptado.
+
+**Declaración de intereses (DEC-113).** `src-pucv-003` identifica como
+conductores del DIAT a Johann Benfeld, Eduardo Aldunate y Diego Ojeda. El
+destinatario del informe y su autor participan de una iniciativa evaluada. Está
+declarado en la metodología y la sección PUCV publica su doble revisión.
 
 ---
 
 ## Último punto completado
 
-Publicación de la v0.5.0 cerrada de extremo a extremo: dataset, capa tipada,
-componentes, ficha del informe, descargas con manifiesto y controles de
-integridad, pruebas de integridad y de control editorial, y un defecto de
-maquetación en móvil encontrado con capturas y corregido (ISSUE-012).
+Borrador académico v0.6.0 cerrado de extremo a extremo: verificación,
+correcciones al dataset, capa narrativa, sección PUCV, web, exportaciones y QA.
 
-`npm run verify` en verde: typecheck, lint (0 errores, 8 avisos preexistentes
-del código donado del juego), 115 pruebas y build de 18 rutas.
+`npm run verify` en verde: typecheck, lint con 0 errores y los 8 avisos
+preexistentes del código donado del juego, **124 pruebas** y build de 18 rutas.
+Paquete con MD, HTML, **PDF A4 de 56 páginas**, seis CSV, JSON, manifiesto,
+checksums y ZIP. QA de impresión comprobado en el CSSOM del HTML exportado: las
+21 tablas conservan su contenedor y la regla `.scroll { overflow: visible }`
+sigue viva. Cero desbordamiento horizontal a 375 px.
 
 ---
 
 ## Próxima tarea exacta
 
-Empezar la verificación sustantiva por la Universidad de Concepción, que es la
-tanda más corta y la que tiene el problema más concreto: abrir sus cuatro
-fuentes —`src-udec-001` a `src-udec-004`—, contrastar la evidencia extraída
-contra lo que cada página dice, y buscar en `jur.udec.cl` un respaldo para
-`src-udec-002`, cuya única URL tiene el certificado mal configurado (ISSUE-002).
+**Continuar la verificación por las 36 fuentes restantes.** El orden ya está
+calculado en `tools/informes/informe-01/prioridad-verificacion.json`: quedan las
+de peso 7 (nivel 3 de escalera sin afirmación numérica) y las de peso 0.
 
-Para cada fuente verificada: escribir `verified_by` y la fecha en
-`canonical/dataset/fuentes.csv`, `last_verified` en las evidencias que sostiene,
-y subir su `workflow_status` a `CONTRASTADO`. Después
-`node scripts/informe-01/06-compilar-a-typescript.mjs` y `npm run verify`.
+Empezar por las cuatro que sostienen `clm-cohorte-006` y `clm-cohorte-004` y aún
+no se abrieron: `src-uautonoma-001`, `src-uautonoma-003`, `src-ucentral-001` y
+`src-unab-001`. Son las que faltan para que las dos afirmaciones sobre currículo
+y uso interno queden completamente contrastadas.
 
-**Ojo:** dos pruebas de `src/data/informe01.test.ts` fallarán a propósito en
-cuanto exista la primera verificación —comprueban que hoy no hay ninguna—.
-Cuando eso ocurra, la prueba se actualiza para exigir coherencia entre
-`verified_by` y `last_verified`, no se borra.
+Para cada una: contrastar los siete campos, escribir `verified_by` y
+`workflow_status: CONTRASTADO` en `fuentes.csv`, `last_verified` y `verified_by`
+en sus evidencias, y anotar la divergencia en el cuaderno de verificación.
+Después `node scripts/informe-01/06-compilar-a-typescript.mjs` y `npm run verify`.
 
----
-
-## Archivos modificados recientemente
-
-```
-docs/report-01/HANDOFF.md            (nuevo)
-docs/report-01/STATUS.md             (nuevo)
-docs/report-01/TASKS.md              (nuevo)
-docs/report-01/DECISIONS.md          (nuevo)
-docs/report-01/ISSUES.md             (nuevo)
-docs/report-01/progress.json         (nuevo)
-content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/*.csv   (seis archivos nuevos)
-scripts/informe-01/                  (cinco constructores y su README)
-```
+**Ojo:** la prueba «cuenta las fuentes verificadas desde el dataset» exige que
+queden fuentes sin verificar. El día que se complete el corpus, esa prueba debe
+fallar para obligar a decidir a mano si el documento deja de ser borrador.
 
 ---
 
 ## Archivos canónicos
 
-Fuente de verdad del Informe 01, en este orden:
+Fuente de verdad, en este orden:
 
 1. `content/reports/01_ia_escuelas_derecho_chile/canonical/kit-canonico-v1.0.0.md`
-   — protocolo, cohorte, vocabularios controlados, estados editoriales.
-2. `content/reports/01_ia_escuelas_derecho_chile/canonical/manifest.json`
-3. `content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/*.csv`
-   — **los datos**. Todo lo que el sitio muestre debe derivarse de aquí.
+2. `content/reports/01_ia_escuelas_derecho_chile/canonical/dataset/*.csv` — **los datos**
+3. `src/data/informe01-borrador.ts` y `informe01-pucv.ts` — **la prosa**
 4. `content/reports/01_ia_escuelas_derecho_chile/sources/investigacion-profunda/*.md`
-   — los cinco documentos de origen, versionados y no editables.
-5. `tools/informes/informe-01/corpus-de-evidencia.md` y `verificacion-fuentes.md`
-   — el cuaderno de trabajo de las rondas 1 y 2.
+5. `tools/informes/informe-01/verificacion-p1-2026-09-04.md` — el contraste
 
-`content/research/source-registry.csv` y `evidence-matrix.csv` pertenecen al
-Informe 02 y **no** son el registro del 01.
+`content/research/source-registry.csv` pertenece al Informe 02 y **no** es el
+registro del 01.
 
 ---
 
 ## Decisiones metodológicas vigentes
 
-Las diez están en `DECISIONS.md`. Las cuatro que más veces se rompen:
+Las trece están en `DECISIONS.md`. Las cinco que más veces se rompen:
 
-- **DEC-102** · ninguna comparación ni ranking nacional. La cobertura es
-  desigual por diseño; comparar produciría un ranking del trabajo de campo.
-- **DEC-105** · universidad no es Facultad. Toda evidencia se atribuye a la
-  unidad que la fuente identifica.
-- **DEC-108** · la verificación sustantiva no se delega y no está hecha.
-- **DEC-109** · la escalera 0–4 se aplica a la iniciativa, nunca a la
-  universidad, y no se promedia.
+- **DEC-102** · ninguna comparación ni ranking nacional.
+- **DEC-105** · universidad no es Facultad.
+- **DEC-109** · la escalera se aplica a la iniciativa, nunca a la universidad.
+- **DEC-111** · contrastar no es aceptar. `ACEPTADO` exige firma humana.
+- **DEC-112** · los constructores en Python están congelados.
 
 ---
 
 ## Qué NO debe hacerse
 
+- **No** ejecutar los scripts `.py`. Sobrescriben la verificación.
 - **No** rellenar `sourceIds` ni `claimIds` en `src/data/reports.ts`.
-- **No** publicar tabla de posiciones, ranking ni puntaje agregado.
-- **No** presentar el informe como informe de resultados: es mapeo de evidencia.
-- **No** arrastrar puntuaciones del informe antecedente ni corregirlas en
-  silencio: cuatro de sus totales no cuadran con sus propias puntuaciones.
-- **No** convertir una ausencia de evidencia pública en inexistencia.
-- **No** reescribir hacia atrás el changelog de la v0.4.0 por el cambio de 72 a
-  74 fuentes: se agrega fe de erratas.
-- **No** editar los cinco documentos de `sources/investigacion-profunda/`.
-- **No** intentar generar Word ni PDF fuera de Windows: la cadena es PowerShell
-  5.1 con Word por COM (ISSUE-011).
-- **No** hacer push, commit ni cambios en repositorios distintos de
-  `dojedacifuentes/aldunate_experimento02`.
+- **No** marcar `ACEPTADO` ningún registro.
+- **No** publicar ranking, tabla de posiciones ni puntaje agregado.
+- **No** presentar el documento como informe de resultados mientras el corpus no
+  esté verificado del todo.
+- **No** escribir cifras a mano en la prosa: usar marcas.
+- **No** convertir una ausencia de evidencia pública en inexistencia. Hay una
+  prueba que lo comprueba sobre las conclusiones.
+- **No** retirar del corpus las fuentes que involucran al autor: se declaran.
+- **No** reescribir los CSV con LF.
 
 ---
 
 ## Pendientes, por prioridad
 
-1. **Verificación sustantiva de las 74 fuentes** (ISSUE-001). Es lo único que
-   desbloquea el paso de mapeo de evidencia a informe de resultados.
-2. Los tres `.json` de contenido para la cadena PowerShell, y con ellos Word y
-   PDF (ISSUE-011).
-3. Línea de tiempo de hitos: la única visualización declarada que falta.
-4. Cerrar ISSUE-002 a ISSUE-008, que son comprobaciones concretas y acotadas.
-5. Igualar la cobertura de las ocho universidades fuera del piloto. Sin eso no
-   habrá comparación nacional por muchas fuentes que se acumulen.
+1. **Verificar las 36 fuentes restantes** (ISSUE-001, ahora al 51%).
+2. **Localizar el acto formal de las cuatro unidades creadas** (ISSUE-006). Es
+   lo que decide la conclusión C-1, que es la principal del informe.
+3. **Pedir la ficha metodológica de la medición de la UNAB** (ISSUE-016). Es la
+   única cifra de efecto del corpus y su diseño no está publicado.
+4. **Recorrer la ruta 13**, contraste externo, en las once (ISSUE-011 del corpus).
+5. Word, que sigue dependiendo del equipo del autor (ISSUE-011).
+6. Línea de tiempo de hitos: la única visualización declarada que falta.
 
 ---
 
 ## Bloqueos
 
-- **ISSUE-001** · verificación sustantiva de las 74 fuentes. Es trabajo humano
-  por definición metodológica, no un paso automatizable.
-- **ISSUE-009** · reconstruir una línea base congelada de 2025 exige una
-  decisión humana sobre un archivo ya editado retrospectivamente.
-- **ISSUE-011** · Word y PDF sólo pueden generarse en el equipo del autor.
+- **ISSUE-003** · el CNED devuelve 403 a petición automatizada. Exige descargar
+  la base desde un navegador y versionar el archivo.
+- **ISSUE-009** · reconstruir una línea base congelada de 2025 exige una decisión
+  humana sobre un archivo ya editado retrospectivamente.
+- **ISSUE-011** · Word sólo puede generarse en el equipo del autor. El PDF ya no:
+  se imprime del HTML con el Chrome del sistema.
 
 ---
 
 ## Tests
 
-Al corte de este relevo, sobre la rama `informe-01/v0.5.0`:
-
 | | Estado | Cuándo |
 |---|---|---|
 | lint | 0 errores · 8 avisos preexistentes | 04-09-2026 |
 | typecheck | pasa | 04-09-2026 |
-| tests | 115 pruebas en 8 archivos, todas pasan | 04-09-2026 |
-| build | pasa · 18 rutas, 3 de ellas del Informe 01 | 04-09-2026 |
-| responsive | capturas a 390 y 1280 px · desbordamiento horizontal cero | 04-09-2026 |
-| impresión | comprobada con `emulateMedia('print')` | 04-09-2026 |
-
-Los nueve avisos de lint son los del código donado del juego y uno de
-`useSpriteAnimation`. Están documentados en `CLAUDE.md` §10 y no se tocan.
+| tests | **124** en 8 archivos | 04-09-2026 |
+| build | pasa · 18 rutas | 04-09-2026 |
+| responsive | 375 px · desbordamiento horizontal cero | 04-09-2026 |
+| impresión | reglas vivas en el CSSOM · 21 tablas con contenedor | 04-09-2026 |
+| exportación | MD 123 KB · HTML 156 KB · PDF 56 pp · ZIP 489 KB | 04-09-2026 |
 
 ---
 
 ## Git
 
-- **Rama:** `informe-01/v0.5.0`, creada desde `origin/main` en `057ad4b`.
-- **Último commit:** ver `git log --oneline -1`.
-- **Cambios sin commit:** ver `git status --short`.
+- **Rama:** `informe-01/borrador-aldunate`, derivada de `informe-01/v0.5.0`.
+- **Base:** `origin/main` en `057ad4b`.
+- La v0.5.0 quedó preservada en su propia rama y empujada al remoto: no se
+  sobrescribió para hacer sitio a ésta.
 
-El árbol local del autor está detrás del remoto. Se trabaja siempre desde
-`origin/main` tras `git fetch`, nunca desde el árbol local.
+Se trabaja siempre desde `git ls-remote origin` tras `git fetch`, nunca desde el
+árbol local, porque varias sesiones escriben sobre este repositorio.
 
 ---
 
@@ -214,10 +211,10 @@ El árbol local del autor está detrás del remoto. Se trabaja siempre desde
 
 ```bash
 git fetch origin
-git status --short
 git log --oneline -5
 cat docs/report-01/progress.json
+sed -n '1,40p' tools/informes/informe-01/verificacion-p1-2026-09-04.md
 ```
 
-Después, la verificación sustantiva por tandas. No repitas las fases 0 a 3: están cerradas y sus
-decisiones están registradas en `DECISIONS.md`.
+Después, la verificación por tandas. No repitas las fases 0 a 6: están cerradas
+y sus decisiones están registradas en `DECISIONS.md`.

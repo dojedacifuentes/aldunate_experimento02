@@ -128,6 +128,9 @@ const cifras: Record<string, string | number> = {
   universitarios: evidencias.filter((e) => e.institutional_level === 'INSTITUCIONAL_UNIVERSIDAD')
     .length,
   evaluadas: iniciativas.filter((i) => i.current_status === '4').length,
+  escalon1: iniciativas.filter((i) => i.current_status === '1').length,
+  escalon2: iniciativas.filter((i) => i.current_status === '2').length,
+  escalon3: iniciativas.filter((i) => i.current_status === '3').length,
 };
 const T = (s: string) => resolverCifras(s, cifras);
 
@@ -184,7 +187,7 @@ p(
 hr();
 h(2, 'Qué muestra la evidencia', 'hallazgos');
 ul([
-  'Cuatro Facultades de Derecho crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios, pero **ninguna de las cuatro publica el acto que la constituye**: sólo una tiene respaldo orgánico, en el organigrama de su Facultad.',
+  'Cuatro Facultades de Derecho crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios, pero **en ninguna de las cuatro se localizó el acto que la constituye**: sólo una tiene respaldo orgánico, en el organigrama de su Facultad.',
   'El uso interno de IA dejó de ser una casilla vacía: cuatro instituciones documentan herramientas o formación desplegadas dentro de la enseñanza del Derecho.',
   'La formación continua es el único eje con serie temporal documentada, y la serie es de una sola institución: dos graduaciones consecutivas, de más de 90 y más de 100 titulados. El programa equivalente de otra universidad de la cohorte figura cerrado desde 2022.',
   'Del corpus, una sola norma sobre uso de IA fue dictada por una Facultad de Derecho, con órgano aprobador identificado y sanción asociada. Los otros dos instrumentos son universitarios y de carácter orientador.',

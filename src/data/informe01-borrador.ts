@@ -177,7 +177,7 @@ export const informe01Discusion: readonly {
     titulo: 'La estructura se anuncia más rápido de lo que se constituye',
     parrafos: [
       'El hallazgo más consistente del corpus es que entre 2025 y 2026 cuatro Facultades de Derecho crearon unidades dedicadas a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios que caracterizaba el fenómeno: nombrar una estructura compromete a la institución de un modo que organizar un evento no compromete.',
-      'La verificación, sin embargo, encontró que de esas cuatro creaciones **ninguna publica el acto que la constituye**. No hay decreto, acuerdo de consejo ni resolución citada en ninguna de las fuentes que las anuncian. Lo que existe en un caso —y sólo en uno— es respaldo orgánico: la estructura publicada de la Facultad de Derecho de la Universidad Católica lista el Departamento de Derecho y Tecnología entre sus once departamentos, con director identificado. Un organigrama es evidencia más fuerte que una noticia de creación, porque el organigrama tiene que sostenerse en el tiempo.',
+      'La verificación, sin embargo, encontró que de esas cuatro creaciones **en ninguna se localizó el acto que la constituye**. No hay decreto, acuerdo de consejo ni resolución citada en ninguna de las fuentes que las anuncian. Conviene mantener la formulación en su registro exacto: dos de esas cuatro instituciones están fuera del piloto de profundidad, de modo que la ausencia mide también dónde se buscó. Lo que existe en un caso —y sólo en uno— es respaldo orgánico: la estructura publicada de la Facultad de Derecho de la Universidad Católica lista el Departamento de Derecho y Tecnología entre sus once departamentos, con director identificado. Un organigrama es evidencia más fuerte que una noticia de creación, porque el organigrama tiene que sostenerse en el tiempo.',
       'En el extremo opuesto, la unidad de la Universidad Diego Portales se acredita mediante el nombramiento de su director y una hoja de ruta: talleres y un curso por implementar, sin nombre de asignatura, semestre, créditos ni matrícula. Entre el organigrama y el nombramiento hay una distancia institucional considerable, y el recuento de «cuatro Facultades» la oculta si no se explicita.',
       'La conclusión que el corpus admite es más precisa que la que el titular sugiere: la institucionalización está ocurriendo por **denominación** antes que por **constitución**. Nombrar una unidad es un acto real y tiene efectos, pero no es lo mismo que dotarla.',
     ],
@@ -234,15 +234,15 @@ export const informe01Conclusiones: readonly Informe01Conclusion[] = [
     id: 'C-1',
     titulo: 'La institucionalización avanza por denominación, no por constitución',
     cuerpo:
-      'Cuatro Facultades de Derecho crearon entre 2025 y 2026 unidades dedicadas a tecnología o inteligencia artificial, y ninguna publica el acto formal que las constituye. Sólo una de las cuatro tiene respaldo orgánico publicado: figura en la estructura de la Facultad, con director identificado. El resto se acredita mediante noticias de creación y nombramientos.',
+      'Cuatro Facultades de Derecho crearon entre 2025 y 2026 unidades dedicadas a tecnología o inteligencia artificial, y en ninguna de las cuatro se localizó el acto formal que la constituye. Sólo una tiene respaldo orgánico publicado: figura en la estructura de la Facultad, con director identificado. Las otras tres se acreditan mediante noticias de creación y nombramientos. La afirmación registra lo que no fue localizado recorriendo el protocolo, no que los actos no existan: dos de las cuatro instituciones están fuera del piloto de profundidad.',
     apoyo: ['clm-cohorte-002'],
     clase: 'HECHO',
   },
   {
     id: 'C-2',
-    titulo: 'Una sola Facultad ha dictado una norma propia con consecuencia jurídica',
+    titulo: 'Del corpus, una sola Facultad dictó una norma propia con consecuencia jurídica',
     cuerpo:
-      'De los tres instrumentos sobre uso de inteligencia artificial del corpus, dos son universitarios y de carácter orientador. El tercero fue aprobado por los órganos de una Facultad de Derecho, impone deberes de declaración y registro, y califica su incumplimiento como infracción grave sancionable conforme al régimen del plagio. La regulación del uso ha avanzado más que la enseñanza del uso.',
+      'De los tres instrumentos sobre uso de inteligencia artificial localizados, dos son universitarios y de carácter orientador. El tercero fue aprobado por los órganos de una Facultad de Derecho, impone deberes de declaración y registro, y califica su incumplimiento como infracción grave sancionable conforme al régimen del plagio. La regulación del uso ha avanzado más que la enseñanza del uso.',
     apoyo: ['clm-cohorte-003'],
     clase: 'HECHO',
   },
@@ -282,7 +282,7 @@ export const informe01Conclusiones: readonly Informe01Conclusion[] = [
     id: 'C-7',
     titulo: 'El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado',
     cuerpo:
-      'Leídos en conjunto, los {evidencias} registros describen un campo que dejó atrás la fase de eventos aislados y entró en una fase de creación de unidades, normas y programas permanentes, sin haber alcanzado en ningún punto la fase de medición. La secuencia actividad → operación → institucionalización → evaluación está detenida en su tercer tramo, y lo está en las once instituciones a la vez, lo que sugiere una causa común y no una diferencia de mérito.',
+      'La distribución de las {iniciativas} iniciativas en la escalera describe un campo a medio camino, no uno que ya cambió de fase: {escalon1} siguen siendo actividades aisladas o anuncios, {escalon2} acreditan operación recurrente, {escalon3} alcanzan alguna señal de institucionalización, y {evaluadas} llegan a evaluación. La secuencia actividad → operación → institucionalización → evaluación está poblada en sus tres primeros tramos y vacía en el cuarto, y lo está en las once instituciones a la vez. Que la ausencia sea simultánea sugiere una causa común —el costo de medir aprendizaje— antes que una diferencia de mérito entre Facultades, aunque la evidencia disponible no permite distinguir entre ambas explicaciones.',
     apoyo: ['clm-cohorte-001', 'clm-cohorte-002', 'clm-cohorte-006'],
     clase: 'INFERENCIA',
   },

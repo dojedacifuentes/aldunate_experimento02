@@ -38,7 +38,7 @@ Lo que sí publica es una cadena completa y recorrible hacia atrás: fuente → 
 
 ## Qué muestra la evidencia
 
-- Cuatro Facultades de Derecho crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios, pero **ninguna de las cuatro publica el acto que la constituye**: sólo una tiene respaldo orgánico, en el organigrama de su Facultad.
+- Cuatro Facultades de Derecho crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios, pero **en ninguna de las cuatro se localizó el acto que la constituye**: sólo una tiene respaldo orgánico, en el organigrama de su Facultad.
 - El uso interno de IA dejó de ser una casilla vacía: cuatro instituciones documentan herramientas o formación desplegadas dentro de la enseñanza del Derecho.
 - La formación continua es el único eje con serie temporal documentada, y la serie es de una sola institución: dos graduaciones consecutivas, de más de 90 y más de 100 titulados. El programa equivalente de otra universidad de la cohorte figura cerrado desde 2022.
 - Del corpus, una sola norma sobre uso de IA fue dictada por una Facultad de Derecho, con órgano aprobador identificado y sanción asociada. Los otros dos instrumentos son universitarios y de carácter orientador.
@@ -529,7 +529,7 @@ Rutas sin recorrer: fuentes-externas-contraste, herramientas-licencias-convenios
 
 El hallazgo más consistente del corpus es que entre 2025 y 2026 cuatro Facultades de Derecho crearon unidades dedicadas a tecnología o inteligencia artificial. Es un cambio de naturaleza respecto de la sucesión de seminarios que caracterizaba el fenómeno: nombrar una estructura compromete a la institución de un modo que organizar un evento no compromete.
 
-La verificación, sin embargo, encontró que de esas cuatro creaciones **ninguna publica el acto que la constituye**. No hay decreto, acuerdo de consejo ni resolución citada en ninguna de las fuentes que las anuncian. Lo que existe en un caso —y sólo en uno— es respaldo orgánico: la estructura publicada de la Facultad de Derecho de la Universidad Católica lista el Departamento de Derecho y Tecnología entre sus once departamentos, con director identificado. Un organigrama es evidencia más fuerte que una noticia de creación, porque el organigrama tiene que sostenerse en el tiempo.
+La verificación, sin embargo, encontró que de esas cuatro creaciones **en ninguna se localizó el acto que la constituye**. No hay decreto, acuerdo de consejo ni resolución citada en ninguna de las fuentes que las anuncian. Conviene mantener la formulación en su registro exacto: dos de esas cuatro instituciones están fuera del piloto de profundidad, de modo que la ausencia mide también dónde se buscó. Lo que existe en un caso —y sólo en uno— es respaldo orgánico: la estructura publicada de la Facultad de Derecho de la Universidad Católica lista el Departamento de Derecho y Tecnología entre sus once departamentos, con director identificado. Un organigrama es evidencia más fuerte que una noticia de creación, porque el organigrama tiene que sostenerse en el tiempo.
 
 En el extremo opuesto, la unidad de la Universidad Diego Portales se acredita mediante el nombramiento de su director y una hoja de ruta: talleres y un curso por implementar, sin nombre de asignatura, semestre, créditos ni matrícula. Entre el organigrama y el nombramiento hay una distancia institucional considerable, y el recuento de «cuatro Facultades» la oculta si no se explicita.
 
@@ -933,13 +933,13 @@ Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna in
 
 ### C-1 · La institucionalización avanza por denominación, no por constitución
 
-Cuatro Facultades de Derecho crearon entre 2025 y 2026 unidades dedicadas a tecnología o inteligencia artificial, y ninguna publica el acto formal que las constituye. Sólo una de las cuatro tiene respaldo orgánico publicado: figura en la estructura de la Facultad, con director identificado. El resto se acredita mediante noticias de creación y nombramientos.
+Cuatro Facultades de Derecho crearon entre 2025 y 2026 unidades dedicadas a tecnología o inteligencia artificial, y en ninguna de las cuatro se localizó el acto formal que la constituye. Sólo una tiene respaldo orgánico publicado: figura en la estructura de la Facultad, con director identificado. Las otras tres se acreditan mediante noticias de creación y nombramientos. La afirmación registra lo que no fue localizado recorriendo el protocolo, no que los actos no existan: dos de las cuatro instituciones están fuera del piloto de profundidad.
 
 **HECHO.** Se apoya en clm-cohorte-002.
 
-### C-2 · Una sola Facultad ha dictado una norma propia con consecuencia jurídica
+### C-2 · Del corpus, una sola Facultad dictó una norma propia con consecuencia jurídica
 
-De los tres instrumentos sobre uso de inteligencia artificial del corpus, dos son universitarios y de carácter orientador. El tercero fue aprobado por los órganos de una Facultad de Derecho, impone deberes de declaración y registro, y califica su incumplimiento como infracción grave sancionable conforme al régimen del plagio. La regulación del uso ha avanzado más que la enseñanza del uso.
+De los tres instrumentos sobre uso de inteligencia artificial localizados, dos son universitarios y de carácter orientador. El tercero fue aprobado por los órganos de una Facultad de Derecho, impone deberes de declaración y registro, y califica su incumplimiento como infracción grave sancionable conforme al régimen del plagio. La regulación del uso ha avanzado más que la enseñanza del uso.
 
 **HECHO.** Se apoya en clm-cohorte-003.
 
@@ -969,7 +969,7 @@ La investigación alcanzó una cobertura 3.7 veces mayor en tres instituciones q
 
 ### C-7 · El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado
 
-Leídos en conjunto, los 75 registros describen un campo que dejó atrás la fase de eventos aislados y entró en una fase de creación de unidades, normas y programas permanentes, sin haber alcanzado en ningún punto la fase de medición. La secuencia actividad → operación → institucionalización → evaluación está detenida en su tercer tramo, y lo está en las once instituciones a la vez, lo que sugiere una causa común y no una diferencia de mérito.
+La distribución de las 53 iniciativas en la escalera describe un campo a medio camino, no uno que ya cambió de fase: 19 siguen siendo actividades aisladas o anuncios, 21 acreditan operación recurrente, 13 alcanzan alguna señal de institucionalización, y 0 llegan a evaluación. La secuencia actividad → operación → institucionalización → evaluación está poblada en sus tres primeros tramos y vacía en el cuarto, y lo está en las once instituciones a la vez. Que la ausencia sea simultánea sugiere una causa común —el costo de medir aprendizaje— antes que una diferencia de mérito entre Facultades, aunque la evidencia disponible no permite distinguir entre ambas explicaciones.
 
 **INFERENCIA.** Se apoya en clm-cohorte-001, clm-cohorte-002, clm-cohorte-006.
 

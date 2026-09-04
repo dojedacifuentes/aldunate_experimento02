@@ -68,7 +68,7 @@ export function Informe01Publicacion() {
             <h3 className="meta mb-4">Lo que vemos</h3>
             <ul className="space-y-3">
               {[
-                'Cuatro Facultades crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. Ninguna de las cuatro publica el acto que la constituye; sólo una figura en el organigrama de su Facultad.',
+                'Cuatro Facultades crearon entre 2025 y 2026 una estructura dedicada a tecnología o inteligencia artificial. En ninguna de las cuatro se localizó el acto que la constituye; sólo una figura en el organigrama de su Facultad.',
                 'El uso interno de IA dejó de ser una casilla vacía: cuatro instituciones documentan herramientas o formación desplegadas dentro de la enseñanza del Derecho.',
                 'La formación continua es el único eje con serie temporal documentada, y la serie es de una sola institución: dos graduaciones consecutivas, de más de 90 y más de 100 titulados.',
                 'Una sola norma sobre IA del corpus la dictó una Facultad de Derecho, con órgano aprobador y sanción. Los otros dos instrumentos son universitarios y orientadores.',
@@ -166,7 +166,7 @@ export function Informe01Publicacion() {
       {/* ── PUCV ── */}
       <Section
         eyebrow="Caso de interés"
-        title="PUCV: de las iniciativas a la capacidad institucional"
+        title="PUCV: doce temas de capacidad institucional"
         description="La pregunta no es si la PUCV hace algo con inteligencia artificial. Es qué faltaría para que lo que ya hace alcance un grado superior de institucionalización."
         className="scroll-mt-20"
       >

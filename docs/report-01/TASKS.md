@@ -110,3 +110,33 @@ Integridad referencial en vitest, QA editorial de expresiones peligrosas,
 ### T-023 · Entrega · `[ ]`
 Revisión de `src/data/trabajos.ts` (`CLAUDE.md` §12) y bundle de git con los
 comandos de publicación.
+
+---
+
+## Tanda siguiente · verificación 39 a 74
+
+Orden calculado en `tools/informes/informe-01/prioridad-verificacion.json`.
+
+- [ ] `src-uautonoma-001` · uso interno de IA · sostiene `clm-cohorte-004`
+- [ ] `src-uautonoma-003` · currículo · sostiene `clm-cohorte-006`
+- [ ] `src-ucentral-001` · uso interno · sostiene `clm-cohorte-004`
+- [ ] `src-unab-001` · uso interno · sostiene `clm-cohorte-004`
+- [ ] `src-puc-chile-001`, `-009` · nivel 3 · `ini-puc-chile-001`
+- [ ] `src-uchile-001`, `-007`, `-010`, `-011`, `-012` · nivel 3 · `ini-uchile-001`
+- [ ] Las 25 restantes, de peso 0
+
+Para cada una, los siete campos: existencia y título literal, fecha declarada,
+unidad responsable, anuncio frente a ejecución, cifras, límites y respaldo de la
+afirmación. Después `verified_by` y `CONTRASTADO` en la fuente, `last_verified`
+en sus evidencias, la divergencia anotada en el cuaderno, y `npm run verify`.
+
+## Cerrar lo que la verificación dejó abierto
+
+- [ ] ISSUE-006 · acto formal de las cuatro unidades creadas en 2025–2026. Es lo
+      que decide la conclusión C-1
+- [ ] ISSUE-015 · acto que traslada el LMIL a la Escuela de Derecho PUCV
+- [ ] ISSUE-016 · ficha metodológica de la medición de la UNAB. Sin diseño,
+      muestra y control, la única cifra de efecto del corpus no es citable
+- [ ] ISSUE-003 · descargar la base del CNED desde un navegador y versionar el
+      archivo, no la URL
+- [ ] Ruta 13 del protocolo: contraste externo, sin recorrer en las once

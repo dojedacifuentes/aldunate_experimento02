@@ -9,7 +9,27 @@ import {
   informe01Recuento,
   informe01Universidades,
 } from './informe01';
+import {
+  informe01Agenda,
+  informe01Conclusiones,
+  informe01Discusion,
+  informe01Intereses,
+  informe01Introduccion,
+  informe01Limitaciones,
+  informe01MetodologiaRelato,
+  informe01ObjetivoGeneral,
+  informe01ObjetivosEspecificos,
+  resolverCifras,
+} from './informe01-borrador';
 import { informe01Lagunas, informe01TemasPucv } from './informe01-editorial';
+import {
+  pucvBrechas,
+  pucvDobleRevision,
+  pucvFavorable,
+  pucvLectura,
+  pucvRecomendaciones,
+} from './informe01-pucv';
+import { cifrasInforme01 } from '@/lib/informe01';
 
 /**
  * Estas pruebas existen para que el build falle antes que el informe mienta.
@@ -259,5 +279,95 @@ describe('informe 01 · control editorial', () => {
     for (const t of informe01TemasPucv) {
       expect(t.salto.length, t.tema).toBeGreaterThan(20);
     }
+  });
+});
+
+/**
+ * La capa narrativa es la que un lector cita, y la que más fácilmente se
+ * desincroniza de los datos. Estas pruebas la atan al dataset.
+ */
+describe('informe 01 · el borrador, atado a sus datos', () => {
+  const cifras = cifrasInforme01();
+  const todaLaProsa = [
+    ...informe01Introduccion,
+    informe01ObjetivoGeneral,
+    ...informe01ObjetivosEspecificos,
+    ...informe01MetodologiaRelato.flatMap((b) => [b.titulo, ...b.parrafos]),
+    ...informe01Intereses,
+    ...informe01Discusion.flatMap((b) => [b.titulo, ...b.parrafos]),
+    ...informe01Conclusiones.flatMap((c) => [c.titulo, c.cuerpo]),
+    ...informe01Limitaciones,
+    ...informe01Agenda.flatMap((a) => [a.pregunta, a.porQue, a.comoSeCierra]),
+    ...pucvLectura,
+    ...pucvFavorable.flatMap((f) => [f.hecho, f.fuerza]),
+    ...pucvBrechas.flatMap((b) => [b.brecha, b.evidencia, b.comparador]),
+    ...pucvDobleRevision.flatMap((d) => [d.pregunta, d.respuesta]),
+    ...pucvRecomendaciones.flatMap((r) => [r.problema, r.evidencia, r.referente, r.accion, r.indicador]),
+  ];
+
+  it('no cita ninguna cifra que el dataset no defina', () => {
+    for (const texto of todaLaProsa) expect(() => resolverCifras(texto, cifras)).not.toThrow();
+  });
+
+  it('no escribe a mano los números que el dataset ya conoce', () => {
+    // Un «74» suelto en un párrafo es la forma en que un informe empieza a
+    // contradecirse a sí mismo. Los recuentos volátiles van por marca.
+    const volatiles = [
+      informe01Recuento.fuentes,
+      informe01Recuento.iniciativas,
+      informe01Recuento.evidencias,
+      informe01Recuento.fuentesVerificadas,
+    ];
+    for (const texto of todaLaProsa)
+      for (const n of volatiles)
+        expect(texto, `«${texto.slice(0, 60)}…» escribe ${n} en vez de usar una marca`).not.toMatch(
+          new RegExp(`(?<![\d{])${n}(?![\d}])`),
+        );
+  });
+
+  it('apoya cada conclusión en afirmaciones que existen', () => {
+    const ids = new Set(informe01Afirmaciones.map((c) => c.id));
+    for (const c of informe01Conclusiones) {
+      expect(c.apoyo.length, c.id).toBeGreaterThan(0);
+      for (const a of c.apoyo) expect(ids.has(a), `${c.id} cita ${a}`).toBe(true);
+    }
+  });
+
+  it('no convierte ausencia de evidencia pública en inexistencia', () => {
+    // El kit §13 es explícito: «no se encontró evidencia pública verificable»,
+    // nunca «la actividad no existe». Estas formas son las que se cuelan.
+    const prohibidas = [
+      /\bno existe[n]?\b(?! todavía una línea)/i,
+      /\bninguna (?:publica|tiene|dicta|cuenta con)\b/i,
+      /\bcarece[n]? de\b/i,
+    ];
+    for (const c of informe01Conclusiones)
+      for (const p of prohibidas)
+        expect(`${c.titulo} ${c.cuerpo}`, `${c.id} afirma inexistencia`).not.toMatch(p);
+  });
+
+  it('declara el conflicto de interés y nombra a quienes lo tienen', () => {
+    const intereses = informe01Intereses.join(' ');
+    expect(intereses).toMatch(/Aldunate/);
+    expect(intereses).toMatch(/Ojeda/);
+  });
+
+  it('reconoce evidencia favorable de la PUCV antes de exponer brechas', () => {
+    expect(pucvFavorable.length).toBeGreaterThanOrEqual(pucvBrechas.length);
+    for (const f of pucvFavorable) expect(f.fuente, f.hecho.slice(0, 40)).toMatch(/^src-/);
+    // Las brechas que alcanzan a toda la cohorte deben declararse como tales, o
+    // la sección imputa a la PUCV lo que es de las once.
+    expect(pucvBrechas.some((b) => b.esDeCohorte)).toBe(true);
+  });
+
+  it('publica la doble revisión de la sección PUCV, no la resuelve en privado', () => {
+    expect(pucvDobleRevision).toHaveLength(2);
+    for (const d of pucvDobleRevision) expect(d.respuesta.length).toBeGreaterThan(80);
+  });
+
+  it('acompaña cada recomendación de problema, evidencia, referente, acción e indicador', () => {
+    for (const r of pucvRecomendaciones)
+      for (const [k, v] of Object.entries(r))
+        expect(String(v).length, `${r.id}.${k}`).toBeGreaterThan(k === 'id' ? 2 : 30);
   });
 });
