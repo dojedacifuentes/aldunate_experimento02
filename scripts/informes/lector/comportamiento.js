@@ -81,7 +81,7 @@
     try {
       var guardado = localStorage.getItem(CLAVE);
       if (guardado) raíz.setAttribute('data-theme', guardado);
-    } catch (e) {
+    } catch {
       /* Almacenamiento bloqueado: se lee con el tema del sistema. */
     }
 
@@ -100,7 +100,7 @@
         );
         try {
           localStorage.setItem(CLAVE, nuevo);
-        } catch (e) {
+        } catch {
           /* Sin memoria: el tema dura lo que la pestaña. */
         }
       });

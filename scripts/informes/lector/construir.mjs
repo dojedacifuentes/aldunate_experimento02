@@ -30,8 +30,21 @@ const raíz = path.resolve(aquí, '..', '..', '..');
 
 const ESTILOS = fs.readFileSync(path.join(aquí, 'estilos.css'), 'utf8');
 const COMPORTAMIENTO = fs.readFileSync(path.join(aquí, 'comportamiento.js'), 'utf8');
+const IMPRESION = fs.readFileSync(path.join(aquí, 'impresion.css'), 'utf8');
 
 import { DOCUMENTOS } from './documentos.mjs';
+import { tratarFiguras } from './figuras.mjs';
+
+/**
+ * Factores de agrandado por figura, medidos por `calibrar-figuras.mjs`.
+ *
+ * Sin el archivo, las figuras se publican con su tamaño original: es mejor un
+ * rótulo pequeño que uno montado sobre otro.
+ */
+const RUTA_ESCALAS = path.join(aquí, 'escalas.json');
+const ESCALAS = fs.existsSync(RUTA_ESCALAS)
+  ? JSON.parse(fs.readFileSync(RUTA_ESCALAS, 'utf8'))
+  : {};
 
 /* ── Utilidades ─────────────────────────────────────────────────────────── */
 
@@ -197,6 +210,13 @@ function construir(doc) {
     (t) => `<div class="tabla-ancha">${t}</div>`,
   );
 
+  /* 4 bis · Figuras: rótulos legibles y colores que siguen al tema.
+        Los rótulos llegaban a 4-5 pt en papel —la mitad del cuerpo— y los
+        colores eran veintidós hexadecimales fijos, de modo que en modo
+        oscuro la figura era un parche de papel blanco. Ver `figuras.mjs`. */
+  const fig = tratarFiguras(cuerpo, ESCALAS[doc.destino] ?? []);
+  cuerpo = fig.html;
+
   /* 5 · Raíl con el índice, agrupado igual que el impreso. */
   const enCuerpo = secciones.filter((s) => !s.anexo);
   const enAnexos = secciones.filter((s) => s.anexo);
@@ -248,7 +268,12 @@ function construir(doc) {
     `else if(!r.getAttribute('data-modo')){var g=localStorage.getItem('informe-lector-tema');if(g){r.setAttribute('data-theme',g);}}` +
     `}catch(e){}})();</script>`;
 
-  const estilo = `\n<style data-capa="lector">\n${ESTILOS}\n</style>\n`;
+  /* Dos hojas y en este orden: primero la de pantalla, después la de papel.
+     La de papel corrige la maqueta original —cuerpo de 12 pt, portada de
+     tinta sobre blanco— y tiene que poder ganarle a las dos anteriores. */
+  const estilo =
+    `\n<style data-capa="lector">\n${ESTILOS}\n</style>\n` +
+    `<style data-capa="impresion">\n${IMPRESION}\n</style>\n`;
   const guion = `\n<script data-capa="lector">\n${COMPORTAMIENTO}\n</script>\n`;
 
   const salida =
@@ -268,6 +293,9 @@ function construir(doc) {
     índiceEnlazado: (salida.match(/<a class="toc-i"/g) || []).length,
     sinEnlazar,
     tablas: (salida.match(/class="tabla-ancha"/g) || []).length,
+    figuras: fig.figuras,
+    rótulos: fig.rótulos,
+    coloreados: fig.coloreados,
     kb: Math.round(salida.length / 1024),
   };
 }
@@ -280,7 +308,9 @@ for (const doc of DOCUMENTOS) {
     const r = construir(doc);
     console.log(
       `✓ ${r.destino}\n  ${r.secciones} secciones (${r.anexos} anexos) · ` +
-        `${r.índiceEnlazado} entradas de índice enlazadas · ${r.tablas} tablas · ${r.kb} KB`,
+        `${r.índiceEnlazado} entradas de índice enlazadas · ${r.tablas} tablas · ${r.kb} KB
+  ` +
+        `${r.figuras} figuras · ${r.rótulos} rótulos agrandados · ${r.coloreados} colores al tema`,
     );
     /* Una entrada de índice sin destino no rompe nada y por eso hay que
        decirlo en voz alta: es un enlace que simplemente no existe. */

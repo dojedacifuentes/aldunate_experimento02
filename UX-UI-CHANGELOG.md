@@ -11,6 +11,39 @@ los mismos de siempre, justificados en `docs/DECISIONS.md` D-022.
 
 ---
 
+## 07-09-2026 · Informe 01 · el texto era pequeño, y la portada no estaba
+
+Tres quejas que resultaron ser la misma: el documento se compuso para caber, no
+para leerse.
+
+**La portada no se imprimía.** Título blanco sobre un degradado oscuro, y una
+impresión sin fondos —la que produjo el PDF publicado— dejaba blanco sobre
+blanco. Contraste 1:1, medido. En pantalla se queda la portada oscura, que es
+buena; en papel hay ahora una de paper, tinta sobre blanco, que no depende de
+que nadie active nada.
+
+**El texto.** Cuerpo de 10,05 pt y márgenes de 17 mm; rótulos de figura a
+5,4 pt, que es la mitad del cuerpo. Ahora 12 pt con márgenes de 25 mm —la
+medida de un paper, unos 85 caracteres por línea— y la escala secundaria sube
+con él: tablas a 10, cabeceras y notas a 9-9,5, identificadores a 8,5.
+
+**Las figuras.** No bastaba con agrandar: un factor plano de 1,32 llevó los
+solapamientos de rótulos de 9 a 44, porque están dibujadas con posiciones
+absolutas y cada una tiene su techo. Se calibra midiendo las cajas de texto en
+un navegador y quedándose, por figura, con el mayor factor que no añade ni un
+choque. Y sus 22 colores fijos pasan a variables: en modo oscuro eran parches
+de papel blanco sobre una página oscura.
+
+**Lo que la calibración no puede dar, lo da el texto de alrededor.** La
+pregunta de cada figura, su titular, la leyenda y la nota metodológica son HTML
+y están a 9,5-13 pt: quien no distinga un rótulo de eje tiene al lado, en
+cuerpo legible, qué dice la figura y hasta dónde llega.
+
+**Comprobado** con el documento en medio impresión: 41 fallos de contraste
+antes, **ninguno** ahora.
+
+---
+
 ## 06-09-2026 · Informe 01 · el documento se abre leído, y se lee bien
 
 Dos problemas distintos que se veían como uno.

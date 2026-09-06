@@ -1138,3 +1138,134 @@
     overflow: visible;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Figuras · paleta por tema
+   ──────────────────────────────────────────────────────────────────────────
+   Las figuras llegaban con veintidós hexadecimales escritos en los atributos
+   y ninguna variable: en modo oscuro eran parches de papel blanco sobre una
+   página oscura, y no pertenecían al documento que las rodea. `figuras.mjs`
+   traduce cada color a una de estas variables, conservando el original como
+   reserva; aquí se les da su equivalente en cada tema.
+
+   El juego claro repite casi exactamente los valores originales —la figura
+   impresa y la figura en claro deben ser la misma— y sólo oscurece dos tintas
+   que no llegaban a contraste suficiente sobre papel.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media screen {
+  :root {
+    --fig-ink: #16202b;
+    --fig-ink2: #26313f;
+    --fig-mute: #52606f;
+    --fig-faint: #7c8794;
+    --fig-line: #b5c0cb;
+    --fig-line2: #d3dae1;
+    --fig-plate: #ffffff;
+    --fig-wash: #eef1f5;
+    --fig-band: #e3e8ee;
+    --fig-brand: #0f4c81;
+    --fig-brand2: #1a6fa8;
+    --fig-acc: #0a6f6d;
+    --fig-acc2: #7ad0cd;
+    --fig-warm: #a85f2a;
+    --fig-warm2: #e8b384;
+    --fig-alert: #a33526;
+    --fig-alert2: #f1d9d4;
+  }
+
+  /* En oscuro no se invierte la figura: se la vuelve a dibujar con tintas de
+     noche. Invertir mecánicamente convierte un relleno de datos en un hueco
+     y un hueco en un relleno, que es cambiar lo que la figura dice. */
+  :root[data-theme='dark'],
+  :root[data-tema='oscuro'] {
+    --fig-ink: #e4edf4;
+    --fig-ink2: #c9d7e3;
+    --fig-mute: #9fb0be;
+    --fig-faint: #7d8fa0;
+    --fig-line: #33485a;
+    --fig-line2: #24384a;
+    --fig-plate: #0e1b27;
+    --fig-wash: #132433;
+    --fig-band: #17293a;
+    --fig-brand: #6fb3de;
+    --fig-brand2: #8cc6ea;
+    --fig-acc: #4fc3c0;
+    --fig-acc2: #2b8482;
+    --fig-warm: #d9a05e;
+    --fig-warm2: #7d5c33;
+    --fig-alert: #e08878;
+    --fig-alert2: #40201c;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']):not([data-tema='claro']) {
+      --fig-ink: #e4edf4;
+      --fig-ink2: #c9d7e3;
+      --fig-mute: #9fb0be;
+      --fig-faint: #7d8fa0;
+      --fig-line: #33485a;
+      --fig-line2: #24384a;
+      --fig-plate: #0e1b27;
+      --fig-wash: #132433;
+      --fig-band: #17293a;
+      --fig-brand: #6fb3de;
+      --fig-brand2: #8cc6ea;
+      --fig-acc: #4fc3c0;
+      --fig-acc2: #2b8482;
+      --fig-warm: #d9a05e;
+      --fig-warm2: #7d5c33;
+      --fig-alert: #e08878;
+      --fig-alert2: #40201c;
+    }
+  }
+
+  /* El texto del documento sube de 17 a 17,6 px y la interlínea con él: es la
+     misma queja que en papel, sólo que en pantalla se notaba menos porque el
+     raíl acortaba la línea. */
+  body {
+    font-size: 1.1rem;
+    line-height: 1.72;
+  }
+
+  p,
+  li {
+    font-size: 1.1rem;
+  }
+
+  .box p {
+    font-size: 1rem;
+  }
+
+  table {
+    font-size: 0.875rem;
+  }
+
+  thead th {
+    font-size: 0.75rem;
+  }
+
+  .chip {
+    font-size: 0.6875rem;
+  }
+
+  figcaption,
+  .tbl-note,
+  .leg {
+    font-size: 0.8125rem;
+  }
+
+  .srcrow {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen {
+  /* El documento trae treinta estilos en línea con un gris de 2,9:1 a 7 pt
+     —los identificadores de fuente de los anexos—. Un estilo en línea gana a
+     cualquier variable, así que hay que nombrarlo. */
+  [style*="8c98a8"] {
+    color: var(--faint) !important;
+    font-size: 0.8125rem !important;
+  }
+}

@@ -2,6 +2,63 @@
 
 ## No publicado
 
+### Informe 01 · el documento se lee: 12 puntos, portada que se imprime, figuras legibles
+
+**El defecto que ordena a los demás: la portada no se imprimía.** El título iba
+en blanco sobre un degradado oscuro, y una impresión que no pinta fondos
+—que es como se produjo el PDF publicado el 06-09-2026— dejaba el degradado
+fuera y el texto solo: **blanco sobre blanco, contraste 1:1**. La primera
+página del informe salía en blanco. En papel hay ahora una portada de paper,
+tinta sobre blanco, que no depende de ningún fondo.
+
+**Cuerpo de 12 puntos, en los tres formatos.** El documento venía a 10,05 pt
+con márgenes de 17 mm. Pasa a 12 pt con márgenes de 25 mm, que es la medida de
+un paper. Medido, de antes a después:
+
+| | antes | ahora |
+|---|---|---|
+| Cuerpo | 10,05 pt | **12 pt** |
+| Rótulos de figura | 5,4 pt | **7,2 pt** |
+| Tablas | 8,4 pt | **10 pt** |
+| Cabeceras de tabla | 7,2 pt | **9 pt** |
+| Pies de figura y notas | 7,4–7,8 pt | **9,5 pt** |
+| Identificadores de fuente | 6,7–6,9 pt | **8,5–9 pt** |
+| Word · cuerpo | 10 pt, ninguno a 12 | **12 pt** |
+
+**Word a 12 pt** (`npm run informe:word`). El `.docx` tenía 1.610 pasajes a
+10 pt y otros 2.500 entre 6,5 y 9,5; ninguno a 12. Se reescalan los 9.331
+tamaños del paquete OOXML por 1,2 —la jerarquía se conserva entera— y se fija
+el tamaño por defecto, que no estaba declarado: cualquier párrafo que escriba
+quien anote el documento nacía con el tamaño de Word y no con el del informe.
+
+**Figuras legibles, y calibradas una por una** (`npm run informe:calibrar`).
+Un primer intento con un factor plano de 1,32 en las doce figuras llevó los
+solapamientos de rótulos de 9 —los que el documento ya traía— a **44**. Están
+dibujadas con posiciones absolutas: cada una admite un aumento distinto. El
+calibrador mide las cajas de texto en un navegador y elige, figura por figura,
+el mayor factor que no añade ni un solapamiento. Ocho quedan entre 1,19 y 1,34;
+una no admite ninguno. Solapamientos finales: **9, los mismos de origen**.
+
+**Las figuras pertenecen al documento.** Traían 22 colores fijos escritos en
+los atributos y ninguna variable: en modo oscuro eran parches de papel blanco
+sobre página oscura. Los 760 se traducen a variables con el original como
+reserva, y tienen ahora juego claro, oscuro y de papel.
+
+**Contraste en impresión: de 41 fallos a 0.** Además de la portada, todo lo que
+era texto claro sobre relleno de color —los siete estados de la matriz de
+capacidades, los rótulos de hallazgo, los identificadores de recomendación—
+dependía de que se imprimieran los fondos. Sin ellos, los siete estados eran el
+mismo rectángulo vacío. Ahora se distinguen por su filete.
+
+**El PDF se imprime desde el mismo HTML que se lee** (`npm run informe:pdf`,
+Chrome del sistema por Playwright). Deja de haber un original aparte: el PDF y
+la web no pueden divergir porque salen del mismo archivo. De 3,5 a 2,8 MB.
+
+**Los originales entregados se conservan** en
+`content/reports/…/entregas/v2.0.0/`, HTML y Word, y todo el proceso lee de
+ahí: volver a ejecutarlo produce exactamente lo mismo y nunca escala dos veces.
+`npm run informe:publicar` encadena los tres pasos.
+
 ### Informe 01 · el documento se lee, y se lee bien
 
 **El informe se abre leído.** La ficha muestra el documento de la versión
