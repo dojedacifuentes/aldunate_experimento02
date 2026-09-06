@@ -235,7 +235,32 @@ evidencia con relleno es peor que una vacía: la vacía es honesta.
 Una versión publicada **nunca se sobrescribe**. Se agrega una entrada a
 `versions` con su `changelog`. El botón de descarga solo aparece si el archivo
 existe: un botón que promete un PDF inexistente es peor que no tener botón. Lo
-mismo vale para `html`, la versión web del documento.
+mismo vale para `html`, la versión web del documento. Desde el 06-09-2026 hay
+una prueba que lo comprueba contra el disco (`src/lib/informes.test.ts`).
+
+### Cada versión tiene su ruta, y todas siguen abiertas
+
+```
+/informes/<informe>                    portada del informe: estado, versión vigente, por dónde entrar
+/informes/<informe>/versiones          el historial entero, con las descargas de cada versión
+/informes/<informe>/v/<versión>        el lector de una versión, vigente o histórica
+```
+
+**Publicar una versión es añadir una entrada a `versions` y dejar los archivos
+en `public/descargas/`.** Ninguna pantalla se toca: el raíl, el lector, el
+historial y las descargas se derivan de esa entrada. Los helpers están en
+`src/lib/informes.ts` y el procedimiento en `docs/informes/07-puente-con-el-sitio.md`.
+
+Tres reglas que ya se rompieron una vez:
+
+- **La vigente es la de número mayor, no la última por fecha.** Dos versiones
+  pueden compartir día. Usa `currentVersion`, nunca `latestVersion`.
+- **Las cifras cuelgan de la versión**, en `figures`, y jamás del informe. La
+  ficha llegó a decir «38 verificadas» encima de un documento que decía «74 de
+  74», y las dos cifras eran ciertas de versiones distintas.
+- **La portada del informe no es el informe.** Si una pantalla anuncia una
+  versión en la cabecera, todo lo que muestre debajo tiene que ser de esa
+  versión. La reconstrucción nativa de la v0.8.0 vive en `/v/0.8.0` por esto.
 
 ### La cadena de producción
 

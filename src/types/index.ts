@@ -240,10 +240,73 @@ export interface ClaimChange {
   reason: string;
 }
 
+/**
+ * Una cifra que la versión sostiene, con su unidad y su advertencia.
+ *
+ * Va en la versión y no en el informe porque las cifras cambian de una a otra,
+ * y una cifra de la v0.8.0 leída bajo el rótulo de la v2.0.0 es una cifra
+ * falsa. La ficha del sitio llegó a declarar «38 verificadas» mientras el
+ * documento vigente ya decía «74 de 74».
+ */
+export interface ReportFigure {
+  /** El número, tal como el documento lo publica. Aquí no se recalcula nada. */
+  value: string;
+  /** Denominador o unidad, si el documento la declara. */
+  unit?: string;
+  label: string;
+  /** Qué cuenta exactamente. Sin esto la cifra viaja sola. */
+  note?: string;
+}
+
+/**
+ * Cómo puede leerse una versión dentro del sitio, sin descargar nada.
+ *
+ *  - `documento`: se muestra el HTML autónomo que produjo la cadena editorial,
+ *    tal cual, con su propia maqueta de papel.
+ *  - `nativo`: el sitio la reconstruye con sus componentes desde los datos
+ *    tipados de `src/data`. Sólo la tiene la versión que alguien transcribió.
+ *  - `ninguna`: no hay lectura en línea y sólo quedan las descargas.
+ *
+ * Es un campo por versión y no una propiedad del informe porque las dos formas
+ * conviven: la v0.8.0 está en datos tipados y la v2.0.0 llegó como documento
+ * cerrado. Obligar a elegir una sola habría costado tirar una de las dos.
+ */
+export type ReportReading = 'documento' | 'nativo' | 'ninguna';
+
+/**
+ * Documento que acompaña a una versión sin sustituirla.
+ *
+ * El Informe 01 v2.0.0 retira a la PUCV de su comparador por conflicto de
+ * interés y la examina aparte. Ese documento no es una versión del informe —no
+ * lo reemplaza— y tampoco es una descarga más: tiene autoría, corte y
+ * advertencias propias. Sin esta figura habría que esconderlo en una lista de
+ * archivos o inventarle un número de versión que no le corresponde.
+ */
+export interface ReportCompanion {
+  id: string;
+  title: string;
+  /** Una frase: qué hace este documento que el principal no hace. */
+  summary: string;
+  version: string;
+  date: string;
+  /** Por qué existe por separado. Es la parte que no se puede omitir. */
+  rationale: string;
+  html?: string;
+  artifacts: ReportArtifact[];
+}
+
 export interface ReportVersion {
   version: string;
   date: string;
   status: ReportStatus;
+  /**
+   * Qué distingue a esta versión, en una frase. Es lo que se lee en el selector
+   * de versiones: una lista de números obliga a abrir cada uno para saber cuál
+   * se busca.
+   */
+  headline?: string;
+  /** Dos o tres frases sobre el alcance de la versión. */
+  summary?: string;
   changelog: string[];
   /** Cambios a nivel de afirmación. Vacío en versiones que no tocaron claims. */
   claimChanges?: ClaimChange[];
@@ -254,6 +317,22 @@ export interface ReportVersion {
    * Misma regla que `pdf`: vacío mientras el archivo no exista.
    */
   html?: string;
+  /**
+   * Todos los formatos de esta versión, cada uno con su descripción.
+   *
+   * `pdf` y `html` siguen existiendo porque son los dos que la cabecera
+   * necesita sin recorrer una lista. La sección de descargas se pinta desde
+   * aquí, y aquí sólo entra lo que existe.
+   */
+  artifacts?: ReportArtifact[];
+  /** Cifras que esta versión sostiene. Se muestran junto a su número. */
+  figures?: ReportFigure[];
+  /** Extensión del PDF. Se declara para que una descarga de 3,5 MB no sorprenda. */
+  pages?: number;
+  /** Cómo se lee en línea. Por omisión, `documento` si hay `html`; si no, `ninguna`. */
+  reading?: ReportReading;
+  /** Documentos que acompañan a esta versión sin sustituirla. */
+  companions?: ReportCompanion[];
 }
 
 /**
@@ -275,7 +354,13 @@ export interface ReportCounts {
   recommendations: number;
 }
 
-export type ReportArtifactFormat = 'PDF' | 'Word' | 'HTML' | 'Markdown' | 'ZIP';
+export type ReportArtifactFormat =
+  | 'PDF'
+  | 'Word'
+  | 'HTML'
+  | 'Markdown'
+  | 'JSON'
+  | 'ZIP';
 
 export interface ReportArtifact {
   format: ReportArtifactFormat;

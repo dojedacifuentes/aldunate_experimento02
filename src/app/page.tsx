@@ -11,7 +11,8 @@ import { primaryNav, secondaryNav, site } from '@/data/site';
 import { profile, researchLines } from '@/data/aldunate';
 import { informeDestacado, reports } from '@/data/reports';
 import { labTools } from '@/data/lab';
-import { formatDateCompact, latestVersion } from '@/lib/utils';
+import { currentVersion } from '@/lib/informes';
+import { formatDateCompact } from '@/lib/utils';
 
 /**
  * Portal.
@@ -259,7 +260,7 @@ export default function HomePage() {
 
           <div className="grid gap-4 lg:grid-cols-2">
             {reports.map((report) => {
-              const latest = latestVersion(report.versions);
+              const latest = currentVersion(report);
               return (
                 <Link key={report.slug} href={`/informes/${report.slug}`} className="group">
                   <Surface interactive className="h-full p-6">

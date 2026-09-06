@@ -7,8 +7,10 @@ import type { ClaimChange, Report, ReportStatus, Tone } from '@/types';
  * Un informe vivo no se reemplaza: se versiona. `versions` crece hacia
  * adelante y nunca se edita hacia atrás; el changelog es la prueba de eso.
  *
- * El informe 01 sigue en fase de investigación: su resumen describe el alcance
- * del trabajo, no hallazgos, porque todavía no hay hallazgos que reportar.
+ * El informe 01 alcanzó su v2.0.0 el 06-09-2026 y dejó de ser borrador: su
+ * corpus está contrastado al 100 % y recorrió la ruta de contraste externo que
+ * la v0.8.0 declaraba como su limitación estructural. Las versiones anteriores
+ * siguen publicadas y legibles, cada una con las cifras que sostenía.
  *
  * El informe 02 alcanzó su versión 0.2.0 con documento completo. Sus hallazgos
  * están respaldados en `src/data/research.ts`, con el nivel epistémico de cada
@@ -45,11 +47,13 @@ export const reports: Report[] = [
     code: 'INFORME 01',
     title:
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
-    subtitle: 'Mapeo comparado de evidencia pública e institucionalización · borrador académico para revisión',
+    subtitle:
+      'Mapeo comparado de capacidades institucionales en once Escuelas y Facultades de Derecho chilenas · corpus contrastado al 100 % y contraste externo cerrado',
+    descriptor: 'Corte 06-09-2026 · comparador ordinal de diez instituciones',
     executiveSummary:
-      'Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas, herramientas e iniciativas de inteligencia artificial en once Escuelas y Facultades de Derecho chilenas, al 1 de septiembre de 2026. El campo entero cabe en dos años: 41 de las 49 iniciativas fechadas empiezan en 2025 o después. Lo que se observa es una fase de construcción de estructura —cinco Facultades sostienen una unidad especializada en funcionamiento— que va por delante de la producción de reglas, con una sola norma propia sobre uso de inteligencia artificial dictada por una Facultad, y muy por delante de cualquier resultado: ninguna de las 53 iniciativas registradas acredita haber medido su efecto sobre el aprendizaje jurídico. La inteligencia artificial entra además por el diplomado y el taller antes que por la malla, y buena parte de las herramientas disponibles pertenece a la universidad y no a su Facultad de Derecho. El informe no publica ranking, y no por cautela genérica: la institución menos investigada de la cohorte acredita tantas capacidades en funcionamiento como la más investigada, de modo que ordenar mediría el trabajo de campo. De las 110 celdas de su matriz de capacidades, 47 quedan sin concluir porque la ruta del protocolo que las habría acreditado no se recorrió. Es un borrador para revisión, no un informe de resultados.',
+      'Qué capacidades institucionales en inteligencia artificial han construido once Escuelas y Facultades de Derecho chilenas, con qué grado de formalización, y qué puede afirmarse sobre ellas con evidencia verificable. Las 74 fuentes del corpus están abiertas y contrastadas una por una contra su publicación original, y por primera vez el trabajo incorpora 31 fuentes de terceros: base histórica de proyectos adjudicados de ANID, prensa no universitaria, Colegio de Abogados, Academia Judicial, Comisión Nacional de Acreditación y política pública sectorial. El campo entero cabe en dos años —41 de las 49 iniciativas fechadas empiezan en 2025 o después— y se construye estructura antes que reglas: cinco Facultades sostienen una unidad especializada en operación y una sola ha dictado norma propia sobre uso de inteligencia artificial. Ninguna de las 53 iniciativas acredita haber medido su efecto sobre el aprendizaje jurídico, y la consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 convierte esa laguna en hecho: no existe un solo proyecto, de ninguna universidad chilena y en ningún año, sobre enseñanza del Derecho con inteligencia artificial. El hallazgo que ordena a los demás es que nadie verifica: ni el regulador de acreditación, ni el gremio, ni la política pública tienen mandato sobre lo que una Facultad de Derecho dice de sí misma en esta materia.',
     authors: [autor.name],
-    status: 'borrador',
+    status: 'publicado',
     folder: 'content/reports/01_ia_escuelas_derecho_chile/',
     axes: [
       'Universidades y unidades académicas',
@@ -89,11 +93,158 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '2.0.0',
+        date: '2026-09-06',
+        status: 'publicado',
+        headline: 'Deja de ser borrador: corpus contrastado al 100 % y contraste externo cerrado',
+        summary:
+          'Las 36 fuentes que la v0.8.0 dejaba sin abrir se contrastaron contra su publicación original, y por primera vez el informe sale del círculo de lo que las universidades dicen de sí mismas. Con eso desaparecen las dos razones por las que la versión anterior se declaraba borrador, y aparecen dos capítulos que antes no podían escribirse: el comparador ordinal y la escala internacional.',
+        pages: 37,
+        reading: 'documento',
+        pdf: '/descargas/informe-01-v2.0.0/informe-01-v2.0.0.pdf',
+        html: '/descargas/informe-01-v2.0.0/informe-01-v2.0.0.html',
+        figures: [
+          {
+            value: '74',
+            unit: '/74',
+            label: '100 % del corpus',
+            note: 'Fuentes públicas abiertas y contrastadas contra su publicación original. En la v0.8.0 eran 38.',
+          },
+          {
+            value: '0',
+            label: 'ausencia confirmada',
+            note: 'Proyectos ANID sobre enseñanza del Derecho con inteligencia artificial, en 49.014 adjudicados desde 1982.',
+          },
+          {
+            value: '18',
+            unit: '/30',
+            label: 'el techo real',
+            note: 'Índice de formalización más alto de la cohorte, alcanzado por dos instituciones.',
+          },
+          {
+            value: '1',
+            unit: '/11',
+            label: 'norma propia',
+            note: 'Facultades con instrumento normativo propio sobre uso de IA en evaluación.',
+          },
+          {
+            value: '31',
+            unit: '/110',
+            label: 'celdas sin concluir',
+            note: 'Eran 47 en la v0.8.0. Bajan porque se recorrieron tres rutas del protocolo en las once instituciones.',
+          },
+        ],
+        changelog: [
+          'Verificación sustantiva completa. Las 36 fuentes que la v0.8.0 dejaba sin contrastar se abrieron y se compararon contra su publicación original: el corpus pasa de 51 % a 100 % contrastado. Aparecieron 23 divergencias, doce de ellas materiales, y todas se publican en el anexo B en lugar de corregirse en silencio.',
+          'Ruta 13 recorrida por primera vez. La v0.8.0 declaraba que ninguna de sus 74 fuentes provenía de contraste externo, y que ésa era su limitación estructural. Esta versión la recorre en las once instituciones —base histórica de ANID, prensa no universitaria, Colegio de Abogados, Academia Judicial, Comisión Nacional de Acreditación y política pública sectorial— y 31 fuentes de terceros entran al registro.',
+          'La ausencia de evaluación deja de ser una laguna y pasa a ser un hecho. La v0.8.0 sólo podía decir que no había encontrado medición de efecto allí donde buscó. La consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 cierra la pregunta por el lado del financiamiento público: ningún proyecto, en ningún año, sobre enseñanza del Derecho con inteligencia artificial.',
+          'Comparador ordinal, con su incertidumbre dentro. La v0.8.0 se prohibía toda comparación ordinal. Esta versión publica una, porque la cobertura mejoró lo suficiente para hacerla defendible. El índice se publica como banda —piso y techo— y no como número: quien tiene celdas sin concluir aparece con una banda ancha, y el lector ve la duda en la misma figura donde ve la posición.',
+          'Escala internacional. Un capítulo de referencia externa con las políticas de facultad, los currículos obligatorios y la literatura experimental disponibles en el mundo. Sirve para calibrar, y en dos casos corrige la impresión de rezago: varias ausencias que parecían chilenas resultan ser globales.',
+          'Celdas sin concluir: de 47 a 31. Al recorrer tres rutas del protocolo en las once instituciones, dieciséis celdas que la v0.8.0 no podía resolver quedan resueltas. La cobertura en rutas pasa de 61 a 88 de 143 posibles, y la asimetría entre el piloto y el resto baja de 2,4 : 1 a 1,8 : 1.',
+          'La PUCV sale del comparador y pasa a un documento complementario. Una declaración de intereses advierte al lector pero no corrige el dato: si quien firma tiene un interés en una de las instituciones que ordena, la advertencia traslada al lector un problema que era del método. El comparador cubre diez instituciones y la PUCV se examina aparte, como caso de proyección y no como caso comparado.',
+          'La enmienda metodológica 2.2, aditiva y sin recodificar ningún registro previo. El estado «en operación» se desdobla para distinguir la capacidad que funciona de la que funciona y publica el instrumento que la sostiene, y el comparador ordinal lleva la incertidumbre dentro del objeto en vez de al pie.',
+        ],
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-v2.0.0/informe-01-v2.0.0.pdf',
+            description:
+              'A4 de 37 páginas, con portada, encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir. 3,5 MB.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-01-v2.0.0/informe-01-v2.0.0.docx',
+            description:
+              'Documento editable, para quien deba anotarlo o devolverlo con control de cambios. No es la fuente editorial: es una salida más de la misma cadena.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-v2.0.0/informe-01-v2.0.0.html',
+            description:
+              'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión. Es el mismo que se lee dentro del sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Matriz de capacidades',
+            href: '/descargas/informe-01-v2.0.0/datos/matriz-v2.json',
+            description:
+              'Las diez capacidades por institución en los dos estados de la enmienda 2.2, con la tabla de puntos del comparador y el registro de qué cambió respecto de la v0.8.0.',
+          },
+          {
+            format: 'JSON',
+            label: 'Fuentes de la segunda ronda',
+            href: '/descargas/informe-01-v2.0.0/datos/fuentes-nuevas.json',
+            description:
+              'Las 22 fuentes de la ronda de ampliación, con su grado documental y su confianza. No están contrastadas y el archivo lo declara: se marcan «Ronda 2» y no «contrastada».',
+          },
+        ],
+        companions: [
+          {
+            id: 'complemento-pucv',
+            title: 'La PUCV como caso de proyección, no como caso comparado',
+            version: '1.0',
+            date: '2026-09-06',
+            summary:
+              'Por qué la Pontificia Universidad Católica de Valparaíso se retira del comparador de diez, y qué puede proyectarse sobre la base que ya existe: cuatro construcciones, un optativo cuyo proyecto final es la medición, y la ventana de decisión con lo que cuesta dejarla pasar.',
+            rationale:
+              'Quien firma el informe trabaja en el Programa de Derecho, Inteligencia Artificial y Tecnología de esa Escuela. El conflicto es actual, directo y sobre el objeto medido, y hay además un sesgo medible: la PUCV fue una de las tres instituciones del piloto de profundidad, de modo que en un instrumento que puntúa capacidades acreditadas por evidencia pública, haberla investigado más produce mecánicamente una puntuación más alta sin que nada haya cambiado en la institución. Este documento no puntúa, no ordena y no compara.',
+            html: '/descargas/informe-01-v2.0.0/complemento-pucv-v1.0.html',
+            artifacts: [
+              {
+                format: 'PDF',
+                label: 'Leer o imprimir',
+                href: '/descargas/informe-01-v2.0.0/complemento-pucv-v1.0.pdf',
+                description: 'A4, con el dossier de evidencia completo en anexo.',
+              },
+              {
+                format: 'Word',
+                label: 'Editar o comentar',
+                href: '/descargas/informe-01-v2.0.0/complemento-pucv-v1.0.docx',
+                description: 'Documento editable, para devolverlo con observaciones.',
+              },
+              {
+                format: 'HTML',
+                label: 'Abrir el documento autónomo',
+                href: '/descargas/informe-01-v2.0.0/complemento-pucv-v1.0.html',
+                description: 'Un solo archivo, legible sin conexión.',
+              },
+            ],
+          },
+        ],
+      },
+      {
         version: '0.8.0',
         date: '2026-09-04',
         status: 'borrador',
+        headline: 'Último borrador: la regla de adyacencia se aplica a los once',
+        summary:
+          'Una iniciativa del ámbito vecino de la tecnología deja de acreditar una capacidad de inteligencia artificial, y la corrección alcanza a los siete registros adyacentes y no sólo a la PUCV. Es la versión que el sitio reconstruye con sus propios componentes: fichas institucionales, matriz navegable y figuras.',
+        pages: 72,
+        reading: 'nativo',
         pdf: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.pdf',
         html: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.html',
+        figures: [
+          {
+            value: '38',
+            unit: '/74',
+            label: '51 % del corpus',
+            note: 'Fuentes contrastadas contra su publicación original en esta versión.',
+          },
+          {
+            value: '47',
+            unit: '/110',
+            label: 'celdas sin concluir',
+            note: 'Sin resolver porque la ruta del protocolo que las habría acreditado no se recorrió.',
+          },
+          {
+            value: '0',
+            label: 'comparaciones ordinales',
+            note: 'Esta versión se prohibía toda ordenación: con la cobertura desigual, ordenar habría medido el trabajo de campo.',
+          },
+        ],
         changelog: [
           'Una iniciativa adyacente deja de acreditar una capacidad de inteligencia artificial. El registro ya distinguía en «dirección» si una iniciativa usa IA, la estudia como objeto jurídico, hace las dos cosas o pertenece al ámbito vecino de la tecnología y la innovación sin componente de IA documentado; la capa de capacidades ignoraba esa distinción, y un laboratorio de innovación legal acreditaba «unidad especializada» igual que un programa de Derecho e Inteligencia Artificial.',
           'La corrección alcanza a los siete registros adyacentes, repartidos en cinco instituciones y no sólo en la PUCV: una regla que se aplicara a una sola sería el método escrito para un resultado. Los siete se abrieron después contra sus fuentes, uno por uno, y ese contraste corrigió tres clasificaciones y dejó cuatro en pie.',
@@ -102,11 +253,44 @@ export const reports: Report[] = [
           'El documento adopta el sistema editorial del Informe 02: papel claro con oscuro disponible y recordado, Spectral para la prosa, IBM Plex Sans para los títulos y Plex Mono para los metadatos, raíl de navegación con el índice derivado de los propios encabezados, barra de progreso y una paleta de cinco tintas de la que ahora derivan también los colores de las figuras.',
           'La declaración de intereses deja de exponer el proceso privado de elaboración. El conflicto se conserva —es práctica académica— en primera persona del autor; se retiran el destinatario del borrador y los terceros nombrados, que no han escrito el informe. El manifiesto declaraba además el protocolo 2.0 cuando el vigente es el 2.1.',
         ],
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.pdf',
+            description:
+              'A4 de 72 páginas, con portada, encabezado, pie y numeración, y con las nueve figuras del informe en vector. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
+          },
+          {
+            format: 'HTML',
+            label: 'Leer la versión web',
+            href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.html',
+            description:
+              'Documento completo y autónomo, preparado para impresión: portada, resumen ejecutivo, hallazgos, metodología, panorama, capacidades comparadas, discusión, sección PUCV, conclusiones, implicancias, limitaciones y siete anexos.',
+          },
+          {
+            format: 'Markdown',
+            label: 'Usar como fuente editorial',
+            href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.md',
+            description: 'El mismo documento en texto plano, reutilizable por personas y por modelos.',
+          },
+          {
+            format: 'ZIP',
+            label: 'Descargar el paquete reproducible',
+            href: '/descargas/informe-01-borrador-academico-v0.8.0.zip',
+            description:
+              'Documento en PDF, HTML y Markdown, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
+          },
+    
+        ],
       },
       {
         version: '0.7.0',
         date: '2026-09-04',
         status: 'borrador',
+        headline: 'Enmienda metodológica 2.1, matriz de capacidades y motor de gráficos propio',
+        pages: 72,
+        reading: 'documento',
         pdf: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.pdf',
         html: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.html',
         changelog: [
@@ -129,6 +313,9 @@ export const reports: Report[] = [
         version: '0.6.0',
         date: '2026-09-04',
         status: 'borrador',
+        headline: 'Primera verificación sustantiva: 38 de 74 fuentes contrastadas',
+        pages: 56,
+        reading: 'documento',
         pdf: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
         html: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
         changelog: [
@@ -149,6 +336,8 @@ export const reports: Report[] = [
         version: '0.5.0',
         date: '2026-09-04',
         status: 'en-investigacion',
+        headline: 'El corpus se vuelve dataset canónico: seis CSV y 74 fuentes',
+        reading: 'documento',
         pdf: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.pdf',
         html: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
         changelog: [
@@ -169,6 +358,7 @@ export const reports: Report[] = [
         version: '0.4.0',
         date: '2026-09-02',
         status: 'en-investigacion',
+        headline: 'Ronda 2 de fusión: el corpus pasa de 43 a 72 fuentes',
         changelog: [
           'Ronda 2 de fusión: se incorporan dos investigaciones profundas que habían quedado sin inventariar.',
           'El corpus pasa de 43 a 72 fuentes públicas únicas; 22 de las localizadas ya estaban y sirven de corroboración.',
@@ -185,6 +375,7 @@ export const reports: Report[] = [
         version: '0.3.0',
         date: '2026-09-02',
         status: 'en-investigacion',
+        headline: 'Kit canónico de investigación inter-IA y cohorte fijada en once',
         changelog: [
           'Publicación del kit canónico de investigación inter-IA v1.0.0.',
           'Cohorte longitudinal fijada en once Facultades, Escuelas o carreras de Derecho.',
@@ -196,6 +387,7 @@ export const reports: Report[] = [
         version: '0.1.0',
         date: '2026-08-29',
         status: 'en-investigacion',
+        headline: 'Apertura del informe: alcance, variables y esquema de registro',
         changelog: [
           'Apertura del informe y definición de alcance.',
           'Definición de variables y esquema de registro.',
@@ -206,6 +398,7 @@ export const reports: Report[] = [
         version: '0.2.0',
         date: '2026-09-01',
         status: 'en-investigacion',
+        headline: 'Primer corpus: 43 fuentes públicas de tres investigaciones profundas',
         changelog: [
           'Corpus de evidencia armado a partir de tres investigaciones profundas sobre las once universidades de la cohorte.',
           'Inventario de 43 fuentes públicas únicas, todas institucionales y con fecha de publicación.',
@@ -234,42 +427,10 @@ export const reports: Report[] = [
       '¿Qué dicen los syllabus 2026 sobre obligatoriedad, semestre, créditos y matrícula real de los cursos de IA?',
       '¿Se sostienen en ANID los proyectos Fondecyt y FONDEF que hoy constan por noticia universitaria?',
       '¿Puede reconstruirse una línea base de 2025 auténticamente congelada? La heredada contiene actividades de 2026.',
-      '¿Qué diría una fuente de contraste externo? Las 74 del corpus son institucionales, de modo que hoy el informe mide lo que las universidades cuentan de sí mismas.',
-      '¿Existe alguna Facultad chilena que haya medido el efecto de una de sus actividades de IA? Ninguna lo ha publicado, y bastaría una para cambiar la lectura del informe.',
-      '¿Qué diría la matriz de capacidades si se recorrieran las rutas que faltan? 47 de sus 110 celdas están sin concluir, y no por lo que hagan las Facultades sino por dónde alcanzó a buscar esta investigación.',
+      '¿Qué omiten las instituciones observadas? La v2.0.0 incorporó 31 fuentes de terceros y con eso confirmó lo que las universidades dicen; lo que ninguna fuente externa puede decir es qué decidieron no publicar.',
+      '¿Ha medido alguna Facultad chilena el efecto de una de sus actividades de IA con recursos propios y sin publicarlo? Por el lado del financiamiento público la pregunta está cerrada: cero proyectos en 49.014 adjudicados por ANID desde 1982.',
+      '¿Qué diría la matriz de capacidades si se recorrieran las rutas que faltan? La v2.0.0 bajó las celdas sin concluir de 47 a 31 de 110, y esas 31 siguen midiendo dónde alcanzó a buscar la investigación y no lo que hacen las Facultades.',
       '¿Debe «verificado» significar responsabilidad editorial o ejecución material del contraste? Los registros llevan la firma de quien responde por ellos, y el contraste lo ejecutó un modelo bajo ese encargo.',
-    ],
-    // Word no aparece porque no existe: su generador es PowerShell 5.1 con Word
-    // por COM y sólo corre en el equipo del autor. Un botón que promete un
-    // archivo inexistente es peor que no tener botón.
-    downloads: [
-      {
-        format: 'PDF',
-        label: 'Leer o imprimir',
-        href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.pdf',
-        description:
-          'A4 de 72 páginas, con portada, encabezado, pie y numeración, y con las nueve figuras del informe en vector. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir.',
-      },
-      {
-        format: 'HTML',
-        label: 'Leer la versión web',
-        href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.html',
-        description:
-          'Documento completo y autónomo, preparado para impresión: portada, resumen ejecutivo, hallazgos, metodología, panorama, capacidades comparadas, discusión, sección PUCV, conclusiones, implicancias, limitaciones y siete anexos.',
-      },
-      {
-        format: 'Markdown',
-        label: 'Usar como fuente editorial',
-        href: '/descargas/informe-01-borrador-academico-v0.8.0/informe-01-borrador-academico-v0.8.0.md',
-        description: 'El mismo documento en texto plano, reutilizable por personas y por modelos.',
-      },
-      {
-        format: 'ZIP',
-        label: 'Descargar el paquete reproducible',
-        href: '/descargas/informe-01-borrador-academico-v0.8.0.zip',
-        description:
-          'Documento en PDF, HTML y Markdown, dataset canónico en seis CSV, representación JSON, manifiesto de publicación y controles de integridad SHA-256.',
-      },
     ],
     researchKit: {
       title: 'Kit canónico de investigación inter-IA',
@@ -311,7 +472,7 @@ export const reports: Report[] = [
         },
       ],
     },
-    updatedAt: '2026-09-04',
+    updatedAt: '2026-09-06',
   },
   {
     slug: 'transformacion-ensenanza-derecho',

@@ -2,6 +2,56 @@
 
 ## No publicado
 
+### Informe 01 · v2.0.0 · deja de ser borrador, y el sitio aprende a versionar
+
+**Corte 06-09-2026.** La v0.8.0 pasa a histórica sin perder nada: conserva su
+URL, sus archivos y su lectura completa en el sitio.
+
+**Añadido · el documento de la v2.0.0, en PDF, Word, HTML y datos.** 37 páginas.
+El corpus pasa de 51 % a 100 % contrastado —las 36 fuentes que faltaban se
+abrieron una por una y produjeron 23 divergencias, doce materiales—, y por
+primera vez se recorre la ruta 13, la de contraste externo: 31 fuentes de
+terceros entran al registro. La consulta exhaustiva de los 49.014 proyectos
+adjudicados por ANID desde 1982 convierte la laguna de evaluación en hecho:
+cero proyectos sobre enseñanza del Derecho con inteligencia artificial.
+
+**Añadido · documento complementario de la PUCV, v1.0.** La institución sale del
+comparador por conflicto de interés declarado y se examina aparte. No es una
+versión del informe ni una descarga más: el modelo de datos tiene ahora
+`companions`, y la interfaz pone la razón de existir delante de los archivos.
+
+**Añadido · una ruta por versión.** `/informes/<informe>/v/<versión>` lee
+cualquier versión sin salir del sitio, y `/informes/<informe>/versiones` publica
+el historial entero con las descargas de cada una. Doce rutas nuevas prerenderizadas.
+
+**Cambiado · la ficha del informe es la portada del informe, no el informe.**
+Reconstruía la v0.8.0 con componentes propios mientras la cabecera anunciaba la
+versión vigente: quien leía de arriba abajo veía «v2.0.0» y a continuación las
+cifras de la anterior. La reconstrucción se mudó entera a `/v/0.8.0` —fichas
+institucionales, matriz navegable, las nueve figuras y los anexos— y no se
+perdió nada.
+
+**Añadido · las cifras cuelgan de la versión.** `ReportVersion.figures`, con su
+nota al lado. Es la pieza que impide que la ficha diga «38 verificadas» encima
+de un documento que ya dice «74 de 74».
+
+**Corregido · la versión vigente se elegía por fecha.** La v0.7.0 y la v0.8.0 se
+publicaron el mismo día, así que el orden dependía de cómo estuviera escrito el
+arreglo. `compareVersions` ordena por número; la fecha sólo desempata. Alcanza
+a la portada, al índice de informes y a la ficha.
+
+**Corregido · el recuento de la ficha se contradecía con el documento.** El
+dataset canónico que alimenta las fichas navegables es el de la v0.8.0 y no se
+ha regenerado; ahora la ficha dice de qué versión es en vez de presentar sus 38
+verificadas como cifra vigente.
+
+**Añadido · `src/lib/informes.test.ts`, 37 pruebas.** Entre ellas, una que abre
+el disco y comprueba que existe cada archivo que el sitio promete: la regla del
+§8 dejó de depender de que quien publica se acuerde de copiar los archivos.
+
+**Verificado.** `npm run verify` completo en el equipo del autor: 0 errores de
+tipos, 0 de lint, 184 pruebas, build con 44 rutas.
+
 ### Informe 01 · v0.8.0 · el instrumento se aplica a todos por igual
 
 **Publicada en producción el 04-09-2026.** La v0.7.0 sigue en su URL, intacta.

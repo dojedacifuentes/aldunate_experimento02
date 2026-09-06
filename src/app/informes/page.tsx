@@ -6,7 +6,8 @@ import { Container, Notice, PageHeader, Section, Surface } from '@/components/co
 import { EditorialStatus } from '@/components/common/status';
 import { EvaNote } from '@/components/eva/EvaNote';
 import { reports } from '@/data/reports';
-import { formatDate, latestVersion } from '@/lib/utils';
+import { currentVersion } from '@/lib/informes';
+import { formatDate } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Informes',
@@ -45,7 +46,7 @@ export default function InformesPage() {
       <Section>
         <ul className="space-y-4">
           {reports.map((report) => {
-            const latest = latestVersion(report.versions);
+            const latest = currentVersion(report);
 
             return (
               <li key={report.slug}>

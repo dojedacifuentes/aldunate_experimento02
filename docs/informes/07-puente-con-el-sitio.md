@@ -70,36 +70,88 @@ actualiza el índice, que es un campo y no texto.
 
 ### 2 · Copiar los archivos a `public/descargas/`
 
-Con el número de versión en el nombre, siempre:
+Una carpeta por versión, con el número en la carpeta y en cada archivo:
 
 ```
-informe-XX-<slug>-v0.2.0.pdf
-informe-XX-completo-v0.2.0.html
+public/descargas/informe-01-v2.0.0/
+  informe-01-v2.0.0.pdf
+  informe-01-v2.0.0.docx
+  informe-01-v2.0.0.html
+  complemento-pucv-v1.0.pdf        ← documentos que acompañan
+  datos/matriz-v2.json             ← datos que el documento cita
 ```
 
 El versionado en el nombre es lo que permite que una versión anterior siga
-descargable cuando se publique la siguiente.
+descargable cuando se publique la siguiente. Las carpetas anteriores a esta
+convención —`informe-01-borrador-academico-v0.8.0/`— **no se renombran**: hay
+enlaces circulando hacia ellas.
+
+Y no toques `.gitattributes`: `public/descargas/** -text` desactiva la
+conversión de fin de línea para lo que se publica, porque los checksums se
+calculan sobre los bytes que escribe el exportador.
 
 ### 3 · Añadir la versión en `src/data/reports.ts`
 
-**Nunca sobrescribir una entrada existente.** Se añade al final de `versions`:
+**Nunca sobrescribir una entrada existente.** Se añade a `versions`, y con eso
+la versión queda publicada, legible en línea y descargable: **ninguna pantalla
+se toca**. El raíl de versiones, la ruta `/v/<versión>`, el historial y la
+sección de descargas se derivan de esta entrada.
 
 ```ts
 {
-  version: '0.2.0',
-  date: '2026-08-31',
-  status: 'en-revision',
-  pdf: '/descargas/informe-02-transformacion-ensenanza-v0.2.0.pdf',
-  html: '/descargas/informe-02-completo-v0.2.0.html',
-  changelog: [
-    'Qué cambió, en frases que un lector externo entienda.',
+  version: '2.1.0',
+  date: '2026-10-01',
+  status: 'publicado',
+  // La frase del raíl. Sin ella, el selector es una lista de números y hay que
+  // abrir tres para encontrar la que se busca.
+  headline: 'Qué distingue a esta versión, en una línea',
+  summary: 'Dos o tres frases sobre su alcance.',
+  pages: 40,
+  reading: 'documento',
+  pdf: '/descargas/informe-01-v2.1.0/informe-01-v2.1.0.pdf',
+  html: '/descargas/informe-01-v2.1.0/informe-01-v2.1.0.html',
+  // Las cifras van aquí y nunca en el informe: son las que este documento
+  // sostiene, y la versión anterior sostenía otras.
+  figures: [
+    { value: '74', unit: '/74', label: '100 % del corpus', note: 'Qué cuenta exactamente.' },
   ],
+  changelog: ['Qué cambió, en frases que un lector externo entienda.'],
+  artifacts: [
+    { format: 'PDF', label: 'Leer o imprimir', href: '…', description: '…' },
+  ],
+  // Sólo si un documento acompaña a la versión sin sustituirla.
+  companions: [],
 }
 ```
 
-`pdf` y `html` solo se rellenan si el archivo existe. La ficha del informe
-comprueba su presencia antes de dibujar el botón: un botón que promete un
-documento inexistente es peor que no tener botón.
+`pdf` y `html` solo se rellenan si el archivo existe, y lo mismo cada `href` de
+`artifacts`. Un botón que promete un documento inexistente es peor que no tener
+botón, y desde la v2.0.0 **hay una prueba que lo comprueba contra el disco**:
+`src/lib/informes.test.ts` abre `public/` y falla si falta cualquiera. Ya no
+depende de que quien publica se acuerde.
+
+#### Los tres campos que deciden la experiencia
+
+| Campo | Qué gobierna |
+|---|---|
+| `reading` | `documento` muestra el HTML autónomo dentro del sitio; `nativo` lo reconstruye desde `src/data`; `ninguna` deja sólo las descargas. Por omisión, `documento` si hay `html` |
+| `figures` | Las cifras que se pintan junto al número de versión. Se anima sólo lo que es un entero |
+| `companions` | Documento que acompaña sin sustituir. Exige `rationale`: por qué existe por separado |
+
+#### Qué versión es la vigente
+
+**La de número mayor, no la última por fecha.** El Informe 01 publicó la v0.7.0
+y la v0.8.0 el mismo día y el orden pasaba a depender de cómo estuviera escrito
+el arreglo. Lo resuelve `compareVersions` en `src/lib/informes.ts`, y de ahí
+salen `currentVersion`, `sortedVersions` e `historicVersions`. No ordenes
+versiones a mano en una pantalla nueva: importa el helper.
+
+#### Dónde queda la versión anterior
+
+Donde estaba. Su ruta `/informes/<informe>/v/<versión>` sigue funcionando, sus
+archivos siguen en `public/descargas/`, y el lector le pone encima —antes del
+documento y no al pie— el aviso de que fue superada, con enlace a la vigente.
+**No se retira nada al publicar una versión nueva.**
 
 ### 4 · Cargar fuentes y afirmaciones en `src/data/research.ts`
 

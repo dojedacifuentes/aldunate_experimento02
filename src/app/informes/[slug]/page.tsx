@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { BookOpen, Download, FlaskConical, ListTree } from 'lucide-react';
+import { BookOpen, Download, FlaskConical, History, ListTree } from 'lucide-react';
 
 import {
   Badge,
   Breadcrumbs,
   ButtonLink,
-  Disclosure,
   Container,
   MetaRow,
   Notice,
@@ -16,17 +15,14 @@ import {
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
 import {
-  Informe01BorradorApertura,
-  Informe01BorradorCierre,
-} from '@/components/informe01/Borrador';
-import {
-  Informe01Anexos,
-  Informe01Apertura,
-  Informe01Publicacion,
-} from '@/components/informe01/Publicacion';
+  ArtefactosDeVersion,
+  ComplementoDeVersion,
+  EntradaDeHistorial,
+  RailDeVersiones,
+  VersionFiguras,
+} from '@/components/informes/Versiones';
 import { informe01Recuento } from '@/data/informe01';
 import {
-  claimChangeLabel,
   getReport,
   reports,
   reportStatusMeta,
@@ -35,7 +31,16 @@ import {
 import { autor } from '@/data/site';
 import type { EvidenceLevel } from '@/types';
 import { evidenceLevels, sources } from '@/data/research';
-import { formatDate, latestVersion } from '@/lib/utils';
+import {
+  currentVersion,
+  hasOnlineReading,
+  readingMode,
+  sortedVersions,
+  versionArtifacts,
+  versionHref,
+  versionsHref,
+} from '@/lib/informes';
+import { formatDate } from '@/lib/utils';
 
 export function generateStaticParams() {
   return reports.map((r) => ({ slug: r.slug }));
@@ -67,11 +72,18 @@ export async function generateMetadata({
 }
 
 /**
- * Detalle de informe.
+ * Ficha de informe.
  *
- * Tres capas de lectura, en este orden: resumen ejecutivo, método y límites,
- * historial y fuentes. Quien se quede en la primera capa debe salir con una
- * idea correcta del alcance; quien baje a la tercera debe poder auditar.
+ * Desde la v2.0.0 del Informe 01 esta pantalla es la **portada del informe** y
+ * no el informe: dice qué es, en qué versión va, qué cambió en ella y por dónde
+ * se entra. El documento se lee en `/informes/<informe>/v/<versión>`, una ruta
+ * por versión, y el historial completo en `/versiones`.
+ *
+ * El motivo es que el informe dejó de caber aquí sin mentir. La pantalla
+ * reconstruía la v0.8.0 con componentes propios mientras la cabecera anunciaba
+ * la versión vigente: quien leía de arriba abajo veía «v2.0.0» y a continuación
+ * las cifras de la anterior. Ahora cada versión se lee en su propia ruta, con
+ * su número en la cabecera, y ninguna pantalla habla por otra.
  *
  * La descarga solo aparece cuando existe un archivo real. Un botón que promete
  * un PDF inexistente es peor que no tener botón.
@@ -86,8 +98,19 @@ export default async function InformeDetallePage({
   if (!report) notFound();
 
   const meta = reportStatusMeta[report.status];
-  const latest = latestVersion(report.versions);
-  const ordered = [...report.versions].sort((a, b) => b.date.localeCompare(a.date));
+  /*
+    La vigente es la de número mayor, no la última por fecha: el Informe 01
+    publicó la v0.7.0 y la v0.8.0 el mismo día y el orden quedaba a merced de
+    cómo estuviera escrito el arreglo.
+  */
+  const latest = currentVersion(report);
+  const ordered = sortedVersions(report.versions);
+  const artefactos = latest ? versionArtifacts(latest) : [];
+  const word = artefactos.find((a) => a.format === 'Word');
+  const complementos = latest?.companions ?? [];
+  const leeEnLinea = latest ? hasOnlineReading(latest) : false;
+  /* Las tres últimas aquí; las demás, en su propia página. */
+  const recientes = ordered.slice(0, 3);
   const reportSources = report.sourceIds
     .map((id) => sources.find((source) => source.id === id))
     .filter((source) => source !== undefined);
@@ -151,9 +174,15 @@ export default async function InformeDetallePage({
             </ol>
           )}
 
+          {/*
+            «Leer en línea» ya no sale del sitio a un archivo suelto: entra al
+            lector de la versión vigente, que conserva alrededor el número de
+            versión, el selector y las descargas. Un documento abierto en una
+            pestaña en blanco no dice de qué versión es ni que existe otra.
+          */}
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            {latest?.html && (
-              <ButtonLink href={latest.html} variant="primary" external>
+            {latest && leeEnLinea && (
+              <ButtonLink href={versionHref(report.slug, latest.version)} variant="primary">
                 <BookOpen className="h-4 w-4" aria-hidden />
                 Leer en línea · v{latest.version}
               </ButtonLink>
@@ -161,7 +190,7 @@ export default async function InformeDetallePage({
             {latest?.pdf ? (
               <ButtonLink
                 href={latest.pdf}
-                variant={latest.html ? 'outline' : 'primary'}
+                variant={leeEnLinea ? 'outline' : 'primary'}
                 external
               >
                 <Download className="h-4 w-4" aria-hidden />
@@ -178,10 +207,22 @@ export default async function InformeDetallePage({
                 PDF no disponible en esta versión
               </span>
             )}
-            <ButtonLink href="#metodologia" variant="outline">
-              <FlaskConical className="h-4 w-4" aria-hidden />
-              Ver metodología
+            {word && (
+              <ButtonLink href={word.href} variant="outline" external>
+                <Download className="h-4 w-4" aria-hidden />
+                Word
+              </ButtonLink>
+            )}
+            <ButtonLink href={versionsHref(report.slug)} variant="outline">
+              <History className="h-4 w-4" aria-hidden />
+              Versiones
             </ButtonLink>
+            {!esInforme01 && (
+              <ButtonLink href="#metodologia" variant="outline">
+                <FlaskConical className="h-4 w-4" aria-hidden />
+                Ver metodología
+              </ButtonLink>
+            )}
             <ButtonLink href="#fuentes" variant="outline">
               <ListTree className="h-4 w-4" aria-hidden />
               Ver fuentes
@@ -189,6 +230,34 @@ export default async function InformeDetallePage({
           </div>
         </Container>
       </header>
+
+      {/*
+        El raíl de versiones va aquí, antes que nada: es lo primero que hay que
+        poder contestar en un informe vivo —«¿cuál estoy mirando y cuáles hay?»—
+        y antes había que bajar hasta la capa 3 para averiguarlo.
+      */}
+      {report.versions.length > 1 && (
+        <section className="border-b border-border/70 py-6">
+          <Container>
+            <div className="mb-3 flex flex-wrap items-baseline justify-between gap-3">
+              <p className="meta text-primary">
+                {report.versions.length} versiones publicadas
+              </p>
+              <Link
+                href={versionsHref(report.slug)}
+                className="text-sm font-medium text-primary hover:underline"
+              >
+                Ver el historial completo
+              </Link>
+            </div>
+            <RailDeVersiones
+              slug={report.slug}
+              versions={ordered}
+              actual={latest?.version}
+            />
+          </Container>
+        </section>
+      )}
 
       {/* ── Capa 1 · Ficha y resumen ── */}
       <Section
@@ -205,11 +274,11 @@ export default async function InformeDetallePage({
           <div className="prose-editorial">
             {esInforme01 ? (
               <p className="text-muted-foreground">
-                Mapeo comparado de evidencia pública sobre uso, enseñanza, políticas,
-                herramientas e iniciativas de inteligencia artificial en once Escuelas y
-                Facultades de Derecho chilenas. El resumen ejecutivo, los hallazgos y el
-                análisis vienen a continuación; esta ficha sólo declara el estado del
-                documento.
+                Mapeo comparado de capacidades institucionales en inteligencia artificial
+                en once Escuelas y Facultades de Derecho chilenas. Esta pantalla es la
+                portada del informe: declara su estado, sus versiones y por dónde se entra.
+                El resumen ejecutivo, los ocho hallazgos y los anexos están dentro del
+                documento, y se leen sin descargar nada en la versión que se elija.
               </p>
             ) : (
               <p>{report.executiveSummary}</p>
@@ -242,10 +311,10 @@ export default async function InformeDetallePage({
                 unas pantallas más abajo.
               */}
               <MetaRow
-                label="Fuentes registradas"
+                label={esInforme01 ? 'Registro navegable' : 'Fuentes registradas'}
                 value={
                   esInforme01
-                    ? `${informe01Recuento.fuentes} en el registro · ${informe01Recuento.fuentesVerificadas} verificadas`
+                    ? `${informe01Recuento.fuentes} fuentes · dataset de la v0.8.0`
                     : hasSources
                       ? String(reportSources.length)
                       : '0 · en registro'
@@ -261,11 +330,70 @@ export default async function InformeDetallePage({
       </Section>
 
       {/*
-        Resumen ejecutivo y hallazgos, antes que nada. Es el cambio editorial de
-        la v0.7.0: el destinatario debe encontrar qué se halló antes de recorrer
-        el alcance, el método y once fichas institucionales.
+        Qué trae la versión vigente. Las cifras cuelgan de la versión y no del
+        informe: son las que ese documento sostiene, y la versión anterior
+        sostenía otras. Es lo que impide que la ficha diga «38 verificadas»
+        mientras el documento descargable en la misma pantalla dice «74 de 74».
       */}
-      {esInforme01 && <Informe01Apertura />}
+      {latest && (
+        <Section
+          eyebrow={`Versión vigente · v${latest.version}`}
+          title={latest.headline ?? `Qué trae la v${latest.version}`}
+          description={latest.summary}
+        >
+          <VersionFiguras version={latest} className="mb-10" />
+
+          <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:items-start">
+            <div>
+              <p className="meta mb-4 text-primary">Qué cambió respecto de la anterior</p>
+              <ul className="space-y-3">
+                {latest.changelog.map((entry) => (
+                  <li key={entry} className="flex gap-4">
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
+                      aria-hidden
+                    />
+                    <span className="leading-relaxed text-muted-foreground">{entry}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Surface className="p-6">
+              <p className="meta mb-4">Cómo leerla</p>
+              <dl className="space-y-0">
+                <MetaRow label="Publicada" value={formatDate(latest.date)} />
+                <MetaRow label="Estado" value={reportStatusMeta[latest.status].label} />
+                {latest.pages && (
+                  <MetaRow label="Extensión" value={`${latest.pages} páginas`} />
+                )}
+                <MetaRow
+                  label="Lectura en línea"
+                  value={
+                    readingMode(latest) === 'nativo'
+                      ? 'Reconstruida en el sitio'
+                      : readingMode(latest) === 'documento'
+                        ? 'Documento completo, sin salir del sitio'
+                        : 'No disponible'
+                  }
+                />
+                <MetaRow label="Formatos" value={String(artefactos.length)} />
+              </dl>
+              {leeEnLinea && (
+                <ButtonLink
+                  href={versionHref(report.slug, latest.version)}
+                  variant="primary"
+                  size="sm"
+                  className="mt-5"
+                >
+                  <BookOpen className="h-3.5 w-3.5" aria-hidden />
+                  Abrir la v{latest.version}
+                </ButtonLink>
+              )}
+            </Surface>
+          </div>
+        </Section>
+      )}
 
       {/* ── Ejes ── */}
       <Section
@@ -304,61 +432,54 @@ export default async function InformeDetallePage({
       </Section>
 
       {/*
-        La publicación del Informe 01.
-        Vive en sus propios componentes y se monta sólo aquí: el informe 02 tiene
-        documento completo y no necesita esta capa, y hacer genérica una sección
-        que sólo un informe usa habría producido una abstracción con un solo caso.
-      */}
-      {/*
-        Después del alcance viene el aparato académico —introducción, objetivos,
-        metodología— y sólo entonces los datos. El orden de la v0.6.0 era el
-        mismo; lo que cambió es que el resumen y los hallazgos ya no esperan
-        detrás de él.
-      */}
-      {esInforme01 && <Informe01BorradorApertura />}
-      {esInforme01 && <Informe01Publicacion />}
-      {esInforme01 && <Informe01BorradorCierre />}
-      {esInforme01 && <Informe01Anexos />}
+        Aquí vivía la publicación entera del Informe 01, reconstruida con
+        componentes propios a partir de `src/data/informe01*`. Se mudó a
+        `/informes/<informe>/v/0.8.0`, que es la versión que esos datos
+        transcriben, y sigue completa: fichas institucionales, matriz navegable,
+        las nueve figuras y los anexos. No se borró nada.
 
-      {report.downloads && report.downloads.length > 0 && (
+        Mantenerla aquí, bajo una cabecera que anuncia la v2.0.0, habría hecho
+        que la pantalla dijera una versión y mostrara otra.
+      */}
+
+      {/*
+        Los complementos van antes que las descargas y con su razón de ser
+        delante: el de la PUCV existe porque quien firma trabaja en esa Escuela,
+        y ponerlo en la rejilla de archivos lo habría convertido en un anexo.
+      */}
+      {complementos.length > 0 && (
+        <Section
+          eyebrow="Acompaña a la versión vigente"
+          title="Documentos complementarios"
+          description="No sustituyen al informe ni son una versión suya: existen aparte porque tratan algo que el informe principal, por método, no puede tratar dentro."
+        >
+          <div className="grid gap-5 lg:grid-cols-2">
+            {complementos.map((companion) => (
+              <ComplementoDeVersion key={companion.id} companion={companion} />
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {latest && artefactos.length > 0 && (
         <Section
           eyebrow="Descargas"
-          title="El informe, fuera de esta página"
-          description="Mismo contenido, mismos números: el documento y el dataset salen del mismo origen y no pueden divergir. El paquete incluye controles de integridad."
+          title={`La v${latest.version}, fuera de esta página`}
+          description="Mismo contenido, mismos números: el documento y sus datos salen del mismo origen y no pueden divergir. Sólo se listan los archivos que existen."
           className="scroll-mt-20"
         >
           <div id="descargas">
-            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {report.downloads.map((artifact) => (
-                <li key={artifact.format}>
-                  <Surface className="flex h-full flex-col p-5">
-                    <Badge tone={artifact.format === 'ZIP' ? 'accent' : 'muted'}>
-                      {artifact.format}
-                    </Badge>
-                    <h3 className="mt-3 font-serif text-lg leading-snug text-foreground">
-                      {artifact.label}
-                    </h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                      {artifact.description}
-                    </p>
-                    <ButtonLink
-                      href={artifact.href}
-                      variant={artifact.format === 'ZIP' ? 'accent' : 'outline'}
-                      size="sm"
-                      external
-                      className="mt-4 self-start"
-                    >
-                      <Download className="h-3.5 w-3.5" aria-hidden />
-                      {artifact.format === 'HTML' ? 'Abrir' : 'Descargar'}
-                    </ButtonLink>
-                  </Surface>
-                </li>
-              ))}
-            </ul>
+            <ArtefactosDeVersion artifacts={artefactos} />
             <Notice tone="muted" className="mt-6">
-              Word y PDF no figuran porque los archivos no existen todavía: la cadena que los
-              produce es PowerShell con Word por COM y sólo corre en el equipo del autor. Los
-              botones aparecerán cuando los archivos estén, y no antes.
+              Éstos son los archivos de la versión vigente. Los de las versiones
+              anteriores no se retiran: cada una conserva los suyos en{' '}
+              <Link
+                href={versionsHref(report.slug)}
+                className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+              >
+                su entrada del historial
+              </Link>
+              .
             </Notice>
           </div>
         </Section>
@@ -483,80 +604,38 @@ export default async function InformeDetallePage({
       {/* ── Capa 3 · Historial ── */}
       <Section eyebrow="Capa 3" title="Historial de versiones">
         <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
-          Cada publicación agrega una versión. Ninguna se reemplaza. El
+          Cada publicación agrega una versión. Ninguna se reemplaza, y cada una
+          sigue legible y descargable con las cifras que sostenía entonces. El
           changelog es la prueba de que el documento cambió de forma trazable.
         </p>
 
-        <ol className="relative space-y-6 border-l border-border pl-6">
-          {ordered.map((version, i) => (
+        <ol className="relative space-y-8 border-l border-border pl-6">
+          {recientes.map((version) => (
             <li key={version.version} className="relative">
               <span
-                className={`absolute -left-[1.6875rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-background ${
-                  i === 0 ? 'bg-primary' : 'bg-muted-foreground/50'
+                className={`absolute -left-[1.6875rem] top-2 h-2.5 w-2.5 rounded-full border-2 border-background ${
+                  version.version === latest?.version
+                    ? 'bg-primary'
+                    : 'bg-muted-foreground/50'
                 }`}
                 aria-hidden
               />
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="mono text-sm font-medium text-foreground">
-                  v{version.version}
-                </span>
-                <span className="mono text-[0.6875rem] text-muted-foreground">
-                  {formatDate(version.date)}
-                </span>
-                {i === 0 && <Badge tone="signal">Actual</Badge>}
-              </div>
-              <ul className="mt-2.5 space-y-1">
-                {version.changelog.map((entry) => (
-                  <li key={entry} className="text-sm leading-relaxed text-muted-foreground">
-                    · {entry}
-                  </li>
-                ))}
-              </ul>
-
-              {/*
-                Changelog a nivel de afirmación. «Se actualizaron fuentes» no
-                permite saber si la frase que alguien citó el mes pasado sigue
-                diciendo lo mismo; esto sí: qué decía, qué dice y por qué.
-              */}
-              {version.claimChanges && version.claimChanges.length > 0 && (
-                <Disclosure
-                  className="mt-4"
-                  summary="Qué afirmaciones cambiaron, y por qué"
-                  hint={`${version.claimChanges.length} cambios`}
-                >
-                  <ol className="space-y-5">
-                    {version.claimChanges.map((c, k) => (
-                      <li key={`${version.version}-${k}`}>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="mono text-[0.625rem] uppercase tracking-widest text-accent">
-                            {claimChangeLabel[c.changeType]}
-                          </span>
-                          {c.claimId && (
-                            <a
-                              href={`/investigacion#${c.claimId}`}
-                              className="mono inline-flex min-h-6 items-center text-[0.625rem] text-primary underline underline-offset-2 hover:no-underline"
-                            >
-                              {c.claimId}
-                            </a>
-                          )}
-                        </div>
-                        <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted-foreground line-through decoration-muted-foreground/40">
-                          {c.previous}
-                        </p>
-                        <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-foreground/85">
-                          {c.current}
-                        </p>
-                        <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                          <span className="meta">Motivo</span> {c.reason}
-                        </p>
-                      </li>
-                    ))}
-                  </ol>
-                </Disclosure>
-              )}
+              <EntradaDeHistorial
+                slug={report.slug}
+                version={version}
+                esActual={version.version === latest?.version}
+                compacta
+              />
             </li>
           ))}
         </ol>
+
+        {ordered.length > recientes.length && (
+          <ButtonLink href={versionsHref(report.slug)} variant="outline" className="mt-8">
+            <History className="h-4 w-4" aria-hidden />
+            Ver las {ordered.length} versiones, con sus descargas
+          </ButtonLink>
+        )}
       </Section>
 
       {/* ── Fuentes ── */}
@@ -612,17 +691,17 @@ export default async function InformeDetallePage({
               <div className="rounded-lg border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
                 <p className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
                   {esInforme01
-                    ? 'Registro poblado · verificación en curso'
+                    ? 'Registro poblado · corpus contrastado al 100 %'
                     : 'Registro vacío'}
                 </p>
                 <h3 className="mt-3 font-serif text-xl text-foreground">
                   {esInforme01
-                    ? `${informe01Recuento.fuentes} fuentes registradas, ${informe01Recuento.fuentesVerificadas} contrastadas contra su original`
+                    ? `${informe01Recuento.fuentes} fuentes en el registro navegable, contrastadas una por una en la v2.0.0`
                     : 'Todavía no hay fuentes incorporadas'}
                 </h3>
                 <p className="mx-auto mt-2.5 max-w-lg text-sm leading-relaxed text-muted-foreground">
                   {esInforme01
-                    ? 'El registro está publicado y cada fuente aparece en la ficha de su institución, con su estado editorial y sus advertencias de lectura. Ninguna entra a esta lista todavía porque esta lista es de fuentes aceptadas, y aceptar exige decisión humana registrada: contrastar no es aceptar.'
+                    ? 'El registro está publicado y cada fuente aparece en la ficha de su institución, con su estado editorial y sus advertencias de lectura; las fichas navegables se construyen sobre el dataset de la v0.8.0, que es el último que se compiló a datos tipados. Ninguna fuente entra a esta lista todavía porque esta lista es de fuentes aceptadas, y aceptar exige decisión humana registrada: contrastar no es aceptar.'
                     : 'El informe está en fase de definición de alcance. Las fuentes entran al registro antes de convertirse en dato, y el registro se publica junto con el documento.'}
                 </p>
                 <Link

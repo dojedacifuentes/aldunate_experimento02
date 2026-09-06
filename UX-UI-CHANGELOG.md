@@ -11,6 +11,48 @@ los mismos de siempre, justificados en `docs/DECISIONS.md` D-022.
 
 ---
 
+## 06-09-2026 · Informes · un informe con nueve versiones necesitaba un eje
+
+El Informe 01 llegó a la v2.0.0 con nueve versiones publicadas, y la interfaz
+seguía siendo la de un informe con una: la ficha mostraba **la última** y el
+resto vivía en una lista de changelogs al fondo de la página, sin manera de
+abrir ninguna. «Leer en línea» salía del sitio a un archivo suelto en una
+pestaña en blanco, sin ruta de vuelta y sin decir de qué versión era.
+
+**El raíl de versiones sube a la primera pantalla.** Nueve tarjetas, la vigente
+marcada, cada una con la frase que la distingue —no un número y una fecha, que
+es lo que obliga a abrir tres para encontrar la que se busca—. Se desplaza
+dentro de sí mismo: comprobado a 375 px, desbordamiento horizontal de la página
+cero.
+
+**Una ruta por versión, y el documento dentro del sitio.** El HTML autónomo que
+produce la cadena editorial entra en un marco que conserva alrededor el número
+de versión, el selector, el changelog y las descargas. Va en `iframe` a
+propósito: el documento trae su hoja de estilos completa —fuentes, retícula,
+colores de papel, reglas de impresión— y volcarla en la página la haría chocar
+en las dos direcciones. Aislada, el documento se ve como el documento, que es lo
+que hay que poder comparar con el PDF. Con salida a pantalla completa, porque
+dentro del marco no se puede usar la búsqueda del navegador.
+
+**El aviso de versión superada va arriba, antes del documento.** Quien llega por
+un enlace antiguo tiene que saberlo antes de leer, no después de citar.
+
+**Las cifras se pegaron a su versión.** Cinco tarjetas con el número, su
+denominador y la nota de qué cuenta. La v0.8.0 declara las suyas —38 de 74, 47
+celdas sin concluir— y la v2.0.0 las suyas, y ninguna pantalla mezcla las dos.
+
+**Corregido · «NaN» en las cinco cifras.** `data-count` lleva el número de
+destino en el atributo y el motor escribe el resultado encima del texto. Puesto
+sin valor, React lo sirve como `data-count="true"`, `Number('true')` es `NaN` y
+el motor lo escribía tal cual. Se ve sólo cuando el contador dispara, de modo
+que en una captura tomada un instante antes la pantalla parecía correcta. Ahora
+sólo se anima lo que es un entero.
+
+**Comprobado** en los dos temas y en 375 y 1280 px, con el documento cargado
+dentro del marco.
+
+---
+
 ## 04-09-2026 · Informe 01 · el móvil dejaba de contener las tablas anchas
 
 Las tres tablas de la publicación del Informe 01 viven dentro de un contenedor

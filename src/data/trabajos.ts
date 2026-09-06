@@ -122,11 +122,11 @@ export const workItems: WorkItem[] = [
       'Mapeo comparado de evidencia pública sobre once universidades chilenas: qué enseñan, qué usan, qué han institucionalizado y qué no puede demostrarse todavía.',
     reportSlug: 'ia-escuelas-derecho-chile',
     nextStep:
-      'Contrastar las 36 fuentes que faltan, empezando por las tres de la Universidad Autónoma, que es la única sin ninguna verificada. Van 38 de 74, y once registros no decían lo que su página dice.',
+      'Recorrer las rutas del protocolo que quedan: 31 de las 110 celdas de la matriz siguen sin concluir, y las 22 fuentes de la ronda de ampliación entraron sin contrastar. Cerrar además la referencia de la «Revista DIE» de la Universidad Central, que no se localizó en ningún dominio.',
     caveat:
-      'La cobertura es desigual por diseño —catorce fuentes de media en las tres universidades del piloto y 3,8 en las otras ocho—, así que no se publica ninguna comparación nacional.',
+      'La cobertura sigue siendo desigual —1,8 a 1 entre el piloto y el resto, antes 2,4 a 1—, y por eso el comparador ordinal publica bandas de piso y techo en vez de un número. La PUCV queda fuera de él por conflicto de interés declarado y se trata en un documento aparte.',
     href: '/informes/ia-escuelas-derecho-chile',
-    updatedAt: '2026-09-04',
+    updatedAt: '2026-09-06',
   },
   {
     id: 'informe-02',
