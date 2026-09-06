@@ -293,6 +293,34 @@ export const reports: Report[] = [
         reading: 'documento',
         pdf: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.pdf',
         html: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.html',
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.pdf',
+            description: 'El documento en A4, tal como se publicó en su día.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.html',
+            description:
+              'Un solo archivo, legible sin conexión. Conserva la maqueta de su versión.',
+          },
+          {
+            format: 'Markdown',
+            label: 'Usar como fuente editorial',
+            href: '/descargas/informe-01-borrador-academico-v0.7.0/informe-01-borrador-academico-v0.7.0.md',
+            description: 'El mismo documento en texto plano, reutilizable.',
+          },
+          {
+            format: 'ZIP',
+            label: 'Descargar el paquete reproducible',
+            href: '/descargas/informe-01-borrador-academico-v0.7.0.zip',
+            description:
+              'Documento, dataset en CSV, representación JSON, manifiesto y controles de integridad SHA-256.',
+          },
+        ],
         changelog: [
           'Enmienda metodológica 2.1, aditiva y documentada. La 2.0 comparaba ocho dimensiones —ámbitos académicos donde una iniciativa puede ocurrir—, y dos de ellas no eran ámbitos sino atributos: como el registro obliga a elegir una dimensión primaria, ninguna iniciativa caía nunca ahí. La doble columna vacía que la v0.6.0 publicó como hallazgo era en parte un artefacto del modelo. La 2.0 se conserva íntegra y su matriz se publica en anexo.',
           'Eje nuevo de mecanismo institucional: qué clase de instrumento es cada iniciativa —unidad, norma, programa formativo, asignatura, herramienta, proyecto, actividad, convenio, publicación—. Es una clasificación de lo que el registro ya contenía en su nombre, su unidad responsable y sus productos, de modo que no aporta evidencia nueva y no reabre la verificación de ninguna fuente.',
@@ -318,6 +346,34 @@ export const reports: Report[] = [
         reading: 'documento',
         pdf: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
         html: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.pdf',
+            description: 'El documento en A4, tal como se publicó en su día.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.html',
+            description:
+              'Un solo archivo, legible sin conexión. Conserva la maqueta de su versión.',
+          },
+          {
+            format: 'Markdown',
+            label: 'Usar como fuente editorial',
+            href: '/descargas/informe-01-borrador-academico-v0.6.0/informe-01-borrador-academico-v0.6.0.md',
+            description: 'El mismo documento en texto plano, reutilizable.',
+          },
+          {
+            format: 'ZIP',
+            label: 'Descargar el paquete reproducible',
+            href: '/descargas/informe-01-borrador-academico-v0.6.0.zip',
+            description:
+              'Documento, dataset en CSV, representación JSON, manifiesto y controles de integridad SHA-256.',
+          },
+        ],
         changelog: [
           'Primera verificación sustantiva del corpus. Se abrieron 38 de las 74 fuentes y se contrastaron siete campos contra la publicación original: existencia y título literal, fecha declarada, unidad responsable, condición de anuncio o ejecución, cifras de cobertura, límites y respaldo efectivo de la afirmación. Es el 51% del corpus, y la portada lo dice.',
           'Once registros no decían lo que su página dice. El decálogo de la PUCV «sugiere recomendaciones» y es lineamiento, no política. El «primer Departamento de Derecho y Tecnología en Chile» es cita textual del decano de la UC, no un hecho verificado, y ninguna de las cuatro unidades creadas entre 2025 y 2026 publica su acto de creación. El convenio de la UAI con Legu se firmó: es acto ejecutado.',
@@ -340,6 +396,34 @@ export const reports: Report[] = [
         reading: 'documento',
         pdf: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.pdf',
         html: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.pdf',
+            description: 'El documento en A4, tal como se publicó en su día.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.html',
+            description:
+              'Un solo archivo, legible sin conexión. Conserva la maqueta de su versión.',
+          },
+          {
+            format: 'Markdown',
+            label: 'Usar como fuente editorial',
+            href: '/descargas/informe-01-mapeo-evidencia-v0.5.0/informe-01-mapeo-evidencia-v0.5.0.md',
+            description: 'El mismo documento en texto plano, reutilizable.',
+          },
+          {
+            format: 'ZIP',
+            label: 'Descargar el paquete reproducible',
+            href: '/descargas/informe-01-mapeo-evidencia-v0.5.0.zip',
+            description:
+              'Documento, dataset en CSV, representación JSON, manifiesto y controles de integridad SHA-256.',
+          },
+        ],
         changelog: [
           'El corpus deja de ser una lista dentro de cinco documentos y pasa a ser un dataset canónico: seis CSV con universidades, fuentes, iniciativas, evidencias, cobertura y afirmaciones.',
           'Fe de erratas de la v0.4.0: el corpus tiene 74 fuentes públicas únicas y no 72. La re-extracción mecánica de URL encontró dos que intento-2b cita en su tabla-resumen y nunca convirtió en registro —IDEA UCEN y el Diplomado en Derecho, Innovación y Tecnología de la UNAB—. La v0.4.0 no se reescribe.',
@@ -546,6 +630,32 @@ export const reports: Report[] = [
         status: 'en-revision',
         pdf: '/descargas/informe-02-transformacion-ensenanza-v0.2.0.pdf',
         html: '/descargas/informe-02-completo-v0.2.0.html',
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-02-transformacion-ensenanza-v0.2.0.pdf',
+            description: 'El informe completo en A4, tal como se publicó.',
+          },
+          {
+            format: 'PDF',
+            label: 'Resumen ejecutivo',
+            href: '/descargas/informe-02-resumen-ejecutivo-v0.2.0.pdf',
+            description: 'La versión corta de esta versión.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-02-transformacion-ensenanza-v0.2.0.docx',
+            description: 'Documento editable de esta versión.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-02-completo-v0.2.0.html',
+            description: 'Un solo archivo, legible sin conexión.',
+          },
+        ],
         changelog: [
           'Documento completo: 24 capítulos y 3 anexos, 76 páginas, 12 figuras y 24 tablas.',
           'Registro de fuentes poblado con 24 entradas verificadas una a una en el documento original.',
@@ -564,6 +674,35 @@ export const reports: Report[] = [
         status: 'en-revision',
         pdf: '/descargas/informe-02-transformacion-ensenanza-v0.3.0.pdf',
         html: '/descargas/informe-02-completo-v0.3.0.html',
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-02-transformacion-ensenanza-v0.3.0.pdf',
+            description:
+              'El informe completo en A4, con sus figuras y su registro de fuentes.',
+          },
+          {
+            format: 'PDF',
+            label: 'Resumen ejecutivo',
+            href: '/descargas/informe-02-resumen-ejecutivo-v0.3.0.pdf',
+            description:
+              'La versión corta, para quien deba decidir sin leer el informe entero.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-02-transformacion-ensenanza-v0.3.0.docx',
+            description:
+              'Documento editable, para devolverlo con control de cambios.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-02-completo-v0.3.0.html',
+            description: 'Un solo archivo, legible sin conexión.',
+          },
+        ],
         changelog: [
           'Revisión metodológica: las afirmaciones se calibran al diseño de sus fuentes, no a su fuerza retórica.',
           'Título canónico único en portada, metadatos, ficha web y descargas. La web presentaba el informe con un alcance más estrecho que el documento.',

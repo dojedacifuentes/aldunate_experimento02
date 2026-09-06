@@ -227,3 +227,52 @@ describe('capa de lectura de los documentos publicados', () => {
     }
   });
 });
+
+describe('nada publicado se queda sin ofrecer', () => {
+  /*
+    El reverso de la regla del §8. «El botón sólo aparece si el archivo existe»
+    evita prometer lo que no hay; esta prueba evita lo contrario, que también
+    pasó: siete documentos servidos en `public/descargas/` a los que no se
+    podía llegar salvo adivinando la dirección, entre ellos el Word y el
+    resumen ejecutivo del Informe 02 vigente.
+
+    Sólo se exigen los documentos: los CSV, manifiestos y checksums que van
+    dentro de un paquete se obtienen por su `.zip` y no necesitan botón propio.
+  */
+  const declarados = new Set<string>();
+  for (const report of reports) {
+    for (const version of report.versions) {
+      if (version.pdf) declarados.add(version.pdf);
+      if (version.html) declarados.add(version.html);
+      for (const a of version.artifacts ?? []) declarados.add(a.href);
+      for (const c of version.companions ?? []) {
+        if (c.html) declarados.add(c.html);
+        for (const a of c.artifacts) declarados.add(a.href);
+      }
+    }
+    for (const a of report.researchKit?.artifacts ?? []) declarados.add(a.href);
+    for (const a of report.downloads ?? []) declarados.add(a.href);
+  }
+
+  const descargas = path.join(publico, 'descargas');
+  const enDisco: string[] = [];
+  const recorrer = (dir: string) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) recorrer(p);
+      else enDisco.push('/' + path.relative(publico, p).split(path.sep).join('/'));
+    }
+  };
+  recorrer(descargas);
+
+  /* Un documento es lo que alguien leería: PDF, Word, HTML o Markdown suelto,
+     fuera de la carpeta `dataset/` de un paquete. */
+  const esDocumento = (f: string) =>
+    /\.(pdf|docx|html|md)$/i.test(f) && !/\/dataset\//i.test(f);
+
+  const sinOfrecer = enDisco.filter((f) => esDocumento(f) && !declarados.has(f));
+
+  it('ningún documento servido queda sin botón', () => {
+    expect(sinOfrecer).toEqual([]);
+  });
+});
