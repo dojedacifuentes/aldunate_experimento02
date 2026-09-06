@@ -2028,7 +2028,26 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 
     if (d.tipo === 'lector:tema' && (d.tema === 'dark' || d.tema === 'light')) {
       raíz.setAttribute('data-theme', d.tema);
-      publicarAlto();
+      /*
+        Medido aquí mismo, el alto es el de antes del cambio: poner el
+        atributo no rehace la maqueta, sólo la invalida. Los dos temas no
+        ocupan lo mismo —el claro daba 277 px más— y el marco se quedaba con
+        el alto del anterior, con una franja vacía debajo. Se mide en el
+        siguiente fotograma, con un temporizador de respaldo porque una
+        pestaña en segundo plano no produce fotogramas.
+      */
+      var yaMedido = false;
+      var medir = function () {
+        if (yaMedido) return;
+        yaMedido = true;
+        publicarAlto();
+      };
+      if (typeof requestAnimationFrame === 'function') {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(medir);
+        });
+      }
+      setTimeout(medir, 120);
     }
 
     /*
