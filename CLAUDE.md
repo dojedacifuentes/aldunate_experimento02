@@ -233,10 +233,14 @@ evidencia con relleno es peor que una vacía: la vacía es honesta.
 ## 8. Informes vivos
 
 Una versión publicada **nunca se sobrescribe**. Se agrega una entrada a
-`versions` con su `changelog`. El botón de descarga solo aparece si el archivo
-existe: un botón que promete un PDF inexistente es peor que no tener botón. Lo
-mismo vale para `html`, la versión web del documento. Desde el 06-09-2026 hay
-una prueba que lo comprueba contra el disco (`src/lib/informes.test.ts`).
+`versions` con su `changelog`.
+
+**El botón y el archivo se exigen en las dos direcciones.** Un botón que promete
+un PDF inexistente es peor que no tener botón; y un documento servido al que no
+se puede llegar salvo adivinando la dirección es una publicación que no publica.
+Se descubrieron siete así el 07-09-2026, entre ellos el Word y el resumen
+ejecutivo del Informe 02 vigente. `src/lib/informes.test.ts` comprueba las dos
+contra el disco.
 
 ### Cada versión tiene su ruta, y todas siguen abiertas
 
@@ -265,6 +269,28 @@ Tres reglas que ya se rompieron una vez:
   vigente sin que haya que pulsar nada: quien entra a un informe entra a
   leerlo. Lo demás —cifras, cambios, descargas, historial— queda alrededor.
 
+### Qué se puede reponer de una versión ya publicada
+
+«No se sobrescribe» es una regla sobre **lo que el documento dice**, no sobre
+cómo se ve. La distinción hacía falta: el 07-09-2026 hubo que rehacer los tres
+archivos de la v2.0.0 porque su portada salía en blanco al imprimirse y su
+cuerpo estaba a 10 pt, y ninguna de las dos cosas cambia una afirmación.
+
+| | Se puede reponer | Exige versión nueva |
+|---|---|---|
+| Tamaño, color, retícula, navegación | sí | |
+| Un archivo que faltaba o estaba roto | sí | |
+| Una cifra, una palabra, el orden | | **sí** |
+| Una figura que dice otra cosa | | **sí** |
+
+**La frontera no es de criterio: está medida.** La prueba de
+`informes.test.ts` compara el texto desnudo del documento entregado con el del
+publicado y exige que sean idénticos. Mientras esa prueba pase, lo que se
+repuso es forma. Si falla, es fondo y toca versión nueva.
+
+Cuando se repone forma, se dice en el changelog de la versión vigente y en
+`UX-UI-CHANGELOG.md`; no se inventa un número de versión para ello.
+
 ### La capa de lectura, y por qué el documento no se toca
 
 Los informes se maquetan para papel, y esa hoja en milímetros y puntos en
@@ -278,14 +304,58 @@ que el documento dice.** Hay una prueba que compara el texto desnudo del
 entregado con el del publicado y exige que sean idénticos. El método completo
 está en `docs/informes/08-lector-en-linea.md`.
 
-### La cadena de producción
+### Un informe puede llegar de dos sitios, y las reglas no son las mismas
 
-Los informes **no se redactan en Word**. El texto vive en archivos `.json` y el
-Word, el PDF y la web se generan desde ahí, de modo que las tres versiones no
-pueden divergir. La maquinaria está en `tools/informes/` y el método en
-`docs/informes/`, siete documentos que explican investigación, diseño, motor de
-gráficos, generador de Word, modelo de contenido, reproducción y el puente con
-`src/data`.
+Ésta es la corrección de una regla que era falsa. Decía que los informes «no se
+redactan en Word: el texto vive en archivos `.json`», y la v2.0.0 del Informe
+01 llegó como documento cerrado producido fuera del repositorio. Una regla que
+el trabajo real desmiente no se cumple: se ignora, y arrastra consigo a las que
+tiene alrededor.
+
+**Procedencia A · nacido en el repositorio.** El texto vive en `.json` y el
+Word, el PDF y la web se generan desde ahí, de modo que los tres no pueden
+divergir. Es el caso del Informe 02 y de todo informe nuevo. La maquinaria está
+en `tools/informes/` y el método en `docs/informes/`.
+
+**Procedencia B · entregado cerrado.** Llega ya maquetado —HTML, Word y PDF— de
+una cadena que vive fuera. Es el caso del Informe 01 desde la v2.0.0. Entonces:
+
+- el entregado se conserva **intocado** en
+  `content/reports/<informe>/entregas/<versión>/`, y es la fuente de todo;
+- `npm run informe:publicar` produce lo que se sirve: capa de lectura, PDF
+  impreso desde ese mismo HTML y Word a 12 pt;
+- **nada se edita en `public/descargas/`**, que es salida y no origen;
+- si hay que corregir el fondo, se corrige en el entregado y se publica una
+  versión nueva.
+
+**Elegir procedencia no es preferencia: es una propiedad del informe.** Lo que
+no se admite es la mezcla —editar a mano lo publicado— porque rompe la única
+garantía que sostiene a las dos: que los tres formatos salen del mismo origen.
+
+### Cuando el documento se contradice a sí mismo
+
+Ocurrió, y la regla nació de ahí. La v2.0.0 del Informe 01 dice en su sección 8
+que la PUCV no está en el comparador y la incluye en la figura del comparador;
+su resumen ejecutivo dice que la encabeza. Y la figura publicada no coincide con
+el archivo de datos del que debería salir.
+
+**El sitio no corrige al documento, y tampoco lo repite como si nada.** No
+corrige porque la decisión es del autor y cambia lo que el informe afirma sobre
+instituciones nombradas. No lo repite en silencio porque publicar una
+contradicción sin decirlo es publicarla dos veces.
+
+Lo que sí se hace:
+
+1. dejarla escrita donde se pueda trabajar —hoy,
+   `docs/informes/09-recalculo-comparador.md`—, con las cifras ya calculadas y
+   el inventario de todo lo que tocaría;
+2. no dejar que el sitio afirme por su cuenta el lado que el documento no
+   sostiene;
+3. preguntar, y registrar la respuesta en `docs/DECISIONS.md`.
+
+**Si una figura tiene archivo de datos, los dos tienen que decir lo mismo.**
+Comprobarlo es de la sesión que publica: un JSON que nadie contrasta con su
+figura es un JSON que documenta otra versión del informe.
 
 Reglas propias de esa cadena:
 

@@ -750,3 +750,68 @@ actualizar para siempre, también al volver. Y una aparición cuyo estado inicia
 es `opacity: 0` deja el contenido invisible si el observador no dispara: hay
 una red de seguridad de tres segundos. Un texto que aparece de golpe es un
 defecto estético; uno que no aparece nunca es una página rota.
+
+---
+
+## D-037 — La PUCV sale del comparador, y el recálculo espera una respuesta
+
+**Qué.** Se registra como tomada la decisión que el propio Informe 01 v2.0.0 ya
+declara y funda en dos sitios —la sección 8 y seis veces en el complemento—:
+la Pontificia Universidad Católica de Valparaíso no forma parte del comparador
+ordinal. Lo que faltaba, y sigue faltando, es aplicarla a los datos: la figura,
+la tabla del anexo D y `matriz-v2.json` contienen once instituciones con la
+PUCV entre ellas, y el resumen ejecutivo dice que «encabeza el comparador».
+
+**Por qué.** El fundamento está escrito en el documento y no se rehace aquí:
+quien firma trabaja en el Programa DIAT de esa Escuela, el conflicto es actual
+y sobre el objeto medido, y hay además un sesgo medible —la PUCV fue una de las
+tres instituciones del piloto de profundidad, y en un instrumento que puntúa
+capacidades acreditadas por evidencia pública, investigar más a una institución
+produce mecánicamente una puntuación más alta—. Una declaración de intereses
+advierte al lector pero no corrige el dato.
+
+**Descartado.** Corregir la sección 8 y el complemento para que digan once, que
+era la otra salida coherente. Se descarta porque el conflicto es real y la
+decisión de apartarla ya estaba tomada y fundada; lo que había era una
+aplicación incompleta, no una duda.
+
+**Lo que queda abierto, y no lo decide una sesión de trabajo.** Al preparar el
+recálculo apareció un problema mayor: `matriz-v2.json` contiene dos matrices y
+el documento publica la primera. `.v1` tiene 31 celdas sin concluir y coincide
+exactamente con la figura publicada; `.v2` aplica los 26 cierres de la Ronda 2,
+deja 5 celdas sin concluir y cambia el orden de forma sustantiva —la
+Universidad Central pasa de 8-16 a 17-17—. Cuál es la canónica de la v2.0.0 es
+una pregunta para el autor, y hasta que se responda no se puede recalcular
+nada. El encargo completo, con las cifras de las dos hipótesis ya calculadas y
+el inventario de todo lo que habría que tocar, está en
+`docs/informes/09-recalculo-comparador.md`.
+
+---
+
+## D-038 — Un informe puede llegar de dos sitios, y la regla se abre a los dos
+
+**Qué.** El §8 de `CLAUDE.md` decía que los informes «no se redactan en Word: el
+texto vive en archivos `.json`». Se reforma para reconocer dos procedencias: el
+informe **nacido en el repositorio**, cuyo texto vive en `.json` y del que se
+generan los tres formatos, y el informe **entregado cerrado**, que llega
+maquetado de una cadena externa, se conserva intocado en
+`content/reports/<informe>/entregas/<versión>/` y se publica con
+`npm run informe:publicar`.
+
+**Por qué.** La regla era falsa desde la v2.0.0 del Informe 01, que llegó como
+HTML, Word y PDF ya compuestos. Una regla que el trabajo real desmiente no se
+cumple: se ignora, y arrastra consigo a las que tiene alrededor. Reconocer las
+dos procedencias hace la norma cumplible y conserva lo que de verdad protegía:
+que los tres formatos salgan de un mismo origen y no puedan divergir.
+
+**Descartado.** Exigir que todo informe entregado se transcriba a `.json` antes
+de publicarse. Es el ideal y no se sostiene: transcribir un documento de
+treinta y siete páginas con doce figuras para poder publicarlo convierte cada
+entrega en un proyecto, y en la práctica se resolvería editando a mano lo
+publicado, que es justo lo que la regla existe para impedir.
+
+**Se añaden dos reglas que faltaban.** Que el botón y el archivo se exijan en
+las dos direcciones —había siete documentos servidos a los que no se podía
+llegar—; y la distinción entre reponer la **forma** de una versión publicada,
+que se permite y se mide con la prueba de igualdad de texto, y cambiar su
+**fondo**, que exige versión nueva.

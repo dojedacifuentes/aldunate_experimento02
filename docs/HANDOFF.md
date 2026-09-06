@@ -1,23 +1,33 @@
 # Handoff · estado del sitio
 
-**Última actualización:** 04-09-2026
+**Última actualización:** 07-09-2026
 **Quien lea esto primero:** `CLAUDE.md` y `AGENTS.md` mandan sobre este documento.
 
-**Estado de esta sesión:** el Informe 01 pasa a `v0.5.0` en la rama
-`informe-01/v0.5.0`. Por primera vez tiene datos publicados: seis CSV canónicos,
-un compilador que los proyecta a `src/data/informe01.ts` y una publicación que
-los enseña, más once fichas institucionales en página propia y descargas en
-Markdown, HTML, CSV, JSON y ZIP. `npm run verify` en verde.
+## ⇢ Lo siguiente está preparado y espera una respuesta del autor
 
-**El relevo detallado del Informe 01 vive en `docs/report-01/`** —HANDOFF,
-STATUS, TASKS, DECISIONS, ISSUES y `progress.json`—. Quien continúe ese trabajo
-debe leer esos archivos antes de tocar nada; este documento sólo registra el
-estado del sitio.
+**Encargo abierto: `docs/informes/09-recalculo-comparador.md`.** Léelo entero
+antes de tocar el Informe 01. Contiene la decisión ya tomada —la PUCV sale del
+comparador ordinal—, las cifras de las dos hipótesis **ya calculadas**, el
+inventario de las veintitantas frases y cifras que habría que cambiar, y el
+problema que lo bloquea.
 
-**Lo que sigue sin estar hecho, y es lo que importa:** la verificación sustantiva
-de las 74 fuentes. Ninguna lleva fecha de verificación, ningún registro está
-`ACEPTADO`, y `sourceIds` y `claimIds` de `reports.ts` siguen vacíos a
-propósito.
+**El bloqueo, en una línea:** `matriz-v2.json` contiene dos matrices y el
+documento publica la primera. `.v1` tiene 31 celdas sin concluir y coincide con
+la figura publicada; `.v2` aplica los 26 cierres de la Ronda 2, deja 5 y cambia
+el orden —la Universidad Central pasa de 8-16 a 17-17—. Cuál es la canónica lo
+decide el autor, no la sesión. Ver D-037.
+
+**La cadena de cálculo ya está en el repo**, en
+`tools/informes/informe-01/comparador/`, con su rúbrica documentada. Antes vivía
+fuera y no se podía comprobar nada.
+
+**Estado del Informe 01:** v2.0.0 publicada y en producción. Se abre leída en la
+ficha, tiene ruta por versión, cuerpo a 12 pt en los tres formatos, portada que
+se imprime —antes salía en blanco— y figuras calibradas. El §8 de `CLAUDE.md`
+se reformó para reconocer las dos procedencias de un informe (D-038).
+
+**Estado del Informe 02:** sin cambios de fondo. Recuperó su Word y su resumen
+ejecutivo, que estaban servidos y sin enlazar.
 
 ---
 
