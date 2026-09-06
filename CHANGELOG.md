@@ -4,14 +4,14 @@
 
 ### El recálculo del comparador queda preparado, y aparece un problema mayor
 
-**Encargo abierto en .** La decisión
+**Encargo abierto en `docs/informes/09-recalculo-comparador.md`.** La decisión
 está tomada y registrada (D-037): la PUCV sale del comparador ordinal. No es
 nueva —el propio informe la declara y funda en su sección 8 y seis veces en el
 complemento—; lo que faltaba era aplicarla a los datos.
 
-**Y al preparar el recálculo apareció algo mayor.**  contiene
-dos matrices y **el documento publica la primera**.  deja 31 celdas sin
-concluir y coincide exactamente con la figura publicada;  aplica los 26
+**Y al preparar el recálculo apareció algo mayor.** `matriz-v2.json` contiene
+dos matrices y **el documento publica la primera**. `.v1` deja 31 celdas sin
+concluir y coincide exactamente con la figura publicada; `.v2` aplica los 26
 cierres de la Ronda 2, deja 5 y cambia el orden de forma sustantiva —la
 Universidad Central pasa de 8-16 a 17-17, la Adolfo Ibáñez de 6-14 a 11-11—.
 Cuál es la canónica es una pregunta para el autor y bloquea el recálculo.
@@ -21,12 +21,12 @@ inventario de todo lo que habría que tocar: las siete frases del documento, los
 tres campos del sitio y las seis menciones del complemento.
 
 **La cadena de cálculo entra al repositorio**, en
-, con la rúbrica documentada. Vivía
+`tools/informes/informe-01/comparador/`, con la rúbrica documentada. Vivía
 fuera, en el equipo del autor, y sin ella no se podía comprobar que lo
 publicado cuadrara con sus datos —que es justamente lo que no cuadra—.
 
-**Reforma del §8 de  (D-038).** La regla decía que los informes «no
-se redactan en Word: el texto vive en archivos », y es falsa desde que
+**Reforma del §8 de `CLAUDE.md` (D-038).** La regla decía que los informes «no
+se redactan en Word: el texto vive en archivos `.json`», y es falsa desde que
 la v2.0.0 llegó como documento cerrado producido fuera. Una regla que el trabajo
 real desmiente no se cumple: se ignora, y arrastra a las de al lado. Ahora
 reconoce dos procedencias —nacido en el repositorio y entregado cerrado— con
