@@ -130,6 +130,14 @@ botón, y desde la v2.0.0 **hay una prueba que lo comprueba contra el disco**:
 `src/lib/informes.test.ts` abre `public/` y falla si falta cualquiera. Ya no
 depende de que quien publica se acuerde.
 
+#### La capa de lectura
+
+Un documento con `reading: 'documento'` tiene que llevar la capa de lectura en
+pantalla, o se sirve como una columna de papel de 210 mm. Se genera con
+`npm run informe:lector` desde el original guardado en `content/.../entregas/`,
+y hay una prueba que falla si falta. El método está en
+[08 · El lector en línea](08-lector-en-linea.md).
+
 #### Los tres campos que deciden la experiencia
 
 | Campo | Qué gobierna |

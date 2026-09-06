@@ -261,6 +261,22 @@ Tres reglas que ya se rompieron una vez:
 - **La portada del informe no es el informe.** Si una pantalla anuncia una
   versión en la cabecera, todo lo que muestre debajo tiene que ser de esa
   versión. La reconstrucción nativa de la v0.8.0 vive en `/v/0.8.0` por esto.
+- **El informe se abre leído.** La ficha muestra el documento de la versión
+  vigente sin que haya que pulsar nada: quien entra a un informe entra a
+  leerlo. Lo demás —cifras, cambios, descargas, historial— queda alrededor.
+
+### La capa de lectura, y por qué el documento no se toca
+
+Los informes se maquetan para papel, y esa hoja en milímetros y puntos en
+pantalla da una columna rígida de 210 mm a 13 px, sin modo oscuro y sin índice.
+El documento entregado se conserva intocado en
+`content/reports/<informe>/entregas/<versión>/` y `npm run informe:lector` le
+añade la capa al publicarlo en `public/descargas/`.
+
+**La capa cambia el tamaño, el ritmo, el color y la navegación; no cambia lo
+que el documento dice.** Hay una prueba que compara el texto desnudo del
+entregado con el del publicado y exige que sean idénticos. El método completo
+está en `docs/informes/08-lector-en-linea.md`.
 
 ### La cadena de producción
 

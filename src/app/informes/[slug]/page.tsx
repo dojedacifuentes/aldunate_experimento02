@@ -14,6 +14,7 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
+import { DocumentoEmbebido } from '@/components/informes/DocumentoEmbebido';
 import {
   ArtefactosDeVersion,
   ComplementoDeVersion,
@@ -259,6 +260,119 @@ export default async function InformeDetallePage({
         </section>
       )}
 
+      {latest && (
+        <Section
+          eyebrow={`Versión vigente · v${latest.version}`}
+          title={latest.headline ?? `Qué trae la v${latest.version}`}
+          description={latest.summary}
+        >
+          <VersionFiguras version={latest} className="mb-10" />
+        </Section>
+      )}
+
+      {/*
+        El documento, abierto. Es lo primero que se lee y no algo a lo que haya
+        que llegar: quien entra a un informe entra a leerlo, y obligarle a
+        pulsar «leer en línea» para empezar era un paso que no compraba nada.
+        Se carga dentro de la página, con el tema del sitio y su índice al
+        lado; la ruta \`/v/<versión>\` sigue existiendo para enlazar una
+        versión concreta y para las históricas.
+      */}
+      {latest && leeEnLinea && readingMode(latest) === 'documento' && latest.html && (
+        <Section
+          id="documento"
+          eyebrow="El informe"
+          title={`Documento completo · v${latest.version}`}
+          description="El documento tal como se imprime y se envía, leído aquí sin descargar nada. El índice de la izquierda lleva a cualquier sección."
+          className="scroll-mt-20"
+        >
+          <DocumentoEmbebido
+            src={latest.html}
+            titulo={`${report.title} · versión ${latest.version}`}
+          />
+        </Section>
+      )}
+
+      {/*
+        La v0.8.0 es la única versión transcrita a datos tipados, y su lectura
+        vive en su propia ruta. Cuando la vigente sea de esa clase, aquí sólo
+        se anuncia: montar la reconstrucción entera dentro de la portada es lo
+        que hacía que la pantalla dijera una versión y mostrara otra.
+      */}
+      {latest && readingMode(latest) === 'nativo' && (
+        <Section eyebrow="El informe" title={`Documento completo · v${latest.version}`}>
+          <Notice tone="signal">
+            Esta versión la reconstruye el sitio con sus propios componentes.{' '}
+            <Link
+              href={versionHref(report.slug, latest.version)}
+              className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+            >
+              Abrir la lectura de la v{latest.version}
+            </Link>
+            .
+          </Notice>
+        </Section>
+      )}
+
+      {latest && (
+        <Section
+          eyebrow="Registro"
+          title={`Qué cambió en la v${latest.version}`}
+          description="Una versión nueva no autoriza a hacer desaparecer la anterior. Esto es lo que se hizo, y qué consecuencia tiene cada cosa sobre lo que el informe puede afirmar."
+        >
+          <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:items-start">
+            <div>
+              <p className="meta mb-4 text-primary">Qué cambió respecto de la anterior</p>
+              <ul className="space-y-3">
+                {latest.changelog.map((entry) => (
+                  <li key={entry} className="flex gap-4">
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
+                      aria-hidden
+                    />
+                    <span className="leading-relaxed text-muted-foreground">{entry}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Surface className="p-6">
+              <p className="meta mb-4">Cómo leerla</p>
+              <dl className="space-y-0">
+                <MetaRow label="Publicada" value={formatDate(latest.date)} />
+                <MetaRow label="Estado" value={reportStatusMeta[latest.status].label} />
+                {latest.pages && (
+                  <MetaRow label="Extensión" value={`${latest.pages} páginas`} />
+                )}
+                <MetaRow
+                  label="Lectura en línea"
+                  value={
+                    readingMode(latest) === 'nativo'
+                      ? 'Reconstruida en el sitio'
+                      : readingMode(latest) === 'documento'
+                        ? 'Documento completo, sin salir del sitio'
+                        : 'No disponible'
+                  }
+                />
+                <MetaRow label="Formatos" value={String(artefactos.length)} />
+              </dl>
+              {leeEnLinea && (
+                <ButtonLink
+                  href={versionHref(report.slug, latest.version)}
+                  variant="primary"
+                  size="sm"
+                  className="mt-5"
+                >
+                  <BookOpen className="h-3.5 w-3.5" aria-hidden />
+                  Abrir la v{latest.version}
+                </ButtonLink>
+              )}
+            </Surface>
+          </div>
+        </Section>
+      )}
+
+
       {/* ── Capa 1 · Ficha y resumen ── */}
       <Section
         eyebrow="Capa 1"
@@ -335,66 +449,6 @@ export default async function InformeDetallePage({
         sostenía otras. Es lo que impide que la ficha diga «38 verificadas»
         mientras el documento descargable en la misma pantalla dice «74 de 74».
       */}
-      {latest && (
-        <Section
-          eyebrow={`Versión vigente · v${latest.version}`}
-          title={latest.headline ?? `Qué trae la v${latest.version}`}
-          description={latest.summary}
-        >
-          <VersionFiguras version={latest} className="mb-10" />
-
-          <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:items-start">
-            <div>
-              <p className="meta mb-4 text-primary">Qué cambió respecto de la anterior</p>
-              <ul className="space-y-3">
-                {latest.changelog.map((entry) => (
-                  <li key={entry} className="flex gap-4">
-                    <span
-                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary"
-                      aria-hidden
-                    />
-                    <span className="leading-relaxed text-muted-foreground">{entry}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <Surface className="p-6">
-              <p className="meta mb-4">Cómo leerla</p>
-              <dl className="space-y-0">
-                <MetaRow label="Publicada" value={formatDate(latest.date)} />
-                <MetaRow label="Estado" value={reportStatusMeta[latest.status].label} />
-                {latest.pages && (
-                  <MetaRow label="Extensión" value={`${latest.pages} páginas`} />
-                )}
-                <MetaRow
-                  label="Lectura en línea"
-                  value={
-                    readingMode(latest) === 'nativo'
-                      ? 'Reconstruida en el sitio'
-                      : readingMode(latest) === 'documento'
-                        ? 'Documento completo, sin salir del sitio'
-                        : 'No disponible'
-                  }
-                />
-                <MetaRow label="Formatos" value={String(artefactos.length)} />
-              </dl>
-              {leeEnLinea && (
-                <ButtonLink
-                  href={versionHref(report.slug, latest.version)}
-                  variant="primary"
-                  size="sm"
-                  className="mt-5"
-                >
-                  <BookOpen className="h-3.5 w-3.5" aria-hidden />
-                  Abrir la v{latest.version}
-                </ButtonLink>
-              )}
-            </Surface>
-          </div>
-        </Section>
-      )}
-
       {/* ── Ejes ── */}
       <Section
         eyebrow="Alcance"

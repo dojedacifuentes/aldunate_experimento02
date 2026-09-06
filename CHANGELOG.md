@@ -2,6 +2,64 @@
 
 ## No publicado
 
+### Informe 01 · el documento se lee, y se lee bien
+
+**El informe se abre leído.** La ficha muestra el documento de la versión
+vigente sin que haya que pulsar nada. Quien entra a un informe entra a leerlo,
+y «Leer en línea» era un paso que no compraba nada: la ruta `/v/<versión>`
+sigue existiendo para enlazar una versión concreta y para las históricas.
+
+**Añadido · capa de lectura en pantalla** (`npm run informe:lector`). Los
+informes se maquetan para papel, y esa hoja en milímetros y puntos daba en
+pantalla una columna rígida de 210 mm a 13 px, con párrafos justificados sin
+partición, sin modo oscuro y con un índice de veintiocho entradas que no
+llevaba a ninguna parte. La v2.0.0 se publicó así el 06-09-2026 y se veía peor
+que la v0.8.0, que sí traía armazón.
+
+Ahora el documento tiene retícula fluida, medida de lectura, raíl con el
+índice, barra de progreso, claro y oscuro, y anclas en sus veintinueve
+secciones —el entregado traía **un** `id` en cuatrocientos kilobytes—. La hoja
+de imprenta queda intacta: todo lo nuevo vive dentro de `@media screen`.
+
+**El documento no se toca.** El entregado se conserva en
+`content/reports/…/entregas/v2.0.0/` y el constructor escribe en
+`public/descargas/`. Una prueba compara el texto desnudo de los dos y exige que
+sean **idénticos**: la capa cambia tamaño, ritmo, color y navegación, y nada
+más.
+
+**Añadido · lectura embebida sin costura.** Dentro del sitio, el documento
+pierde su raíl y su fondo —los pone la página— y publica su alto para que el
+marco crezca hasta él: un solo desplazamiento en vez de uno dentro de otro. El
+índice se dibuja con la tipografía del sitio y el tema del sitio manda sobre el
+del documento.
+
+**Corregido · contraste.** Los 36 colores que la hoja original llevaba escritos
+dentro de las reglas se redeclararon contra variables, porque un color suelto
+es un color sin equivalente oscuro. Comprobados 34 tipos de elemento en los dos
+temas: ninguno baja de 4,5 : 1. Tres tintas se oscurecieron para llegar
+—`--faint`, `--acc` y el chip «no concluyente»—.
+
+**Corregido · el marco crecía sin fin.** El alto se medía con
+`body.scrollHeight`, que vale al menos el alto del marco, y el marco tomaba su
+alto de esa medida: 1.200 → 1.200 → … Llegó a 3.147.655 píxeles. Se mide el
+contenido, que no crece porque crezca el marco.
+
+**Corregido · el primer aviso no lo oía nadie.** El marco va en el HTML del
+servidor y su guion corre antes de que React hidrate; `onLoad` tampoco se
+dispara para un marco ya cargado. El documento quedaba clavado en su alto
+provisional y el índice, vacío, sin ningún error en consola. La página pregunta
+ahora hasta que le contestan.
+
+**Corregido · dos defectos del índice del documento entregado**, sin tocar su
+texto: «2 · Objetivos» está maquetado como `h3` y el índice lo cita como
+sección, y el índice dice «…: fuentes de la segunda ronda» donde el encabezado
+dice «…: las fuentes…». El emparejamiento tolera las dos cosas y avisa por
+consola de cualquier entrada que se quede sin destino.
+
+**Añadido · `docs/informes/08-lector-en-linea.md`** y una entrada en el §8 de
+`CLAUDE.md`. Publicar la versión siguiente son cinco pasos y el que se olvida
+—generar la capa— lo caza una prueba.
+
 ### Informe 01 · v2.0.0 · deja de ser borrador, y el sitio aprende a versionar
 
 **Corte 06-09-2026.** La v0.8.0 pasa a histórica sin perder nada: conserva su

@@ -11,6 +11,51 @@ los mismos de siempre, justificados en `docs/DECISIONS.md` D-022.
 
 ---
 
+## 06-09-2026 · Informe 01 · el documento se abre leído, y se lee bien
+
+Dos problemas distintos que se veían como uno.
+
+**El primero: había que pedir permiso para leer.** La ficha del informe
+mostraba cifras, cambios y descargas, y el documento estaba detrás de un botón.
+Ahora se abre con la página. El orden es contexto → documento → qué cambió →
+ficha → alcance → complementos → descargas → historial: se entra leyendo y el
+aparato queda alrededor, no delante.
+
+**El segundo: lo que se abría era una maqueta de imprenta.** Columna rígida de
+210 mm en un monitor de 1.400 px, 13 px de cuerpo, justificado sin partición,
+papel blanco a medianoche y un índice de veintiocho entradas que no llevaba a
+ninguna parte porque el documento entregado traía **un** `id` en cuatrocientos
+kilobytes. La v0.8.0 sí tenía armazón de lectura, y por eso se veía mejor.
+
+**La capa de pantalla.** Retícula fluida con medida de lectura de 42 rem, y
+62 rem para lo que no cabe en ella —tablas, figuras, anexos—. Cuerpo en rem,
+bandera en vez de justificado, aire entre capítulos en lugar de saltos de
+página. Raíl pegajoso con el índice y el capítulo marcado, barra de progreso,
+alternador de claro y oscuro que se recuerda. Todo dentro de `@media screen`:
+la impresión sale exactamente como venía.
+
+**Portada.** Era una hoja A4 de 297 mm clavados. Ahora respira: tipografía en
+`clamp`, rejilla de metadatos que se recoloca sola y el degradado y la retícula
+conservados, que son la identidad del documento.
+
+**Embebido sin costura.** Dentro de la ficha, el documento pierde raíl y fondo
+—los pone la página— y publica su alto para que el marco crezca hasta él. Hay
+un solo desplazamiento, no uno dentro de otro, que es lo que hacía incómodo
+leer treinta y siete páginas en un marco. El índice se dibuja con la tipografía
+del sitio, porque quien navega está en el sitio y el documento es lo que está
+leyendo.
+
+**Contraste, medido.** 34 tipos de elemento en los dos temas, ninguno por
+debajo de 4,5 : 1. Tres tintas se oscurecieron para llegar.
+
+**Y una lección de método.** Las capturas del panel salían en negro y las
+transiciones de color no terminaban: el panel estaba oculto y no producía
+fotogramas. Media hora persiguiendo un fallo de tema que no existía. Cuando el
+panel no pinta, se mide con estilos calculados y geometría —que además es más
+riguroso que mirar—.
+
+---
+
 ## 06-09-2026 · Informes · un informe con nueve versiones necesitaba un eje
 
 El Informe 01 llegó a la v2.0.0 con nueve versiones publicadas, y la interfaz

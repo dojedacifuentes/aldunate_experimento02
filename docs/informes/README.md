@@ -20,6 +20,7 @@ cómo funciona y por qué está hecha así.
 | **05** | [Modelo de contenido](05-modelo-de-contenido.md) | El esquema de bloques, el orden de archivos y cómo insertar un capítulo |
 | **06** | [Guía de reproducción](06-reproducir.md) | Paso a paso, requisitos, trampas del entorno y verificaciones |
 | **07** | [Puente con el sitio](07-puente-con-el-sitio.md) | Cómo un informe compilado termina publicado aquí, y cómo se traduce su evidencia a `src/data/research.ts` |
+| **08** | [El lector en línea](08-lector-en-linea.md) | Cómo un documento maquetado para papel se lee en pantalla —índice, raíl, claro y oscuro— sin dejar de decir lo mismo |
 
 ---
 

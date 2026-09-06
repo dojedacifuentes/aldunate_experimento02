@@ -239,1159 +239,8 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 .div-b{font-size:8.8pt;line-height:1.46;margin:0}
 .two{columns:2;column-gap:9mm}
 .two>*{break-inside:avoid}
-</style>
-<style data-capa="lector">
-/* ══════════════════════════════════════════════════════════════════════════
-   Capa de lectura en pantalla · informes del laboratorio
-   ──────────────────────────────────────────────────────────────────────────
-   Los informes se maquetan para papel: la hoja de estilos que llega con el
-   documento está en milímetros y puntos, con `@page`, saltos de página y una
-   caja de 210 mm. Eso es correcto para el PDF y es lo que garantiza que el
-   documento impreso y el descargable no diverjan.
-
-   En pantalla, esa misma hoja produce una columna rígida de 210 mm, texto a
-   10 pt, párrafos justificados sin partición y ningún modo oscuro. Este
-   archivo NO la reemplaza: se añade después y sólo dentro de `@media screen`,
-   de modo que la imprenta queda exactamente como venía y la pantalla recibe
-   un diseño propio.
-
-   Regla que gobierna el archivo entero: **nada de lo que hay aquí puede
-   cambiar lo que el documento dice.** Cambia el tamaño, el ritmo, el color y
-   la navegación; no el contenido, ni el orden, ni una cifra.
-   ══════════════════════════════════════════════════════════════════════════ */
-
-@media screen {
-
-  /* ── 1 · Tintas ─────────────────────────────────────────────────────────
-     Los suelos son exactamente los del sitio —#F7F4EE y #09131D— para que el
-     documento embebido no tenga costura con la página que lo aloja. El resto
-     de la paleta conserva la identidad fría del documento (azul y verde
-     azulado), que es la que usan sus figuras.
-
-     Todo color vive aquí. La hoja original tiene 36 hexadecimales escritos
-     dentro de las reglas, y cada uno de ellos se vuelve a declarar más abajo
-     contra una variable: un color suelto es un color que no tiene equivalente
-     oscuro, y en modo oscuro se ve como una mancha clara.                  */
-
-  :root {
-    color-scheme: light;
-
-    --paper: #f7f4ee;
-    --wash: #efeae0;
-    --plate: #fffdf9;
-
-    --ink: #1a1813;
-    --ink2: #2f2b24;
-    --body: #3a362e;
-    --mute: #5c5548;
-    --faint: #6e685c;
-
-    --line: #ddd5c6;
-    --line2: #eae4d8;
-
-    --brand: #1b5486;
-    --brand2: #2a6fa8;
-    --acc: #0c6f6e;
-    --acc2: #5aafac;
-    --warm: #a65c24;
-    --warm2: #d9a06a;
-    --alert: #9e3527;
-
-    --g0: #e6e0d4;
-    --g1: #c4bcac;
-
-    /* Estados de la matriz de capacidades. */
-    --chip-op-bg: #d9efee;
-    --chip-op-fg: #08514f;
-    --chip-opf-bg: #1b5486;
-    --chip-opf-fg: #ffffff;
-    --chip-inc-bg: #f7e7d3;
-    --chip-inc-fg: #7d4318;
-    --chip-ent-bg: #e3e9f1;
-    --chip-ent-fg: #364c62;
-    --chip-nl-bg: #ebe6dc;
-    --chip-nl-fg: #6b665b;
-    --chip-nc-bg: transparent;
-    --chip-nc-fg: #6b665b;
-    --chip-nc-bd: #c4bcac;
-    --chip-ady-bg: #e6efe7;
-    --chip-ady-fg: #3f6444;
-
-    /* Cajas. */
-    --box-acc-bg: #e9f6f5;
-    --box-acc-bd: #bfdedc;
-    --box-warn-bg: #fbf2e7;
-    --box-warn-bd: #ecd7bf;
-    --box-key-bg: #ecf3f9;
-    --box-key-bd: #cbdcec;
-    --box-dark-bg: #17222c;
-    --box-dark-fg: #dbe6f0;
-    --box-dark-strong: #ffffff;
-
-    --hall-bg: #1a1813;
-    --hall-fg: #ffffff;
-    --enlace-bd: #b9cbdc;
-
-    /* Retícula de lectura. */
-    --medida: 42rem;
-    --raíl: 17.5rem;
-    --aire: clamp(2.75rem, 6vw, 5rem);
-  }
-
-  /* El oscuro se declara dos veces a propósito: una para quien no ha elegido
-     y lleva el sistema en oscuro, otra para quien pulsó el botón. Sin la
-     segunda, el botón no puede sacar a nadie del oscuro del sistema.       */
-  :root[data-theme='dark'],
-  :root[data-tema='oscuro'] {
-    color-scheme: dark;
-
-    --paper: #09131d;
-    --wash: #0e1b27;
-    --plate: #0e1b27;
-
-    --ink: #e4edf4;
-    --ink2: #c9d7e3;
-    --body: #b3c3d1;
-    --mute: #93a6b5;
-    --faint: #77899a;
-
-    --line: #1f3444;
-    --line2: #182734;
-
-    --brand: #6fb3de;
-    --brand2: #8cc6ea;
-    --acc: #4fc3c0;
-    --acc2: #2b8482;
-    --warm: #d9a05e;
-    --warm2: #7d5c33;
-    --alert: #e08878;
-
-    --g0: #16252f;
-    --g1: #33485a;
-
-    --chip-op-bg: #123330;
-    --chip-op-fg: #6fd3cf;
-    --chip-opf-bg: #6fb3de;
-    --chip-opf-fg: #09131d;
-    --chip-inc-bg: #33240f;
-    --chip-inc-fg: #e0ab6a;
-    --chip-ent-bg: #17283a;
-    --chip-ent-fg: #9db6cd;
-    --chip-nl-bg: #14202b;
-    --chip-nl-fg: #8496a4;
-    --chip-nc-bg: transparent;
-    --chip-nc-fg: #77899a;
-    --chip-nc-bd: #33485a;
-    --chip-ady-bg: #16281a;
-    --chip-ady-fg: #93bc94;
-
-    --box-acc-bg: #0c2422;
-    --box-acc-bd: #1c4a47;
-    --box-warn-bg: #2a1f10;
-    --box-warn-bd: #56401f;
-    --box-key-bg: #0e2135;
-    --box-key-bd: #234563;
-    --box-dark-bg: #0e1b27;
-    --box-dark-fg: #c9d7e3;
-    --box-dark-strong: #ffffff;
-
-    --hall-bg: #6fb3de;
-    --hall-fg: #09131d;
-    --enlace-bd: #2c4a63;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']):not([data-tema='claro']) {
-      color-scheme: dark;
-
-      --paper: #09131d;
-      --wash: #0e1b27;
-      --plate: #0e1b27;
-      --ink: #e4edf4;
-      --ink2: #c9d7e3;
-      --body: #b3c3d1;
-      --mute: #93a6b5;
-      --faint: #77899a;
-      --line: #1f3444;
-      --line2: #182734;
-      --brand: #6fb3de;
-      --brand2: #8cc6ea;
-      --acc: #4fc3c0;
-      --acc2: #2b8482;
-      --warm: #d9a05e;
-      --warm2: #7d5c33;
-      --alert: #e08878;
-      --g0: #16252f;
-      --g1: #33485a;
-      --chip-op-bg: #123330;
-      --chip-op-fg: #6fd3cf;
-      --chip-opf-bg: #6fb3de;
-      --chip-opf-fg: #09131d;
-      --chip-inc-bg: #33240f;
-      --chip-inc-fg: #e0ab6a;
-      --chip-ent-bg: #17283a;
-      --chip-ent-fg: #9db6cd;
-      --chip-nl-bg: #14202b;
-      --chip-nl-fg: #8496a4;
-      --chip-nc-bd: #33485a;
-      --chip-nc-fg: #77899a;
-      --chip-ady-bg: #16281a;
-      --chip-ady-fg: #93bc94;
-      --box-acc-bg: #0c2422;
-      --box-acc-bd: #1c4a47;
-      --box-warn-bg: #2a1f10;
-      --box-warn-bd: #56401f;
-      --box-key-bg: #0e2135;
-      --box-key-bd: #234563;
-      --box-dark-bg: #0e1b27;
-      --box-dark-fg: #c9d7e3;
-      --hall-bg: #6fb3de;
-      --hall-fg: #09131d;
-      --enlace-bd: #2c4a63;
-    }
-  }
-
-  /* ── 2 · Base ───────────────────────────────────────────────────────────
-     La hoja de imprenta fija 10,05 pt y 1,545 de interlínea, que en pantalla
-     son 13 px apretados. Aquí manda el rem.                                */
-
-  html {
-    -webkit-text-size-adjust: 100%;
-  }
-
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--body);
-    font-family: var(--serif);
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    font-variant-numeric: normal;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  ::selection {
-    background: color-mix(in oklab, var(--acc) 24%, transparent);
-    color: var(--ink);
-  }
-
-  a {
-    color: var(--brand);
-    border-bottom: 1px solid var(--enlace-bd);
-    text-decoration: none;
-  }
-
-  a:hover {
-    border-bottom-color: currentColor;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--acc);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-
-  /* ── 3 · Armazón ────────────────────────────────────────────────────────
-     Rejilla de dos columnas: raíl pegajoso con el índice, y la columna de
-     lectura. El raíl es la diferencia entre un documento de treinta y siete
-     páginas navegable y uno que sólo se puede recorrer con la rueda.       */
-
-  .lector {
-    display: grid;
-    grid-template-columns: var(--raíl) minmax(0, 1fr);
-    gap: 0;
-    max-width: 84rem;
-    margin: 0 auto;
-    align-items: start;
-  }
-
-  .lector-raíl {
-    position: sticky;
-    top: 0;
-    max-height: 100vh;
-    max-height: 100svh;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding: 2.25rem 1.25rem 2.5rem 1.75rem;
-    border-right: 1px solid var(--line);
-  }
-
-  .lector-raíl::-webkit-scrollbar {
-    width: 6px;
-  }
-  .lector-raíl::-webkit-scrollbar-thumb {
-    background: var(--g1);
-    border-radius: 3px;
-  }
-
-  .raíl-marca {
-    font-family: var(--mono);
-    font-size: 0.625rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--acc);
-    font-weight: 600;
-    margin: 0 0 0.4rem;
-  }
-
-  .raíl-título {
-    font-family: var(--sans);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    line-height: 1.35;
-    color: var(--ink);
-    margin: 0 0 0.3rem;
-    text-wrap: balance;
-  }
-
-  .raíl-sub {
-    font-family: var(--mono);
-    font-size: 0.625rem;
-    color: var(--mute);
-    letter-spacing: 0.04em;
-    margin: 0 0 1.25rem;
-  }
-
-  .lector-raíl nav {
-    border-top: 1px solid var(--line);
-    padding-top: 0.9rem;
-  }
-
-  .lector-raíl nav a {
-    display: block;
-    font-family: var(--sans);
-    font-size: 0.75rem;
-    line-height: 1.4;
-    color: var(--mute);
-    padding: 0.4rem 0.5rem 0.4rem 0.7rem;
-    border: 0;
-    border-left: 2px solid transparent;
-    border-radius: 0 3px 3px 0;
-    transition: color 0.14s, background-color 0.14s, border-color 0.14s;
-  }
-
-  .lector-raíl nav a:hover {
-    color: var(--ink);
-    background: var(--wash);
-  }
-
-  /* El capítulo en pantalla, marcado. Es lo que convierte el índice en un
-     mapa de posición y no en una lista de enlaces. */
-  .lector-raíl nav a.activo {
-    color: var(--ink);
-    border-left-color: var(--acc);
-    background: var(--wash);
-    font-weight: 600;
-  }
-
-  .lector-raíl nav a.anexo {
-    padding-left: 1.4rem;
-    font-size: 0.71875rem;
-  }
-
-  .raíl-grupo {
-    font-family: var(--mono);
-    font-size: 0.5625rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--faint);
-    margin: 1.1rem 0 0.4rem 0.7rem;
-  }
-
-  .raíl-pie {
-    margin-top: 1.5rem;
-    padding-top: 0.9rem;
-    border-top: 1px solid var(--line);
-    font-family: var(--sans);
-    font-size: 0.6875rem;
-    line-height: 1.5;
-    color: var(--faint);
-  }
-
-  .lector-cuerpo {
-    min-width: 0;
-    padding: 0 var(--aire) 5rem;
-  }
-
-  /* Barra de progreso: dice cuánto queda sin ocupar sitio. */
-  #lector-prog {
-    position: fixed;
-    inset: 0 auto auto 0;
-    height: 2px;
-    width: 0;
-    background: var(--acc);
-    z-index: 60;
-    transition: width 0.1s linear;
-  }
-
-  /* Alternador de tema. */
-  .lector-tema {
-    position: fixed;
-    top: 0.9rem;
-    right: 0.9rem;
-    z-index: 61;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--plate);
-    color: var(--mute);
-    cursor: pointer;
-  }
-
-  .lector-tema:hover {
-    color: var(--ink);
-    border-color: var(--g1);
-  }
-
-  /* ── 4 · Secciones ──────────────────────────────────────────────────────
-     `.page` era una hoja de papel. En pantalla es sólo un bloque, y el salto
-     de página no significa nada: lo que separa capítulos aquí es el aire. */
-
-  .page {
-    max-width: var(--medida);
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  /* Los bloques anchos —tablas, figuras, anexos— salen de la medida de
-     lectura y usan el ancho disponible. Un registro de 96 fuentes en 42rem
-     es ilegible. */
-  .page.ancha,
-  .page:has(> .toc),
-  .page:has(table),
-  .page:has(figure) {
-    max-width: 62rem;
-  }
-
-  .page + .page {
-    margin-top: var(--aire);
-    padding-top: var(--aire);
-    border-top: 1px solid var(--line2);
-  }
-
-  /* La portada ya cierra con su propio aire: una regla encima de la primera
-     sección la dejaría separada del documento por una línea que no separa
-     nada. */
-  .cover + .page {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* El encabezado corriente es del papel: en pantalla lo dice el raíl. */
-  .hdr {
-    display: none;
-  }
-
-  .page > h2 {
-    scroll-margin-top: 1.5rem;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: var(--ink);
-    text-wrap: balance;
-  }
-
-  h2 {
-    font-size: clamp(1.6rem, 3.2vw, 2.15rem);
-    line-height: 1.16;
-    letter-spacing: -0.022em;
-    margin: 0 0 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.1875rem;
-    line-height: 1.28;
-    margin: 2.75rem 0 0.75rem;
-  }
-
-  h4 {
-    font-size: 1rem;
-    color: var(--ink2);
-    margin: 2rem 0 0.5rem;
-  }
-
-  h5 {
-    font-size: 0.75rem;
-    color: var(--acc);
-    letter-spacing: 0.1em;
-    margin: 1.9rem 0 0.5rem;
-  }
-
-  p {
-    /* Justificado sin partición decente produce ríos; en pantalla, bandera. */
-    text-align: left;
-    hyphens: none;
-    margin: 0 0 1.05rem;
-    font-size: 1.0625rem;
-    line-height: 1.7;
-  }
-
-  p.lead {
-    font-size: 1.1875rem;
-    line-height: 1.6;
-    color: var(--ink2);
-  }
-
-  small {
-    font-size: 0.8125rem;
-  }
-
-  .eyebrow {
-    font-size: 0.6875rem;
-    letter-spacing: 0.16em;
-    margin: 0 0 0.75rem;
-  }
-
-  .rule {
-    height: 3px;
-    width: 3.5rem;
-    margin: 0 0 1.75rem;
-  }
-
-  .rule.full {
-    width: 100%;
-    height: 1px;
-    margin: 2.25rem 0;
-  }
-
-  ul,
-  ol {
-    padding-left: 1.35rem;
-    margin: 0.75rem 0 1.25rem;
-  }
-
-  li {
-    margin-bottom: 0.4rem;
-    padding-left: 0.2rem;
-  }
-
-  ul.clean li {
-    padding-left: 1.6rem;
-    margin-bottom: 0.7rem;
-  }
-
-  ul.clean li:before {
-    top: 0.58rem;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-width: 1px;
-  }
-
-  /* ── 5 · Portada ────────────────────────────────────────────────────────
-     En papel es una hoja A4 exacta. En pantalla, un bloque que respira y se
-     adapta; el degradado y la retícula se conservan porque son la identidad
-     del documento. */
-
-  .cover {
-    width: auto;
-    height: auto;
-    min-height: 0;
-    max-width: none;
-    margin: 0 0 var(--aire);
-    padding: clamp(2rem, 5.5vw, 4rem) clamp(1.5rem, 5vw, 3.5rem)
-      clamp(2rem, 4.5vw, 3rem);
-    border-radius: 0 0 14px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .cv-top {
-    padding-bottom: 1.25rem;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .cv-org {
-    font-size: 0.6875rem;
-  }
-
-  .cv-badge {
-    font-size: 0.625rem;
-    padding: 0.35rem 0.7rem;
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-
-  .cv-mid {
-    margin-top: clamp(2.5rem, 7vw, 5rem);
-    padding-bottom: 0;
-  }
-
-  .cv-kicker {
-    font-size: 0.6875rem;
-    letter-spacing: 0.18em;
-    margin-bottom: 1.1rem;
-  }
-
-  .cv-title {
-    font-size: clamp(2rem, 5.4vw, 3.6rem);
-    line-height: 1.06;
-    margin: 0 0 1.25rem;
-    max-width: 22ch;
-  }
-
-  .cv-sub {
-    font-size: clamp(1rem, 1.9vw, 1.1875rem);
-    line-height: 1.5;
-    max-width: 46ch;
-    margin: 0 0 1.5rem;
-  }
-
-  .cv-tag {
-    font-size: 0.6875rem;
-    padding: 0.45rem 0.85rem;
-    border-radius: 999px;
-  }
-
-  .cv-grid {
-    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
-    gap: 1.25rem 1.5rem;
-    margin-top: clamp(2rem, 5vw, 3.25rem);
-    padding-top: 1.5rem;
-  }
-
-  .cv-cell {
-    padding-right: 0;
-  }
-
-  .cv-k {
-    font-size: 0.5625rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .cv-v {
-    font-size: 0.875rem;
-  }
-
-  .cv-v small {
-    font-size: 0.6875rem;
-    margin-top: 0.25rem;
-  }
-
-  .cv-foot {
-    margin-top: 2rem;
-    padding-top: 1.1rem;
-    font-size: 0.6875rem;
-  }
-
-  /* ── 6 · Cajas, límites y hallazgos ─────────────────────────────────── */
-
-  .box {
-    border-radius: 8px;
-    padding: 1.15rem 1.35rem;
-    margin: 1.5rem 0;
-    border-width: 1px;
-  }
-
-  .box p {
-    font-size: 0.9375rem;
-    line-height: 1.62;
-  }
-
-  .box.acc {
-    background: var(--box-acc-bg);
-    border-color: var(--box-acc-bd);
-    border-left: 3px solid var(--acc);
-  }
-
-  .box.warn {
-    background: var(--box-warn-bg);
-    border-color: var(--box-warn-bd);
-    border-left: 3px solid var(--warm);
-  }
-
-  .box.key {
-    background: var(--box-key-bg);
-    border-color: var(--box-key-bd);
-    border-left: 3px solid var(--brand);
-  }
-
-  .box.dark {
-    background: var(--box-dark-bg);
-    color: var(--box-dark-fg);
-    border: 1px solid var(--line);
-  }
-
-  .box.dark strong {
-    color: var(--box-dark-strong);
-  }
-
-  .limite {
-    font-size: 0.9375rem;
-    border-left: 2px solid var(--g1);
-    padding: 0.25rem 0 0.25rem 1.1rem;
-    margin: 1rem 0 1.25rem;
-  }
-
-  .hall {
-    margin: 0 0 2.5rem;
-  }
-
-  .hall-h {
-    gap: 0.85rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .hall-n {
-    font-size: 0.75rem;
-    background: var(--hall-bg);
-    color: var(--hall-fg);
-    padding: 0.25rem 0.55rem;
-    border-radius: 4px;
-  }
-
-  .hall-n.new {
-    background: var(--acc);
-    color: var(--paper);
-  }
-
-  .hall-t {
-    font-size: 1.125rem;
-    line-height: 1.3;
-  }
-
-  .hall-b p {
-    font-size: 1rem;
-  }
-
-  .dato {
-    font-size: 0.6875rem;
-    letter-spacing: 0.12em;
-  }
-
-  .src {
-    font-size: 0.6875rem;
-    margin-top: 0.5rem;
-  }
-
-  /* ── 7 · Cifras ─────────────────────────────────────────────────────── */
-
-  .kpis {
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: 0.85rem;
-    margin: 1.75rem 0 2rem;
-  }
-
-  .kpi {
-    background: var(--plate);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--acc);
-    border-radius: 8px;
-    padding: 1.1rem 1.15rem 1.25rem;
-  }
-
-  .kpi-v {
-    font-size: 1.75rem;
-  }
-
-  .kpi-v span {
-    font-size: 0.9375rem;
-  }
-
-  .kpi-l {
-    font-size: 0.75rem;
-    margin-top: 0.55rem;
-  }
-
-  .kpi-d {
-    font-size: 0.625rem;
-    margin-top: 0.4rem;
-  }
-
-  /* ── 8 · Tablas y estados ───────────────────────────────────────────── */
-
-  /* Una tabla ancha se desplaza dentro de sí misma; la página nunca. */
-  .tabla-ancha {
-    overflow-x: auto;
-    margin: 1.25rem 0 0.5rem;
-    /* El desplazamiento propio necesita un ancestro posicionado o los
-       `sr-only` de dentro arrastran el ancho del documento. */
-    position: relative;
-  }
-
-  table {
-    font-size: 0.8125rem;
-    line-height: 1.45;
-    margin: 1.25rem 0 1rem;
-  }
-
-  .tabla-ancha table {
-    margin: 0;
-    min-width: 34rem;
-  }
-
-  thead th {
-    font-size: 0.6875rem;
-    padding: 0 0.9rem 0.5rem 0;
-    border-bottom: 1px solid var(--ink2);
-  }
-
-  tbody td {
-    padding: 0.55rem 0.9rem 0.55rem 0;
-    border-bottom: 1px solid var(--line2);
-  }
-
-  tbody tr:last-child td {
-    border-bottom: 1px solid var(--line);
-  }
-
-  td.num,
-  th.num {
-    padding-right: 0.6rem;
-  }
-
-  .tbl-note {
-    font-size: 0.75rem;
-    margin: 0.4rem 0 1.5rem;
-  }
-
-  .chip {
-    font-size: 0.625rem;
-    padding: 0.15rem 0.45rem;
-    border-radius: 3px;
-  }
-
-  .c-op {
-    background: var(--chip-op-bg);
-    color: var(--chip-op-fg);
-  }
-  .c-opf {
-    background: var(--chip-opf-bg);
-    color: var(--chip-opf-fg);
-  }
-  .c-inc {
-    background: var(--chip-inc-bg);
-    color: var(--chip-inc-fg);
-  }
-  .c-ent {
-    background: var(--chip-ent-bg);
-    color: var(--chip-ent-fg);
-  }
-  .c-nl {
-    background: var(--chip-nl-bg);
-    color: var(--chip-nl-fg);
-  }
-  .c-nc {
-    background: var(--chip-nc-bg);
-    color: var(--chip-nc-fg);
-    border: 1px dashed var(--chip-nc-bd);
-  }
-  .c-ady {
-    background: var(--chip-ady-bg);
-    color: var(--chip-ady-fg);
-  }
-
-  /* ── 9 · Figuras ────────────────────────────────────────────────────── */
-
-  figure {
-    margin: 2rem 0 2.5rem;
-  }
-
-  .fig-q {
-    font-size: 0.6875rem;
-    letter-spacing: 0.12em;
-    margin: 0 0 0.5rem;
-  }
-
-  .fig-t {
-    font-size: 1.125rem;
-    line-height: 1.3;
-    margin: 0 0 1.25rem;
-    max-width: 46ch;
-  }
-
-  figcaption {
-    font-size: 0.75rem;
-    line-height: 1.55;
-    margin-top: 0.85rem;
-    padding-top: 0.7rem;
-    border-top: 1px solid var(--line2);
-  }
-
-  .leg {
-    font-size: 0.6875rem;
-    gap: 0.5rem 1.4rem;
-    margin-top: 0.85rem;
-  }
-
-  .leg i {
-    width: 0.6rem;
-    height: 0.6rem;
-    margin-right: 0.4rem;
-    border-radius: 2px;
-  }
-
-  /* ── 10 · Índice del documento ──────────────────────────────────────── */
-
-  .toc {
-    columns: 2;
-    column-gap: 2.5rem;
-    font-size: 0.9375rem;
-  }
-
-  /* En papel el número es la página. En pantalla no hay páginas: el índice
-     lleva a la sección, y por eso cada entrada es un enlace. */
-  a.toc-i {
-    border-bottom: 0;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .toc-i {
-    gap: 0.7rem;
-    padding: 0.5rem 0.35rem;
-    border-bottom: 1px solid var(--line2);
-    border-radius: 3px;
-    transition: background-color 0.14s;
-  }
-
-  a.toc-i:hover {
-    background: var(--wash);
-  }
-
-  a.toc-i:hover .toc-t {
-    color: var(--ink);
-  }
-
-  .toc-n {
-    font-size: 0.6875rem;
-    min-width: 1.6rem;
-  }
-
-  .toc-h {
-    font-size: 0.6875rem;
-    margin: 1.5rem 0 0.5rem;
-  }
-
-  /* ── 11 · Anexos ────────────────────────────────────────────────────── */
-
-  .srcrow {
-    font-size: 0.8125rem;
-    grid-template-columns: 6rem 1fr 5rem;
-    gap: 0.9rem;
-    padding: 0.65rem 0;
-  }
-
-  .srcid {
-    font-size: 0.6875rem;
-  }
-
-  .srcurl {
-    font-size: 0.6875rem;
-    margin-top: 0.25rem;
-  }
-
-  .div-item {
-    border-left: 2px solid var(--warm2);
-    padding: 0.35rem 0 0.35rem 1.1rem;
-    margin: 0 0 1.25rem;
-  }
-
-  .div-id {
-    font-size: 0.6875rem;
-  }
-
-  .div-t {
-    font-size: 0.9375rem;
-    margin: 0.2rem 0 0.35rem;
-  }
-
-  .div-b {
-    font-size: 0.9375rem;
-    line-height: 1.55;
-  }
-
-  .rec {
-    background: var(--plate);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 1.25rem 1.35rem;
-    margin: 1.5rem 0;
-  }
-
-  .rec-h {
-    gap: 0.85rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.7rem;
-  }
-
-  .rec-id {
-    font-size: 0.75rem;
-    background: var(--brand);
-    color: var(--paper);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-  }
-
-  .rec-t {
-    font-size: 1.0625rem;
-  }
-
-  .rec-g {
-    grid-template-columns: 6rem 1fr;
-    gap: 0.6rem 1.2rem;
-    font-size: 0.9375rem;
-  }
-
-  .rec-k {
-    font-size: 0.6875rem;
-  }
-
-  .two {
-    columns: 2;
-    column-gap: 2.25rem;
-  }
-
-  /* ── 12 · Estrecho ──────────────────────────────────────────────────── */
-
-  @media (max-width: 60rem) {
-    .lector {
-      display: block;
-    }
-
-    /* El raíl deja de ser columna y pasa a ser un desplegable arriba: en un
-       teléfono, una columna de 17 rem se come la pantalla. */
-    .lector-raíl {
-      position: static;
-      max-height: none;
-      overflow: visible;
-      border-right: 0;
-      border-bottom: 1px solid var(--line);
-      padding: 1.25rem 1.25rem 1rem;
-    }
-
-    .lector-raíl nav {
-      max-height: 15rem;
-      overflow-y: auto;
-    }
-
-    .raíl-pie {
-      display: none;
-    }
-
-    .lector-cuerpo {
-      padding: 0 1.25rem 3rem;
-    }
-
-    .toc,
-    .two {
-      columns: 1;
-    }
-
-    .srcrow {
-      grid-template-columns: 1fr;
-      gap: 0.2rem;
-    }
-
-    .rec-g {
-      grid-template-columns: 1fr;
-      gap: 0.2rem 0;
-    }
-
-    .cover {
-      border-radius: 0;
-    }
-  }
-
-  /* ── 13 · Embebido ──────────────────────────────────────────────────────
-     Cuando el documento vive dentro de una página del sitio, el sitio ya pone
-     el suelo, el índice y el tema. Aquí sólo queda el texto: sin raíl propio,
-     sin barra de progreso, sin botón y sin fondo, para que no haya costura
-     entre el documento y la página que lo aloja. */
-
-  :root[data-modo='embebido'] body {
-    background: transparent;
-  }
-
-  :root[data-modo='embebido'] .lector {
-    display: block;
-    max-width: none;
-  }
-
-  :root[data-modo='embebido'] .lector-raíl,
-  :root[data-modo='embebido'] #lector-prog,
-  :root[data-modo='embebido'] .lector-tema {
-    display: none;
-  }
-
-  :root[data-modo='embebido'] .lector-cuerpo {
-    padding: 0 0 1rem;
-  }
-
-  :root[data-modo='embebido'] .cover {
-    border-radius: 12px;
-    margin-top: 0;
-  }
-
-  /* El ancla tiene que dejar sitio a la cabecera fija del sitio. */
-  :root[data-modo='embebido'] .page > h2 {
-    scroll-margin-top: 5.5rem;
-  }
-}
-
-/* ── 14 · Movimiento ────────────────────────────────────────────────────── */
-
-@media screen and (prefers-reduced-motion: reduce) {
-  #lector-prog,
-  .lector-raíl nav a,
-  .toc-i {
-    transition: none;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* ── 15 · Papel ─────────────────────────────────────────────────────────────
-   Lo que este archivo añade no debe aparecer nunca en una impresión: el
-   documento impreso es el que venía, sin una sola diferencia. */
-
-@media print {
-  #lector-prog,
-  .lector-tema,
-  .lector-raíl {
-    display: none !important;
-  }
-
-  .lector {
-    display: block;
-  }
-
-  .lector-cuerpo {
-    padding: 0;
-  }
-
-  /* El envoltorio de desplazamiento no existe en papel: la tabla fluye. */
-  .tabla-ancha {
-    overflow: visible;
-  }
-}
-
-</style>
-<script>(function(){var r=document.documentElement;try{var p=new URLSearchParams(location.search);if(p.get('modo')==='embebido'){r.setAttribute('data-modo','embebido');}var t=p.get('tema');if(t==='oscuro'||t==='dark'){r.setAttribute('data-theme','dark');}else if(t==='claro'||t==='light'){r.setAttribute('data-theme','light');}else if(!r.getAttribute('data-modo')){var g=localStorage.getItem('informe-lector-tema');if(g){r.setAttribute('data-theme',g);}}}catch(e){}})();</script>
-</head>
+</style></head>
 <body>
-<div id="lector-prog" aria-hidden="true"></div>
-<button class="lector-tema" id="lector-tema" type="button" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.2 12H2M22 12h-2.2M6.1 6.1 4.6 4.6M19.4 19.4l-1.5-1.5M17.9 6.1l1.5-1.5M4.6 19.4l1.5-1.5"/></svg></button>
-<div class="lector">
-<aside class="lector-raíl"><p class="raíl-marca">Informe 01</p><p class="raíl-título">Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile</p><p class="raíl-sub">v2.0.0 · corte 06-09-2026</p><nav aria-label="Índice del documento"><a href="#que-es-esto-y-en-que-se-distingue-de-la-version-anterior">Qué es esto, y en qué se distingue de la versión anterior</a><a href="#indice">Índice</a><a href="#resumen-ejecutivo">Resumen ejecutivo</a><a href="#los-ocho-hallazgos-principales">Los ocho hallazgos principales</a><a href="#como-leer-este-documento">Cómo leer este documento</a><a href="#1-introduccion">1 · Introducción</a><a href="#3-metodologia">3 · Metodología</a><a href="#panorama-del-conjunto">Panorama del conjunto</a><a href="#cobertura-de-la-investigacion">Cobertura de la investigación</a><a href="#capacidades-institucionales-comparadas">Capacidades institucionales comparadas</a><a href="#4-el-comparador-ordinal">4 · El comparador ordinal</a><a href="#la-comprobacion-que-impide-leer-mal-todo-lo-anterior">La comprobación que impide leer mal todo lo anterior</a><a href="#5-discusion">5 · Discusión</a><a href="#6-contraste-externo-que-dicen-los-terceros">6 · Contraste externo: qué dicen los terceros</a><a href="#7-la-escala-internacional">7 · La escala internacional</a><a href="#8-la-institucion-que-no-esta-en-el-comparador">8 · La institución que no está en el comparador</a><a href="#9-conclusiones">9 · Conclusiones</a><a href="#11-limitaciones">11 · Limitaciones</a><a href="#12-agenda-de-investigacion">12 · Agenda de investigación</a><a href="#nota-metodologica">Nota metodológica</a><a href="#ampliacion-del-corpus-las-fuentes-de-la-segunda-ronda">Ampliación del corpus: las fuentes de la segunda ronda</a><p class="raíl-grupo">Anexos</p><a href="#las-once-instituciones-una-por-una" class="anexo">Las once instituciones, una por una</a><a href="#registro-de-divergencias-de-la-verificacion" class="anexo">Registro de divergencias de la verificación</a><a href="#las-capacidades-celda-por-celda" class="anexo">Las capacidades, celda por celda</a><a href="#comparador-ordinal-rubrica-y-calculo" class="anexo">Comparador ordinal: rúbrica y cálculo</a><a href="#contraste-externo-proyectos-anid-y-fuentes-de-terceros" class="anexo">Contraste externo: proyectos ANID y fuentes de terceros</a><a href="#referencia-internacional-normas-curriculos-y-estudios" class="anexo">Referencia internacional: normas, currículos y estudios</a><a href="#candidatas-fuera-de-cohorte" class="anexo">Candidatas fuera de cohorte</a><a href="#registro-completo-de-fuentes" class="anexo">Registro completo de fuentes</a></nav><p class="raíl-pie">Prototipo académico experimental.<br>No es un sitio oficial de la PUCV.</p></aside>
-<main class="lector-cuerpo">
-
 
 <div class="page cover">
  <div class="cv-top">
@@ -1421,13 +270,13 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Ficha · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Ficha del documento</p>
- <h2 id="que-es-esto-y-en-que-se-distingue-de-la-version-anterior">Qué es esto, y en qué se distingue de la versión anterior</h2>
+ <h2>Qué es esto, y en qué se distingue de la versión anterior</h2>
  <div class="rule"></div>
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 9mm">
-  <div class="tabla-ancha"><table style="margin-top:0"><tbody><tr><td class="k" style="width:36mm">Versión</td><td>v2.0.0 · sucede a v0.8.0 del 04-09-2026</td></tr><tr><td class="k" style="width:36mm">Estado</td><td>Informe de resultados sobre corpus verificado. Cada conclusión conserva el alcance que su cobertura permite.</td></tr><tr><td class="k" style="width:36mm">Fecha de corte</td><td>6 de septiembre de 2026</td></tr><tr><td class="k" style="width:36mm">Autoría</td><td>Diego Hernán Ojeda Cifuentes · Licenciado en Ciencias Jurídicas</td></tr><tr><td class="k" style="width:36mm">Destinatario</td><td>Prof. Eduardo Aldunate Lizana · Director de la Escuela de Derecho PUCV</td></tr><tr><td class="k" style="width:36mm">Cohorte</td><td>COHORTE_IA_DERECHO_CHILE_11_V1 · once instituciones, cerrada</td></tr><tr><td class="k" style="width:36mm">Protocolo</td><td>METODOLOGIA_IA_DERECHO_V2.2 · enmienda de la V2.1, que se conserva íntegra</td></tr><tr><td class="k" style="width:36mm">Capacidades comparadas</td><td>10 sobre 11 instituciones = 110 celdas</td></tr></tbody></table></div>
-  <div class="tabla-ancha"><table style="margin-top:0"><tbody><tr><td class="k" style="width:36mm">Fuentes del corpus</td><td>74 públicas únicas · <strong>74 contrastadas (100 %)</strong></td></tr><tr><td class="k" style="width:36mm">Fuentes de contraste externo</td><td>31 · ruta 13 recorrida en las once instituciones</td></tr><tr><td class="k" style="width:36mm">Iniciativas deduplicadas</td><td>53</td></tr><tr><td class="k" style="width:36mm">Evidencias</td><td>75</td></tr><tr><td class="k" style="width:36mm">Afirmaciones</td><td>14</td></tr><tr><td class="k" style="width:36mm">Divergencias registradas</td><td>23 · anexo B</td></tr><tr><td class="k" style="width:36mm">Iniciativas con evaluación de efecto</td><td>0 · ausencia ahora confirmada, no sólo no localizada</td></tr></tbody></table></div>
+  <table style="margin-top:0"><tbody><tr><td class="k" style="width:36mm">Versión</td><td>v2.0.0 · sucede a v0.8.0 del 04-09-2026</td></tr><tr><td class="k" style="width:36mm">Estado</td><td>Informe de resultados sobre corpus verificado. Cada conclusión conserva el alcance que su cobertura permite.</td></tr><tr><td class="k" style="width:36mm">Fecha de corte</td><td>6 de septiembre de 2026</td></tr><tr><td class="k" style="width:36mm">Autoría</td><td>Diego Hernán Ojeda Cifuentes · Licenciado en Ciencias Jurídicas</td></tr><tr><td class="k" style="width:36mm">Destinatario</td><td>Prof. Eduardo Aldunate Lizana · Director de la Escuela de Derecho PUCV</td></tr><tr><td class="k" style="width:36mm">Cohorte</td><td>COHORTE_IA_DERECHO_CHILE_11_V1 · once instituciones, cerrada</td></tr><tr><td class="k" style="width:36mm">Protocolo</td><td>METODOLOGIA_IA_DERECHO_V2.2 · enmienda de la V2.1, que se conserva íntegra</td></tr><tr><td class="k" style="width:36mm">Capacidades comparadas</td><td>10 sobre 11 instituciones = 110 celdas</td></tr></tbody></table>
+  <table style="margin-top:0"><tbody><tr><td class="k" style="width:36mm">Fuentes del corpus</td><td>74 públicas únicas · <strong>74 contrastadas (100 %)</strong></td></tr><tr><td class="k" style="width:36mm">Fuentes de contraste externo</td><td>31 · ruta 13 recorrida en las once instituciones</td></tr><tr><td class="k" style="width:36mm">Iniciativas deduplicadas</td><td>53</td></tr><tr><td class="k" style="width:36mm">Evidencias</td><td>75</td></tr><tr><td class="k" style="width:36mm">Afirmaciones</td><td>14</td></tr><tr><td class="k" style="width:36mm">Divergencias registradas</td><td>23 · anexo B</td></tr><tr><td class="k" style="width:36mm">Iniciativas con evaluación de efecto</td><td>0 · ausencia ahora confirmada, no sólo no localizada</td></tr></tbody></table>
  </div>
- <h3 style="margin-top:6mm" id="seis-cambios-respecto-de-la-v0-8-0">Seis cambios respecto de la v0.8.0</h3>
+ <h3 style="margin-top:6mm">Seis cambios respecto de la v0.8.0</h3>
  <p>Una versión nueva no autoriza a hacer desaparecer la anterior. Lo que sigue enumera qué se
  hizo y qué consecuencia tiene cada cosa sobre lo que el informe puede afirmar. La v0.8.0
  permanece publicada y sus cifras siguen siendo recuperables una a una.</p>
@@ -1435,16 +284,16 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Índice · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Contenido</p>
- <h2 id="indice">Índice</h2>
+ <h2>Índice</h2>
  <div class="rule"></div>
  <p style="max-width:150mm">Las secciones 4, 6, 7 y 10 y los anexos B, D, E, F y G no existían en
  la versión anterior. El resto conserva la numeración de la v0.8.0, para que quien la haya leído
  encuentre lo mismo en el mismo sitio.</p>
- <div class="toc" style="margin-top:6mm"><div class="toc-h">CUERPO</div><a class="toc-i" href="#resumen-ejecutivo"><span class="toc-n">01</span><span class="toc-t">Resumen ejecutivo</span></a><a class="toc-i" href="#los-ocho-hallazgos-principales"><span class="toc-n">02</span><span class="toc-t">Los ocho hallazgos principales</span></a><a class="toc-i" href="#como-leer-este-documento"><span class="toc-n">03</span><span class="toc-t">Cómo leer este documento</span></a><a class="toc-i" href="#1-introduccion"><span class="toc-n">04</span><span class="toc-t">1 · Introducción</span></a><a class="toc-i" href="#2-objetivos"><span class="toc-n">05</span><span class="toc-t">2 · Objetivos</span></a><a class="toc-i" href="#3-metodologia"><span class="toc-n">06</span><span class="toc-t">3 · Metodología</span></a><a class="toc-i" href="#panorama-del-conjunto"><span class="toc-n">07</span><span class="toc-t">Panorama del conjunto</span></a><a class="toc-i" href="#cobertura-de-la-investigacion"><span class="toc-n">08</span><span class="toc-t">Cobertura de la investigación</span></a><a class="toc-i" href="#capacidades-institucionales-comparadas"><span class="toc-n">09</span><span class="toc-t">Capacidades institucionales comparadas</span></a><a class="toc-i" href="#4-el-comparador-ordinal"><span class="toc-n">10</span><span class="toc-t">4 · El comparador ordinal</span></a><a class="toc-i" href="#la-comprobacion-que-impide-leer-mal-todo-lo-anterior"><span class="toc-n">11</span><span class="toc-t">La comprobación que impide leer mal todo lo anterior</span></a><a class="toc-i" href="#5-discusion"><span class="toc-n">12</span><span class="toc-t">5 · Discusión</span></a><a class="toc-i" href="#6-contraste-externo-que-dicen-los-terceros"><span class="toc-n">13</span><span class="toc-t">6 · Contraste externo: qué dicen los terceros</span></a><a class="toc-i" href="#7-la-escala-internacional"><span class="toc-n">14</span><span class="toc-t">7 · La escala internacional</span></a><a class="toc-i" href="#8-la-institucion-que-no-esta-en-el-comparador"><span class="toc-n">15</span><span class="toc-t">8 · La institución que no está en el comparador</span></a><a class="toc-i" href="#9-conclusiones"><span class="toc-n">16</span><span class="toc-t">9 · Conclusiones</span></a><a class="toc-i" href="#11-limitaciones"><span class="toc-n">18</span><span class="toc-t">11 · Limitaciones</span></a><a class="toc-i" href="#12-agenda-de-investigacion"><span class="toc-n">19</span><span class="toc-t">12 · Agenda de investigación</span></a><a class="toc-i" href="#nota-metodologica"><span class="toc-n">20</span><span class="toc-t">Nota metodológica</span></a><div class="toc-h">ANEXOS</div><a class="toc-i" href="#las-once-instituciones-una-por-una"><span class="toc-n">A</span><span class="toc-t">Las once instituciones, una por una</span></a><a class="toc-i" href="#registro-de-divergencias-de-la-verificacion"><span class="toc-n">B</span><span class="toc-t">Registro de divergencias de la verificación</span></a><a class="toc-i" href="#las-capacidades-celda-por-celda"><span class="toc-n">C</span><span class="toc-t">Las capacidades, celda por celda</span></a><a class="toc-i" href="#comparador-ordinal-rubrica-y-calculo"><span class="toc-n">D</span><span class="toc-t">Comparador ordinal: rúbrica y cálculo</span></a><a class="toc-i" href="#contraste-externo-proyectos-anid-y-fuentes-de-terceros"><span class="toc-n">E</span><span class="toc-t">Contraste externo: proyectos ANID y fuentes de terceros</span></a><a class="toc-i" href="#referencia-internacional-normas-curriculos-y-estudios"><span class="toc-n">F</span><span class="toc-t">Referencia internacional: normas, currículos y estudios</span></a><a class="toc-i" href="#ampliacion-del-corpus-las-fuentes-de-la-segunda-ronda"><span class="toc-n">I</span><span class="toc-t">Ampliación del corpus: fuentes de la segunda ronda</span></a><a class="toc-i" href="#candidatas-fuera-de-cohorte"><span class="toc-n">G</span><span class="toc-t">Candidatas fuera de cohorte</span></a><a class="toc-i" href="#registro-completo-de-fuentes"><span class="toc-n">I</span><span class="toc-t">Registro completo de fuentes</span></a></div>
+ <div class="toc" style="margin-top:6mm"><div class="toc-h">CUERPO</div><div class="toc-i"><span class="toc-n">01</span><span class="toc-t">Resumen ejecutivo</span></div><div class="toc-i"><span class="toc-n">02</span><span class="toc-t">Los ocho hallazgos principales</span></div><div class="toc-i"><span class="toc-n">03</span><span class="toc-t">Cómo leer este documento</span></div><div class="toc-i"><span class="toc-n">04</span><span class="toc-t">1 · Introducción</span></div><div class="toc-i"><span class="toc-n">05</span><span class="toc-t">2 · Objetivos</span></div><div class="toc-i"><span class="toc-n">06</span><span class="toc-t">3 · Metodología</span></div><div class="toc-i"><span class="toc-n">07</span><span class="toc-t">Panorama del conjunto</span></div><div class="toc-i"><span class="toc-n">08</span><span class="toc-t">Cobertura de la investigación</span></div><div class="toc-i"><span class="toc-n">09</span><span class="toc-t">Capacidades institucionales comparadas</span></div><div class="toc-i"><span class="toc-n">10</span><span class="toc-t">4 · El comparador ordinal</span></div><div class="toc-i"><span class="toc-n">11</span><span class="toc-t">La comprobación que impide leer mal todo lo anterior</span></div><div class="toc-i"><span class="toc-n">12</span><span class="toc-t">5 · Discusión</span></div><div class="toc-i"><span class="toc-n">13</span><span class="toc-t">6 · Contraste externo: qué dicen los terceros</span></div><div class="toc-i"><span class="toc-n">14</span><span class="toc-t">7 · La escala internacional</span></div><div class="toc-i"><span class="toc-n">15</span><span class="toc-t">8 · La institución que no está en el comparador</span></div><div class="toc-i"><span class="toc-n">16</span><span class="toc-t">9 · Conclusiones</span></div><div class="toc-i"><span class="toc-n">18</span><span class="toc-t">11 · Limitaciones</span></div><div class="toc-i"><span class="toc-n">19</span><span class="toc-t">12 · Agenda de investigación</span></div><div class="toc-i"><span class="toc-n">20</span><span class="toc-t">Nota metodológica</span></div><div class="toc-h">ANEXOS</div><div class="toc-i"><span class="toc-n">A</span><span class="toc-t">Las once instituciones, una por una</span></div><div class="toc-i"><span class="toc-n">B</span><span class="toc-t">Registro de divergencias de la verificación</span></div><div class="toc-i"><span class="toc-n">C</span><span class="toc-t">Las capacidades, celda por celda</span></div><div class="toc-i"><span class="toc-n">D</span><span class="toc-t">Comparador ordinal: rúbrica y cálculo</span></div><div class="toc-i"><span class="toc-n">E</span><span class="toc-t">Contraste externo: proyectos ANID y fuentes de terceros</span></div><div class="toc-i"><span class="toc-n">F</span><span class="toc-t">Referencia internacional: normas, currículos y estudios</span></div><div class="toc-i"><span class="toc-n">I</span><span class="toc-t">Ampliación del corpus: fuentes de la segunda ronda</span></div><div class="toc-i"><span class="toc-n">G</span><span class="toc-t">Candidatas fuera de cohorte</span></div><div class="toc-i"><span class="toc-n">I</span><span class="toc-t">Registro completo de fuentes</span></div></div>
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Resumen ejecutivo · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">01</p>
- <h2 id="resumen-ejecutivo">Resumen ejecutivo</h2>
+ <h2>Resumen ejecutivo</h2>
  <div class="rule"></div>
  <div class="kpi b"><div class="kpi-v">74<span>/74</span></div><div class="kpi-d">100 % del corpus</div><div class="kpi-l">Fuentes públicas contrastadas contra su publicación original</div></div><div class="kpi r"><div class="kpi-v">0</div><div class="kpi-d">ausencia confirmada</div><div class="kpi-l">Proyectos ANID sobre enseñanza del Derecho con IA, en 49.014 adjudicados desde 1982</div></div><div class="kpi "><div class="kpi-v">18<span>/30</span></div><div class="kpi-d">el techo real</div><div class="kpi-l">Índice de formalización más alto de la cohorte, alcanzado por dos instituciones</div></div><div class="kpi w"><div class="kpi-v">1</div><div class="kpi-d">de once</div><div class="kpi-l">Facultades con norma propia sobre uso de IA en evaluación, de once</div></div>
  <p class="lead">Este informe establece qué capacidades institucionales en materia de inteligencia
@@ -1521,7 +370,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Hallazgos · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">02</p>
- <h2 id="los-ocho-hallazgos-principales">Los ocho hallazgos principales</h2>
+ <h2>Los ocho hallazgos principales</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Cada hallazgo declara el dato que lo sostiene, la lectura que permite y
  el límite hasta el que llega. El límite no es un descargo: es parte del hallazgo, y por eso ninguno
@@ -1595,7 +444,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Cómo leer · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">03</p>
- <h2 id="como-leer-este-documento">Cómo leer este documento</h2>
+ <h2>Cómo leer este documento</h2>
  <div class="rule"></div>
 
  <div class="box acc">
@@ -1657,7 +506,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>1 · Introducción · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">04</p>
- <h2 id="1-introduccion">1 · Introducción</h2>
+ <h2>1 · Introducción</h2>
  <div class="rule"></div>
 
  <p class="lead">La incorporación de sistemas de inteligencia artificial a la enseñanza y al ejercicio
@@ -1716,7 +565,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  —y es la novedad de esta versión— son las afirmaciones que el contraste con bases oficiales permite
  cerrar por el lado negativo, donde la ausencia en un registro exhaustivo sí es un dato.</p>
 
- <h3 id="2-objetivos">2 · Objetivos</h3>
+ <h3>2 · Objetivos</h3>
  <h4>Objetivo general</h4>
  <p>Establecer, sobre evidencia pública verificable y trazable, qué capacidades institucionales en
  materia de inteligencia artificial existen en once Escuelas y Facultades de Derecho chilenas al 6 de
@@ -1743,7 +592,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>3 · Metodología · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">06</p>
- <h2 id="3-metodologia">3 · Metodología</h2>
+ <h2>3 · Metodología</h2>
  <div class="rule"></div>
 
  <h4>La cohorte y por qué sigue cerrada</h4>
@@ -1858,7 +707,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>3 · Metodología · v2.0.0 · corte 06-09-2026</span></div>
- <h3 style="margin-top:0" id="la-enmienda-2-2-que-se-anade-y-por-que">La enmienda 2.2: qué se añade y por qué</h3>
+ <h3 style="margin-top:0">La enmienda 2.2: qué se añade y por qué</h3>
  <p>La metodología 2.1 introdujo dos instrumentos: la clase de mecanismo con que se hace cada cosa y
  una matriz de diez capacidades institucionales que reemplazó al recuento de evidencia como
  comparador principal. Ambos se conservan sin modificación. La enmienda 2.2 añade dos cosas y no
@@ -1936,7 +785,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Panorama · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">07</p>
- <h2 id="panorama-del-conjunto">Panorama del conjunto</h2>
+ <h2>Panorama del conjunto</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Antes de comparar instituciones conviene ver la forma del conjunto:
  cuándo empezó, con qué instrumentos se está haciendo, hasta dónde ha llegado y en qué dirección
@@ -1966,9 +815,9 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  </figure>
 
  <h5>Vocabulario de mecanismos institucionales</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:34mm">Mecanismo</th><th>Qué comprende</th>
+ <table><thead><tr><th style="width:34mm">Mecanismo</th><th>Qué comprende</th>
   <th class="num" style="width:20mm">Iniciativas</th><th class="num" style="width:24mm">De la Facultad</th></tr></thead>
-  <tbody><tr><td class="k">Unidad</td><td>Centro, programa, departamento, dirección, laboratorio o núcleo.</td><td class="num">7</td><td class="num">7</td></tr><tr><td class="k">Norma o política</td><td>Política, guía, lineamiento, decálogo o regla de integridad académica.</td><td class="num">4</td><td class="num">2</td></tr><tr><td class="k">Programa formativo</td><td>Diplomado, diploma, minor, curso, taller o capacitación.</td><td class="num">12</td><td class="num">11</td></tr><tr><td class="k">Asignatura o malla</td><td>Actividad dentro de una asignatura o línea declarada de la malla.</td><td class="num">4</td><td class="num">4</td></tr><tr><td class="k">Herramienta</td><td>Sistema, asistente, plataforma o licencia puesta a disposición.</td><td class="num">11</td><td class="num">4</td></tr><tr><td class="k">Proyecto</td><td>Investigación, I+D o adjudicación de fondo concursable.</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="k">Actividad</td><td>Seminario, workshop o jornada de una sola ocurrencia.</td><td class="num">8</td><td class="num">7</td></tr><tr><td class="k">Convenio</td><td>Acuerdo o alianza con un tercero.</td><td class="num">4</td><td class="num">3</td></tr><tr><td class="k">Publicación</td><td>Revista, número monográfico o línea editorial.</td><td class="num">2</td><td class="num">2</td></tr></tbody></table></div>
+  <tbody><tr><td class="k">Unidad</td><td>Centro, programa, departamento, dirección, laboratorio o núcleo.</td><td class="num">7</td><td class="num">7</td></tr><tr><td class="k">Norma o política</td><td>Política, guía, lineamiento, decálogo o regla de integridad académica.</td><td class="num">4</td><td class="num">2</td></tr><tr><td class="k">Programa formativo</td><td>Diplomado, diploma, minor, curso, taller o capacitación.</td><td class="num">12</td><td class="num">11</td></tr><tr><td class="k">Asignatura o malla</td><td>Actividad dentro de una asignatura o línea declarada de la malla.</td><td class="num">4</td><td class="num">4</td></tr><tr><td class="k">Herramienta</td><td>Sistema, asistente, plataforma o licencia puesta a disposición.</td><td class="num">11</td><td class="num">4</td></tr><tr><td class="k">Proyecto</td><td>Investigación, I+D o adjudicación de fondo concursable.</td><td class="num">3</td><td class="num">2</td></tr><tr><td class="k">Actividad</td><td>Seminario, workshop o jornada de una sola ocurrencia.</td><td class="num">8</td><td class="num">7</td></tr><tr><td class="k">Convenio</td><td>Acuerdo o alianza con un tercero.</td><td class="num">4</td><td class="num">3</td></tr><tr><td class="k">Publicación</td><td>Revista, número monográfico o línea editorial.</td><td class="num">2</td><td class="num">2</td></tr></tbody></table>
 </div>
 
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Panorama · v2.0.0 · corte 06-09-2026</span></div>
@@ -2009,7 +858,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Cobertura · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">08</p>
- <h2 id="cobertura-de-la-investigacion">Cobertura de la investigación</h2>
+ <h2>Cobertura de la investigación</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Cuánto se investigó cada institución, que no es lo mismo que cuánto hace.
  Va antes que cualquier comparación porque sin este denominador la comparación engaña.</p>
@@ -2028,10 +877,10 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
   once.</figcaption>
  </figure>
 
- <div class="tabla-ancha"><table><thead><tr><th style="width:56mm">Institución</th><th>Piloto</th>
+ <table><thead><tr><th style="width:56mm">Institución</th><th>Piloto</th>
    <th class="num">Rutas v0.8.0</th><th class="num">Rutas v2.0.0</th><th class="num">Fuentes</th>
    <th class="num">Contrastadas</th><th class="num">Celdas sin concluir</th></tr></thead>
-  <tbody><tr><td class="k">Pontificia Universidad Católica de Chile</td><td>sí</td><td class="num">9</td><td class="num"><strong>12</strong></td><td class="num">12</td><td class="num">12 (100 %)</td><td class="num">1</td></tr><tr><td class="k">Pontificia Universidad Católica de Valparaíso</td><td>sí</td><td class="num">9</td><td class="num"><strong>11</strong></td><td class="num">14</td><td class="num">14 (100 %)</td><td class="num">0</td></tr><tr><td class="k">Universidad Adolfo Ibáñez</td><td>—</td><td class="num">4</td><td class="num"><strong>6</strong></td><td class="num">3</td><td class="num">3 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad Andrés Bello</td><td>—</td><td class="num">5</td><td class="num"><strong>8</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">2</td></tr><tr><td class="k">Universidad Autónoma de Chile</td><td>—</td><td class="num">2</td><td class="num"><strong>5</strong></td><td class="num">3</td><td class="num">3 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad Central de Chile</td><td>—</td><td class="num">5</td><td class="num"><strong>7</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad de Chile</td><td>sí</td><td class="num">11</td><td class="num"><strong>12</strong></td><td class="num">16</td><td class="num">16 (100 %)</td><td class="num">1</td></tr><tr><td class="k">Universidad de Concepción</td><td>—</td><td class="num">4</td><td class="num"><strong>7</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">3</td></tr><tr><td class="k">Universidad de los Andes</td><td>—</td><td class="num">5</td><td class="num"><strong>7</strong></td><td class="num">5</td><td class="num">5 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad del Desarrollo</td><td>—</td><td class="num">3</td><td class="num"><strong>6</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad Diego Portales</td><td>—</td><td class="num">4</td><td class="num"><strong>7</strong></td><td class="num">3</td><td class="num">3 (100 %)</td><td class="num">4</td></tr></tbody></table></div>
+  <tbody><tr><td class="k">Pontificia Universidad Católica de Chile</td><td>sí</td><td class="num">9</td><td class="num"><strong>12</strong></td><td class="num">12</td><td class="num">12 (100 %)</td><td class="num">1</td></tr><tr><td class="k">Pontificia Universidad Católica de Valparaíso</td><td>sí</td><td class="num">9</td><td class="num"><strong>11</strong></td><td class="num">14</td><td class="num">14 (100 %)</td><td class="num">0</td></tr><tr><td class="k">Universidad Adolfo Ibáñez</td><td>—</td><td class="num">4</td><td class="num"><strong>6</strong></td><td class="num">3</td><td class="num">3 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad Andrés Bello</td><td>—</td><td class="num">5</td><td class="num"><strong>8</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">2</td></tr><tr><td class="k">Universidad Autónoma de Chile</td><td>—</td><td class="num">2</td><td class="num"><strong>5</strong></td><td class="num">3</td><td class="num">3 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad Central de Chile</td><td>—</td><td class="num">5</td><td class="num"><strong>7</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad de Chile</td><td>sí</td><td class="num">11</td><td class="num"><strong>12</strong></td><td class="num">16</td><td class="num">16 (100 %)</td><td class="num">1</td></tr><tr><td class="k">Universidad de Concepción</td><td>—</td><td class="num">4</td><td class="num"><strong>7</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">3</td></tr><tr><td class="k">Universidad de los Andes</td><td>—</td><td class="num">5</td><td class="num"><strong>7</strong></td><td class="num">5</td><td class="num">5 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad del Desarrollo</td><td>—</td><td class="num">3</td><td class="num"><strong>6</strong></td><td class="num">4</td><td class="num">4 (100 %)</td><td class="num">4</td></tr><tr><td class="k">Universidad Diego Portales</td><td>—</td><td class="num">4</td><td class="num"><strong>7</strong></td><td class="num">3</td><td class="num">3 (100 %)</td><td class="num">4</td></tr></tbody></table>
  <p class="tbl-note">Media del piloto: 11.7 rutas. Media de las otras ocho:
  6.6 rutas. Razón de 1,8 a 1, frente a 2,4 a 1 en la versión anterior. En número de
  fuentes la razón sigue siendo de 3,7 a 1 y no ha mejorado: la cobertura ganada es de rutas
@@ -2050,7 +899,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Capacidades · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">09</p>
- <h2 id="capacidades-institucionales-comparadas">Capacidades institucionales comparadas</h2>
+ <h2>Capacidades institucionales comparadas</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Responde «¿qué capacidad demuestra cada Facultad?» y no «¿cuánta
  evidencia encontramos de ella?». Cada celda se calcula con una regla mecánica sobre el dataset y
@@ -2090,7 +939,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>4 · Comparador ordinal · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">10</p>
- <h2 id="4-el-comparador-ordinal">4 · El comparador ordinal</h2>
+ <h2>4 · El comparador ordinal</h2>
  <div class="rule"></div>
  <p class="lead">La versión anterior de este informe se prohibía publicar un orden entre
  instituciones. Esta lo publica. Conviene decir con precisión qué cambió, qué mide el índice y qué
@@ -2109,7 +958,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  cada una en una escala de cero a tres. Un máximo teórico de 30 puntos. La rúbrica completa, con el
  instrumento concreto que justifica cada punto en cada celda, se publica en el anexo D.</p>
 
- <div class="tabla-ancha"><table><thead><tr><th style="width:14mm" class="num">Puntos</th><th style="width:52mm">Estado</th><th>Qué acredita</th></tr></thead>
+ <table><thead><tr><th style="width:14mm" class="num">Puntos</th><th style="width:52mm">Estado</th><th>Qué acredita</th></tr></thead>
  <tbody>
   <tr><td class="num k">3</td><td class="k">En operación, con instrumento formal publicado</td>
    <td>La capacidad funciona <em>y</em> existe un objeto citable con identificador que la sostiene: decreto o resolución, acuerdo de consejo, código de asignatura con créditos, código de proyecto adjudicado, registro de propiedad intelectual, convenio firmado con partes identificadas, o unidad listada en un organigrama publicado.</td></tr>
@@ -2121,7 +970,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
    <td>Se recorrieron las rutas del protocolo que la habrían encontrado y no se halló evidencia pública. No significa que la capacidad no exista.</td></tr>
   <tr><td class="num k">—</td><td class="k">No concluyente</td>
    <td>La ruta no se recorrió en esa institución. La celda se excluye del piso y aporta 2 puntos al techo. Es la fuente de la anchura de la banda.</td></tr>
- </tbody></table></div>
+ </tbody></table>
 
  <figure class="nobreak" style="margin-top:7mm">
   <p class="fig-q">¿Cuánta capacidad formalizada acredita públicamente cada Facultad?</p>
@@ -2139,14 +988,14 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>4 · Comparador ordinal · v2.0.0 · corte 06-09-2026</span></div>
  <h5>El orden, con su incertidumbre declarada</h5>
- <div class="tabla-ancha"><table><thead><tr><th class="num">#</th><th style="width:60mm">Institución</th>
+ <table><thead><tr><th class="num">#</th><th style="width:60mm">Institución</th>
    <th class="num">Piso</th><th class="num">Techo</th><th class="num">Celdas s/c</th><th>Lectura</th></tr></thead>
-  <tbody><tr><td class="num" style="width:9mm">1</td><td class="k">Pontificia Universidad Católica de Chile</td><td class="num"><strong>20</strong></td><td class="num">20</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">2</td><td class="k">Universidad Autónoma de Chile</td><td class="num"><strong>17</strong></td><td class="num">17</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">3</td><td class="k">Universidad Central de Chile</td><td class="num"><strong>17</strong></td><td class="num">17</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">4</td><td class="k">Universidad de Chile</td><td class="num"><strong>12</strong></td><td class="num">14</td><td class="num">1</td><td>banda estrecha</td></tr><tr><td class="num" style="width:9mm">5</td><td class="k">Universidad Adolfo Ibáñez</td><td class="num"><strong>11</strong></td><td class="num">11</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">6</td><td class="k">Universidad Andrés Bello</td><td class="num"><strong>11</strong></td><td class="num">11</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">7</td><td class="k">Universidad del Desarrollo</td><td class="num"><strong>8</strong></td><td class="num">10</td><td class="num">1</td><td>banda estrecha</td></tr><tr><td class="num" style="width:9mm">8</td><td class="k">Universidad Diego Portales</td><td class="num"><strong>8</strong></td><td class="num">8</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">9</td><td class="k">Universidad de los Andes</td><td class="num"><strong>5</strong></td><td class="num">9</td><td class="num">2</td><td>banda ancha</td></tr><tr><td class="num" style="width:9mm">10</td><td class="k">Universidad de Concepción</td><td class="num"><strong>5</strong></td><td class="num">7</td><td class="num">1</td><td>banda estrecha</td></tr></tbody></table></div>
+  <tbody><tr><td class="num" style="width:9mm">1</td><td class="k">Pontificia Universidad Católica de Chile</td><td class="num"><strong>20</strong></td><td class="num">20</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">2</td><td class="k">Universidad Autónoma de Chile</td><td class="num"><strong>17</strong></td><td class="num">17</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">3</td><td class="k">Universidad Central de Chile</td><td class="num"><strong>17</strong></td><td class="num">17</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">4</td><td class="k">Universidad de Chile</td><td class="num"><strong>12</strong></td><td class="num">14</td><td class="num">1</td><td>banda estrecha</td></tr><tr><td class="num" style="width:9mm">5</td><td class="k">Universidad Adolfo Ibáñez</td><td class="num"><strong>11</strong></td><td class="num">11</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">6</td><td class="k">Universidad Andrés Bello</td><td class="num"><strong>11</strong></td><td class="num">11</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">7</td><td class="k">Universidad del Desarrollo</td><td class="num"><strong>8</strong></td><td class="num">10</td><td class="num">1</td><td>banda estrecha</td></tr><tr><td class="num" style="width:9mm">8</td><td class="k">Universidad Diego Portales</td><td class="num"><strong>8</strong></td><td class="num">8</td><td class="num">0</td><td>banda cerrada</td></tr><tr><td class="num" style="width:9mm">9</td><td class="k">Universidad de los Andes</td><td class="num"><strong>5</strong></td><td class="num">9</td><td class="num">2</td><td>banda ancha</td></tr><tr><td class="num" style="width:9mm">10</td><td class="k">Universidad de Concepción</td><td class="num"><strong>5</strong></td><td class="num">7</td><td class="num">1</td><td>banda estrecha</td></tr></tbody></table>
  <p class="tbl-note">Ordenado por piso y, en caso de empate, por techo. El orden no es transitivo en
  sentido estricto: una institución con piso 12 y techo 20 podría estar realmente por encima de una
  con piso 18 y techo 18. La tabla lo dice en lugar de ocultarlo.</p>
 
- <h3 id="como-se-lee-este-orden-y-como-no">Cómo se lee este orden, y cómo no</h3>
+ <h3>Cómo se lee este orden, y cómo no</h3>
 
  <h4>Lo que el orden significa</h4>
  <p>Mide capacidad institucional en materia de inteligencia artificial <em>publicada de modo que un
@@ -2184,7 +1033,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Comprobación · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">11</p>
- <h2 id="la-comprobacion-que-impide-leer-mal-todo-lo-anterior">La comprobación que impide leer mal todo lo anterior</h2>
+ <h2>La comprobación que impide leer mal todo lo anterior</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Si cuánto se investiga y cuánto hacen las Facultades fueran la misma
  variable, el informe entero estaría midiendo su propio trabajo de campo, y el comparador ordinal de
@@ -2222,10 +1071,10 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>5 · Discusión · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">12</p>
- <h2 id="5-discusion">5 · Discusión</h2>
+ <h2>5 · Discusión</h2>
  <div class="rule"></div>
 
- <h3 style="margin-top:2mm" id="la-estructura-se-anuncia-mas-rapido-de-lo-que-se-constituye">La estructura se anuncia más rápido de lo que se constituye</h3>
+ <h3 style="margin-top:2mm">La estructura se anuncia más rápido de lo que se constituye</h3>
  <p>El hallazgo más consistente del corpus es que entre 2025 y 2026 cuatro Facultades de Derecho
  crearon unidades dedicadas a tecnología o inteligencia artificial. Es un cambio de naturaleza
  respecto de la sucesión de seminarios que caracterizaba el fenómeno: nombrar una estructura
@@ -2259,7 +1108,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  institucionalización está ocurriendo por denominación antes que por constitución. Nombrar una unidad
  es un acto real y tiene efectos, pero no es lo mismo que dotarla.</p>
 
- <h3 id="la-norma-disciplinaria-es-donde-mas-lejos-ha-llegado-una-fac">La norma disciplinaria es donde más lejos ha llegado una Facultad</h3>
+ <h3>La norma disciplinaria es donde más lejos ha llegado una Facultad</h3>
  <p>De los instrumentos normativos del corpus, dos son universitarios: los lineamientos de la
  Universidad de Chile los dictan dos vicerrectorías y no mencionan Derecho, y el decálogo de la PUCV
  lo elabora una unidad de integridad académica dependiente de la Vicerrectoría Académica y, según su
@@ -2286,7 +1135,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  problema que una Facultad sabe tratar, y el diseño curricular es un problema que exige acuerdos más
  amplios.</p>
 
- <h3 id="la-formacion-continua-funciona-el-pregrado-no-aparece">La formación continua funciona; el pregrado no aparece</h3>
+ <h3>La formación continua funciona; el pregrado no aparece</h3>
  <p>La formación continua es el único eje del corpus con serie temporal documentada, y la serie es de
  una sola institución. El Programa de Derecho, Ciencia y Tecnología de la Universidad Católica publica
  dos graduaciones consecutivas —más de noventa titulados en 2024 y más de cien en 2025—, en ambos
@@ -2329,7 +1178,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>5 · Discusión · v2.0.0 · corte 06-09-2026</span></div>
- <h3 style="margin-top:0" id="la-unica-medicion-de-efecto-del-corpus-no-es-juridica">La única medición de efecto del corpus no es jurídica</h3>
+ <h3 style="margin-top:0">La única medición de efecto del corpus no es jurídica</h3>
  <p>Ninguna de las 53 iniciativas registradas alcanza el peldaño de evaluación. Es la tercera ronda
  independiente de investigación que llega a la misma ausencia, y la verificación sustantiva completa
  no la modificó.</p>
@@ -2359,7 +1208,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  educativa. La capacidad de evaluar el aprendizaje mediado por estas herramientas está, por ahora,
  fuera de ellas. Y la sección siguiente muestra que tampoco la han solicitado.</p>
 
- <h3 id="el-problema-de-atribucion-no-es-un-tecnicismo">El problema de atribución no es un tecnicismo</h3>
+ <h3>El problema de atribución no es un tecnicismo</h3>
  <p>Quince registros del corpus corresponden a capacidades de la universidad y no de la Facultad de
  Derecho: licencias corporativas de asistentes generativos, plataformas de búsqueda bibliográfica con
  asistente incorporado, oficinas centrales de inteligencia artificial, agentes docentes en fase
@@ -2399,13 +1248,13 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>6 · Contraste externo · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">13</p>
- <h2 id="6-contraste-externo-que-dicen-los-terceros">6 · Contraste externo: qué dicen los terceros</h2>
+ <h2>6 · Contraste externo: qué dicen los terceros</h2>
  <div class="rule"></div>
  <p class="lead">La versión anterior declaraba como su limitación estructural más grave que ninguna de
  sus 74 fuentes provenía de contraste externo. Ésta recorre esa ruta en las once instituciones. Lo
  que aparece no desmiente al corpus: lo recoloca.</p>
 
- <h3 style="margin-top:5mm" id="lo-que-financia-el-estado-y-lo-que-no">Lo que financia el Estado, y lo que no</h3>
+ <h3 style="margin-top:5mm">Lo que financia el Estado, y lo que no</h3>
  <p>La base histórica de proyectos adjudicados por ANID contiene 49.014 registros desde 1982, con
  código, título, monto, duración, institución, disciplina y palabras clave. Es una fuente de una
  naturaleza distinta a todo lo demás del corpus: permite afirmaciones de exhaustividad y no sólo de
@@ -2425,10 +1274,10 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  </figure>
 
  <h5>Los siete proyectos de disciplina Derecho con objeto de inteligencia artificial</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:16mm">Código</th><th style="width:32mm">Instrumento</th>
+ <table><thead><tr><th style="width:16mm">Código</th><th style="width:32mm">Instrumento</th>
    <th style="width:34mm">Responsable</th><th style="width:34mm">Institución</th>
    <th class="num" style="width:22mm">Monto ($)</th><th class="num" style="width:12mm">Meses</th></tr></thead>
-  <tbody><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1262567</td><td>Fondecyt Regular 2026</td><td>Ricardo Lillo Lobos</td><td>U. Adolfo Ibáñez</td><td class="num">57.300.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1260629</td><td>Fondecyt Regular 2026</td><td>Osvaldo Artaza Varela</td><td>U. de Talca</td><td class="num">39.720.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1262017</td><td>Fondecyt Regular 2026</td><td>Alberto Coddou Mc Manus</td><td>P. U. Católica de Chile</td><td class="num">48.960.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1262066</td><td>Fondecyt Regular 2026</td><td>Juan Faúndes Peñafiel</td><td>U. Autónoma de Chile</td><td class="num">163.800.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1250613</td><td>Fondecyt Regular 2025</td><td>Sebastián Bozzo Hauri</td><td>U. Autónoma de Chile</td><td class="num">55.610.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1250142</td><td>Fondecyt Regular 2025</td><td>Juan Pablo Mañalich Raffo</td><td>U. de Chile</td><td class="num">46.980.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1250103</td><td>Fondecyt Regular 2025</td><td>Eduardo Jequier Lehuedé</td><td>U. San Sebastián</td><td class="num">60.792.000</td><td class="num">48</td></tr></tbody></table></div>
+  <tbody><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1262567</td><td>Fondecyt Regular 2026</td><td>Ricardo Lillo Lobos</td><td>U. Adolfo Ibáñez</td><td class="num">57.300.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1260629</td><td>Fondecyt Regular 2026</td><td>Osvaldo Artaza Varela</td><td>U. de Talca</td><td class="num">39.720.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1262017</td><td>Fondecyt Regular 2026</td><td>Alberto Coddou Mc Manus</td><td>P. U. Católica de Chile</td><td class="num">48.960.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1262066</td><td>Fondecyt Regular 2026</td><td>Juan Faúndes Peñafiel</td><td>U. Autónoma de Chile</td><td class="num">163.800.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1250613</td><td>Fondecyt Regular 2025</td><td>Sebastián Bozzo Hauri</td><td>U. Autónoma de Chile</td><td class="num">55.610.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1250142</td><td>Fondecyt Regular 2025</td><td>Juan Pablo Mañalich Raffo</td><td>U. de Chile</td><td class="num">46.980.000</td><td class="num">48</td></tr><tr><td class="k" style="font-family:var(--mono);font-size:7.6pt">1250103</td><td>Fondecyt Regular 2025</td><td>Eduardo Jequier Lehuedé</td><td>U. San Sebastián</td><td class="num">60.792.000</td><td class="num">48</td></tr></tbody></table>
  <p class="tbl-note">Suma de los siete: 473.162.000 pesos. Los títulos completos, y los ocho proyectos
  adicionales con objeto jurídico-tecnológico clasificados fuera de la disciplina Derecho —entre ellos
  el FONDEF <strong>IT25I0151</strong> de certeza jurídica ambiental, 236.998.000 pesos y 24 meses, y
@@ -2465,7 +1314,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>6 · Contraste externo · v2.0.0 · corte 06-09-2026</span></div>
- <h3 style="margin-top:0" id="lo-que-dice-la-prensa-que-no-es-universitaria">Lo que dice la prensa que no es universitaria</h3>
+ <h3 style="margin-top:0">Lo que dice la prensa que no es universitaria</h3>
  <p>Existe una sola pieza de prensa general que aborda directamente el objeto de este informe: un
  artículo de La Tercera de 12 de febrero de 2025 que recoge declaraciones de decanos y vicedecanos de
  cuatro Facultades sobre informática jurídica, ética e inteligencia artificial. Conviene registrar con
@@ -2496,8 +1345,8 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
   de la cohorte ha publicado una respuesta ni un dato que la confirme o la desmienta.</li>
  </ul>
 
- <h3 id="lo-que-hacen-las-instituciones-del-sector-y-donde-se-detiene">Lo que hacen las instituciones del sector, y dónde se detienen</h3>
- <div class="tabla-ancha"><table><thead><tr><th style="width:44mm">Institución</th><th style="width:26mm">Qué publicó</th>
+ <h3>Lo que hacen las instituciones del sector, y dónde se detienen</h3>
+ <table><thead><tr><th style="width:44mm">Institución</th><th style="width:26mm">Qué publicó</th>
    <th>Alcance declarado, y dónde se detiene</th></tr></thead>
   <tbody>
    <tr><td class="k">Academia Judicial</td><td>Sitio y guía sobre IA generativa · 7-04-2026</td>
@@ -2521,9 +1370,9 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
     <td>Con el Ministerio de Economía, acredita que una Facultad de Derecho chilena construyó un
     prototipo de IA generativa para un servicio público. Es el contraste externo que <em>confirma</em>
     una capacidad, y también el que corrige su grado de madurez.</td></tr>
-  </tbody></table></div>
+  </tbody></table>
 
- <h3 id="lo-que-se-sabe-del-uso-real-que-es-poco-y-no-es-de-derecho">Lo que se sabe del uso real, que es poco y no es de Derecho</h3>
+ <h3>Lo que se sabe del uso real, que es poco y no es de Derecho</h3>
  <p>No existe ninguna encuesta sobre uso de inteligencia artificial específicamente entre estudiantes o
  profesionales del Derecho en Chile. Es una ausencia comprobada y no una laguna de búsqueda. Los tres
  datos disponibles son aproximaciones y conviene usarlos con sus salvedades:</p>
@@ -2557,20 +1406,20 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>7 · Escala internacional · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">14</p>
- <h2 id="7-la-escala-internacional">7 · La escala internacional</h2>
+ <h2>7 · La escala internacional</h2>
  <div class="rule"></div>
  <p class="lead">Sin una referencia externa, cada ausencia de la cohorte chilena se lee como rezago.
  Este capítulo existe para distinguir el rezago de la ausencia global, y en dos puntos importantes
  corrige la lectura pesimista que la versión anterior invitaba a hacer.</p>
 
- <h3 style="margin-top:5mm" id="la-asignatura-obligatoria-de-inteligencia-artificial-es-exce">La asignatura obligatoria de inteligencia artificial es excepcional en todo el mundo</h3>
+ <h3 style="margin-top:5mm">La asignatura obligatoria de inteligencia artificial es excepcional en todo el mundo</h3>
  <p>Este informe sostiene, y mantiene, que ninguna de las once instituciones chilenas acredita una
  línea curricular obligatoria de inteligencia artificial con syllabus, semestre, créditos y matrícula.
  Formulada así, la afirmación sugiere que existe un estándar internacional del que Chile se aparta.
  No existe.</p>
 
- <div class="tabla-ancha"><table><thead><tr><th style="width:42mm">Facultad</th><th style="width:24mm">Desde</th><th>Qué exige exactamente</th></tr></thead>
-  <tbody><tr><td class="k">Case Western Reserve</td><td>enero 2025</td><td>«Introduction to AI and the Law», obligatorio para todos los estudiantes de primer año desde febrero de 2025. Se estructura como <strong>certificación, no como curso con créditos</strong>.</td></tr><tr><td class="k">UNLV · William S. Boyd</td><td>mayo 2026</td><td>«Introduction to the Responsible Use of AI», requerido a los estudiantes de primer año desde otoño de 2026. Número de créditos no publicado.</td></tr><tr><td class="k">UC Law San Francisco</td><td>julio 2026</td><td>Laboratorio obligatorio de ejercicio profesional asistido por IA para todos los estudiantes de JD desde la promoción 2029, en segundo año, en seis sesiones. <strong>Explícitamente sin créditos académicos</strong>: los participantes obtienen certificado de finalización.</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:42mm">Facultad</th><th style="width:24mm">Desde</th><th>Qué exige exactamente</th></tr></thead>
+  <tbody><tr><td class="k">Case Western Reserve</td><td>enero 2025</td><td>«Introduction to AI and the Law», obligatorio para todos los estudiantes de primer año desde febrero de 2025. Se estructura como <strong>certificación, no como curso con créditos</strong>.</td></tr><tr><td class="k">UNLV · William S. Boyd</td><td>mayo 2026</td><td>«Introduction to the Responsible Use of AI», requerido a los estudiantes de primer año desde otoño de 2026. Número de créditos no publicado.</td></tr><tr><td class="k">UC Law San Francisco</td><td>julio 2026</td><td>Laboratorio obligatorio de ejercicio profesional asistido por IA para todos los estudiantes de JD desde la promoción 2029, en segundo año, en seis sesiones. <strong>Explícitamente sin créditos académicos</strong>: los participantes obtienen certificado de finalización.</td></tr></tbody></table>
  <p class="tbl-note">Son los tres casos verificables de facultades de Derecho con un componente
  obligatorio de inteligencia artificial para todos sus estudiantes, sobre más de ciento noventa
  facultades acreditadas en Estados Unidos. <strong>No se localizó ninguna facultad de Derecho fuera de
@@ -2590,7 +1439,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
   se ha usado.</strong></p>
  </div>
 
- <h3 id="la-norma-de-facultad-dos-modelos-de-gobernanza-y-chile-usa-e">La norma de facultad: dos modelos de gobernanza, y Chile usa el más exigente</h3>
+ <h3>La norma de facultad: dos modelos de gobernanza, y Chile usa el más exigente</h3>
  <p>El contraste internacional muestra dos arquitecturas distintas, y saber cuál se está usando cambia
  lo que es razonable exigirle a una Facultad chilena.</p>
 
@@ -2629,7 +1478,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>7 · Escala internacional · v2.0.0 · corte 06-09-2026</span></div>
- <h3 style="margin-top:0" id="la-evidencia-sobre-efectos-existe-es-minuscula-y-dice-cosas-">La evidencia sobre efectos existe, es minúscula, y dice cosas incómodas</h3>
+ <h3 style="margin-top:0">La evidencia sobre efectos existe, es minúscula, y dice cosas incómodas</h3>
  <p>Este informe sostiene que ninguna Facultad de la cohorte ha medido el efecto de lo que hace. La
  pregunta natural es cuánto se ha medido en el mundo, y la respuesta calibra la severidad del juicio:
  <strong>del orden de tres a cuatro estudios experimentales serios en total, todos estadounidenses y
@@ -2662,7 +1511,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  Facultad que planifique su intervención como una ventaja competitiva y no como una capacidad
  permanente.</p>
 
- <h3 id="la-fiabilidad-de-las-herramientas-juridicas-medida">La fiabilidad de las herramientas jurídicas, medida</h3>
+ <h3>La fiabilidad de las herramientas jurídicas, medida</h3>
  <figure class="nobreak">
   <p class="fig-q">¿Qué tan fiables son las herramientas de investigación jurídica con IA?</p>
   <p class="fig-t">Las herramientas comerciales especializadas alucinan entre el 17 % y el 33 % de las veces</p>
@@ -2673,8 +1522,8 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
   resultados; ambas circunstancias se declaran aquí.</figcaption>
  </figure>
 
- <div class="tabla-ancha"><table><thead><tr><th style="width:66mm">Herramienta</th><th class="num">Exactitud</th><th class="num">Alucinación</th></tr></thead>
-  <tbody><tr><td class="k">Lexis+ AI · LexisNexis</td><td class="num">65</td><td class="num">17</td></tr><tr><td class="k">Ask Practical Law AI · Thomson Reuters</td><td class="num">19</td><td class="num">17</td></tr><tr><td class="k">Westlaw AI-Assisted Research</td><td class="num">41</td><td class="num">33</td></tr><tr><td class="k">GPT-4 · línea base</td><td class="num">—</td><td class="num">43</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:66mm">Herramienta</th><th class="num">Exactitud</th><th class="num">Alucinación</th></tr></thead>
+  <tbody><tr><td class="k">Lexis+ AI · LexisNexis</td><td class="num">65</td><td class="num">17</td></tr><tr><td class="k">Ask Practical Law AI · Thomson Reuters</td><td class="num">19</td><td class="num">17</td></tr><tr><td class="k">Westlaw AI-Assisted Research</td><td class="num">41</td><td class="num">33</td></tr><tr><td class="k">GPT-4 · línea base</td><td class="num">—</td><td class="num">43</td></tr></tbody></table>
  <p class="tbl-note">Un estudio complementario sobre más de 800.000 consultas verificables sitúa la
  alucinación de los modelos generales entre el 58 % y el 88 % según el modelo. Y un tercero, de 2025,
  mide la variación por jurisdicción: 45 % en Los Ángeles, 55 % en Londres, 61 % en Sídney y
@@ -2693,7 +1542,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
   condiciones de enseñar.</p>
  </div>
 
- <h3 id="que-hace-la-region">Qué hace la región</h3>
+ <h3>Qué hace la región</h3>
  <p>El caso más institucionalizado de América Latina es un laboratorio de Derecho e inteligencia
  artificial fundado en 2019 en una universidad mexicana, con dos codirectores, entre una y cinco
  publicaciones indexadas por año y un diplomado de 108 horas. En Colombia lo equivalente es un
@@ -2719,7 +1568,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 <div class="page">
 <div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>8 · La institución ausente · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">15</p>
- <h2 id="8-la-institucion-que-no-esta-en-el-comparador">8 · La institución que no está en el comparador</h2>
+ <h2>8 · La institución que no está en el comparador</h2>
  <div class="rule"></div>
 
  <p class="lead">El comparador de este informe cubre diez instituciones y la cohorte del corpus once.
@@ -2777,7 +1626,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div></div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>9 · Conclusiones · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">16</p>
- <h2 id="9-conclusiones">9 · Conclusiones</h2>
+ <h2>9 · Conclusiones</h2>
  <div class="rule"></div>
  <figure class="nobreak">
   <p class="fig-q">¿Qué puede sostener este estudio, y con qué firmeza?</p>
@@ -2814,7 +1663,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
    <div class="src">Hecho sobre el estado de la verificación institucional. Se apoya en el anexo E.</div></div></div>
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>10 · Implicancias · v2.0.0 · corte 06-09-2026</span></div>
- <h3 style="margin-top:0" id="la-ventana-y-que-cuesta-dejarla-pasar">La ventana, y qué cuesta dejarla pasar</h3>
+ <h3 style="margin-top:0">La ventana, y qué cuesta dejarla pasar</h3>
  <p>Este informe no puede predecir el futuro y no lo intentará. Puede, en cambio, señalar tres hechos
  fechados que acotan el período en que estas decisiones son distintivas, y uno que acota el período en
  que son posibles sin coste reputacional.</p>
@@ -2856,14 +1705,14 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>11 · Limitaciones · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">18</p>
- <h2 id="11-limitaciones">11 · Limitaciones</h2>
+ <h2>11 · Limitaciones</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Lo que este método no puede ver, dicho antes de que lo diga un lector.</p>
  <ul class="clean"><li><strong>El corpus sigue siendo mayoritariamente autodescriptivo.</strong> Las 31 fuentes de contraste externo incorporadas en esta versión corrigen la limitación estructural de la anterior, pero no la eliminan: 74 de 105 fuentes siguen siendo comunicación de las propias instituciones observadas. El contraste externo confirmó lo que dicen; no puede decir qué omitieron.</li><li><strong>La cobertura sigue siendo desigual.</strong> Tres instituciones recibieron un piloto de profundidad y ocho no. La razón bajó de 2,4 : 1 a 1,8 : 1 en rutas recorridas, pero en número de fuentes se mantiene en 3,7 : 1. Con 31 de 110 celdas sin concluir, cuatro instituciones tienen un techo igual o superior al piso de la primera y el orden entre ellas no es resoluble.</li><li><strong>El comparador ordinal mide formalización publicada.</strong> No mide calidad de la enseñanza, ni preparación de egresados, ni uso real. Una Facultad excelente que no publique sus instrumentos puntúa bajo, y eso es deliberado, pero un lector que confunda las dos cosas leerá mal la tabla.</li><li><strong>Una fuente no resistió la verificación y no fue localizable.</strong> La atribuida a una revista de la Universidad Central no aparece en ningún dominio ni buscador. Se degrada a pendiente de referencia bibliográfica completa, y su consecuencia —que la capacidad de investigación de esa institución baje a no localizada— se declara aquí porque perjudica a una institución sin que ella pueda responder en este documento.</li><li><strong>No existe línea base congelada de 2025.</strong> El documento antecedente contiene actividades fechadas en 2026, de modo que ninguna afirmación de crecimiento temporal es sostenible y la trayectoria de la mayoría de las iniciativas queda como desconocida.</li><li><strong>Dos dimensiones del protocolo siguen vacías.</strong> Recursos y capacidades, y continuidad, cobertura y resultados, no reúnen evidencia en ninguna institución. Ninguna publica presupuesto, dotación ni sostenibilidad, y ningún fondo de vinculación con el medio de la cohorte publica su monto.</li><li><strong>La ausencia de evidencia pública no es inexistencia, salvo donde el registro es exhaustivo.</strong> Toda afirmación negativa de este informe se refiere a lo que no fue localizado recorriendo un protocolo definido. La única excepción son las afirmaciones apoyadas en la base histórica de proyectos adjudicados, donde la ausencia en un registro completo sí es un dato — y aun ahí, sólo sobre financiamiento público competitivo.</li><li><strong>El autor participa en una de las iniciativas evaluadas.</strong> Ver la declaración de intereses en la sección 3. Ninguna afirmación sobre la PUCV se sostiene en fuente única, la rúbrica del comparador se cerró antes de calcular resultados, y la sección correspondiente publica su doble revisión, incluida la observación de que la primera posición de la PUCV se beneficia de ser la institución mejor investigada.</li></ul>
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>12 · Agenda · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">19</p>
- <h2 id="12-agenda-de-investigacion">12 · Agenda de investigación</h2>
+ <h2>12 · Agenda de investigación</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Siete preguntas abiertas, con la razón por la que importan y el
  procedimiento que las cerraría. La agenda de la versión anterior tenía siete; dos se cerraron en
@@ -2893,7 +1742,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Nota metodológica · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">20</p>
- <h2 id="nota-metodologica">Nota metodológica</h2>
+ <h2>Nota metodológica</h2>
  <div class="rule"></div>
  <div class="two">
   <p><strong>Once instituciones, no el sistema.</strong> La cohorte es cerrada y no probabilística.
@@ -2944,7 +1793,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo A · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo A</p>
- <h2 id="las-once-instituciones-una-por-una" data-anexo="sí">Las once instituciones, una por una</h2>
+ <h2>Las once instituciones, una por una</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Perfil de cada institución con lo que su evidencia acredita, su cobertura
  y las rutas del protocolo que quedan por recorrer. El catálogo completo de iniciativas por
@@ -3052,7 +1901,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo B · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo B</p>
- <h2 id="registro-de-divergencias-de-la-verificacion" data-anexo="sí">Registro de divergencias de la verificación</h2>
+ <h2>Registro de divergencias de la verificación</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Las 23 divergencias encontradas al contrastar cada fuente
  contra su publicación original, 14 de ellas materiales. Se publican íntegras, incluidas las que
@@ -3115,25 +1964,25 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo C · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo C</p>
- <h2 id="las-capacidades-celda-por-celda" data-anexo="sí">Las capacidades, celda por celda</h2>
+ <h2>Las capacidades, celda por celda</h2>
  <div class="rule"></div>
  <p>La matriz del cuerpo en texto, para quien quiera el dato exacto, imprima en blanco y negro o
  llegue con un lector de pantalla. Es la misma información que dibuja la figura y sale de la misma
  función: no puede decir otra cosa.</p>
  <h5>Las diez capacidades y la pregunta que responde cada una</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:44mm">Capacidad</th><th>Pregunta</th></tr></thead><tbody><tr><td class="k">Unidad especializada</td><td>¿Existe una estructura dedicada dentro de la Facultad?</td></tr><tr><td class="k">Norma propia</td><td>¿La Facultad dictó reglas sobre el uso de inteligencia artificial?</td></tr><tr><td class="k">Presencia en pregrado</td><td>¿La IA aparece dentro de la enseñanza de pregrado?</td></tr><tr><td class="k">Formación estructurada</td><td>¿Hay diplomados, minors, cursos o capacitaciones con IA?</td></tr><tr><td class="k">Herramienta desplegada</td><td>¿Hay un sistema de IA efectivamente a disposición?</td></tr><tr><td class="k">Adopción en la enseñanza</td><td>¿Consta que la IA se usa dentro de la enseñanza del Derecho?</td></tr><tr><td class="k">Alcance declarado</td><td>¿El registro declara a quién alcanza lo que se hace?</td></tr><tr><td class="k">Investigación</td><td>¿Hay proyectos o publicaciones sobre inteligencia artificial?</td></tr><tr><td class="k">Transferencia</td><td>¿Hay convenios o servicios hacia fuera de la Facultad?</td></tr><tr><td class="k">Evaluación de efecto</td><td>¿Se midió si algo de esto mejoró el aprendizaje jurídico?</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:44mm">Capacidad</th><th>Pregunta</th></tr></thead><tbody><tr><td class="k">Unidad especializada</td><td>¿Existe una estructura dedicada dentro de la Facultad?</td></tr><tr><td class="k">Norma propia</td><td>¿La Facultad dictó reglas sobre el uso de inteligencia artificial?</td></tr><tr><td class="k">Presencia en pregrado</td><td>¿La IA aparece dentro de la enseñanza de pregrado?</td></tr><tr><td class="k">Formación estructurada</td><td>¿Hay diplomados, minors, cursos o capacitaciones con IA?</td></tr><tr><td class="k">Herramienta desplegada</td><td>¿Hay un sistema de IA efectivamente a disposición?</td></tr><tr><td class="k">Adopción en la enseñanza</td><td>¿Consta que la IA se usa dentro de la enseñanza del Derecho?</td></tr><tr><td class="k">Alcance declarado</td><td>¿El registro declara a quién alcanza lo que se hace?</td></tr><tr><td class="k">Investigación</td><td>¿Hay proyectos o publicaciones sobre inteligencia artificial?</td></tr><tr><td class="k">Transferencia</td><td>¿Hay convenios o servicios hacia fuera de la Facultad?</td></tr><tr><td class="k">Evaluación de efecto</td><td>¿Se midió si algo de esto mejoró el aprendizaje jurídico?</td></tr></tbody></table>
  <h5>Los siete estados y su valor en el índice</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:26mm">Código</th><th>Qué significa</th><th class="num">Puntos</th></tr></thead><tbody><tr><td><span class="chip c-opf">OPF</span></td><td class="k">En operación, con instrumento formal publicado</td><td class="num">3</td></tr><tr><td><span class="chip c-op">OP</span></td><td class="k">En operación</td><td class="num">2</td></tr><tr><td><span class="chip c-inc">INC</span></td><td class="k">Incipiente</td><td class="num">1</td></tr><tr><td><span class="chip c-ent">ENT</span></td><td class="k">Sólo en el entorno</td><td class="num">1</td></tr><tr><td><span class="chip c-ady">ADY</span></td><td class="k">Sólo adyacente</td><td class="num">1</td></tr><tr><td><span class="chip c-nl">NL</span></td><td class="k">No localizada</td><td class="num">0</td></tr><tr><td><span class="chip c-nc">NC</span></td><td class="k">No concluyente</td><td class="num">—</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:26mm">Código</th><th>Qué significa</th><th class="num">Puntos</th></tr></thead><tbody><tr><td><span class="chip c-opf">OPF</span></td><td class="k">En operación, con instrumento formal publicado</td><td class="num">3</td></tr><tr><td><span class="chip c-op">OP</span></td><td class="k">En operación</td><td class="num">2</td></tr><tr><td><span class="chip c-inc">INC</span></td><td class="k">Incipiente</td><td class="num">1</td></tr><tr><td><span class="chip c-ent">ENT</span></td><td class="k">Sólo en el entorno</td><td class="num">1</td></tr><tr><td><span class="chip c-ady">ADY</span></td><td class="k">Sólo adyacente</td><td class="num">1</td></tr><tr><td><span class="chip c-nl">NL</span></td><td class="k">No localizada</td><td class="num">0</td></tr><tr><td><span class="chip c-nc">NC</span></td><td class="k">No concluyente</td><td class="num">—</td></tr></tbody></table>
  <h5>Estado de cada capacidad por institución</h5>
- <div class="tabla-ancha"><table style="font-size:7pt"><thead><tr><th style="width:38mm">Institución</th><th class="num" style="width:9mm;font-size:6.4pt">Unidad</th><th class="num" style="width:9mm;font-size:6.4pt">Norma</th><th class="num" style="width:9mm;font-size:6.4pt">Presencia</th><th class="num" style="width:9mm;font-size:6.4pt">Formación</th><th class="num" style="width:9mm;font-size:6.4pt">Herramienta</th><th class="num" style="width:9mm;font-size:6.4pt">Adopción</th><th class="num" style="width:9mm;font-size:6.4pt">Alcance</th><th class="num" style="width:9mm;font-size:6.4pt">Investigación</th><th class="num" style="width:9mm;font-size:6.4pt">Transferencia</th><th class="num" style="width:9mm;font-size:6.4pt">Evaluación</th><th class="num">Piso</th></tr></thead>
-  <tbody><tr><td class="k" style="font-size:7.6pt">Pontificia Universidad Católica de Chile</td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>20</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Autónoma de Chile</td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>17</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Central de Chile</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>17</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad de Chile</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>12</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Adolfo Ibáñez</td><td class="num"><span class="chip c-ady">ADY</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>11</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Andrés Bello</td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>11</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad del Desarrollo</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>8</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Diego Portales</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>8</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad de los Andes</td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>5</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad de Concepción</td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>5</strong></td></tr></tbody></table></div>
+ <table style="font-size:7pt"><thead><tr><th style="width:38mm">Institución</th><th class="num" style="width:9mm;font-size:6.4pt">Unidad</th><th class="num" style="width:9mm;font-size:6.4pt">Norma</th><th class="num" style="width:9mm;font-size:6.4pt">Presencia</th><th class="num" style="width:9mm;font-size:6.4pt">Formación</th><th class="num" style="width:9mm;font-size:6.4pt">Herramienta</th><th class="num" style="width:9mm;font-size:6.4pt">Adopción</th><th class="num" style="width:9mm;font-size:6.4pt">Alcance</th><th class="num" style="width:9mm;font-size:6.4pt">Investigación</th><th class="num" style="width:9mm;font-size:6.4pt">Transferencia</th><th class="num" style="width:9mm;font-size:6.4pt">Evaluación</th><th class="num">Piso</th></tr></thead>
+  <tbody><tr><td class="k" style="font-size:7.6pt">Pontificia Universidad Católica de Chile</td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>20</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Autónoma de Chile</td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>17</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Central de Chile</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>17</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad de Chile</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>12</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Adolfo Ibáñez</td><td class="num"><span class="chip c-ady">ADY</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-opf">OPF</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>11</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Andrés Bello</td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>11</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad del Desarrollo</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>8</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad Diego Portales</td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>8</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad de los Andes</td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-op">OP</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>5</strong></td></tr><tr><td class="k" style="font-size:7.6pt">Universidad de Concepción</td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-nc">NC</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-ent">ENT</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><span class="chip c-inc">INC</span></td><td class="num"><span class="chip c-nl">NL</span></td><td class="num"><strong>5</strong></td></tr></tbody></table>
  <p class="tbl-note">Las columnas siguen el orden del cuerpo: unidad, norma, pregrado, formación,
  herramienta, adopción, alcance, investigación, transferencia y evaluación. NC son celdas no
  concluyentes, excluidas del piso y con aporte de 2 puntos al techo.</p>
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo D · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo D</p>
- <h2 id="comparador-ordinal-rubrica-y-calculo" data-anexo="sí">Comparador ordinal: rúbrica y cálculo</h2>
+ <h2>Comparador ordinal: rúbrica y cálculo</h2>
  <div class="rule"></div>
  <p>La rúbrica se cerró antes de calcular los resultados de cada institución, como medida de control
  del conflicto de interés declarado en la sección 3. Lo que sigue permite rehacer el cálculo o
@@ -3171,25 +2020,25 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
   de la institución destinataria del informe.</p>
  </div>
  <h5>Las trece celdas que alcanzan el estado con instrumento formal, y cuál es</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:44mm">Institución</th><th style="width:36mm">Capacidad</th><th>Instrumento</th></tr></thead>
-  <tbody><tr><td class="k">P. U. Católica de Chile</td><td>Unidad especializada</td><td style="font-size:8pt">Departamento listado en la estructura orgánica publicada de la Facultad, con director identificado</td></tr><tr><td class="k">P. U. Católica de Chile</td><td>Norma propia</td><td style="font-size:8pt">Guía aprobada por Comité Directivo y Consejo de la Facultad, con deberes exigibles y régimen de consecuencias</td></tr><tr><td class="k">P. U. Católica de Chile</td><td>Adopción en la enseñanza</td><td style="font-size:8pt">Opción de integrar IA oficializada en el formulario institucional de condiciones y evaluaciones, mayo de 2026</td></tr><tr><td class="k">P. U. Católica de Chile</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2026 nº 1262017 · Fondecyt Iniciación 2025 nº 11251741 · FONDEF IDeA I+D 2026 nº ID26I10704</td></tr><tr><td class="k">P. U. Católica de Valparaíso</td><td>Herramienta desplegada</td><td style="font-size:8pt">Registro de propiedad intelectual de ScribeClaroPUCV, Certificado nº 2026-A-6558 de 23-06-2026</td></tr><tr><td class="k">P. U. Católica de Valparaíso</td><td>Transferencia</td><td style="font-size:8pt">Convenio con la Corte Suprema de agosto de 2020, con decana y presidente de la Corte identificados y actividad derivada documentada</td></tr><tr><td class="k">U. Adolfo Ibáñez</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2026 nº 1262567, 57.300.000 pesos, 48 meses, objeto de IA explícito</td></tr><tr><td class="k">U. Autónoma de Chile</td><td>Formación estructurada</td><td style="font-size:8pt">Minor con cinco asignaturas y 25 créditos publicados, con cohorte egresada y ceremonia fechada</td></tr><tr><td class="k">U. Autónoma de Chile</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2025 nº 1250613 · Fondecyt Regular 2026 nº 1262066</td></tr><tr><td class="k">U. de Chile</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2025 nº 1250142 · Fondecyt Regular 2026 nº 1261853</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:44mm">Institución</th><th style="width:36mm">Capacidad</th><th>Instrumento</th></tr></thead>
+  <tbody><tr><td class="k">P. U. Católica de Chile</td><td>Unidad especializada</td><td style="font-size:8pt">Departamento listado en la estructura orgánica publicada de la Facultad, con director identificado</td></tr><tr><td class="k">P. U. Católica de Chile</td><td>Norma propia</td><td style="font-size:8pt">Guía aprobada por Comité Directivo y Consejo de la Facultad, con deberes exigibles y régimen de consecuencias</td></tr><tr><td class="k">P. U. Católica de Chile</td><td>Adopción en la enseñanza</td><td style="font-size:8pt">Opción de integrar IA oficializada en el formulario institucional de condiciones y evaluaciones, mayo de 2026</td></tr><tr><td class="k">P. U. Católica de Chile</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2026 nº 1262017 · Fondecyt Iniciación 2025 nº 11251741 · FONDEF IDeA I+D 2026 nº ID26I10704</td></tr><tr><td class="k">P. U. Católica de Valparaíso</td><td>Herramienta desplegada</td><td style="font-size:8pt">Registro de propiedad intelectual de ScribeClaroPUCV, Certificado nº 2026-A-6558 de 23-06-2026</td></tr><tr><td class="k">P. U. Católica de Valparaíso</td><td>Transferencia</td><td style="font-size:8pt">Convenio con la Corte Suprema de agosto de 2020, con decana y presidente de la Corte identificados y actividad derivada documentada</td></tr><tr><td class="k">U. Adolfo Ibáñez</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2026 nº 1262567, 57.300.000 pesos, 48 meses, objeto de IA explícito</td></tr><tr><td class="k">U. Autónoma de Chile</td><td>Formación estructurada</td><td style="font-size:8pt">Minor con cinco asignaturas y 25 créditos publicados, con cohorte egresada y ceremonia fechada</td></tr><tr><td class="k">U. Autónoma de Chile</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2025 nº 1250613 · Fondecyt Regular 2026 nº 1262066</td></tr><tr><td class="k">U. de Chile</td><td>Investigación</td><td style="font-size:8pt">Fondecyt Regular 2025 nº 1250142 · Fondecyt Regular 2026 nº 1261853</td></tr></tbody></table>
  <p class="tbl-note">Diez filas para trece celdas: tres instituciones acreditan una misma capacidad
  mediante varios instrumentos, que se agrupan en una sola fila.</p>
  <h5>Cálculo completo</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:44mm">Institución</th><th>Detalle por capacidad</th><th class="num">Piso</th><th class="num">Techo</th></tr></thead>
-  <tbody><tr><td class="k">Pontificia Universidad Católica de Chile</td><td style="font-size:7.6pt">unidad 3 · norma 3 · presencia 2 · formación 2 · herramienta 1 · adopción 3 · alcance 2 · investigación 3 · transferencia 1 · evaluación 0</td><td class="num"><strong>20</strong></td><td class="num">20</td></tr><tr><td class="k">Universidad Autónoma de Chile</td><td style="font-size:7.6pt">unidad 3 · norma 0 · presencia 2 · formación 3 · herramienta 0 · adopción 2 · alcance 2 · investigación 3 · transferencia 2 · evaluación 0</td><td class="num"><strong>17</strong></td><td class="num">17</td></tr><tr><td class="k">Universidad Central de Chile</td><td style="font-size:7.6pt">unidad 2 · norma 3 · presencia 2 · formación 2 · herramienta 2 · adopción 2 · alcance 2 · investigación 0 · transferencia 2 · evaluación 0</td><td class="num"><strong>17</strong></td><td class="num">17</td></tr><tr><td class="k">Universidad de Chile</td><td style="font-size:7.6pt">unidad 2 · norma 1 · presencia — · formación 2 · herramienta 0 · adopción 1 · alcance 2 · investigación 3 · transferencia 1 · evaluación 0</td><td class="num"><strong>12</strong></td><td class="num">14</td></tr><tr><td class="k">Universidad Adolfo Ibáñez</td><td style="font-size:7.6pt">unidad 1 · norma 0 · presencia 2 · formación 2 · herramienta 0 · adopción 2 · alcance 0 · investigación 3 · transferencia 1 · evaluación 0</td><td class="num"><strong>11</strong></td><td class="num">11</td></tr><tr><td class="k">Universidad Andrés Bello</td><td style="font-size:7.6pt">unidad 0 · norma 1 · presencia 2 · formación 1 · herramienta 2 · adopción 1 · alcance 2 · investigación 0 · transferencia 2 · evaluación 0</td><td class="num"><strong>11</strong></td><td class="num">11</td></tr><tr><td class="k">Universidad del Desarrollo</td><td style="font-size:7.6pt">unidad 2 · norma 1 · presencia 1 · formación 2 · herramienta 1 · adopción — · alcance 0 · investigación 0 · transferencia 1 · evaluación 0</td><td class="num"><strong>8</strong></td><td class="num">10</td></tr><tr><td class="k">Universidad Diego Portales</td><td style="font-size:7.6pt">unidad 2 · norma 0 · presencia 1 · formación 1 · herramienta 0 · adopción 1 · alcance 2 · investigación 0 · transferencia 1 · evaluación 0</td><td class="num"><strong>8</strong></td><td class="num">8</td></tr><tr><td class="k">Universidad de los Andes</td><td style="font-size:7.6pt">unidad 0 · norma 0 · presencia — · formación 2 · herramienta 1 · adopción — · alcance 0 · investigación 1 · transferencia 1 · evaluación 0</td><td class="num"><strong>5</strong></td><td class="num">9</td></tr><tr><td class="k">Universidad de Concepción</td><td style="font-size:7.6pt">unidad 0 · norma 0 · presencia — · formación 1 · herramienta 1 · adopción 1 · alcance 1 · investigación 0 · transferencia 1 · evaluación 0</td><td class="num"><strong>5</strong></td><td class="num">7</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:44mm">Institución</th><th>Detalle por capacidad</th><th class="num">Piso</th><th class="num">Techo</th></tr></thead>
+  <tbody><tr><td class="k">Pontificia Universidad Católica de Chile</td><td style="font-size:7.6pt">unidad 3 · norma 3 · presencia 2 · formación 2 · herramienta 1 · adopción 3 · alcance 2 · investigación 3 · transferencia 1 · evaluación 0</td><td class="num"><strong>20</strong></td><td class="num">20</td></tr><tr><td class="k">Universidad Autónoma de Chile</td><td style="font-size:7.6pt">unidad 3 · norma 0 · presencia 2 · formación 3 · herramienta 0 · adopción 2 · alcance 2 · investigación 3 · transferencia 2 · evaluación 0</td><td class="num"><strong>17</strong></td><td class="num">17</td></tr><tr><td class="k">Universidad Central de Chile</td><td style="font-size:7.6pt">unidad 2 · norma 3 · presencia 2 · formación 2 · herramienta 2 · adopción 2 · alcance 2 · investigación 0 · transferencia 2 · evaluación 0</td><td class="num"><strong>17</strong></td><td class="num">17</td></tr><tr><td class="k">Universidad de Chile</td><td style="font-size:7.6pt">unidad 2 · norma 1 · presencia — · formación 2 · herramienta 0 · adopción 1 · alcance 2 · investigación 3 · transferencia 1 · evaluación 0</td><td class="num"><strong>12</strong></td><td class="num">14</td></tr><tr><td class="k">Universidad Adolfo Ibáñez</td><td style="font-size:7.6pt">unidad 1 · norma 0 · presencia 2 · formación 2 · herramienta 0 · adopción 2 · alcance 0 · investigación 3 · transferencia 1 · evaluación 0</td><td class="num"><strong>11</strong></td><td class="num">11</td></tr><tr><td class="k">Universidad Andrés Bello</td><td style="font-size:7.6pt">unidad 0 · norma 1 · presencia 2 · formación 1 · herramienta 2 · adopción 1 · alcance 2 · investigación 0 · transferencia 2 · evaluación 0</td><td class="num"><strong>11</strong></td><td class="num">11</td></tr><tr><td class="k">Universidad del Desarrollo</td><td style="font-size:7.6pt">unidad 2 · norma 1 · presencia 1 · formación 2 · herramienta 1 · adopción — · alcance 0 · investigación 0 · transferencia 1 · evaluación 0</td><td class="num"><strong>8</strong></td><td class="num">10</td></tr><tr><td class="k">Universidad Diego Portales</td><td style="font-size:7.6pt">unidad 2 · norma 0 · presencia 1 · formación 1 · herramienta 0 · adopción 1 · alcance 2 · investigación 0 · transferencia 1 · evaluación 0</td><td class="num"><strong>8</strong></td><td class="num">8</td></tr><tr><td class="k">Universidad de los Andes</td><td style="font-size:7.6pt">unidad 0 · norma 0 · presencia — · formación 2 · herramienta 1 · adopción — · alcance 0 · investigación 1 · transferencia 1 · evaluación 0</td><td class="num"><strong>5</strong></td><td class="num">9</td></tr><tr><td class="k">Universidad de Concepción</td><td style="font-size:7.6pt">unidad 0 · norma 0 · presencia — · formación 1 · herramienta 1 · adopción 1 · alcance 1 · investigación 0 · transferencia 1 · evaluación 0</td><td class="num"><strong>5</strong></td><td class="num">7</td></tr></tbody></table>
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo E · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo E</p>
- <h2 id="contraste-externo-proyectos-anid-y-fuentes-de-terceros" data-anexo="sí">Contraste externo: proyectos ANID y fuentes de terceros</h2>
+ <h2>Contraste externo: proyectos ANID y fuentes de terceros</h2>
  <div class="rule"></div>
  <h5>Ocho proyectos con objeto jurídico-tecnológico clasificados fuera de la disciplina Derecho</h5>
  <p style="font-size:9.4pt">Los siete de disciplina Derecho se publican en la sección 6. Estos ocho
  suman 1.361 millones de pesos y ninguno lo lidera una Facultad de Derecho. Es el hallazgo H-4 medido
  en dinero público.</p>
- <div class="tabla-ancha"><table><thead><tr><th style="width:19mm">Código</th><th style="width:34mm">Instrumento</th>
+ <table><thead><tr><th style="width:19mm">Código</th><th style="width:34mm">Instrumento</th>
    <th style="width:30mm">Institución</th><th>Título</th><th class="num" style="width:20mm">Monto ($)</th>
-   <th class="num" style="width:11mm">Meses</th></tr></thead><tbody><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">IT25I0151</td><td style="font-size:7.6pt">FONDEF IDeA Investigación Tecnológica 2025</td><td style="font-size:7.6pt">U. de los Andes (con PUCV)</td><td style="font-size:7.6pt">Escalamiento y validación de un sistema integrado para la certeza jurídica en materia ambiental mediante inteligencia artificial</td><td class="num">236.998.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">ID21I10206</td><td style="font-size:7.6pt">FONDEF IDeA I+D 2021</td><td style="font-size:7.6pt">U. de los Andes</td><td style="font-size:7.6pt">Desarrollo de herramienta computacional para la certeza jurídica en materia ambiental (fase anterior de IT25I0151)</td><td class="num">199.999.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">ID26I10072</td><td style="font-size:7.6pt">FONDEF IDeA I+D 2026</td><td style="font-size:7.6pt">U. Alberto Hurtado</td><td style="font-size:7.6pt">ChileReconoce 2.0: solución jurídico-tecnológica</td><td class="num">227.700.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">ID26I10704</td><td style="font-size:7.6pt">FONDEF IDeA I+D 2026</td><td style="font-size:7.6pt">P. U. Católica de Chile</td><td style="font-size:7.6pt">Plataforma de gestión de protección de víctimas</td><td class="num">227.000.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">SUC250019</td><td style="font-size:7.6pt">Startup Ciencia 2025</td><td style="font-size:7.6pt">Instituto Milenio Fundamentos de los Datos</td><td style="font-size:7.6pt">Asistente inteligente para el análisis de fuentes formales del derecho</td><td class="num">134.492.000</td><td class="num">12</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">RP24I10007</td><td style="font-size:7.6pt">Corfo Desafíos Públicos 2024</td><td style="font-size:7.6pt">DATAQU</td><td style="font-size:7.6pt">Transformación digital en la gestión judicial: innovación con modelos de lenguaje para la automatización de demandas</td><td class="num">149.520.000</td><td class="num">—</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">RP24I10013</td><td style="font-size:7.6pt">Corfo Desafíos Públicos 2024</td><td style="font-size:7.6pt">ANALITIC</td><td style="font-size:7.6pt">Automatización de análisis y clasificación de documentos de causas judiciales para el Consejo de Defensa del Estado</td><td class="num">149.848.000</td><td class="num">—</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">11251741</td><td style="font-size:7.6pt">Fondecyt Iniciación 2025</td><td style="font-size:7.6pt">P. U. Católica de Chile</td><td style="font-size:7.6pt">Conservación de datos personales</td><td class="num">35.760.000</td><td class="num">36</td></tr></tbody></table></div>
+   <th class="num" style="width:11mm">Meses</th></tr></thead><tbody><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">IT25I0151</td><td style="font-size:7.6pt">FONDEF IDeA Investigación Tecnológica 2025</td><td style="font-size:7.6pt">U. de los Andes (con PUCV)</td><td style="font-size:7.6pt">Escalamiento y validación de un sistema integrado para la certeza jurídica en materia ambiental mediante inteligencia artificial</td><td class="num">236.998.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">ID21I10206</td><td style="font-size:7.6pt">FONDEF IDeA I+D 2021</td><td style="font-size:7.6pt">U. de los Andes</td><td style="font-size:7.6pt">Desarrollo de herramienta computacional para la certeza jurídica en materia ambiental (fase anterior de IT25I0151)</td><td class="num">199.999.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">ID26I10072</td><td style="font-size:7.6pt">FONDEF IDeA I+D 2026</td><td style="font-size:7.6pt">U. Alberto Hurtado</td><td style="font-size:7.6pt">ChileReconoce 2.0: solución jurídico-tecnológica</td><td class="num">227.700.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">ID26I10704</td><td style="font-size:7.6pt">FONDEF IDeA I+D 2026</td><td style="font-size:7.6pt">P. U. Católica de Chile</td><td style="font-size:7.6pt">Plataforma de gestión de protección de víctimas</td><td class="num">227.000.000</td><td class="num">24</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">SUC250019</td><td style="font-size:7.6pt">Startup Ciencia 2025</td><td style="font-size:7.6pt">Instituto Milenio Fundamentos de los Datos</td><td style="font-size:7.6pt">Asistente inteligente para el análisis de fuentes formales del derecho</td><td class="num">134.492.000</td><td class="num">12</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">RP24I10007</td><td style="font-size:7.6pt">Corfo Desafíos Públicos 2024</td><td style="font-size:7.6pt">DATAQU</td><td style="font-size:7.6pt">Transformación digital en la gestión judicial: innovación con modelos de lenguaje para la automatización de demandas</td><td class="num">149.520.000</td><td class="num">—</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">RP24I10013</td><td style="font-size:7.6pt">Corfo Desafíos Públicos 2024</td><td style="font-size:7.6pt">ANALITIC</td><td style="font-size:7.6pt">Automatización de análisis y clasificación de documentos de causas judiciales para el Consejo de Defensa del Estado</td><td class="num">149.848.000</td><td class="num">—</td></tr><tr><td style="font-family:var(--mono);font-size:7.2pt" class="k">11251741</td><td style="font-size:7.6pt">Fondecyt Iniciación 2025</td><td style="font-size:7.6pt">P. U. Católica de Chile</td><td style="font-size:7.6pt">Conservación de datos personales</td><td class="num">35.760.000</td><td class="num">36</td></tr></tbody></table>
  <div class="box warn">
   <h5>Dos advertencias de método sobre esta fuente</h5>
   <p><strong>El acto administrativo no basta.</strong> Las nóminas de fallo que ANID publica para
@@ -3203,26 +2052,26 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
   proyectos de esta tabla se localizaron por objeto y palabras clave, no por disciplina.</p>
  </div>
  <h5>Fuentes de contraste externo incorporadas</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:38mm">Emisor</th><th>Documento</th><th style="width:44mm">Dominio</th></tr></thead>
-  <tbody><tr><td class="k">ANID</td><td>Histórico de proyectos adjudicados · 49.014 registros 1982-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">github.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados</td></tr><tr><td class="k">ANID</td><td>Resolución exenta 7461 · fallo Investigación Tecnológica IDeA 2025 · 09-09-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">documentos.anid.cl</td></tr><tr><td class="k">ANID</td><td>Nómina de proyectos aprobados Fondecyt Regular 2026 · 680 proyectos</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">documentos.anid.cl</td></tr><tr><td class="k">ANID</td><td>Resolución exenta 71 · adjudicación IDeA I+D 2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">documentos.anid.cl</td></tr><tr><td class="k">SIES · Mineduc</td><td>Informe de Matrícula en Educación Superior en Chile 2024 · julio 2024</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">educacionsuperior.mineduc.cl</td></tr><tr><td class="k">CNA-Chile</td><td>Repositorio de criterios y estándares por carrera</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">cnachile.cl</td></tr><tr><td class="k">Minciencia</td><td>Política Nacional de Inteligencia Artificial · actualización 2024</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">cens.cl</td></tr><tr><td class="k">Academia Judicial</td><td>Sitio y guía sobre IA generativa para juezas y jueces · 07-04-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">ia.academiajudicial.cl</td></tr><tr><td class="k">Colegio de Abogados</td><td>Guía de uso responsable de IA · aprobada 06-07-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">idealex.press · actualidadjuridica.doe.cl</td></tr><tr><td class="k">Ministerio de Economía</td><td>Superir y UNAB presentan primer piloto de asesor virtual · 23-10-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">economia.gob.cl</td></tr><tr><td class="k">Superintendencia de Insolvencia</td><td>Presentación del piloto de asesor virtual de insolvencia</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">superir.gob.cl</td></tr><tr><td class="k">La Tercera</td><td>«Informática jurídica», ética e IA: el nuevo enfoque de las Facultades de Derecho · 12-02-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">latercera.com</td></tr><tr><td class="k">La Tercera · Pulso</td><td>La IA ya entró a los estudios de abogados · 16-08-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">latercera.com</td></tr><tr><td class="k">T13</td><td>Uso de IA habría hecho colapsar plataforma del Poder Judicial · 28-07-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">t13.cl</td></tr><tr><td class="k">Diario Constitucional</td><td>Entre el código y el oficio: dos visiones críticas sobre la formación jurídica · 21-02-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">diarioconstitucional.cl</td></tr><tr><td class="k">Diario Financiero</td><td>Oportunidades y riesgos de la IA generativa para el sector jurídico · 12-01-2024</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">df.cl</td></tr><tr><td class="k">U. de Chile</td><td>81 % de estudiantes de primer año usa inteligencia artificial · 13-05-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">uchile.cl</td></tr><tr><td class="k">RPUD 8(2) 2021</td><td>Contreras et al., «Sobre el minor en Inteligencia Artificial y Derecho»</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">pedagogiaderecho.uchile.cl</td></tr><tr><td class="k">RPUD 8(1) 2021</td><td>León Reyes y Sandoval, «El mercado de los abogados y las abogadas»</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">pedagogiaderecho.uchile.cl</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:38mm">Emisor</th><th>Documento</th><th style="width:44mm">Dominio</th></tr></thead>
+  <tbody><tr><td class="k">ANID</td><td>Histórico de proyectos adjudicados · 49.014 registros 1982-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">github.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados</td></tr><tr><td class="k">ANID</td><td>Resolución exenta 7461 · fallo Investigación Tecnológica IDeA 2025 · 09-09-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">documentos.anid.cl</td></tr><tr><td class="k">ANID</td><td>Nómina de proyectos aprobados Fondecyt Regular 2026 · 680 proyectos</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">documentos.anid.cl</td></tr><tr><td class="k">ANID</td><td>Resolución exenta 71 · adjudicación IDeA I+D 2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">documentos.anid.cl</td></tr><tr><td class="k">SIES · Mineduc</td><td>Informe de Matrícula en Educación Superior en Chile 2024 · julio 2024</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">educacionsuperior.mineduc.cl</td></tr><tr><td class="k">CNA-Chile</td><td>Repositorio de criterios y estándares por carrera</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">cnachile.cl</td></tr><tr><td class="k">Minciencia</td><td>Política Nacional de Inteligencia Artificial · actualización 2024</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">cens.cl</td></tr><tr><td class="k">Academia Judicial</td><td>Sitio y guía sobre IA generativa para juezas y jueces · 07-04-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">ia.academiajudicial.cl</td></tr><tr><td class="k">Colegio de Abogados</td><td>Guía de uso responsable de IA · aprobada 06-07-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">idealex.press · actualidadjuridica.doe.cl</td></tr><tr><td class="k">Ministerio de Economía</td><td>Superir y UNAB presentan primer piloto de asesor virtual · 23-10-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">economia.gob.cl</td></tr><tr><td class="k">Superintendencia de Insolvencia</td><td>Presentación del piloto de asesor virtual de insolvencia</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">superir.gob.cl</td></tr><tr><td class="k">La Tercera</td><td>«Informática jurídica», ética e IA: el nuevo enfoque de las Facultades de Derecho · 12-02-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">latercera.com</td></tr><tr><td class="k">La Tercera · Pulso</td><td>La IA ya entró a los estudios de abogados · 16-08-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">latercera.com</td></tr><tr><td class="k">T13</td><td>Uso de IA habría hecho colapsar plataforma del Poder Judicial · 28-07-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">t13.cl</td></tr><tr><td class="k">Diario Constitucional</td><td>Entre el código y el oficio: dos visiones críticas sobre la formación jurídica · 21-02-2026</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">diarioconstitucional.cl</td></tr><tr><td class="k">Diario Financiero</td><td>Oportunidades y riesgos de la IA generativa para el sector jurídico · 12-01-2024</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">df.cl</td></tr><tr><td class="k">U. de Chile</td><td>81 % de estudiantes de primer año usa inteligencia artificial · 13-05-2025</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">uchile.cl</td></tr><tr><td class="k">RPUD 8(2) 2021</td><td>Contreras et al., «Sobre el minor en Inteligencia Artificial y Derecho»</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">pedagogiaderecho.uchile.cl</td></tr><tr><td class="k">RPUD 8(1) 2021</td><td>León Reyes y Sandoval, «El mercado de los abogados y las abogadas»</td><td style="font-family:var(--mono);font-size:7pt;color:#8c98a8">pedagogiaderecho.uchile.cl</td></tr></tbody></table>
  <p class="tbl-note">Diecinueve entradas para 31 fuentes: varias filas agrupan documentos del mismo
  emisor. El registro completo con direcciones se entrega con el dataset.</p>
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo F · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo F</p>
- <h2 id="referencia-internacional-normas-curriculos-y-estudios" data-anexo="sí">Referencia internacional: normas, currículos y estudios</h2>
+ <h2>Referencia internacional: normas, currículos y estudios</h2>
  <div class="rule"></div>
  <h5>Políticas de facultad sobre uso de IA en evaluación</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:38mm">Institución</th><th style="width:16mm">País</th>
-   <th style="width:22mm">Vigencia</th><th>Contenido</th></tr></thead><tbody><tr><td class="k">Berkeley Law</td><td>EE.UU.</td><td>verano 2026</td><td style="font-size:8pt">Prohíbe el uso de IA para conceptualizar, esquematizar, redactar, revisar, traducir o editar cualquier trabajo entregado para calificación, incluida la corrección gramatical. Prohibición absoluta en exámenes. Innovación transferible: la cita a fuente inexistente genera presunción de uso prohibido.</td></tr><tr><td class="k">Columbia Law School</td><td>EE.UU.</td><td>1-08-2026</td><td style="font-size:8pt">Permite la IA como apoyo al aprendizaje y prohíbe que sustituya el razonamiento jurídico del estudiante o actúe como redactor no declarado. Obligación de declarar todo uso; instrucción expresa de errar del lado de la declaración. Vía procesal identificada.</td></tr><tr><td class="k">U. of Chicago Law School</td><td>EE.UU.</td><td>otoño 2023, rev. 2025</td><td style="font-size:8pt">La política más antigua con fecha verificable. Prohibición absoluta en exámenes. Regla sustantiva: citar el uso de IA en nota al pie no exime de la prohibición.</td></tr><tr><td class="k">Marquette University Law School</td><td>EE.UU.</td><td>vigente</td><td style="font-size:8pt">Consecuencia más explícita del conjunto: la infracción es falta grave que puede acarrear suspensión o expulsión.</td></tr><tr><td class="k">London School of Economics</td><td>R. Unido</td><td>verano 2024</td><td style="font-size:8pt">Modelo de escala graduada de alcance institucional: tres posiciones que cada departamento adopta y comunica. La corrección ortográfica y gramatical no queda prohibida ni en la posición más restrictiva.</td></tr><tr><td class="k">U. of New South Wales</td><td>Australia</td><td>nov. 2025</td><td style="font-size:8pt">Marco de seis categorías de uso de IA en evaluación, de alcance universitario, con declaración estandarizada por curso.</td></tr></tbody></table></div>
+ <table><thead><tr><th style="width:38mm">Institución</th><th style="width:16mm">País</th>
+   <th style="width:22mm">Vigencia</th><th>Contenido</th></tr></thead><tbody><tr><td class="k">Berkeley Law</td><td>EE.UU.</td><td>verano 2026</td><td style="font-size:8pt">Prohíbe el uso de IA para conceptualizar, esquematizar, redactar, revisar, traducir o editar cualquier trabajo entregado para calificación, incluida la corrección gramatical. Prohibición absoluta en exámenes. Innovación transferible: la cita a fuente inexistente genera presunción de uso prohibido.</td></tr><tr><td class="k">Columbia Law School</td><td>EE.UU.</td><td>1-08-2026</td><td style="font-size:8pt">Permite la IA como apoyo al aprendizaje y prohíbe que sustituya el razonamiento jurídico del estudiante o actúe como redactor no declarado. Obligación de declarar todo uso; instrucción expresa de errar del lado de la declaración. Vía procesal identificada.</td></tr><tr><td class="k">U. of Chicago Law School</td><td>EE.UU.</td><td>otoño 2023, rev. 2025</td><td style="font-size:8pt">La política más antigua con fecha verificable. Prohibición absoluta en exámenes. Regla sustantiva: citar el uso de IA en nota al pie no exime de la prohibición.</td></tr><tr><td class="k">Marquette University Law School</td><td>EE.UU.</td><td>vigente</td><td style="font-size:8pt">Consecuencia más explícita del conjunto: la infracción es falta grave que puede acarrear suspensión o expulsión.</td></tr><tr><td class="k">London School of Economics</td><td>R. Unido</td><td>verano 2024</td><td style="font-size:8pt">Modelo de escala graduada de alcance institucional: tres posiciones que cada departamento adopta y comunica. La corrección ortográfica y gramatical no queda prohibida ni en la posición más restrictiva.</td></tr><tr><td class="k">U. of New South Wales</td><td>Australia</td><td>nov. 2025</td><td style="font-size:8pt">Marco de seis categorías de uso de IA en evaluación, de alcance universitario, con declaración estandarizada por curso.</td></tr></tbody></table>
  <p class="tbl-note">No se localizó ninguna política de inteligencia artificial dictada por una
  facultad de Derecho como tal en Reino Unido, Australia, España ni América Latina. El modelo
  estadounidense es de norma de facultad binaria; el británico y australiano, de escala graduada
  institucional que la unidad adopta y declara.</p>
  <h5>Literatura experimental sobre efecto e fiabilidad</h5>
- <div class="tabla-ancha"><table><thead><tr><th style="width:34mm">Autores</th><th style="width:16mm">Año</th>
+ <table><thead><tr><th style="width:34mm">Autores</th><th style="width:16mm">Año</th>
    <th style="width:36mm">Publicación</th><th style="width:34mm">Diseño</th><th>Resultado</th></tr></thead>
-  <tbody><tr><td class="k" style="font-size:8pt">Choi y Schwarcz</td><td>2023</td><td style="font-size:7.6pt">Journal of Legal Education · revisado por pares</td><td style="font-size:7.6pt">48 estudiantes · intrasujeto no aleatorizado</td><td style="font-size:8pt">Selección múltiple +28,9 puntos percentiles; ensayos sin efecto significativo. Efecto igualador: los de peor desempeño +45 puntos, los de mejor desempeño −20.</td></tr><tr><td class="k" style="font-size:8pt">Schwarcz, Manning, Prescott, Barry, Cleveland y Rich</td><td>2025 · publ. 2026</td><td style="font-size:7.6pt">Journal of Law & Empirical Analysis · revisado por pares</td><td style="font-size:7.6pt">137 estudiantes de dos facultades · ensayo controlado aleatorizado</td><td style="font-size:8pt">Productividad +34 % a +140 % en cinco de seis tareas. Calidad global +0,27 y +0,53 en escala de 7. Efecto negativo en redacción de acuerdo de confidencialidad.</td></tr><tr><td class="k" style="font-size:8pt">Bednar, Cleveland, Erbsen y Schwarcz</td><td>2026</td><td style="font-size:7.6pt">Documento de trabajo · no revisado por pares</td><td style="font-size:7.6pt">≈100 estudiantes · aleatorizado, cuatro tareas secuenciales</td><td style="font-size:8pt">Único que mide aprendizaje y no desempeño. La exposición previa a IA no deterioró la comprensión posterior.</td></tr><tr><td class="k" style="font-size:8pt">Schrepel</td><td>2026</td><td style="font-size:7.6pt">Law, Innovation and Technology</td><td style="font-size:7.6pt">Experimento pedagógico de dos años · no aleatorizado</td><td style="font-size:8pt">La formación estructurada dio ventaja el primer año y la ventaja se diluyó el segundo.</td></tr><tr><td class="k" style="font-size:8pt">Magesh, Surani, Dahl, Suzgun, Manning y Ho</td><td>2024 · publ. 2025</td><td style="font-size:7.6pt">Journal of Empirical Legal Studies · revisado por pares</td><td style="font-size:7.6pt">202 consultas jurídicas preregistradas</td><td style="font-size:8pt">Alucinación 17 % a 33 % en herramientas comerciales; exactitud entre 19 % y 65 %.</td></tr><tr><td class="k" style="font-size:8pt">Dahl, Magesh, Suzgun y Ho</td><td>2024</td><td style="font-size:7.6pt">Journal of Legal Analysis · revisado por pares</td><td style="font-size:7.6pt">+800.000 consultas verificables</td><td style="font-size:8pt">Alucinación de modelos generales entre 58 % y 88 % según modelo.</td></tr><tr><td class="k" style="font-size:8pt">Curran y otros</td><td>2025</td><td style="font-size:7.6pt">AI4A2J-ICAIL25</td><td style="font-size:7.6pt">Consultas jurídicas por jurisdicción</td><td style="font-size:8pt">Alucinación 45 % en Los Ángeles, 55 % en Londres, 61 % en Sídney, 100 % en derecho estadual australiano.</td></tr></tbody></table></div>
+  <tbody><tr><td class="k" style="font-size:8pt">Choi y Schwarcz</td><td>2023</td><td style="font-size:7.6pt">Journal of Legal Education · revisado por pares</td><td style="font-size:7.6pt">48 estudiantes · intrasujeto no aleatorizado</td><td style="font-size:8pt">Selección múltiple +28,9 puntos percentiles; ensayos sin efecto significativo. Efecto igualador: los de peor desempeño +45 puntos, los de mejor desempeño −20.</td></tr><tr><td class="k" style="font-size:8pt">Schwarcz, Manning, Prescott, Barry, Cleveland y Rich</td><td>2025 · publ. 2026</td><td style="font-size:7.6pt">Journal of Law & Empirical Analysis · revisado por pares</td><td style="font-size:7.6pt">137 estudiantes de dos facultades · ensayo controlado aleatorizado</td><td style="font-size:8pt">Productividad +34 % a +140 % en cinco de seis tareas. Calidad global +0,27 y +0,53 en escala de 7. Efecto negativo en redacción de acuerdo de confidencialidad.</td></tr><tr><td class="k" style="font-size:8pt">Bednar, Cleveland, Erbsen y Schwarcz</td><td>2026</td><td style="font-size:7.6pt">Documento de trabajo · no revisado por pares</td><td style="font-size:7.6pt">≈100 estudiantes · aleatorizado, cuatro tareas secuenciales</td><td style="font-size:8pt">Único que mide aprendizaje y no desempeño. La exposición previa a IA no deterioró la comprensión posterior.</td></tr><tr><td class="k" style="font-size:8pt">Schrepel</td><td>2026</td><td style="font-size:7.6pt">Law, Innovation and Technology</td><td style="font-size:7.6pt">Experimento pedagógico de dos años · no aleatorizado</td><td style="font-size:8pt">La formación estructurada dio ventaja el primer año y la ventaja se diluyó el segundo.</td></tr><tr><td class="k" style="font-size:8pt">Magesh, Surani, Dahl, Suzgun, Manning y Ho</td><td>2024 · publ. 2025</td><td style="font-size:7.6pt">Journal of Empirical Legal Studies · revisado por pares</td><td style="font-size:7.6pt">202 consultas jurídicas preregistradas</td><td style="font-size:8pt">Alucinación 17 % a 33 % en herramientas comerciales; exactitud entre 19 % y 65 %.</td></tr><tr><td class="k" style="font-size:8pt">Dahl, Magesh, Suzgun y Ho</td><td>2024</td><td style="font-size:7.6pt">Journal of Legal Analysis · revisado por pares</td><td style="font-size:7.6pt">+800.000 consultas verificables</td><td style="font-size:8pt">Alucinación de modelos generales entre 58 % y 88 % según modelo.</td></tr><tr><td class="k" style="font-size:8pt">Curran y otros</td><td>2025</td><td style="font-size:7.6pt">AI4A2J-ICAIL25</td><td style="font-size:7.6pt">Consultas jurídicas por jurisdicción</td><td style="font-size:8pt">Alucinación 45 % en Los Ángeles, 55 % en Londres, 61 % en Sídney, 100 % en derecho estadual australiano.</td></tr></tbody></table>
  <p class="tbl-note">Siete estudios en total, cinco de ellos revisados por pares, y del orden de tres a
  cuatro experimentales sobre efecto en educación jurídica, tres del mismo equipo. Ninguno fuera de
  Estados Unidos. No se localizó ningún ensayo controlado aleatorizado sobre IA y educación jurídica en
@@ -3246,7 +2095,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo G · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo G</p>
- <h2 id="candidatas-fuera-de-cohorte" data-anexo="sí">Candidatas fuera de cohorte</h2>
+ <h2>Candidatas fuera de cohorte</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Se revisaron dieciséis instituciones chilenas con Facultad o Escuela de
  Derecho fuera de la cohorte. Seis arrojan algo localizable y sólo dos son sólidas. Ninguna se
@@ -3290,7 +2139,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 </div>
 <div class="page"><div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo I · v2.0.0 · corte 06-09-2026</span></div>
  <p class="eyebrow">Anexo I</p>
- <h2 id="registro-completo-de-fuentes" data-anexo="sí">Registro completo de fuentes</h2>
+ <h2>Registro completo de fuentes</h2>
  <div class="rule"></div>
  <p style="max-width:152mm">Las 74 fuentes del corpus, todas contrastadas contra su publicación
  original al 6 de septiembre de 2026. La confianza documental de cada una se deriva de la jerarquía de
@@ -3301,7 +2150,7 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
 <div class="page">
 <div class="hdr"><span>Informe 01 · IA en Escuelas y Facultades de Derecho en Chile</span><span>Anexo · Ampliación del corpus · v2.0.0</span></div>
  <p class="eyebrow">Anexo</p>
- <h2 id="ampliacion-del-corpus-las-fuentes-de-la-segunda-ronda">Ampliación del corpus: las fuentes de la segunda ronda</h2>
+ <h2>Ampliación del corpus: las fuentes de la segunda ronda</h2>
  <div class="rule"></div>
 
  <p class="lead">La ronda de ampliación aportó 32 referencias.
@@ -3352,270 +2201,4 @@ ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;hei
  <p class="tbl-note" style="margin-top:4mm">Referencias que la ronda repetía y que ya constaban en el
  corpus, con el identificador que ya tenían: R2-UC-02 = src-puc-chile-008 · R2-UNAB-02 = src-unab-001 · R2-UAUT-05 = src-uautonoma-002 · R2-UAUT-06 = src-uautonoma-001 · R2-UCEN-02 = src-ucentral-003 · R2-UCH-01 = src-uchile-002 · R2-UDEC-01 = src-udec-001 · R2-UDP-01 = src-udp-002 · R2-UDP-02 = src-udp-001 · R2-PUCV-03 = src-pucv-011.</p>
 </div>
-
-</main>
-</div>
-
-<script data-capa="lector">
-/* ══════════════════════════════════════════════════════════════════════════
-   Comportamiento del lector · informes del laboratorio
-   ──────────────────────────────────────────────────────────────────────────
-   Sin dependencias y sin módulos: el documento tiene que abrirse desde un
-   disco, sin red y sin nada instalado. Es la misma regla que gobierna el
-   documento entero —un solo archivo, autónomo— y por eso esto va incrustado
-   y no enlazado.
-
-   Hace cuatro cosas:
-     1. barra de progreso y capítulo activo en el raíl;
-     2. alternador de tema, recordado;
-     3. en modo embebido, publica su alto a la página que lo aloja;
-     4. en modo embebido, recibe de ella el tema y las órdenes de navegación.
-   ══════════════════════════════════════════════════════════════════════════ */
-
-(function () {
-  'use strict';
-
-  var raíz = document.documentElement;
-  var embebido = raíz.getAttribute('data-modo') === 'embebido';
-
-  /* ── 1 · Progreso y capítulo activo ─────────────────────────────────── */
-
-  var prog = document.getElementById('lector-prog');
-  var enlaces = [].slice.call(document.querySelectorAll('.lector-raíl nav a'));
-  var destinos = enlaces.map(function (a) {
-    return document.getElementById(a.getAttribute('href').slice(1));
-  });
-
-  function alDesplazar() {
-    if (prog) {
-      var h = document.documentElement;
-      var alto = h.scrollHeight - h.clientHeight;
-      prog.style.width = (alto > 0 ? (h.scrollTop / alto) * 100 : 0) + '%';
-    }
-
-    var activo = -1;
-    for (var i = 0; i < destinos.length; i++) {
-      var d = destinos[i];
-      if (d && d.getBoundingClientRect().top <= 140) activo = i;
-    }
-    for (var j = 0; j < enlaces.length; j++) {
-      enlaces[j].classList.toggle('activo', j === activo);
-    }
-
-    /*
-      El raíl se desplaza por su cuenta, y en un documento de veinticinco
-      capítulos el activo terminaba fuera de su vista: el índice marcaba una
-      posición que no se podía ver sin buscarla a mano.
-    */
-    if (activo >= 0 && enlaces[activo] && !embebido) {
-      var a = enlaces[activo];
-      var raíl = a.closest('.lector-raíl');
-      if (raíl && raíl.scrollHeight > raíl.clientHeight) {
-        var ra = a.getBoundingClientRect();
-        var rr = raíl.getBoundingClientRect();
-        if (ra.top < rr.top + 8 || ra.bottom > rr.bottom - 8) {
-          raíl.scrollTop += ra.top - rr.top - raíl.clientHeight / 2.5;
-        }
-      }
-    }
-  }
-
-  if (!embebido) {
-    addEventListener('scroll', alDesplazar, { passive: true });
-    addEventListener('resize', alDesplazar, { passive: true });
-    alDesplazar();
-  }
-
-  /* ── 2 · Tema ───────────────────────────────────────────────────────────
-     Arranca en el del sistema y el botón lo fija. Se recuerda, porque quien
-     elige claro para leer treinta y siete páginas no quiere volver a
-     elegirlo en cada visita.
-
-     En modo embebido no se toca nada: manda la página que aloja, y dos
-     alternadores compitiendo por el mismo píxel es peor que ninguno. */
-
-  var CLAVE = 'informe-lector-tema';
-
-  if (!embebido) {
-    try {
-      var guardado = localStorage.getItem(CLAVE);
-      if (guardado) raíz.setAttribute('data-theme', guardado);
-    } catch (e) {
-      /* Almacenamiento bloqueado: se lee con el tema del sistema. */
-    }
-
-    var botón = document.getElementById('lector-tema');
-    if (botón) {
-      botón.addEventListener('click', function () {
-        var fijado = raíz.getAttribute('data-theme');
-        var oscuroAhora = fijado
-          ? fijado === 'dark'
-          : matchMedia('(prefers-color-scheme: dark)').matches;
-        var nuevo = oscuroAhora ? 'light' : 'dark';
-        raíz.setAttribute('data-theme', nuevo);
-        botón.setAttribute(
-          'aria-label',
-          nuevo === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro',
-        );
-        try {
-          localStorage.setItem(CLAVE, nuevo);
-        } catch (e) {
-          /* Sin memoria: el tema dura lo que la pestaña. */
-        }
-      });
-    }
-  }
-
-  /* ── 3 · Conversación con la página que aloja ───────────────────────────
-     Sólo en modo embebido, y sólo con quien lo abrió. El documento publica
-     su alto para que el marco crezca hasta él: así hay un solo
-     desplazamiento —el de la página— en vez de uno dentro de otro, que es
-     el defecto que hace incómodo leer un documento largo dentro de un marco. */
-
-  if (!embebido) return;
-
-  var últimoAlto = 0;
-
-  /**
-   * Alto del contenido, medido en el envoltorio y no en el documento.
-   *
-   * `document.body.scrollHeight` y `documentElement.scrollHeight` valen **al
-   * menos** el alto del marco, y el marco toma su alto justo de lo que se
-   * publica aquí. Con eso se cierra un bucle: se informa 1.200, el marco pasa
-   * a 1.200, el documento vuelve a medir 1.200 o más, se informa de nuevo…
-   * En la primera prueba llegó a 3.147.655 píxeles antes de que lo parara la
-   * inspección. `.lector` mide su contenido y nada más, así que no crece
-   * porque el marco crezca.
-   */
-  function altoContenido() {
-    var envoltorio = document.querySelector('.lector');
-    if (envoltorio) return Math.ceil(envoltorio.getBoundingClientRect().height);
-    return document.body.scrollHeight;
-  }
-
-  function publicarAlto() {
-    var alto = altoContenido();
-    /* Sin el umbral, un píxel de diferencia por redondeo mantiene el marco
-       redibujándose para siempre. */
-    if (Math.abs(alto - últimoAlto) < 2) return;
-    últimoAlto = alto;
-    parent.postMessage({ tipo: 'lector:alto', alto: alto }, '*');
-  }
-
-  function publicarÍndice() {
-    var secciones = [].slice
-      .call(document.querySelectorAll('.lector-cuerpo .page > h2[id]'))
-      .map(function (h) {
-        return {
-          id: h.id,
-          texto: (h.textContent || '').replace(/\s+/g, ' ').trim(),
-          anexo: h.getAttribute('data-anexo') === 'sí',
-        };
-      });
-    parent.postMessage({ tipo: 'lector:índice', secciones: secciones }, '*');
-  }
-
-  /*
-    El alto cambia tres veces después de `load`: cuando llegan las fuentes,
-    cuando el navegador reflowea las tablas anchas y cuando cambia el ancho.
-    Un solo aviso deja el marco corto y el documento cortado por abajo.
-  */
-  /*
-    El observador va sobre `.lector` y no sobre `body` por la misma razón que
-    la medición: `body` cambia de tamaño cuando cambia el marco, y observarlo
-    reintroduce el bucle por la puerta de atrás.
-  */
-  var envoltorio = document.querySelector('.lector');
-  if (typeof ResizeObserver === 'function' && envoltorio) {
-    new ResizeObserver(publicarAlto).observe(envoltorio);
-  }
-  addEventListener('load', publicarAlto);
-  addEventListener('resize', publicarAlto, { passive: true });
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(publicarAlto).catch(function () {});
-  }
-  publicarAlto();
-
-  /*
-    El índice se publica por iniciativa propia y no sólo cuando lo piden. La
-    página que aloja lo pedía al dispararse `load` del marco, y ese momento
-    puede caer antes de que ella tenga puesto su escuchador: el índice llegaba
-    a nadie y la columna de navegación quedaba vacía sin que fallara nada.
-  */
-  publicarÍndice();
-  addEventListener('load', publicarÍndice);
-
-  /* El índice y el tema los pone la página que aloja; llegan por mensaje. */
-  addEventListener('message', function (ev) {
-    var d = ev.data;
-    if (!d || typeof d !== 'object') return;
-
-    if (d.tipo === 'lector:tema' && (d.tema === 'dark' || d.tema === 'light')) {
-      raíz.setAttribute('data-theme', d.tema);
-      publicarAlto();
-    }
-
-    /*
-      Saltar a una sección. El marco no se desplaza —crece hasta su
-      contenido—, así que aquí no se puede hacer scroll: se devuelve la
-      posición de la sección y desplaza la página de fuera, que es la única
-      que tiene una barra.
-    */
-    if (d.tipo === 'lector:ir' && typeof d.id === 'string') {
-      var destino = document.getElementById(d.id);
-      if (destino) {
-        parent.postMessage(
-          {
-            tipo: 'lector:posición',
-            id: d.id,
-            arriba: destino.getBoundingClientRect().top + (scrollY || 0),
-          },
-          '*',
-        );
-      }
-    }
-
-    /* La página pide el índice para dibujarlo con su propia tipografía. */
-    if (d.tipo === 'lector:índice') publicarÍndice();
-
-    /*
-      Pregunta de apertura.
-
-      El marco se carga con el HTML de la página —va en el servidor— y su
-      guion corre mucho antes de que la página termine de hidratar y ponga su
-      escuchador. El primer alto y el primer índice se publicaban, por tanto,
-      a nadie: el documento se quedaba en su alto provisional de 1.200 px y la
-      columna del índice, vacía. Quien pregunta es quien sabe que ya está
-      escuchando, así que la respuesta se fuerza y se salta el umbral.
-    */
-    if (d.tipo === 'lector:pregunta') {
-      últimoAlto = 0;
-      publicarAlto();
-      publicarÍndice();
-    }
-  });
-
-  /*
-    Un enlace interno dentro del marco no puede desplazar la página de fuera
-    por su cuenta: sin esto, pulsar el índice impreso del documento no hacía
-    absolutamente nada, que es peor que no tenerlo enlazado.
-  */
-  document.addEventListener('click', function (ev) {
-    var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="#"]') : null;
-    if (!a) return;
-    var id = a.getAttribute('href').slice(1);
-    if (!id || !document.getElementById(id)) return;
-    ev.preventDefault();
-    parent.postMessage(
-      {
-        tipo: 'lector:posición',
-        id: id,
-        arriba: document.getElementById(id).getBoundingClientRect().top + (scrollY || 0),
-      },
-      '*',
-    );
-  });
-})();
-
-</script>
 </body></html>

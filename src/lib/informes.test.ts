@@ -13,6 +13,9 @@ import {
   versionArtifacts,
   versionHref,
 } from '@/lib/informes';
+/* La lista sale del propio constructor: si alguien añade un documento allí y
+   olvida generar su capa, es esta prueba la que lo dice. */
+import { DOCUMENTOS } from '../../scripts/informes/lector/documentos.mjs';
 
 /**
  * Las reglas del informe vivo, comprobadas.
@@ -149,6 +152,78 @@ describe('complementos', () => {
           expect(companion.artifacts.length).toBeGreaterThan(0);
         }
       }
+    }
+  });
+});
+
+describe('capa de lectura de los documentos publicados', () => {
+  /*
+    Los informes llegan maquetados para papel y el sitio les añade la capa de
+    lectura con `scripts/informes/lector/construir.mjs`. Publicar una versión
+    sin ejecutarlo no rompe el build: simplemente se sirve una columna de
+    210 mm a 10 pt, sin modo oscuro y sin índice, que es exactamente el defecto
+    que la capa vino a corregir. Aquí se convierte en un fallo.
+
+    La lista sale del propio constructor. Las versiones históricas no están en
+    ella y no deben estarlo: una versión publicada no se reconstruye.
+  */
+  const destinos = DOCUMENTOS.map((d: { destino: string }) => d.destino);
+
+  it.each(destinos)('%s lleva la capa de lector', (destino) => {
+    const texto = fs.readFileSync(path.join(process.cwd(), destino), 'utf8');
+    expect(texto).toContain('data-capa="lector"');
+    expect(texto).toContain('id="lector-prog"');
+    expect(texto).toContain('class="lector-cuerpo"');
+  });
+
+  it.each(destinos)('%s ancla sus secciones', (destino) => {
+    const texto = fs.readFileSync(path.join(process.cwd(), destino), 'utf8');
+    const anclas = texto.match(/<h2[^>]*\sid="[^"]+"/g) ?? [];
+    // Sin anclas no hay índice navegable, que es la mitad del trabajo.
+    expect(anclas.length).toBeGreaterThan(4);
+  });
+
+  it.each(DOCUMENTOS.map((d: { fuente: string }) => d.fuente))(
+    '%s se conserva intocado como fuente',
+    (fuente) => {
+      /* El constructor lee el documento tal como llegó. Si la fuente se pierde
+         o se contamina con la capa, deja de ser reproducible. */
+      const ruta = path.join(process.cwd(), fuente);
+      expect(fs.existsSync(ruta)).toBe(true);
+      expect(fs.readFileSync(ruta, 'utf8')).not.toContain('data-capa="lector"');
+    },
+  );
+
+  it('lo publicado y su fuente dicen el mismo texto', () => {
+    /*
+      La condición que hace legítima toda la operación: la capa cambia el
+      tamaño, el ritmo y el color, y no el contenido. Se compara el texto
+      desnudo de los dos, sin etiquetas ni espacios.
+    */
+    const desnudo = (s: string) =>
+      s
+        .replace(/<style[\s\S]*?<\/style>/g, '')
+        .replace(/<script[\s\S]*?<\/script>/g, '')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    /* Se compara cuerpo contra cuerpo: el publicado antepone los rótulos del
+       raíl, que son navegación y no documento. */
+    const cuerpoDe = (html: string, desde: string) =>
+      desnudo(html.slice(html.indexOf(desde)));
+
+    for (const doc of DOCUMENTOS as { fuente: string; destino: string }[]) {
+      const antes = cuerpoDe(
+        fs.readFileSync(path.join(process.cwd(), doc.fuente), 'utf8'),
+        '<body',
+      );
+      const despues = cuerpoDe(
+        fs.readFileSync(path.join(process.cwd(), doc.destino), 'utf8'),
+        '<main class="lector-cuerpo">',
+      );
+      // Palabra por palabra, el mismo documento.
+      expect(despues).toBe(antes);
     }
   });
 });

@@ -1,0 +1,1140 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   Capa de lectura en pantalla · informes del laboratorio
+   ──────────────────────────────────────────────────────────────────────────
+   Los informes se maquetan para papel: la hoja de estilos que llega con el
+   documento está en milímetros y puntos, con `@page`, saltos de página y una
+   caja de 210 mm. Eso es correcto para el PDF y es lo que garantiza que el
+   documento impreso y el descargable no diverjan.
+
+   En pantalla, esa misma hoja produce una columna rígida de 210 mm, texto a
+   10 pt, párrafos justificados sin partición y ningún modo oscuro. Este
+   archivo NO la reemplaza: se añade después y sólo dentro de `@media screen`,
+   de modo que la imprenta queda exactamente como venía y la pantalla recibe
+   un diseño propio.
+
+   Regla que gobierna el archivo entero: **nada de lo que hay aquí puede
+   cambiar lo que el documento dice.** Cambia el tamaño, el ritmo, el color y
+   la navegación; no el contenido, ni el orden, ni una cifra.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media screen {
+
+  /* ── 1 · Tintas ─────────────────────────────────────────────────────────
+     Los suelos son exactamente los del sitio —#F7F4EE y #09131D— para que el
+     documento embebido no tenga costura con la página que lo aloja. El resto
+     de la paleta conserva la identidad fría del documento (azul y verde
+     azulado), que es la que usan sus figuras.
+
+     Todo color vive aquí. La hoja original tiene 36 hexadecimales escritos
+     dentro de las reglas, y cada uno de ellos se vuelve a declarar más abajo
+     contra una variable: un color suelto es un color que no tiene equivalente
+     oscuro, y en modo oscuro se ve como una mancha clara.                  */
+
+  :root {
+    color-scheme: light;
+
+    --paper: #f7f4ee;
+    --wash: #efeae0;
+    --plate: #fffdf9;
+
+    --ink: #1a1813;
+    --ink2: #2f2b24;
+    --body: #3a362e;
+    --mute: #5c5548;
+    --faint: #6e685c;
+
+    --line: #ddd5c6;
+    --line2: #eae4d8;
+
+    --brand: #1b5486;
+    --brand2: #2a6fa8;
+    --acc: #0c6f6e;
+    --acc2: #5aafac;
+    --warm: #a65c24;
+    --warm2: #d9a06a;
+    --alert: #9e3527;
+
+    --g0: #e6e0d4;
+    --g1: #c4bcac;
+
+    /* Estados de la matriz de capacidades. */
+    --chip-op-bg: #d9efee;
+    --chip-op-fg: #08514f;
+    --chip-opf-bg: #1b5486;
+    --chip-opf-fg: #ffffff;
+    --chip-inc-bg: #f7e7d3;
+    --chip-inc-fg: #7d4318;
+    --chip-ent-bg: #e3e9f1;
+    --chip-ent-fg: #364c62;
+    --chip-nl-bg: #ebe6dc;
+    --chip-nl-fg: #6b665b;
+    --chip-nc-bg: transparent;
+    --chip-nc-fg: #6b665b;
+    --chip-nc-bd: #c4bcac;
+    --chip-ady-bg: #e6efe7;
+    --chip-ady-fg: #3f6444;
+
+    /* Cajas. */
+    --box-acc-bg: #e9f6f5;
+    --box-acc-bd: #bfdedc;
+    --box-warn-bg: #fbf2e7;
+    --box-warn-bd: #ecd7bf;
+    --box-key-bg: #ecf3f9;
+    --box-key-bd: #cbdcec;
+    --box-dark-bg: #17222c;
+    --box-dark-fg: #dbe6f0;
+    --box-dark-strong: #ffffff;
+
+    --hall-bg: #1a1813;
+    --hall-fg: #ffffff;
+    --enlace-bd: #b9cbdc;
+
+    /* Retícula de lectura. */
+    --medida: 42rem;
+    --raíl: 17.5rem;
+    --aire: clamp(2.75rem, 6vw, 5rem);
+  }
+
+  /* El oscuro se declara dos veces a propósito: una para quien no ha elegido
+     y lleva el sistema en oscuro, otra para quien pulsó el botón. Sin la
+     segunda, el botón no puede sacar a nadie del oscuro del sistema.       */
+  :root[data-theme='dark'],
+  :root[data-tema='oscuro'] {
+    color-scheme: dark;
+
+    --paper: #09131d;
+    --wash: #0e1b27;
+    --plate: #0e1b27;
+
+    --ink: #e4edf4;
+    --ink2: #c9d7e3;
+    --body: #b3c3d1;
+    --mute: #93a6b5;
+    --faint: #77899a;
+
+    --line: #1f3444;
+    --line2: #182734;
+
+    --brand: #6fb3de;
+    --brand2: #8cc6ea;
+    --acc: #4fc3c0;
+    --acc2: #2b8482;
+    --warm: #d9a05e;
+    --warm2: #7d5c33;
+    --alert: #e08878;
+
+    --g0: #16252f;
+    --g1: #33485a;
+
+    --chip-op-bg: #123330;
+    --chip-op-fg: #6fd3cf;
+    --chip-opf-bg: #6fb3de;
+    --chip-opf-fg: #09131d;
+    --chip-inc-bg: #33240f;
+    --chip-inc-fg: #e0ab6a;
+    --chip-ent-bg: #17283a;
+    --chip-ent-fg: #9db6cd;
+    --chip-nl-bg: #14202b;
+    --chip-nl-fg: #8496a4;
+    --chip-nc-bg: transparent;
+    --chip-nc-fg: #77899a;
+    --chip-nc-bd: #33485a;
+    --chip-ady-bg: #16281a;
+    --chip-ady-fg: #93bc94;
+
+    --box-acc-bg: #0c2422;
+    --box-acc-bd: #1c4a47;
+    --box-warn-bg: #2a1f10;
+    --box-warn-bd: #56401f;
+    --box-key-bg: #0e2135;
+    --box-key-bd: #234563;
+    --box-dark-bg: #0e1b27;
+    --box-dark-fg: #c9d7e3;
+    --box-dark-strong: #ffffff;
+
+    --hall-bg: #6fb3de;
+    --hall-fg: #09131d;
+    --enlace-bd: #2c4a63;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']):not([data-tema='claro']) {
+      color-scheme: dark;
+
+      --paper: #09131d;
+      --wash: #0e1b27;
+      --plate: #0e1b27;
+      --ink: #e4edf4;
+      --ink2: #c9d7e3;
+      --body: #b3c3d1;
+      --mute: #93a6b5;
+      --faint: #77899a;
+      --line: #1f3444;
+      --line2: #182734;
+      --brand: #6fb3de;
+      --brand2: #8cc6ea;
+      --acc: #4fc3c0;
+      --acc2: #2b8482;
+      --warm: #d9a05e;
+      --warm2: #7d5c33;
+      --alert: #e08878;
+      --g0: #16252f;
+      --g1: #33485a;
+      --chip-op-bg: #123330;
+      --chip-op-fg: #6fd3cf;
+      --chip-opf-bg: #6fb3de;
+      --chip-opf-fg: #09131d;
+      --chip-inc-bg: #33240f;
+      --chip-inc-fg: #e0ab6a;
+      --chip-ent-bg: #17283a;
+      --chip-ent-fg: #9db6cd;
+      --chip-nl-bg: #14202b;
+      --chip-nl-fg: #8496a4;
+      --chip-nc-bd: #33485a;
+      --chip-nc-fg: #77899a;
+      --chip-ady-bg: #16281a;
+      --chip-ady-fg: #93bc94;
+      --box-acc-bg: #0c2422;
+      --box-acc-bd: #1c4a47;
+      --box-warn-bg: #2a1f10;
+      --box-warn-bd: #56401f;
+      --box-key-bg: #0e2135;
+      --box-key-bd: #234563;
+      --box-dark-bg: #0e1b27;
+      --box-dark-fg: #c9d7e3;
+      --hall-bg: #6fb3de;
+      --hall-fg: #09131d;
+      --enlace-bd: #2c4a63;
+    }
+  }
+
+  /* ── 2 · Base ───────────────────────────────────────────────────────────
+     La hoja de imprenta fija 10,05 pt y 1,545 de interlínea, que en pantalla
+     son 13 px apretados. Aquí manda el rem.                                */
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-variant-numeric: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--acc) 24%, transparent);
+    color: var(--ink);
+  }
+
+  a {
+    color: var(--brand);
+    border-bottom: 1px solid var(--enlace-bd);
+    text-decoration: none;
+  }
+
+  a:hover {
+    border-bottom-color: currentColor;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ── 3 · Armazón ────────────────────────────────────────────────────────
+     Rejilla de dos columnas: raíl pegajoso con el índice, y la columna de
+     lectura. El raíl es la diferencia entre un documento de treinta y siete
+     páginas navegable y uno que sólo se puede recorrer con la rueda.       */
+
+  .lector {
+    display: grid;
+    grid-template-columns: var(--raíl) minmax(0, 1fr);
+    gap: 0;
+    max-width: 84rem;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .lector-raíl {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    max-height: 100svh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 2.25rem 1.25rem 2.5rem 1.75rem;
+    border-right: 1px solid var(--line);
+  }
+
+  .lector-raíl::-webkit-scrollbar {
+    width: 6px;
+  }
+  .lector-raíl::-webkit-scrollbar-thumb {
+    background: var(--g1);
+    border-radius: 3px;
+  }
+
+  .raíl-marca {
+    font-family: var(--mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--acc);
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+
+  .raíl-título {
+    font-family: var(--sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0 0 0.3rem;
+    text-wrap: balance;
+  }
+
+  .raíl-sub {
+    font-family: var(--mono);
+    font-size: 0.625rem;
+    color: var(--mute);
+    letter-spacing: 0.04em;
+    margin: 0 0 1.25rem;
+  }
+
+  .lector-raíl nav {
+    border-top: 1px solid var(--line);
+    padding-top: 0.9rem;
+  }
+
+  .lector-raíl nav a {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--mute);
+    padding: 0.4rem 0.5rem 0.4rem 0.7rem;
+    border: 0;
+    border-left: 2px solid transparent;
+    border-radius: 0 3px 3px 0;
+    transition: color 0.14s, background-color 0.14s, border-color 0.14s;
+  }
+
+  .lector-raíl nav a:hover {
+    color: var(--ink);
+    background: var(--wash);
+  }
+
+  /* El capítulo en pantalla, marcado. Es lo que convierte el índice en un
+     mapa de posición y no en una lista de enlaces. */
+  .lector-raíl nav a.activo {
+    color: var(--ink);
+    border-left-color: var(--acc);
+    background: var(--wash);
+    font-weight: 600;
+  }
+
+  .lector-raíl nav a.anexo {
+    padding-left: 1.4rem;
+    font-size: 0.71875rem;
+  }
+
+  .raíl-grupo {
+    font-family: var(--mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin: 1.1rem 0 0.4rem 0.7rem;
+  }
+
+  .raíl-pie {
+    margin-top: 1.5rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    color: var(--faint);
+  }
+
+  .lector-cuerpo {
+    min-width: 0;
+    padding: 0 var(--aire) 5rem;
+  }
+
+  /* Barra de progreso: dice cuánto queda sin ocupar sitio. */
+  #lector-prog {
+    position: fixed;
+    inset: 0 auto auto 0;
+    height: 2px;
+    width: 0;
+    background: var(--acc);
+    z-index: 60;
+    transition: width 0.1s linear;
+  }
+
+  /* Alternador de tema. */
+  .lector-tema {
+    position: fixed;
+    top: 0.9rem;
+    right: 0.9rem;
+    z-index: 61;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--plate);
+    color: var(--mute);
+    cursor: pointer;
+  }
+
+  .lector-tema:hover {
+    color: var(--ink);
+    border-color: var(--g1);
+  }
+
+  /* ── 4 · Secciones ──────────────────────────────────────────────────────
+     `.page` era una hoja de papel. En pantalla es sólo un bloque, y el salto
+     de página no significa nada: lo que separa capítulos aquí es el aire. */
+
+  .page {
+    max-width: var(--medida);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Los bloques anchos —tablas, figuras, anexos— salen de la medida de
+     lectura y usan el ancho disponible. Un registro de 96 fuentes en 42rem
+     es ilegible. */
+  .page.ancha,
+  .page:has(> .toc),
+  .page:has(table),
+  .page:has(figure) {
+    max-width: 62rem;
+  }
+
+  .page + .page {
+    margin-top: var(--aire);
+    padding-top: var(--aire);
+    border-top: 1px solid var(--line2);
+  }
+
+  /* La portada ya cierra con su propio aire: una regla encima de la primera
+     sección la dejaría separada del documento por una línea que no separa
+     nada. */
+  .cover + .page {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* El encabezado corriente es del papel: en pantalla lo dice el raíl. */
+  .hdr {
+    display: none;
+  }
+
+  .page > h2 {
+    scroll-margin-top: 1.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3.2vw, 2.15rem);
+    line-height: 1.16;
+    letter-spacing: -0.022em;
+    margin: 0 0 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.1875rem;
+    line-height: 1.28;
+    margin: 2.75rem 0 0.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    color: var(--ink2);
+    margin: 2rem 0 0.5rem;
+  }
+
+  h5 {
+    font-size: 0.75rem;
+    color: var(--acc);
+    letter-spacing: 0.1em;
+    margin: 1.9rem 0 0.5rem;
+  }
+
+  p {
+    /* Justificado sin partición decente produce ríos; en pantalla, bandera. */
+    text-align: left;
+    hyphens: none;
+    margin: 0 0 1.05rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  p.lead {
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    color: var(--ink2);
+  }
+
+  small {
+    font-size: 0.8125rem;
+  }
+
+  .eyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    margin: 0 0 0.75rem;
+  }
+
+  .rule {
+    height: 3px;
+    width: 3.5rem;
+    margin: 0 0 1.75rem;
+  }
+
+  .rule.full {
+    width: 100%;
+    height: 1px;
+    margin: 2.25rem 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.35rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.2rem;
+  }
+
+  ul.clean li {
+    padding-left: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+
+  ul.clean li:before {
+    top: 0.58rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-width: 1px;
+  }
+
+  /* ── 5 · Portada ────────────────────────────────────────────────────────
+     En papel es una hoja A4 exacta. En pantalla, un bloque que respira y se
+     adapta; el degradado y la retícula se conservan porque son la identidad
+     del documento. */
+
+  .cover {
+    width: auto;
+    height: auto;
+    min-height: 0;
+    max-width: none;
+    margin: 0 0 var(--aire);
+    padding: clamp(2rem, 5.5vw, 4rem) clamp(1.5rem, 5vw, 3.5rem)
+      clamp(2rem, 4.5vw, 3rem);
+    border-radius: 0 0 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cv-top {
+    padding-bottom: 1.25rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cv-org {
+    font-size: 0.6875rem;
+  }
+
+  .cv-badge {
+    font-size: 0.625rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .cv-mid {
+    margin-top: clamp(2.5rem, 7vw, 5rem);
+    padding-bottom: 0;
+  }
+
+  .cv-kicker {
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 1.1rem;
+  }
+
+  .cv-title {
+    font-size: clamp(2rem, 5.4vw, 3.6rem);
+    line-height: 1.06;
+    margin: 0 0 1.25rem;
+    max-width: 22ch;
+  }
+
+  .cv-sub {
+    font-size: clamp(1rem, 1.9vw, 1.1875rem);
+    line-height: 1.5;
+    max-width: 46ch;
+    margin: 0 0 1.5rem;
+  }
+
+  .cv-tag {
+    font-size: 0.6875rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+  }
+
+  .cv-grid {
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    gap: 1.25rem 1.5rem;
+    margin-top: clamp(2rem, 5vw, 3.25rem);
+    padding-top: 1.5rem;
+  }
+
+  .cv-cell {
+    padding-right: 0;
+  }
+
+  .cv-k {
+    font-size: 0.5625rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .cv-v {
+    font-size: 0.875rem;
+  }
+
+  .cv-v small {
+    font-size: 0.6875rem;
+    margin-top: 0.25rem;
+  }
+
+  .cv-foot {
+    margin-top: 2rem;
+    padding-top: 1.1rem;
+    font-size: 0.6875rem;
+  }
+
+  /* ── 6 · Cajas, límites y hallazgos ─────────────────────────────────── */
+
+  .box {
+    border-radius: 8px;
+    padding: 1.15rem 1.35rem;
+    margin: 1.5rem 0;
+    border-width: 1px;
+  }
+
+  .box p {
+    font-size: 0.9375rem;
+    line-height: 1.62;
+  }
+
+  .box.acc {
+    background: var(--box-acc-bg);
+    border-color: var(--box-acc-bd);
+    border-left: 3px solid var(--acc);
+  }
+
+  .box.warn {
+    background: var(--box-warn-bg);
+    border-color: var(--box-warn-bd);
+    border-left: 3px solid var(--warm);
+  }
+
+  .box.key {
+    background: var(--box-key-bg);
+    border-color: var(--box-key-bd);
+    border-left: 3px solid var(--brand);
+  }
+
+  .box.dark {
+    background: var(--box-dark-bg);
+    color: var(--box-dark-fg);
+    border: 1px solid var(--line);
+  }
+
+  .box.dark strong {
+    color: var(--box-dark-strong);
+  }
+
+  .limite {
+    font-size: 0.9375rem;
+    border-left: 2px solid var(--g1);
+    padding: 0.25rem 0 0.25rem 1.1rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  .hall {
+    margin: 0 0 2.5rem;
+  }
+
+  .hall-h {
+    gap: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .hall-n {
+    font-size: 0.75rem;
+    background: var(--hall-bg);
+    color: var(--hall-fg);
+    padding: 0.25rem 0.55rem;
+    border-radius: 4px;
+  }
+
+  .hall-n.new {
+    background: var(--acc);
+    color: var(--paper);
+  }
+
+  .hall-t {
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+
+  .hall-b p {
+    font-size: 1rem;
+  }
+
+  .dato {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+  }
+
+  .src {
+    font-size: 0.6875rem;
+    margin-top: 0.5rem;
+  }
+
+  /* ── 7 · Cifras ─────────────────────────────────────────────────────── */
+
+  .kpis {
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0.85rem;
+    margin: 1.75rem 0 2rem;
+  }
+
+  .kpi {
+    background: var(--plate);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--acc);
+    border-radius: 8px;
+    padding: 1.1rem 1.15rem 1.25rem;
+  }
+
+  .kpi-v {
+    font-size: 1.75rem;
+  }
+
+  .kpi-v span {
+    font-size: 0.9375rem;
+  }
+
+  .kpi-l {
+    font-size: 0.75rem;
+    margin-top: 0.55rem;
+  }
+
+  .kpi-d {
+    font-size: 0.625rem;
+    margin-top: 0.4rem;
+  }
+
+  /* ── 8 · Tablas y estados ───────────────────────────────────────────── */
+
+  /* Una tabla ancha se desplaza dentro de sí misma; la página nunca. */
+  .tabla-ancha {
+    overflow-x: auto;
+    margin: 1.25rem 0 0.5rem;
+    /* El desplazamiento propio necesita un ancestro posicionado o los
+       `sr-only` de dentro arrastran el ancho del documento. */
+    position: relative;
+  }
+
+  table {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    margin: 1.25rem 0 1rem;
+  }
+
+  .tabla-ancha table {
+    margin: 0;
+    min-width: 34rem;
+  }
+
+  thead th {
+    font-size: 0.6875rem;
+    padding: 0 0.9rem 0.5rem 0;
+    border-bottom: 1px solid var(--ink2);
+  }
+
+  tbody td {
+    padding: 0.55rem 0.9rem 0.55rem 0;
+    border-bottom: 1px solid var(--line2);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 1px solid var(--line);
+  }
+
+  td.num,
+  th.num {
+    padding-right: 0.6rem;
+  }
+
+  .tbl-note {
+    font-size: 0.75rem;
+    margin: 0.4rem 0 1.5rem;
+  }
+
+  .chip {
+    font-size: 0.625rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+  }
+
+  .c-op {
+    background: var(--chip-op-bg);
+    color: var(--chip-op-fg);
+  }
+  .c-opf {
+    background: var(--chip-opf-bg);
+    color: var(--chip-opf-fg);
+  }
+  .c-inc {
+    background: var(--chip-inc-bg);
+    color: var(--chip-inc-fg);
+  }
+  .c-ent {
+    background: var(--chip-ent-bg);
+    color: var(--chip-ent-fg);
+  }
+  .c-nl {
+    background: var(--chip-nl-bg);
+    color: var(--chip-nl-fg);
+  }
+  .c-nc {
+    background: var(--chip-nc-bg);
+    color: var(--chip-nc-fg);
+    border: 1px dashed var(--chip-nc-bd);
+  }
+  .c-ady {
+    background: var(--chip-ady-bg);
+    color: var(--chip-ady-fg);
+  }
+
+  /* ── 9 · Figuras ────────────────────────────────────────────────────── */
+
+  figure {
+    margin: 2rem 0 2.5rem;
+  }
+
+  .fig-q {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    margin: 0 0 0.5rem;
+  }
+
+  .fig-t {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    margin: 0 0 1.25rem;
+    max-width: 46ch;
+  }
+
+  figcaption {
+    font-size: 0.75rem;
+    line-height: 1.55;
+    margin-top: 0.85rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--line2);
+  }
+
+  .leg {
+    font-size: 0.6875rem;
+    gap: 0.5rem 1.4rem;
+    margin-top: 0.85rem;
+  }
+
+  .leg i {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.4rem;
+    border-radius: 2px;
+  }
+
+  /* ── 10 · Índice del documento ──────────────────────────────────────── */
+
+  .toc {
+    columns: 2;
+    column-gap: 2.5rem;
+    font-size: 0.9375rem;
+  }
+
+  /* En papel el número es la página. En pantalla no hay páginas: el índice
+     lleva a la sección, y por eso cada entrada es un enlace. */
+  a.toc-i {
+    border-bottom: 0;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .toc-i {
+    gap: 0.7rem;
+    padding: 0.5rem 0.35rem;
+    border-bottom: 1px solid var(--line2);
+    border-radius: 3px;
+    transition: background-color 0.14s;
+  }
+
+  a.toc-i:hover {
+    background: var(--wash);
+  }
+
+  a.toc-i:hover .toc-t {
+    color: var(--ink);
+  }
+
+  .toc-n {
+    font-size: 0.6875rem;
+    min-width: 1.6rem;
+  }
+
+  .toc-h {
+    font-size: 0.6875rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  /* ── 11 · Anexos ────────────────────────────────────────────────────── */
+
+  .srcrow {
+    font-size: 0.8125rem;
+    grid-template-columns: 6rem 1fr 5rem;
+    gap: 0.9rem;
+    padding: 0.65rem 0;
+  }
+
+  .srcid {
+    font-size: 0.6875rem;
+  }
+
+  .srcurl {
+    font-size: 0.6875rem;
+    margin-top: 0.25rem;
+  }
+
+  .div-item {
+    border-left: 2px solid var(--warm2);
+    padding: 0.35rem 0 0.35rem 1.1rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .div-id {
+    font-size: 0.6875rem;
+  }
+
+  .div-t {
+    font-size: 0.9375rem;
+    margin: 0.2rem 0 0.35rem;
+  }
+
+  .div-b {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .rec {
+    background: var(--plate);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.25rem 1.35rem;
+    margin: 1.5rem 0;
+  }
+
+  .rec-h {
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .rec-id {
+    font-size: 0.75rem;
+    background: var(--brand);
+    color: var(--paper);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .rec-t {
+    font-size: 1.0625rem;
+  }
+
+  .rec-g {
+    grid-template-columns: 6rem 1fr;
+    gap: 0.6rem 1.2rem;
+    font-size: 0.9375rem;
+  }
+
+  .rec-k {
+    font-size: 0.6875rem;
+  }
+
+  .two {
+    columns: 2;
+    column-gap: 2.25rem;
+  }
+
+  /* ── 12 · Estrecho ──────────────────────────────────────────────────── */
+
+  @media (max-width: 60rem) {
+    .lector {
+      display: block;
+    }
+
+    /* El raíl deja de ser columna y pasa a ser un desplegable arriba: en un
+       teléfono, una columna de 17 rem se come la pantalla. */
+    .lector-raíl {
+      position: static;
+      max-height: none;
+      overflow: visible;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .lector-raíl nav {
+      max-height: 15rem;
+      overflow-y: auto;
+    }
+
+    .raíl-pie {
+      display: none;
+    }
+
+    .lector-cuerpo {
+      padding: 0 1.25rem 3rem;
+    }
+
+    .toc,
+    .two {
+      columns: 1;
+    }
+
+    .srcrow {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+
+    .rec-g {
+      grid-template-columns: 1fr;
+      gap: 0.2rem 0;
+    }
+
+    .cover {
+      border-radius: 0;
+    }
+  }
+
+  /* ── 13 · Embebido ──────────────────────────────────────────────────────
+     Cuando el documento vive dentro de una página del sitio, el sitio ya pone
+     el suelo, el índice y el tema. Aquí sólo queda el texto: sin raíl propio,
+     sin barra de progreso, sin botón y sin fondo, para que no haya costura
+     entre el documento y la página que lo aloja. */
+
+  :root[data-modo='embebido'] body {
+    background: transparent;
+  }
+
+  :root[data-modo='embebido'] .lector {
+    display: block;
+    max-width: none;
+  }
+
+  :root[data-modo='embebido'] .lector-raíl,
+  :root[data-modo='embebido'] #lector-prog,
+  :root[data-modo='embebido'] .lector-tema {
+    display: none;
+  }
+
+  :root[data-modo='embebido'] .lector-cuerpo {
+    padding: 0 0 1rem;
+  }
+
+  :root[data-modo='embebido'] .cover {
+    border-radius: 12px;
+    margin-top: 0;
+  }
+
+  /* El ancla tiene que dejar sitio a la cabecera fija del sitio. */
+  :root[data-modo='embebido'] .page > h2 {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+/* ── 14 · Movimiento ────────────────────────────────────────────────────── */
+
+@media screen and (prefers-reduced-motion: reduce) {
+  #lector-prog,
+  .lector-raíl nav a,
+  .toc-i {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── 15 · Papel ─────────────────────────────────────────────────────────────
+   Lo que este archivo añade no debe aparecer nunca en una impresión: el
+   documento impreso es el que venía, sin una sola diferencia. */
+
+@media print {
+  #lector-prog,
+  .lector-tema,
+  .lector-raíl {
+    display: none !important;
+  }
+
+  .lector {
+    display: block;
+  }
+
+  .lector-cuerpo {
+    padding: 0;
+  }
+
+  /* El envoltorio de desplazamiento no existe en papel: la tabla fluye. */
+  .tabla-ancha {
+    overflow: visible;
+  }
+}

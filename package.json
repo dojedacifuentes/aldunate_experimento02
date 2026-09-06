@@ -21,7 +21,8 @@
     "test:watch": "vitest",
     "informe01:datos": "node scripts/informe-01/06-compilar-a-typescript.mjs",
     "juego:arte": "node scripts/rpg-art/bake.mjs",
-    "juego:suelto": "tsx scripts/standalone/dump.mts && node scripts/standalone/build.mjs"
+    "juego:suelto": "tsx scripts/standalone/dump.mts && node scripts/standalone/build.mjs",
+    "informe:lector": "node scripts/informes/lector/construir.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
