@@ -135,6 +135,15 @@
   }
 
   function publicarAlto() {
+    /*
+      Con el marco a cero de ancho —oculto, dentro de algo plegado, o en una
+      pestaña que el navegador aún no ha compuesto— cada palabra ocupa una
+      línea y la medición es real pero inútil: se llegó a medir 3.147.655 px
+      con la portada sola en 14.246. Publicar eso dejaría la página con tres
+      millones de píxeles de alto en cuanto el marco volviera a verse.
+    */
+    if (document.documentElement.clientWidth < 120) return;
+
     var alto = altoContenido();
     /* Sin el umbral, un píxel de diferencia por redondeo mantiene el marco
        redibujándose para siempre. */

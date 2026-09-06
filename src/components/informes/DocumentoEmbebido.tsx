@@ -92,7 +92,17 @@ export function DocumentoEmbebido({
       if (!d || typeof d !== 'object') return;
 
       if (d.tipo === 'lector:alto' && typeof d.alto === 'number') {
-        setAlto(d.alto);
+        /*
+          Segunda guarda, del lado de acá. El documento ya no publica alturas
+          medidas a cero de ancho, pero una versión suya anterior sí podría
+          —los documentos publicados no se reconstruyen—, y un alto absurdo
+          deja la página con kilómetros de vacío. Cien mil píxeles son ya unas
+          cien pantallas: nada legítimo pasa de ahí.
+        */
+        if (d.alto > 0 && d.alto < 400_000) setAlto(d.alto);
+        /* El velo se retira igual: el documento contestó, y dejarlo puesto
+           encima de un documento que ya está debajo es peor que un alto
+           provisional. */
         setCargado(true);
       }
 
