@@ -30,19 +30,38 @@ hoy; el techo, lo que daría si todas las celdas sin concluir resultaran
 favorables. Una banda ancha no es una institución peor evaluada: es una peor
 investigada, y son cosas distintas.
 
-## Las dos matrices, y por qué importa
+## Las dos matrices, y cuál se publica
 
-`matriz-v2.json` contiene `.v1` y `.v2`. **El documento publicado usa `.v1`.**
+`matriz-v2.json` contiene `.v1` y `.v2`. **La canónica es `.v2`** (D-039).
 
-- `.v1` — 31 celdas sin concluir. Coincide exactamente con la figura del
-  informe y con su frase «de 47 a 31».
-- `.v2` — aplica los 26 cierres de la Ronda 2 y deja 5. Está calculado,
-  declara `rechazados: 0` y **no se publicó**.
+- `.v2` — aplica los 26 cierres de la Ronda 2 y deja 5 celdas sin concluir. Es
+  la que publicaban ya las tres tablas de la v2.0.0 —el orden de la sección 4,
+  el anexo C y el cálculo del anexo D— y la que la v2.1.0 lleva también a las
+  figuras y a la prosa.
+- `.v1` — 31 celdas sin concluir. Es la matriz anterior a la Ronda 2. Se
+  conserva porque las figuras de la v2.0.0 la dibujaban y hay que poder
+  reproducir lo que esa versión publicó; ninguna versión vigente la usa.
 
-Cuál es la canónica es una pregunta abierta para el autor, y bloquea el
-recálculo. Ver `docs/informes/09-recalculo-comparador.md`.
+La v2.0.0 estuvo dos días publicada con las tablas en `.v2` y las figuras en
+`.v1`. Ver `docs/informes/09-recalculo-comparador.md`.
+
+## Las figuras salen de aquí
+
+`figuras.mjs` genera las cuatro figuras que derivan de la matriz —el
+comparador, la comprobación contra cobertura, la matriz de capacidades y su
+lectura por filas— más el perfil de la institución apartada, que va al
+complemento. Existe por el defecto de arriba: mientras la figura y la tabla
+salgan de sitios distintos, divergir es cuestión de tiempo.
 
 ```bash
+node tools/informes/informe-01/comparador/figuras.mjs      # las cinco figuras
 node tools/informes/informe-01/comparador/recalcular.mjs
 node tools/informes/informe-01/comparador/sensibilidad.mjs
 ```
+
+## Quién sale del comparador
+
+`FUERA_DEL_COMPARADOR`, en `figuras.mjs`. Hoy es la Pontificia Universidad
+Católica de Valparaíso, por D-037: quien firma trabaja en su Escuela de Derecho.
+Sigue en la cohorte —las figuras de cobertura y el registro de fuentes la
+dibujan— y no en el orden ni en la matriz de capacidades.

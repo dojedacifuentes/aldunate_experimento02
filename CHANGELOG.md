@@ -2,6 +2,71 @@
 
 ## No publicado
 
+### Informe 01 v2.1.0 · la institución apartada sale también de las figuras, y la portada deja de correrse
+
+**La v2.0.0 publicaba dos matrices a la vez.** Sus tres tablas —el orden de la
+sección 4, el anexo C y el cálculo del anexo D— aplicaban la Ronda 2 sobre diez
+instituciones, sin la PUCV, que es lo que su propia sección 8 declara y funda.
+Sus cuatro figuras derivadas de la matriz, y toda la prosa escrita encima,
+seguían publicando la matriz anterior sobre once, con la PUCV dentro y
+encabezando el orden. El resumen ejecutivo decía que «encabeza el comparador»
+seis páginas antes de que la sección 8 explicara por qué no está en él.
+
+**Con eso se resuelve la pregunta que bloqueaba el recálculo (D-039).** No había
+que elegir entre `.v1` y `.v2`: el documento entregado ya publicaba `.v2` en sus
+tablas, y la sección 8 lo confirma al situar el perfil apartado en «el segundo
+lugar del orden», que es su posición bajo `.v2` y no bajo `.v1`. Lo que estaba
+desactualizado no era la decisión sino su alcance.
+
+**Las cuatro figuras se generan ahora desde la matriz**, en
+`tools/informes/informe-01/comparador/figuras.mjs`, con la gramática visual
+medida sobre las entregadas. Las otras ocho no dependen de ella y se conservan
+byte a byte. La regla que sale de esto: una figura derivada de un dato no se
+dibuja aparte del dato, porque mientras salgan de sitios distintos divergir no
+es un accidente sino cuestión de tiempo.
+
+**Cifras que cambian**, y son las que se envían: el techo del comparador pasa de
+18 a 20 puntos y lo alcanza una sola institución; el promedio de los pisos, de
+9,4 a 11,4; las celdas sin concluir, de 31 sobre 110 a 5 sobre 100; seis de las
+diez quedan con banda cerrada y ninguna con banda ancha. La v2.0.0 permanece
+publicada con las suyas.
+
+**La lectura de las puntuaciones se rehace entera.** Donde había una lista de
+recuentos hay ahora tres formas de ausencia con nombre: la unánime —evaluación
+de efecto, 0 de 30, sin una sola excepción—, la bimodal —investigación, cuatro
+instituciones con proyecto adjudicado y cinco con nada, casi sin término
+medio— y la de umbral —transferencia, donde ninguna obtiene cero y siete
+obtienen exactamente un punto—. La forma de cada pérdida dice qué haría falta
+para revertirla; el agregado no.
+
+**El complemento pasa a v1.1** y estrena la sección que le faltaba: las diez
+capacidades de la institución apartada, su suma de 18 sobre 30 y el reparto de
+los doce puntos que faltan —cinco a los que sólo les falta el instrumento
+citable, cuatro que existen en la universidad y no en la Escuela, tres de una
+capacidad que no consta en ninguna Facultad del país—. Nueve de los doce no
+dependen de construir nada.
+
+**La portada dejó de correrse (D-040).** En impresión medía 255,6 mm contra una
+caja de 245: se desbordaba diez milímetros, el pie caía partido en una segunda
+hoja y todo lo demás quedaba desplazado, en el PDF y en el documento autónomo.
+La causa era un espaciador fijo de 55 mm entre la cabecera y el título, elegido
+a ojo para un documento y heredado por los demás. Ahora la portada se fija al
+alto exacto de su caja y reparte el aire sobrante, de modo que un título de
+cuatro líneas se come el aire en vez de empujar el pie fuera de la página.
+
+**Dos cifras del sitio se corrigen de paso.** La extensión declarada pasa de 37
+a 113 páginas, que son las del PDF que se descarga: las 37 eran las del PDF de
+la cadena de origen y dejaron de ser ciertas cuando se reimprimió a 12 puntos. Y
+el subtítulo y el descriptor dejan de leerse como contradicción —«once Escuelas»
+junto a «comparador de diez»— diciendo lo que cada cifra cuenta.
+
+**Una prueba deja de fijar la versión vigente por literal.** `informes.test.ts`
+comprobaba que la vigente fuera `'2.0.0'`, de modo que fallaba en cada
+publicación y se arreglaba editando el número sin mirar qué afirmaba. Ahora
+calcula el máximo con una comparación escrita a propósito distinta de la que
+prueba, y comprueba aparte que hay fechas repetidas, que es la regresión que el
+caso vigilaba.
+
 ### El recálculo del comparador queda preparado, y aparece un problema mayor
 
 **Encargo abierto en `docs/informes/09-recalculo-comparador.md`.** La decisión

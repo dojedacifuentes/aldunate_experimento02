@@ -41,9 +41,23 @@ describe('orden de versiones', () => {
   it('la vigente es la de número mayor, no la última por fecha', () => {
     const informe01 = reports.find((r) => r.slug === 'ia-escuelas-derecho-chile');
     expect(informe01).toBeDefined();
+
     // La v0.7.0 y la v0.8.0 comparten fecha: sin comparación numérica el
     // resultado dependía del orden de escritura del arreglo.
-    expect(currentVersion(informe01!)?.version).toBe('2.0.0');
+    const fechas = informe01!.versions.map((v) => v.date);
+    expect(new Set(fechas).size).toBeLessThan(fechas.length);
+
+    // El número esperado se calcula aquí, con una comparación escrita a
+    // propósito distinta de la que se está probando. Fijarlo como literal
+    // obligaba a editar esta prueba en cada publicación, que es la forma más
+    // segura de que un día se edite sin mirar qué está afirmando.
+    const mayor = [...informe01!.versions].sort((a, b) => {
+      const pa = a.version.split('.').map(Number);
+      const pb = b.version.split('.').map(Number);
+      return pb[0] - pa[0] || pb[1] - pa[1] || (pb[2] ?? 0) - (pa[2] ?? 0);
+    })[0];
+
+    expect(currentVersion(informe01!)?.version).toBe(mayor.version);
   });
 
   it('cada informe tiene exactamente una versión vigente y el resto históricas', () => {

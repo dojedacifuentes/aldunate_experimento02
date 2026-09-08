@@ -48,8 +48,8 @@ export const reports: Report[] = [
     title:
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
     subtitle:
-      'Mapeo comparado de capacidades institucionales en once Escuelas y Facultades de Derecho chilenas · corpus contrastado al 100 % y contraste externo cerrado',
-    descriptor: 'Corte 06-09-2026 · comparador ordinal de diez instituciones',
+      'Mapeo comparado de capacidades institucionales en una cohorte de once Escuelas y Facultades de Derecho chilenas, diez de ellas en el comparador ordinal · corpus contrastado al 100 %',
+    descriptor: 'Corte 06-09-2026 · cohorte de once, comparador de diez',
     executiveSummary:
       'Qué capacidades institucionales en inteligencia artificial han construido once Escuelas y Facultades de Derecho chilenas, con qué grado de formalización, y qué puede afirmarse sobre ellas con evidencia verificable. Las 74 fuentes del corpus están abiertas y contrastadas una por una contra su publicación original, y por primera vez el trabajo incorpora 31 fuentes de terceros: base histórica de proyectos adjudicados de ANID, prensa no universitaria, Colegio de Abogados, Academia Judicial, Comisión Nacional de Acreditación y política pública sectorial. El campo entero cabe en dos años —41 de las 49 iniciativas fechadas empiezan en 2025 o después— y se construye estructura antes que reglas: cinco Facultades sostienen una unidad especializada en operación y una sola ha dictado norma propia sobre uso de inteligencia artificial. Ninguna de las 53 iniciativas acredita haber medido su efecto sobre el aprendizaje jurídico, y la consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 convierte esa laguna en hecho: no existe un solo proyecto, de ninguna universidad chilena y en ningún año, sobre enseñanza del Derecho con inteligencia artificial. El hallazgo que ordena a los demás es que nadie verifica: ni el regulador de acreditación, ni el gremio, ni la política pública tienen mandato sobre lo que una Facultad de Derecho dice de sí misma en esta materia.',
     authors: [autor.name],
@@ -92,6 +92,130 @@ export const reports: Report[] = [
       'El campo cambia más rápido que el ciclo de verificación: toda cifra tiene fecha.',
     ],
     versions: [
+      {
+        version: '2.1.0',
+        date: '2026-09-08',
+        status: 'publicado',
+        headline:
+          'La institución apartada sale también de las figuras y de la prosa, y las puntuaciones se leen',
+        summary:
+          'La v2.0.0 publicaba dos matrices a la vez: sus tablas aplicaban la ronda de ampliación sobre diez instituciones, sin la PUCV, y sus cuatro figuras derivadas de la matriz seguían dibujando once con la matriz anterior. El resumen ejecutivo decía que la PUCV encabezaba el comparador seis páginas antes de que la sección 8 explicara por qué no estaba en él. Esta versión aplica a las figuras y a la prosa lo que las tablas ya aplicaban, y rehace la lectura de dónde se pierden los puntos.',
+        pages: 113,
+        reading: 'documento',
+        pdf: '/descargas/informe-01-v2.1.0/informe-01-v2.1.0.pdf',
+        html: '/descargas/informe-01-v2.1.0/informe-01-v2.1.0.html',
+        figures: [
+          {
+            value: '74',
+            unit: '/74',
+            label: '100 % del corpus',
+            note: 'Fuentes públicas abiertas y contrastadas contra su publicación original. El corpus no cambia en esta versión.',
+          },
+          {
+            value: '0',
+            label: 'ausencia confirmada',
+            note: 'Proyectos ANID sobre enseñanza del Derecho con inteligencia artificial, en 49.014 adjudicados desde 1982.',
+          },
+          {
+            value: '20',
+            unit: '/30',
+            label: 'el techo real',
+            note: 'Índice de formalización más alto del comparador de diez, alcanzado por una sola institución. Las figuras de la v2.0.0 decían 18 y dos.',
+          },
+          {
+            value: '2',
+            unit: '/10',
+            label: 'norma propia',
+            note: 'Facultades del comparador con instrumento normativo propio sobre uso de IA, con acto citable. El promedio de los pisos es 11,4 y la mediana, 11.',
+          },
+          {
+            value: '5',
+            unit: '/100',
+            label: 'celdas sin concluir',
+            note: 'Las figuras de la v2.0.0 dibujaban 31 sobre 110. Bajan porque la figura pasa a leer la misma matriz que sus propias tablas.',
+          },
+        ],
+        changelog: [
+          'La contradicción que corrige. La v2.0.0 publicaba la matriz de la ronda de ampliación en sus tablas —el orden de la sección 4, el anexo C y el cálculo del anexo D, los tres sobre diez instituciones sin la PUCV— y la matriz anterior en sus cuatro figuras derivadas de ella, sobre once y con la PUCV encabezando. Las dos salían de sitios distintos, así que nada impedía que divergieran. El resumen ejecutivo afirmaba que la PUCV «encabeza el comparador» y la sección 8 explicaba, seis páginas después, por qué está fuera de él.',
+          'Las cuatro figuras se rehacen desde la matriz. La del comparador, la de comprobación, la matriz de capacidades y su lectura por filas se generan ahora desde `matriz-v2.json` con un motor publicado en el repositorio, de modo que no puedan volver a decir algo distinto de las tablas que tienen al lado. Las otras ocho figuras no dependen de la matriz y se conservan intactas.',
+          'Cifras que cambian, y son las que se envían. El techo del comparador pasa de 18 a 20 puntos y lo alcanza una sola institución en vez de dos; el promedio de los pisos, de 9,4 a 11,4; las celdas sin concluir, de 31 sobre 110 a 5 sobre 100; y seis de las diez instituciones quedan con banda cerrada, ninguna con banda ancha. La v2.0.0 permanece publicada con sus cifras, y su contradicción queda declarada dentro de esta versión.',
+          'La lectura de las puntuaciones se rehace entera. Donde antes había una lista de recuentos, ahora hay tres formas de ausencia con nombre: la unánime —evaluación de efecto obtiene 0 de 30, sin una sola excepción—, la bimodal —investigación reparte sus puntos entre cuatro instituciones con proyecto adjudicado y cinco con nada, casi sin término medio— y la de umbral —transferencia, donde ninguna obtiene cero y siete obtienen exactamente un punto—. La forma de cada pérdida dice qué haría falta para revertirla; el agregado no.',
+          'La comprobación contra el sesgo de cobertura queda más fuerte y menos cómoda. La Universidad Autónoma de Chile recorre cinco rutas de trece y obtiene 17 puntos; la Universidad de Chile recorre doce y obtiene 12. La correlación entre cobertura e índice es de 0,34 sobre las diez. La afirmación de la v2.0.0 —que las dos instituciones con más rutas estaban entre las tres de mayor piso— deja de ser cierta y se retira.',
+          'El complemento incorpora el perfil que le faltaba. El documento de la PUCV pasa de v1.0 a v1.1 y estrena una sección 4 con sus diez capacidades, su puntuación de 18 sobre 30 y el detalle de los doce puntos que faltan, repartidos en tres formas: cinco a los que sólo les falta el instrumento citable, cuatro que existen en la universidad y no en la Escuela, y tres de una capacidad que no consta en ninguna Facultad del país. Nueve de los doce no dependen de construir nada.',
+          'La portada dejó de correrse. En impresión medía 255,6 mm contra una caja de 245: se desbordaba diez milímetros, el pie caía partido en una segunda hoja y todo lo demás quedaba desplazado. La causa era un espaciador fijo de 55 mm entre la cabecera y el título. Ahora la portada se fija al alto exacto de su caja y reparte el aire sobrante, de modo que un título de cuatro líneas se come el aire en vez de empujar el pie fuera de la página.',
+          'La extensión declarada se corrige. La v2.0.0 anunciaba 37 páginas, que eran las del PDF de la cadena de origen; el PDF que se sirve se imprime desde el mismo HTML a 12 puntos y tiene 113. La cifra que se publica es la del archivo que se descarga.',
+        ],
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-v2.1.0/informe-01-v2.1.0.pdf',
+            description:
+              'A4 de 113 páginas, con portada de una sola hoja, encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir. 2,8 MB.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-01-v2.1.0/informe-01-v2.1.0.docx',
+            description:
+              'Documento editable a 12 puntos, con las diecinueve tablas y sin las figuras, igual que el de la versión anterior. Para quien deba anotarlo o devolverlo con control de cambios.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-v2.1.0/informe-01-v2.1.0.html',
+            description:
+              'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión. Es el mismo que se lee dentro del sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Matriz de capacidades',
+            href: '/descargas/informe-01-v2.1.0/datos/matriz-v2.json',
+            description:
+              'Las diez capacidades por institución en los dos estados de la enmienda 2.2. Esta versión publica `.v2`, la de la ronda de ampliación, y de ella salen las cuatro figuras y las tres tablas del comparador.',
+          },
+          {
+            format: 'JSON',
+            label: 'Fuentes de la segunda ronda',
+            href: '/descargas/informe-01-v2.1.0/datos/fuentes-nuevas.json',
+            description:
+              'Las 22 fuentes de la ronda de ampliación, con su grado documental y su confianza. No están contrastadas y el archivo lo declara: se marcan «Ronda 2» y no «contrastada».',
+          },
+        ],
+        companions: [
+          {
+            id: 'complemento-pucv',
+            title: 'La PUCV como caso de proyección, no como caso comparado',
+            version: '1.1',
+            date: '2026-09-08',
+            summary:
+              'Por qué la Pontificia Universidad Católica de Valparaíso se retira del comparador de diez, qué acredita su perfil completo —18 puntos de 30, sin ninguna celda sin concluir— y dónde están los doce que le faltan. Con las cuatro construcciones posibles, un optativo cuyo proyecto final es la medición, y la ventana de decisión con lo que cuesta dejarla pasar.',
+            rationale:
+              'Quien firma el informe trabaja en el Programa de Derecho, Inteligencia Artificial y Tecnología de esa Escuela. El conflicto es actual, directo y sobre el objeto medido, y hay además un sesgo medible: la PUCV fue una de las tres instituciones del piloto de profundidad, de modo que en un instrumento que puntúa capacidades acreditadas por evidencia pública, haberla investigado más produce mecánicamente una puntuación más alta sin que nada haya cambiado en la institución. Este documento publica su perfil para que la decisión sea auditable, y no puntúa, no ordena y no compara.',
+            html: '/descargas/informe-01-v2.1.0/complemento-pucv-v1.1.html',
+            artifacts: [
+              {
+                format: 'PDF',
+                label: 'Leer o imprimir',
+                href: '/descargas/informe-01-v2.1.0/complemento-pucv-v1.1.pdf',
+                description: 'A4 de 25 páginas, con el perfil de capacidades y el dossier de evidencia completo en anexo.',
+              },
+              {
+                format: 'Word',
+                label: 'Editar o comentar',
+                href: '/descargas/informe-01-v2.1.0/complemento-pucv-v1.1.docx',
+                description: 'Documento editable, para devolverlo con observaciones.',
+              },
+              {
+                format: 'HTML',
+                label: 'Abrir el documento autónomo',
+                href: '/descargas/informe-01-v2.1.0/complemento-pucv-v1.1.html',
+                description: 'Un solo archivo, legible sin conexión.',
+              },
+            ],
+          },
+        ],
+      },
       {
         version: '2.0.0',
         date: '2026-09-06',

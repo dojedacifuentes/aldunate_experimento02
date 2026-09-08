@@ -108,17 +108,32 @@
   /* ── 3 · Portada de papel ─────────────────────────────────────────────
      La de pantalla es un degradado oscuro con texto blanco y se queda. Ésta
      es otra: tinta sobre papel, sin un solo color de fondo del que dependa
-     la legibilidad. Es además la forma de una portada de paper. */
+     la legibilidad. Es además la forma de una portada de paper.
+
+     El aire entre la cabecera y el título **no puede ser una medida fija.**
+     Lo era —55 mm— y el resultado es que la portada del Informe 01 medía
+     255,6 mm contra una caja de 245: se desbordaba 10,6 mm, el pie se partía
+     en una segunda hoja y todo lo demás quedaba corrido. La del complemento
+     medía 229,2 y cabía, así que el defecto sólo aparecía en el documento
+     cuyo título ocupa cuatro líneas.
+
+     La portada se fija ahora al alto exacto de su caja y reparte el aire
+     sobrante con `margin-top:auto`. Un título más largo se come el aire en
+     vez de empujar el pie fuera de la hoja, y la portada mide una página
+     sea cual sea el documento. */
   .cover {
     page: portada;
-    height: auto;
+    /* 297 de A4 − 30 de margen superior − 22 de inferior = 245. Se dejan dos
+       de holgura: un redondeo a favor bastaría para abrir una hoja vacía. */
+    height: 243mm;
     min-height: 0;
     width: auto;
     margin: 0;
     padding: 0;
     background: none !important;
     color: #16202b;
-    display: block;
+    display: flex;
+    flex-direction: column;
     break-after: page;
   }
 
@@ -129,7 +144,7 @@
   .cv-top {
     border-bottom: 0.6pt solid #16202b;
     padding-bottom: 4mm;
-    margin-bottom: 55mm;
+    margin-bottom: 0;
     align-items: flex-start;
   }
 
@@ -153,8 +168,10 @@
     padding: 1.4mm 3mm;
   }
 
+  /* Aquí se acumula el aire sobrante de la hoja: es la única medida elástica
+     de la portada, y la que absorbe un título de una línea o de cuatro. */
   .cv-mid {
-    margin-top: 0;
+    margin-top: auto;
   }
 
   .cv-kicker {

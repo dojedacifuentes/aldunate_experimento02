@@ -1,113 +1,75 @@
-# 09 · Recálculo del comparador · encargo abierto
+# 09 · Recálculo del comparador · cerrado el 08-09-2026
 
-Encargo preparado el 07-09-2026 para la sesión siguiente. Contiene la decisión
-tomada, los dos problemas que la bloquean, los números ya calculados y la lista
-exacta de lo que hay que tocar.
+Encargo abierto el 07-09-2026 y **cerrado el 08-09-2026 con la publicación de la
+v2.1.0**. Se conserva porque explica una contradicción que estuvo publicada dos
+días, y porque la regla que sale de ella vale para cualquier informe futuro.
 
-**Léelo entero antes de cambiar una cifra.** Lo que sigue no es una mejora de
-presentación: cambia lo que el informe afirma sobre once instituciones
-nombradas.
-
----
-
-## 1 · La decisión
-
-**La Pontificia Universidad Católica de Valparaíso sale del comparador
-ordinal.** No es una decisión nueva: es la que el propio documento ya declara y
-funda, y que nunca se aplicó a sus datos.
-
-Lo declara en dos sitios:
-
-- La sección 8 del informe principal se titula **«La institución que no está en
-  el comparador»**.
-- El documento complementario lo dice seis veces, la primera así: *«El
-  comparador ordinal del Informe 01 cubre diez instituciones y la Pontificia
-  Universidad Católica de Valparaíso no es una de ellas, por decisión
-  metodológica que aquí se explica y se funda.»*
-
-El fundamento está escrito y no hay que rehacerlo: quien firma trabaja en el
-Programa DIAT de esa Escuela, el conflicto es actual y sobre el objeto medido,
-y hay además un sesgo medible —la PUCV fue una de las tres instituciones del
-piloto de profundidad, de modo que en un instrumento que puntúa capacidades
-acreditadas por evidencia pública, haberla investigado más produce
-mecánicamente una puntuación más alta—.
-
-**Qué queda por hacer:** aplicarlo. Hoy la figura del comparador, la tabla del
-anexo D y `matriz-v2.json` contienen **once** instituciones, la PUCV entre
-ellas, con 18 puntos y banda cerrada. Y el resumen ejecutivo dice que la PUCV
-**«encabeza el comparador»**.
+Lo que sigue es lo que se encontró, lo que se decidió y lo que se hizo. La
+decisión está registrada como **D-039** en `docs/DECISIONS.md`.
 
 ---
 
-## 2 · El problema que hay que resolver antes
+## 1 · La pregunta que bloqueaba el encargo, y su respuesta
 
-Al preparar este encargo apareció algo mayor, y **no se puede recalcular sin
-resolverlo primero.**
+`matriz-v2.json` contiene dos matrices. El encargo la planteó como una decisión
+editorial del autor entre dos hipótesis igual de defendibles, y no lo era.
 
-`tools/informes/informe-01/comparador/matriz-v2.json` contiene dos matrices, y
-**el documento publica la primera**:
+**La canónica es `.v2`, y lo decía el propio documento entregado.** Sus tablas
+ya la publicaban:
 
-| | celdas sin concluir | encabeza | de dónde sale |
-|---|---|---|---|
-| `.v1` | **31** | PUC de Chile 18-20 | es lo que publica la figura del informe |
-| `.v2` | **5** | PUC de Chile 20-20 | aplica los 26 cierres de la Ronda 2 |
-
-Los números de la figura publicada coinciden **exactamente** con `.v1`:
-PUC 18-20, PUCV 18, Autónoma 12-20, U. de Chile 12-14, UNAB 10-14, Central
-8-16, UAI 6-14, UDP 6-14, Andes 5-13, UdeC 5-11, UDD 3-11. Y el texto del
-informe dice «celdas sin concluir: de 47 a 31», que es el recuento de `.v1`.
-
-`.v2` está calculado, declara `aplicados: 26` y `rechazados: 0`, y **no se
-publicó**. Aplicarlo cambia el orden de forma sustantiva:
-
-| Institución | publicado (`.v1`) | con Ronda 2 (`.v2`) |
+| Dónde | Qué publica la v2.0.0 | Coincide con |
 |---|---|---|
-| U. Central de Chile | 8-16 | **17-17** |
-| U. Autónoma de Chile | 12-20 | **17-17** |
-| U. Adolfo Ibáñez | 6-14 | **11-11** |
-| U. del Desarrollo | 3-11 | **8-10** |
-| PUC de Chile | 18-20 | **20-20** |
+| Tabla del orden, sección 4 | diez filas, sin la PUCV | `.v2`, celda por celda |
+| Anexo C · capacidades celda por celda | diez filas, sin la PUCV | `.v2`, celda por celda |
+| Anexo D · cálculo completo | diez filas, sin la PUCV | `.v2`, celda por celda |
+| Figura del comparador | **once barras, con la PUCV** | `.v1` |
+| Figura de comprobación | **once puntos, con la PUCV** | `.v1` |
+| Matriz de capacidades | **once filas, 31 celdas blancas** | `.v1` |
+| Matriz leída por filas | **recuentos sobre once** | `.v1` |
+| Prosa que las rodea | once, y la PUCV encabezando | `.v1` |
 
-**La pregunta que hay que contestar primero, y es del autor:** ¿cuál de las dos
-matrices es la canónica de la v2.0.0?
+La sección 8 lo confirma sin ambigüedad: dice que el perfil de la institución
+apartada «habría sido de 18 puntos con banda cerrada, es decir **el segundo
+lugar del orden**». Es su posición bajo `.v2` —detrás de la PUC de Chile con
+20— y no bajo `.v1`, donde con 18 y banda cerrada habría encabezado.
 
-- Si es `.v1`, hay que explicar por qué el informe dice que la Ronda 2 cerró
-  celdas y publica la matriz anterior, y `.v2` debe declararse descartada con su
-  motivo.
-- Si es `.v2`, la figura, la tabla del anexo D, el recuento de celdas sin
-  concluir (31 → 5) y todas las cifras derivadas están mal en el documento
-  publicado, y la corrección es mayor que la de la PUCV.
-
-**No lo decidas tú.** Pregunta, y deja la respuesta escrita en `DECISIONS.md`.
+El encargo anterior comparó la figura con `.v1`, acertó, y no llegó a mirar la
+tabla que tenía debajo. De ahí la impresión de que había que elegir.
 
 ---
 
-## 3 · Los números, ya calculados
+## 2 · Lo que se hizo
 
-Con la matriz que se elija, quitar la PUCV da esto. Calculado el 07-09-2026 con
-la rúbrica del propio informe (`OPF` 3, `OP` 2, `INC`/`ENT`/`ADY` 1, `NL` 0,
-`NC` sin puntuar y sumando 2 al techo).
+**Las cuatro figuras derivadas de la matriz se generan ahora desde la matriz**,
+en `tools/informes/informe-01/comparador/figuras.mjs`. La gramática visual
+—escalas, colores, tamaños, posiciones— se midió sobre las figuras entregadas
+para que el cambio de origen no se lea como un cambio de diseño. Las otras ocho
+no dependen de la matriz y se conservan byte a byte.
 
-### Sobre `.v1` — la matriz que hoy se publica
+**La prosa se armonizó con 36 sustituciones, todas comprobadas**, en
+`tools/informes/informe-01/v2.1.0/armonizar.mjs`. Cada una declara cuántas
+apariciones espera y el script no escribe nada si una sola no cuadra: es la
+única defensa razonable al editar un documento de 29.000 palabras que afirma
+cosas sobre diez universidades con nombre.
 
-```
- 1. P. U. Católica de Chile      18-20   nc=1     ← pasa a encabezar
- 2. U. Autónoma de Chile         12-20   nc=4
- 3. U. de Chile                  12-14   nc=1
- 4. U. Andrés Bello              10-14   nc=2
- 5. U. Central de Chile           8-16   nc=4
- 6. U. Adolfo Ibáñez              6-14   nc=4
- 7. U. Diego Portales             6-14   nc=4
- 8. U. de los Andes               5-13   nc=4
- 9. U. de Concepción              5-11   nc=3
-10. U. del Desarrollo             3-11   nc=4
-```
+**El complemento pasa a v1.1** y estrena la sección que le faltaba: el perfil
+completo de la institución apartada, sus diez capacidades, su suma de 18 sobre
+30 y el reparto de los doce puntos que faltan. Lo genera
+`tools/informes/informe-01/v2.1.0/complemento.mjs`.
 
-La PUCV salía con **18-18, banda cerrada, cero celdas sin concluir**: el único
-perfil completo de la cohorte. Ese dato no desaparece — se traslada al
-complemento, que es donde el conflicto está declarado.
+### Las cifras que cambiaron
 
-### Sobre `.v2` — si resulta ser la canónica
+| | v2.0.0 (figuras y prosa) | v2.1.0 |
+|---|---|---|
+| Techo del comparador | 18/30, dos instituciones | **20/30, una** |
+| Promedio de los pisos | 9,4 | **11,4** |
+| Celdas sin concluir | 31 de 110 | **5 de 100** |
+| Banda cerrada | una institución | **seis de diez** |
+| Banda ancha | cuatro instituciones | **ninguna** |
+| Correlación cobertura–índice | «existe y no es perfecta» | **0,34, publicada** |
+| Extensión declarada | 37 páginas | **113**, las del PDF que se sirve |
+
+### El orden publicado
 
 ```
  1. P. U. Católica de Chile      20-20   nc=0
@@ -120,95 +82,54 @@ complemento, que es donde el conflicto está declarado.
  8. U. Diego Portales             8- 8   nc=0
  9. U. de los Andes               5- 9   nc=2
 10. U. de Concepción              5- 7   nc=1
+
+Apartada: P. U. Católica de Valparaíso, 18-18, nc=0 → complemento v1.1
 ```
 
-Para reproducirlos:
+---
+
+## 3 · La regla que sale de esto
+
+**Una figura derivada de un dato no se dibuja aparte del dato.**
+
+Mientras la figura y la tabla salgan de sitios distintos, divergir no es un
+accidente: es cuestión de tiempo. Aquí tardó una entrega. El informe llevaba
+publicada dos días una portada que decía una cosa y un anexo que decía otra,
+sobre diez universidades nombradas, y nadie lo vio porque cada pieza era
+correcta por separado.
+
+Para reproducir el orden y comprobar que lo publicado cuadra:
 
 ```bash
+node tools/informes/informe-01/comparador/figuras.mjs
 node tools/informes/informe-01/comparador/recalcular.mjs
 node tools/informes/informe-01/comparador/sensibilidad.mjs
 ```
 
----
-
-## 4 · Todo lo que hay que tocar
-
-Inventariado el 07-09-2026. **La cuenta es la prueba de que no falta nada:** al
-terminar, ninguna de estas frases puede seguir diciendo lo que dice hoy.
-
-### En el documento entregado
-
-`content/reports/01_ia_escuelas_derecho_chile/entregas/v2.0.0/informe-01-v2.0.0.html`
-
-| Dónde | Qué dice hoy | Veces |
-|---|---|---|
-| Resumen ejecutivo | «la PUCV … **encabeza el comparador**» | 1 |
-| Resumen ejecutivo | «la **única** de las once cuyo perfil no tiene ninguna celda sin concluir» | 1 |
-| Resumen ejecutivo | remite a «la **sección 10**», que ya no existe: se movió al complemento | 1 |
-| Figura del comparador | once barras, PUCV incluida | 1 |
-| Anexo D · rúbrica y cálculo | once filas | 1 |
-| Cuerpo | «las once instituciones» | 11 |
-| Cuerpo | «banda cerrada» — hoy sólo la PUCV la tiene | 11 |
-
-### En el sitio
-
-`src/data/reports.ts`, entrada de la v2.0.0:
-
-- `figures[]` publica **«18 / 30 · el techo real · alcanzado por dos
-  instituciones»**. Con la PUCV fuera lo alcanza una sola, y si la matriz
-  canónica es `.v2`, el techo es 20.
-- `figures[]` publica **«31 / 110 · celdas sin concluir»**. Depende de la matriz
-  que se elija.
-- `subtitle` dice «once Escuelas y Facultades»; `descriptor` dice «comparador
-  ordinal de diez instituciones». Las dos son correctas —la cohorte es de once y
-  el comparador de diez— pero juntas se leen como contradicción y conviene
-  desambiguarlas.
-- `changelog[]` de la v2.0.0 describe el comparador; revisar si alguna frase
-  queda falsa.
-
-### En el complemento
-
-`…/entregas/v2.0.0/complemento-pucv-v1.0.html`
-
-Es el documento que **recibe** lo que sale del principal. Hay que:
-
-- incorporar el perfil completo de la PUCV con sus diez capacidades, su
-  puntuación y su banda cerrada, presentado **como caso y no como posición**;
-- desarrollar las ventanas de oportunidad y los vacíos actuales, que es lo que
-  el encargo pide y hoy está enunciado y no desarrollado;
-- comprobar que sus seis menciones a «diez instituciones» siguen siendo ciertas
-  después del recálculo.
-
----
-
-## 5 · Cómo publicarlo cuando esté hecho
-
-El original entregado **no se edita a mano**: es la fuente del que se derivan
-los tres formatos. Se corrige, y después:
+Para rehacer la v2.1.0 entera desde la v2.0.0 intocada:
 
 ```bash
-npm run informe:publicar     # capa de lectura + PDF + Word a 12 pt
-npm run informe:calibrar     # sólo si cambian las figuras
-npm run verify
+node tools/informes/informe-01/v2.1.0/armonizar.mjs
+node tools/informes/informe-01/v2.1.0/complemento.mjs
+npm run informe:publicar
 ```
 
-Si el cambio altera cifras publicadas, **es una versión nueva** —v2.1.0— y no
-una corrección en el sitio: se añade una entrada a `versions` en `reports.ts` y
-la v2.0.0 se queda donde está, con su changelog diciendo qué se corrigió. Es la
-regla del §8 de `CLAUDE.md` y aquí es especialmente importante, porque la v2.0.0
-ya está publicada y alguien pudo citarla.
-
-Ver [07 · Puente con el sitio](07-puente-con-el-sitio.md) y
-[08 · El lector en línea](08-lector-en-linea.md).
+El `.docx` de origen de cada entrega se produce aparte, convirtiendo el HTML con
+Word por automatización COM, y `npm run informe:word` lo lleva de 10 a 12
+puntos. Ver [06 · Cómo reproducirlo](06-reproducir.md).
 
 ---
 
-## 6 · Lo que NO hay que hacer
+## 4 · Lo que sigue abierto
 
-- **No recalcular sin resolver el §2.** Elegir matriz por cuenta propia es
-  decidir por el autor sobre once instituciones nombradas.
-- **No borrar los datos de la PUCV.** Salen del comparador y entran al
-  complemento; no desaparecen.
-- **No reescribir la rúbrica.** Está cerrada desde antes de calcular, y ésa es
-  la razón de que el comparador sea defendible. Si se toca, deja de serlo.
-- **No sobrescribir la v2.0.0 publicada.**
+- **Las 22 fuentes de la ronda de ampliación no están contrastadas.** Entraron
+  al registro marcadas «Ronda 2» y no «contrastada», y sostienen los 26 cierres
+  de `.v2`. Contrastarlas es el trabajo de campo pendiente, y es lo que declara
+  el tablero de la portada.
+- **Cinco celdas siguen sin concluir**, repartidas en cuatro instituciones:
+  Universidad de Chile, del Desarrollo y de Concepción con una cada una, y de
+  los Andes con dos.
+- **La paginación tiene holgura.** El PDF ocupa 113 páginas para unas 70 de
+  contenido: cada sección abre hoja y los bloques que no pueden partirse empujan
+  al siguiente pliego. No es un error —ninguna afirmación depende de ello— pero
+  cuarenta páginas de aire son cuarenta páginas.

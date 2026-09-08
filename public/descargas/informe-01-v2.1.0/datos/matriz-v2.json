@@ -1,0 +1,616 @@
+{
+ "caps": [
+  "Unidad",
+  "Norma",
+  "Presencia",
+  "Formacion",
+  "Herramienta",
+  "Adopcion",
+  "Alcance",
+  "Investigacion",
+  "Transferencia",
+  "Evaluacion"
+ ],
+ "puntos": {
+  "OPF": 3,
+  "OP": 2,
+  "INC": 1,
+  "ENT": 1,
+  "ADY": 1,
+  "NL": 0,
+  "NC": null
+ },
+ "v1": {
+  "P. U. Católica de Chile": [
+   "OPF",
+   "OPF",
+   "NC",
+   "OP",
+   "ENT",
+   "OPF",
+   "OP",
+   "OPF",
+   "INC",
+   "NL"
+  ],
+  "P. U. Católica de Valparaíso": [
+   "OP",
+   "ENT",
+   "OP",
+   "OP",
+   "OPF",
+   "ENT",
+   "OP",
+   "OP",
+   "OPF",
+   "NL"
+  ],
+  "U. Adolfo Ibáñez": [
+   "NC",
+   "NC",
+   "NC",
+   "OP",
+   "NL",
+   "NC",
+   "NL",
+   "OPF",
+   "INC",
+   "NL"
+  ],
+  "U. Andrés Bello": [
+   "NC",
+   "NC",
+   "OP",
+   "INC",
+   "OP",
+   "ENT",
+   "OP",
+   "NL",
+   "OP",
+   "NL"
+  ],
+  "U. Autónoma de Chile": [
+   "NC",
+   "NC",
+   "OP",
+   "OPF",
+   "NC",
+   "OP",
+   "OP",
+   "OPF",
+   "NC",
+   "NL"
+  ],
+  "U. Central de Chile": [
+   "OP",
+   "NC",
+   "NC",
+   "NC",
+   "OP",
+   "OP",
+   "OP",
+   "NL",
+   "NC",
+   "NL"
+  ],
+  "U. de Chile": [
+   "OP",
+   "ENT",
+   "NC",
+   "OP",
+   "NL",
+   "ENT",
+   "OP",
+   "OPF",
+   "INC",
+   "NL"
+  ],
+  "U. de Concepción": [
+   "NC",
+   "NC",
+   "NC",
+   "INC",
+   "ENT",
+   "INC",
+   "ENT",
+   "NL",
+   "INC",
+   "NL"
+  ],
+  "U. de los Andes": [
+   "NC",
+   "NC",
+   "NC",
+   "OP",
+   "ENT",
+   "NC",
+   "NL",
+   "ENT",
+   "INC",
+   "NL"
+  ],
+  "U. del Desarrollo": [
+   "NC",
+   "NC",
+   "INC",
+   "NC",
+   "ENT",
+   "NC",
+   "NL",
+   "NL",
+   "ENT",
+   "NL"
+  ],
+  "U. Diego Portales": [
+   "OP",
+   "NC",
+   "INC",
+   "NC",
+   "NC",
+   "NC",
+   "OP",
+   "NL",
+   "INC",
+   "NL"
+  ]
+ },
+ "v2": {
+  "P. U. Católica de Chile": [
+   "OPF",
+   "OPF",
+   "OP",
+   "OP",
+   "ENT",
+   "OPF",
+   "OP",
+   "OPF",
+   "INC",
+   "NL"
+  ],
+  "P. U. Católica de Valparaíso": [
+   "OP",
+   "ENT",
+   "OP",
+   "OP",
+   "OPF",
+   "ENT",
+   "OP",
+   "OP",
+   "OPF",
+   "NL"
+  ],
+  "U. Adolfo Ibáñez": [
+   "ADY",
+   "NL",
+   "OP",
+   "OP",
+   "NL",
+   "OP",
+   "NL",
+   "OPF",
+   "INC",
+   "NL"
+  ],
+  "U. Andrés Bello": [
+   "NL",
+   "ENT",
+   "OP",
+   "INC",
+   "OP",
+   "ENT",
+   "OP",
+   "NL",
+   "OP",
+   "NL"
+  ],
+  "U. Autónoma de Chile": [
+   "OPF",
+   "NL",
+   "OP",
+   "OPF",
+   "NL",
+   "OP",
+   "OP",
+   "OPF",
+   "OP",
+   "NL"
+  ],
+  "U. Central de Chile": [
+   "OP",
+   "OPF",
+   "OP",
+   "OP",
+   "OP",
+   "OP",
+   "OP",
+   "NL",
+   "OP",
+   "NL"
+  ],
+  "U. de Chile": [
+   "OP",
+   "ENT",
+   "NC",
+   "OP",
+   "NL",
+   "ENT",
+   "OP",
+   "OPF",
+   "INC",
+   "NL"
+  ],
+  "U. de Concepción": [
+   "NL",
+   "NL",
+   "NC",
+   "INC",
+   "ENT",
+   "INC",
+   "ENT",
+   "NL",
+   "INC",
+   "NL"
+  ],
+  "U. de los Andes": [
+   "NL",
+   "NL",
+   "NC",
+   "OP",
+   "ENT",
+   "NC",
+   "NL",
+   "ENT",
+   "INC",
+   "NL"
+  ],
+  "U. del Desarrollo": [
+   "OP",
+   "ENT",
+   "INC",
+   "OP",
+   "ENT",
+   "NC",
+   "NL",
+   "NL",
+   "ENT",
+   "NL"
+  ],
+  "U. Diego Portales": [
+   "OP",
+   "NL",
+   "INC",
+   "INC",
+   "NL",
+   "INC",
+   "OP",
+   "NL",
+   "INC",
+   "NL"
+  ]
+ },
+ "antes": {
+  "P. U. Católica de Chile": {
+   "piso": 18,
+   "techo": 20,
+   "nc": 1
+  },
+  "P. U. Católica de Valparaíso": {
+   "piso": 18,
+   "techo": 18,
+   "nc": 0
+  },
+  "U. Adolfo Ibáñez": {
+   "piso": 6,
+   "techo": 14,
+   "nc": 4
+  },
+  "U. Andrés Bello": {
+   "piso": 10,
+   "techo": 14,
+   "nc": 2
+  },
+  "U. Autónoma de Chile": {
+   "piso": 12,
+   "techo": 20,
+   "nc": 4
+  },
+  "U. Central de Chile": {
+   "piso": 8,
+   "techo": 16,
+   "nc": 4
+  },
+  "U. de Chile": {
+   "piso": 12,
+   "techo": 14,
+   "nc": 1
+  },
+  "U. de Concepción": {
+   "piso": 5,
+   "techo": 11,
+   "nc": 3
+  },
+  "U. de los Andes": {
+   "piso": 5,
+   "techo": 13,
+   "nc": 4
+  },
+  "U. del Desarrollo": {
+   "piso": 3,
+   "techo": 11,
+   "nc": 4
+  },
+  "U. Diego Portales": {
+   "piso": 6,
+   "techo": 14,
+   "nc": 4
+  }
+ },
+ "despues": {
+  "P. U. Católica de Chile": {
+   "piso": 20,
+   "techo": 20,
+   "nc": 0
+  },
+  "P. U. Católica de Valparaíso": {
+   "piso": 18,
+   "techo": 18,
+   "nc": 0
+  },
+  "U. Adolfo Ibáñez": {
+   "piso": 11,
+   "techo": 11,
+   "nc": 0
+  },
+  "U. Andrés Bello": {
+   "piso": 11,
+   "techo": 11,
+   "nc": 0
+  },
+  "U. Autónoma de Chile": {
+   "piso": 17,
+   "techo": 17,
+   "nc": 0
+  },
+  "U. Central de Chile": {
+   "piso": 17,
+   "techo": 17,
+   "nc": 0
+  },
+  "U. de Chile": {
+   "piso": 12,
+   "techo": 14,
+   "nc": 1
+  },
+  "U. de Concepción": {
+   "piso": 5,
+   "techo": 7,
+   "nc": 1
+  },
+  "U. de los Andes": {
+   "piso": 5,
+   "techo": 9,
+   "nc": 2
+  },
+  "U. del Desarrollo": {
+   "piso": 8,
+   "techo": 10,
+   "nc": 1
+  },
+  "U. Diego Portales": {
+   "piso": 8,
+   "techo": 8,
+   "nc": 0
+  }
+ },
+ "aplicados": [
+  [
+   "P. U. Católica de Chile",
+   "Presencia",
+   "NC",
+   "OP",
+   "R2-UC-01",
+   "Seminario DER201H-3 íntegramente de IA y Derecho, 2025. No obligatorio."
+  ],
+  [
+   "U. Adolfo Ibáñez",
+   "Unidad",
+   "NC",
+   "ADY",
+   "R2-UAI-01",
+   "Laboratorio de Justicia Centrada en las Personas: usa IA, su objeto no es IA."
+  ],
+  [
+   "U. Adolfo Ibáñez",
+   "Norma",
+   "NC",
+   "NL",
+   "—",
+   "Rutas recorridas sin localizar norma propia de Facultad."
+  ],
+  [
+   "U. Adolfo Ibáñez",
+   "Presencia",
+   "NC",
+   "OP",
+   "R2-UAI-01; R2-UAI-02",
+   "Curso de pregrado con prototipos que incorporan IA."
+  ],
+  [
+   "U. Adolfo Ibáñez",
+   "Adopcion",
+   "NC",
+   "OP",
+   "R2-UAI-01",
+   "IA utilizada dentro de proyectos formativos del curso 2025."
+  ],
+  [
+   "U. Andrés Bello",
+   "Unidad",
+   "NC",
+   "NL",
+   "—",
+   "No se localizó estructura de Derecho dedicada a IA o LegalTech."
+  ],
+  [
+   "U. Andrés Bello",
+   "Norma",
+   "NC",
+   "ENT",
+   "R2-UNAB-01",
+   "Lineamientos de la universidad, no norma propia de Derecho."
+  ],
+  [
+   "U. Autónoma de Chile",
+   "Unidad",
+   "NC",
+   "OPF",
+   "R2-UAUT-01; R2-UAUT-02",
+   "IA+D creado por Resolución VRIP 118/2020 y adscrito a Derecho."
+  ],
+  [
+   "U. Autónoma de Chile",
+   "Norma",
+   "NC",
+   "NL",
+   "—",
+   "No se localizó regla propia de Facultad."
+  ],
+  [
+   "U. Autónoma de Chile",
+   "Herramienta",
+   "NC",
+   "NL",
+   "R2-UAUT-05; R2-UAUT-06",
+   "Usa herramientas de terceros; sin sistema propio desplegado."
+  ],
+  [
+   "U. Autónoma de Chile",
+   "Transferencia",
+   "NC",
+   "OP",
+   "R2-UAUT-07",
+   "Convenio Legalfit: prácticas con automatización e IA."
+  ],
+  [
+   "U. Central de Chile",
+   "Norma",
+   "NC",
+   "OPF",
+   "R2-UCEN-01",
+   "Resolución 13/2025 del decano aprueba instructivo de uso académico de IA."
+  ],
+  [
+   "U. Central de Chile",
+   "Presencia",
+   "NC",
+   "OP",
+   "R2-UCEN-03",
+   "Academia y Laboratorio LegalTech selecciona desde segundo año."
+  ],
+  [
+   "U. Central de Chile",
+   "Formacion",
+   "NC",
+   "OP",
+   "R2-UCEN-03",
+   "Ciclos semestrales, mentoring y certificación."
+  ],
+  [
+   "U. Central de Chile",
+   "Transferencia",
+   "NC",
+   "OP",
+   "R2-UCEN-02",
+   "Convenio con la Cámara de Comercio de Sevilla para IA y LegalTech."
+  ],
+  [
+   "U. de Concepción",
+   "Unidad",
+   "NC",
+   "NL",
+   "—",
+   "Se localizaron actividades, no una unidad especializada."
+  ],
+  [
+   "U. de Concepción",
+   "Norma",
+   "NC",
+   "NL",
+   "—",
+   "No se localizó instrumento propio de Facultad."
+  ],
+  [
+   "U. de los Andes",
+   "Unidad",
+   "NC",
+   "NL",
+   "—",
+   "No se localizó unidad de IA o LegalTech dependiente de Derecho."
+  ],
+  [
+   "U. de los Andes",
+   "Norma",
+   "NC",
+   "NL",
+   "—",
+   "No se localizó norma propia de Derecho."
+  ],
+  [
+   "U. del Desarrollo",
+   "Unidad",
+   "NC",
+   "OP",
+   "R2-UDD-01",
+   "Observatorio de Derecho y Tecnología, dependiente de un centro de Facultad."
+  ],
+  [
+   "U. del Desarrollo",
+   "Norma",
+   "NC",
+   "ENT",
+   "R2-UDD-04",
+   "Política y reglamento de la universidad, no de Derecho."
+  ],
+  [
+   "U. del Desarrollo",
+   "Formacion",
+   "NC",
+   "OP",
+   "R2-UDD-02; R2-UDD-03",
+   "II Versión del curso de IA para Abogados en 2026: continuidad verificable."
+  ],
+  [
+   "U. Diego Portales",
+   "Norma",
+   "NC",
+   "NL",
+   "R2-UDP-02",
+   "Declara orientación al uso de IA; no se localizó norma publicada."
+  ],
+  [
+   "U. Diego Portales",
+   "Formacion",
+   "NC",
+   "INC",
+   "R2-UDP-02",
+   "Taller y curso anunciados; falta programa de ejecución."
+  ],
+  [
+   "U. Diego Portales",
+   "Herramienta",
+   "NC",
+   "NL",
+   "—",
+   "No se localizó sistema de IA de Facultad."
+  ],
+  [
+   "U. Diego Portales",
+   "Adopcion",
+   "NC",
+   "INC",
+   "R2-UDP-02",
+   "Incorporación anunciada desde primer y penúltimo semestre; falta ejecución."
+  ]
+ ],
+ "rechazados": []
+}

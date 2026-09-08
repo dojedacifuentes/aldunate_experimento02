@@ -12,21 +12,21 @@
 export const DOCUMENTOS = [
   {
     fuente:
-      'content/reports/01_ia_escuelas_derecho_chile/entregas/v2.0.0/informe-01-v2.0.0.html',
-    destino: 'public/descargas/informe-01-v2.0.0/informe-01-v2.0.0.html',
+      'content/reports/01_ia_escuelas_derecho_chile/entregas/v2.1.0/informe-01-v2.1.0.html',
+    destino: 'public/descargas/informe-01-v2.1.0/informe-01-v2.1.0.html',
     marca: 'Informe 01',
     título:
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
-    sub: 'v2.0.0 · corte 06-09-2026',
+    sub: 'v2.1.0 · corte 06-09-2026',
     pie: 'Prototipo académico experimental.<br>No es un sitio oficial de la PUCV.',
   },
   {
     fuente:
-      'content/reports/01_ia_escuelas_derecho_chile/entregas/v2.0.0/complemento-pucv-v1.0.html',
-    destino: 'public/descargas/informe-01-v2.0.0/complemento-pucv-v1.0.html',
+      'content/reports/01_ia_escuelas_derecho_chile/entregas/v2.1.0/complemento-pucv-v1.1.html',
+    destino: 'public/descargas/informe-01-v2.1.0/complemento-pucv-v1.1.html',
     marca: 'Informe 01 · complemento',
     título: 'La PUCV como caso de proyección, no como caso comparado',
-    sub: 'v1.0 · corte 06-09-2026',
+    sub: 'v1.1 · corte 06-09-2026',
     pie: 'Documento complementario. No sustituye al Informe 01.<br>No es un sitio oficial de la PUCV.',
   },
 ];

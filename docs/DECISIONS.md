@@ -815,3 +815,80 @@ las dos direcciones —había siete documentos servidos a los que no se podía
 llegar—; y la distinción entre reponer la **forma** de una versión publicada,
 que se permite y se mide con la prueba de igualdad de texto, y cambiar su
 **fondo**, que exige versión nueva.
+
+---
+
+## D-039 — La matriz canónica de la v2.0.0 es `.v2`, y lo decía el propio documento
+
+**Qué.** Se resuelve la pregunta que D-037 dejó abierta y que bloqueaba el
+recálculo: de las dos matrices de `matriz-v2.json`, la canónica es `.v2`, la de
+la ronda de ampliación. El comparador cubre diez instituciones con las cifras de
+esa matriz, y la v2.1.0 aplica esas cifras a las cuatro figuras derivadas de
+ella y a toda la prosa escrita encima.
+
+**Por qué, y por qué no era una elección.** El encargo suponía una decisión
+editorial entre dos hipótesis igual de defendibles. No lo era: al abrir el
+documento entregado se comprueba que **sus tablas ya publican `.v2` sobre diez
+instituciones**. La tabla del orden de la sección 4, el anexo C —«Estado de cada
+capacidad por institución», diez filas, sin la PUCV— y el «Cálculo completo» del
+anexo D coinciden celda por celda con `.v2`. La sección 8 va más lejos y declara
+que el perfil de la institución apartada «habría sido de 18 puntos con banda
+cerrada, es decir el segundo lugar del orden», que es su posición exacta bajo
+`.v2` y no bajo `.v1`.
+
+Lo que estaba desactualizado no era la decisión sino su alcance: las cuatro
+figuras que se derivan de la matriz —la del comparador, la de comprobación, la
+matriz de capacidades y su lectura por filas— seguían dibujando `.v1` sobre
+once, y la prosa estaba escrita sobre las figuras. La sesión anterior comparó la
+figura con `.v1`, acertó, y no llegó a mirar la tabla que tenía debajo.
+
+**Cómo se comprobó.** Reproduciendo el cálculo con la rúbrica del anexo D sobre
+las dos matrices y contrastando los once pares piso–techo contra los publicados.
+`.v1` reproduce la figura; `.v2` reproduce las tres tablas. No hay una tercera
+lectura posible.
+
+**Descartado.** Publicar `.v1` y declarar `.v2` descartada, que era la otra
+salida que el encargo contemplaba. Se descarta porque obligaría a revertir tres
+tablas ya entregadas a cifras anteriores —la Universidad Central volvería de
+17-17 a 8-16 y la Autónoma de 17-17 a 12-20— y a sostener que el informe
+recorrió la ronda de ampliación y decidió no usarla, cosa que el documento no
+dice en ninguna parte.
+
+**Qué cambia para los lectores.** El techo del comparador pasa de 18 a 20 puntos
+y lo alcanza una sola institución; el promedio de los pisos, de 9,4 a 11,4; las
+celdas sin concluir, de 31 sobre 110 a 5 sobre 100. Seis de las diez quedan con
+banda cerrada y ninguna con banda ancha. La v2.0.0 sigue publicada con sus
+cifras, y la v2.1.0 declara la contradicción en su frontis en vez de hacerla
+desaparecer.
+
+**La regla que se añade.** Una figura derivada de un dato no se dibuja aparte
+del dato. Las cuatro se generan desde `matriz-v2.json` en
+`tools/informes/informe-01/comparador/figuras.mjs`, con la gramática visual
+medida sobre las entregadas para que el cambio de origen no se lea como un
+cambio de diseño. Mientras la figura y la tabla salgan de sitios distintos,
+divergir no es un accidente: es cuestión de tiempo.
+
+---
+
+## D-040 — El aire de una portada no puede ser una medida fija
+
+**Qué.** En la hoja de impresión, el espaciador de 55 mm entre la cabecera y el
+título de portada se sustituye por una portada de alto fijo —el de su caja de
+página— que reparte el aire sobrante con `margin-top:auto`.
+
+**Por qué.** La portada del Informe 01 medía 255,6 mm contra una caja de 245: se
+desbordaba 10,6 mm, el pie caía partido en una segunda hoja y todo lo que venía
+después quedaba corrido, en el PDF y en el documento autónomo. La del
+complemento medía 229,2 y cabía, de modo que el defecto sólo aparecía en el
+documento cuyo título ocupa cuatro líneas y cuya cabecera ocupa tres. Una medida
+fija elegida a ojo funciona para el documento en el que se eligió y para ningún
+otro.
+
+**Descartado.** Reducir el espaciador a 42 mm, que era la corrección mínima.
+Habría arreglado este documento y dejado la trampa puesta para el siguiente
+título largo.
+
+**Es forma y no fondo**, de modo que por el §8 de `CLAUDE.md` podría reponerse
+sobre una versión ya publicada. No se hace: se publica dentro de la v2.1.0,
+porque esa versión sale de todos modos y reimprimir la v2.0.0 con una portada
+distinta obligaría a explicar dos veces la misma corrección.

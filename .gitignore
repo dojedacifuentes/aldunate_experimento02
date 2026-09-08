@@ -21,6 +21,9 @@ next-env.d.ts
 # salida de la cadena de producción de informes
 # el documento publicado vive en public/descargas, no aquí
 tools/informes/*/salida/
+# las figuras se regeneran con figuras.mjs y se incrustan en el documento;
+# guardarlas sueltas invita a editarlas a mano, que es el defecto que corrigen
+tools/informes/*/comparador/figuras/
 
 # sistema
 .DS_Store
