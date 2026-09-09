@@ -93,6 +93,128 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '3.0.0',
+        date: '2026-09-09',
+        status: 'publicado',
+        headline: 'El corpus son 96 fuentes y no 74, y la portada ya lo dice',
+        summary:
+          'El frontis afirmaba en cuatro sitios que el corpus son 74 fuentes y que está verificado al 100 %. El anexo de ampliación, en el mismo documento, declaraba un corpus de 96 con 22 sin contrastar. La cifra correcta es 74 de 96, un 77 %, y sigue siendo alta. Se declaran además dos direcciones publicadas que no resuelven y que la versión anterior no advertía, se ordenan las letras de los anexos —dos llevaban la I y la H no se usaba— y la sección 10 recupera el encabezado y la entrada de índice que nunca tuvo. Ninguna celda se degrada y ninguna posición se mueve.',
+        pages: 112,
+        reading: 'documento',
+        pdf: '/descargas/informe-01-v3.0.0/informe-01-v3.0.0.pdf',
+        html: '/descargas/informe-01-v3.0.0/informe-01-v3.0.0.html',
+        figures: [
+          {
+            value: '74',
+            unit: '/96',
+            label: '77 % del corpus',
+            note: 'Fuentes abiertas y contrastadas contra su publicación original. Las 22 de la ronda de ampliación se declaran como tales y no como contrastadas. Más 31 de contraste externo.',
+          },
+          {
+            value: '0',
+            label: 'ausencia confirmada',
+            note: 'Proyectos ANID sobre enseñanza del Derecho con inteligencia artificial, en 49.014 adjudicados desde 1982.',
+          },
+          {
+            value: '20',
+            unit: '/30',
+            label: 'el techo real',
+            note: 'Índice de formalización más alto del comparador de diez, alcanzado por una sola institución. El promedio de los pisos es 11,4 y la mediana, 11.',
+          },
+          {
+            value: '13',
+            unit: '/26',
+            label: 'cierres expuestos',
+            note: 'Cierres de la matriz que se apoyan en fuentes sin contraste sustantivo, con 25 puntos encima. El análisis de sensibilidad dice que el orden aguanta: lo que se ensancha son las bandas.',
+          },
+          {
+            value: '5',
+            unit: '/100',
+            label: 'celdas sin concluir',
+            note: 'Repartidas en cuatro instituciones. Sólo una de ellas tiene más de una.',
+          },
+        ],
+        changelog: [
+          'La portada deja de declarar una confianza que el anexo desmentía. Decía «setenta y cuatro fuentes verificadas una por una» y «Corpus verificado al 100 %», mientras el anexo de ampliación decía que el corpus pasó a 96 y que 22 de ellas no han pasado el contraste sustantivo. Las dos cosas no podían ser ciertas. Se corrigen los cuatro sitios del frontis, el indicador del resumen ejecutivo y los cinco pasajes del cuerpo que argumentaban sobre ese 100 %. La cifra que se publica es 74 de 96, un 77 %.',
+          'Se declaran dos direcciones rotas que la versión anterior no advertía. El anexo advertía de dos fuentes irrecuperables; son cuatro. Además de la resolución de la Universidad Central y del documento escaneado de la Universidad Autónoma, tampoco resuelven la referencia del seminario de la Pontificia Universidad Católica de Chile ni la del curso de la Universidad del Desarrollo, que sostienen dos puntos cada una. Un enlace roto que el documento no declara traslada al lector un problema que ya se conocía.',
+          'Las cuatro se acotan en vez de dejarse abiertas. El análisis de sensibilidad se amplió de dos escenarios a las cuatro fuentes rotas más la cota superior de los trece cierres expuestos, y el resultado se publica: si las cuatro cayeran a la vez, el orden sólo intercambiaría dos puestos. Lo que se degrada es la resolución del comparador, no el comparador.',
+          'Las letras de los anexos dejan de repetirse. El índice publicaba A, B, C, D, E, F, I, G, I: dos anexos con la misma letra, la H sin usar y uno de ellos fuera del orden en que se lee. El registro completo de fuentes pasa a ser el anexo H y la ampliación del corpus, el I, que es el último del documento. No había ninguna cita en prosa a esas dos letras.',
+          'La sección 10 recupera su encabezado. Existía —tenía cabecera corriente propia, «10 · Implicancias»— pero no tenía título ni entrada en el índice, que saltaba del 16 al 18. Es la sección donde vive lo más fuerte del documento: las tres ventanas fechadas y lo que cuesta dejarlas pasar. Ahora se puede citar y se puede llegar a ella.',
+          'La nota que explicaba los saltos de numeración era falsa en sus dos mitades. Decía que no existían las secciones 2 ni 10, y las dos existen: la 2 son los Objetivos, que el propio índice listaba, y la 10 son las Implicancias. Se reescribe para decir lo que de verdad ocurre.',
+          'Ninguna cifra sobre una institución con nombre cambia. Ninguna celda se degrada, ninguna posición se mueve, el corpus y la rúbrica son los de la v2.2.0. Lo que cambia es lo que el documento afirma sobre su propia verificación.',
+        ],
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-v3.0.0/informe-01-v3.0.0.pdf',
+            description:
+              'A4 de 112 páginas, con portada de una sola hoja, encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir. 2,8 MB.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-01-v3.0.0/informe-01-v3.0.0.docx',
+            description:
+              'Documento editable a 12 puntos, con las diecinueve tablas y sin las figuras. Para quien deba anotarlo o devolverlo con control de cambios.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-v3.0.0/informe-01-v3.0.0.html',
+            description:
+              'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión. Es el mismo que se lee dentro del sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Matriz de capacidades',
+            href: '/descargas/informe-01-v3.0.0/datos/matriz-v2.json',
+            description:
+              'Las diez capacidades por institución en los dos estados de la enmienda 2.2. De aquí salen las figuras derivadas de la matriz, las tablas del comparador y, desde esta versión, el comparador explorable de esta misma ficha. De ningún otro sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Fuentes de la segunda ronda',
+            href: '/descargas/informe-01-v3.0.0/datos/fuentes-nuevas.json',
+            description:
+              'Las 22 fuentes de la ronda de ampliación, con su grado documental y su confianza. No están contrastadas y el archivo lo declara: se marcan «Ronda 2» y no «contrastada».',
+          },
+        ],
+        companions: [
+          {
+            id: 'complemento-pucv',
+            title: 'La PUCV como caso de proyección, no como caso comparado',
+            version: '1.1',
+            date: '2026-09-08',
+            summary:
+              'Por qué la Pontificia Universidad Católica de Valparaíso se retira del comparador de diez, qué acredita su perfil completo —18 puntos de 30, sin ninguna celda sin concluir— y dónde están los doce que le faltan. Con las cuatro construcciones posibles, un optativo cuyo proyecto final es la medición, y la ventana de decisión con lo que cuesta dejarla pasar.',
+            rationale:
+              'Quien firma el informe trabaja en el Programa de Derecho, Inteligencia Artificial y Tecnología de esa Escuela. El conflicto es actual, directo y sobre el objeto medido, y hay además un sesgo medible: la PUCV fue una de las tres instituciones del piloto de profundidad, de modo que en un instrumento que puntúa capacidades acreditadas por evidencia pública, haberla investigado más produce mecánicamente una puntuación más alta sin que nada haya cambiado en la institución. Este documento publica su perfil para que la decisión sea auditable, y no puntúa, no ordena y no compara.',
+            html: '/descargas/informe-01-v3.0.0/complemento-pucv-v1.1.html',
+            artifacts: [
+              {
+                format: 'PDF',
+                label: 'Leer o imprimir',
+                href: '/descargas/informe-01-v3.0.0/complemento-pucv-v1.1.pdf',
+                description: 'A4 de 25 páginas, con el perfil de capacidades y el dossier de evidencia completo en anexo.',
+              },
+              {
+                format: 'Word',
+                label: 'Editar o comentar',
+                href: '/descargas/informe-01-v3.0.0/complemento-pucv-v1.1.docx',
+                description: 'Documento editable a 12 puntos. El complemento no cambia en esta versión: viaja con ella para que sus dos documentos estén en la misma carpeta.',
+              },
+              {
+                format: 'HTML',
+                label: 'Abrir el documento autónomo',
+                href: '/descargas/informe-01-v3.0.0/complemento-pucv-v1.1.html',
+                description: 'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión.',
+              },
+            ],
+          },
+        ],
+      },
+      {
         version: '2.2.0',
         date: '2026-09-09',
         status: 'publicado',

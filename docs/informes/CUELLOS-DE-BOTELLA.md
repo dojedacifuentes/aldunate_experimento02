@@ -23,7 +23,7 @@ medida**, para que la sesión que venga empiece con trabajo y no con arqueologí
 | 1 | La figura y la tabla salían de sitios distintos | Tres tablas publicaban `.v2` y cuatro figuras dibujaban `.v1` | Dos días publicado con la institución apartada encabezando un orden del que estaba excluida | D-039 | `figuras.mjs`, fuente única |
 | 2 | El documento se narraba a sí mismo | 69 pasajes del cuerpo comparando con versiones que el lector no tiene | Se leía como un registro de cambios en vez de como la descripción de once Escuelas | D-041 | `src/lib/informes.test.ts` |
 | 3 | `overflow-wrap:anywhere` aplicado a `td, th` | 33 celdas con una palabra partida | «PRESEN / CIA», «TRANSF / ERENCI / A», «PISO» roto en vertical | D-042 | `verificar-maqueta.mjs` |
-| 4 | **La portada declaraba una confianza que el anexo desmentía** | Tres afirmaciones de «74 fuentes · 100 %» en el frontis contra un anexo que declara 96 fuentes y 22 sin contrastar | La primera persona que comprobara una cosa contra la otra encontraba una contradicción en el documento que le pide que confíe en su verificación | *pendiente de redactar como decisión* | *pendiente* |
+| 4 | **La portada declaraba una confianza que el anexo desmentía** | Cuatro afirmaciones de «74 fuentes · 100 %» en el frontis, más cinco pasajes del cuerpo, contra un anexo que declara 96 fuentes y 22 sin contrastar | La primera persona que comprobara una cosa contra la otra encontraba una contradicción en el documento que le pide que confíe en su verificación | D-043 | El guion de la v3.0.0 cuenta cada sustitución y falla si queda una afirmación de «verificado al 100 %» o una letra de anexo repetida |
 
 ---
 

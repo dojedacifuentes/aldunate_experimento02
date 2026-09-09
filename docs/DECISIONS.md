@@ -960,3 +960,65 @@ documento publicado y en modo impresión, las celdas cuyo número de líneas sup
 su número de palabras —que es la firma de una palabra partida—, las tablas que
 se salen de la caja de 160 mm y los rótulos de figura que pisan una barra. En la
 v2.1.0 daba 33, 0 y 8; en la v2.2.0 da 0, 0 y 0.
+
+---
+
+## D-043 — Un corpus que crece no puede seguir declarando el porcentaje del que tenía
+
+**Qué.** El frontis del Informe 01 pasa de afirmar «74 fuentes · verificado al
+100 %» a afirmar «96 fuentes · 74 contrastadas (77 %)», y los cinco pasajes del
+cuerpo que argumentaban sobre ese 100 % se acotan al **corpus original**. Se
+publica como v3.0.0 porque cambia lo que el informe afirma sobre su propia
+verificación, que es de fondo y no de forma.
+
+**Por qué.** El documento se contradecía a sí mismo. La portada, el sello, los
+metadatos, la ficha y el indicador del resumen ejecutivo decían que el corpus
+son 74 fuentes contrastadas al 100 %. El anexo de ampliación, cincuenta páginas
+después, decía que la ronda añadió 22 fuentes, que **el corpus pasa de 74 a 96**
+y que esas 22 no han pasado el contraste. Las dos cosas no pueden ser ciertas.
+El anexo era la parte honesta.
+
+Importa más que un descuadre aritmético porque el lector que se queda en la
+portada —que son casi todos— recibía una garantía de verificación que el propio
+documento desmiente más adelante, y porque la primera persona que comprobara una
+cosa contra la otra encontraría la contradicción por su cuenta. Un informe cuya
+defensa es la trazabilidad no puede permitirse que su afirmación más visible sea
+la que no resiste.
+
+**Descartado.** Dejar el frontis y añadir una nota al pie que dijera «74 se
+refiere al corpus original», que era la corrección barata. Se descarta porque el
+número grande de la portada seguiría siendo el que no corresponde, y una nota al
+pie no la lee quien lee un titular. También se descarta lo contrario —degradar a
+`NC` las trece celdas que dependen de fuentes sin contrastar— porque eso sí
+movería cifras de instituciones con nombre sobre la base de una comprobación que
+no se ha hecho, que es el error simétrico.
+
+**Qué cambia para los lectores, y qué no.** Ninguna celda se degrada, ninguna
+posición se mueve, el corpus y la rúbrica son los de la v2.2.0. El 77 % sigue
+siendo alto. Lo que cambia es que el documento deja de presentar las fuentes de
+la ronda de ampliación como si hubieran pasado un contraste que no pasaron.
+
+**Lo que viaja con esta versión.** Dos direcciones publicadas que devuelven
+`404` y que la v2.2.0 no advertía —el seminario de la Pontificia Universidad
+Católica de Chile y el curso de la Universidad del Desarrollo, dos puntos cada
+una— se declaran junto a las dos que ya estaban advertidas. Las letras de los
+anexos dejan de repetir la I y de saltarse la H. Y la sección 10, que tenía
+cabecera corriente propia pero ni encabezado ni entrada de índice, recupera las
+dos: es donde vive lo más fuerte del documento.
+
+**Cómo se acota lo que queda abierto.** El análisis de sensibilidad se amplió de
+dos escenarios a las cuatro fuentes rotas más la cota superior de los trece
+cierres expuestos, y su resultado se publica: **si las cuatro cayeran a la vez,
+el orden sólo intercambiaría dos puestos.** Lo que se degrada es la resolución
+del comparador, no el comparador. Sin esa cifra, declarar las fuentes rotas
+habría abierto una duda sin medirla, que es peor que no declararlas.
+
+**La regla que se añade.** *El recuento que la portada publica es el del corpus
+completo, y el porcentaje contrastado se calcula sobre él.* Un corpus que crece
+por rondas de ampliación no puede seguir declarando el porcentaje del que tenía
+cuando se cerró la ronda anterior.
+
+**Cómo se sostiene.** `tools/informes/informe-01/v3.0.0/armonizar.mjs` cuenta
+las apariciones de cada sustitución y no escribe nada si una sola no cuadra, y
+al terminar comprueba que no quede ninguna afirmación de «corpus verificado al
+100 %» ni ninguna letra de anexo repetida. Falla en vez de publicar.
