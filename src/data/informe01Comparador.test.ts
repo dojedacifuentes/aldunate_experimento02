@@ -231,7 +231,7 @@ describe('la afirmación de corpus sólo puede vivir en el registro versionado',
 describe('la institución apartada no recibe orden, puntuación ni lugar', () => {
   /*
     D-037 la sacó del comparador; la v3.2.0 sacó además su puntuación del texto,
-    porque la secci\u00f3n 8 declaraba que no la recibe y a la vez publicaba «18
+    porque la sección 8 declaraba que no la recibe y a la vez publicaba «18
     puntos, es decir el segundo lugar del orden». La bandera existe para que la
     exclusión sea comprobable por cualquier consumidor del dato y no una
     convención sobre en qué campo vive.

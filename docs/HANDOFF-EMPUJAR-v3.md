@@ -48,8 +48,11 @@ contra producción, no contra el local**:
 | «El cuello se cierra con su prueba…» | La prueba que ata el comparador del sitio a la matriz, el registro de cuellos de botella y el `nextStep` del tablero |
 | «El corpus son 96 fuentes y no 74…» | **La v3.0.0 del documento**: guion de armonización, los seis artefactos publicados, la entrada en `reports.ts`, la conversión a Word por COM y la decisión D-043 |
 | «Los ocho hallazgos se leen juntos…» | **La v3.1.0**: la lectura transversal, la celda vacía cuantificada y cuatro prioridades, con el criterio 2 del encargo automatizado en el guion |
+| «La ficha decía 100 por ciento…» | El sitio deja de contradecir al documento: seis cifras en `reports.ts`, la cadena escrita a mano de la ficha, y ocho pruebas que lo impiden |
+| «Adjudicado no es solicitado…» | **La v3.2.0**, cierre editorial: nueve pasajes que confundían adjudicación con solicitud, la puntuación y el lugar de la institución apartada, y cinco afirmaciones nacionales acotadas. Complemento a v1.2 |
+| «La exclusión del orden pasa a ser un dato…» | `excluidaDelOrden` en el dataset, la banda de la apartada retirada del comparador web, y tres pruebas |
 
-**La v3.1.0 es la versión vigente.** La v2.2.0 se queda publicada donde estaba,
+**La v3.2.0 es la versión vigente**, con el complemento v1.2. La v2.2.0 se queda publicada donde estaba,
 con las cifras que sostenía —se comprobó que su HTML conserva intactas sus dos
 afirmaciones de «Corpus verificado al 100 %»—. Una versión publicada no se
 sobrescribe.
