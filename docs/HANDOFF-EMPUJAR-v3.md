@@ -47,8 +47,9 @@ contra producción, no contra el local**:
 | «Un lector de pantalla anunciaba…» | La etiqueta accesible de cada celda pasa a usar el rótulo del documento |
 | «El cuello se cierra con su prueba…» | La prueba que ata el comparador del sitio a la matriz, el registro de cuellos de botella y el `nextStep` del tablero |
 | «El corpus son 96 fuentes y no 74…» | **La v3.0.0 del documento**: guion de armonización, los seis artefactos publicados, la entrada en `reports.ts`, la conversión a Word por COM y la decisión D-043 |
+| «Los ocho hallazgos se leen juntos…» | **La v3.1.0**: la lectura transversal, la celda vacía cuantificada y cuatro prioridades, con el criterio 2 del encargo automatizado en el guion |
 
-**La v3.0.0 es la versión vigente.** La v2.2.0 se queda publicada donde estaba,
+**La v3.1.0 es la versión vigente.** La v2.2.0 se queda publicada donde estaba,
 con las cifras que sostenía —se comprobó que su HTML conserva intactas sus dos
 afirmaciones de «Corpus verificado al 100 %»—. Una versión publicada no se
 sobrescribe.
