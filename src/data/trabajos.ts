@@ -122,7 +122,7 @@ export const workItems: WorkItem[] = [
       'Mapeo comparado de evidencia pública sobre once universidades chilenas: qué enseñan, qué usan, qué han institucionalizado y qué no puede demostrarse todavía.',
     reportSlug: 'ia-escuelas-derecho-chile',
     nextStep:
-      'Contrastar las 22 fuentes de la ronda de ampliación, que entraron al registro sin abrirse una por una. Recorrer después las rutas de las 5 celdas que siguen sin concluir, repartidas en cuatro instituciones. Cerrar además la referencia de la «Revista DIE» de la Universidad Central, que no se localizó en ningún dominio.',
+      'Recuperar las tres direcciones de la ronda de ampliación que no resuelven —dos de ellas sin declarar en el documento— y contrastar las 13 fuentes cuyos cierres sostienen 25 puntos de la matriz. El análisis de sensibilidad ya está publicado y acota lo que está en juego: las cuatro fuentes irrecuperables no mueven ninguna posición, sólo ensanchan las bandas. Después, las 5 celdas que siguen sin concluir en cuatro instituciones y la referencia de la «Revista DIE» de la Universidad Central, no localizada en ningún dominio.',
     caveat:
       'La cobertura sigue siendo desigual —1,8 a 1 entre el piloto y el resto, antes 2,4 a 1—, y por eso el comparador ordinal publica bandas de piso y techo en vez de un número. La PUCV queda fuera de él por conflicto de interés declarado y se trata en un documento aparte, con su perfil completo y sin posición.',
     href: '/informes/ia-escuelas-derecho-chile',
