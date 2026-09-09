@@ -583,6 +583,41 @@ export function figuraPorCapacidad(filas, total) {
 }
 
 /**
+ * Parte un rótulo en líneas que caben en un ancho dado.
+ *
+ * Sin esto, la figura de conclusiones escribía ochenta y cinco caracteres a
+ * 8,1 pt desde la izquierda y las barras arrancaban en un punto fijo: el
+ * rótulo pasaba por debajo de la barra y se leía «La cobertura desigual acota,
+ * pero ya no impide, la compar». Un ancho medido en caracteres es una
+ * aproximación —la fuente es proporcional— y basta, porque el objetivo no es
+ * justificar sino no invadir la columna de al lado.
+ */
+function partir(s, anchoPx, tamaño) {
+  /* 0,52 em por carácter es la media de Inter en minúsculas; se queda corto a
+     propósito, que es el lado seguro. */
+  const porLínea = Math.max(8, Math.floor(anchoPx / (tamaño * 0.52)));
+  const líneas = [];
+  let actual = '';
+  for (const palabra of s.split(' ')) {
+    if (actual && `${actual} ${palabra}`.length > porLínea) {
+      líneas.push(actual);
+      actual = palabra;
+    } else {
+      actual = actual ? `${actual} ${palabra}` : palabra;
+    }
+  }
+  if (actual) líneas.push(actual);
+  return líneas;
+}
+
+/** Varias líneas de texto, centradas verticalmente sobre `y`. */
+function textoMulti(x, y, líneas, o = {}) {
+  const salto = (o.size ?? 8) * 1.28;
+  const arriba = y - ((líneas.length - 1) * salto) / 2;
+  return líneas.map((l, i) => texto(x, arriba + salto * i, l, o)).join('');
+}
+
+/**
  * Qué le falta a cada capacidad para llegar a tres, y de qué clase es la falta.
  *
  * No es una opinión sobre la institución: es la lectura mecánica de la
@@ -699,6 +734,276 @@ export function figuraPerfil(clave, matriz = 'v2') {
   );
 }
 
+/**
+ * Figura de cobertura · cuánto se investigó cada institución.
+ *
+ * La versión anterior de esta figura llevaba dentro una marca de «hasta aquí
+ * llegaba la v0.8.0» y una leyenda que la explicaba. Eso obliga al lector a
+ * conocer una versión que no tiene delante, y se retira: la figura dice cuánto
+ * se recorrió, y la asimetría entre el piloto y el resto se lee sola porque el
+ * piloto va marcado.
+ */
+export function figuraCobertura() {
+  const X0 = 258;
+  const ANCHO = 380;
+  const RUTAS = 13;
+  const ALTO = 13;
+  const PASO = 26;
+  const Y0 = 14;
+  const px = (r) => X0 + (r / RUTAS) * ANCHO;
+
+  const filas = Object.entries(COBERTURA).map(([clave, c]) => ({
+    nombre: NOMBRES[clave][0],
+    ...c,
+  }));
+
+  const ejeAbajo = Y0 + PASO * (filas.length - 1) + ALTO + 13;
+  const partes = [];
+
+  for (let r = 0; r <= 12; r += 2) {
+    partes.push(
+      `<line x1="${n1(px(r))}" y1="8.0" x2="${n1(px(r))}" y2="${n1(ejeAbajo)}"` +
+        ` stroke="#eef1f5" stroke-width="0.5"/>`,
+    );
+    partes.push(texto(px(r), ejeAbajo + 12, String(r)));
+  }
+  partes.push(
+    texto(px(6.5), ejeAbajo + 24, 'Rutas del protocolo recorridas, de trece', {
+      size: 7.1,
+      fill: '#5d6b7d',
+      peso: 500,
+    }),
+  );
+
+  filas.forEach((f, i) => {
+    const y = Y0 + PASO * i;
+    const base = y + ALTO - 3.2;
+    if (f.piloto) {
+      partes.push(
+        `<rect x="0" y="${n1(y)}" width="3" height="${n1(ALTO)}" rx="1.5"` +
+          ` fill="#00a3a3" opacity="1"/>`,
+      );
+    }
+    partes.push(
+      texto(X0 - 10, base, f.nombre, {
+        size: 8,
+        fill: f.piloto ? '#0d1420' : '#26313f',
+        peso: f.piloto ? 650 : 450,
+        anclaje: 'end',
+      }),
+    );
+    partes.push(
+      `<rect x="${n1(X0)}" y="${n1(y)}" width="${n1(ANCHO)}" height="${n1(ALTO)}"` +
+        ` rx="1.4" fill="#eef1f5" opacity="1"/>`,
+    );
+    partes.push(
+      `<rect x="${n1(X0)}" y="${n1(y)}" width="${n1(px(f.rutas) - X0)}"` +
+        ` height="${n1(ALTO)}" rx="1.4" fill="${f.piloto ? '#0f4c81' : '#1a6fa8'}" opacity="1"/>`,
+    );
+    partes.push(
+      texto(X0 + ANCHO + 9, base, `${f.rutas}/13`, {
+        size: 8.4,
+        fill: '#0d1420',
+        peso: 650,
+        anclaje: 'start',
+      }),
+    );
+    partes.push(
+      texto(752, base, `${f.fuentes} ${f.fuentes === 1 ? 'fuente' : 'fuentes'}`, {
+        size: 7,
+        peso: 400,
+        anclaje: 'end',
+      }),
+    );
+  });
+
+  return (
+    `<svg viewBox="0 0 760 ${ejeAbajo + 32}" xmlns="http://www.w3.org/2000/svg"` +
+    ` role="img" style="max-width:100%">${partes.join('')}</svg>`
+  );
+}
+
+/**
+ * Las ocho conclusiones, su clase y la confianza que las sostiene.
+ *
+ * Transcritas de la figura entregada. La C-6 pierde el «ya no impide», que
+ * sólo significa algo para quien leyó la versión anterior; dice ahora lo mismo
+ * en presente.
+ */
+export const CONCLUSIONES = [
+  ['C-1', 'La institucionalización avanza por denominación, no por constitución', 70, 'hecho'],
+  ['C-2', 'Dos Facultades dictaron norma propia; sólo una publica el instrumento', 70, 'hecho'],
+  ['C-3', 'La continuidad dejó de ser excepcional, y sigue sin llegar a resultados', 80, 'hecho'],
+  ['C-4', 'No hay línea curricular obligatoria documentada en ninguna de las once', 80, 'hecho'],
+  ['C-5', 'Ninguna iniciativa acredita evaluación de efecto, y ninguna la ha solicitado', 95, 'hecho'],
+  ['C-6', 'La cobertura desigual acota la comparación ordinal, y no la impide', 80, 'inferencia'],
+  ['C-7', 'El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado', 75, 'inferencia'],
+  ['C-8', 'Ninguna institución chilena tiene mandato para verificar lo que las Facultades afirman', 90, 'hecho'],
+];
+
+/**
+ * Figura de conclusiones · confianza de la afirmación más débil de cada una.
+ *
+ * El rótulo vivía en una línea sin ancho máximo y la barra empezaba en un
+ * punto fijo: los siete rótulos largos pasaban por debajo de las barras. Ahora
+ * el texto se parte dentro de su columna y la barra empieza donde termina.
+ */
+export function figuraConclusiones() {
+  const X_TEXTO = 26;
+  const ANCHO_TEXTO = 206;
+  const X0 = 250;
+  const ANCHO = 392;
+  const MIN = 50;
+  const MAX = 100;
+  const ALTO = 11;
+  const PASO = 32;
+  const Y0 = 11;
+  const px = (v) => X0 + ((v - MIN) / (MAX - MIN)) * ANCHO;
+
+  const partes = [];
+  CONCLUSIONES.forEach(([código, texto_, confianza, clase], i) => {
+    const y = Y0 + PASO * i;
+    const medio = y + ALTO / 2 + 2.6;
+    partes.push(
+      texto(0, medio, código, { size: 8, fill: '#0d1420', peso: 650, anclaje: 'start' }),
+    );
+    partes.push(
+      textoMulti(X_TEXTO, medio, partir(texto_, ANCHO_TEXTO, 8.1), {
+        size: 8.1,
+        fill: '#26313f',
+        peso: 400,
+        anclaje: 'start',
+      }),
+    );
+    partes.push(
+      `<rect x="${n1(X0)}" y="${n1(y)}" width="${n1(ANCHO)}" height="${n1(ALTO)}"` +
+        ` rx="1.4" fill="#eef1f5" opacity="1"/>`,
+    );
+    partes.push(
+      `<rect x="${n1(X0)}" y="${n1(y)}" width="${n1(px(confianza) - X0)}"` +
+        ` height="${n1(ALTO)}" rx="1.4"` +
+        ` fill="${clase === 'hecho' ? '#0f4c81' : '#c2703a'}" opacity="1"/>`,
+    );
+    partes.push(
+      texto(px(confianza) + 6, medio, String(confianza), {
+        size: 8.4,
+        fill: '#0d1420',
+        peso: 650,
+        anclaje: 'start',
+      }),
+    );
+  });
+
+  const ejeAbajo = Y0 + PASO * CONCLUSIONES.length;
+  for (const v of [50, 75, 100]) {
+    partes.push(texto(px(v), ejeAbajo + 12, String(v)));
+  }
+  partes.push(
+    texto(px(75), ejeAbajo + 22, 'Confianza declarada de la afirmación más débil que la sostiene', {
+      size: 7,
+      fill: '#5d6b7d',
+      peso: 500,
+    }),
+  );
+
+  return (
+    `<svg viewBox="0 0 680 ${ejeAbajo + 30}" xmlns="http://www.w3.org/2000/svg"` +
+    ` role="img" style="max-width:100%">${partes.join('')}</svg>`
+  );
+}
+
+/**
+ * Iniciativas por año de inicio declarado.
+ *
+ * Transcrito de la figura entregada: 49 iniciativas fechadas, cuatro sin
+ * fecha. La anotación de la banda se apoyaba sobre las cifras de las barras y
+ * las tapaba; ahora vive encima del área de trazado, que está vacía.
+ */
+export const CRONOLOGIA = [
+  ['antes de 2020', 2],
+  ['2020', 1],
+  ['2021', 2],
+  ['2022', 0],
+  ['2023', 0],
+  ['2024', 3],
+  ['2025', 23],
+  ['2026', 17],
+  ['2027', 1],
+];
+
+/** Figura de cronología · el campo entero cabe en dos años. */
+export function figuraCronologia() {
+  const X0 = 14;
+  const ANCHO = 652;
+  const Y_BASE = 176;
+  const ALTO_MAX = 128;
+  const n = CRONOLOGIA.length;
+  const paso = ANCHO / n;
+  const barra = paso * 0.66;
+  const tope = Math.max(...CRONOLOGIA.map(([, v]) => v));
+  const desde = CRONOLOGIA.findIndex(([a]) => a === '2025');
+
+  const partes = [];
+
+  /* La banda marca los tres años que concentran el campo. Va detrás de las
+     barras y su rótulo, arriba del todo, donde no hay ninguna cifra. */
+  const xBanda = X0 + paso * desde + (paso - barra) / 2 - 6;
+  partes.push(
+    `<rect x="${n1(xBanda)}" y="14.0" width="${n1(ANCHO - (paso * desde) - (paso - barra) / 2 + 6)}"` +
+      ` height="${n1(Y_BASE - 14)}" rx="2" fill="#eef1f5" opacity="0.75"/>`,
+  );
+  partes.push(
+    texto(xBanda + 8, 24, '41 de las 49 iniciativas fechadas', {
+      size: 7.2,
+      fill: '#5d6b7d',
+      peso: 600,
+      anclaje: 'start',
+    }),
+  );
+
+  CRONOLOGIA.forEach(([año, v], i) => {
+    const x = X0 + paso * i + (paso - barra) / 2;
+    const h = v === 0 ? 0 : Math.max(3, (v / tope) * ALTO_MAX);
+    const y = Y_BASE - h;
+    if (v === 0) {
+      partes.push(
+        `<line x1="${n1(x + barra / 2 - 5)}" y1="${n1(Y_BASE - 3)}"` +
+          ` x2="${n1(x + barra / 2 + 5)}" y2="${n1(Y_BASE - 3)}"` +
+          ` stroke="#b9c4d1" stroke-width="1.2"/>`,
+      );
+    } else {
+      partes.push(
+        `<rect x="${n1(x)}" y="${n1(y)}" width="${n1(barra)}" height="${n1(h)}"` +
+          ` rx="1.4" fill="${i >= desde ? '#0f4c81' : '#1a6fa8'}" opacity="1"/>`,
+      );
+    }
+    partes.push(
+      texto(x + barra / 2, (v === 0 ? Y_BASE - 3 : y) - 5, v === 0 ? '—' : String(v), {
+        size: 8.6,
+        fill: v === 0 ? '#8c98a8' : '#0d1420',
+        peso: 650,
+      }),
+    );
+    partes.push(
+      texto(x + barra / 2, Y_BASE + 13, año, {
+        size: 7.2,
+        fill: i >= desde ? '#26313f' : '#8c98a8',
+        peso: i >= desde ? 600 : 400,
+      }),
+    );
+  });
+
+  partes.push(
+    `<line x1="${n1(X0)}" y1="${n1(Y_BASE)}" x2="${n1(X0 + ANCHO)}" y2="${n1(Y_BASE)}"` +
+      ` stroke="#c3ccd6" stroke-width="0.6"/>`,
+  );
+
+  return (
+    `<svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg"` +
+    ` role="img" style="max-width:100%">${partes.join('')}</svg>`
+  );
+}
+
 /* `import.meta.url` llega como `file:///C:/…` y `argv[1]` como `C:\…`: comparar
    las dos cadenas nunca da verdadero en Windows. Se comparan las rutas. */
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -711,6 +1016,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   fs.writeFileSync(
     path.join(salida, 'por-capacidad.svg'),
     figuraPorCapacidad(porCapacidad('v2'), filas.length),
+  );
+  fs.writeFileSync(path.join(salida, 'cobertura.svg'), figuraCobertura());
+  fs.writeFileSync(path.join(salida, 'conclusiones.svg'), figuraConclusiones());
+  fs.writeFileSync(path.join(salida, 'cronologia.svg'), figuraCronologia());
+  fs.writeFileSync(
+    path.join(salida, 'perfil-apartada.svg'),
+    figuraPerfil(FUERA_DEL_COMPARADOR[0]),
   );
 
   const pisos = filas.map((f) => f.piso);

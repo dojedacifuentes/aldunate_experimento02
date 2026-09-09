@@ -47,14 +47,20 @@ La v2.0.0 estuvo dos días publicada con las tablas en `.v2` y las figuras en
 
 ## Las figuras salen de aquí
 
-`figuras.mjs` genera las cuatro figuras que derivan de la matriz —el
-comparador, la comprobación contra cobertura, la matriz de capacidades y su
-lectura por filas— más el perfil de la institución apartada, que va al
-complemento. Existe por el defecto de arriba: mientras la figura y la tabla
-salgan de sitios distintos, divergir es cuestión de tiempo.
+`figuras.mjs` genera siete figuras del informe y una del complemento. Cuatro
+derivan de la matriz —el comparador, la comprobación contra cobertura, la
+matriz de capacidades y su lectura por filas—; tres se trajeron aquí porque las
+entregadas tenían defectos que no se arreglan editando un SVG a mano: la de
+cobertura llevaba dentro una comparación con una versión anterior, la de
+conclusiones escribía rótulos que las barras tapaban desde la mitad, y la
+cronología ponía su anotación encima de una cifra. La octava es el perfil de la
+institución apartada, que va al complemento.
+
+Existe por el defecto de arriba: mientras la figura y la tabla salgan de sitios
+distintos, divergir es cuestión de tiempo.
 
 ```bash
-node tools/informes/informe-01/comparador/figuras.mjs      # las cinco figuras
+node tools/informes/informe-01/comparador/figuras.mjs      # las ocho figuras
 node tools/informes/informe-01/comparador/recalcular.mjs
 node tools/informes/informe-01/comparador/sensibilidad.mjs
 ```

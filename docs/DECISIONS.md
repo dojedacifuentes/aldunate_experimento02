@@ -892,3 +892,71 @@ título largo.
 sobre una versión ya publicada. No se hace: se publica dentro de la v2.1.0,
 porque esa versión sale de todos modos y reimprimir la v2.0.0 con una portada
 distinta obligaría a explicar dos veces la misma corrección.
+
+---
+
+## D-041 — El documento afirma; el sitio versiona
+
+**Qué.** El cuerpo de un informe no compara con sus versiones anteriores.
+Enuncia en presente y cita su evidencia. El registro de cambios vive en la
+ficha del sitio —que ya lo publica entero, versión por versión— y en una nota
+de un párrafo en el frontis, para quien lea el PDF suelto.
+
+**Por qué.** La v2.1.0 llegó a arrastrar ochenta y cinco menciones a versiones
+anteriores. Dieciséis estaban en el frontis, que es su sitio. Las otras sesenta
+y nueve estaban repartidas por el cuerpo: en el resumen ejecutivo, en los ocho
+hallazgos, en siete pasajes de las conclusiones, en los pies de figura y dentro
+de dos figuras. «La v0.8.0 sólo podía decir…», «eran 31 en la versión
+anterior», «esta versión recorre…».
+
+Quien recibe el documento no ha leído el anterior. Para ese lector cada una de
+esas frases compara contra algo que no tiene delante, y el informe se lee como
+un registro de cambios en lugar de como lo que es: la descripción de once
+Escuelas de Derecho chilenas. El diff es información sobre el trabajo, no sobre
+el objeto, y el sitio ya tiene el lugar donde publicarlo.
+
+**Descartado.** Bajar el diff completo a un anexo del propio documento, que era
+la otra salida coherente y sirve si el PDF circula sin el sitio al lado. Se
+descarta porque duplica lo que la ficha ya publica y porque un anexo de
+versiones envejece: cada publicación lo alarga y nadie lo poda.
+
+**Qué se conserva del frontis.** La nota de versión, de un párrafo. Y la caja
+que explica por qué la cohorte es de once y el comparador de diez: no es un
+cambio, es la regla que hay que conocer para leer cualquier cifra del
+documento, y sin ella las dos cifras se leen como una contradicción.
+
+**Cómo se sostiene.** `src/lib/informes.test.ts` comprueba que el cuerpo del
+documento vigente no contenga comparaciones con versiones anteriores. Excluye
+el frontis, las figuras y los encabezados corrientes, que llevan el sello de
+versión por diseño. Sin la prueba, la regla dura hasta la siguiente entrega.
+
+---
+
+## D-042 — Una regla escrita para las URL no puede gobernar las cabeceras
+
+**Qué.** La capa de lectura devuelve `overflow-wrap: normal` al texto corriente
+—párrafos, listas, celdas y cabeceras de tabla— y deja `anywhere` sólo donde
+hacía falta: los identificadores y las direcciones del registro de fuentes.
+
+**Por qué.** El documento entregado trae
+`.srcid,.srcurl,td,th,p,li,div{overflow-wrap:anywhere}`. En una URL de treinta
+caracteres sin espacios la regla es correcta y evita un desbordamiento. En una
+cabecera de tabla autoriza al navegador a partir cualquier palabra por donde
+caiga, y en las columnas estrechas de la matriz de capacidades —4,6 mm medidos—
+el resultado eran «PRESEN / CIA», «TRANSF / ERENCI / A» y un «PISO» roto letra
+a letra en vertical. Treinta y tres celdas del documento publicado.
+
+**Descartado.** Ensanchar las columnas. La matriz son doce columnas en 160 mm y
+no hay milímetros que repartir; el arreglo real es que el rótulo quepa, no que
+la columna crezca. Los diez rótulos se abrevian y la nota de la tabla declara
+las abreviaturas.
+
+**Regla que queda.** Una cabecera no se parte: si no cabe, se acorta el rótulo
+y se declara la abreviatura. Y una regla de emergencia tipográfica se aplica a
+la clase que la necesita, nunca a `td, th, p, li, div`.
+
+**Cómo se mide.** `tools/informes/lector/verificar-maqueta.mjs` cuenta, sobre el
+documento publicado y en modo impresión, las celdas cuyo número de líneas supera
+su número de palabras —que es la firma de una palabra partida—, las tablas que
+se salen de la caja de 160 mm y los rótulos de figura que pisan una barra. En la
+v2.1.0 daba 33, 0 y 8; en la v2.2.0 da 0, 0 y 0.

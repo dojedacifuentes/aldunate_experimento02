@@ -126,7 +126,7 @@ export const workItems: WorkItem[] = [
     caveat:
       'La cobertura sigue siendo desigual —1,8 a 1 entre el piloto y el resto, antes 2,4 a 1—, y por eso el comparador ordinal publica bandas de piso y techo en vez de un número. La PUCV queda fuera de él por conflicto de interés declarado y se trata en un documento aparte, con su perfil completo y sin posición.',
     href: '/informes/ia-escuelas-derecho-chile',
-    updatedAt: '2026-09-08',
+    updatedAt: '2026-09-09',
   },
   {
     id: 'informe-02',

@@ -93,6 +93,129 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '2.2.0',
+        date: '2026-09-09',
+        status: 'publicado',
+        headline: 'El informe deja de narrarse a sí mismo, y sus tablas se pueden leer',
+        summary:
+          'El documento arrastraba 69 pasajes escritos como comparación con versiones que el lector no tiene delante: «la v0.8.0 sólo podía decir», «eran 31 en la versión anterior». Quedan tres, y las tres nombran una ronda de trabajo de campo, no una versión. El diff vive donde corresponde, que es esta ficha. En paralelo, las cabeceras de tabla dejan de partirse a mitad de palabra —eran 33— y tres figuras se rehacen: la de cobertura llevaba dentro una marca de «hasta aquí llegaba la versión anterior», y la de conclusiones tenía los rótulos tapados por las barras.',
+        pages: 112,
+        reading: 'documento',
+        pdf: '/descargas/informe-01-v2.2.0/informe-01-v2.2.0.pdf',
+        html: '/descargas/informe-01-v2.2.0/informe-01-v2.2.0.html',
+        figures: [
+          {
+            value: '74',
+            unit: '/74',
+            label: '100 % del corpus',
+            note: 'Fuentes públicas abiertas y contrastadas contra su publicación original, más 31 de contraste externo.',
+          },
+          {
+            value: '0',
+            label: 'ausencia confirmada',
+            note: 'Proyectos ANID sobre enseñanza del Derecho con inteligencia artificial, en 49.014 adjudicados desde 1982.',
+          },
+          {
+            value: '20',
+            unit: '/30',
+            label: 'el techo real',
+            note: 'Índice de formalización más alto del comparador de diez, alcanzado por una sola institución. El promedio de los pisos es 11,4 y la mediana, 11.',
+          },
+          {
+            value: '2',
+            unit: '/10',
+            label: 'norma propia',
+            note: 'Facultades del comparador con instrumento normativo propio sobre uso de IA, con acto citable.',
+          },
+          {
+            value: '5',
+            unit: '/100',
+            label: 'celdas sin concluir',
+            note: 'Repartidas en cuatro instituciones. Sólo una de ellas tiene más de una.',
+          },
+        ],
+        changelog: [
+          'El documento afirma; el sitio versiona. El cuerpo llevaba 69 pasajes escritos como comparación con versiones anteriores, repartidos por el resumen ejecutivo, los ocho hallazgos, siete puntos de las conclusiones, los pies de figura y dos figuras. Quien recibe el informe no ha leído el anterior: para ese lector cada uno de esos pasajes compara contra algo que no tiene delante. Se reescriben en presente, con su evidencia. Quedan tres menciones y las tres nombran una ronda de trabajo de campo, no una versión.',
+          'El frontis pasa de dos registros de cambios a una nota. Abría con tres párrafos sobre lo que corregía la versión anterior y seguía con una lista de seis bloques sobre lo que había corregido la anterior a ésa: 5.710 caracteres de historia editorial antes del índice. Queda una nota de un párrafo y se conserva la caja que explica por qué la cohorte es de once y el comparador de diez, que es una regla de lectura y no un cambio.',
+          'Las cabeceras de tabla dejan de partirse a mitad de palabra. El documento traía `overflow-wrap:anywhere` sobre `td` y `th` —una regla puesta para que una URL sin espacios no desbordara su celda— y el navegador la aplicaba a todo: en una columna de 4,6 mm se leía «PRESEN / CIA», «TRANSF / ERENCI / A» y un «PISO» roto letra a letra en vertical. Eran 33 celdas. Ahora son cero.',
+          'La matriz del anexo C abrevia sus diez columnas y declara las abreviaturas; el anexo D deja de repetirla. Ese anexo traía, en una columna estrecha, los diez pares «capacidad + puntos» de cada institución como texto corrido: cuatro líneas por fila con la misma información que el anexo C dibuja dos páginas antes. Se retira y la nota dice dónde está el detalle.',
+          'Tres figuras se rehacen desde sus datos. La de cobertura llevaba dentro una marca de «hasta aquí llegaba la versión anterior» y una leyenda que la explicaba; ahora dice cuánto se recorrió y marca el piloto de profundidad. La de conclusiones escribía rótulos de hasta 85 caracteres sin ancho máximo y las barras los tapaban desde la mitad; ahora el texto se parte dentro de su columna. La cronología tenía la anotación de la banda encima de la cifra de una barra.',
+          'Las cifras se alinean por columna. Las tablas heredaban la numeración de estilo antiguo del cuerpo, correcta en prosa y pésima en una tabla: los dígitos suben y bajan y la columna deja de leerse. Las columnas numéricas pasan a numeración tabular y alineación a la derecha.',
+          'Una prueba nueva impide que la narración vuelva. `informes.test.ts` comprueba que el cuerpo del documento vigente no contenga comparaciones con versiones anteriores, excluyendo el frontis —que es donde la nota corresponde— y los encabezados corrientes. Y `tools/informes/lector/verificar-maqueta.mjs` mide sobre el documento publicado las palabras partidas, las tablas que se salen de la caja y los rótulos de figura que pisan una barra.',
+          'Ninguna cifra sobre las instituciones cambia. El corpus, las fuentes, la rúbrica y el comparador son los de la v2.1.0. Lo que cambia es cómo se lee.',
+        ],
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-v2.2.0/informe-01-v2.2.0.pdf',
+            description:
+              'A4 de 112 páginas, con portada de una sola hoja, encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir. 2,7 MB.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-01-v2.2.0/informe-01-v2.2.0.docx',
+            description:
+              'Documento editable a 12 puntos, con las diecinueve tablas y sin las figuras. Para quien deba anotarlo o devolverlo con control de cambios.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-v2.2.0/informe-01-v2.2.0.html',
+            description:
+              'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión. Es el mismo que se lee dentro del sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Matriz de capacidades',
+            href: '/descargas/informe-01-v2.2.0/datos/matriz-v2.json',
+            description:
+              'Las diez capacidades por institución en los dos estados de la enmienda 2.2. De aquí salen las cuatro figuras derivadas de la matriz y las tres tablas del comparador, y de ningún otro sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Fuentes de la segunda ronda',
+            href: '/descargas/informe-01-v2.2.0/datos/fuentes-nuevas.json',
+            description:
+              'Las 22 fuentes de la ronda de ampliación, con su grado documental y su confianza. No están contrastadas y el archivo lo declara: se marcan «Ronda 2» y no «contrastada».',
+          },
+        ],
+        companions: [
+          {
+            id: 'complemento-pucv',
+            title: 'La PUCV como caso de proyección, no como caso comparado',
+            version: '1.1',
+            date: '2026-09-08',
+            summary:
+              'Por qué la Pontificia Universidad Católica de Valparaíso se retira del comparador de diez, qué acredita su perfil completo —18 puntos de 30, sin ninguna celda sin concluir— y dónde están los doce que le faltan. Con las cuatro construcciones posibles, un optativo cuyo proyecto final es la medición, y la ventana de decisión con lo que cuesta dejarla pasar.',
+            rationale:
+              'Quien firma el informe trabaja en el Programa de Derecho, Inteligencia Artificial y Tecnología de esa Escuela. El conflicto es actual, directo y sobre el objeto medido, y hay además un sesgo medible: la PUCV fue una de las tres instituciones del piloto de profundidad, de modo que en un instrumento que puntúa capacidades acreditadas por evidencia pública, haberla investigado más produce mecánicamente una puntuación más alta sin que nada haya cambiado en la institución. Este documento publica su perfil para que la decisión sea auditable, y no puntúa, no ordena y no compara.',
+            html: '/descargas/informe-01-v2.2.0/complemento-pucv-v1.1.html',
+            artifacts: [
+              {
+                format: 'PDF',
+                label: 'Leer o imprimir',
+                href: '/descargas/informe-01-v2.2.0/complemento-pucv-v1.1.pdf',
+                description: 'A4 de 25 páginas, con el perfil de capacidades y el dossier de evidencia completo en anexo.',
+              },
+              {
+                format: 'Word',
+                label: 'Editar o comentar',
+                href: '/descargas/informe-01-v2.2.0/complemento-pucv-v1.1.docx',
+                description: 'Documento editable, para devolverlo con observaciones.',
+              },
+              {
+                format: 'HTML',
+                label: 'Abrir el documento autónomo',
+                href: '/descargas/informe-01-v2.2.0/complemento-pucv-v1.1.html',
+                description: 'Un solo archivo, legible sin conexión.',
+              },
+            ],
+          },
+        ],
+      },
+      {
         version: '2.1.0',
         date: '2026-09-08',
         status: 'publicado',

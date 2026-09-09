@@ -791,10 +791,30 @@
     min-width: 34rem;
   }
 
+  /* El documento trae `overflow-wrap:anywhere` sobre `td, th, p, li, div`
+     para que una URL sin espacios no desborde su celda. Aplicada al texto
+     corriente parte cualquier palabra por donde caiga, y en una columna
+     estrecha se lee «PRESEN / CIA» o un «PISO» roto en vertical. Se devuelve
+     el comportamiento normal a la prosa y se deja donde hacía falta. */
+  p,
+  li,
+  td,
+  th,
+  div {
+    overflow-wrap: normal;
+  }
+
+  .srcurl,
+  .srcid,
+  .src {
+    overflow-wrap: anywhere;
+  }
+
   thead th {
     font-size: 0.6875rem;
     padding: 0 0.9rem 0.5rem 0;
     border-bottom: 1px solid var(--ink2);
+    hyphens: none;
   }
 
   tbody td {
@@ -809,6 +829,8 @@
   td.num,
   th.num {
     padding-right: 0.6rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums lining-nums;
   }
 
   .tbl-note {

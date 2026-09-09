@@ -2,6 +2,68 @@
 
 ## No publicado
 
+### Informe 01 v2.2.0 · el documento deja de narrarse a sí mismo, y sus tablas se pueden leer
+
+**El documento afirma; el sitio versiona (D-041).** El cuerpo llevaba 69
+pasajes escritos como comparación con versiones anteriores —«la v0.8.0 sólo
+podía decir», «eran 31 en la versión anterior», «esta versión recorre»—
+repartidos por el resumen ejecutivo, los ocho hallazgos, siete puntos de las
+conclusiones, los pies de figura y dos figuras. Quien recibe el informe no ha
+leído el anterior: para ese lector cada pasaje compara contra algo que no tiene
+delante. Se reescriben en presente, con su evidencia. Quedan tres menciones y
+las tres nombran una ronda de trabajo de campo, no una versión.
+
+**El frontis pasa de dos registros de cambios a una nota.** Abría con tres
+párrafos sobre lo que corregía la versión anterior y seguía con una lista de
+seis bloques sobre lo que había corregido la anterior a ésa: 5.710 caracteres
+antes del índice. Queda una nota de un párrafo. Se conserva la caja de «once y
+diez», que no es un cambio sino la regla que hay que conocer para leer
+cualquier cifra del documento.
+
+**Las cabeceras dejan de partirse a mitad de palabra (D-042).** El documento
+trae `overflow-wrap:anywhere` sobre `td, th, p, li, div`, una regla puesta para
+que una URL sin espacios no desborde su celda. Aplicada a una cabecera autoriza
+a partir cualquier palabra: en las columnas de 4,6 mm de la matriz se leía
+«PRESEN / CIA», «TRANSF / ERENCI / A» y un «PISO» roto letra a letra en
+vertical. Eran 33 celdas. La capa de lectura devuelve el corte normal al texto
+corriente y deja `anywhere` en los identificadores y las direcciones, que es
+donde hacía falta.
+
+**El anexo D deja de repetir el anexo C.** Traía, en una columna estrecha, los
+diez pares «capacidad + puntos» de cada institución como texto corrido: cuatro
+líneas por fila con la misma información que el anexo C dibuja dos páginas
+antes con una celda por capacidad. Se retira la columna y la nota dice dónde
+está el detalle. La matriz del anexo C abrevia sus diez rótulos y los declara.
+
+**Tres figuras se rehacen desde sus datos**, y con ellas son siete las que salen
+de `figuras.mjs`. La de cobertura llevaba dentro una marca de «hasta aquí
+llegaba la versión anterior» con su leyenda: ahora dice cuánto se recorrió y
+marca el piloto de profundidad. La de conclusiones escribía rótulos de hasta 85
+caracteres sin ancho máximo y las barras los tapaban desde la mitad —«La
+cobertura desigual acota, pero ya no impide, la compar»—: ahora el texto se
+parte dentro de su columna. La cronología tenía la anotación de la banda encima
+de la cifra de una barra.
+
+**Las cifras se alinean por columna.** Las tablas heredaban la numeración de
+estilo antiguo del cuerpo, correcta en prosa y pésima en una tabla. Las
+columnas numéricas pasan a numeración tabular y alineación a la derecha.
+
+**Dos comprobaciones nuevas, porque una regla sin prueba dura una entrega.**
+`informes.test.ts` falla si vuelve la narración de versiones al cuerpo. Y
+`tools/informes/lector/verificar-maqueta.mjs` mide sobre el documento publicado
+las palabras partidas, las tablas que se salen de la caja y los rótulos de
+figura que pisan una barra: en la v2.1.0 daba 33, 0 y 8; en la v2.2.0 da 0, 0 y
+0.
+
+**Una cifra del sitio se corrige.** El aviso de la v2.1.0 sobre «43 páginas de
+aire» era falso: salía de una medición hecha con el viewport equivocado. El
+contenido son 93 páginas y el PDF tiene 112, de modo que el sobrecoste real de
+abrir capítulo en hoja nueva son 19 páginas sobre 37 secciones. No se toca la
+paginación.
+
+**Ninguna cifra sobre las instituciones cambia.** El corpus, las fuentes, la
+rúbrica y el comparador son los de la v2.1.0. Cambia cómo se lee.
+
 ### Informe 01 v2.1.0 · la institución apartada sale también de las figuras, y la portada deja de correrse
 
 **La v2.0.0 publicaba dos matrices a la vez.** Sus tres tablas —el orden de la

@@ -197,6 +197,36 @@ describe('capa de lectura de los documentos publicados', () => {
     expect(anclas.length).toBeGreaterThan(4);
   });
 
+  /*
+    El documento afirma; el sitio versiona.
+
+    La v2.1.0 llegó a arrastrar ochenta y cinco menciones a versiones
+    anteriores, y sesenta y nueve de ellas vivían en el cuerpo: «la v0.8.0 sólo
+    podía decir…», «eran 31 en la versión anterior». Quien recibe el documento
+    no ha leído el anterior, así que para ese lector cada una es una
+    comparación contra algo que no tiene delante, y el informe se lee como un
+    registro de cambios.
+
+    El diff vive en el changelog de la ficha y en la nota del frontis. Aquí se
+    comprueba que no haya vuelto al cuerpo. El frontis se excluye a propósito
+    —es donde la nota corresponde— igual que las figuras y los encabezados
+    corrientes, que llevan el sello de versión por diseño.
+  */
+  const NARRACION = /versión anterior|de la v\d+\.\d+\.\d+|la v\d+\.\d+\.\d+ (?:era|decía|declaraba|sostuvo|registraba|advertía|tenía)/gi;
+
+  it.each(destinos)('%s no narra sus propias versiones en el cuerpo', (destino) => {
+    const texto = fs.readFileSync(path.join(process.cwd(), destino), 'utf8');
+    /* Desde el encabezado de la sección, no desde el enlace del raíl: la capa
+       de lectura pone un índice de navegación arriba del todo, antes del
+       frontis, y anclar ahí metería el frontis dentro del cuerpo. */
+    const desdeElÍndice = texto.slice(texto.indexOf('<h2>Índice</h2>'));
+    const cuerpo = desdeElÍndice
+      .replace(/<svg[\s\S]*?<\/svg>/g, ' ')
+      .replace(/<div class="hdr">[\s\S]*?<\/div>/g, ' ')
+      .replace(/<[^>]+>/g, ' ');
+    expect(cuerpo.match(NARRACION) ?? []).toEqual([]);
+  });
+
   it.each(DOCUMENTOS.map((d: { fuente: string }) => d.fuente))(
     '%s se conserva intocado como fuente',
     (fuente) => {

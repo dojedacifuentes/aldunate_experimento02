@@ -366,15 +366,71 @@
     margin: 4mm 0;
   }
 
+  /* El documento trae `overflow-wrap:anywhere` sobre `td, th, p, li, div`.
+     La regla existe para que una URL de treinta caracteres sin espacios no
+     desborde su celda, y en una URL es correcta; aplicada a una cabecera de
+     tabla parte cualquier palabra por donde caiga. En una columna de 4,6 mm
+     el resultado medido era «PRESEN / CIA», «TRANSF / ERENCI / A» y un «PISO»
+     roto letra a letra en vertical.
+
+     Se devuelve el comportamiento normal —partir sólo entre palabras— a todo
+     el texto corriente, y se deja `anywhere` donde hacía falta: los
+     identificadores y las direcciones del registro de fuentes. Una columna
+     demasiado estrecha para su palabra más larga ahora se ensancha en lugar
+     de trocearla. */
+  p,
+  li,
+  td,
+  th,
+  div {
+    overflow-wrap: normal;
+  }
+
+  .srcurl,
+  .srcid,
+  td.srcurl,
+  .src {
+    overflow-wrap: anywhere;
+  }
+
   thead th {
     font-size: 9pt;
     letter-spacing: 0.06em;
     padding: 0 3mm 2mm 0;
     color: #2c3845;
+    /* Una cabecera nunca se parte: si no cabe, se acorta el rótulo. */
+    hyphens: none;
   }
 
   tbody td {
     padding: 2.2mm 3mm 2.2mm 0;
+  }
+
+  /* La matriz de capacidades son doce columnas en 160 mm. Con el relleno
+     corriente, los 3 mm de cada columna suman 36 y la tabla se pasa de la
+     caja por un milímetro. El ancho declarado no la salva: la tabla es de
+     maqueta automática y manda el contenido más el relleno. */
+  .matriz th,
+  .matriz td {
+    padding-right: 1.4mm;
+  }
+
+  /* Las cifras se leen en columna, y para eso tienen que ocupar todas lo
+     mismo. El documento usa numeración de estilo antiguo en el cuerpo, que es
+     correcta en prosa y pésima en una tabla: los dígitos suben y bajan y la
+     columna deja de alinearse. */
+  td.num,
+  th.num,
+  .cv-v {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  td.num {
+    text-align: right;
+  }
+
+  th.num {
+    text-align: right;
   }
 
   .tbl-note {

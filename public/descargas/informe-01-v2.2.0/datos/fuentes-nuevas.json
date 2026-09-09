@@ -1,0 +1,254 @@
+{
+ "nuevas": [
+  {
+   "id": "R2-UC-01",
+   "inst": "P. U. Católica de Chile",
+   "titulo": "Seminario de Investigación: Inteligencia Artificial y Derecho",
+   "grado": "B",
+   "url": "https://derecho.uc.cl/images/old/stories/Programacion_de_cursos/2025_1/Contracíclicos/2020/Contracíclicos/Carlos_Amunategui_-_Formulario_de_Condiciones_y_Evaluaciones_Seminario_2025.pdf",
+   "conf": 80
+  },
+  {
+   "id": "R2-UAI-01",
+   "inst": "U. Adolfo Ibáñez",
+   "titulo": "Proyectos en cursos de pre y posgrado",
+   "grado": "B",
+   "url": "https://labjusticia.uai.cl/proyectos-cursos/",
+   "conf": 80
+  },
+  {
+   "id": "R2-UAI-02",
+   "inst": "U. Adolfo Ibáñez",
+   "titulo": "Estudiantes UAI presentan prototipos para mejorar el acceso a la justicia de personas mayores",
+   "grado": "C",
+   "url": "https://www.uai.cl/noticias/derecho/estudiantes-uai-presentan-prototipos-para-mejorar-el-acceso-a-la-justicia-de-personas-mayores",
+   "conf": 65
+  },
+  {
+   "id": "R2-UNAB-01",
+   "inst": "U. Andrés Bello",
+   "titulo": "Lineamientos para el uso de inteligencia artificial generativa",
+   "grado": "B",
+   "url": "https://ia.unab.cl/wp-content/uploads/2025/04/Lineamientos-para-el-uso-de-inteligencia-artificial-generativa_UNAB.pdf",
+   "conf": 80
+  },
+  {
+   "id": "R2-UNAB-03",
+   "inst": "U. Andrés Bello",
+   "titulo": "Primera versión del Programa intensivo «Inteligencia artificial y nuevas tecnologías»",
+   "grado": "E",
+   "url": "https://es.linkedin.com/posts/derechounab_somosunab-derechounab-iaeducativa-activity-7290809556832571392-VAv_",
+   "conf": 45
+  },
+  {
+   "id": "R2-UAUT-01",
+   "inst": "U. Autónoma de Chile",
+   "titulo": "IA+D · Grupo de Investigación en Inteligencia Artificial y Derecho",
+   "grado": "B",
+   "url": "https://www.uautonoma.cl/investigacion/direccion-de-investigacion/grupos-de-investigacion/iad-grupo-de-investigacion-en-inteligencia-artificial-y-derecho/",
+   "conf": 80
+  },
+  {
+   "id": "R2-UAUT-02",
+   "inst": "U. Autónoma de Chile",
+   "titulo": "Resolución VRIP N.º 118/2020",
+   "grado": "A",
+   "url": "https://www.uautonoma.cl/content/uploads/2024/10/Res-118-2020.pdf",
+   "conf": 95
+  },
+  {
+   "id": "R2-UAUT-03",
+   "inst": "U. Autónoma de Chile",
+   "titulo": "Minor en Inteligencia Artificial y Derecho cumple 5 años",
+   "grado": "C",
+   "url": "https://www.uautonoma.cl/noticias/minor-en-inteligencia-artificial-y-derecho-cumple-5-anos/",
+   "conf": 65
+  },
+  {
+   "id": "R2-UAUT-04",
+   "inst": "U. Autónoma de Chile",
+   "titulo": "Minor reconoció a los primeros 12 estudiantes que completaron el programa",
+   "grado": "C",
+   "url": "https://www.uautonoma.cl/noticias/minor-en-inteligencia-artificial-y-derecho-reconocio-a-primeros-12-estudiantes-que-completaron-exitosamente-el-programa/",
+   "conf": 65
+  },
+  {
+   "id": "R2-UAUT-07",
+   "inst": "U. Autónoma de Chile",
+   "titulo": "Facultad de Derecho firma convenio con Legalfit",
+   "grado": "C",
+   "url": "https://www.uautonoma.cl/noticias/facultad-de-derecho-firma-convenio-con-legalfit-para-modernizar-la-formacion-practica-de-futuros-abogados-con-metodologias-agiles/",
+   "conf": 65
+  },
+  {
+   "id": "R2-UCEN-01",
+   "inst": "U. Central de Chile",
+   "titulo": "Resolución N.º 13/2025 · Instructivo sobre uso académico de inteligencia artificial",
+   "grado": "A",
+   "url": "https://www.ucentral.cl/ucentral/site/docs/20250723/20250723093952/resolucion_13_instructivo_uso_academico_inteligencia_artificial.pdf",
+   "conf": 95
+  },
+  {
+   "id": "R2-UCEN-03",
+   "inst": "U. Central de Chile",
+   "titulo": "Academia y Laboratorio LegalTech",
+   "grado": "B",
+   "url": "https://facdeh.ucentral.cl/legal-tech/academia-y-laboratorio-legaltech/",
+   "conf": 80
+  },
+  {
+   "id": "R2-UCH-02",
+   "inst": "U. de Chile",
+   "titulo": "Diploma en Derecho e Inteligencia Artificial · edición 2023",
+   "grado": "B",
+   "url": "https://postgrados.derecho.uchile.cl/diploma-en-derecho-e-inteligencia-artificial-2/",
+   "conf": 80
+  },
+  {
+   "id": "R2-UAND-01",
+   "inst": "U. de los Andes",
+   "titulo": "Curso en Inteligencia Artificial en el Derecho · admisión octubre 2025",
+   "grado": "B",
+   "url": "https://webapp.uandes.cl/postulacion/register?id=5063",
+   "conf": 80
+  },
+  {
+   "id": "R2-UAND-02",
+   "inst": "U. de los Andes",
+   "titulo": "Curso en IA en el Derecho: transformando la práctica legal con LegalTech",
+   "grado": "B",
+   "url": "https://postgrados.uandes.cl/cursos/curso-en-inteligencia-artificial-en-el-derecho-transformando-la-practica-legal-con-legaltech/",
+   "conf": 80
+  },
+  {
+   "id": "R2-UDD-01",
+   "inst": "U. del Desarrollo",
+   "titulo": "Observatorio de Derecho y Tecnología",
+   "grado": "B",
+   "url": "https://derecho.udd.cl/cdre/observatorio-de-derecho-y-tecnologia/",
+   "conf": 80
+  },
+  {
+   "id": "R2-UDD-02",
+   "inst": "U. del Desarrollo",
+   "titulo": "Curso Herramientas de Inteligencia Artificial para Abogados",
+   "grado": "B",
+   "url": "https://derecho.udd.cl/files/2025/12/curso-herramientas-de-inteligencia-artificial-para-abogados-23-01-2026.pdf",
+   "conf": 80
+  },
+  {
+   "id": "R2-UDD-03",
+   "inst": "U. del Desarrollo",
+   "titulo": "II Versión · Curso Herramientas de IA para Abogados",
+   "grado": "B",
+   "url": "https://derecho.udd.cl/files/2025/12/curso-herramientas-de-inteligencia-artificial-para-abogados-29-05-2026.pdf",
+   "conf": 80
+  },
+  {
+   "id": "R2-UDD-04",
+   "inst": "U. del Desarrollo",
+   "titulo": "Reglamentos e Instructivos · Política de IA y Reglamento Operativo IAG",
+   "grado": "B",
+   "url": "https://www.udd.cl/reglamentos-e-instructivos/",
+   "conf": 80
+  },
+  {
+   "id": "R2-PUCV-01",
+   "inst": "P. U. Católica de Valparaíso",
+   "titulo": "Información General · Diplomados Derecho PUCV",
+   "grado": "B",
+   "url": "https://www.pucv.cl/uuaa/diplomados-derecho/informacion-general",
+   "conf": 80
+  },
+  {
+   "id": "R2-PUCV-02",
+   "inst": "P. U. Católica de Valparaíso",
+   "titulo": "Derecho adecúa sus programas a las nuevas necesidades de la disciplina",
+   "grado": "C",
+   "url": "https://www.pucv.cl/pucv/noticias/vida-universitaria/derecho-adecua-sus-programas-a-las-nuevas-necesidades-de-la-disciplina",
+   "conf": 65
+  },
+  {
+   "id": "R2-PUCV-04",
+   "inst": "P. U. Católica de Valparaíso",
+   "titulo": "ScribeClaroPUCV es utilizada por el Poder Judicial",
+   "grado": "C",
+   "url": "https://www.pucv.cl/pucv/noticias/vida-universitaria/scribeclaropucv-plataforma-de-ia-para-mejorar-la-redaccion-es-utilizada",
+   "conf": 65
+  }
+ ],
+ "repetidas": [
+  {
+   "id": "R2-UC-02",
+   "url": "https://derecho.uc.cl/facultad-de-derecho-uc-establece-guia-etica-para-uso-de-inteligencia-artificial-generativa/",
+   "ya": "src-puc-chile-008",
+   "tituloR2": "Facultad de Derecho UC establece guía ética para uso de IA generativa",
+   "tituloV1": "Facultad de Derecho UC establece guía ética para uso de inteligencia artificial generativa"
+  },
+  {
+   "id": "R2-UNAB-02",
+   "url": "https://noticias.unab.cl/facultad-de-derecho-unab-presento-su-cuenta-publica-2025-con-foco-en-innovacion-internacionalizacion-y-fortalecimiento-academico/",
+   "ya": "src-unab-001",
+   "tituloR2": "Facultad de Derecho presentó su Cuenta Pública 2025",
+   "tituloV1": "Facultad de Derecho UNAB presentó su cuenta pública 2025"
+  },
+  {
+   "id": "R2-UAUT-05",
+   "url": "https://www.uautonoma.cl/noticias/facultad-de-derecho-pone-en-marcha-innovador-programa-de-formacion-en-inteligencia-artificial-para-estudiantes-de-sus-clinicas-juridicas/",
+   "ya": "src-uautonoma-002",
+   "tituloR2": "Facultad de Derecho pone en marcha programa de formación en IA para sus Clínicas Jurídicas",
+   "tituloV1": "Facultad de Derecho pone en marcha programa de formación en inteligencia artificial para estudiantes de sus clínicas jurídicas"
+  },
+  {
+   "id": "R2-UAUT-06",
+   "url": "https://www.uautonoma.cl/noticias/alfabetizacion-en-ia-generativa-en-derecho-alcanza-al-80-de-docentes-y-se-amplia-a-estudiantes/",
+   "ya": "src-uautonoma-001",
+   "tituloR2": "Alfabetización en IA generativa en Derecho alcanza al 80% de docentes",
+   "tituloV1": "Alfabetización en IA generativa en Derecho alcanza al 80 % de docentes y se amplía a estudiantes"
+  },
+  {
+   "id": "R2-UCEN-02",
+   "url": "https://facdeh.ucentral.cl/legal-tech/",
+   "ya": "src-ucentral-003",
+   "tituloR2": "Programa de IA y LegalTech",
+   "tituloV1": "Programa de IA y LegalTech · Facultad de Derecho y Humanidades"
+  },
+  {
+   "id": "R2-UCH-01",
+   "url": "https://postgrados.derecho.uchile.cl/diploma-en-derecho-e-inteligencia-artificial/",
+   "ya": "src-uchile-002",
+   "tituloR2": "Diploma en Derecho e Inteligencia Artificial · edición 2022",
+   "tituloV1": "Diploma en Derecho e Inteligencia Artificial · edición 2022"
+  },
+  {
+   "id": "R2-UDEC-01",
+   "url": "https://jur.udec.cl/content/facultad-de-ciencias-jurídicas-y-sociales-udec-realizó-seminario-sobre-inteligencia",
+   "ya": "src-udec-001",
+   "tituloR2": "Facultad realizó seminario sobre IA aplicada al ejercicio jurídico",
+   "tituloV1": "Facultad de Ciencias Jurídicas y Sociales UdeC realizó seminario sobre inteligencia artificial"
+  },
+  {
+   "id": "R2-UDP-01",
+   "url": "https://derecho.udp.cl/direccion-de-inteligencia-artificial-y-derecho/",
+   "ya": "src-udp-002",
+   "tituloR2": "Dirección de Inteligencia Artificial y Derecho",
+   "tituloV1": "Dirección de Inteligencia Artificial y Derecho"
+  },
+  {
+   "id": "R2-UDP-02",
+   "url": "https://derecho.udp.cl/academico-rafael-mery-es-nombrado-director-de-inteligencia-artificial-y-derecho-udp/",
+   "ya": "src-udp-001",
+   "tituloR2": "Académico Rafael Mery es nombrado Director de IA y Derecho UDP",
+   "tituloV1": "Académico Rafael Mery es nombrado director de Inteligencia Artificial y Derecho UDP"
+  },
+  {
+   "id": "R2-PUCV-03",
+   "url": "https://www.pucv.cl/uuaa/derecho-pucv/noticias/exitosa-iv-version-de-innova-day-2025-fomentando-la-innovacion-legal",
+   "ya": "src-pucv-011",
+   "tituloR2": "Exitosa IV Versión de Innova Day 2025",
+   "tituloV1": "IV versión de Innova Day 2025"
+  }
+ ],
+ "totalV1": 74,
+ "totalV2": 96
+}
