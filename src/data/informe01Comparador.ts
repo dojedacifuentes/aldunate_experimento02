@@ -185,7 +185,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 20,
       "techo": 20,
       "sinConcluir": 0,
-      "puntosExpuestos": 2
+      "puntosExpuestos": 2,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. Autónoma de Chile",
@@ -278,7 +279,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 17,
       "techo": 17,
       "sinConcluir": 0,
-      "puntosExpuestos": 5
+      "puntosExpuestos": 5,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. Central de Chile",
@@ -371,7 +373,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 17,
       "techo": 17,
       "sinConcluir": 0,
-      "puntosExpuestos": 7
+      "puntosExpuestos": 7,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. de Chile",
@@ -440,7 +443,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 12,
       "techo": 14,
       "sinConcluir": 1,
-      "puntosExpuestos": 0
+      "puntosExpuestos": 0,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. Adolfo Ibáñez",
@@ -532,7 +536,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 11,
       "techo": 11,
       "sinConcluir": 0,
-      "puntosExpuestos": 5
+      "puntosExpuestos": 5,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. Andrés Bello",
@@ -611,7 +616,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 11,
       "techo": 11,
       "sinConcluir": 0,
-      "puntosExpuestos": 1
+      "puntosExpuestos": 1,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. del Desarrollo",
@@ -699,7 +705,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 8,
       "techo": 10,
       "sinConcluir": 1,
-      "puntosExpuestos": 5
+      "puntosExpuestos": 5,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. Diego Portales",
@@ -790,7 +797,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 8,
       "techo": 8,
       "sinConcluir": 0,
-      "puntosExpuestos": 0
+      "puntosExpuestos": 0,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. de los Andes",
@@ -867,7 +875,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 5,
       "techo": 9,
       "sinConcluir": 2,
-      "puntosExpuestos": 0
+      "puntosExpuestos": 0,
+      "excluidaDelOrden": false
     },
     {
       "institucion": "U. de Concepción",
@@ -944,7 +953,8 @@ export const informe01Comparador: Informe01Comparador = {
       "piso": 5,
       "techo": 7,
       "sinConcluir": 1,
-      "puntosExpuestos": 0
+      "puntosExpuestos": 0,
+      "excluidaDelOrden": false
     }
   ],
   "apartada": {
@@ -1014,7 +1024,8 @@ export const informe01Comparador: Informe01Comparador = {
     "piso": 18,
     "techo": 18,
     "sinConcluir": 0,
-    "puntosExpuestos": 0
+    "puntosExpuestos": 0,
+    "excluidaDelOrden": true
   },
   "maximo": 30,
   "cierres": {

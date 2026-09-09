@@ -108,7 +108,19 @@ function fila(institución, estados) {
     if (cierre && !cierre.contrastada) puntosExpuestos += puntos ?? 0;
     return { capacidad, estado, puntos, cierre };
   });
-  return { institucion: institución, celdas, piso, techo: piso + sinConcluir * 2, sinConcluir, puntosExpuestos };
+  return {
+    institucion: institución,
+    celdas,
+    piso,
+    techo: piso + sinConcluir * 2,
+    sinConcluir,
+    puntosExpuestos,
+    /* La exclusión del orden viaja con el dato y no con la pantalla que lo
+       dibuja. Antes era una convención —la apartada estaba en otro campo— y una
+       convención no impide que un componente nuevo la ordene con las demás por
+       descuido. Con la bandera, cualquier consumidor puede comprobarlo. */
+    excluidaDelOrden: institución === APARTADA,
+  };
 }
 
 const todas = Object.entries(D.v2).map(([inst, estados]) => fila(inst, estados));

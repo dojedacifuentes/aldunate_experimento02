@@ -227,3 +227,35 @@ describe('la afirmación de corpus sólo puede vivir en el registro versionado',
     expect(culpables.map((f) => f.slice(process.cwd().length).split(sep).join('/'))).toEqual([]);
   });
 });
+
+describe('la institución apartada no recibe orden, puntuación ni lugar', () => {
+  /*
+    D-037 la sacó del comparador; la v3.2.0 sacó además su puntuación del texto,
+    porque la secci\u00f3n 8 declaraba que no la recibe y a la vez publicaba «18
+    puntos, es decir el segundo lugar del orden». La bandera existe para que la
+    exclusión sea comprobable por cualquier consumidor del dato y no una
+    convención sobre en qué campo vive.
+  */
+  it('marca la apartada con la bandera, y sólo a ella', () => {
+    expect(informe01Comparador.apartada?.excluidaDelOrden).toBe(true);
+    expect(informe01Comparador.filas.map((f) => f.excluidaDelOrden)).toEqual(
+      informe01Comparador.filas.map(() => false),
+    );
+  });
+
+  it('ninguna fila del orden lleva el nombre de la apartada', () => {
+    expect(informe01Comparador.filas.some((f) => f.institucion === APARTADA)).toBe(false);
+  });
+
+  it('el comparador no dibuja la banda de la apartada', () => {
+    /* La banda junto a un orden es una posición aunque no lleve número. El dato
+       se conserva para trazabilidad; lo que no puede es pintarse. */
+    const fuente = readFileSync(
+      join(process.cwd(), 'src/components/informes/Comparador.tsx'),
+      'utf8',
+    );
+    const trasApartada = fuente.slice(fuente.indexOf('apartada.celdas.map'));
+    expect(trasApartada).not.toMatch(/<Banda\s+fila=\{apartada\}/);
+    expect(trasApartada).toContain('sin puntuación');
+  });
+});

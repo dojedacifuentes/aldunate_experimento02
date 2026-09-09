@@ -229,8 +229,18 @@ export function Comparador({ className }: { className?: string }) {
                     </span>
                   </td>
                 ))}
+                {/*
+                  Sin banda y sin cifra. Desde la v3.2.0 el informe no publica
+                  la puntuación de esta institución ni su lugar, y el sitio no
+                  puede publicarlos por su cuenta: la banda dibujada junto a un
+                  orden es una posición, aunque no lleve número. El perfil
+                  completo se lee en el documento complementario, que no puntúa
+                  contra nadie.
+                */}
                 <td className="py-3 pl-4">
-                  <Banda fila={apartada} maximo={maximo} />
+                  <span className="mono whitespace-nowrap text-[0.6875rem] text-muted-foreground">
+                    sin puntuación
+                  </span>
                 </td>
               </tr>
             </tfoot>

@@ -375,6 +375,14 @@ export interface Informe01FilaComparador {
   sinConcluir: number;
   /** Cuántos de sus puntos descansan en fuente sin contrastar. */
   puntosExpuestos: number;
+  /**
+   * Apartada del orden por el conflicto de interés declarado (D-037). Desde la
+   * v3.2.0 el informe tampoco publica su puntuación ni su lugar: una cifra
+   * calculada con un esfuerzo de investigación mayor no es comparable con las
+   * demás. El cálculo se conserva para trazabilidad; lo que no se publica es su
+   * posición.
+   */
+  excluidaDelOrden: boolean;
 }
 
 export interface Informe01Comparador {
