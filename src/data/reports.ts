@@ -93,6 +93,127 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '3.1.0',
+        date: '2026-09-09',
+        status: 'publicado',
+        headline: 'El informe pasa de describir a orientar decisiones',
+        summary:
+          'Los ocho hallazgos interpretaban cada uno su dato, pero nadie leía qué dicen juntos. La sección 10 recibe tres bloques nuevos: las tres formas de ausencia que dibuja la matriz —unánime, bimodal y de umbral—, la cuantificación de la única capacidad que ninguna institución ha construido, y cuatro prioridades con su evidencia, su actor y lo que falta saber en cada una. Las cuatro son del campo, del regulador o del gremio: ninguna se dirige a una universidad nombrada del comparador, y el guion que las publica se detiene si alguna lo hiciera. Ninguna cifra cambia.',
+        pages: 116,
+        reading: 'documento',
+        pdf: '/descargas/informe-01-v3.1.0/informe-01-v3.1.0.pdf',
+        html: '/descargas/informe-01-v3.1.0/informe-01-v3.1.0.html',
+        figures: [
+          {
+            value: '10',
+            unit: '/100',
+            label: 'con instrumento formal',
+            note: 'Celdas del comparador que acreditan una capacidad con acto publicado. Cinco de las diez Facultades no acreditan ninguna, y de las que sí, una concentra cuatro.',
+          },
+          {
+            value: '0',
+            unit: '/30',
+            label: 'evaluación de efecto',
+            note: 'La única capacidad vacía en las diez instituciones, y la única sin una sola celda sin concluir: la ruta se recorrió entera en todas y no apareció nada en ninguna.',
+          },
+          {
+            value: '4',
+            label: 'prioridades',
+            note: 'Con evidencia, actor y qué falta saber. Del campo, del regulador o del gremio; ninguna dirigida a una universidad nombrada del comparador.',
+          },
+          {
+            value: '0',
+            label: 'ausencia confirmada',
+            note: 'Proyectos ANID sobre enseñanza del Derecho con inteligencia artificial, en 49.014 adjudicados desde 1982. Sí hay diez que cruzan IA con enseñanza en otras seis disciplinas.',
+          },
+          {
+            value: '20',
+            unit: '/30',
+            label: 'el techo real',
+            note: 'Índice de formalización más alto del comparador de diez, alcanzado por una sola institución. El promedio de los pisos es 11,4 y la mediana, 11.',
+          },
+        ],
+        changelog: [
+          'Los ocho hallazgos se leen juntos por primera vez. Cada uno describía su capacidad; nadie decía qué dibujan como conjunto. Son tres formas de ausencia distintas, y cada una se cierra de otra manera: unánime en la evaluación de efecto —no localizada en las diez, sin ninguna celda sin concluir—, bimodal en la norma propia y en la investigación —donde ninguna institución ocupa un estado intermedio: se tiene el acto o no se tiene nada—, y de umbral en la transferencia, donde nueve de diez se agolpan entre incipiente y operación y ninguna alcanza el instrumento formal.',
+          'La cifra que ordena las tres. De las cien celdas del comparador, sólo diez alcanzan el estado con instrumento formal publicado, y cinco de las diez Facultades no acreditan ninguna. Lo que el conjunto describe no es un campo desigual en actividad —la actividad abunda— sino uno donde la actividad rara vez llega al acto que la hace verificable desde fuera.',
+          'La capacidad vacía se cuantifica. La evaluación de efecto son treinta puntos repartidos en el comparador y están todos vacíos. El instrumento para financiarla existe y está en uso: entre 2024 y 2026 se adjudicaron diez proyectos que cruzan IA con enseñanza en otras seis disciplinas. Y su orden de magnitud es público: los siete proyectos vigentes de disciplina Derecho con objeto de IA suman 473.162.000 pesos, con mediana de 55,6 millones a 48 meses. Lo que no se afirma es que evaluar cueste eso; lo que sí, que el instrumento está disponible y que ninguna Facultad de Derecho lo ha solicitado nunca para este objeto.',
+          'Cuatro prioridades, y el límite que las hace publicables. Financiar la investigación sobre la propia enseñanza; publicar el acto de lo que ya está en operación —la más barata, no exige presupuesto nuevo—; cerrar la regla de uso antes de que la cierre el estándar profesional; y dotar de contraparte a lo que las Facultades dicen de sí mismas. Cada una declara evidencia, problema, actor y qué falta saber. Ninguna se dirige a una universidad nombrada del comparador: quien firma tiene conflicto declarado con una institución de la cohorte y prescribir a las demás desde ahí es lo que la sección 8 existe para evitar.',
+          'Y ninguna de las cuatro se publica como demostrada. No existe en Chile una sola medición del efecto de estas decisiones, que es justamente lo que la primera propone construir. Se publican como lo que la evidencia hace razonable considerar, no como lo que demuestra.',
+          'La sección 10 pasa a llamarse «Implicancias y decisiones», que es lo que ahora contiene.',
+          'Ninguna cifra cambia. Todo recuento nuevo se deriva de la matriz publicada y del contraste externo, y el guion que compone esta versión comprueba once afirmaciones sobre la matriz antes de escribir: si una sola dejara de ser cierta, no publica.',
+        ],
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-v3.1.0/informe-01-v3.1.0.pdf',
+            description:
+              'A4 de 116 páginas, con portada de una sola hoja, encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir. 2,8 MB.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-01-v3.1.0/informe-01-v3.1.0.docx',
+            description:
+              'Documento editable a 12 puntos, con las diecinueve tablas y sin las figuras. Para quien deba anotarlo o devolverlo con control de cambios.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-v3.1.0/informe-01-v3.1.0.html',
+            description:
+              'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión. Es el mismo que se lee dentro del sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Matriz de capacidades',
+            href: '/descargas/informe-01-v3.1.0/datos/matriz-v2.json',
+            description:
+              'Las diez capacidades por institución en los dos estados de la enmienda 2.2. De aquí salen las figuras del documento, las tablas del comparador, el comparador explorable de esta ficha y —desde esta versión— los recuentos de la lectura transversal. De ningún otro sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Fuentes de la segunda ronda',
+            href: '/descargas/informe-01-v3.1.0/datos/fuentes-nuevas.json',
+            description:
+              'Las 22 fuentes de la ronda de ampliación, con su grado documental y su confianza. No están contrastadas y el archivo lo declara: se marcan «Ronda 2» y no «contrastada».',
+          },
+        ],
+        companions: [
+          {
+            id: 'complemento-pucv',
+            title: 'La PUCV como caso de proyección, no como caso comparado',
+            version: '1.1',
+            date: '2026-09-08',
+            summary:
+              'Por qué la Pontificia Universidad Católica de Valparaíso se retira del comparador de diez, qué acredita su perfil completo —18 puntos de 30, sin ninguna celda sin concluir— y dónde están los doce que le faltan. Con las cuatro construcciones posibles, un optativo cuyo proyecto final es la medición, y la ventana de decisión con lo que cuesta dejarla pasar.',
+            rationale:
+              'Quien firma el informe trabaja en el Programa de Derecho, Inteligencia Artificial y Tecnología de esa Escuela. El conflicto es actual, directo y sobre el objeto medido, y hay además un sesgo medible: la PUCV fue una de las tres instituciones del piloto de profundidad, de modo que en un instrumento que puntúa capacidades acreditadas por evidencia pública, haberla investigado más produce mecánicamente una puntuación más alta sin que nada haya cambiado en la institución. Este documento publica su perfil para que la decisión sea auditable, y no puntúa, no ordena y no compara. Es también donde vive lo prescriptivo sobre ella: las prioridades del informe son del campo, y ninguna se dirige a una institución con nombre.',
+            html: '/descargas/informe-01-v3.1.0/complemento-pucv-v1.1.html',
+            artifacts: [
+              {
+                format: 'PDF',
+                label: 'Leer o imprimir',
+                href: '/descargas/informe-01-v3.1.0/complemento-pucv-v1.1.pdf',
+                description: 'A4 de 25 páginas, con el perfil de capacidades y el dossier de evidencia completo en anexo.',
+              },
+              {
+                format: 'Word',
+                label: 'Editar o comentar',
+                href: '/descargas/informe-01-v3.1.0/complemento-pucv-v1.1.docx',
+                description: 'Documento editable a 12 puntos. El complemento no cambia en esta versión: viaja con ella para que sus dos documentos estén en la misma carpeta.',
+              },
+              {
+                format: 'HTML',
+                label: 'Abrir el documento autónomo',
+                href: '/descargas/informe-01-v3.1.0/complemento-pucv-v1.1.html',
+                description: 'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión.',
+              },
+            ],
+          },
+        ],
+      },
+      {
         version: '3.0.0',
         date: '2026-09-09',
         status: 'publicado',
