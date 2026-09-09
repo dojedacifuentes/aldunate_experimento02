@@ -1,8 +1,12 @@
 # Checkpoint · el complemento PUCV y su aritmética
 
 **Fecha:** 09-09-2026 · **Objeto:** `complemento-pucv-v1.1.html`, tal como viaja
-con el Informe 01 v3.1.0 · **Estado:** hallazgos verificados, corrección **sin
-empezar**.
+con el Informe 01 v3.1.0.
+
+**Estado:** los tres defectos están verificados **y la corrección aritmética ya
+está construida y comprobada** en
+`tools/informes/informe-01/complemento/decisiones.mjs`. Lo que queda es redactar
+la prosa de la v1.2 y correr la cadena de publicación. Ver §5.
 
 Este archivo existe para que la sesión siguiente no tenga que redescubrir nada.
 Todo lo que afirma está comprobado contra la rúbrica publicada del anexo D y
@@ -117,6 +121,57 @@ extendió a la web. La corrección es la misma.
 
 **No toca ninguna cifra del comparador.** La PUCV está fuera de él por D-037, de
 modo que la puerta de aprobación del encargo no se abre por este trabajo.
+
+---
+
+## 5 · Lo que ya está hecho, y lo que queda
+
+### Hecho · el mapa y su comprobación
+
+`tools/informes/informe-01/complemento/decisiones.mjs` declara qué capacidad
+toca cada decisión y hasta qué estado la lleva. **Los puntos no se escriben:
+los calcula la rúbrica sobre la matriz**, y el guion se detiene si una decisión
+promete lo que su capacidad no puede dar, si no cambia nada, o si dos decisiones
+prometen más puntos de los que faltan.
+
+```bash
+node tools/informes/informe-01/complemento/decisiones.mjs
+```
+
+Con las dos correcciones —D-3 a +1, D-4 re-rotulada a alcance declarado— y las
+tres decisiones nuevas —**D-7** formación, **D-8** investigación, **D-9**
+adopción—, la salida es:
+
+```
+cierran 12 de los 12 puntos que faltan
+  instrumento 5
+  nivel       4
+  inexistente 3
+ninguna capacidad queda sin decisión que la cierre.
+```
+
+**Ese 5 / 4 / 3 es exactamente el reparto que declara la sección 4 del
+complemento**, escrito allí a mano y ahora derivado de la matriz. Que coincidan
+sin haberlo forzado es la comprobación de que el mapa es correcto.
+
+### Queda · la prosa y la cadena
+
+1. **Escribir los campos de D-7, D-8 y D-9.** Cada decisión del complemento
+   lleva `Evidencia · Referente · Indicador · Efecto · Plazo`. El `Efecto` ya no
+   se redacta: lo emite `decisiones.mjs`. Los otros cuatro campos hay que
+   escribirlos, y el material está en el anexo de evidencia del propio
+   complemento y en la ficha PUCV del anexo A del informe.
+2. **Corregir en el texto** el `Efecto` de D-3 y el de D-4, que hoy contradicen
+   la rúbrica.
+3. **Rehacer la aritmética de la §9**: dice «hasta 9 puntos» y pasa a ser 12,
+   con las tres clases y su coste.
+4. **`tools/informes/informe-01/v3.2.0/armonizar.mjs`**, con sustituciones
+   contadas sobre el complemento, más un guardián que llame a `calcular()` y no
+   publique si `errores` no está vacío.
+5. Correr la cadena del §4 de este documento y verificar contra producción.
+
+**Orden recomendado:** 4 primero. Con el guion escrito, los pasos 1 a 3 se
+convierten en rellenar huecos que el propio guion valida.
 
 ---
 
