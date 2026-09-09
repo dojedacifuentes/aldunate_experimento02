@@ -114,21 +114,21 @@ límites del documento y respaldo efectivo.
 error, de modo que etiqueta los `404` como «probablemente escaneado». El código
 HTTP es correcto; la nota no. Arreglar antes de usarla para otra cosa.
 
-### P2 · Las tres cosas que faltan en la interpretación
+### P2 · RESUELTA en la v3.1.0 · la capa de decisión
 
-La auditoría comprobó que las capas 5 y 6 **sí existen** —los ocho hallazgos
-traen `Dato · Lectura · Límite`, las ocho conclusiones declaran confianza, y la
-sección 10, que en la v3.0.0 recuperó su encabezado, ya desarrolla las
-implicaciones con tres hechos fechados—. No hay que reconstruirlas. Falta:
+La sección 10 recibió los tres bloques que faltaban: la lectura transversal de
+los ocho hallazgos —las tres formas de ausencia, con su recuento—, la
+cuantificación de la capacidad vacía, y cuatro prioridades con evidencia,
+problema, actor y qué falta saber.
 
-1. **La lectura transversal**: qué dicen los ocho hallazgos *juntos*. Las tres
-   formas de ausencia —unánime, bimodal, de umbral— están identificadas por
-   separado y nadie las lee como un patrón del campo.
-2. **Las 3 a 5 prioridades**, sistémicas, nunca dirigidas a una universidad
-   nombrada del comparador.
-3. **La oportunidad cuantificada**: con qué se llenaría la celda de evaluación
-   de efecto —0 de 30 puntos, 0 proyectos ANID en 49.014 desde 1982— y qué
-   costaría. Es lo que un fondo concursable pregunta.
+**Lo que queda de esta línea**, y es lo único: **el complemento PUCV** sigue con
+sus brechas y prioridades sin desarrollar. Es donde vive lo prescriptivo sobre
+la institución apartada, y el informe ya no puede absorberlo —las prioridades
+del cuerpo son del campo por construcción, y hay un guion que se detiene si
+alguna nombra a una institución del comparador—. Sus doce puntos que faltan ya
+están repartidos en tres clases: cinco por instrumento, cuatro por nivel de
+decisión y tres por capacidad inexistente, y **nueve de los doce no dependen de
+construir nada**.
 
 ### P3 · El cuello siguiente, con su cifra
 
