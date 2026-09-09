@@ -26,7 +26,8 @@
     "informe:calibrar": "node scripts/informes/lector/calibrar-figuras.mjs",
     "informe:pdf": "node scripts/informes/lector/pdf.mjs",
     "informe:word": "node scripts/informes/lector/word.mjs",
-    "informe:publicar": "npm run informe:lector && npm run informe:pdf && npm run informe:word"
+    "informe:publicar": "npm run informe:lector && npm run informe:pdf && npm run informe:word",
+    "informe01:comparador": "node scripts/informe-01/08-compilar-comparador.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

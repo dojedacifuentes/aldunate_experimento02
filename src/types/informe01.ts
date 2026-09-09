@@ -319,3 +319,74 @@ export interface Informe01Recuento {
   rutasPiloto: number;
   rutasResto: number;
 }
+
+/* ── Comparador ordinal ────────────────────────────────────────────────────
+   El índice de formalización de capacidad del Informe 01, tal como lo define
+   el anexo D. Vive aquí porque desde la v3.0.0 el sitio lo dibuja con sus
+   propios componentes en vez de servirlo dentro de un marco, y la regla de
+   D-039 —una figura derivada de un dato no se dibuja aparte del dato— se
+   extiende a la web: estos tipos los puebla un generador, nunca una mano. */
+
+/** Los siete estados de la rúbrica. NC no puntúa y suma 2 al techo. */
+export type Informe01EstadoCapacidad = 'OPF' | 'OP' | 'INC' | 'ENT' | 'ADY' | 'NL' | 'NC';
+
+export interface Informe01CapacidadComparador {
+  /** Clave corta del dataset. */
+  clave: string;
+  /** Rótulo del documento. */
+  rotulo: string;
+  /** Rótulo abreviado para la cabecera de la matriz en pantalla (D-042). */
+  corto: string;
+  /** La pregunta que esa capacidad responde. */
+  pregunta: string;
+}
+
+/**
+ * El cierre de la Ronda 2 que fijó una celda, cuando lo hubo. Es la cadena
+ * hallazgo → dato → evidencia → fuente, y por eso trae la nota literal y el
+ * identificador: sin ellos, la celda es un número sin procedencia.
+ */
+export interface Informe01Cierre {
+  nota: string;
+  fuentes: string[];
+  /**
+   * Si la evidencia que sostiene el cierre pasó el contraste sustantivo.
+   * Falso en trece de los veintiséis cierres, y el sitio lo dice en vez de
+   * esconderlo.
+   */
+  contrastada: boolean;
+}
+
+export interface Informe01CeldaComparador {
+  capacidad: string;
+  estado: Informe01EstadoCapacidad;
+  /** Nulo en NC: no puntúa. */
+  puntos: number | null;
+  cierre: Informe01Cierre | null;
+}
+
+export interface Informe01FilaComparador {
+  institucion: string;
+  celdas: Informe01CeldaComparador[];
+  /** Lo que la evidencia acredita hoy. */
+  piso: number;
+  /** Lo que daría si todas las celdas sin concluir resultaran favorables. */
+  techo: number;
+  sinConcluir: number;
+  /** Cuántos de sus puntos descansan en fuente sin contrastar. */
+  puntosExpuestos: number;
+}
+
+export interface Informe01Comparador {
+  capacidades: Informe01CapacidadComparador[];
+  rubrica: { codigo: Informe01EstadoCapacidad; significa: string; puntos: number | null }[];
+  /** Las diez del comparador, ya ordenadas por piso y techo. */
+  filas: Informe01FilaComparador[];
+  /**
+   * La undécima de la cohorte, apartada del orden por el conflicto de interés
+   * de la sección 8 (D-037). No puntúa contra las demás y no se ordena.
+   */
+  apartada: Informe01FilaComparador | null;
+  maximo: number;
+  cierres: { total: number; expuestos: number; puntosExpuestos: number };
+}

@@ -14,6 +14,7 @@ import {
   Surface,
 } from '@/components/common/ui';
 import { EditorialStatus, EpistemicTag } from '@/components/common/status';
+import { Comparador } from '@/components/informes/Comparador';
 import { DocumentoEmbebido } from '@/components/informes/DocumentoEmbebido';
 import {
   ArtefactosDeVersion,
@@ -267,6 +268,28 @@ export default async function InformeDetallePage({
           description={latest.summary}
         >
           <VersionFiguras version={latest} className="mb-10" />
+        </Section>
+      )}
+
+      {/*
+        El comparador explorable, delante del documento.
+
+        Hasta aquí el sitio servía un PDF dentro de un marco: quien entraba
+        recibía cien mil píxeles de documento y ninguna forma de preguntarle
+        nada. La matriz se dibuja ahora con el mismo dato que publican las
+        tablas del documento —generado desde `matriz-v2.json`, nunca escrito a
+        mano— y por eso no puede decir una cifra distinta. El documento sigue
+        debajo, entero: esto no lo sustituye, lo antecede.
+      */}
+      {esInforme01 && (
+        <Section
+          id="comparador"
+          eyebrow="Tres minutos"
+          title="Las diez capacidades, comparadas"
+          description="Diez Facultades y diez capacidades, con la incertidumbre dentro del dato. Ordene por cualquier capacidad y pulse una celda para ver de dónde sale. La undécima institución de la cohorte se examina aparte, y la razón está en la sección 8 del documento."
+          className="scroll-mt-20"
+        >
+          <Comparador />
         </Section>
       )}
 
