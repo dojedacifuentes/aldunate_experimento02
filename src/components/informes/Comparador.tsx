@@ -186,6 +186,7 @@ export function Comparador({ className }: { className?: string }) {
               <Fila
                 key={fila.institucion}
                 fila={fila}
+                rotulos={capacidades.map((c) => c.rotulo)}
                 posicion={posición.get(fila.institucion) ?? null}
                 maximo={maximo}
                 capacidadActiva={capacidadActiva}
@@ -342,6 +343,7 @@ export function Comparador({ className }: { className?: string }) {
 
 function Fila({
   fila,
+  rotulos,
   posicion,
   maximo,
   capacidadActiva,
@@ -349,6 +351,9 @@ function Fila({
   onInspeccionar,
 }: {
   fila: Informe01FilaComparador;
+  /* El rótulo del documento, no la clave del dataset: un lector de pantalla
+     que anuncia «Formacion» sin tilde está leyendo el nombre de una variable. */
+  rotulos: string[];
   posicion: number | null;
   maximo: number;
   capacidadActiva: number | null;
@@ -373,7 +378,7 @@ function Fila({
             type="button"
             onClick={() => onInspeccionar(i)}
             aria-pressed={inspeccionada === i}
-            aria-label={`${fila.institucion}, ${celda.capacidad}: ${celda.estado}. Ver de dónde sale.`}
+            aria-label={`${fila.institucion}, ${rotulos[i]}: ${celda.estado}. Ver de dónde sale.`}
             className={cn(
               'mono inline-flex min-w-11 justify-center rounded border px-1.5 py-1 text-[0.625rem] transition-all hover:brightness-110',
               TONO[celda.estado],
