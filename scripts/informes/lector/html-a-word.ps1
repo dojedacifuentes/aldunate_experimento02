@@ -33,15 +33,15 @@ $entregas = Join-Path $raiz "content\reports\01_ia_escuelas_derecho_chile\entreg
 # volver a ejecutar la cadena agrandaría la letra una vez más en cada pasada.
 $destino = $entregas
 
-$piezas = @(
-  @{ html = "informe-01-v$Version.html"; docx = "informe-01-v$Version.docx" },
-  @{ html = 'complemento-pucv-v1.1.html'; docx = 'complemento-pucv-v1.1.docx' }
-)
-
-foreach ($p in $piezas) {
-  $origen = [string](Join-Path $entregas $p.html)
-  if (-not (Test-Path $origen)) { throw "No existe el HTML de origen: $origen" }
+# Se enumeran los HTML que la entrega contenga, en vez de nombrarlos: el
+# complemento cambia de versión por su cuenta —fue v1.1 durante tres entregas y
+# pasó a v1.2 en la v3.2.0— y una lista escrita a mano convierte cada cambio
+# suyo en una edición de este guion que alguien tiene que recordar.
+$piezas = Get-ChildItem -Path $entregas -Filter '*.html' | ForEach-Object {
+  @{ html = $_.Name; docx = [System.IO.Path]::ChangeExtension($_.Name, 'docx') }
 }
+
+if ($piezas.Count -eq 0) { throw "No hay ningun HTML en la entrega: $entregas" }
 if (-not (Test-Path $destino)) { New-Item -ItemType Directory -Path $destino | Out-Null }
 
 Write-Output "Abriendo Word..."

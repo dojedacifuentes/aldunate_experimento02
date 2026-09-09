@@ -835,7 +835,11 @@ export const CONCLUSIONES = [
   ['C-2', 'Dos Facultades dictaron norma propia; sólo una publica el instrumento', 70, 'hecho'],
   ['C-3', 'La continuidad dejó de ser excepcional, y sigue sin llegar a resultados', 80, 'hecho'],
   ['C-4', 'No hay línea curricular obligatoria documentada en ninguna de las once', 80, 'hecho'],
-  ['C-5', 'Ninguna iniciativa acredita evaluación de efecto, y ninguna la ha solicitado', 95, 'hecho'],
+  /* «y ninguna la ha solicitado» decía más de lo que la fuente permite: la base
+     de ANID recoge proyectos ADJUDICADOS, de modo que acredita que ninguno se
+     financió y no que ninguno se presentara. Una postulación rechazada no deja
+     rastro en ese registro. */
+  ['C-5', 'Ninguna iniciativa acredita evaluación de efecto, y ninguna figura entre lo adjudicado', 95, 'hecho'],
   ['C-6', 'La cobertura desigual acota la comparación ordinal, y no la impide', 80, 'inferencia'],
   ['C-7', 'El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado', 75, 'inferencia'],
   ['C-8', 'Ninguna institución chilena tiene mandato para verificar lo que las Facultades afirman', 90, 'hecho'],

@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Informe complementario · La PUCV como caso de proyección · v1.2</title>
+<meta name="author" content="Diego Hernán Ojeda Cifuentes">
+<meta name="description" content="Documento complementario del Informe 01. La Pontificia Universidad Católica de Valparaíso se retira del comparador por conflicto de interés declarado y se examina aparte como caso de proyección.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;650;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ---------- guardas de impresión: nada puede exceder el ancho de página ---------- */
+@media print{
+  html,body{width:210mm;overflow-x:hidden}
+}
+.srcid,.srcurl,td,th,p,li,div{overflow-wrap:anywhere}
+.srcrow{overflow:hidden}
+table{table-layout:auto;max-width:100%}
+svg{max-width:100%}
+
+:root{
+  --ink:#0d1420; --ink2:#1d2836; --body:#26313f; --mute:#5d6b7d; --faint:#8c98a8;
+  --line:#dde3ea; --line2:#eef1f5; --paper:#ffffff; --wash:#f6f8fa;
+  --brand:#0f4c81; --brand2:#1a6fa8; --acc:#00a3a3; --acc2:#7ad0cd;
+  --warm:#c2703a; --warm2:#e8b384; --alert:#b3402f;
+  --g0:#e3e8ee; --g1:#b9c4d1;
+  --serif:"Source Serif 4","Charter","Georgia","Times New Roman",serif;
+  --sans:"Inter","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{orphans:3;widows:3;margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--serif);font-size:10.05pt;line-height:1.545;
+  font-variant-numeric:oldstyle-nums proportional-nums;
+  text-rendering:optimizeLegibility}
+
+@page{size:A4;margin:19mm 17mm 17mm 17mm}
+@page portada{size:A4;margin:0}
+
+
+/* ---------- estructura de página ---------- */
+.page{position:relative}
+/* sólo las secciones que abren capítulo empiezan hoja nueva; las continuaciones fluyen */
+.page:has(> h2){break-before:page}
+.page:not(:has(> h2))>.hdr{display:none}
+.cover{break-before:auto}
+.page:last-child{page-break-after:auto;break-after:auto}
+.nobreak{break-inside:avoid;page-break-inside:avoid}
+
+h1,h2,h3,h4,h5{font-family:var(--sans);color:var(--ink);font-weight:600;
+  line-height:1.22;letter-spacing:-.011em;margin:0}
+h2{font-size:20pt;letter-spacing:-.021em;margin:0 0 3mm}
+h3{font-size:12.6pt;margin:7mm 0 2.2mm;letter-spacing:-.012em}
+h4{font-size:10.3pt;margin:4.8mm 0 1.4mm;color:var(--ink2)}
+h5{font-size:9.4pt;margin:4mm 0 1.2mm;color:var(--brand);
+  text-transform:uppercase;letter-spacing:.09em;font-weight:650}
+p{margin:0 0 2.3mm;hyphens:auto;text-align:justify;orphans:3;widows:3}
+p.lead{font-size:11.2pt;line-height:1.5;color:var(--ink2);text-align:left}
+a{color:var(--brand);text-decoration:none;border-bottom:.4px solid #c3d2e0}
+strong{font-weight:650;color:var(--ink)}
+em{font-style:italic}
+small{font-size:8.2pt}
+
+.eyebrow{font-family:var(--sans);font-size:7.6pt;font-weight:650;
+  text-transform:uppercase;letter-spacing:.15em;color:var(--acc);margin:0 0 2mm}
+.sec-no{font-family:var(--sans);font-size:8pt;font-weight:650;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--faint)}
+.rule{height:2.4pt;background:linear-gradient(90deg,var(--brand) 0%,var(--acc) 62%,var(--acc2) 100%);
+  border-radius:2pt;margin:0 0 5mm;width:34mm}
+.rule.full{width:100%;height:.6pt;background:var(--line);margin:6mm 0}
+
+/* ---------- portada ---------- */
+.cover{page:portada;height:297mm;width:210mm;margin:0;background:
+   radial-gradient(1100px 620px at 84% -8%, #14507f 0%, rgba(20,80,127,0) 62%),
+   radial-gradient(760px 520px at 6% 104%, #06484a 0%, rgba(6,72,74,0) 60%),
+   linear-gradient(168deg,#0a1220 0%,#0d1c2e 46%,#091825 100%);
+  color:#eaf1f7;padding:22mm 20mm 16mm;display:flex;flex-direction:column;
+  position:relative;overflow:hidden}
+.cover:before{content:"";position:absolute;inset:0;opacity:.16;
+  background-image:linear-gradient(rgba(122,208,205,.42) .35px,transparent .35px),
+                   linear-gradient(90deg,rgba(122,208,205,.42) .35px,transparent .35px);
+  background-size:7mm 7mm;
+  -webkit-mask-image:radial-gradient(700px 480px at 76% 26%,#000 0%,transparent 74%);
+  mask-image:radial-gradient(700px 480px at 76% 26%,#000 0%,transparent 74%)}
+.cover>*{position:relative;z-index:2}
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;
+  border-bottom:.5px solid rgba(200,224,236,.26);padding-bottom:4mm}
+.cv-org{font-family:var(--sans);font-size:8.2pt;letter-spacing:.12em;
+  text-transform:uppercase;color:#9fd6d3;font-weight:600;line-height:1.5}
+.cv-badge{font-family:var(--mono);font-size:7.4pt;letter-spacing:.1em;
+  border:.6px solid rgba(122,208,205,.5);color:#a8dedb;padding:1.6mm 3mm;border-radius:1.4mm}
+.cv-mid{margin-top:auto;padding-bottom:2mm}
+.cv-kicker{font-family:var(--sans);font-size:8.4pt;font-weight:650;letter-spacing:.17em;
+  text-transform:uppercase;color:#5fbfbb;margin-bottom:6mm}
+.cv-title{font-family:var(--sans);font-size:39pt;line-height:1.035;font-weight:650;
+  letter-spacing:-.032em;color:#fff;margin:0 0 6mm;max-width:172mm}
+.cv-title .hl{color:#7ad0cd}
+.cv-sub{font-family:var(--serif);font-size:13pt;line-height:1.44;color:#bcd0e0;
+  max-width:150mm;margin:0 0 8mm;font-style:italic}
+.cv-tag{display:inline-block;font-family:var(--sans);font-size:8pt;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:#0a1220;background:#7ad0cd;
+  padding:2mm 4mm;border-radius:1.2mm}
+.cv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:.5px solid rgba(200,224,236,.26);margin-top:9mm;padding-top:5mm}
+.cv-cell{padding-right:5mm}
+.cv-k{font-family:var(--sans);font-size:6.9pt;letter-spacing:.14em;text-transform:uppercase;
+  color:#7f9bb0;margin-bottom:1.6mm;font-weight:600}
+.cv-v{font-family:var(--sans);font-size:10pt;color:#e9f2f8;font-weight:600;line-height:1.32}
+.cv-v small{display:block;font-size:7.6pt;color:#9db4c6;font-weight:400;
+  margin-top:.8mm;font-family:var(--serif)}
+.cv-foot{margin-top:7mm;font-size:8pt;color:#8fa6ba;line-height:1.5;
+  border-top:.5px solid rgba(200,224,236,.18);padding-top:4mm;font-family:var(--sans)}
+
+/* ---------- cajas ---------- */
+.box{background:var(--wash);border:.5px solid var(--line);border-radius:2mm;
+  padding:4mm 4.5mm;margin:3.4mm 0}
+.box.acc{background:#f2fbfb;border-color:#c8e9e7;border-left:2.6pt solid var(--acc)}
+.box.warn{background:#fdf6f0;border-color:#f0dcc9;border-left:2.6pt solid var(--warm)}
+.box.key{background:#f4f8fc;border-color:#d4e3f0;border-left:2.6pt solid var(--brand)}
+.box.dark{background:var(--ink);border:none;color:#dbe6f0}
+.box{orphans:4;widows:4}
+.box.dark h5{color:var(--acc2)} .box.dark strong{color:#fff}
+.box p:last-child{margin-bottom:0}
+.box p{font-size:9.25pt;line-height:1.5}
+.limite{font-size:9pt;color:var(--mute);border-left:1.6pt solid var(--g1);
+  padding:1mm 0 1mm 4mm;margin:2.5mm 0 3mm;font-style:italic}
+.limite strong{font-style:normal;color:var(--ink2)}
+
+/* ---------- tablas ---------- */
+table{width:100%;border-collapse:collapse;margin:3mm 0 3.4mm;font-size:8.4pt;
+  font-family:var(--sans);line-height:1.42}
+thead th{text-align:left;font-size:7.2pt;font-weight:650;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--mute);border-bottom:.9pt solid var(--ink2);
+  padding:0 3mm 1.8mm 0;vertical-align:bottom}
+tbody td{padding:1.9mm 3mm 1.9mm 0;border-bottom:.4px solid var(--line);
+  vertical-align:top;color:var(--body)}
+tbody tr:last-child td{border-bottom:.7pt solid var(--line)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;padding-right:2mm}
+td.k{font-weight:600;color:var(--ink)}
+.tbl-note{font-size:7.8pt;color:var(--mute);font-family:var(--sans);
+  line-height:1.5;margin:-1mm 0 4mm}
+.chip{display:inline-block;font-family:var(--sans);font-size:6.8pt;font-weight:650;
+  letter-spacing:.06em;padding:.5mm 1.6mm;border-radius:.9mm;white-space:nowrap}
+.c-op{background:#dcf0ef;color:#065f5c} .c-opf{background:#0f4c81;color:#fff}
+.c-inc{background:#fdeedd;color:#8a4a1c} .c-ent{background:#e7edf4;color:#3d556e}
+.c-nl{background:#f2f4f7;color:#6b7684} .c-nc{background:#fff;color:#98a3b2;
+  border:.5px dashed #c3ccd6}
+
+/* ---------- figuras ---------- */
+figure{margin:4mm 0 5mm;break-inside:avoid}
+.fig-q{font-family:var(--sans);font-size:7.4pt;font-weight:650;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--acc);margin:0 0 1.8mm}
+.fig-t{font-family:var(--sans);font-size:12.4pt;font-weight:600;color:var(--ink);
+  line-height:1.28;letter-spacing:-.014em;margin:0 0 4mm;max-width:158mm}
+figcaption{font-family:var(--sans);font-size:7.8pt;color:var(--mute);line-height:1.52;
+  margin-top:2.5mm;border-top:.4px solid var(--line);padding-top:2mm}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.leg{display:flex;flex-wrap:wrap;gap:2mm 5mm;font-family:var(--sans);font-size:7.4pt;
+  color:var(--mute);margin-top:2.5mm}
+.leg i{display:inline-block;width:2.6mm;height:2.6mm;border-radius:.6mm;
+  margin-right:1.4mm;vertical-align:-.3mm}
+
+/* ---------- listas ---------- */
+ul,ol{margin:2mm 0 3mm;padding-left:5mm}
+li{margin-bottom:1.35mm;padding-left:1mm}
+ul.clean{list-style:none;padding-left:0}
+ul.clean li{padding-left:6mm;position:relative;margin-bottom:2mm}
+ul.clean li:before{content:"";position:absolute;left:0;top:1.9mm;width:2.6mm;height:2.6mm;
+  border-radius:50%;background:var(--acc2);border:1pt solid var(--acc)}
+
+/* ---------- índice ---------- */
+.toc{columns:2;column-gap:11mm;font-family:var(--sans);font-size:9pt}
+.toc-i{break-inside:avoid;display:flex;gap:2.5mm;padding:1.5mm 0;
+  border-bottom:.4px solid var(--line2);align-items:baseline}
+.toc-n{font-size:7.6pt;color:var(--acc);font-weight:650;min-width:8mm;
+  font-variant-numeric:tabular-nums}
+.toc-t{flex:1;color:var(--ink2)}
+.toc-h{font-family:var(--sans);font-size:7.4pt;font-weight:650;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--faint);margin:5mm 0 1.5mm;
+  break-after:avoid;break-inside:avoid}
+
+/* ---------- KPI ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:4mm 0 5mm}
+.kpi{border:.5px solid var(--line);border-top:2.4pt solid var(--acc);border-radius:1.6mm;
+  padding:3.4mm 3.4mm 3.8mm;background:#fff}
+.kpi.b{border-top-color:var(--brand)} .kpi.w{border-top-color:var(--warm)}
+.kpi.r{border-top-color:var(--alert)}
+.kpi-v{font-family:var(--sans);font-size:21pt;font-weight:650;color:var(--ink);
+  line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.kpi-v span{font-size:11pt;color:var(--mute);font-weight:500}
+.kpi-l{font-family:var(--sans);font-size:7.4pt;color:var(--mute);line-height:1.42;
+  margin-top:2mm}
+.kpi-d{font-family:var(--sans);font-size:6.8pt;font-weight:650;letter-spacing:.05em;
+  color:var(--acc);margin-top:1.4mm;text-transform:uppercase}
+
+/* ---------- hallazgo ---------- */
+.hall{margin:0 0 5.6mm;break-inside:avoid}
+.hall-h{display:flex;gap:3.5mm;align-items:baseline;margin-bottom:2.4mm}
+.hall-n{font-family:var(--sans);font-size:8pt;font-weight:700;color:#fff;
+  background:var(--ink);padding:1.1mm 2.4mm;border-radius:1mm;letter-spacing:.05em;
+  white-space:nowrap}
+.hall-n.new{background:var(--acc)}
+.hall-t{font-family:var(--sans);font-size:12pt;font-weight:600;color:var(--ink);
+  line-height:1.25;letter-spacing:-.014em}
+.hall-b{padding-left:0}
+.hall-b p{font-size:9.5pt}
+.dato{font-family:var(--sans);font-size:7.2pt;font-weight:650;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--brand)}
+.src{font-family:var(--mono);font-size:7.2pt;color:var(--faint);margin-top:1.5mm}
+
+/* ---------- recomendaciones ---------- */
+.rec{border:.5px solid var(--line);border-radius:2mm;padding:4mm 4.5mm;margin:3.4mm 0;
+  break-inside:avoid;background:#fff}
+.rec-h{display:flex;gap:3mm;align-items:baseline;margin-bottom:3mm;
+  border-bottom:.5px solid var(--line);padding-bottom:2.4mm}
+.rec-id{font-family:var(--mono);font-size:8.6pt;font-weight:700;color:#fff;
+  background:var(--brand);padding:1mm 2.2mm;border-radius:1mm}
+.rec-t{font-family:var(--sans);font-size:10.4pt;font-weight:600;color:var(--ink);line-height:1.28}
+.rec-g{display:grid;grid-template-columns:20mm 1fr;gap:1.8mm 4mm;font-size:9.2pt}
+.rec-k{font-family:var(--sans);font-size:7.2pt;font-weight:650;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--acc);padding-top:.7mm}
+
+/* ---------- encabezado corriente ---------- */
+.rh{position:running(rh)}
+.hdr{display:flex;justify-content:space-between;font-family:var(--sans);font-size:7pt;
+  color:var(--faint);border-bottom:.4px solid var(--line);padding-bottom:1.6mm;margin-bottom:6mm;
+  letter-spacing:.05em}
+
+/* ---------- anexos ---------- */
+.srcrow{font-family:var(--sans);font-size:7.6pt;border-bottom:.4px solid var(--line2);
+  padding:2mm 0;break-inside:avoid;display:grid;grid-template-columns:20mm 1fr 17mm;gap:3mm}
+.srcid{font-family:var(--mono);font-size:6.9pt;color:var(--brand);font-weight:600}
+.srcurl{color:var(--faint);font-size:6.7pt;word-break:break-all;font-family:var(--mono);
+  display:block;margin-top:.7mm}
+.div-item{border-left:2pt solid var(--warm2);padding:1.2mm 0 1.2mm 4mm;margin:0 0 2.9mm;
+  break-inside:avoid}
+.div-id{font-family:var(--mono);font-size:7.4pt;color:var(--warm);font-weight:700}
+.div-t{font-family:var(--sans);font-size:9pt;font-weight:600;color:var(--ink);margin:.6mm 0 1mm}
+.div-b{font-size:8.8pt;line-height:1.46;margin:0}
+.two{columns:2;column-gap:9mm}
+.two>*{break-inside:avoid}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<div class="page cover">
+  <div class="cv-top">
+    <div class="cv-org">Prototipo académico experimental<br>No es una publicación oficial de la PUCV</div>
+    <div class="cv-badge">COMPLEMENTO · v1.2</div>
+  </div>
+  <div class="cv-mid">
+    <div class="cv-kicker">Informe 01 · documento complementario</div>
+    <h1 class="cv-title">La PUCV como <span class="hl">caso de proyección</span>, no como caso comparado</h1>
+    <p class="cv-sub">Por qué esta institución se retira del comparador de diez, qué conflicto de interés lo obliga, y qué puede proyectarse sobre la base que ya existe.</p>
+    <span class="cv-tag">Conflicto de interés declarado</span>
+  </div>
+  <div class="cv-grid">
+    <div class="cv-cell"><div class="cv-k">Documento</div><div class="cv-v">Complementario<small>No sustituye al Informe 01</small></div></div>
+    <div class="cv-cell"><div class="cv-k">Corte</div><div class="cv-v">06-09-2026<small>El mismo del informe principal</small></div></div>
+    <div class="cv-cell"><div class="cv-k">Autoría</div><div class="cv-v">Diego H. Ojeda Cifuentes<small>Parte interesada. Véase §1</small></div></div>
+    <div class="cv-cell"><div class="cv-k">Naturaleza</div><div class="cv-v">Proyecciones<small>No es evaluación ni ranking</small></div></div>
+  </div>
+  <div class="cv-foot">Este documento no puntúa, no ordena y no compara. El comparador ordinal del Informe 01 cubre diez instituciones y la Pontificia Universidad Católica de Valparaíso no es una de ellas, por decisión metodológica que aquí se explica y se funda.</div>
+</div>
+
+<!-- ═══════════════ 1 · POR QUÉ VA APARTE ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">La razón del documento</p>
+  <h2>1 · Por qué la PUCV sale del comparador</h2>
+  <div class="rule"></div>
+
+  <div class="box warn nobreak">
+    <h5>Declaración de conflicto de interés</h5>
+    <p><strong>Quien firma este informe es parte interesada en una de las instituciones que estudia.</strong>
+    Trabajo en el Programa de Derecho, Inteligencia Artificial y Tecnología de la Escuela de Derecho de la
+    Pontificia Universidad Católica de Valparaíso, participo en la organización del certamen de innovación
+    legal de la Facultad, y llevo seis años vinculado a la Universidad.</p>
+    <p>No es un conflicto potencial ni remoto: es actual, directo y sobre el objeto medido. Las versiones
+    anteriores de este informe lo administraron con una declaración y una doble revisión publicada. Este
+    documento sostiene que eso no basta.</p>
+  </div>
+
+  <p class="lead">Una declaración de intereses advierte al lector, pero no corrige el dato. Si el
+  investigador tiene un interés en una de las once instituciones que ordena, la advertencia traslada al
+  lector un problema que era del método.</p>
+
+  <p>Hay además un segundo sesgo, y éste es medible. La PUCV fue una de las tres instituciones del piloto
+  de profundidad: se investigó con más rutas, se le localizaron más fuentes y se le verificó una
+  proporción mayor. En un instrumento que puntúa capacidades acreditadas mediante evidencia pública,
+  <strong>investigar más a una institución produce mecánicamente una puntuación más alta</strong>, sin que
+  nada haya cambiado en la institución.</p>
+
+  <table>
+    <thead><tr><th style="width:64mm">El sesgo, en cifras del propio corpus</th><th class="num">PUCV</th><th class="num">Media de las demás</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Fuentes localizadas</td><td class="num"><strong>14</strong></td><td class="num">3,8</td></tr>
+      <tr><td class="k">Proporción del corpus verificada en la ronda inicial</td><td class="num"><strong>86 %</strong></td><td class="num">44 %</td></tr>
+      <tr><td class="k">Celdas sin concluir tras la ronda 2</td><td class="num"><strong>0</strong></td><td class="num">0,5</td></tr>
+      <tr><td class="k">Posición que habría ocupado en el comparador</td><td class="num" colspan="2">segunda de once, con banda cerrada 18–18</td></tr>
+    </tbody>
+  </table>
+  <p class="tbl-note">La última fila se publica precisamente porque el documento no la usa. Ocultarla sería
+  administrar el sesgo en la dirección contraria.</p>
+
+  <div class="box key nobreak">
+    <h5>La decisión</h5>
+    <p><strong>La PUCV se retira del comparador ordinal y de las diez variables de capacidad.</strong> El
+    Informe 01 compara diez instituciones. Ésta se examina aquí, aparte, y no como posición sino como
+    proyección: qué podría construirse sobre lo que ya existe, y qué haría falta para demostrarlo.</p>
+    <p>La cohorte histórica de once no cambia: sigue siendo el universo del corpus, y las fuentes de la
+    PUCV siguen en el registro. Lo que cambia es que <strong>no se le asigna puntuación ni lugar</strong>.</p>
+  </div>
+
+  <p class="limite"><strong>Lo que esta decisión cuesta.</strong> El comparador pierde a una institución
+  sobre la que existe más evidencia que sobre casi ninguna otra, y el lector pierde la posibilidad de
+  situarla. Se acepta ese costo porque la alternativa —publicar un orden en el que el autor tiene
+  interés— compromete el instrumento entero, no sólo una fila.</p>
+</div>
+
+<!-- ═══════════════ 2 · QUÉ ES Y QUÉ NO ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">Alcance</p>
+  <h2>2 · Qué hace este documento y qué no hace</h2>
+  <div class="rule"></div>
+
+  <div class="two">
+    <div>
+      <h4>Lo que sí hace</h4>
+      <ul>
+        <li>Describe la base existente con las mismas fuentes verificadas del corpus.</li>
+        <li>Evalúa <strong>proyecciones</strong>: qué es construible sobre esa base, con qué instrumento y con qué indicador.</li>
+        <li>Identifica un vacío del campo que esta institución está en condiciones de cubrir antes que otras.</li>
+        <li>Propone un diseño concreto y medible, con los datos que produciría.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Lo que no hace</h4>
+      <ul>
+        <li>No puntúa, no ordena y no compara con las otras diez.</li>
+        <li>No evalúa la calidad de la enseñanza ni el desempeño de ninguna unidad ni de ninguna persona.</li>
+        <li>No presenta las proyecciones como logros: son propuestas, y se escriben en condicional.</li>
+        <li>No habla en nombre de la Universidad, de la Facultad ni de la Escuela de Derecho.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box acc nobreak">
+    <h5>Cómo leer una proyección</h5>
+    <p>Cada una de las cuatro proyecciones de la sección 5 declara cuatro cosas: <strong>de qué evidencia parte</strong>,
+    <strong>qué propone</strong>, <strong>qué indicador la haría verificable</strong> y <strong>qué la puede
+    hacer fracasar</strong>. Una proyección sin la cuarta parte es publicidad.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 3 · LA BASE ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">Punto de partida</p>
+  <h2>3 · De dónde parte esto</h2>
+  <div class="rule"></div>
+
+  <p class="lead">Las proyecciones de este documento no se apoyan en intenciones. Se apoyan en cinco hechos
+  que el corpus verificó contra su publicación original, y que se enumeran aquí sin adjetivos.</p>
+
+  <table>
+    <thead><tr><th style="width:52mm">Hecho verificado</th><th>Qué acredita exactamente</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Certamen de innovación legal con cinco versiones entre 2022 y 2026</td>
+          <td>Continuidad plurianual sostenida, con participación de varias universidades y de otros países. Es la serie más larga que el corpus registra en su ámbito.</td></tr>
+      <tr><td class="k">Herramienta de IA propia, desplegada y en uso externo</td>
+          <td>Un asistente de redacción jurídica accesible sin registro, construido en la Escuela de Derecho, cuyo uso se documenta fuera de la Universidad. No publica métricas de uso.</td></tr>
+      <tr><td class="k">Financiamiento concursable de vinculación con el medio en dos años consecutivos</td>
+          <td>Capacidad de formular y adjudicar proyectos con la IA en el objeto. No acredita presupuesto permanente.</td></tr>
+      <tr><td class="k">Experiencia de aula ejecutada dentro de una asignatura jurídica</td>
+          <td>Prompting y un asistente conversacional dentro de un curso. Fuente única, sin matrícula ni evaluación publicadas.</td></tr>
+      <tr><td class="k">Conducción de Derecho en el instrumento de integridad académica de la Universidad</td>
+          <td>Participación de la unidad jurídica en la gobernanza universitaria de la materia. El instrumento es universitario y de carácter orientador.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="limite"><strong>Y lo que esa base no acredita.</strong> No hay acto formal de creación del
+  programa que la sostiene; el financiamiento localizado es íntegramente concursable; no hay línea
+  curricular con créditos; y no hay ninguna medición de efecto sobre el aprendizaje. Las cuatro
+  proyecciones siguientes se dirigen exactamente a esos cuatro huecos.</p>
+</div>
+
+
+<!-- ═══════════════ 4 · EL PERFIL ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">El dato</p>
+  <h2>4 · El perfil completo, capacidad por capacidad</h2>
+  <div class="rule"></div>
+
+  <p class="lead">El informe principal retira a esta institución del comparador. Retirarla del orden no
+  es retirarle el dato: la rúbrica se le aplicó igual que a las demás, y el resultado se publica aquí
+  entero. Ocultarlo sería administrar el conflicto de interés en la dirección contraria, y dejaría al
+  lector con una institución apartada de la que no puede saber nada.</p>
+
+  <div class="box acc nobreak">
+    <h5>Qué es este número y qué no es</h5>
+    <p>Los 18 puntos que siguen son la suma de la rúbrica del anexo D aplicada a este perfil.
+    <strong>No son una posición.</strong> Un orden se construye comparando, y el instrumento que
+    ordena excluye a esta institución por construcción: no hay lugar en el que ponerla, y ponerla
+    igualmente sería reintroducir por la puerta de atrás lo que la sección 8 del informe principal
+    retiró por la de delante. El número está aquí para que el lector pueda auditar la decisión —ver
+    qué se retiró— y para que las proyecciones de las secciones siguientes se apoyen en una base
+    verificable en lugar de en adjetivos.</p>
+  </div>
+
+  <figure class="nobreak">
+    <p class="fig-q">¿Qué acredita esta Escuela, y qué le falta para acreditar el resto?</p>
+    <p class="fig-t">Dos capacidades completas, cinco a las que sólo les falta el instrumento, dos que
+    existen un nivel más arriba y una que no consta</p>
+    <svg viewBox="0 0 680 256" xmlns="http://www.w3.org/2000/svg" role="img" style="max-width:100%"><text x="158.0" y="30.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#0d1420" font-weight="650" text-anchor="end" letter-spacing="0" opacity="1">Herramienta desplegada</text><rect x="168.0" y="20.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="20.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="220.0" y="20.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><text x="252.0" y="30.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">3</text><text x="268.0" y="30.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#5d6b7d" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">completa</text><text x="158.0" y="51.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#0d1420" font-weight="650" text-anchor="end" letter-spacing="0" opacity="1">Transferencia</text><rect x="168.0" y="41.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="41.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="220.0" y="41.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><text x="252.0" y="51.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">3</text><text x="268.0" y="51.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#5d6b7d" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">completa</text><text x="158.0" y="72.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Unidad especializada</text><rect x="168.0" y="62.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="62.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="220.0" y="62.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="72.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">2</text><text x="268.0" y="72.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">falta el objeto citable que la acredite</text><text x="158.0" y="93.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Presencia en pregrado</text><rect x="168.0" y="83.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="83.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="220.0" y="83.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="93.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">2</text><text x="268.0" y="93.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">falta el objeto citable que la acredite</text><text x="158.0" y="114.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Formación estructurada</text><rect x="168.0" y="104.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="104.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="220.0" y="104.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="114.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">2</text><text x="268.0" y="114.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">falta el objeto citable que la acredite</text><text x="158.0" y="135.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Alcance declarado</text><rect x="168.0" y="125.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="125.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="220.0" y="125.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="135.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">2</text><text x="268.0" y="135.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">falta el objeto citable que la acredite</text><text x="158.0" y="156.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Investigación</text><rect x="168.0" y="146.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="146.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="220.0" y="146.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="156.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">2</text><text x="268.0" y="156.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">falta el objeto citable que la acredite</text><text x="158.0" y="177.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Norma propia</text><rect x="168.0" y="167.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="167.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><rect x="220.0" y="167.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="177.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">1</text><text x="268.0" y="177.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">existe en la universidad, no en la Facultad</text><text x="158.0" y="198.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Adopción en la enseñanza</text><rect x="168.0" y="188.0" width="23.0" height="14.0" rx="1.2" fill="#0f4c81" opacity="1"/><rect x="194.0" y="188.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><rect x="220.0" y="188.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="198.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">1</text><text x="268.0" y="198.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">existe en la universidad, no en la Facultad</text><text x="158.0" y="219.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8" fill="#26313f" font-weight="450" text-anchor="end" letter-spacing="0" opacity="1">Evaluación de efecto</text><rect x="168.0" y="209.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><rect x="194.0" y="209.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><rect x="220.0" y="209.0" width="23.0" height="14.0" rx="1.2" fill="#ffffff" stroke="#c3ccd6" stroke-width=".7" stroke-dasharray="2.5 2"/><text x="252.0" y="219.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="8.6" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">0</text><text x="268.0" y="219.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">no consta</text><line x1="18.0" y1="230.0" x2="672" y2="230.0" stroke="#eef1f5" stroke-width="0.5"/><text x="158.0" y="244.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7.4" fill="#5d6b7d" font-weight="600" text-anchor="end" letter-spacing="0" opacity="1">Suma de la rúbrica, sin posición</text><text x="168.0" y="244.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#0d1420" font-weight="650" text-anchor="start" letter-spacing="0" opacity="1">18 de 30</text><text x="220.0" y="244.0" font-family="Inter,'Segoe UI',Helvetica,Arial,sans-serif" font-size="7" fill="#8c98a8" font-weight="400" text-anchor="start" letter-spacing="0" opacity="1">ninguna celda sin concluir · esta figura no ordena</text></svg>
+    <figcaption>Cada capacidad vale hasta tres puntos. Los peldaños llenos son lo que la evidencia
+    pública acredita hoy; los punteados, lo que la rúbrica pide y no encuentra. El perfil no tiene
+    ninguna celda sin concluir: las trece rutas del protocolo que le corresponden se recorrieron, de
+    modo que cada ausencia es una ausencia comprobada y no un hueco de investigación. La figura no
+    ordena y no admite lectura comparativa.</figcaption>
+  </figure>
+</div>
+
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+
+  <h3>Los doce puntos que faltan tienen tres formas, y sólo una es cara</h3>
+
+  <p>El reparto importa más que la suma, porque cada forma se cierra con un acto distinto y cuesta
+  una cosa distinta. Doce puntos repartidos en doce capacidades vacías serían un problema de
+  construcción institucional. Repartidos como están, son sobre todo un problema de publicación.</p>
+
+  <table>
+    <thead><tr><th style="width:30mm">Forma</th><th style="width:14mm">Puntos</th><th>Qué falta, y qué acto lo cierra</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Falta el instrumento</td><td>5</td>
+          <td><strong>Cinco capacidades están en operación y ninguna publica el objeto citable que
+          las acredita.</strong> Unidad especializada, presencia en pregrado, formación estructurada,
+          alcance declarado e investigación pierden un punto cada una, y cada una lo recupera
+          publicando un documento que en la mayoría de los casos ya existe: el acto que crea el
+          programa, el código y los créditos de la asignatura, el del programa formativo, el alcance
+          real de lo que se ejecuta y el código del proyecto adjudicado. Ninguno de los cinco exige
+          decidir nada nuevo. Exigen publicar lo decidido.</td></tr>
+      <tr><td class="k">Falta el nivel</td><td>4</td>
+          <td><strong>Dos capacidades existen en la Universidad y no en la Escuela.</strong> La regla
+          de uso de inteligencia artificial y la adopción declarada en la enseñanza constan como
+          instrumentos universitarios de carácter orientador, no como decisiones de la unidad
+          jurídica. Valen un punto en lugar de tres por esa razón y no por su contenido. Se cierran
+          decidiendo en el nivel que la rúbrica pregunta —un acuerdo de Consejo de Escuela con
+          deberes exigibles—, no construyendo nada nuevo. Es el único de los tres huecos que exige
+          una decisión de gobierno.</td></tr>
+      <tr><td class="k">Falta todo</td><td>3</td>
+          <td><strong>La evaluación de efecto no consta, y no consta en ninguna de las instituciones observadas.</strong> Es la única de las tres formas que no se cierra con un trámite: exige
+          producir evidencia que hoy no existe. También es la única donde el esfuerzo no compra una
+          posición sino una primicia, porque las diez instituciones del comparador están igualmente
+          en cero y no hay un solo proyecto financiado en la materia. Las secciones 5 a 7 desarrollan
+          exactamente esta vía.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box key nobreak">
+    <p>Nueve de los doce puntos que faltan —los cinco del instrumento y los cuatro del nivel— no
+    dependen de construir nada. Dependen de publicar y de decidir dónde corresponde. Es la lectura
+    más incómoda de este documento y también la más accionable: <strong>la distancia entre lo que
+    esta Escuela hace y lo que puede acreditar es, en tres cuartas partes, una distancia
+    documental.</strong></p>
+  </div>
+
+  <h3>Lo que el perfil sí acredita, y con qué</h3>
+
+  <p>Las dos capacidades completas son las únicas de todo el corpus en las que esta institución
+  alcanza el grado más alto de la rúbrica, y las dos lo alcanzan por la misma razón: existe un objeto
+  con identificador que cualquiera puede comprobar sin preguntarle nada a la institución.</p>
+
+  <table>
+    <thead><tr><th style="width:44mm">Capacidad</th><th>Instrumento formal que la acredita</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Herramienta desplegada</td>
+          <td>Registro de propiedad intelectual de ScribeClaroPUCV, Certificado nº 2026-A-6558 de
+          23-06-2026. Un asistente de redacción jurídica construido en la Escuela, accesible sin
+          registro y con uso documentado fuera de la Universidad. No publica métricas de uso, y ése
+          es el límite del registro.</td></tr>
+      <tr><td class="k">Transferencia</td>
+          <td>Convenio con la Corte Suprema de agosto de 2020, con decana y presidente de la Corte
+          identificados y actividad derivada documentada. Es el único convenio del corpus con
+          contraparte de esa jerarquía y con continuidad verificable.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="limite"><strong>Límite.</strong> Que estas dos capacidades estén completas no dice que
+  la Escuela sea mejor en ellas que las demás: dice que en estas dos publicó el objeto que la rúbrica
+  pide, y que en las otras ocho no. La rúbrica mide trazabilidad, no mérito, y ésa es la única cosa
+  que un método basado en evidencia pública puede medir.</div>
+</div>
+
+<!-- ═══════════════ 5 · PROYECCIONES ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">Proyecciones</p>
+  <h2>5 · Cuatro cosas construibles sobre esa base</h2>
+  <div class="rule"></div>
+
+  <div class="rec" style="border-left:2.6pt solid #0f4c81">
+    <div class="rec-h"><span class="rec-id">P-1</span><span class="rec-t">Formación continua internacional por la vía de vinculación con el medio</span></div>
+    <div class="rec-g">
+      <div class="rec-k">Parte de</div><div>Un certamen con cinco versiones y participantes de seis países, y dos adjudicaciones consecutivas de fondos de vinculación con el medio con la IA en el objeto. El canal internacional ya está abierto y ya está financiado por concurso.</div>
+      <div class="rec-k">Propone</div><div>Convertir ese canal en oferta de formación continua con docencia internacional en inteligencia artificial aplicada al Derecho, articulada como actividad de vinculación con el medio y no como programa de postgrado. La diferencia importa: el ciclo de decisión de vinculación es corto y su financiamiento ya existe, mientras que crear un programa de postgrado exige aprobaciones que tardan más que la ventana tecnológica.</div>
+      <div class="rec-k">Indicador</div><div>Dos ediciones consecutivas con matrícula publicada, procedencia institucional de los participantes y docentes externos identificados. Dos puntos hacen una serie; uno no.</div>
+      <div class="rec-k">Riesgo</div><div>Que la actividad internacional siga midiéndose por asistencia a un evento. El alcance de un certamen no es cobertura formativa, y contarlo como tal repetiría el error que el informe principal señala en otras instituciones.</div>
+    </div>
+  </div>
+
+  <div class="rec" style="border-left:2.6pt solid #c2703a">
+    <div class="rec-h"><span class="rec-id">P-2</span><span class="rec-t">Cubrir el vacío que ninguna de las diez ha cubierto: medir el efecto</span></div>
+    <div class="rec-g">
+      <div class="rec-k">Parte de</div><div>El hallazgo central del informe principal. En la capacidad «evaluación de efecto», <strong>las diez instituciones comparadas quedan en «no localizada»</strong>: las rutas se recorrieron y no se encontró ninguna medición del efecto de la IA sobre el aprendizaje jurídico. No es una laguna de la investigación: es un hecho sobre el campo.</div>
+      <div class="rec-k">Propone</div><div>Ser la primera en producir esa evidencia, con un diseño modesto y publicable, sobre una competencia acotada y con grupo de comparación. No hace falta un ensayo clínico: hace falta un instrumento declarado, una medida antes y después, y la publicación del resultado aunque sea negativo.</div>
+      <div class="rec-k">Indicador</div><div>Un informe con diseño, muestra, instrumento, grupo de comparación y resultado, publicado con sus datos. Es la única celda de la matriz que hoy nadie ocupa.</div>
+      <div class="rec-k">Riesgo</div><div>Publicar una medición sin grupo de comparación. La única cifra de resultado que el corpus localizó en todo Chile compara a quien usó una herramienta treinta veces con quien no la usó, lo que mide sobre todo la diferencia entre ambos grupos antes de la herramienta. Repetir ese diseño no cubriría el vacío: lo llenaría de ruido.</div>
+    </div>
+  </div>
+
+  <p class="limite"><strong>Por qué P-2 es la de mayor consecuencia.</strong> Las otras tres proyecciones
+  mejoran la posición de una institución. Ésta cambia lo que se puede afirmar sobre el campo entero, y es
+  la única que ninguna de las diez comparadas está hoy en condiciones de reclamar.</p>
+</div>
+
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+
+  <div class="rec" style="border-left:2.6pt solid #0f4c81">
+    <div class="rec-h"><span class="rec-id">P-3</span><span class="rec-t">Gestión de caso y de clientes con IA avanzada, y la metodología para construirla</span></div>
+    <div class="rec-g">
+      <div class="rec-k">Parte de</div><div>Una herramienta propia ya desplegada y una experiencia de aula ya ejecutada. Lo que falta no es capacidad técnica: es un objeto de enseñanza que produzca algo verificable.</div>
+      <div class="rec-k">Propone</div><div>Enseñar la gestión de un caso y de una cartera de clientes con asistentes de IA avanzados, y enseñar además <strong>la metodología para construir esa gestión</strong> en un entorno de trabajo con agentes —lectura de expedientes, extracción de hitos, control de plazos, redacción de minutas, trazabilidad de cada decisión—. El producto del curso no es un ensayo sobre la IA: es un panel de gestión funcionando.</div>
+      <div class="rec-k">Indicador</div><div>Un artefacto entregable por estudiante o por equipo, versionado, con su registro de construcción y su documentación. Un panel que funciona es evaluable por terceros; una exposición sobre paneles no lo es.</div>
+      <div class="rec-k">Riesgo</div><div>Que el curso derive en una demostración de herramientas y envejezca con ellas. Lo que debe quedar es el criterio jurídico sobre qué se delega, qué se verifica y qué no se delega nunca; la herramienta concreta es el vehículo, no el contenido.</div>
+    </div>
+  </div>
+
+  <div class="rec" style="border-left:2.6pt solid #0f4c81">
+    <div class="rec-h"><span class="rec-id">P-4</span><span class="rec-t">Cerrar en protección de datos personales, con la ley que entra en vigor ahora</span></div>
+    <div class="rec-g">
+      <div class="rec-k">Parte de</div><div>La Ley 21.719, publicada el 13 de diciembre de 2024, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales, <strong>entra en vigor en diciembre de 2026</strong>. Su régimen amplía los derechos de acceso, rectificación, cancelación y oposición con portabilidad y bloqueo, e instala un deber de responsabilidad proactiva sobre quien trata los datos.</div>
+      <div class="rec-k">Propone</div><div>Que el arco del curso termine donde termina el problema real: un panel de gestión jurídica trata datos personales de terceros, muchas veces sensibles, y a menudo los envía a un proveedor externo. El cierre no es un módulo teórico sino el examen del propio artefacto construido en P-3 contra el estándar de la ley: base de licitud, finalidad, minimización, encargado de tratamiento, transferencia internacional y medidas de seguridad.</div>
+      <div class="rec-k">Indicador</div><div>Cada artefacto entregado acompañado de su evaluación de cumplimiento, con las decisiones de diseño que la ley obligó a cambiar. Eso es a la vez producto formativo y evidencia de aprendizaje.</div>
+      <div class="rec-k">Riesgo</div><div>Enseñar la ley en abstracto. El valor está en que el estudiante descubra que su propio prototipo no cumple, y tenga que rehacerlo. Sin ese choque, el módulo es un anexo.</div>
+    </div>
+  </div>
+
+  <div class="box key nobreak">
+    <h5>Por qué las cuatro forman una sola cosa</h5>
+    <p>P-3 construye el objeto, P-4 lo somete a la norma que rige desde diciembre de 2026, P-2 mide si
+    enseñarlo así produjo aprendizaje, y P-1 abre el canal por el que eso puede ofrecerse fuera. Separadas
+    son cuatro iniciativas más. Juntas son <strong>un curso que genera su propia evidencia</strong>, que es
+    exactamente lo que el corpus no encontró en ninguna de las diez instituciones comparadas.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 5 · EL OPTATIVO ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">El instrumento</p>
+  <h2>6 · Un optativo cuyo proyecto final es la medición</h2>
+  <div class="rule"></div>
+
+  <p class="lead">La forma concreta que toman las cuatro proyecciones es una asignatura optativa de
+  pregrado, con proyecto final entregable, diseñada desde el principio para producir datos de
+  aprendizaje utilizables. No se le añade una evaluación al final: la evaluación es su arquitectura.</p>
+
+  <h3>El arco</h3>
+  <table>
+    <thead><tr><th class="num" style="width:12mm">Tramo</th><th style="width:44mm">Qué se hace</th><th>Qué queda registrado</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td class="k">Línea base</td><td>La misma tarea jurídica que se repetirá al final, resuelta sin asistencia. Es el punto de comparación de cada estudiante consigo mismo.</td></tr>
+      <tr><td class="num">2</td><td class="k">Caso y clientes</td><td>Gestión de un expediente y de una cartera con asistentes avanzados: hitos, plazos, minutas. Registro de qué se delegó y qué se verificó.</td></tr>
+      <tr><td class="num">3</td><td class="k">Metodología</td><td>Construcción del flujo de trabajo en un entorno de agentes. Quedan versiones, decisiones y errores, no sólo el resultado.</td></tr>
+      <tr><td class="num">4</td><td class="k">El panel</td><td>El artefacto de gestión, funcionando y documentado. Es el proyecto final.</td></tr>
+      <tr><td class="num">5</td><td class="k">Protección de datos</td><td>Evaluación del propio panel contra la Ley 21.719 y rectificación de lo que no cumple.</td></tr>
+      <tr><td class="num">6</td><td class="k">Medida final</td><td>La tarea del tramo 1, repetida. Y la entrega del panel corregido.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Qué datos produce, y para qué sirven</h3>
+  <table>
+    <thead><tr><th style="width:44mm">Dato</th><th style="width:52mm">Cómo se obtiene</th><th>Para qué sirve después</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Medida antes y después, por estudiante</td><td>La misma tarea en el tramo 1 y en el 6, corregida con rúbrica ciega respecto del momento.</td><td>Es la medida de efecto que ninguna institución del corpus tiene.</td></tr>
+      <tr><td class="k">Grupo de comparación</td><td>Estudiantes de la misma cohorte que no cursan el optativo, resolviendo la misma tarea.</td><td>Sin esto no hay efecto atribuible, sólo diferencia entre quienes se inscribieron y quienes no.</td></tr>
+      <tr><td class="k">Rúbrica del artefacto</td><td>Criterios observables sobre el panel entregado, publicados antes de evaluar.</td><td>Permite que un tercero rehaga la corrección. Una rúbrica cerrada después no es refutable.</td></tr>
+      <tr><td class="k">Registro de proceso</td><td>Versiones del artefacto y decisiones documentadas a lo largo del semestre.</td><td>Distingue aprendizaje de resultado afortunado, y alimenta la investigación sobre cómo se aprende esto.</td></tr>
+      <tr><td class="k">Hallazgos de cumplimiento</td><td>Qué incumplía cada panel antes de la corrección del tramo 5.</td><td>Material de investigación sobre riesgos reales de la gestión jurídica asistida.</td></tr>
+      <tr><td class="k">Cobertura declarada</td><td>Matrícula, deserción y perfil de los inscritos.</td><td>Convierte la actividad en cobertura verificable, que es lo que hoy falta en todo el corpus.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box warn nobreak">
+    <h5>La exigencia que el propio curso se impone</h5>
+    <p>Un optativo que enseña protección de datos y que a la vez recoge datos de sus estudiantes tiene que
+    cumplir lo que enseña. <strong>Base de licitud, finalidad declarada, minimización, anonimización antes
+    de cualquier publicación y derecho a no participar en la investigación sin efecto sobre la
+    calificación.</strong> Si el diseño de medición no resiste su propio módulo final, el curso está mal
+    construido.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 6 · PRODUCTOS ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">Qué sale de ahí</p>
+  <h2>7 · Los productos, y por qué importan fuera del aula</h2>
+  <div class="rule"></div>
+
+  <div class="two">
+    <div>
+      <h4>Un informe del curso</h4>
+      <p>Con diseño, muestra, instrumento, grupo de comparación y resultado, publicado aunque el resultado
+      sea que no hubo diferencia. Un resultado negativo publicado es más valioso para el campo que un
+      resultado positivo sin diseño, y hoy no existe ninguno de los dos.</p>
+      <h4>Un conjunto de datos anonimizado</h4>
+      <p>Las medidas antes y después, las rúbricas y los hallazgos de cumplimiento, depurados de datos
+      personales. Es lo que permite que otra Facultad replique la medición en vez de creerla.</p>
+    </div>
+    <div>
+      <h4>Base para postular a proyectos</h4>
+      <p>Los fondos de investigación en docencia y en transferencia piden lo mismo que aquí se produce:
+      un problema documentado, un instrumento probado, datos preliminares y un equipo con antecedentes.
+      El curso genera las cuatro cosas como subproducto de funcionar.</p>
+      <h4>Una posición defendible en el campo</h4>
+      <p>No por haber hecho más actividades, sino por haber publicado la primera medición de efecto. Es la
+      única capacidad del comparador que hoy está vacía en las diez instituciones.</p>
+    </div>
+  </div>
+
+  <div class="box key nobreak">
+    <h5>La ventana, y qué cuesta dejarla pasar</h5>
+    <p>Dos cosas coinciden en el tiempo. La Ley 21.719 entra en vigor en diciembre de 2026, de modo que
+    todas las Facultades tendrán que abordar la materia y muchas lo harán como módulo teórico. Y ninguna
+    de las diez instituciones comparadas ha publicado una medición de efecto, de modo que la primera que
+    lo haga fija el estándar de cómo se mide.</p>
+    <p><strong>Las dos ventanas se cierran solas.</strong> La primera cuando la materia se vuelva rutina;
+    la segunda cuando alguien más publique. Ninguna de las dos exige presupuesto extraordinario: exigen
+    decidir ahora qué se va a medir y publicarlo aunque salga mal.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ 7 · LIMITACIONES ═══════════════ -->
+<div class="page">
+  <div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+  <p class="eyebrow">Honestidad del documento</p>
+  <h2>8 · Limitaciones de este complemento</h2>
+  <div class="rule"></div>
+
+  <ul>
+    <li><strong>Lo escribe una parte interesada.</strong> Retirar a la PUCV del comparador elimina el sesgo
+    del orden, no el de este documento. Todo lo que aquí se propone lo propone alguien que trabaja en el
+    programa que se beneficiaría de que se aprobara.</li>
+    <li><strong>Son proyecciones, no compromisos.</strong> Nada de lo descrito existe. No hay acuerdo de
+    Facultad, no hay financiamiento asignado y no hay docentes comprometidos. Presentarlo de otro modo
+    sería exactamente el defecto que el informe principal reprocha a otras instituciones: contar el
+    anuncio como ejecución.</li>
+    <li><strong>El diseño de medición es el punto débil.</strong> Un optativo tiene matrícula pequeña y
+    autoselección: quien se inscribe ya está interesado. El grupo de comparación mitiga eso pero no lo
+    elimina, y el informe resultante deberá decirlo en su primera página.</li>
+    <li><strong>La base de partida tiene huecos conocidos.</strong> El programa que sostendría esto no
+    tiene acto formal de creación localizado, su financiamiento es concursable y su herramienta propia no
+    publica cifras de uso. Las proyecciones no los resuelven; los heredan.</li>
+    <li><strong>No se consultó a la institución.</strong> Este documento se construye sobre evidencia
+    pública. Ni la Escuela de Derecho ni la Facultad ni la Universidad han revisado su contenido, y
+    ninguna de ellas habla a través de él.</li>
+  </ul>
+
+  <div class="box dark nobreak">
+    <h5>Una nota final sobre el método</h5>
+    <p>La razón de que este documento exista aparte no es diplomática. Un instrumento que ordena
+    instituciones sólo sirve si quien lo aplica no tiene interés en el resultado. Como aquí lo tiene, la
+    salida honesta no era matizar la posición de la PUCV: era <strong>retirarla del instrumento y decir
+    por qué</strong>, dejando el orden de las diez restantes en pie y verificable por cualquiera.</p>
+    <p>Lo que se pierde en cobertura se gana en que el comparador siga significando algo.</p>
+  </div>
+</div>
+
+<div class="page"><div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+ 
+ <h2>9 · Implicancias y ventana de decisión</h2>
+ <div class="rule"></div>
+ <p class="lead">Las conclusiones dicen qué muestra la evidencia. Esto dice qué decisiones abre esa
+ evidencia, con qué indicador se comprobaría más adelante si se tomaron, y qué cuesta no tomarlas.</p>
+
+ <p>Ninguno de estos bloques afirma qué debe hacer la institución. Enuncia un problema observado, la
+ evidencia que lo sostiene, el referente donde ese mismo problema ya tiene un mecanismo, el indicador
+ verificable y el efecto medible sobre la posición comparada. Se ordenan por relación entre esfuerzo y
+ efecto, no por importancia.</p>
+
+ <div class="box key">
+  <h5>La aritmética de la decisión, en una línea</h5>
+  <p>La PUCV acredita hoy 18 puntos de 30 y es la única institución de la cohorte cuya banda está
+  cerrada: no hay evidencia pendiente de aparecer que suba esa cifra. Las seis decisiones que siguen
+  suman, en conjunto, <strong>hasta 9 puntos</strong>. Cuatro de las seis no requieren presupuesto y
+  tres consisten únicamente en publicar lo que se decida. La que más cuesta —medir una vez— es también
+  la única que hoy nadie en Chile ha hecho.</p>
+ </div>
+ <div class="rec"><div class="rec-h"><span class="rec-id">D-1</span>
+   <span class="rec-t">Publicar el instrumento que crea la unidad, con denominación estable y dependencia orgánica.</span></div><div class="rec-g">
+   <div class="rec-k">Evidencia</div><div>La única mención a su origen es una afirmación de continuidad desde 2020 sin instrumento citado. La unidad aparece con cuatro denominaciones distintas en fuentes de la propia universidad y ha tenido tres directores sin acto publicado en ninguna transición.</div>
+   <div class="rec-k">Referente</div><div>La Facultad de Derecho de la Universidad Católica publica su Departamento de Derecho y Tecnología en la estructura orgánica, con director y dependencia.</div>
+   <div class="rec-k">Indicador</div><div>Documento con número y fecha accesible desde el sitio de la Facultad, y unidad listada en el organigrama publicado.</div>
+   <div class="rec-k">Efecto</div><div><strong>+1 punto en unidad especializada. Cierra la brecha más citada del informe y la más barata de todas.</strong></div>
+   <div class="rec-k">Plazo</div><div>Semanas. No requiere presupuesto.</div>
+  </div></div><div class="rec"><div class="rec-h"><span class="rec-id">D-2</span>
+   <span class="rec-t">Dictar una norma de Facultad sobre uso de IA generativa en trabajos y evaluaciones, con órgano aprobador identificado.</span></div><div class="rec-g">
+   <div class="rec-k">Evidencia</div><div>El decálogo disponible es universitario, sugiere recomendaciones, no obliga, no tipifica, no establece consecuencia y no consta aprobado por decreto ni resolución.</div>
+   <div class="rec-k">Referente</div><div>La guía de Derecho UC, aprobada por Comité Directivo y Consejo, impone deberes de declaración y registro y califica su incumplimiento como infracción grave. Internacionalmente, Berkeley aporta un mecanismo transferible: la cita a fuente inexistente genera presunción de uso prohibido, sin necesidad de tipificar conductas.</div>
+   <div class="rec-k">Indicador</div><div>Instrumento aprobado, publicado y fechado, con deberes exigibles y régimen de consecuencias.</div>
+   <div class="rec-k">Efecto</div><div><strong>+2 puntos en norma propia. Es la capacidad donde la cohorte entera está más vacía: diez de once no la tienen.</strong></div>
+   <div class="rec-k">Plazo</div><div>Un semestre. Coste: el tiempo de los órganos que la aprueben.</div>
+  </div></div><div class="rec"><div class="rec-h"><span class="rec-id">D-3</span>
+   <span class="rec-t">Convertir la experiencia de aula en una asignatura con código, créditos y matrícula, o en una certificación declarada.</span></div><div class="rec-g">
+   <div class="rec-k">Evidencia</div><div>La integración de IA en Filosofía del Derecho se apoya en una fuente única de 2024, sin matrícula, semestre ni evaluación, y sin prueba pública de continuidad. La malla vigente, verificada en sus diez semestres, no contiene ninguna asignatura de IA ni de tecnología jurídica.</div>
+   <div class="rec-k">Referente</div><div>Ninguna Facultad de la cohorte lo ha hecho, y en el mundo sólo tres. Dos de las tres eligieron la certificación sin créditos precisamente para no abrir la reforma curricular: es el camino corto y está disponible.</div>
+   <div class="rec-k">Indicador</div><div>Código de asignatura con créditos y semestre publicado, o certificación con programa, horas y registro de participantes.</div>
+   <div class="rec-k">Efecto</div><div><strong>+1 a +2 puntos en presencia en pregrado. Situaría a la Facultad entre las primeras del mundo si se opta por la asignatura con créditos.</strong></div>
+   <div class="rec-k">Plazo</div><div>Uno a dos años por la vía curricular; un semestre por la vía de la certificación.</div>
+  </div></div><div class="rec"><div class="rec-h"><span class="rec-id">D-4</span>
+   <span class="rec-t">Declarar el alcance real de lo que ya se ejecuta, separando lo interno de lo externo.</span></div><div class="rec-g">
+   <div class="rec-k">Evidencia</div><div>Las cifras publicadas —cerca de noventa participantes en un taller, alrededor de cien en una actividad conjunta— corresponden a públicos mixtos de varias universidades, egresados y profesionales. No hay ninguna cifra de penetración interna. La edición 2025 del certamen no publicó nota de resultados.</div>
+   <div class="rec-k">Referente</div><div>La Universidad Autónoma publica una cobertura declarada de su propio cuerpo docente. La Universidad Católica publica sus graduaciones con número de titulados, año a año.</div>
+   <div class="rec-k">Indicador</div><div>Una serie de al menos dos años con cifras publicadas y desagregadas entre estudiantes de la propia Escuela y público externo.</div>
+   <div class="rec-k">Efecto</div><div><strong>+1 punto en adopción en la enseñanza. Es puramente publicación: los datos ya existen en los registros de cada actividad.</strong></div>
+   <div class="rec-k">Plazo</div><div>Inmediato. No requiere presupuesto.</div>
+  </div></div><div class="rec"><div class="rec-h"><span class="rec-id">D-5</span>
+   <span class="rec-t">Medir, una sola vez, el efecto de una sola actividad sobre una competencia acotada.</span></div><div class="rec-g">
+   <div class="rec-k">Evidencia</div><div>ScribeClaroPUCV está desplegada, tiene registro de propiedad intelectual, tiene reconocimiento de la Corte Suprema y no publica cuántas personas la usan ni con qué resultado. Ninguna iniciativa de la cohorte alcanza el peldaño de evaluación.</div>
+   <div class="rec-k">Referente</div><div>En ninguna de las otras diez. Y en el mundo, del orden de tres a cuatro estudios experimentales, todos estadounidenses. La literatura disponible ofrece diseños replicables a escala de un curso, con muestras entre 48 y 137 estudiantes.</div>
+   <div class="rec-k">Indicador</div><div>Un estudio publicado con diseño, muestra, grupo de comparación e instrumento declarados, sobre una competencia acotada —por ejemplo, claridad de la redacción en una asignatura concreta—.</div>
+   <div class="rec-k">Efecto</div><div><strong>+3 puntos en evaluación de efecto. Sería la primera iniciativa del corpus en alcanzar el cuarto peldaño, que hoy está vacío en las once instituciones.</strong></div>
+   <div class="rec-k">Plazo</div><div>Un semestre de aplicación más uno de análisis. Es la más cara de las cinco y sigue siendo modesta.</div>
+  </div></div><div class="rec"><div class="rec-h"><span class="rec-id">D-6</span>
+   <span class="rec-t">Alojar el Programa y el Laboratorio en el dominio institucional de la universidad.</span></div><div class="rec-g">
+   <div class="rec-k">Evidencia</div><div>Ni el Programa ni el Laboratorio tienen página en el sitio de la PUCV. Su única descripción estructurada —consejo académico, equipo, oferta formativa, histórico— vive en dominios externos de propiedad privada, que pueden caducar o cambiar de titular.</div>
+   <div class="rec-k">Referente</div><div>Todas las unidades comparables de la cohorte tienen página dentro del dominio institucional de su facultad o universidad.</div>
+   <div class="rec-k">Indicador</div><div>Página del Programa y del Laboratorio accesibles desde el sitio de la Facultad de Derecho PUCV, con la misma información que hoy vive fuera.</div>
+   <div class="rec-k">Efecto</div><div><strong>No suma puntos por sí sola, y es condición de que las demás sean verificables por un tercero.</strong></div>
+   <div class="rec-k">Plazo</div><div>Semanas. Coste administrativo.</div>
+  </div></div>
+</div>
+
+<div class="page"><div class="hdr"><span>Informe 01 · complemento</span><span>La PUCV como caso de proyección · v1.2</span></div>
+ <p class="eyebrow">Anexo H</p>
+ <h2>Anexo · La evidencia completa</h2>
+ <div class="rule"></div>
+ <p style="max-width:152mm">Diecisiete registros ordenados cronológicamente, con la unidad a la que se
+ atribuye cada uno y su estado tras la verificación. Se publica completo porque la sección 8 del informe principal hace afirmaciones sobre esta institución y el lector debe poder comprobarlas sin reconstruir el corpus.</p>
+ <table style="font-size:8.2pt"><thead><tr><th>Fecha</th><th>Mecanismo</th><th>Qué consta</th>
+   <th>Atribución</th><th>Estado</th></tr></thead><tbody><tr><td class="k" style="width:17mm">2020</td><td style="width:24mm">Publicación indexada</td><td>Artículo sobre uso de inteligencia artificial por administraciones fiscales y derechos de los contribuyentes en Latinoamérica, en revista internacional de derecho y tecnología. Acredita interés de la Escuela por la materia cinco años antes de la ola de 2025.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada</td></tr><tr><td class="k" style="width:17mm">2020</td><td style="width:24mm">Unidad</td><td>Primera mención pública al Núcleo de Derecho, Inteligencia Artificial y Tecnología, con director identificado, en un seminario sobre fiscalización tributaria e IA. La única afirmación de origen dice que «se oficializa en el 2020», sin instrumento citado.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">sin acto de creación</td></tr><tr><td class="k" style="width:17mm">2020</td><td style="width:24mm">Convenio</td><td>Convenio con la Corte Suprema para el proyecto de modernización de su base de datos de jurisprudencia mediante inteligencia artificial, firmado por la decana de la Facultad y el presidente de la Corte, con cincuenta pasantes. Proyecto multiuniversitario de diecinueve instituciones.</td><td style="width:34mm;font-size:7.6pt">Facultad y Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · instrumento formal</td></tr><tr><td class="k" style="width:17mm">2021</td><td style="width:24mm">Herramienta</td><td>Asistente virtual desarrollado en virtud de convenio con el Servicio de Impuestos Internos, a cargo del Núcleo, con participación de un estudiante de informática.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada</td></tr><tr><td class="k" style="width:17mm">2022–2026</td><td style="width:24mm">Actividad recurrente</td><td>Certamen de innovación legal del laboratorio de la Escuela, con ediciones documentadas desde 2022. La serie de continuidad más larga del corpus. La edición 2025 tiene convocatoria y no publica nota de resultados; dos ediciones aparecen numeradas como cuarta.</td><td style="width:34mm;font-size:7.6pt">Facultad de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">serie verificada · cifras 2025 pendientes</td></tr><tr><td class="k" style="width:17mm">2023</td><td style="width:24mm">Fondo</td><td>Adjudicación en el concurso institucional de inteligencia artificial en educación: dos de las catorce iniciativas seleccionadas son de la Escuela de Derecho. Una de ellas origina la herramienta de redacción jurídica.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho · fondo de la universidad</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada</td></tr><tr><td class="k" style="width:17mm">2024</td><td style="width:24mm">Asignatura</td><td>Integración de inteligencia artificial en el curso de Filosofía del Derecho mediante prompting y un chatbot de asignatura, con dos sesiones documentadas. Fuente única; no consta que se haya repetido ni su matrícula, semestre, créditos o evaluación.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · sin continuidad acreditada</td></tr><tr><td class="k" style="width:17mm">2024–2025</td><td style="width:24mm">Formación</td><td>Talleres de alfabetización digital y de prompting jurídico, con módulos fechados. El taller de 2025 declara cerca de noventa participantes, que son estudiantes de distintas universidades, egresados y profesionales, no de la propia Escuela.</td><td style="width:34mm;font-size:7.6pt">Programa DIAT</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · alcance externo</td></tr><tr><td class="k" style="width:17mm">2025</td><td style="width:24mm">Fondo</td><td>Dos proyectos de vinculación con el medio adjudicados con inteligencia artificial en el objeto. Montos no publicados. Responsable único.</td><td style="width:34mm;font-size:7.6pt">Facultad y Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · sin monto</td></tr><tr><td class="k" style="width:17mm">2025</td><td style="width:24mm">Actividad</td><td>Encuentro entre estudiantes de Derecho e Ingeniería con alrededor de cien participantes. Es la cifra interna mejor documentada del dossier.</td><td style="width:34mm;font-size:7.6pt">Laboratorio y Programa, con dirección de asuntos internacionales</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada</td></tr><tr><td class="k" style="width:17mm">2025</td><td style="width:24mm">Herramienta</td><td>La Comisión de Lenguaje Claro de la Corte Suprema destaca la herramienta de redacción jurídica mediante boletín oficial. Reconocimiento externo de una institución del Estado.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho · Vicerrectoría Académica</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · reconocimiento externo</td></tr><tr><td class="k" style="width:17mm">2025</td><td style="width:24mm">Proyecto</td><td>Participación como contraparte en el FONDEF de certeza jurídica ambiental, adjudicado a otra universidad y dirigido desde su Facultad de Ingeniería. Un profesor de la Escuela integra el equipo.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho como contraparte</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · atribución compartida</td></tr><tr><td class="k" style="width:17mm">2026</td><td style="width:24mm">Norma</td><td>Presentación del decálogo universitario sobre uso ético de la inteligencia artificial en docencia, conducido por una profesora de la Escuela desde la Unidad de Integridad Académica. Según su propia formulación, «sugiere recomendaciones». Sin decreto ni resolución. La nota institucional remite, como referencia, a un enlace compartido de un servicio comercial de inteligencia artificial.</td><td style="width:34mm;font-size:7.6pt">Vicerrectoría Académica</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · orientador, no vinculante</td></tr><tr><td class="k" style="width:17mm">2026</td><td style="width:24mm">Herramienta</td><td>Registro de propiedad intelectual de la herramienta de redacción jurídica, Certificado nº 2026-A-6558 de 23 de junio. Es el único instrumento formal citable de todo el conjunto PUCV.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · instrumento formal</td></tr><tr><td class="k" style="width:17mm">2026</td><td style="width:24mm">Actividad</td><td>Workshop internacional sobre manejo de inteligencia artificial en el ámbito legal, con expositor extranjero y dirigido a exalumnos. La nota no declara la fecha del workshop, sólo la de su publicación, ni cifras de asistencia.</td><td style="width:34mm;font-size:7.6pt">Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · sin fecha ni cifras</td></tr><tr><td class="k" style="width:17mm">2026</td><td style="width:24mm">Fondo</td><td>Dos proyectos de vinculación con el medio adjudicados, con los mismos dos objetos del año anterior y el mismo responsable. Montos no publicados.</td><td style="width:34mm;font-size:7.6pt">Facultad y Escuela de Derecho</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · sin monto</td></tr><tr><td class="k" style="width:17mm">2026</td><td style="width:24mm">Contexto</td><td>La universidad participa como mandante en un centro regional de supercómputo e inteligencia artificial aplicada, con financiamiento estatal de hasta siete millones de dólares. La Facultad de Derecho no participa ni es mencionada.</td><td style="width:34mm;font-size:7.6pt">Universidad</td><td style="width:30mm;font-size:7.4pt;color:#5d6b7d">verificada · entorno</td></tr></tbody></table>
+ <div class="box key">
+  <h5>Lo que el dossier muestra cuando se lee entero</h5>
+  <p><strong>Actividad densa desde 2020 y formalización casi nula.</strong> Diecisiete registros en
+  seis años, de siete clases distintas de mecanismo, y <strong>dos instrumentos formales citables en
+  todo el conjunto</strong>: un convenio de 2020 y un registro de propiedad intelectual de 2026. No
+  hay decreto, resolución ni reglamento en ninguno de los diecisiete.</p>
+  <p><strong>Todo lo normativo lo dicta la universidad, y sugiere.</strong> El decálogo, la política de
+  integridad académica y el reglamento de disciplina son instrumentos de la Vicerrectoría Académica.
+  La Facultad de Derecho no ha emitido ninguno.</p>
+  <p><strong>Ausencia sistemática de cifras.</strong> No hay cifras de uso de la herramienta, ni montos
+  de ningún fondo, ni asistentes de ningún seminario salvo dos actividades, ni resultados de la
+  edición 2025 del certamen. Las dos cifras que existen —noventa y cien participantes— corresponden a
+  públicos mixtos y externos.</p>
+  <p><strong>Concentración en una persona.</strong> Una misma persona dirige el Programa y el
+  Laboratorio y es responsable de las cuatro adjudicaciones de vinculación con el medio de 2025 y
+  2026. La dirección de la unidad ha pasado por tres personas desde 2020 sin acto publicado en ninguna
+  transición.</p>
+ </div>
+</div>
+
+</body></html>

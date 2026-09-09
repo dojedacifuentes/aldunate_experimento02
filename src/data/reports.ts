@@ -96,6 +96,127 @@ export const reports: Report[] = [
     ],
     versions: [
       {
+        version: '3.2.0',
+        date: '2026-09-09',
+        status: 'publicado',
+        headline: 'Cierre editorial: dos familias de afirmaciones se acotan a lo que su fuente permite',
+        summary:
+          'La base histórica de ANID recoge proyectos adjudicados. De su silencio se sigue que ningún proyecto sobre enseñanza del Derecho con inteligencia artificial se financió; no se sigue que ninguno se presentara, porque una postulación rechazada no deja rastro en ese registro. El informe daba ese paso de más en nueve pasajes, incluidos el título de la conclusión de mayor confianza declarada y una figura. Y la institución apartada del comparador deja de recibir puntuación y lugar también en el texto: la sección 8 declaraba que no los recibe y a la vez publicaba «18 puntos […] es decir el segundo lugar del orden». Se acotan además cinco afirmaciones nacionales que sólo sostenía una cohorte de once. Ninguna cifra sobre las diez instituciones comparadas cambia.',
+        pages: 116,
+        reading: 'documento',
+        pdf: '/descargas/informe-01-v3.2.0/informe-01-v3.2.0.pdf',
+        html: '/descargas/informe-01-v3.2.0/informe-01-v3.2.0.html',
+        figures: [
+          {
+            value: '0',
+            label: 'adjudicaciones',
+            note: 'Proyectos ANID sobre enseñanza del Derecho con inteligencia artificial, en 49.014 adjudicados desde 1982. El registro acredita ausencia de financiamiento, no ausencia de postulaciones.',
+          },
+          {
+            value: '10',
+            unit: '/100',
+            label: 'con instrumento formal',
+            note: 'Celdas del comparador que acreditan una capacidad con acto publicado. Cinco de las diez Facultades no acreditan ninguna.',
+          },
+          {
+            value: '0',
+            unit: '/30',
+            label: 'evaluación de efecto',
+            note: 'La única capacidad vacía en las diez instituciones, y la única sin una sola celda sin concluir.',
+          },
+          {
+            value: '4',
+            label: 'prioridades',
+            note: 'Con evidencia, actor y qué falta saber. Del campo, del regulador o del gremio; ninguna dirigida a una universidad nombrada del comparador.',
+          },
+          {
+            value: '20',
+            unit: '/30',
+            label: 'el techo real',
+            note: 'Índice de formalización más alto del comparador de diez, alcanzado por una sola institución. El promedio de los pisos es 11,4 y la mediana, 11.',
+          },
+        ],
+        changelog: [
+          'Adjudicación no es solicitud. La base histórica de ANID recoge proyectos adjudicados: de su silencio se sigue que ningún proyecto sobre enseñanza del Derecho con IA se financió, no que ninguno se presentara. El informe afirmaba lo segundo en nueve pasajes —el hallazgo H-5, su límite, la discusión, el contraste externo, el título y el cuerpo de la conclusión C-5, la figura de conclusiones y dos pasajes de la sección 10—. Todos se reformulan.',
+          'El argumento no se pierde, y conviene decirlo. Lo que la base sí acredita es que entre 2024 y 2026 otras seis disciplinas obtuvieron adjudicaciones para cruzar inteligencia artificial con enseñanza y Derecho no obtuvo ninguna. Ese contraste queda intacto; lo que se retira es la inferencia sobre lo que nadie llegó a pedir.',
+          'La institución apartada deja de recibir puntuación y lugar también en el texto. La sección 8 se contradecía a sí misma: su recuadro declaraba que «no recibe puntuación ni lugar» y el párrafo inmediatamente anterior publicaba «18 puntos con banda cerrada, es decir el segundo lugar del orden». Publicar la posición de la institución excluida del orden vacía la exclusión, y con un agravante: la razón declarada para excluirla es que el piloto de profundidad infla mecánicamente lo que acredita, de modo que esa cifra no es comparable.',
+          'Lo que se conserva de ese pasaje. El reparto de los doce puntos que le faltan en tres formas de ausencia —cinco por instrumento, cuatro por nivel de decisión y tres por capacidad inexistente— sigue publicado: es descripción de sus propias capacidades, no comparación con nadie, y es lo más accionable del documento. Se conserva sin la puntuación ni el lugar que lo enmarcaban.',
+          'Cinco afirmaciones nacionales se acotan a la cohorte. «Ninguna Facultad del país», «la primera del país», «el perfil mejor documentado del país» y «la Facultad de Derecho chilena mejor documentada del país» descansaban en un corpus de once instituciones. Se acotan a lo observado. Las afirmaciones nacionales que sí tienen fuente nacional —la base de ANID para adjudicaciones, la CNA, el Colegio de Abogados, la Política Nacional de IA— se conservan intactas.',
+          'El complemento pasa a v1.2 por la misma razón, con una sola corrección: «no consta en ninguna Facultad del país» pasa a «en ninguna de las instituciones observadas». Su perfil capacidad por capacidad se conserva entero, porque ese documento no puntúa contra nadie y no ordena.',
+          'Ninguna cifra sobre las diez instituciones comparadas cambia. El comparador, la rúbrica, el corpus y las bandas son los de la v3.1.0. Lo que cambia es el alcance de lo que el informe afirma sobre ellas.',
+        ],
+        artifacts: [
+          {
+            format: 'PDF',
+            label: 'Leer o imprimir',
+            href: '/descargas/informe-01-v3.2.0/informe-01-v3.2.0.pdf',
+            description:
+              'A4 de 116 páginas, con portada de una sola hoja, encabezado, pie y numeración. Es una impresión del mismo HTML: los dos salen del mismo modelo y no pueden divergir. 2,9 MB.',
+          },
+          {
+            format: 'Word',
+            label: 'Editar o comentar',
+            href: '/descargas/informe-01-v3.2.0/informe-01-v3.2.0.docx',
+            description:
+              'Documento editable a 12 puntos, con las diecinueve tablas y sin las figuras. Para quien deba anotarlo o devolverlo con control de cambios.',
+          },
+          {
+            format: 'HTML',
+            label: 'Abrir el documento autónomo',
+            href: '/descargas/informe-01-v3.2.0/informe-01-v3.2.0.html',
+            description:
+              'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión. Es el mismo que se lee dentro del sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Matriz de capacidades',
+            href: '/descargas/informe-01-v3.2.0/datos/matriz-v2.json',
+            description:
+              'Las diez capacidades por institución en los dos estados de la enmienda 2.2. De aquí salen las figuras del documento, las tablas del comparador y el comparador explorable de esta ficha. De ningún otro sitio.',
+          },
+          {
+            format: 'JSON',
+            label: 'Fuentes de la segunda ronda',
+            href: '/descargas/informe-01-v3.2.0/datos/fuentes-nuevas.json',
+            description:
+              'Las 22 fuentes de la ronda de ampliación, con su grado documental y su confianza. No están contrastadas y el archivo lo declara: se marcan «Ronda 2» y no «contrastada».',
+          },
+        ],
+        companions: [
+          {
+            id: 'complemento-pucv',
+            title: 'La PUCV como caso de proyección, no como caso comparado',
+            version: '1.2',
+            date: '2026-09-09',
+            summary:
+              'Por qué la Pontificia Universidad Católica de Valparaíso se retira del comparador de diez, qué acredita su perfil completo capacidad por capacidad y dónde están los doce puntos que le faltan. Con las cuatro construcciones posibles, un optativo cuyo proyecto final es la medición, y la ventana de decisión con lo que cuesta dejarla pasar.',
+            rationale:
+              'Quien firma el informe trabaja en el Programa de Derecho, Inteligencia Artificial y Tecnología de esa Escuela. El conflicto es actual, directo y sobre el objeto medido, y hay además un sesgo medible: la PUCV fue una de las tres instituciones del piloto de profundidad, de modo que en un instrumento que puntúa capacidades acreditadas por evidencia pública, haberla investigado más produce mecánicamente una puntuación más alta sin que nada haya cambiado en la institución. Por esa razón, desde la v3.2.0 el informe no publica su puntuación ni su lugar: el perfil vive aquí, en un documento que no puntúa contra nadie y no ordena.',
+            html: '/descargas/informe-01-v3.2.0/complemento-pucv-v1.2.html',
+            artifacts: [
+              {
+                format: 'PDF',
+                label: 'Leer o imprimir',
+                href: '/descargas/informe-01-v3.2.0/complemento-pucv-v1.2.pdf',
+                description: 'A4 de 25 páginas, con el perfil de capacidades y el dossier de evidencia completo en anexo.',
+              },
+              {
+                format: 'Word',
+                label: 'Editar o comentar',
+                href: '/descargas/informe-01-v3.2.0/complemento-pucv-v1.2.docx',
+                description: 'Documento editable a 12 puntos, para anotarlo o devolverlo con control de cambios.',
+              },
+              {
+                format: 'HTML',
+                label: 'Abrir el documento autónomo',
+                href: '/descargas/informe-01-v3.2.0/complemento-pucv-v1.2.html',
+                description: 'Un solo archivo, sin dependencias, legible sin conexión y preparado para impresión.',
+              },
+            ],
+          },
+        ],
+      },
+      {
         version: '3.1.0',
         date: '2026-09-09',
         status: 'publicado',
