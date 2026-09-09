@@ -175,6 +175,44 @@ convierten en rellenar huecos que el propio guion valida.
 
 ---
 
+## 6 · Aparte, y es P0: la ficha del sitio contradice al documento
+
+**No es del complemento**, pero se descubrió el mismo día y no debe perderse.
+Lo detectó una auditoría externa de UX sobre el commit `01b5d03`, y está
+**verificado contra `main` de ahora**.
+
+La v3.0.0 corrigió el documento —el corpus son 96 fuentes, 74 contrastadas, un
+77 %— pero **`src/data/reports.ts` sigue describiendo el informe con las cifras
+viejas**. Es el mismo defecto que la v3.0.0 vino a corregir, una capa más
+arriba: ahora la ficha del sitio afirma lo que el documento desmiente.
+
+| Campo | Dice hoy | Debería decir |
+|---|---|---|
+| `subtitle` | «corpus contrastado al **100 %**» | 74 de 96 · 77 % |
+| `executiveSummary` | «Las **74 fuentes del corpus** están abiertas y contrastadas» | las 74 del corpus **original**; las 22 de la ronda, no |
+| `executiveSummary` | «**cinco** Facultades sostienen una unidad especializada en operación» | **seis** — la matriz da 2 `OPF` + 4 `OP` |
+| `executiveSummary` | «**una sola** ha dictado norma propia» | **dos** con instrumento formal; una sola lo publica |
+| `descriptor` | «Corte 06-09-2026» | correcto, es el corte del corpus y no cambia |
+| `updatedAt` | `2026-09-06` | la versión vigente es del 09-09-2026 |
+
+**Por qué importa más que un descuadre.** Es lo primero que ve quien llega al
+sitio, y contradice al documento que la propia ficha sirve. Y el argumento es el
+mismo de D-043: la primera persona que compare las dos cosas encuentra la
+contradicción por su cuenta.
+
+**Cómo se cierra bien.** No a mano. Los recuentos de instituciones deben salir
+de la matriz —hay un generador y una prueba que ya lo hacen para el comparador,
+`scripts/informe-01/08-compilar-comparador.mjs` y
+`src/data/informe01Comparador.test.ts`—, y la prueba debe extenderse a que el
+`subtitle` y el `executiveSummary` no contradigan a la versión vigente. Escribir
+las cifras a mano en `reports.ts` es cómo se llegó aquí.
+
+**Separar además dos fechas que hoy son una:** la fecha de la versión y el corte
+del estudio. `updatedAt` sirve para ordenar y no debería ser también lo que se
+pinta como fecha editorial.
+
+---
+
 ## 4 · La mecánica, que ya está resuelta
 
 El complemento **no se edita a mano**: se deriva, igual que el informe.
