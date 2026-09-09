@@ -175,7 +175,16 @@ convierten en rellenar huecos que el propio guion valida.
 
 ---
 
-## 6 · Aparte, y es P0: la ficha del sitio contradice al documento
+## 6 · RESUELTO · la ficha del sitio contradecía al documento
+
+> **Cerrado el 09-09-2026.** Las seis cifras están corregidas en `reports.ts` y
+> hay seis pruebas nuevas en `src/data/informe01Comparador.test.ts` que impiden
+> que vuelva: los recuentos de instituciones se comprueban **contra la matriz**,
+> no contra un número escrito en la prueba, y la fecha de la ficha no puede ser
+> anterior a la de la versión que publica. Se comprobó además que el guardián
+> detecta el texto anterior, porque una prueba que no puede fallar no sirve.
+>
+> Lo que sigue es el registro de qué estaba mal, que se conserva.
 
 **No es del complemento**, pero se descubrió el mismo día y no debe perderse.
 Lo detectó una auditoría externa de UX sobre el commit `01b5d03`, y está

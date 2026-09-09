@@ -3,7 +3,10 @@ import { join } from 'node:path';
 
 import { describe, expect, it } from 'vitest';
 
+import { currentVersion } from '@/lib/informes';
+
 import { informe01Comparador } from './informe01Comparador';
+import { reports } from './reports';
 
 /**
  * El comparador del sitio contra su fuente de verdad.
@@ -114,5 +117,75 @@ describe('comparador ordinal · el sitio no puede decir una cifra distinta del d
     expect(informe01Comparador.maximo).toBe(D.caps.length * 3);
     const techoReal = Math.max(...informe01Comparador.filas.map((f) => f.piso));
     expect(techoReal).toBe(20);
+  });
+});
+
+/**
+ * La ficha del sitio contra la versión que sirve.
+ *
+ * Existe porque el defecto ya ocurrió dos veces con la misma forma. La v3.0.0
+ * corrigió dentro del documento la contradicción entre un frontis que declaraba
+ * el corpus contrastado al 100 % y un anexo que declaraba 96 fuentes con 22 sin
+ * contrastar (D-043) — y `reports.ts` se quedó con las cifras viejas, de modo
+ * que lo primero que veía quien llegaba al sitio contradecía al documento que la
+ * propia ficha sirve.
+ *
+ * Los recuentos de instituciones no se comprueban contra un número escrito aquí
+ * sino contra la matriz: si mañana una Facultad acredita su unidad, la prueba
+ * falla y obliga a corregir la prosa, que es exactamente lo que no ocurrió.
+ */
+const EN_PALABRAS: Record<number, string> = {
+  1: 'una', 2: 'dos', 3: 'tres', 4: 'cuatro', 5: 'cinco',
+  6: 'seis', 7: 'siete', 8: 'ocho', 9: 'nueve', 10: 'diez',
+};
+
+const enOperación = (capacidad: string) =>
+  informe01Comparador.filas.filter((f) =>
+    ['OPF', 'OP'].includes(f.celdas.find((c) => c.capacidad === capacidad)!.estado),
+  ).length;
+
+const conInstrumento = (capacidad: string) =>
+  informe01Comparador.filas.filter(
+    (f) => f.celdas.find((c) => c.capacidad === capacidad)!.estado === 'OPF',
+  ).length;
+
+describe('la ficha del sitio no puede contradecir a la versión que sirve', () => {
+  const informe = reports.find((r) => r.slug === 'ia-escuelas-derecho-chile');
+  const presentación = `${informe?.subtitle ?? ''} ${informe?.executiveSummary ?? ''}`;
+
+  it('encuentra el informe en el registro', () => {
+    expect(informe).toBeDefined();
+    expect(informe?.subtitle).toBeTruthy();
+    expect(informe?.executiveSummary).toBeTruthy();
+  });
+
+  it('no promete un corpus contrastado al 100 %', () => {
+    /* La cifra correcta es 74 de 96. Un porcentaje que el propio documento
+       desmiente cincuenta páginas después no es un redondeo: es la afirmación
+       más visible del sitio contradiciendo a la que la sostiene. */
+    expect(presentación).not.toMatch(/(contrastad|verificad)\w* al 100 ?%/i);
+  });
+
+  it('declara el corpus completo y no sólo el original', () => {
+    expect(presentación).toContain('96 fuentes');
+  });
+
+  it('cuenta las unidades especializadas que cuenta la matriz', () => {
+    expect(informe?.executiveSummary).toContain(
+      `${EN_PALABRAS[enOperación('Unidad')]} Facultades sostienen una unidad especializada`,
+    );
+  });
+
+  it('cuenta las normas propias que cuenta la matriz', () => {
+    expect(informe?.executiveSummary).toContain(
+      `${EN_PALABRAS[conInstrumento('Norma')]} han dictado norma propia`,
+    );
+  });
+
+  it('no se fecha antes que la versión vigente que publica', () => {
+    const vigente = informe ? currentVersion(informe) : undefined;
+    expect(vigente).toBeDefined();
+    /* Las fechas van en ISO, de modo que comparar cadenas es comparar fechas. */
+    expect(informe!.updatedAt >= vigente!.date).toBe(true);
   });
 });

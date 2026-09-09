@@ -48,10 +48,10 @@ export const reports: Report[] = [
     title:
       'Uso y enseñanza de inteligencia artificial en Escuelas y Facultades de Derecho en Chile',
     subtitle:
-      'Mapeo comparado de capacidades institucionales en una cohorte de once Escuelas y Facultades de Derecho chilenas, diez de ellas en el comparador ordinal · corpus contrastado al 100 %',
+      'Mapeo comparado de capacidades institucionales en una cohorte de once Escuelas y Facultades de Derecho chilenas, diez de ellas en el comparador ordinal · corpus de 96 fuentes, 74 contrastadas (77 %)',
     descriptor: 'Corte 06-09-2026 · cohorte de once, comparador de diez',
     executiveSummary:
-      'Qué capacidades institucionales en inteligencia artificial han construido once Escuelas y Facultades de Derecho chilenas, con qué grado de formalización, y qué puede afirmarse sobre ellas con evidencia verificable. Las 74 fuentes del corpus están abiertas y contrastadas una por una contra su publicación original, y por primera vez el trabajo incorpora 31 fuentes de terceros: base histórica de proyectos adjudicados de ANID, prensa no universitaria, Colegio de Abogados, Academia Judicial, Comisión Nacional de Acreditación y política pública sectorial. El campo entero cabe en dos años —41 de las 49 iniciativas fechadas empiezan en 2025 o después— y se construye estructura antes que reglas: cinco Facultades sostienen una unidad especializada en operación y una sola ha dictado norma propia sobre uso de inteligencia artificial. Ninguna de las 53 iniciativas acredita haber medido su efecto sobre el aprendizaje jurídico, y la consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 convierte esa laguna en hecho: no existe un solo proyecto, de ninguna universidad chilena y en ningún año, sobre enseñanza del Derecho con inteligencia artificial. El hallazgo que ordena a los demás es que nadie verifica: ni el regulador de acreditación, ni el gremio, ni la política pública tienen mandato sobre lo que una Facultad de Derecho dice de sí misma en esta materia.',
+      'Qué capacidades institucionales en inteligencia artificial han construido once Escuelas y Facultades de Derecho chilenas, con qué grado de formalización, y qué puede afirmarse sobre ellas con evidencia verificable. Las 74 fuentes del corpus original están abiertas y contrastadas una por una contra su publicación original; las 22 que aportó después la ronda de ampliación se declaran como tales y no como contrastadas. El trabajo incorpora además 31 fuentes de terceros: base histórica de proyectos adjudicados de ANID, prensa no universitaria, Colegio de Abogados, Academia Judicial, Comisión Nacional de Acreditación y política pública sectorial. El campo entero cabe en dos años —41 de las 49 iniciativas fechadas empiezan en 2025 o después— y se construye estructura antes que reglas: seis Facultades sostienen una unidad especializada en operación y dos han dictado norma propia con acto citable, de las cuales sólo una publica el instrumento. Ninguna de las 53 iniciativas acredita haber medido su efecto sobre el aprendizaje jurídico, y la consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 convierte esa laguna en hecho: no existe un solo proyecto, de ninguna universidad chilena y en ningún año, sobre enseñanza del Derecho con inteligencia artificial. El hallazgo que ordena a los demás es que nadie verifica: ni el regulador de acreditación, ni el gremio, ni la política pública tienen mandato sobre lo que una Facultad de Derecho dice de sí misma en esta materia.',
     authors: [autor.name],
     status: 'publicado',
     folder: 'content/reports/01_ia_escuelas_derecho_chile/',
@@ -1046,7 +1046,12 @@ export const reports: Report[] = [
         },
       ],
     },
-    updatedAt: '2026-09-06',
+    /* La fecha de la última versión publicada, no la del corte del estudio.
+       Las dos se confundían: el corte sigue siendo el 06-09-2026 y va en
+       `descriptor`, mientras la ficha se quedaba fechada ahí aunque la versión
+       vigente fuera del 09. Una prueba comprueba ahora que esta fecha no sea
+       anterior a la de la versión que la ficha sirve. */
+    updatedAt: '2026-09-09',
   },
   {
     slug: 'transformacion-ensenanza-derecho',
