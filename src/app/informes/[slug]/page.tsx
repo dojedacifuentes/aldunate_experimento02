@@ -768,7 +768,7 @@ export default async function InformeDetallePage({
               <div className="rounded-lg border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
                 <p className="mono text-[0.6875rem] uppercase tracking-widest text-muted-foreground">
                   {esInforme01
-                    ? 'Registro poblado · corpus contrastado al 100 %'
+                    ? 'Registro poblado · corpus original contrastado una por una'
                     : 'Registro vacío'}
                 </p>
                 <h3 className="mt-3 font-serif text-xl text-foreground">

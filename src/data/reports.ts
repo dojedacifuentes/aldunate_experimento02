@@ -8,9 +8,12 @@ import type { ClaimChange, Report, ReportStatus, Tone } from '@/types';
  * adelante y nunca se edita hacia atrás; el changelog es la prueba de eso.
  *
  * El informe 01 alcanzó su v2.0.0 el 06-09-2026 y dejó de ser borrador: su
- * corpus está contrastado al 100 % y recorrió la ruta de contraste externo que
- * la v0.8.0 declaraba como su limitación estructural. Las versiones anteriores
- * siguen publicadas y legibles, cada una con las cifras que sostenía.
+ * corpus original quedó contrastado una por una y recorrió la ruta de contraste
+ * externo que la v0.8.0 declaraba como su limitación estructural. La ronda de
+ * ampliación posterior lo llevó a 96 fuentes, de las cuales 74 están
+ * contrastadas —un 77 %—, y la v3.0.0 corrigió el frontis que todavía declaraba
+ * el 100 % (D-043). Las versiones anteriores siguen publicadas y legibles, cada
+ * una con las cifras que sostenía.
  *
  * El informe 02 alcanzó su versión 0.2.0 con documento completo. Sus hallazgos
  * están respaldados en `src/data/research.ts`, con el nivel epistémico de cada

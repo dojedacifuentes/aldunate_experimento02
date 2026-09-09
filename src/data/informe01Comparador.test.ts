@@ -1,5 +1,5 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join, sep } from 'node:path';
 
 import { describe, expect, it } from 'vitest';
 
@@ -22,6 +22,14 @@ import { reports } from './reports';
  * que es disciplina y no comprobación. Con ella, un dato regenerado y no
  * recompilado rompe el `verify` en vez de llegar a producción.
  */
+
+/** Recorre un directorio entero, que es como se comprueba una regla sobre todas
+    las pantallas y no sólo sobre las que alguien recordó enumerar. */
+function listar(dir: string): string[] {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? listar(join(dir, e.name)) : [join(dir, e.name)],
+  );
+}
 
 const MATRIZ = join(
   process.cwd(),
@@ -187,5 +195,35 @@ describe('la ficha del sitio no puede contradecir a la versión que sirve', () =
     expect(vigente).toBeDefined();
     /* Las fechas van en ISO, de modo que comparar cadenas es comparar fechas. */
     expect(informe!.updatedAt >= vigente!.date).toBe(true);
+  });
+});
+
+describe('la afirmación de corpus sólo puede vivir en el registro versionado', () => {
+  /*
+    La contradicción reapareció tres veces en tres capas distintas: el documento
+    (D-043), los datos de presentación y —esto— una cadena escrita a mano dentro
+    de una pantalla. Un componente que afirma un porcentaje del corpus no tiene
+    forma de enterarse de que el corpus creció.
+
+    La regla que se adopta: el porcentaje de contraste se enuncia en la entrada
+    de versión que lo sostenía, y en ningún otro sitio del código. En `reports.ts`
+    es historia —el `headline` de la v2.0.0 decía lo que esa versión sostenía y
+    no se reescribe—; en una pantalla es una afirmación en presente.
+  */
+  const AFIRMACIÓN = /(contrastad|verificad)\w* al 100 ?%/i;
+
+  const archivos = ['src/app', 'src/components']
+    .flatMap((dir) => listar(join(process.cwd(), dir)))
+    .filter((f) => f.endsWith('.tsx') || f.endsWith('.ts'));
+
+  it('encuentra pantallas que revisar', () => {
+    expect(archivos.length).toBeGreaterThan(20);
+  });
+
+  it('ninguna pantalla afirma un corpus contrastado al 100 %', () => {
+    const culpables = archivos.filter((f) => AFIRMACIÓN.test(readFileSync(f, 'utf8')));
+    /* Se normaliza el separador para que el mensaje de fallo se lea igual en
+       Windows y en CI, sin depender del sistema donde corra la prueba. */
+    expect(culpables.map((f) => f.slice(process.cwd().length).split(sep).join('/'))).toEqual([]);
   });
 });
