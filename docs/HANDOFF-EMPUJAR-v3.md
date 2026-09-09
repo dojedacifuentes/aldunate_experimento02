@@ -115,6 +115,11 @@ límites del documento y respaldo efectivo.
 error, de modo que etiqueta los `404` como «probablemente escaneado». El código
 HTTP es correcto; la nota no. Arreglar antes de usarla para otra cosa.
 
+> **Lo primero que debe leer la sesión siguiente:**
+> [`docs/informes/CHECKPOINT-complemento-pucv.md`](informes/CHECKPOINT-complemento-pucv.md).
+> Trae el perfil de la institución apartada celda por celda, tres defectos ya
+> verificados en la aritmética de sus decisiones, y el método para cerrarlos.
+
 ### P2 · RESUELTA en la v3.1.0 · la capa de decisión
 
 La sección 10 recibió los tres bloques que faltaban: la lectura transversal de
