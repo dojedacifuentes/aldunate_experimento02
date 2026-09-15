@@ -1,0 +1,79 @@
+[Informe 01 v3.2.0 · líneas 2482-2560 del texto completo]
+
+Las capacidades, celda por celda
+
+La matriz del cuerpo en texto, para quien quiera el dato exacto, imprima en blanco y negro o
+ llegue con un lector de pantalla. Es la misma información que dibuja la figura y sale de la misma
+ función: no puede decir otra cosa.
+
+Las diez capacidades y la pregunta que responde cada una
+
+Capacidad | Pregunta | 
+
+Unidad especializada | ¿Existe una estructura dedicada dentro de la Facultad? | 
+
+Norma propia | ¿La Facultad dictó reglas sobre el uso de inteligencia artificial? | 
+
+Presencia en pregrado | ¿La IA aparece dentro de la enseñanza de pregrado? | 
+
+Formación estructurada | ¿Hay diplomados, minors, cursos o capacitaciones con IA? | 
+
+Herramienta desplegada | ¿Hay un sistema de IA efectivamente a disposición? | 
+
+Adopción en la enseñanza | ¿Consta que la IA se usa dentro de la enseñanza del Derecho? | 
+
+Alcance declarado | ¿El registro declara a quién alcanza lo que se hace? | 
+
+Investigación | ¿Hay proyectos o publicaciones sobre inteligencia artificial? | 
+
+Transferencia | ¿Hay convenios o servicios hacia fuera de la Facultad? | 
+
+Evaluación de efecto | ¿Se midió si algo de esto mejoró el aprendizaje jurídico? | 
+
+Los siete estados y su valor en el índice
+
+Código | Qué significa | Puntos | 
+
+OPF | En operación, con instrumento formal publicado | 3 | 
+
+OP | En operación | 2 | 
+
+INC | Incipiente | 1 | 
+
+ENT | Sólo en el entorno | 1 | 
+
+ADY | Sólo adyacente | 1 | 
+
+NL | No localizada | 0 | 
+
+NC | No concluyente | — | 
+
+Estado de cada capacidad por institución
+
+Institución | Unid | Norma | Pregr | Form | Herr | Adop | Alc | Inv | Transf | Eval | Piso | 
+
+Pontificia Universidad Católica de Chile | OPF | OPF | OP | OP | ENT | OPF | OP | OPF | INC | NL | 20 | 
+
+Universidad Autónoma de Chile | OPF | NL | OP | OPF | NL | OP | OP | OPF | OP | NL | 17 | 
+
+Universidad Central de Chile | OP | OPF | OP | OP | OP | OP | OP | NL | OP | NL | 17 | 
+
+Universidad de Chile | OP | ENT | NC | OP | NL | ENT | OP | OPF | INC | NL | 12 | 
+
+Universidad Adolfo Ibáñez | ADY | NL | OP | OP | NL | OP | NL | OPF | INC | NL | 11 | 
+
+Universidad Andrés Bello | NL | ENT | OP | INC | OP | ENT | OP | NL | OP | NL | 11 | 
+
+Universidad del Desarrollo | OP | ENT | INC | OP | ENT | NC | NL | NL | ENT | NL | 8 | 
+
+Universidad Diego Portales | OP | NL | INC | INC | NL | INC | OP | NL | INC | NL | 8 | 
+
+Universidad de los Andes | NL | NL | NC | OP | ENT | NC | NL | ENT | INC | NL | 5 | 
+
+Universidad de Concepción | NL | NL | NC | INC | ENT | INC | ENT | NL | INC | NL | 5 | 
+
+Las columnas siguen el orden del cuerpo, abreviadas: Unid unidad especializada, Norma norma propia, Pregr presencia en pregrado, Form formación estructurada, Herr herramienta desplegada, Adop adopción en la enseñanza, Alc alcance declarado, Inv investigación, Transf transferencia y Eval evaluación de efecto. NC son celdas no
+ concluyentes, excluidas del piso y con aporte de 2 puntos al techo.
+
+Anexo D
+

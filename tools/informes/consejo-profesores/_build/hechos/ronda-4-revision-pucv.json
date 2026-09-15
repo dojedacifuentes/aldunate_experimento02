@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "ronda": 4,
+    "fecha": "2026-09-15",
+    "tipo": "Revisión interna de la Dirección de la Escuela",
+    "alcance": "Exclusivamente la Pontificia Universidad Católica de Valparaíso.",
+    "fuente_de_la_revision": "Conocimiento directo de la Dirección de la Escuela de Derecho sobre el funcionamiento de sus propias unidades y actividades, contrastado con la evidencia pública registrada.",
+    "justificacion": "Las fuentes públicas de la PUCV describen sus iniciativas en los términos en que la institución las comunica. La Dirección constata que varias de esas comunicaciones sobrestiman la continuidad, el alcance o el objeto de lo que describen. La revisión corrige a la baja y no al alza.",
+    "advertencia_de_asimetria": "Esta revisión solo pudo aplicarse a la PUCV, porque es la única institución sobre cuyo funcionamiento interno la Dirección tiene conocimiento directo. Las otras diez conservan el estado que arroja su evidencia pública. La comparación entre la PUCV y las demás queda así sesgada en contra de la primera, lo que refuerza la decisión de informarla fuera del orden."
+  },
+
+  "cambios_propuestos": [
+    {
+      "universidad": "pucv",
+      "capacidad": "Presencia en pregrado",
+      "estado_anterior": "En operación",
+      "puntos_anterior": 2,
+      "estado_propuesto": "Incipiente",
+      "puntos_propuesto": 1,
+      "motivo": "El Taller de Prompts Socráticos y el asistente conversacional de Filosofía del Derecho constituyeron una instancia aislada dentro de una asignatura. La actividad se realizó y se registra, pero no acredita continuidad en semestres posteriores ni produjo resultados de investigación sobre su efecto formativo. La malla de pregrado, verificada en sus diez semestres, no contiene asignaturas de la materia."
+    },
+    {
+      "universidad": "pucv",
+      "capacidad": "Formación estructurada",
+      "estado_anterior": "En operación",
+      "puntos_anterior": 2,
+      "estado_propuesto": "Incipiente",
+      "puntos_propuesto": 1,
+      "motivo": "El Diplomado Legal Management Program no es un programa de inteligencia artificial ni está orientado de manera prioritaria a su enseñanza: su objeto es la gestión y la innovación legal, materias adyacentes. La Escuela no ofrece diplomados, magísteres ni cursos de inteligencia artificial dirigidos a profesionales externos; la formación que imparte en esta materia se realiza internamente y para su propia comunidad."
+    },
+    {
+      "universidad": "pucv",
+      "capacidad": "Unidad especializada",
+      "estado_anterior": "En operación",
+      "puntos_anterior": 2,
+      "estado_propuesto": "Incipiente",
+      "puntos_propuesto": 1,
+      "motivo": "La actividad acreditable del Programa DIAT se reduce al taller que lleva su nombre y a iniciativas aisladas. No acredita programa de trabajo continuo, ni equipo estable con dedicación declarada, ni acto formal de creación, ni página propia en el dominio institucional."
+    },
+    {
+      "universidad": "pucv",
+      "capacidad": "Transferencia",
+      "estado_anterior": "En operación con instrumento formal",
+      "puntos_anterior": 3,
+      "estado_propuesto": "Incipiente",
+      "puntos_propuesto": 1,
+      "motivo": "No consta transferencia continua de conocimiento hacia el ejercicio profesional ni actividad de profesionalización sostenida en materia de inteligencia artificial. Las instancias registradas son puntuales y no configuran una relación estable con tribunales, organismos públicos o estudios jurídicos sobre esta materia."
+    }
+  ],
+
+  "se_conservan": [
+    {
+      "capacidad": "Herramienta desplegada",
+      "estado": "En operación con instrumento formal",
+      "motivo": "ScribeClaroPUCV es una herramienta propia, desplegada y documentada, creada para estudiantes de Derecho. La revisión no encontró motivo para rebajarla."
+    },
+    {
+      "capacidad": "Investigación",
+      "estado": "En operación",
+      "motivo": "La adjudicación de fondos internos concursables en 2025 y 2026 está documentada y corresponde a actividad efectivamente ejecutada."
+    },
+    {
+      "capacidad": "Alcance declarado",
+      "estado": "En operación",
+      "motivo": "Las comunicaciones institucionales declaran el alcance de las iniciativas, con independencia de la magnitud de lo declarado."
+    }
+  ]
+}

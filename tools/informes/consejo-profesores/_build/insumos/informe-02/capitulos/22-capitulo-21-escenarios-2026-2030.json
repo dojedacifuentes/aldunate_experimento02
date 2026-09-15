@@ -1,0 +1,75 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 21",
+  "x": "Escenarios 2026-2030"
+ },
+ {
+  "t": "lead",
+  "x": "Tres futuros construidos exclusivamente a partir de las tendencias documentadas en este informe. No son predicciones tecnológicas: cada uno se define por qué variable institucional resulta determinante, y las tres variables ya son observables hoy."
+ },
+ {
+  "t": "table",
+  "cap": "Tabla 16. Escenarios 2026-2030. La plausibilidad estimada refleja la fuerza de las señales tempranas ya observables, no una preferencia del autor.",
+  "head": [
+   "",
+   "Escenario A · Asimilación",
+   "Escenario B · Transformación híbrida",
+   "Escenario C · Reconfiguración profunda"
+  ],
+  "w": [
+   1500,
+   2540,
+   2540,
+   2540
+  ],
+  "align": [
+   "left",
+   "left",
+   "left",
+   "left"
+  ],
+  "rows": [
+   [
+    "**Qué ocurre**",
+    "La IA se incorpora como herramienta; la arquitectura universitaria apenas cambia. La evaluación se endurece por vía presencial.",
+    "Cambian evaluación, competencias y algo del currículo; la estructura institucional se mantiene. Convive el examen seguro con el trabajo asistido.",
+    "La tutoría personalizada, la automatización de la enseñanza básica y las credenciales alternativas modifican funciones universitarias tradicionales."
+   ],
+   [
+    "**Variable determinante**",
+    "Restricción presupuestaria y coste del rediseño",
+    "Capacidad de financiar horas docentes de evaluación y diseño",
+    "Aparición de evidencia sólida de que el tutor de IA supera a la enseñanza masiva, más aceptación del empleador"
+   ],
+   [
+    "**Señales tempranas ya visibles**",
+    "Retorno del examen presencial; 19 % de políticas vigentes; formación docente sin financiar",
+    "Modelo de dos carriles en Australia y Reino Unido; requisitos de egreso; 65 % de estudiantes que percibe cambio evaluativo",
+    "Resultado de Kestin; caída del filtro por expediente del 73 % al 42 %; contratación por competencias"
+   ],
+   [
+    "**Barreras**",
+    "Ninguna: es el resultado por defecto",
+    "Coste, gobernanza colegiada, acreditación",
+    "Ausencia de evidencia a escala; regulación europea; legitimidad social"
+   ],
+   [
+    "**Plausibilidad**",
+    "**Alta** en la mayoría del sistema",
+    "**Alta** en el segmento de instituciones intensivas en investigación de países anglófonos",
+    "**Baja-media** antes de 2030, salvo en formación continua y credenciales cortas"
+   ]
+  ]
+ },
+ {
+  "t": "p",
+  "x": "El escenario más probable no es ninguno de los tres en estado puro, sino su coexistencia estratificada: un pequeño grupo de instituciones bien financiadas en el escenario B, la mayor parte del sistema en el A, y la reconfiguración profunda ocurriendo fuera de la universidad —en la formación continua, las credenciales cortas y la formación corporativa— antes que dentro de ella."
+ },
+ {
+  "t": "callout",
+  "h": "La señal que habría que vigilar",
+  "c": "teal",
+  "x": "El indicador que decidirá entre el escenario A y el B no es tecnológico: es presupuestario. Concretamente, si las instituciones empiezan a financiar horas docentes destinadas a evaluación oral, diseño de tareas y observación de desempeño. Si ese gasto no aparece en los presupuestos de 2027 y 2028, la reforma evaluativa se degradará en rúbricas nuevas sobre prácticas viejas y el escenario A se habrá impuesto por omisión."
+ }
+]

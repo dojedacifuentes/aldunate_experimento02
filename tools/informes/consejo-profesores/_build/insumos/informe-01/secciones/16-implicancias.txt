@@ -1,0 +1,217 @@
+[Informe 01 v3.2.0 · líneas 1717-1933 del texto completo]
+
+10 · Implicancias y decisiones
+
+Lo que dicen los ocho hallazgos juntos
+
+Cada hallazgo describe su capacidad. Leídos como conjunto, las 100 celdas de
+ la matriz dibujan tres formas de ausencia distintas, y distinguirlas importa
+ porque cada una se cierra de una manera diferente.
+
+Ausencia unánime. La evaluación de efecto figura como no localizada en las
+ 10 instituciones del comparador, y —única entre las diez capacidades— sin una sola
+ celda sin concluir. La ruta se recorrió entera en todas y no apareció nada en ninguna. No es un
+ hueco de investigación: es una ausencia comprobada, y por eso es la única capacidad sobre la que
+ este informe puede afirmar algo del campo entero y no sólo de lo que alcanzó a mirar.
+
+Ausencia bimodal. La norma propia y la investigación no admiten término
+ medio: en las dos, ninguna institución ocupa un estado intermedio. En norma
+ propia hay 2 con instrumento formal, 3 donde la regla existe en la
+ universidad y no en la Facultad, y 5 donde no se localizó. En investigación,
+ 4 con instrumento formal, 1 sólo en el entorno y
+ 5 no localizada. Son capacidades que se acreditan con un acto o no se
+ acreditan: no hay forma incipiente de haber dictado una norma.
+
+Ausencia de umbral. La transferencia es el caso contrario.
+ 9 de las 10 están entre incipiente y en
+ operación —6 y 3 respectivamente— y
+ ninguna alcanza el instrumento formal. Aquí no falta actividad: falta el acto que
+ la convierte en relación estable, y todas se detienen debajo del mismo techo.
+
+La cifra que ordena las tres es la misma. De las 100 celdas del comparador, sólo
+ 10 alcanzan el estado con instrumento formal publicado, y se reparten
+ muy desigual: una institución concentra 4, otra 3,
+ y otras tres tienen una cada una. 5 de las 10 Facultades
+ del comparador no acreditan un solo instrumento formal en ninguna de las diez capacidades.
+
+Lo que el conjunto describe, entonces, no es un campo desigual en cantidad de actividad —la
+ actividad abunda y está repartida— sino un campo donde la actividad rara vez llega al acto
+ que la hace verificable desde fuera. Es consistente con lo que el hallazgo sobre la
+ verificación institucional establece por otra vía: donde nadie exige el acto, el costo de no
+ publicarlo es cero.
+
+Límite. El instrumento mide capacidad acreditada por evidencia
+ pública. Una Facultad puede haber dictado el acto y no haberlo publicado, y aparecería aquí igual
+ que una que no lo dictó. La distinción entre las dos no la puede hacer ningún método basado en
+ evidencia pública, y este informe no la hace.
+
+La celda que nadie ha ocupado, y qué costaría ocuparla
+
+La evaluación de efecto vale tres puntos por institución en la rúbrica del anexo D: son
+ 30 puntos repartidos en el comparador, y están todos vacíos.
+ Es la única capacidad del instrumento en esa situación.
+
+El contraste externo fija la naturaleza de esa ausencia y la separa de las demás: la consulta
+ exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 no devuelve un solo proyecto
+ sobre enseñanza del Derecho con inteligencia artificial, en ninguna universidad y en ningún año.
+ No es que no se haya encontrado la medición: es que ninguna se ha financiado. La base recoge adjudicaciones, de modo que acredita ausencia de financiamiento y no ausencia de intentos.
+
+Y no ocurre porque falte el instrumento. Entre 2024 y 2026 se adjudicaron diez proyectos que
+ cruzan inteligencia artificial con enseñanza o educación superior, repartidos en seis disciplinas
+ —Ciencias de la Educación, Humanidades, Informática, Escuelas de Negocios y Ciencias de la Salud—.
+ Ninguno es de Derecho. El instrumento existe, está en uso, y otras disciplinas lo están usando para
+ estudiar su propia transformación docente.
+
+El orden de magnitud, con las cifras que ya publica el anexo E
+
+Los siete proyectos vigentes de disciplina Derecho con objeto de inteligencia artificial suman
+ 473.162.000 pesos. La mediana es de 55.610.000 y seis de los siete están entre
+ 39,7 y 60,8 millones, todos a 48 meses. Ése es el tamaño publicado de un Fondecyt Regular en esta
+ disciplina y en este objeto.
+
+Lo que la evidencia no permite afirmar es que evaluar el efecto de la
+ enseñanza cueste eso: un diseño con grupo de comparación no tiene por qué costar lo que un
+ proyecto de dogmática, y podría costar bastante menos. Lo que sí permite afirmar es que el
+ instrumento con el que se financiaría está disponible, que su orden de magnitud en esta disciplina
+ es público, y que no consta ninguna adjudicación a una Facultad de Derecho chilena para este objeto.
+
+Qué tendría que contener para contar. La escalera de institucionalización sitúa la evaluación en
+ su cuarto peldaño, y ese peldaño exige resultados públicamente revisables: no
+ basta con contar asistentes ni con una encuesta de satisfacción, que es lo que hoy existe. La única
+ medición de resultado de todo el corpus la publica una vicerrectoría de transformación digital
+ sobre el conjunto de su universidad, es correlacional y no distingue a los estudiantes de Derecho.
+ La primera Facultad que publique una medición con diseño, instrumento declarado y grupo de
+ comparación será, con la evidencia de este informe a la vista, la primera en poder demostrar lo que las demás afirman.
+
+De los datos a la decisión
+
+Cuatro prioridades. Ninguna se sigue automáticamente de un dato: cada una declara
+ la evidencia que la sostiene, quién puede tomarla y qué haría falta saber para tomarla mejor.
+
+Las cuatro son del campo, del regulador o del gremio. Ninguna se dirige a una
+ universidad nombrada del comparador, y no es una cortesía: quien firma este informe tiene un
+ conflicto de interés declarado con una de las instituciones de la cohorte, y prescribir a las
+ demás desde esa posición es exactamente lo que la sección 8 existe para evitar. Lo prescriptivo
+ sobre la institución apartada se publica en el documento complementario, que no puntúa y no
+ compara.
+
+P-1Financiar la investigación sobre la propia enseñanza, con el instrumento que ya existe
+
+Evidencia
+
+Cero proyectos sobre enseñanza del Derecho con inteligencia artificial en 49.014 adjudicados por ANID desde 1982, frente a diez proyectos 2024-2026 que cruzan IA con enseñanza en otras seis disciplinas. Anexo E.
+
+Problema
+
+La capacidad de investigar la IA como problema jurídico está construida y financiada; la de investigar cómo se enseña, no se ha constituido. Sin ella, ninguna afirmación sobre eficacia formativa es verificable.
+
+Actor
+
+Las Facultades como postulantes. No requiere que ANID cree nada: el instrumento se está usando para este objeto en otras disciplinas.
+
+Falta saber
+
+Si llegó a pedirse. El registro consultado recoge adjudicaciones y no postulaciones: acredita que ningún proyecto se financió y no dice cuántos se presentaron ni cuántos se rechazaron. Desconocimiento del instrumento, ausencia de equipos con esa formación metodológica, postulaciones rechazadas o decisión deliberada son explicaciones compatibles con la misma evidencia.
+
+P-2Publicar el acto de lo que ya está en operación
+
+Evidencia
+
+Sólo 10 de las 100 celdas del comparador alcanzan el estado con instrumento formal, y 5 Facultades no acreditan ninguno. De las cuatro unidades creadas entre 2025 y 2026, ninguna publica el acto que la constituye.
+
+Problema
+
+Buena parte de la distancia entre instituciones no mide qué se ha construido sino qué se ha dejado por escrito. Una capacidad real sin acto publicado es indistinguible desde fuera de una que no existe.
+
+Actor
+
+Cada Facultad, en su propio nivel de decisión. Es la prioridad más barata de las cuatro: no exige presupuesto nuevo, sino publicar lo que ya se decidió.
+
+Falta saber
+
+Si la no publicación es una decisión o una inercia administrativa. La evidencia pública no distingue entre las dos, y la respuesta cambia si el remedio es una política o un procedimiento.
+
+P-3Cerrar la regla de uso antes de que la cierre el estándar profesional
+
+Evidencia
+
+2 de 10 Facultades acreditan norma propia con acto citable. La guía del Colegio de Abogados de 6 de julio de 2026 ya impone al abogado en ejercicio verificación personal de citas, competencia tecnológica y prohibición de delegar el juicio profesional. Sección 6.
+
+Problema
+
+Una Facultad que titula abogados sin haber definido qué se permite en sus propias evaluaciones está formando para un estándar profesional que ya existe y que ella no aplica. El contraste internacional de la sección 7 muestra además que, donde el instrumento existe, el modelo dominante es el de deberes de declaración con consecuencia asociada.
+
+Actor
+
+Cada Facultad en su régimen de evaluación, y el gremio en la articulación entre formación y ejercicio.
+
+Falta saber
+
+Si una norma de Facultad cambia la conducta de quien estudia. No hay ninguna medición al respecto en el corpus, y obtenerla es precisamente la prioridad P-1.
+
+P-4Dotar de contraparte a lo que las Facultades dicen de sí mismas
+
+Evidencia
+
+La Comisión Nacional de Acreditación ha dictado criterios específicos sólo para Pedagogía, Medicina y Odontología; Derecho no tiene criterios propios y su acreditación de carrera es voluntaria. El Colegio de Abogados regula al abogado en ejercicio, la Academia Judicial se dirige a juezas y jueces, y la Política Nacional de Inteligencia Artificial contempla a las instituciones de educación superior sin una sola mención a la formación jurídica.
+
+Problema
+
+Lo que una Facultad publica sobre cómo enseña inteligencia artificial no tiene hoy contraparte evaluadora en ninguna institución chilena. En ese vacío, la calidad de la autodescripción depende enteramente de la disciplina de quien la escribe.
+
+Actor
+
+La Comisión Nacional de Acreditación, el Ministerio de Ciencia en la revisión de la Política Nacional, y el gremio.
+
+Falta saber
+
+Si la verificación externa produciría capacidad o sólo cumplimiento formal. Este mismo informe da una razón para dudar: el campo ya anuncia estructura antes de constituirla, y un criterio de acreditación mal diseñado premiaría el anuncio.
+
+Límite de las cuatro. Son prioridades sobre el campo, no un
+ plan de trabajo para nadie en particular, y ninguna de las cuatro está respaldada por evidencia de
+ que funcione: no existe en Chile una sola medición del efecto de estas decisiones, que es
+ justamente lo que la primera de ellas propone construir. Se publican como lo que son —lo que la
+ evidencia disponible hace razonable considerar— y no como lo que la evidencia demuestra.
+
+La ventana, y qué cuesta dejarla pasar
+
+Este informe no puede predecir el futuro y no lo intentará. Puede, en cambio, señalar tres hechos
+ fechados que acotan el período en que estas decisiones son distintivas, y uno que acota el período en
+ que son posibles sin coste reputacional.
+
+La ventana de la norma se está cerrando desde fuera. El Colegio de Abogados
+ aprobó en julio de 2026 una guía que impone al abogado en ejercicio verificación personal de citas
+ normativas y jurisprudenciales, competencia tecnológica y prohibición de delegar el juicio
+ profesional. Una Facultad que titula abogados sin haber definido qué se permite en sus propias
+ evaluaciones está formando para un estándar profesional que ya existe y que ella no aplica.
+
+La ventana del riesgo ya se cerró. El 28 de julio de 2026 el uso automatizado de
+ inteligencia artificial hizo colapsar la Oficina Judicial Virtual con 38.477 escritos. La discusión
+ sobre si estas herramientas plantean un problema institucional concreto en Chile terminó ese día.
+
+La ventana de la primacía es estrecha. Otra Facultad de la misma región presentó
+ el 4 de septiembre de 2026 un laboratorio de innovación docente en Derecho, ética y tecnologías, con
+ coordinadora identificada y una capacitación docente ya ejecutada. Reproduce exactamente el patrón
+ que este informe critica —presentación pública sin acto de creación— y por eso no altera hoy el
+ comparador. Pero es la primera unidad nueva de este tipo creada en 2026, y está a veinte minutos.
+
+La ventana de la evaluación sigue abierta y es la única sin competencia. Ninguna
+ de las once ha medido. No consta ninguna adjudicación de financiamiento público chileno para hacerlo.
+ Existen diseños replicables publicados con muestras de entre 48 y 137 estudiantes. La primera
+ Facultad de Derecho chilena que publique una medición de efecto sobre aprendizaje jurídico no
+ mejorará su posición en este comparador: creará la categoría.
+
+Lo que este informe no dice, y conviene que quede escrito
+
+No dice que la Escuela de Derecho de la PUCV esté rezagada. Dice lo contrario: es la institución sobre la que más rutas del protocolo se recorrieron, y no le queda ninguna celda sin concluir, de modo que cada una de sus ausencias está comprobada y no es un hueco de investigación. No dice
+ tampoco que deba invertir más en inteligencia artificial en abstracto; ninguna de las seis decisiones
+ propuestas consiste en comprar tecnología, y cuatro no cuestan dinero.
+
+Dice una cosa más incómoda que cualquiera de las dos: que la primera posición de una cohorte cuyo
+ máximo es 18 sobre 30 no es una posición cómoda, y que la diferencia entre tener actividad y tener
+ capacidad se juega en instrumentos que ya se sabe cómo redactar. Un decreto de creación. Una norma
+ aprobada por el consejo. Un código de asignatura. Una cifra publicada. Un estudio con grupo de
+ comparación. Cinco documentos, y la Facultad que los publique será, con la evidencia de este informe a la vista, la primera en poder demostrarlo.
+
+18
+

@@ -1,0 +1,77 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 7",
+  "x": "El estudiante como agente: uso, delegación y descalibración"
+ },
+ {
+  "t": "lead",
+  "x": "El cambio de rol del estudiante suele describirse con optimismo: de receptor pasivo a agente que formula problemas, coordina herramientas y verifica resultados. La evidencia disponible respalda parcialmente esa descripción y añade dos matices incómodos: lo que más se delega es precisamente el trabajo cognitivo de orden superior, y la percepción del propio rendimiento está sistemáticamente equivocada."
+ },
+ {
+  "t": "h2",
+  "x": "7.1 La taxonomía de Bloom invertida"
+ },
+ {
+  "t": "p",
+  "x": "Los datos de uso publicados por Anthropic sobre estudiantes universitarios muestran un patrón que merece atención. Cerca del 47 % de las interacciones son directas —instrucción, resultado, implicación mínima—, lo que corresponde a automatización más que a aumento de capacidades. Y la distribución por niveles cognitivos está invertida respecto de lo que cabría esperar: las categorías más frecuentes son «crear» (39,8 %) y «analizar» (30,2 %), mientras «recordar» es marginal."
+ },
+ {
+  "t": "p",
+  "x": "Dicho de otro modo: los estudiantes no delegan las tareas mecánicas para concentrarse en las complejas. **Delegan las complejas.** Delegan exactamente los procesos que la formación universitaria existe para desarrollar."
+ },
+ {
+  "t": "p",
+  "x": "Un matiz esperanzador acompaña al hallazgo: los usuarios con más antigüedad iteran más y delegan menos. La colaboración madura con la práctica. Eso convierte la enseñanza explícita de patrones de uso en una intervención con sentido, no en una aspiración vaga."
+ },
+ {
+  "t": "p",
+  "x": "La advertencia es obligada: son datos de un proveedor sobre su propia plataforma, sin muestreo representativo. Sirven para describir patrones de interacción, no para estimar prevalencia poblacional."
+ },
+ {
+  "t": "h2",
+  "x": "7.2 La descalibración: el hallazgo más transferible"
+ },
+ {
+  "t": "p",
+  "x": "En julio de 2025, METR publicó un ensayo aleatorizado con dieciséis desarrolladores de software experimentados que completaron 246 tareas reales en sus propios repositorios de código abierto, con asignación aleatoria del permiso de usar IA. El resultado fue que tardaron un **19 % más** con la herramienta. Habían predicho que serían un 24 % más rápidos. Y después de haber experimentado la ralentización, seguían estimando que habían sido un **20 % más rápidos**."
+ },
+ {
+  "t": "p",
+  "x": "La brecha entre productividad percibida y medida fue de casi cuarenta puntos porcentuales, **en expertos, en su propio dominio, sobre su propio código**. METR ha marcado posteriormente el resultado como histórico, advirtiendo que no refleja necesariamente las herramientas ni los flujos de trabajo actuales; la advertencia es pertinente y no afecta al punto pedagógico."
+ },
+ {
+  "t": "p",
+  "x": "Porque el punto pedagógico es este: si expertos en su propia especialidad no pueden estimar correctamente si la herramienta les ayudó, no hay razón para suponer que un estudiante de segundo año pueda hacerlo. **La calibración de la propia confianza no es una competencia deseable; es un prerrequisito de la autorregulación del aprendizaje**, y hoy no se enseña ni se evalúa en prácticamente ningún currículo."
+ },
+ {
+  "t": "h2",
+  "x": "7.3 Sobre el debate de la degradación cognitiva"
+ },
+ {
+  "t": "p",
+  "x": "Ningún estudio de este campo ha tenido tanta repercusión mediática como «Your Brain on ChatGPT», del MIT Media Lab, que registró mediante electroencefalografía la actividad de 54 participantes escritores de ensayos en tres condiciones: sin herramientas, con buscador y con un modelo de lenguaje. Reportó menor conectividad cerebral en el grupo con LLM, ensayos más homogéneos en vocabulario y estructura, y persistencia de los efectos tras retirar la herramienta."
+ },
+ {
+  "t": "p",
+  "x": "Es también uno de los estudios metodológicamente más débiles del campo, y este informe considera obligatorio decirlo. La muestra es muy pequeña; un comentario publicado señala problemas en el análisis electroencefalográfico, inconsistencias en el reporte de resultados y transparencia limitada; y los hallazgos se refieren a una única tarea, la escritura de ensayos, en un contexto específico. La menor conectividad durante una tarea delegada es, además, la observación esperable: delegar consume menos recursos cognitivos por definición. Que eso constituya un daño duradero es una inferencia que el diseño no permite establecer."
+ },
+ {
+  "t": "callout",
+  "h": "Cómo debe usarse este estudio",
+  "c": "ochre",
+  "x": "«Your Brain on ChatGPT» ha sido citado en presentaciones institucionales de todo el mundo como prueba de que la IA daña el cerebro. No lo es. Es una hipótesis interesante con evidencia preliminar y limitaciones serias. La evidencia sólida sobre pérdida de aprendizaje no viene de la neuroimagen sino del diseño experimental de Bastani: retirar la herramienta y medir qué queda. Cuando se necesite un dato duro sobre este punto, la cifra defendible es el −17 %, no la conectividad electroencefalográfica."
+ },
+ {
+  "t": "h2",
+  "x": "7.4 Homogeneización: más creatividad individual, menos diversidad colectiva"
+ },
+ {
+  "t": "p",
+  "x": "Anil Doshi y Oliver Hauser publicaron en Science Advances, en julio de 2024, un experimento sobre escritura de relatos breves con y sin acceso a ideas generadas por IA. El acceso hizo que los relatos fueran evaluados como más creativos, mejor escritos y más disfrutables, **especialmente entre los escritores menos creativos**. Pero los relatos asistidos resultaron más parecidos entre sí que los escritos sin ayuda."
+ },
+ {
+  "t": "p",
+  "x": "Los autores lo describen como un dilema social: individualmente cada autor mejora, colectivamente el espacio de contenido novedoso se estrecha. Trasladado a la universidad, el efecto tiene dos caras que conviene mantener juntas. La cara buena es niveladora y aparece de nuevo, con más fuerza, en el estudio de Derecho del capítulo 13. La cara mala es que un sistema formativo que produce trabajos individualmente mejores y colectivamente más parecidos está perdiendo exactamente aquello que justifica reunir a miles de personas a pensar en el mismo lugar."
+ }
+]

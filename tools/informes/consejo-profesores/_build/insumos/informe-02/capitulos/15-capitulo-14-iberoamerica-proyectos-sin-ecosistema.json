@@ -1,0 +1,83 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 14",
+  "x": "Iberoamérica: proyectos sin ecosistema"
+ },
+ {
+  "t": "lead",
+  "x": "La narrativa habitual presenta a la región como receptora tardía. Los datos la matizan: existen iniciativas notables, algunas pioneras a escala mundial. Lo que no existe es un ecosistema. La diferencia entre ambas cosas explica por qué la región produce casos y no produce evidencia."
+ },
+ {
+  "t": "h2",
+  "x": "14.1 Lo que hay: 193 iniciativas en 22 países"
+ },
+ {
+  "t": "p",
+  "x": "El mapeo más completo de la región es la convocatoria «¡IA Presente!» del Banco Interamericano de Desarrollo con Ceibal, implementada por Socialab, que identificó **193 iniciativas** de IA educativa activas en **22 países** de América Latina y el Caribe. A ello se suma **EduIALab**, el laboratorio regional de IA para la educación creado por Ceibal de Uruguay junto al Banco Mundial, el BID y el IDRC de Canadá."
+ },
+ {
+  "t": "p",
+  "x": "En el plano de la medición, la tercera edición del **Índice Latinoamericano de Inteligencia Artificial**, presentado por la CEPAL y el CENIA de Chile, evalúa 19 países sobre más de 100 subindicadores en tres dimensiones: factores habilitantes; investigación, desarrollo y adopción; y gobernanza."
+ },
+ {
+  "t": "h2",
+  "x": "14.2 El caso Tecnológico de Monterrey: soberanía tecnológica real, evidencia declarada"
+ },
+ {
+  "t": "p",
+  "x": "El Tecnológico de Monterrey lanzó TECgpt el 28 de septiembre de 2023, siendo el primer modelo de IA generativa propio de una universidad latinoamericana, y posteriormente abrió el ecosistema con TECgpt Open Edition. Es, sin discusión, la apuesta de soberanía tecnológica institucional más avanzada de la región y una de las pocas del mundo en el modelo «construir»."
+ },
+ {
+  "t": "p",
+  "x": "Las cifras institucionales, presentadas en su AI Day de 2025, reportan más de 14.000 usuarios de TECgpt y un ecosistema que incluye un Sistema Inteligente de Apoyo a la Facultad. La institución declara además ganancias de aprendizaje de veinte a treinta puntos con impacto en más de 10.000 estudiantes en 2025."
+ },
+ {
+  "t": "callout",
+  "h": "Advertencia obligada sobre esta cifra",
+  "c": "brick",
+  "x": "La cifra de «veinte a treinta puntos» de ganancia de aprendizaje es un **autoinforme institucional sin metodología pública, sin grupo de control y sin revisión externa**. Este informe la consigna porque es lo que la institución afirma, y advierte expresamente que no constituye evidencia de resultados en el sentido en que se emplea ese término en el capítulo 15. El contraste con el caso de Harvard —donde una ganancia comparable está respaldada por un ensayo aleatorizado publicado en una revista revisada por pares— ilustra la diferencia entre afirmar y demostrar. Esta advertencia no cuestiona el valor estratégico de TECgpt, que es considerable; cuestiona el uso de esa cifra como prueba pedagógica."
+ },
+ {
+  "t": "h2",
+  "x": "14.3 Chile: formación docente como vector"
+ },
+ {
+  "t": "p",
+  "x": "Chile presenta un perfil característico de nivel 2 —política y alfabetización— con un vector interesante y poco frecuente: la formación inicial docente."
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "**MetaRed TIC Chile** definió una hoja de ruta 2025-2026 con la inteligencia artificial como eje estratégico, con participación central de la Universidad de Chile.",
+   "El programa **«Futuros Docentes en IA»**, alianza público-privada impulsada desde el Ministerio de Ciencia, realizó un piloto en 2025 con cuatro universidades y cerca de 200 futuros docentes, e inició su escalamiento nacional desde marzo de 2026 con nueve universidades del CRUCH.",
+   "La **Universidad de Chile** ha desarrollado lineamientos éticos para la docencia universitaria con IA, derivados de su modelo educativo institucional; la **Universidad Andrés Bello** publicó lineamientos de uso responsable en 2024."
+  ]
+ },
+ {
+  "t": "p",
+  "x": "Formar en IA a quienes van a enseñar es una intervención de alto apalancamiento y bajo coste comparativo, y es una decisión más inteligente que la compra de licencias a escala. Lo que no existe en Chile —ni ha sido documentado públicamente en esta investigación— es un rediseño evaluativo institucional comparable al australiano, ni una modificación formal de perfiles de egreso comparable a la de Ohio State."
+ },
+ {
+  "t": "h2",
+  "x": "14.4 España y el marco iberoamericano"
+ },
+ {
+  "t": "p",
+  "x": "La Conferencia de Rectores de las Universidades Españolas, a través del grupo de trabajo de Inteligencia Artificial y Gobernanza del Dato de su sectorial de Digitalización, encuestó en abril y mayo de 2025 a los responsables de implantación de IA en las universidades españolas. Su posicionamiento formal de junio de 2024 se resume en una fórmula que este informe suscribe: **la IA no debe prohibirse, debe enseñarse**."
+ },
+ {
+  "t": "p",
+  "x": "Es necesario señalar aquí una limitación de esta investigación. Circulan cifras muy citadas sobre el porcentaje de universidades españolas con políticas de uso condicionado y sobre presupuestos agregados de IA educativa que no ha sido posible rastrear hasta una fuente primaria fiable. Se han excluido deliberadamente de este informe. Su ausencia es preferible a su inclusión sin verificación."
+ },
+ {
+  "t": "h2",
+  "x": "14.5 El diagnóstico regional"
+ },
+ {
+  "t": "callout",
+  "h": "Proyectos, no ecosistema",
+  "c": "navy",
+  "x": "La región tiene iniciativas de primer nivel mundial —TECgpt es anterior a la mayoría de los despliegues estadounidenses, y Ceibal lleva casi dos décadas de infraestructura pública—. Lo que no tiene es la capa que convierte iniciativas en conocimiento acumulable: evaluación independiente, publicación de resultados negativos, comparabilidad entre instituciones y financiación sostenida de investigación educativa. El resultado es que la región **genera casos que el mundo cita y no genera evidencia que el mundo pueda usar**. Corregir eso es más barato que cualquier despliegue tecnológico y tendría más impacto."
+ }
+]

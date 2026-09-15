@@ -1,0 +1,177 @@
+[Informe 01 v3.2.0 · líneas 1222-1400 del texto completo]
+
+6 · Contraste externo: qué dicen los terceros
+
+Un corpus formado sólo por lo que las universidades publican de sí mismas no puede distinguir entre lo que ocurre y lo que se declara. Ésta recorre esa ruta en las once instituciones. Lo
+ que aparece no desmiente al corpus: lo recoloca.
+
+Lo que financia el Estado, y lo que no
+
+La base histórica de proyectos adjudicados por ANID contiene 49.014 registros desde 1982, con
+ código, título, monto, duración, institución, disciplina y palabras clave. Es una fuente de una
+ naturaleza distinta a todo lo demás del corpus: permite afirmaciones de exhaustividad y no sólo de
+ existencia. Consultarla de forma programática, y no por muestreo, es lo que hace posibles las dos
+ afirmaciones de esta sección.
+
+¿Qué investigación sobre inteligencia artificial y Derecho financia el Estado chileno?
+
+Existe investigación jurídica sobre IA, está financiada y crece. Investigación sobre cómo enseñar Derecho con IA no existe.
+
+[FIGURA SVG]
+
+Consulta exhaustiva sobre el universo completo de proyectos adjudicados. La primera
+ columna cuenta proyectos de disciplina Derecho cuyo objeto o palabras clave incluyen inteligencia
+ artificial, con fallo 2025 y 2026. La segunda, proyectos con objeto jurídico-tecnológico
+ clasificados fuera de la disciplina Derecho. La tercera es el resultado de buscar, en los 49.014
+ registros y en todos los años, cualquier proyecto sobre enseñanza del Derecho con inteligencia
+ artificial.
+
+Los siete proyectos de disciplina Derecho con objeto de inteligencia artificial
+
+Código | Instrumento | 
+ Responsable | Institución | 
+ Monto ($) | Meses | 
+
+1262567 | Fondecyt Regular 2026 | Ricardo Lillo Lobos | U. Adolfo Ibáñez | 57.300.000 | 48 | 
+
+1260629 | Fondecyt Regular 2026 | Osvaldo Artaza Varela | U. de Talca | 39.720.000 | 48 | 
+
+1262017 | Fondecyt Regular 2026 | Alberto Coddou Mc Manus | P. U. Católica de Chile | 48.960.000 | 48 | 
+
+1262066 | Fondecyt Regular 2026 | Juan Faúndes Peñafiel | U. Autónoma de Chile | 163.800.000 | 48 | 
+
+1250613 | Fondecyt Regular 2025 | Sebastián Bozzo Hauri | U. Autónoma de Chile | 55.610.000 | 48 | 
+
+1250142 | Fondecyt Regular 2025 | Juan Pablo Mañalich Raffo | U. de Chile | 46.980.000 | 48 | 
+
+1250103 | Fondecyt Regular 2025 | Eduardo Jequier Lehuedé | U. San Sebastián | 60.792.000 | 48 | 
+
+Suma de los siete: 473.162.000 pesos. Los títulos completos, y los ocho proyectos
+ adicionales con objeto jurídico-tecnológico clasificados fuera de la disciplina Derecho —entre ellos
+ el FONDEF IT25I0151 de certeza jurídica ambiental, 236.998.000 pesos y 24 meses, y
+ dos proyectos Corfo de automatización judicial— se publican en el anexo E.
+
+La asimetría que este cruce hace visible
+
+Los siete proyectos son sustantivos: regulación de riesgos, debido proceso,
+ responsabilidad civil por daños de sistemas de IA, gestión algorítmica del trabajo, penología
+ algorítmica. Ninguno es pedagógico. Las Facultades de Derecho chilenas han
+ construido, con financiamiento público competitivo y evaluación por pares, una capacidad real para
+ estudiar la inteligencia artificial como problema jurídico. No consta que hayan obtenido nunca financiamiento para estudiar cómo enseñan; el registro recoge adjudicaciones y no postulaciones, de modo que no dice si llegaron a pedirlo. Y no es que el instrumento no exista ni que la ventana esté cerrada:
+ entre 2024 y 2026 se adjudicaron diez proyectos que cruzan inteligencia artificial con enseñanza o
+ educación superior —seis en Ciencias de la Educación, y el resto en Humanidades, Informática,
+ Escuelas de Negocios y Ciencias de la Salud—. Uno de ellos estudia la formación universitaria en
+ ingeniería de software en la era de la IA generativa. Otras disciplinas están investigando su propia
+ transformación docente. El Derecho, no.
+
+Corrección fáctica que el contraste obliga a publicar
+
+La nota institucional que anuncia el proyecto de certeza jurídica ambiental lo presenta como una
+ adjudicación reciente y no publica código, monto ni duración. La fuente oficial permite completarlo
+ y corregirlo: es el FONDEF IT25I0151, instrumento Investigación Tecnológica
+ —la línea de escalamiento de un resultado ya existente, no de investigación nueva—, por 236.998.000
+ pesos y 24 meses, adjudicado por resolución exenta 7461 de 9 de septiembre de 2025. Y es la segunda
+ fase de un proyecto anterior: ID21I10206, de 2021, por 199.999.000 pesos, cuyo
+ seminario de cierre se realizó el 8 de julio de 2024. La línea de trabajo tiene cinco años y unos
+ 437 millones acumulados. Presentarla como una irrupción de 2025 subestima su continuidad; los tres
+ campos que lo demuestran —código, monto e instrumento— no están en la comunicación institucional
+ sino en el repositorio de datos abiertos.
+
+Lo que dice la prensa que no es universitaria
+
+Existe una sola pieza de prensa general que aborda directamente el objeto de este informe: un
+ artículo de La Tercera de 12 de febrero de 2025 que recoge declaraciones de decanos y vicedecanos de
+ cuatro Facultades sobre informática jurídica, ética e inteligencia artificial. Conviene registrar con
+ precisión qué vale: el artículo no evalúa a las Facultades, transporta su autodescripción.
+ Cuenta como corroboración de que el discurso existe y es público, no como validación independiente
+ de su contenido. Aporta, eso sí, las dos cifras de escala que este informe usa en su introducción.
+
+Lo demás se reparte en tres registros y ninguno mira a las Facultades.
+
+El mercado va por delante. En agosto de 2026 la prensa económica documentaba
+ comités de inteligencia artificial constituidos en los principales estudios jurídicos del país, una
+ asociación gremial de legaltech que agrupa veintiuna empresas y proyecciones de venta en millones de
+ dólares. La única mención universitaria del artículo es la de un decano.
+
+El riesgo ya se materializó. El 28 de julio de 2026 el uso automatizado de
+ inteligencia artificial para el ingreso de escritos hizo colapsar la Oficina Judicial Virtual:
+ 38.477 escritos hasta el mediodía del lunes, entre 500 y 900 por tribunal, desde el sábado anterior.
+ La Corte Suprema bloqueó la dirección de origen y su Departamento de Informática debió elaborar un
+ escrito tipo de respuesta. Es el primer incidente institucional documentado en Chile atribuible
+ directamente al uso profesional de estas herramientas, y ocurrió a seis semanas de la fecha de corte
+ de este informe.
+
+La crítica a la formación existe y viene de fuera de la academia. En febrero de
+ 2026 dos abogadas fundadoras de una plataforma de procuradores sostenían, en la prensa jurídica
+ especializada, que «existe una brecha estructural entre lo que las facultades de Derecho enseñan y
+ lo que el ejercicio profesional exige», y que «el uso excesivo de modelos de escritos y herramientas
+ de inteligencia artificial ha contribuido al debilitamiento y prácticamente el olvido del
+ razonamiento jurídico». Es una opinión y se registra como tal; su interés es que ninguna Facultad
+ de la cohorte ha publicado una respuesta ni un dato que la confirme o la desmienta.
+
+Lo que hacen las instituciones del sector, y dónde se detienen
+
+Institución | Qué publicó | 
+ Alcance declarado, y dónde se detiene | 
+
+Academia Judicial | Sitio y guía sobre IA generativa · 7-04-2026 | 
+ Guía para juezas y jueces aprobada por su Consejo Directivo, tutoriales de prompting, catálogo
+ de herramientas y orientaciones de la Corte Suprema, anclada al Código de Ética Judicial.
+ No menciona facultades de Derecho, formación de pregrado ni estudiantes. | 
+
+Colegio de Abogados de Chile | Guía de uso responsable de IA · aprobada 6-07-2026 | 
+ Competencia tecnológica, verificación diligente de resultados, prohibición de delegar el juicio
+ profesional, verificación personal de citas normativas y jurisprudenciales, confidencialidad
+ reforzada. Nada sobre formación universitaria ni sobre la preparación de los
+ egresados. | 
+
+Comisión Nacional de Acreditación | Criterios y estándares por carrera | 
+ Sólo existen para Pedagogía, Medicina y Odontología, las tres de acreditación obligatoria.
+ Derecho no tiene criterios propios y su acreditación de carrera es voluntaria.
+ No existe el instrumento regulatorio con que evaluar cómo una Facultad de Derecho enseña IA. | 
+
+Ministerio de Ciencia | Política Nacional de Inteligencia Artificial | 
+ Contempla a las instituciones de educación superior para incorporar la IA como conocimiento
+ transversal y fortalecer las carreras de computación. Ningún objetivo, acción ni mención
+ sobre formación jurídica, abogados o facultades de Derecho. | 
+
+Superintendencia de Insolvencia | Piloto de asesor virtual · 23-10-2025 | 
+ Con el Ministerio de Economía, acredita que una Facultad de Derecho chilena construyó un
+ prototipo de IA generativa para un servicio público. Es el contraste externo que confirma
+ una capacidad, y también el que corrige su grado de madurez. | 
+
+Lo que se sabe del uso real, que es poco y no es de Derecho
+
+No existe ninguna encuesta sobre uso de inteligencia artificial específicamente entre estudiantes o
+ profesionales del Derecho en Chile. Es una ausencia comprobada y no una laguna de búsqueda. Los tres
+ datos disponibles son aproximaciones y conviene usarlos con sus salvedades:
+
+81 % de los estudiantes de primer año de la Universidad de Chile declara usar
+ herramientas de IA, y sólo 18 % aprueba usarlas para completar trabajos o tareas. La encuesta está
+ segregada por facultad y carrera, pero el desglose de Derecho no se publica: se
+ entrega internamente a cada unidad. El dato existe, dentro de una de las once instituciones, y no
+ es público.
+
+24 % de adopción de IA en áreas legales sitúa a Chile último de la región según
+ un estudio de mercado de 2025 sobre más de 200 profesionales, frente a un promedio regional del
+ 28 %. La fuente es una empresa proveedora de legaltech y la muestra no es probabilística; se cita
+ como señal y no como hecho.
+
+El único registro publicado y revisado por pares de un programa curricular chileno de IA y
+ Derecho es un artículo de 2021 en el que los propios autores del minor de la Universidad Autónoma
+ reconocen que «el éxito depende del interés del estudiante» dado su carácter voluntario, y sugieren
+ que hacerlo obligatorio mejoraría la preparación. Es autoevaluación, y es lo más parecido a
+ investigación educativa sobre esta materia que existe en el país.
+
+Conclusión de la sección
+
+El contraste externo no desmintió al corpus en ningún punto sustantivo, y eso es en sí un
+ resultado: lo que las Facultades publican sobre sí mismas, cuando se contrasta contra registros
+ oficiales, resulta ser cierto aunque frecuentemente presentado con más madurez de la que acredita.
+ El hallazgo del capítulo es otro y es de arquitectura institucional: no hay nadie del otro
+ lado. Ni regulador con criterios, ni gremio que se ocupe de la formación, ni política
+ pública que la contemple, ni investigación educativa financiada. En ese vacío, la única disciplina
+ que opera sobre lo que una Facultad de Derecho dice de sí misma es la suya propia.
+
+14
+

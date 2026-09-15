@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+12/30
+ Universidad de Chile
+
+Facultad de Derecho U. de Chile · piloto de profundidad
+
+La institución más investigada de la cohorte. Su centro hereda una genealogía de treinta y ocho años y el único instrumento citado oficializa una denominación anterior y distinta de la actual. Cuatro de las fuentes que el registro le atribuía corresponden a departamentos distintos del centro, y tres son anuncios de agenda sin acreditación de realización. El contraste externo le acredita dos proyectos Fondecyt de objeto de IA. Su encuesta de admisión mide uso de IA por carrera y no publica el desglose de Derecho.
+
+Cobertura
+
+12 de 13 rutas · 16 fuentes, 16 contrastadas (100 %) · 1 celdas sin concluir
+
+Índice
+
+Piso 12 · techo 14
+
+Rutas por recorrer
+
+malla-curricular
+

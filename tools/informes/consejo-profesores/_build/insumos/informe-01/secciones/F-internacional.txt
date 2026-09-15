@@ -1,0 +1,69 @@
+[Informe 01 v3.2.0 · líneas 2751-2819 del texto completo]
+
+Referencia internacional: normas, currículos y estudios
+
+Políticas de facultad sobre uso de IA en evaluación
+
+Institución | País | 
+ Vigencia | Contenido | 
+
+Berkeley Law | EE.UU. | verano 2026 | Prohíbe el uso de IA para conceptualizar, esquematizar, redactar, revisar, traducir o editar cualquier trabajo entregado para calificación, incluida la corrección gramatical. Prohibición absoluta en exámenes. Innovación transferible: la cita a fuente inexistente genera presunción de uso prohibido. | 
+
+Columbia Law School | EE.UU. | 1-08-2026 | Permite la IA como apoyo al aprendizaje y prohíbe que sustituya el razonamiento jurídico del estudiante o actúe como redactor no declarado. Obligación de declarar todo uso; instrucción expresa de errar del lado de la declaración. Vía procesal identificada. | 
+
+U. of Chicago Law School | EE.UU. | otoño 2023, rev. 2025 | La política más antigua con fecha verificable. Prohibición absoluta en exámenes. Regla sustantiva: citar el uso de IA en nota al pie no exime de la prohibición. | 
+
+Marquette University Law School | EE.UU. | vigente | Consecuencia más explícita del conjunto: la infracción es falta grave que puede acarrear suspensión o expulsión. | 
+
+London School of Economics | R. Unido | verano 2024 | Modelo de escala graduada de alcance institucional: tres posiciones que cada departamento adopta y comunica. La corrección ortográfica y gramatical no queda prohibida ni en la posición más restrictiva. | 
+
+U. of New South Wales | Australia | nov. 2025 | Marco de seis categorías de uso de IA en evaluación, de alcance universitario, con declaración estandarizada por curso. | 
+
+No se localizó ninguna política de inteligencia artificial dictada por una
+ facultad de Derecho como tal en Reino Unido, Australia, España ni América Latina. El modelo
+ estadounidense es de norma de facultad binaria; el británico y australiano, de escala graduada
+ institucional que la unidad adopta y declara.
+
+Literatura experimental sobre efecto e fiabilidad
+
+Autores | Año | 
+ Publicación | Diseño | Resultado | 
+
+Choi y Schwarcz | 2023 | Journal of Legal Education · revisado por pares | 48 estudiantes · intrasujeto no aleatorizado | Selección múltiple +28,9 puntos percentiles; ensayos sin efecto significativo. Efecto igualador: los de peor desempeño +45 puntos, los de mejor desempeño −20. | 
+
+Schwarcz, Manning, Prescott, Barry, Cleveland y Rich | 2025 · publ. 2026 | Journal of Law & Empirical Analysis · revisado por pares | 137 estudiantes de dos facultades · ensayo controlado aleatorizado | Productividad +34 % a +140 % en cinco de seis tareas. Calidad global +0,27 y +0,53 en escala de 7. Efecto negativo en redacción de acuerdo de confidencialidad. | 
+
+Bednar, Cleveland, Erbsen y Schwarcz | 2026 | Documento de trabajo · no revisado por pares | ≈100 estudiantes · aleatorizado, cuatro tareas secuenciales | Único que mide aprendizaje y no desempeño. La exposición previa a IA no deterioró la comprensión posterior. | 
+
+Schrepel | 2026 | Law, Innovation and Technology | Experimento pedagógico de dos años · no aleatorizado | La formación estructurada dio ventaja el primer año y la ventaja se diluyó el segundo. | 
+
+Magesh, Surani, Dahl, Suzgun, Manning y Ho | 2024 · publ. 2025 | Journal of Empirical Legal Studies · revisado por pares | 202 consultas jurídicas preregistradas | Alucinación 17 % a 33 % en herramientas comerciales; exactitud entre 19 % y 65 %. | 
+
+Dahl, Magesh, Suzgun y Ho | 2024 | Journal of Legal Analysis · revisado por pares | +800.000 consultas verificables | Alucinación de modelos generales entre 58 % y 88 % según modelo. | 
+
+Curran y otros | 2025 | AI4A2J-ICAIL25 | Consultas jurídicas por jurisdicción | Alucinación 45 % en Los Ángeles, 55 % en Londres, 61 % en Sídney, 100 % en derecho estadual australiano. | 
+
+Siete estudios en total, cinco de ellos revisados por pares, y del orden de tres a
+ cuatro experimentales sobre efecto en educación jurídica, tres del mismo equipo. Ninguno fuera de
+ Estados Unidos. No se localizó ningún ensayo controlado aleatorizado sobre IA y educación jurídica en
+ Europa, Australia ni América Latina. No consta retractación de ninguno.
+
+Centros de referencia, para calibrar qué es una unidad consolidada
+
+Stanford CodeX opera entre la facultad de Derecho y el departamento de computación y produce
+ investigación, un premio anual y una semana de conferencias. Suffolk mantiene una concentración
+ electiva dentro del programa de grado con laboratorio propio. Georgetown organiza desde 2018 una
+ competencia de soluciones tecnológicas creadas por estudiantes para cerrar la brecha de acceso a la
+ justicia, dentro de un curso académico, con doce semestres de operación. Melbourne dicta desde 2015
+ una asignatura clínica en la que equipos de estudiantes construyen aplicaciones jurídicas para
+ organizaciones sin fines de lucro; cumplió diez años en 2025 y es electiva. Bucerius ofrece un
+ programa de verano de tres semanas, treinta plazas, sin créditos de grado. En América Latina, el
+ caso más institucionalizado es un laboratorio mexicano fundado en 2019, con dos codirectores y entre
+ una y cinco publicaciones indexadas anuales.
+
+Ninguno de estos casos es una asignatura obligatoria. Todos son electivos,
+ clínicas, competencias o programas de extensión. Es el modelo dominante del campo, y es exactamente
+ el modelo que varias instituciones de la cohorte chilena ya están operando.
+
+Anexo G
+

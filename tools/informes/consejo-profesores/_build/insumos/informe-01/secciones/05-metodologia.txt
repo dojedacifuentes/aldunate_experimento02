@@ -1,0 +1,200 @@
+[Informe 01 v3.2.0 · líneas 499-700 del texto completo]
+
+3 · Metodología
+
+La cohorte y por qué sigue cerrada
+
+El estudio observa once instituciones bajo el identificador
+ COHORTE_IA_DERECHO_CHILE_11_V1. La selección no es probabilística y no pretende
+ representar al sistema universitario chileno: reproduce la cohorte de un antecedente de 2025 para
+ conservar comparabilidad longitudinal. Toda afirmación se refiere a esas once y a ninguna más, y el
+ documento evita sistemáticamente la expresión «las universidades chilenas» cuando el universo
+ analizado es esta cohorte.
+
+Cerrarla tiene un costo y una razón. El costo es que una institución relevante fuera de la lista
+ no entra al comparador aunque su actividad sea notable, y el anexo G documenta un caso concreto:
+ la Facultad de Derecho de la Universidad de Valparaíso presentó el 4 de septiembre de 2026 un
+ Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías, con coordinadora identificada y una
+ capacitación docente ya ejecutada. La razón para no incorporarla es que un universo que crece a
+ medida que se investiga vuelve inservible cualquier comparación temporal. Las candidatas se
+ registran fuera de cohorte en el anexo G y su incorporación exigiría una versión nueva del
+ protocolo, no una decisión de redacción.
+
+Qué cuenta como evidencia
+
+Sólo entra al registro material públicamente accesible con dirección propia. La jerarquía va de
+ resoluciones y políticas oficiales hasta la prensa externa, y la confianza documental de cada fuente
+ se asigna por su tipo, no por lo interesante que resulte su contenido. Un resultado de buscador, una
+ síntesis generada por un modelo de lenguaje o la conclusión de otra investigación no son fuentes:
+ son pistas para localizar una. Cinco documentos de investigación previa, producidos por modelos
+ distintos en rondas independientes, sirvieron para localizar el corpus; ninguno se cita como
+ evidencia y su contenido narrativo quedó fuera del dataset.
+
+De la fuente a la conclusión
+
+La cadena es fuente → evidencia → iniciativa → afirmación → conclusión, y ningún eslabón sustituye
+ al anterior. Una fuente puede sostener varias evidencias y varias fuentes pueden sostener una; una
+ iniciativa respaldada por cuatro documentos sigue siendo una iniciativa. El control de doble conteo es explícito, y la verificación detectó un caso: dos fuentes de la Universidad de
+ los Andes que el registro trataba como iniciativas distintas describen el mismo proyecto FONDEF
+ desde dos portales de la misma universidad.
+
+Atribución: universidad no es Facultad
+
+Cada iniciativa se atribuye a la unidad que la fuente identifica, y no a la que resultaría más
+ favorable. Una licencia institucional disponible para toda la comunidad universitaria no es adopción
+ de Derecho; un centro alojado en una dirección de incubación no es un laboratorio de la Facultad;
+ una actividad organizada por un centro de estudiantes no es una actividad de la Facultad. La regla
+ no es formalismo: sin ella, la universidad con mejor infraestructura informática aparecería como la
+ Facultad de Derecho más avanzada.
+
+IA y tecnología adyacente
+
+Cada iniciativa recibe una etiqueta de dirección: uso de IA en el Derecho, aplicación del Derecho
+ a la IA, ambas, o adyacente. El criterio aplicado es literal: si la fuente no menciona inteligencia
+ artificial, la iniciativa que sostiene no puede elevar la madurez en inteligencia artificial. La
+ verificación encontró dos fuentes que sostenían tesis sobre capacidad en IA sin nombrarla una sola
+ vez, y —en la dirección contraria, que también hay que declarar— dos casos donde la etiqueta
+ adyacente resultó demasiado severa: un curso de compliance de la Universidad de los Andes dedica
+ uno de sus ocho módulos a los desafíos de la inteligencia artificial en la Administración pública, y
+ un proyecto estudiantil de la Universidad del Desarrollo la menciona expresamente.
+
+La escalera de institucionalización
+
+Cada iniciativa se sitúa en una escala de cinco peldaños: sin evidencia pública localizada,
+ exploración, operación, institucionalización y evaluación. El nivel de institucionalización exige al
+ menos una señal formal —responsable identificado, continuidad documentada, política, recursos o
+ integración curricular— y la acumulación de eventos no lo produce por sí sola. El nivel de
+ evaluación exige productos o resultados públicamente revisables, no continuidad. La escala se aplica
+ a la iniciativa y nunca a la universidad, y no se promedia.
+
+Verificación sustantiva: qué se hizo esta vez
+
+Que una dirección responda no prueba que diga lo que se le atribuye. La verificación sustantiva
+ consiste en abrir la publicación original y contrastar siete campos contra el registro: existencia y
+ título literal, fecha declarada, unidad responsable, condición de anuncio o de ejecución, cifras de
+ población o cobertura, límites del documento, y respaldo efectivo de la afirmación que sostiene.
+
+Se verificaron las 74 fuentes del corpus. Las 38 que ya estaban
+ contrastadas se conservan; las 36 restantes se abrieron una por una. El resultado fue de
+ aproximadamente una divergencia por cada tres registros, la misma proporción que había arrojado la
+ tanda anterior, lo que sugiere que la tasa es estructural del método de construcción del corpus y no
+ un accidente de una tanda. Las 23 divergencias se publican en el anexo B con su consecuencia sobre
+ el registro. Dos fuentes no resistieron la verificación y su tratamiento se declara expresamente:
+ una dirección de la Universidad Central devuelve un bucle de redirección y su contenido se recuperó
+ en otro dominio de la misma universidad; otra, atribuida a una «Revista DIE» de la misma
+ institución, no fue localizable en ningún dominio ni buscador y se degrada a
+ pendiente de referencia bibliográfica completa, con la consecuencia de que la capacidad de
+ investigación de esa institución baja de operación a no localizada.
+
+La ruta trece: contraste con fuentes que no son las observadas
+
+Un corpus formado sólo por lo que las universidades publican de sí mismas tiene una limitación estructural: todas eran institucionales de las propias observadas. Esta
+ versión recorre esa ruta en las once instituciones. Las fuentes incorporadas son de cinco clases:
+
+Base histórica de proyectos adjudicados de ANID —49.014 registros desde 1982,
+ con código, título, monto, duración, institución y palabras clave— consultada de forma exhaustiva y
+ programática, no por muestreo. Es la fuente que permite, por primera vez, afirmaciones de
+ exhaustividad y no sólo de existencia.
+
+Resoluciones de fallo de ANID, que acreditan la adjudicación pero —dato de
+ método que conviene registrar— no publican título, monto ni duración: esos tres campos sólo constan
+ en el repositorio de datos abiertos, no en el acto administrativo.
+
+Prensa no universitaria: La Tercera, su suplemento económico, T13, Diario
+ Financiero, Diario Constitucional, Emol.
+
+Instituciones del sector jurídico: Colegio de Abogados de Chile, Academia
+ Judicial, Superintendencia de Insolvencia y Reemprendimiento, Ministerio de Economía.
+
+Reguladores y política pública: Comisión Nacional de Acreditación, Servicio de
+ Información de Educación Superior del Ministerio de Educación, Política Nacional de Inteligencia
+ Artificial.
+
+Consecuencia sobre el estatuto del documento
+
+Con el corpus original contrastado al 100 %, las fuentes de la ronda de ampliación declaradas como tales y la ruta de contraste externo recorrida, el documento se publica como informe de resultados y no como borrador. Lo que no desaparece es el límite de fondo: el informe mide lo que once
+ Facultades de Derecho han decidido hacer público sobre su relación con la inteligencia artificial.
+ Que eso se aproxime a lo que efectivamente hacen sigue siendo una hipótesis razonable y no un
+ hallazgo.
+
+La enmienda 2.2: qué se añade y por qué
+
+La metodología 2.1 introdujo dos instrumentos: la clase de mecanismo con que se hace cada cosa y
+ una matriz de diez capacidades institucionales que reemplazó al recuento de evidencia como
+ comparador principal. Ambos se conservan sin modificación. La enmienda 2.2 añade dos cosas y no
+ recodifica ningún registro previo.
+
+Primera: el estado se desdobla para distinguir operación de operación acreditada
+
+La escala de estados de la 2.1 tenía seis valores y no distinguía entre una capacidad que
+ funciona y una capacidad que funciona y publica el instrumento que la sostiene. Esa
+ distinción es la que el informe entero existe para hacer, y hasta ahora vivía en el texto y no en el
+ dato. La 2.2 divide «en operación» en dos: con instrumento formal publicado, y sin él. Instrumento
+ formal significa un objeto citable con identificador: un decreto o resolución, un acuerdo de consejo
+ o comité, un código de asignatura con créditos, un código de proyecto adjudicado, un registro de
+ propiedad intelectual, un convenio firmado con partes identificadas, o una unidad listada en un
+ organigrama publicado. Una noticia de creación no lo es.
+
+La regla se aplicó mecánicamente sobre campos ya verificados, sin reabrir la calificación de
+ ninguna fuente. Sólo trece de las 110 celdas alcanzan el nuevo estado, y el detalle de cuál es el
+ instrumento en cada caso se publica en el anexo D.
+
+Segunda: el comparador ordinal, con la incertidumbre dentro del objeto
+
+La 2.1 prohibía la comparación ordinal por una razón medida: la cobertura de investigación era
+ 3,7 veces mayor en tres instituciones que en las ocho restantes, de modo que ordenar habría
+ producido un ranking del trabajo de campo. Esa razón sigue siendo válida para cualquier índice que
+ se publique como un número único, y por eso el índice de la 2.2 no es un número.
+
+Cada institución obtiene un piso —la suma de puntos de las celdas resueltas— y un techo —el piso
+ más lo que aportarían sus celdas sin concluir si todas resultaran favorables—. Una institución con
+ muchas celdas sin concluir aparece con una banda ancha; una con la investigación completa aparece
+ con una banda estrecha o cerrada. La anchura de la banda es, literalmente, la medida de lo que este
+ informe no sabe sobre esa institución, y se dibuja en el mismo objeto gráfico que la posición.
+
+Análisis de sensibilidad de la enmienda
+
+Sustituir un instrumento por otro obliga a preguntar si las conclusiones cambian porque hay
+ evidencia nueva o porque cambió la forma de medir. Aquí hay las dos cosas y conviene separarlas.
+ Por cambio de método: ninguna conclusión se hizo más fuerte. El desdoblamiento del
+ estado sólo puede bajar puntuaciones respecto de una escala que no lo tuviera, y la institución más
+ afectada por él es la mejor verificada de la cohorte. Por evidencia nueva: dos
+ conclusiones se refuerzan y una se debilita. Se refuerzan C-5, porque la ausencia de evaluación
+ pasa de no localizada a confirmada por registro exhaustivo, y la nueva C-8. Se debilita la
+ atribución de capacidad investigadora a la Universidad Central, cuya única fuente de respaldo no
+ resistió la verificación. Ese último caso se declara aquí porque es el que perjudica al informe: es una capacidad que la regla de adyacencia no da por acreditada.
+
+Relación con el antecedente de 2025
+
+Existe un informe anterior sobre la misma cohorte con una metodología distinta, que puntuaba sobre
+ una escala de quince puntos en cinco dimensiones. Ese documento se trata como antecedente y no como
+ fuente vigente: sus puntajes no se arrastran, sus cifras no se comparan aritméticamente con las de
+ este informe, y sus errores se corrigen mediante fe de erratas y no en silencio. No existe todavía
+ una línea base congelada de 2025, porque el documento antecedente contiene actividades fechadas en
+ 2026. Mientras eso no se resuelva, ninguna afirmación de la forma «tal capacidad aumentó desde 2025»
+ es publicable.
+
+Declaración de intereses
+
+El autor de este informe participa en una de las iniciativas que el informe evalúa: el Programa
+ de Derecho, Inteligencia Artificial y Tecnología de la PUCV, en cuyo equipo técnico figura como
+ Director de Operaciones según la página pública del propio Programa. La iniciativa se registra, se
+ clasifica y se somete a las mismas reglas que las otras cincuenta y dos.
+
+La declaración no resuelve el conflicto: lo hace visible. Las medidas adoptadas son cuatro. Las
+ fuentes que involucran al autor permanecen en el corpus y no se retiran. La sección dedicada a la
+ PUCV se somete a una doble revisión explícita —si el juicio resulta demasiado severo y si resulta
+ demasiado indulgente— cuyo resultado se publica. Ninguna afirmación sobre la PUCV se sostiene en
+ una fuente única. Y el comparador ordinal se calculó con la rúbrica
+ cerrada antes de conocer el resultado de cada institución, para que la posición de la PUCV
+ no pudiera ajustarse a conveniencia; la rúbrica se publica íntegra en el anexo D.
+
+El lector debe saber además que este informe se produjo con asistencia de sistemas de
+ inteligencia artificial en la localización de fuentes, en el contraste de cada publicación original
+ contra su registro y en la redacción. La responsabilidad editorial es humana y está firmada. Que un
+ informe sobre inteligencia artificial en la enseñanza del Derecho se haya producido con esa
+ asistencia no es una ironía: es la condición que hizo posible contrastar 74 fuentes en dos días, y
+ el documento sería deshonesto si lo omitiera.
+
+07
+

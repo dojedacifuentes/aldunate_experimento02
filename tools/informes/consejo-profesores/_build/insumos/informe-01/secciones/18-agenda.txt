@@ -1,0 +1,86 @@
+[Informe 01 v3.2.0 · líneas 1958-2043 del texto completo]
+
+12 · Agenda de investigación
+
+Siete preguntas abiertas, con la razón por la que importan y el
+ procedimiento que las cerraría. Cada una declara el procedimiento que la cerraría, de modo que su respuesta pueda comprobarse desde fuera.
+
+A-1
+ ¿Cuál es el acto formal que crea cada una de las unidades anunciadas entre 2025 y 2026?
+
+Por qué importa
+
+Es la diferencia entre institucionalización anunciada y acreditada, y afecta a C-1, que es la conclusión principal del informe.
+
+Cómo se cierra
+
+Solicitud de decreto, acuerdo de consejo o resolución a cada Facultad, o localización en sus repositorios de transparencia. Cinco documentos cierran la pregunta.
+
+A-2
+ ¿Existe alguna asignatura obligatoria de IA en las mallas vigentes de las once?
+
+Por qué importa
+
+C-4 registra una ausencia de evidencia pública. Esta versión la convirtió en verificación directa para una institución; faltan diez.
+
+Cómo se cierra
+
+Revisión de las once mallas vigentes y de los programas de las asignaturas que nombren tecnología, innovación o inteligencia artificial, verificando obligatoriedad, semestre, créditos y matrícula.
+
+A-3
+ ¿Cuántos estudiantes de Derecho usan efectivamente las herramientas institucionales?
+
+Por qué importa
+
+Es la distancia entre disponibilidad y adopción, que este informe identifica como su laguna central. Hay un dato que existe y no es público: la encuesta de admisión de una de las once está segregada por carrera y se entrega internamente a cada unidad.
+
+Cómo se cierra
+
+Solicitud del desglose por carrera de esa encuesta, y datos de uso desagregados por unidad académica a las once.
+
+A-4
+ ¿Qué mide realmente la única cifra de resultado del corpus?
+
+Por qué importa
+
+Es el único dato de efecto disponible y su diseño no está publicado. Sin ficha metodológica no es citable ni siquiera fuera del ámbito jurídico.
+
+Cómo se cierra
+
+Obtención del diseño, la muestra, el grupo de control y el instrumento de medición, o registro definitivo como señal no verificable.
+
+A-5
+ ¿Qué ocurriría si se recorriera el piloto de profundidad en las ocho instituciones restantes?
+
+Por qué importa
+
+Cuatro instituciones tienen hoy un techo igual o superior al piso de la primera. Es la pregunta que decide si el orden publicado en la sección 4 se sostiene o se reordena.
+
+Cómo se cierra
+
+Aplicación del piloto de profundidad a las ocho no piloto, empezando por las dos de mayor techo: Universidad Autónoma de Chile y Pontificia Universidad Católica de Chile.
+
+A-6
+ ¿Puede reconstruirse una línea base congelada al 31-12-2025?
+
+Por qué importa
+
+Sin ella no hay comparación temporal posible y el informe no puede afirmar que nada haya aumentado ni disminuido.
+
+Cómo se cierra
+
+Decisión humana sobre qué se considera público al cierre de 2025 en un documento antecedente que ya fue editado retrospectivamente. No es automatizable.
+
+A-7
+ ¿Qué muestran los ocho proyectos ANID con objeto jurídico-tecnológico clasificados fuera de la disciplina Derecho?
+
+Por qué importa
+
+Son 1.126 millones de pesos en investigación jurídico-tecnológica que las Facultades de Derecho no lideran. Determinar quién los conduce y con qué participación jurídica precisaría el hallazgo H-4.
+
+Cómo se cierra
+
+Revisión de equipo y afiliación declarada de cada uno en las fichas y resúmenes públicos de ANID, y contraste con la comunicación institucional de cada universidad.
+
+20
+

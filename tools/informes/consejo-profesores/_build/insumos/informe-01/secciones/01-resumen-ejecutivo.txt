@@ -1,0 +1,89 @@
+[Informe 01 v3.2.0 · líneas 162-250 del texto completo]
+
+Resumen ejecutivo
+
+74/96
+
+77 % del corpus
+
+Fuentes públicas contrastadas contra su publicación original
+
+0
+
+ausencia confirmada
+
+Proyectos ANID sobre enseñanza del Derecho con IA, en 49.014 adjudicados desde 1982
+
+20/30
+
+el techo real
+
+Índice de formalización más alto del comparador, alcanzado por una sola institución
+
+2
+
+de diez
+
+Facultades del comparador con norma propia sobre uso de IA, con instrumento citable
+
+Este informe establece qué capacidades institucionales en materia de inteligencia
+ artificial han construido once Escuelas y Facultades de Derecho chilenas, con qué grado de
+ formalización, y qué puede y no puede afirmarse sobre ellas a partir de evidencia verificable.
+ No es un borrador: las 74 fuentes del corpus original fueron abiertas y contrastadas una por una contra su publicación original —las 22 que aportó después la ronda de ampliación se marcan como tales y no como contrastadas—, y el trabajo incorpora además 31 fuentes de terceros ajenas a las instituciones observadas.
+
+El método separa cuatro cosas que la discusión pública mezcla —la fuente, la evidencia que esa
+ fuente prueba, la iniciativa que agrupa varias evidencias y la afirmación que se sostiene sobre
+ ellas— y añade una distinción que hace casi todo el trabajo: a quién pertenece cada capacidad.
+ Una licencia disponible para toda la universidad no es una capacidad de su Facultad de Derecho,
+ y un proyecto dirigido desde Ingeniería no acredita investigación jurídica sobre inteligencia
+ artificial. La verificación reatribuyó seis registros por esta causa.
+
+Lo que aparece tiene una forma reconocible y muy reciente
+
+Cuarenta y una de las cuarenta y nueve iniciativas fechadas comienzan en 2025 o después: lo que
+ se observa no es la maduración de un proceso largo sino su apertura. En seis de las diez Facultades del comparador consta una unidad especializada en funcionamiento; en una sola, un instrumento
+ normativo propio con órgano aprobador y consecuencia jurídica asociada. La formación entra por el
+ diplomado, el minor y el taller —doce programas formativos— antes que por la malla, y siete de las
+ once herramientas disponibles pertenecen a la universidad y no a la Facultad.
+
+Se construye estructura antes que reglas, y actividad antes que resultados
+
+Se crean órganos, se abren programas y se anuncian herramientas. Ninguna de las 53 iniciativas
+ registradas acredita haber medido su efecto sobre el aprendizaje jurídico. Esa ausencia no depende de dónde se haya buscado: la consulta exhaustiva de la base histórica de proyectos adjudicados por ANID —49.014 registros
+ desde 1982— no devuelve un solo proyecto, de ninguna universidad chilena, en ningún año,
+ sobre cómo enseñar Derecho con o sobre inteligencia artificial. Existen siete proyectos vigentes de
+ disciplina Derecho cuyo objeto es la IA, por unos 473 millones de pesos, y todos son sustantivos:
+ regulación, debido proceso, responsabilidad civil, gestión algorítmica del trabajo. Ninguno es
+ pedagógico. La capacidad de investigar la IA como problema jurídico existe y está financiada; la
+ capacidad de investigar la propia enseñanza no se ha constituido.
+
+El hallazgo que ordena a los demás
+
+Nadie verifica. La Comisión Nacional de Acreditación no ha dictado criterios
+ específicos para Derecho, cuya acreditación de carrera es además voluntaria. La guía del Colegio
+ de Abogados de julio de 2026 regula al abogado en ejercicio y guarda silencio sobre quién lo
+ forma. El sitio de inteligencia artificial de la Academia Judicial, de abril de 2026, se dirige a
+ jueces y no menciona a las Facultades. La Política Nacional de Inteligencia Artificial contempla a
+ las instituciones de educación superior y no contiene una sola línea sobre formación jurídica.
+ El resultado es que lo que las Facultades de Derecho dicen sobre cómo enseñan inteligencia
+ artificial no tiene, hoy, contraparte evaluadora en ninguna institución chilena.
+ Este informe no llena ese vacío: lo documenta.
+
+Para la Pontificia Universidad Católica de Valparaíso
+
+Esta institución no aparece en el comparador, y la sección 8 explica por qué: quien firma trabaja en su Escuela de Derecho, y un orden en el que el autor tiene interés directo compromete el instrumento entero y no sólo una fila. Su examen se publica aparte, en un documento complementario que no puntúa, no ordena y no compara. Lo que sigue es lo que el corpus permite decir de ella sin ordenarla. La evidencia corrige de entrada una idea que el documento antecedente podía sugerir: la PUCV no parte de cero. Tiene una unidad especializada con continuidad
+ declarada desde 2020, un laboratorio propio, una herramienta de inteligencia artificial construida
+ en casa, operativa y con registro de propiedad intelectual —uno de los dos instrumentos formales de todo su conjunto, junto al convenio con la Corte Suprema—, una experiencia de aula ejecutada dentro de una asignatura jurídica, un convenio firmado
+ con la Corte Suprema y dos adjudicaciones consecutivas de fondos concursables. Su perfil no tiene además ninguna celda sin concluir: las trece rutas del protocolo que le corresponden se recorrieron enteras, de modo que cada ausencia suya es una ausencia comprobada y no un hueco de investigación.
+
+La incomodidad no está ahí. Está en que ese perfil —el que más rutas del protocolo acumula, por la misma razón que obliga a apartarlo— deja doce puntos de la rúbrica sin acreditar, y en que esos doce no se reparten al azar: se reparten en tres formas de ausencia muy distintas. Tres puntos son la evaluación de efecto, que no acredita ninguna de las instituciones observadas y sobre la que no consta ningún proyecto adjudicado. Cuatro puntos son dos capacidades que existen en la universidad y no en la Facultad —la regla de uso y la adopción declarada en la enseñanza—, y que se cierran decidiendo en el nivel correcto, no construyendo nada nuevo. Y cinco puntos se pierden de uno en uno, en cinco capacidades que ya están en operación y a las que sólo les falta el instrumento citable que las acredite: publicar el acto que crea la unidad, el código de la asignatura, el del programa formativo, el alcance real de lo que ya se ejecuta y el del proyecto adjudicado. Ninguna de las tres clases exige presupuesto nuevo relevante, y las tres son verificables desde fuera. La malla de pregrado, verificada asignatura por asignatura, no contiene ninguna
+ asignatura de inteligencia artificial ni de tecnología jurídica; el Programa DIAT y el LMIL no
+ tienen página en el sitio de su propia universidad; y el instrumento universitario más específico
+ sobre uso ético de la IA sugiere recomendaciones en lugar de obligar.
+
+La pregunta que el informe deja planteada es de gestión antes que de diagnóstico. Si una base
+ propia y sostenida ya existe, la cuestión no es generar más iniciativas sino cuáles conviene
+ convertir en capacidad formalizada, transversal y evaluable, y con qué instrumento. El documento complementario la formula con los referentes a la vista, un indicador por cada decisión y una estimación explícita de lo que cuesta no tomarla.
+
+02
+

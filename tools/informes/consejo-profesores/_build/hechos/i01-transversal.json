@@ -1,0 +1,858 @@
+{
+  "_meta": {
+    "documento": "Base de hechos transversales para el Documento A (uso y enseñanza de IA en las escuelas de Derecho chilenas)",
+    "fuente_principal": "insumos/informe-01/informe-01-v3.2.0.txt, corte 06-09-2026. Toda referencia 'linea' remite a ese archivo salvo que se nombre otro.",
+    "otros_insumos_usados": [
+      "insumos/informe-01/iniciativas.csv (53 filas)",
+      "insumos/informe-01/evidencias.csv (75 filas)",
+      "insumos/informe-01/afirmaciones.csv (14 filas)",
+      "insumos/informe-01/matriz-v2.json (clave v2 y lista aplicados)",
+      "insumos/informe-01/complemento-pucv-v1.2.txt (sólo para la Ley 21.719)",
+      "Solo lectura: aldunate_experimento02/content/reports/01_ia_escuelas_derecho_chile/entregas/v3.2.0/informe-01-v3.2.0.html (valores de las figuras SVG, que el .txt no trae)"
+    ],
+    "convenciones": "FALTANTE = el dato no consta en los insumos. 'control' = discrepancia detectada que el Documento A no debe heredar. Las cifras recalculadas con Node se marcan 'calculo'.",
+    "fecha_elaboracion": "2026-09-13"
+  },
+
+  "hallazgos": [
+    {
+      "id": "H-1",
+      "enunciado": "El fenómeno tiene dos años, no una década.",
+      "dato": "41 de las 49 iniciativas con fecha declarada comienzan en 2025 o después. Cuatro iniciativas no declaran fecha y una anuncia su inicio para 2027. Dos iniciativas son anteriores a 2020 (1988 y 2008).",
+      "lectura": "Lo que se observa no es la maduración de un proceso largo sino su apertura. Casi todo lo registrado es de primera generación: por eso abunda la estructura recién creada, escasean los resultados y ninguna Facultad ha tenido tiempo material de evaluar lo que empezó el año anterior.",
+      "limite": "La fecha es la de inicio declarado por la fuente, no la de la actividad real. Una Facultad que llevara años trabajando sin publicarlo aparecería como recién llegada.",
+      "cifras": [
+        { "valor": "41 de 49", "descripcion": "iniciativas fechadas que comienzan en 2025 o después", "linea": "202, 260, 709", "calculo": "iniciativas.csv: 2025=17, 2026=23, 2027=1 → 41" },
+        { "valor": 49, "descripcion": "iniciativas con fecha declarada, de 53", "linea": "260", "calculo": "iniciativas.csv: 49" },
+        { "valor": 4, "descripcion": "iniciativas sin fecha", "linea": "264, 713", "calculo": "ini-puc-chile-001, ini-unab-004, ini-ucentral-004, ini-udec-003" },
+        { "valor": 1, "descripcion": "iniciativa con inicio anunciado para 2027 (malla UDD, Admisión 2027)", "linea": "714", "calculo": "ini-udd-001" }
+      ],
+      "apoyos": "Línea de tiempo (panorama) · anexo A · iniciativas.csv",
+      "control": [
+        "El texto (260, 715) dice que las dos iniciativas anteriores a 2020 son unidades. En iniciativas.csv la de 1988 es una unidad (CE3, ini-uchile-001), pero la de 2008 es la línea de tesis sobre IA del mismo centro (ini-uchile-004), de mecanismo PUBLICACION. Conviene decir «dos iniciativas anteriores a 2020, ambas del centro de la Universidad de Chile».",
+        "Las 41 incluyen una iniciativa anunciada para 2027. Iniciadas en 2025-2026: 40."
+      ]
+    },
+    {
+      "id": "H-2",
+      "enunciado": "La estructura se crea antes que la regla, y ninguna de las dos se acredita con su acto.",
+      "dato": "En seis de las diez Facultades del comparador consta una unidad especializada en operación (dos con instrumento formal y cuatro sin él). Norma propia con instrumento citable: dos de diez. El corpus registra siete unidades frente a cuatro normas, y de esas cuatro sólo dos son de una Facultad. De las cuatro unidades creadas entre 2025 y 2026, ninguna publica el acto que la constituye. En la Universidad de Chile, el único instrumento citado (decreto del Rector de 5 de noviembre de 2003) oficializa una denominación anterior y distinta de la actual.",
+      "lectura": "La institucionalización avanza por creación de órganos y no por producción de reglas. Crear una unidad es un acto de autoridad; dictar una norma sobre uso de IA obliga antes a decidir qué se permite en una evaluación, qué se declara y qué consecuencia tiene no declararlo, lo que es más difícil y más comprometedor.",
+      "limite": "La ruta que acredita normas propias se recorrió en las diez instituciones del comparador y no queda ninguna celda de esa capacidad sin concluir: la asimetría entre unidades y normas no se explica por cobertura.",
+      "cifras": [
+        { "valor": "6 de 10", "descripcion": "Facultades con unidad especializada en operación", "linea": "271, 275", "calculo": "matriz-v2 Unidad: 2 con instrumento formal + 4 en operación; 3 no localizada; 1 sólo adyacente" },
+        { "valor": "2 de 10", "descripcion": "Facultades con norma propia con instrumento citable", "linea": "275, 1733, 1852", "calculo": "matriz-v2 Norma: 2 con instrumento formal, 3 sólo en el entorno, 5 no localizada" },
+        { "valor": "7 frente a 4", "descripcion": "unidades frente a normas en el corpus; 2 de las 4 normas son de una Facultad", "linea": "271, 738-740", "calculo": "iniciativas.csv: UNIDAD 7 (7 de Facultad), NORMA 4 (2 de Facultad)" },
+        { "valor": "0 de 4", "descripcion": "unidades creadas en 2025-2026 que publican su acto constitutivo", "linea": "273, 1834" }
+      ],
+      "apoyos": "clm-cohorte-002 · clm-cohorte-003 · matriz de capacidades",
+      "control": [
+        "El dato del hallazgo (271) dice «instrumento normativo propio dictado por la Facultad, en una sola», pero su propio límite (275), C-2 (1665), la sección 10 (1733) y P-3 (1852) dicen dos. La segunda es la Resolución 13/2025 del decano de la Universidad Central (anexo D, 2621), sostenida en la fuente R2-UCEN-01, cuya dirección devuelve 404 y que no se pudo abrir (1665). Usar «dos, una de ellas no leída».",
+        "clm-cohorte-002 (afirmaciones.csv) nombra como las cuatro unidades 2025-2026 las de la UC, la UDP, la Universidad Central y el Programa DIAT de la PUCV. El DIAT se oficializó como Núcleo en 2020 (iniciativas.csv ini-pucv-001; línea 234) y la PUCV está fuera del comparador. Si el Documento A habla de las diez instituciones comparadas, esas cuatro unidades no pertenecen todas a ellas."
+      ]
+    },
+    {
+      "id": "H-3",
+      "enunciado": "La inteligencia artificial entra por la formación continua, no por la malla.",
+      "dato": "Doce iniciativas son programas formativos (diplomados, minors, cursos, talleres), once sostenidos por la propia Facultad, frente a cuatro que ocurren dentro de una asignatura o de una línea de malla. La formación estructurada consta en operación en siete de las diez Facultades del comparador; la presencia en pregrado, en cinco. El único minor con egresados (Universidad Autónoma) es electivo, suma 25 créditos en cinco asignaturas de las cuales tres son informáticas, se co-titula con Ingeniería y, según su página, se cursa sobre electivos de formación general para no aumentar la carga académica.",
+      "lectura": "La formación continua y el postgrado son espacios donde una Facultad decide en un semestre; la malla exige comités, acreditación y acuerdo de claustro, y responde en años. La distribución observada es la que produciría esa diferencia de velocidad y no requiere suponer desinterés curricular.",
+      "limite": "Las rutas de malla y de programas de asignatura quedaron sin recorrer en tres de las diez. Que el pregrado aparezca menos poblado es compatible con que se haya buscado menos.",
+      "cifras": [
+        { "valor": 12, "descripcion": "programas formativos; 11 de la Facultad", "linea": "205, 282, 742", "calculo": "iniciativas.csv PROGRAMA_FORMATIVO 12, 11 de Facultad/centro/equipo" },
+        { "valor": 4, "descripcion": "iniciativas dentro de una asignatura o línea de malla", "linea": "282, 744", "calculo": "iniciativas.csv ASIGNATURA 4" },
+        { "valor": "7 de 10", "descripcion": "Facultades con formación estructurada en operación", "linea": "282", "calculo": "matriz-v2 Formación: 1 con instrumento formal + 6 en operación; 3 incipiente" },
+        { "valor": "5 de 10", "descripcion": "Facultades con presencia en pregrado en operación", "linea": "282", "calculo": "matriz-v2 Presencia: 5 en operación, 2 incipiente, 3 no concluyente" },
+        { "valor": "25 créditos, 5 asignaturas, 3 informáticas", "descripcion": "minor de la Universidad Autónoma", "linea": "284, 1132-1136" }
+      ],
+      "apoyos": "clm-cohorte-005 · clm-cohorte-006 · mecanismos institucionales",
+      "control": []
+    },
+    {
+      "id": "H-4",
+      "enunciado": "Buena parte de lo que se atribuye a las Facultades pertenece a sus universidades.",
+      "dato": "De las once herramientas del corpus, siete no son de la Facultad de Derecho (seis de la universidad y una de estudiantes). En la matriz del comparador, doce de las 100 celdas muestran una capacidad presente sólo en el entorno institucional. Casos: el convenio de la UDP con el sector tecnológico lo firma su Vicerrectoría de Investigación e Innovación; el FONDEF de certeza jurídica ambiental lo dirige la Facultad de Ingeniería de la Universidad de los Andes; el asesor de insolvencia de la UNAB se aloja y opera en la Superintendencia de Insolvencia y Reemprendimiento.",
+      "lectura": "Existe una capa de infraestructura universitaria (licencias generales, asistentes institucionales, lineamientos de rectoría) disponible para Derecho pero no desarrollada por Derecho. Confundir disponibilidad con adopción es el error más frecuente al leer estos anuncios.",
+      "limite": "Que una capacidad sea universitaria no impide que la Facultad la use intensamente: impide acreditarlo con lo publicado. La distinción es sobre atribución de la evidencia, no sobre uso real.",
+      "cifras": [
+        { "valor": "7 de 11", "descripcion": "herramientas que no son de la Facultad", "linea": "206, 293, 746", "calculo": "iniciativas.csv HERRAMIENTA 11: 6 INSTITUCIONAL_UNIVERSIDAD + 1 ESTUDIANTIL; 4 de Facultad/equipo" },
+        { "valor": "12 de 100", "descripcion": "celdas del comparador en estado «sólo en el entorno»", "linea": "293 (con denominador erróneo)", "calculo": "matriz-v2: 12 de 100 en el comparador; 14 de 110 con la PUCV" },
+        { "valor": 9, "descripcion": "registros del corpus que son capacidades de la universidad y no de la Facultad", "fuente": "afirmaciones.csv clm-cohorte-007; iniciativas.csv institutional_level INSTITUCIONAL_UNIVERSIDAD = 9" }
+      ],
+      "apoyos": "clm-cohorte-007 · clm-cohorte-004 · anexo B",
+      "control": [
+        "La línea 293 dice «Doce de las 110 celdas». Según matriz-v2 son 12 de 100 (comparador) o 14 de 110 (cohorte con la PUCV).",
+        "El número de reatribuciones es inconsistente: 6 (líneas 198 y 293), 15 registros y 15 reatribuciones (1183-1187), 9 registros universitarios (clm-cohorte-007). No usar cifra de reatribuciones sin resolver cuál rige; la de 9 registros universitarios es la única respaldada por el dataset.",
+        "«Siete de las once herramientas pertenecen a la universidad» (206) es inexacto: una de las siete es estudiantil (Hereda Fácil, ini-udd-004)."
+      ]
+    },
+    {
+      "id": "H-5",
+      "enunciado": "Nadie ha medido si algo de esto funciona, y tampoco consta financiamiento público adjudicado para hacerlo.",
+      "dato": "Ninguna de las 53 iniciativas alcanza el cuarto peldaño de la escalera, que exige resultados públicamente revisables. La consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 devuelve cero proyectos sobre enseñanza del Derecho con IA, en cualquier universidad chilena y en cualquier año. Existen en cambio diez proyectos 2024-2026 que cruzan IA con enseñanza o educación superior: seis en Ciencias de la Educación y el resto en Humanidades, Informática, Negocios y Salud; uno estudia la formación universitaria en ingeniería de software en la era de la IA generativa. Ninguno es de Derecho.",
+      "lectura": "El campo produce actividad y estructura, y todavía no produce conocimiento sobre sus propios efectos. Las cifras que existen son de cobertura (cuánta gente participó), y contar asistentes no dice si alguien aprendió mejor. Otras disciplinas obtuvieron adjudicaciones para estudiar su docencia; Derecho no.",
+      "limite": "El registro recoge adjudicaciones y no postulaciones (ver anid.salvedad). Una Facultad podría haber medido con recursos propios sin publicarlo; ese caso queda fuera de cualquier método basado en evidencia pública.",
+      "cifras": [
+        { "valor": "0 de 53", "descripcion": "iniciativas en el peldaño de evaluación", "linea": "304, 1152, 1688", "calculo": "iniciativas.csv current_status máximo = 3" },
+        { "valor": 49014, "descripcion": "proyectos adjudicados por ANID consultados, desde 1982", "linea": "174, 211, 304, 590, 1229" },
+        { "valor": 0, "descripcion": "proyectos sobre enseñanza del Derecho con IA", "linea": "170-174, 304" },
+        { "valor": 10, "descripcion": "proyectos 2024-2026 que cruzan IA con enseñanza o educación superior, fuera de Derecho", "linea": "304, 1280" },
+        { "valor": 6, "descripcion": "de esos diez, en Ciencias de la Educación", "linea": "304, 1281" }
+      ],
+      "apoyos": "clm-cohorte-001 · anexo E · base histórica ANID",
+      "control": [
+        "Las disciplinas nombradas son cinco (Ciencias de la Educación, Humanidades, Informática, Negocios, Salud: líneas 304 y 1280-1282). La nota de versión (82), C-5 (1688) y la sección 10 (1774) hablan de «seis disciplinas». No heredar «seis».",
+        "El texto no da los códigos de los diez proyectos ni cuántos corresponden a cada una de las otras cuatro disciplinas: FALTANTE."
+      ]
+    },
+    {
+      "id": "H-6",
+      "enunciado": "Cuánto se investigó y cuánto se hace siguen siendo variables distintas, aunque menos.",
+      "dato": "La Universidad Autónoma de Chile recorrió 5 de 13 rutas del protocolo y obtiene piso 17 y techo 17. La Universidad de Chile recorrió 12 y obtiene piso 12 y techo 14. En las diez instituciones, la correlación entre rutas recorridas y piso del índice es 0,34. De las dos instituciones con doce rutas, una encabeza el comparador y la otra es cuarta.",
+      "lectura": "Si el trabajo de campo y la capacidad institucional fueran la misma variable, ese par de valores no podría existir. Por eso el comparador se publica como banda y no como número: la anchura de la banda mide lo que aún no se sabe de cada institución.",
+      "limite": "La comprobación prueba que la cobertura no determina el resultado, no que sea irrelevante. Con 5 de las 100 celdas sin concluir, repartidas en cuatro instituciones, para las otras seis el piso es ya la medida.",
+      "cifras": [
+        { "valor": "5/13 rutas; piso 17, techo 17", "descripcion": "Universidad Autónoma de Chile", "linea": "825, 948, 1028, 2639", "calculo": "matriz-v2 despues" },
+        { "valor": "12/13 rutas; piso 12, techo 14", "descripcion": "Universidad de Chile", "linea": "829, 952, 1028, 2643" },
+        { "valor": "0,34", "descripcion": "correlación entre rutas recorridas y piso del índice, diez instituciones", "linea": "1028" },
+        { "valor": "5 de 100", "descripcion": "celdas sin concluir, en cuatro instituciones", "linea": "319, 937, 1032" }
+      ],
+      "apoyos": "clm-metodo-001 · sección 11 (comprobación)",
+      "control": [
+        "El texto del hallazgo (315) conserva cifras anteriores a la ronda 2: «banda de 12 a 20» para la Autónoma, que coincide con matriz-v2 'antes' (piso 12, techo 20), y «tanta capacidad en operación como la más investigada». Las cifras vigentes son piso 17 y techo 17 (tabla 948, anexo D 2639, matriz-v2 'despues'). No heredar la versión de la línea 315.",
+        "La celda de unidad especializada de la Autónoma (3 puntos) y su transferencia (2 puntos) se cerraron en la ronda 2 con fuentes no contrastadas (R2-UAUT-01, R2-UAUT-02 y R2-UAUT-07)."
+      ]
+    },
+    {
+      "id": "H-7",
+      "enunciado": "La relación con el mundo externo es conversación, no todavía vínculo estable.",
+      "dato": "La capacidad de transferencia vale un punto (incipiente o sólo en el entorno) en siete de las diez Facultades, en operación en tres y con instrumento formal en ninguna. Lo registrado son ocho actividades de una sola ocurrencia (seminarios, jornadas, workshops). La Superintendencia de Insolvencia y Reemprendimiento describe como «primer piloto» lo que la nota universitaria presenta como lanzamiento.",
+      "lectura": "Las Facultades discuten el asunto en público mucho más de lo que lo incorporan a relaciones institucionales duraderas. Un seminario acredita interés y convocatoria; un convenio acredita que alguien de fuera comprometió recursos.",
+      "limite": "Un convenio firmado es acto ejecutado, pero de los convenios registrados sólo parte acredita actividad derivada (el informe dice dos de cuatro).",
+      "cifras": [
+        { "valor": "7 de 10", "descripcion": "Facultades con transferencia en un punto", "linea": "326", "calculo": "matriz-v2 Transferencia: 6 incipiente + 1 sólo en el entorno; 3 en operación; 0 con instrumento formal (coincide con 1740-1742)" },
+        { "valor": 8, "descripcion": "actividades de una sola ocurrencia; 7 de la Facultad", "linea": "326, 750", "calculo": "iniciativas.csv ACTIVIDAD 8, 1 estudiantil" },
+        { "valor": "4 según el informe; 2 en iniciativas.csv", "descripcion": "convenios con terceros en el corpus", "linea": "326, 752" }
+      ],
+      "apoyos": "clm-cohorte-008 · anexo B · anexo E",
+      "control": [
+        "El hallazgo (326) y la tabla de mecanismos (752: 4 convenios, 3 de la Facultad) no calzan con iniciativas.csv, que registra 2 convenios (UDP, 07-04-2026; UAI, 06-01-2026). Con 4 convenios, la tabla de mecanismos suma 55 iniciativas y no 53. El texto no identifica el convenio «de 2020» ni el otro: FALTANTE. El caso Superir que cita el hallazgo figura en el CSV como HERRAMIENTA (ini-unab-002), no como convenio.",
+        "«Incipiente en siete» (326) mezcla dos estados: son 6 incipientes y 1 sólo en el entorno, ambos de un punto (1740-1741; matriz-v2)."
+      ]
+    },
+    {
+      "id": "H-8",
+      "enunciado": "Ninguna institución chilena tiene mandato para verificar lo que las Facultades dicen de sí mismas.",
+      "dato": "La Comisión Nacional de Acreditación ha dictado criterios y estándares específicos por carrera sólo para Pedagogía, Medicina y Odontología, las tres de acreditación obligatoria; Derecho no tiene criterios propios y su acreditación de carrera es voluntaria. La guía del Colegio de Abogados aprobada el 6 de julio de 2026 regula al abogado en ejercicio y no menciona la formación universitaria. El sitio de IA de la Academia Judicial, de 7 de abril de 2026, se dirige a juezas y jueces. La Política Nacional de Inteligencia Artificial contempla a las instituciones de educación superior sin mención a la formación jurídica.",
+      "lectura": "Es el hallazgo que ordena a los demás. El corpus de partida era íntegramente comunicación de las propias instituciones observadas, y esa autodescripción no tiene contraparte: no hay regulador que la contraste, gremio que la exija ni política pública que la contemple. En ese vacío, el costo de no publicar es cero.",
+      "limite": "Describe el estado de la verificación institucional, no la calidad de las Facultades. Una institución puede hacer un trabajo excelente y no publicarlo.",
+      "cifras": [
+        { "valor": 3, "descripcion": "carreras con criterios CNA específicos (Pedagogía, Medicina, Odontología)", "linea": "337, 1350" },
+        { "valor": "06-07-2026", "descripcion": "aprobación de la guía del Colegio de Abogados", "linea": "337, 1343, 2722" },
+        { "valor": "07-04-2026", "descripcion": "sitio y guía de IA de la Academia Judicial", "linea": "337, 1338, 2720" }
+      ],
+      "apoyos": "anexo E · CNA-Chile, Colegio de Abogados, Academia Judicial, Minciencia",
+      "control": []
+    }
+  ],
+
+  "conclusiones": [
+    {
+      "id": "C-1",
+      "enunciado": "La institucionalización avanza por denominación, no por constitución.",
+      "texto_factual": "Cuatro Facultades crearon entre 2025 y 2026 unidades dedicadas a tecnología o IA, y en ninguna se localizó el acto formal que la constituye. Sólo una tiene respaldo orgánico publicado: el Departamento de Derecho y Tecnología de la UC figura en la estructura de la Facultad, con director identificado. Las otras tres se acreditan con noticias de creación y nombramientos. La unidad de la Universidad de Chile cita un decreto rectoral de 2003 que oficializa una denominación anterior y distinta de la actual.",
+      "clase": "hecho",
+      "confianza": { "valor": 70, "fuente": "figura de conclusiones del HTML v3.2.0; coincide con clm-cohorte-002 = 70" },
+      "apoyos": "clm-cohorte-002 · anexo B · líneas 1655-1660",
+      "control": ["Las cuatro de clm-cohorte-002 incluyen el Programa DIAT de la PUCV (ver H-2, control)."]
+    },
+    {
+      "id": "C-2",
+      "enunciado": "Dos Facultades dictaron norma propia con acto citable; sólo una pudo leerse.",
+      "texto_factual": "La Facultad de Derecho de la UC aprobó una guía por Comité Directivo y Consejo, con deberes de declaración y registro, y calificó su incumplimiento como infracción grave sancionable conforme al régimen del plagio. La Universidad Central aprobó por resolución de su decano (Resolución 13/2025, anexo D) un instructivo sobre uso académico de IA; la dirección publicada de esa resolución devuelve error y el documento no se pudo abrir, de modo que se acredita la existencia del acto y no su contenido. La regulación del uso avanza más deprisa que su enseñanza.",
+      "clase": "hecho",
+      "confianza": { "valor": 70, "fuente": "línea 1665 (baja de 85 a 70) y figura de conclusiones del HTML" },
+      "apoyos": "clm-cohorte-003 · sección 7 · líneas 1662-1667, 2611, 2621",
+      "control": [
+        "El título original (1663) dice «sólo una publica el instrumento», pero el texto dice que ambas lo publican y que una dirección falla. Se reformula sin cambiar el sentido.",
+        "La línea 1665 llama a la unidad «Facultad de Derecho y Humanidades de la Universidad Central»; iniciativas.csv la llama «Facultad de Ciencias Jurídicas y Sociales, Universidad Central». Verificar el nombre antes de usarlo.",
+        "Fuente R2-UCEN-01 con 404 (encargo; matriz-v2 aplicados). La celda vale 3 puntos del piso de la Universidad Central."
+      ]
+    },
+    {
+      "id": "C-3",
+      "enunciado": "La continuidad dejó de ser excepcional, y sigue sin llegar a resultados.",
+      "texto_factual": "Hay continuidad plurianual en varios ejes e instituciones, toda en formación y ninguna en el currículo obligatorio ni en la evaluación. El informe distingue tres niveles: continuidad de oferta (una página que sigue publicada), que abunda; continuidad de ejecución (una segunda versión con fechas), que aparece en tres instituciones; y continuidad con resultados (titulados contados), con sólo dos casos: dos graduaciones consecutivas de la UC con más de noventa y más de cien titulados, y el minor de la Universidad Autónoma.",
+      "clase": "hecho",
+      "confianza": { "valor": 80, "fuente": "línea 1674 (baja de 85 a 80) y figura del HTML" },
+      "apoyos": "clm-cohorte-005 · líneas 1669-1676",
+      "control": [
+        "C-3 (1672) dice que la Universidad de Chile «conserva fichas separadas de su diploma para 2022 y 2023»; la discusión (1119-1120) y clm-cohorte-005 dicen que entre 2022 y 2026 no hay edición localizada. Contradicción no resuelta: no usar la ficha 2023.",
+        "C-3 (1674) cifra en doce los estudiantes que completaron el minor de la Autónoma; la discusión (1136-1137) dice que la nota de egreso no publica cuántos egresaron. Probable fuente de la ronda 2 no contrastada: FALTANTE la fuente del «doce».",
+        "C-3 habla de «un minor con cinco años de trayectoria»; iniciativas.csv fecha ini-uautonoma-003 en 2025, aunque el artículo RPUD 8(2) 2021 (1381-1384) documenta el minor en 2021.",
+        "La mención de una segunda versión del curso de la UDD con calendario, horas y arancel proviene de la ronda 2 (R2-UDD-02/R2-UDD-03; R2-UDD-02 devuelve 404)."
+      ]
+    },
+    {
+      "id": "C-4",
+      "enunciado": "No hay línea curricular obligatoria documentada en ninguna de las once.",
+      "texto_factual": "En ninguna institución de la cohorte se localizó evidencia pública de una asignatura obligatoria de IA con syllabus, semestre, créditos y matrícula. Existen talleres, electivos y experiencias acotadas a una asignatura. El único minor con egresados es electivo, se co-titula con Ingeniería, opera en una sola sede y está diseñado para no aumentar la carga académica. En el plano internacional sólo se localizaron tres facultades con componente obligatorio, dos de ellas certificaciones sin créditos.",
+      "clase": "hecho",
+      "clase_detalle": "hecho sobre el corpus, de alcance acotado (ausencia de evidencia pública, no evidencia de ausencia)",
+      "confianza": { "valor": 80, "fuente": "figura de conclusiones del HTML; afirmaciones.csv clm-cohorte-006 registra 75 (clasificación PENDING, 04-09-2026)" },
+      "apoyos": "clm-cohorte-006 · sección 7 · líneas 1678-1683",
+      "control": []
+    },
+    {
+      "id": "C-5",
+      "enunciado": "Ninguna iniciativa acredita evaluación de efecto, y ninguna figura entre lo adjudicado.",
+      "texto_factual": "Ninguna de las 53 iniciativas alcanza el peldaño de evaluación. La única medición de resultado del corpus la publica una vicerrectoría de transformación digital sobre toda su universidad; es correlacional y no distingue estudiantes de Derecho. La consulta exhaustiva de 49.014 proyectos adjudicados por ANID desde 1982 no devuelve ningún proyecto sobre enseñanza del Derecho con IA, y sí diez que cruzan IA con enseñanza en otras disciplinas.",
+      "clase": "hecho",
+      "clase_detalle": "hecho sobre el corpus y sobre el registro público de financiamiento",
+      "confianza": { "valor": 95, "fuente": "figura de conclusiones del HTML (la de mayor confianza, línea 1688); afirmaciones.csv clm-cohorte-001 registra 85" },
+      "apoyos": "clm-cohorte-001 · anexo E · líneas 1685-1690",
+      "control": ["No heredar «otras seis disciplinas» (1688): se nombran cinco."]
+    },
+    {
+      "id": "C-6",
+      "enunciado": "La cobertura desigual acota la comparación ordinal, y no la impide.",
+      "texto_factual": "La investigación recorrió 1,8 veces más rutas en tres instituciones que en las ocho restantes, y el corpus original está contrastado al 100 % en todas. Eso hace publicable un comparador sobre capacidades acreditadas si incorpora su incertidumbre, y por eso se publica como banda. Con 5 de 100 celdas sin concluir, ninguna institución tiene un techo igual o superior al piso de la primera (20); quedan sin resolver dos empates: Autónoma y Central en 17, Adolfo Ibáñez y Andrés Bello en 11.",
+      "clase": "inferencia",
+      "confianza": { "valor": 80, "fuente": "figura de conclusiones del HTML; afirmaciones.csv clm-metodo-001 registra 90" },
+      "apoyos": "clm-metodo-001 · sección 11 · líneas 1692-1697",
+      "control": ["La agenda A-5 (2012) dice lo contrario («Cuatro instituciones tienen hoy un techo igual o superior al piso de la primera»). matriz-v2 confirma C-6: el techo más alto después de la UC es 17. A-5 es un resto de la versión anterior."]
+    },
+    {
+      "id": "C-7",
+      "enunciado": "El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado.",
+      "texto_factual": "De las 53 iniciativas, 19 son actividades aisladas o anuncios, 21 acreditan operación recurrente, 13 alcanzan alguna señal de institucionalización y ninguna llega a evaluación. La escalera está poblada en sus tres primeros tramos y vacía en el cuarto en las once instituciones a la vez. Esa simultaneidad sugiere una causa común (el costo de medir aprendizaje y la falta de un financiamiento que las Facultades hayan usado) más que una diferencia de mérito.",
+      "clase": "inferencia",
+      "confianza": { "valor": 75, "fuente": "figura de conclusiones del HTML" },
+      "apoyos": "clm-cohorte-001 · clm-cohorte-002 · clm-cohorte-006 · líneas 1699-1704",
+      "control": ["La regla declarada (1648: la barra es la confianza de la afirmación más débil) no se reproduce con afirmaciones.csv: el mínimo de sus apoyos en el CSV es 70 (clm-cohorte-002) y la figura dice 75. El CSV es de 04-09-2026 y anterior al cierre."]
+    },
+    {
+      "id": "C-8",
+      "enunciado": "Ninguna institución chilena tiene mandato para verificar lo que las Facultades afirman.",
+      "texto_factual": "La CNA no ha dictado criterios específicos para Derecho, cuya acreditación de carrera es voluntaria. La guía del Colegio de Abogados de julio de 2026 regula al abogado en ejercicio y no menciona la formación universitaria. El sitio de IA de la Academia Judicial se dirige a juezas y jueces. La Política Nacional de IA contempla a las instituciones de educación superior sin mencionar la formación jurídica. No existe incentivo externo para publicar el acto, declarar el alcance o medir el efecto.",
+      "clase": "hecho",
+      "clase_detalle": "hecho sobre el estado de la verificación institucional; la última frase (ausencia de incentivo) es lectura",
+      "confianza": { "valor": 90, "fuente": "figura de conclusiones del HTML; no tiene afirmación propia en afirmaciones.csv" },
+      "apoyos": "anexo E · líneas 1706-1711",
+      "control": []
+    }
+  ],
+
+  "prioridades": [
+    {
+      "id": "P-1",
+      "enunciado": "Financiar la investigación sobre la propia enseñanza, con el instrumento que ya existe.",
+      "evidencia": "Cero proyectos sobre enseñanza del Derecho con IA entre 49.014 adjudicados por ANID desde 1982, frente a diez proyectos 2024-2026 que cruzan IA con enseñanza en otras disciplinas (anexo E).",
+      "problema": "La capacidad de investigar la IA como problema jurídico está construida y financiada; la de investigar cómo se enseña no se ha constituido. Sin ella, ninguna afirmación sobre eficacia formativa es verificable.",
+      "actor": "Las Facultades como postulantes. No requiere que ANID cree nada: otras disciplinas ya usan el instrumento para este objeto.",
+      "falta_saber": "Si llegó a pedirse. Desconocimiento del instrumento, falta de equipos con esa formación metodológica, postulaciones rechazadas o decisión deliberada son explicaciones compatibles con la misma evidencia.",
+      "linea": "1812-1828"
+    },
+    {
+      "id": "P-2",
+      "enunciado": "Publicar el acto de lo que ya está en operación.",
+      "evidencia": "Sólo 10 de las 100 celdas del comparador alcanzan el estado con instrumento formal, y 5 Facultades no acreditan ninguno. De las cuatro unidades creadas entre 2025 y 2026, ninguna publica el acto que la constituye.",
+      "problema": "Buena parte de la distancia entre instituciones mide lo que se dejó por escrito y no lo que se construyó. Una capacidad real sin acto publicado es indistinguible desde fuera de una que no existe.",
+      "actor": "Cada Facultad, en su propio nivel de decisión. Es la más barata de las cuatro: no exige presupuesto nuevo, sino publicar lo ya decidido.",
+      "falta_saber": "Si la no publicación es decisión o inercia administrativa; la evidencia pública no lo distingue, y el remedio cambia (política o procedimiento).",
+      "linea": "1830-1846"
+    },
+    {
+      "id": "P-3",
+      "enunciado": "Cerrar la regla de uso antes de que la cierre el estándar profesional.",
+      "evidencia": "2 de 10 Facultades acreditan norma propia con acto citable. La guía del Colegio de Abogados de 6 de julio de 2026 ya impone al abogado en ejercicio verificación personal de citas, competencia tecnológica y prohibición de delegar el juicio profesional.",
+      "problema": "Una Facultad que titula abogados sin definir qué se permite en sus propias evaluaciones forma para un estándar profesional que ya existe y que ella no aplica. Donde el instrumento existe en el extranjero, el modelo dominante es el de deberes de declaración con consecuencia asociada.",
+      "actor": "Cada Facultad en su régimen de evaluación, y el gremio en la articulación entre formación y ejercicio.",
+      "falta_saber": "Si una norma de Facultad cambia la conducta de quien estudia. No hay medición al respecto; obtenerla es P-1.",
+      "linea": "1848-1864"
+    },
+    {
+      "id": "P-4",
+      "enunciado": "Dotar de contraparte a lo que las Facultades dicen de sí mismas.",
+      "evidencia": "La CNA dictó criterios específicos sólo para Pedagogía, Medicina y Odontología; Derecho no tiene criterios y su acreditación es voluntaria. El Colegio de Abogados regula al abogado en ejercicio, la Academia Judicial se dirige a juezas y jueces, y la Política Nacional de IA no menciona la formación jurídica.",
+      "problema": "Lo que una Facultad publica sobre cómo enseña IA no tiene contraparte evaluadora en ninguna institución chilena; su calidad depende de la disciplina de quien la escribe.",
+      "actor": "La Comisión Nacional de Acreditación, el Ministerio de Ciencia en la revisión de la Política Nacional, y el gremio.",
+      "falta_saber": "Si la verificación externa produciría capacidad o sólo cumplimiento formal. El campo ya anuncia estructura antes de constituirla, y un criterio de acreditación mal diseñado premiaría el anuncio.",
+      "linea": "1866-1882"
+    }
+  ],
+
+  "_prioridades_limite": {
+    "texto": "Son prioridades sobre el campo, no un plan de trabajo para una institución. Ninguna se dirige a una universidad nombrada del comparador, por el conflicto de interés declarado del autor. Ninguna está respaldada por evidencia de que funcione: no existe en Chile una medición del efecto de estas decisiones.",
+    "linea": "1802-1810, 1884-1888",
+    "no_heredar": "El cierre de la sección 10 (1920-1928) y la sección 11 (1952) hablan de «seis decisiones propuestas», «cuatro no cuestan dinero», «la primera posición» de la PUCV y un máximo de «18 sobre 30». El cuerpo tiene cuatro prioridades; el techo del comparador es 20 de 30 (Pontificia Universidad Católica de Chile); la PUCV no tiene posición."
+  },
+
+  "cifras_generales": {
+    "fuentes_corpus": { "valor": 96, "linea": "19, 21, 66", "nota": "públicas únicas, de las instituciones observadas" },
+    "fuentes_corpus_original": { "valor": 74, "linea": "191, 573, 2898", "calculo": "fuentes.csv: 74 filas" },
+    "fuentes_contrastadas": { "valor": 74, "porcentaje": "77 % de 96", "linea": "164-168, 21, 66, 573-574", "nota": "38 contrastadas antes y 36 abiertas en la verificación completa" },
+    "fuentes_ronda_2": { "valor": 22, "linea": "66, 191, 3448-3615", "nota": "sin contraste sustantivo. Otros diez identificadores R2 coinciden con fuentes ya registradas (línea 3623)." },
+    "ronda_2_en_la_matriz": {
+      "celdas_cerradas": 26,
+      "puntos_totales": 29,
+      "fuentes_nuevas_no_contrastadas_con_puntos": 13,
+      "puntos_de_esas_13": 25,
+      "otros_4_puntos": "R2-UCEN-02 (transferencia U. Central, 2) y R2-UDP-02 (formación y adopción UDP, 2), que equivalen a src-ucentral-003 y src-udp-001 (línea 3623)",
+      "fuente": "calculo sobre matriz-v2.json 'aplicados' con la tabla de puntos de la misma matriz; coincide con el encargo (13 fuentes, 25 puntos)"
+    },
+    "ronda_2_direcciones_404": {
+      "valor": 3,
+      "detalle": [
+        { "fuente": "R2-UC-01", "celda": "P. U. Católica de Chile · presencia en pregrado · en operación (2 puntos)", "efecto_si_vuelve_a_no_concluyente": "piso 18, techo 20 (regla del anexo D, 2584)" },
+        { "fuente": "R2-UCEN-01", "celda": "U. Central de Chile · norma propia · con instrumento formal (3 puntos)", "efecto_si_vuelve_a_no_concluyente": "piso 14, techo 16" },
+        { "fuente": "R2-UDD-02 (junto a R2-UDD-03)", "celda": "U. del Desarrollo · formación estructurada · en operación (2 puntos)", "efecto_si_vuelve_a_no_concluyente": "piso 6, techo 10, si R2-UDD-03 no bastara por sí sola" }
+      ],
+      "fuente": "encargo (estado de verificación) y matriz-v2.json 'aplicados'; la línea 1665 reconoce el error de dirección de la resolución de la U. Central",
+      "nota": "El techo de 20/30 depende en 2 puntos de una fuente que devuelve 404."
+    },
+    "fuentes_externas": { "valor": 31, "linea": "33, 68, 191, 1938", "nota": "19 entradas en el anexo E agrupan las 31 (2744). Las direcciones completas no están en los insumos." },
+    "fuentes_totales_con_externas": { "valor": 127, "linea": "1938", "nota": "96 de 127 siguen siendo comunicación de las instituciones observadas" },
+    "divergencias_verificacion": { "valor": 23, "linea": "76, 369, 577", "nota": "aprox. una por cada tres registros" },
+    "iniciativas": { "valor": 53, "linea": "70, 210", "calculo": "iniciativas.csv: 53" },
+    "iniciativas_fechadas": { "valor": 49, "linea": "202, 260, 709", "calculo": "iniciativas.csv: 49" },
+    "iniciativas_desde_2025": { "valor": 41, "linea": "202, 260, 709", "calculo": "iniciativas.csv: 41, incluida una anunciada para 2027" },
+    "iniciativas_sin_fecha": { "valor": 4, "linea": "264, 713" },
+    "evidencias": { "valor": 75, "linea": "72", "calculo": "evidencias.csv: 75", "nota": "En el CSV (04-09-2026) figuran 42 CONTRASTADO, 30 FUENTE_ABIERTA y 3 PROPUESTO: el archivo es anterior al cierre de la verificación que declara la línea 573." },
+    "afirmaciones": { "valor": 14, "linea": "74", "calculo": "afirmaciones.csv: 10 FACT, 2 SIGNAL, 1 PENDING, 1 INFERENCE" },
+    "escalera_institucionalizacion": {
+      "peldanos": [
+        { "peldano": 1, "nombre": "Exploración", "definicion": "anuncio, evento o piloto aislado", "conteo": 19 },
+        { "peldano": 2, "nombre": "Operación", "definicion": "actividad recurrente o proyecto en ejecución", "conteo": 21 },
+        { "peldano": 3, "nombre": "Institucionalización", "definicion": "responsable formal, continuidad, política o recursos", "conteo": 13 },
+        { "peldano": 4, "nombre": "Evaluación", "definicion": "resultados públicamente revisables", "conteo": 0 }
+      ],
+      "linea": "559-564, 1702; figura 3 del HTML",
+      "calculo": "iniciativas.csv current_status: 1=19, 2=21, 3=13",
+      "nota": "El peldaño se aplica a la iniciativa, nunca a la universidad, y no se promedia (764-766). La escala incluye un nivel previo, «sin evidencia pública localizada» (559)."
+    },
+    "direccion_de_las_iniciativas": {
+      "ia_para_el_derecho": 30, "derecho_de_la_ia": 9, "ambas": 11, "adyacente": 3,
+      "linea": "779; figura 4 del HTML",
+      "calculo": "iniciativas.csv direction; usan la IA (para el Derecho o ambas) 41 de 53 = 77 %, «tres de cada cuatro»",
+      "contraste": "Los siete proyectos ANID de disciplina Derecho con objeto IA son todos «Derecho de la IA» y ninguno «IA para el Derecho» (787-789)."
+    },
+    "mecanismos_institucionales": {
+      "tabla": [
+        { "mecanismo": "Unidad", "total": 7, "de_la_facultad": 7 },
+        { "mecanismo": "Norma o política", "total": 4, "de_la_facultad": 2 },
+        { "mecanismo": "Programa formativo", "total": 12, "de_la_facultad": 11 },
+        { "mecanismo": "Asignatura o malla", "total": 4, "de_la_facultad": 4 },
+        { "mecanismo": "Herramienta", "total": 11, "de_la_facultad": 4 },
+        { "mecanismo": "Proyecto", "total": 3, "de_la_facultad": 2 },
+        { "mecanismo": "Actividad", "total": 8, "de_la_facultad": 7 },
+        { "mecanismo": "Convenio", "total": 4, "de_la_facultad": 3, "en_iniciativas_csv": "2 y 2" },
+        { "mecanismo": "Publicación", "total": 2, "de_la_facultad": 2 }
+      ],
+      "linea": "735-754",
+      "nota": "«De la Facultad» = Facultad, su centro o un equipo académico. Con 4 convenios la tabla suma 55, no 53; iniciativas.csv suma 53 con 2 convenios."
+    },
+    "unidades_frente_a_normas": { "valor": "7 unidades frente a 4 normas; 2 normas de Facultad", "linea": "271, 738-740" },
+    "programas_formativos": { "valor": 12, "de_la_facultad": 11, "linea": "205, 282, 742" },
+    "herramientas": { "total": 11, "de_la_facultad": 4, "no_de_la_facultad": 7, "linea": "206, 293, 746", "calculo": "de las 7: 6 universitarias y 1 estudiantil" },
+    "registros_universitarios": { "valor": 9, "fuente": "afirmaciones.csv clm-cohorte-007; iniciativas.csv", "control": "reatribuciones: 6 (198, 293) frente a 15 (1183-1187); cifra no resuelta" },
+    "comparador_celdas": { "valor": 100, "resueltas": 95, "sin_concluir": 5, "instituciones_con_celdas_sin_concluir": 4, "linea": "64, 355, 937, 997, 1032" },
+    "comparador_puntos": { "acreditados": 114, "en_juego_en_celdas_resueltas": 285, "linea": "997", "calculo": "matriz-v2: 114" },
+    "comparador_maximo": { "valor": "20 de 30", "institucion": "Pontificia Universidad Católica de Chile", "linea": "176-180, 927, 946, 991, 2637" },
+    "comparador_promedio_y_mediana_pisos": { "promedio": "11,4", "mediana": 11, "linea": "927, 991" },
+    "comparador_tabla": {
+      "filas": [
+        { "institucion": "Pontificia Universidad Católica de Chile", "piso": 20, "techo": 20, "sin_concluir": 0, "rutas": 12, "fuentes": 12 },
+        { "institucion": "Universidad Autónoma de Chile", "piso": 17, "techo": 17, "sin_concluir": 0, "rutas": 5, "fuentes": 3 },
+        { "institucion": "Universidad Central de Chile", "piso": 17, "techo": 17, "sin_concluir": 0, "rutas": 7, "fuentes": 4 },
+        { "institucion": "Universidad de Chile", "piso": 12, "techo": 14, "sin_concluir": 1, "rutas": 12, "fuentes": 16 },
+        { "institucion": "Universidad Adolfo Ibáñez", "piso": 11, "techo": 11, "sin_concluir": 0, "rutas": 6, "fuentes": 3 },
+        { "institucion": "Universidad Andrés Bello", "piso": 11, "techo": 11, "sin_concluir": 0, "rutas": 8, "fuentes": 4 },
+        { "institucion": "Universidad del Desarrollo", "piso": 8, "techo": 10, "sin_concluir": 1, "rutas": 6, "fuentes": 4 },
+        { "institucion": "Universidad Diego Portales", "piso": 8, "techo": 8, "sin_concluir": 0, "rutas": 7, "fuentes": 3 },
+        { "institucion": "Universidad de los Andes", "piso": 5, "techo": 9, "sin_concluir": 2, "rutas": 7, "fuentes": 5 },
+        { "institucion": "Universidad de Concepción", "piso": 5, "techo": 7, "sin_concluir": 1, "rutas": 7, "fuentes": 4 }
+      ],
+      "linea": "817-837, 943-964, 2635-2655",
+      "calculo": "matriz-v2 'despues' reproduce pisos y techos",
+      "nota": "Índice de Formalización de Capacidad del informe experto; el Documento A construye su propio puntaje. PUCV: 11 rutas, 14 fuentes, 0 celdas sin concluir (819); su puntaje no se consigna aquí."
+    },
+    "celdas_con_instrumento_formal": {
+      "valor": "10 de 100",
+      "reparto": "UC 4; Autónoma 3; Adolfo Ibáñez, Central y Universidad de Chile 1 cada una; 5 Facultades con 0 (Andrés Bello, Concepción, los Andes, Desarrollo, Diego Portales)",
+      "linea": "1745-1749, 1834, 2591, 2605-2629",
+      "calculo": "matriz-v2: 10 en el comparador; 12 en la cohorte de 110 con los 2 de la PUCV (2629)",
+      "control": "La línea 637 dice «trece de las 110 celdas»: con matriz-v2 son 12."
+    },
+    "celdas_solo_en_el_entorno": { "valor": "12 de 100", "calculo": "matriz-v2; 14 de 110 con la PUCV", "control": "293 dice «de las 110»" },
+    "estados_matriz_comparador": { "con_instrumento_formal": 10, "en_operacion": 29, "incipiente": 13, "solo_entorno": 12, "solo_adyacente": 1, "no_localizada": 30, "no_concluyente": 5, "calculo": "matriz-v2, diez instituciones sin la PUCV" },
+    "capacidades_en_operacion_por_fila": {
+      "filas": [
+        { "capacidad": "Formación estructurada", "instituciones": 7, "puntos_de_30": 18 },
+        { "capacidad": "Unidad especializada", "instituciones": 6, "puntos_de_30": 15 },
+        { "capacidad": "Alcance declarado", "instituciones": 6, "puntos_de_30": 13 },
+        { "capacidad": "Presencia en pregrado", "instituciones": 5, "puntos_de_30": 12 },
+        { "capacidad": "Adopción en la enseñanza", "instituciones": 4, "puntos_de_30": 13 },
+        { "capacidad": "Investigación", "instituciones": 4, "puntos_de_30": 13 },
+        { "capacidad": "Transferencia", "instituciones": 3, "puntos_de_30": 13 },
+        { "capacidad": "Norma propia", "instituciones": 2, "puntos_de_30": 9 },
+        { "capacidad": "Herramienta desplegada", "instituciones": 2, "puntos_de_30": 8 },
+        { "capacidad": "Evaluación de efecto", "instituciones": 0, "puntos_de_30": 0 }
+      ],
+      "linea": "figura 7 del HTML (instituciones en operación, con o sin instrumento); pérdidas por capacidad en 1005",
+      "calculo": "matriz-v2 (puntos por capacidad)",
+      "control": "La línea 887 dice que investigación «consta en cinco instituciones, todas con proyecto adjudicado y código citable»; la figura, las líneas 1001 y 1735 y matriz-v2 dan 4 con instrumento formal y 1 sólo en el entorno."
+    },
+    "formas_de_ausencia": {
+      "unanime": "Evaluación de efecto: 0 de 30, no localizada en las 10 y sin celdas sin concluir (999, 1725-1729)",
+      "bimodal": "Norma propia: 2 con instrumento formal, 3 sólo en el entorno, 5 no localizada. Investigación: 4 con instrumento formal, 1 sólo en el entorno, 5 no localizada (1731-1737)",
+      "umbral": "Transferencia: 6 incipiente, 3 en operación, 1 sólo en el entorno, ninguna con instrumento formal (1739-1743)"
+    },
+    "rutas_protocolo": { "media_piloto": "11,7", "media_otras_ocho": "6,6", "razon_rutas": "1,8 : 1 (antes 2,4 : 1)", "razon_fuentes": "3,7 : 1", "linea": "376, 839-842, 1940" },
+    "correlacion_rutas_piso": { "valor": "0,34", "linea": "1028" },
+    "sesgo_verificado_fuera_del_piloto": { "valor": "el registro subestimaba 2 casos y sobreestimaba 3", "linea": "1034-1036" },
+    "matricula_derecho": { "pregrado_2024": 51331, "primer_anio": 11401, "posicion": "segunda carrera universitaria con más matrícula nueva", "linea": "444-446", "control": "La línea 1308 atribuye estas dos cifras al artículo de La Tercera de 12-02-2025; el anexo E (2714) lista además el Informe de Matrícula 2024 del SIES. Precisar la fuente antes de citarlas." },
+    "metricas_de_cobertura_no_de_efecto": { "detalle": "cerca del 80 % del profesorado de Derecho de la Universidad Autónoma, en tres sedes; unos 90 participantes en el taller de la PUCV (2025); dos cohortes graduadas de la UC (más de 90 titulados en 2024, más de 100 en 2025); más de 300 consultas a un asistente docente", "linea": "770-772, 1111, 1168-1170", "fuente_csv": "ini-uautonoma-001, ini-pucv-005, ini-puc-chile-002" },
+    "unica_cifra_de_resultado": { "detalle": "20 % más de aprobación entre estudiantes que usaron más de 30 veces un ecosistema de asistentes de IA; más de 15.000 estudiantes y 450.000 interacciones; universitaria, no jurídica, correlacional", "linea": "1157-1166", "nota": "El texto no nombra la universidad: FALTANTE." },
+    "candidatas_fuera_de_cohorte": { "revisadas": 16, "con_algo_localizable": 6, "solidas": 2, "linea": "2822-2823", "nota": "Ninguna tiene norma ni acto formal publicado sobre IA a nivel de Facultad de Derecho (2885-2887)." },
+    "dimensiones_vacias": { "detalle": "Recursos y capacidades; continuidad, cobertura y resultados: sin evidencia en ninguna institución. Ninguna publica presupuesto, dotación ni sostenibilidad, y ningún fondo de vinculación con el medio publica su monto.", "linea": "1948" }
+  },
+
+  "iniciativas_por_anio": [
+    { "anio": "1988", "conteo": 1, "iniciativas": ["ini-uchile-001"] },
+    { "anio": "2008", "conteo": 1, "iniciativas": ["ini-uchile-004"] },
+    { "anio": "2020", "conteo": 1, "iniciativas": ["ini-pucv-001"] },
+    { "anio": "2021", "conteo": 0, "iniciativas": [] },
+    { "anio": "2022", "conteo": 2, "iniciativas": ["ini-pucv-002", "ini-uchile-002"] },
+    { "anio": "2023", "conteo": 0, "iniciativas": [] },
+    { "anio": "2024", "conteo": 3, "iniciativas": ["ini-pucv-003", "ini-puc-chile-002", "ini-uchile-003"] },
+    { "anio": "2025", "conteo": 17, "iniciativas": ["ini-pucv-004", "ini-pucv-005", "ini-pucv-009", "ini-puc-chile-003", "ini-puc-chile-006", "ini-puc-chile-007", "ini-uchile-006", "ini-uchile-008", "ini-udp-001", "ini-uandes-001", "ini-uandes-002", "ini-unab-001", "ini-unab-002", "ini-udd-002", "ini-uautonoma-003", "ini-ucentral-001", "ini-udec-002"] },
+    { "anio": "2026", "conteo": 23, "iniciativas": ["ini-pucv-006", "ini-pucv-007", "ini-pucv-008", "ini-puc-chile-004", "ini-puc-chile-005", "ini-uchile-005", "ini-uchile-007", "ini-udp-002", "ini-udp-003", "ini-uandes-003", "ini-uandes-004", "ini-uai-001", "ini-uai-002", "ini-uai-003", "ini-unab-003", "ini-udd-003", "ini-udd-004", "ini-uautonoma-001", "ini-uautonoma-002", "ini-ucentral-002", "ini-ucentral-003", "ini-udec-001", "ini-udec-004"] },
+    { "anio": "2027", "conteo": 1, "iniciativas": ["ini-udd-001"] },
+    { "anio": "sin fecha", "conteo": 4, "iniciativas": ["ini-puc-chile-001", "ini-unab-004", "ini-ucentral-004", "ini-udec-003"] }
+  ],
+
+  "_iniciativas_por_anio_contraste": {
+    "metodo": "Node sobre iniciativas.csv: año = primeros cuatro caracteres de start_date; vacío = sin fecha.",
+    "coincide_con_el_informe": [
+      "49 fechadas (informe 202, 260, 709) = 49 en el CSV.",
+      "41 desde 2025 (informe 202, 260, 709) = 17 + 23 + 1 en el CSV. Incluye la iniciativa anunciada para 2027.",
+      "4 sin fecha (264, 713) y 1 en 2027 (714) coinciden."
+    ],
+    "discrepancias": [
+      "La figura de la línea de tiempo del HTML v3.2.0 (primera figura SVG) rotula 2021 = 2, 2022 = —, 2025 = 23 y 2026 = 17. El CSV da 2021 = 0, 2022 = 2, 2025 = 17 y 2026 = 23: la figura corre un año las dos iniciativas de 2022 e intercambia 2025 con 2026. Los totales del texto no cambian; el gráfico del Documento A debe salir del CSV.",
+      "La de 2008 no es una unidad sino una línea de tesis (ver H-1, control).",
+      "Varias fechas de 2025-2026 son la fecha de la noticia y no la del inicio real (por ejemplo ini-puc-chile-003, 2025-12-31). El año de ini-udec-002 se infiere del día de la semana (nota del CSV)."
+    ]
+  },
+
+  "anid": {
+    "registros_consultados": { "valor": 49014, "periodo": "1982-2026", "linea": "174, 211, 590, 1229, 2706", "fuente": { "titulo": "Histórico de proyectos adjudicados", "editor": "ANID", "url": "github.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados (ruta que da el anexo E; protocolo no indicado)" }, "metodo": "consulta exhaustiva y programática, no por muestreo (591-592, 1232)" },
+    "proyectos_derecho_con_objeto_ia": {
+      "numero": 7,
+      "criterio": "disciplina Derecho, objeto o palabras clave con IA, fallo 2025 y 2026 (1242-1243)",
+      "proyectos": [
+        { "codigo": "1262567", "instrumento": "Fondecyt Regular 2026", "responsable": "Ricardo Lillo Lobos", "institucion": "U. Adolfo Ibáñez", "monto": 57300000, "meses": 48 },
+        { "codigo": "1260629", "instrumento": "Fondecyt Regular 2026", "responsable": "Osvaldo Artaza Varela", "institucion": "U. de Talca", "monto": 39720000, "meses": 48 },
+        { "codigo": "1262017", "instrumento": "Fondecyt Regular 2026", "responsable": "Alberto Coddou Mc Manus", "institucion": "P. U. Católica de Chile", "monto": 48960000, "meses": 48 },
+        { "codigo": "1262066", "instrumento": "Fondecyt Regular 2026", "responsable": "Juan Faúndes Peñafiel", "institucion": "U. Autónoma de Chile", "monto": 163800000, "meses": 48 },
+        { "codigo": "1250613", "instrumento": "Fondecyt Regular 2025", "responsable": "Sebastián Bozzo Hauri", "institucion": "U. Autónoma de Chile", "monto": 55610000, "meses": 48 },
+        { "codigo": "1250142", "instrumento": "Fondecyt Regular 2025", "responsable": "Juan Pablo Mañalich Raffo", "institucion": "U. de Chile", "monto": 46980000, "meses": 48 },
+        { "codigo": "1250103", "instrumento": "Fondecyt Regular 2025", "responsable": "Eduardo Jequier Lehuedé", "institucion": "U. San Sebastián", "monto": 60792000, "meses": 48 }
+      ],
+      "linea": "1250-1266",
+      "suma": { "valor": 473162000, "linea": "214 («unos 473 millones»), 1268, 1781", "calculo": "Node: 473.162.000" },
+      "mediana": { "valor": 55610000, "linea": "1782", "calculo": "Node: 55.610.000" },
+      "rango": { "minimo": 39720000, "maximo": 163800000, "seis_de_siete_entre": "39,7 y 60,8 millones", "linea": "1782-1783" },
+      "objeto": "todos sustantivos: regulación de riesgos, debido proceso, responsabilidad civil por daños de sistemas de IA, gestión algorítmica del trabajo, penología algorítmica; ninguno pedagógico (214-216, 1275-1277)",
+      "nota": "Dos de las siete instituciones están fuera de la cohorte (U. de Talca, U. San Sebastián). Los títulos completos no están en el texto extraído: FALTANTE.",
+      "control": "El anexo D (2627) acredita la investigación de la Universidad de Chile con Fondecyt Regular 2025 nº 1250142 y Fondecyt Regular 2026 nº 1261853; este segundo código no está entre los siete y el texto no lo describe."
+    },
+    "proyectos_juridico_tecnologicos_fuera_de_la_disciplina_derecho": {
+      "numero": 8,
+      "suma": { "valor": 1361317000, "linea": "2665-2666 («1.361 millones»)", "calculo": "Node: 1.361.317.000" },
+      "proyectos": [
+        { "codigo": "IT25I0151", "instrumento": "FONDEF IDeA Investigación Tecnológica 2025", "institucion": "U. de los Andes (con PUCV)", "monto": 236998000, "meses": 24 },
+        { "codigo": "ID21I10206", "instrumento": "FONDEF IDeA I+D 2021", "institucion": "U. de los Andes", "monto": 199999000, "meses": 24 },
+        { "codigo": "ID26I10072", "instrumento": "FONDEF IDeA I+D 2026", "institucion": "U. Alberto Hurtado", "monto": 227700000, "meses": 24 },
+        { "codigo": "ID26I10704", "instrumento": "FONDEF IDeA I+D 2026", "institucion": "P. U. Católica de Chile", "monto": 227000000, "meses": 24 },
+        { "codigo": "SUC250019", "instrumento": "Startup Ciencia 2025", "institucion": "Instituto Milenio Fundamentos de los Datos", "monto": 134492000, "meses": 12 },
+        { "codigo": "RP24I10007", "instrumento": "Corfo Desafíos Públicos 2024", "institucion": "DATAQU", "monto": 149520000, "meses": null },
+        { "codigo": "RP24I10013", "instrumento": "Corfo Desafíos Públicos 2024", "institucion": "ANALITIC", "monto": 149848000, "meses": null },
+        { "codigo": "11251741", "instrumento": "Fondecyt Iniciación 2025", "institucion": "P. U. Católica de Chile", "monto": 35760000, "meses": 36 }
+      ],
+      "linea": "2663-2687",
+      "nota": "Ninguno lo lidera una Facultad de Derecho (2666).",
+      "control": [
+        "La agenda A-7 (2034) dice «1.126 millones»: la suma verificada es 1.361 millones.",
+        "La figura ANID del HTML v3.2.0 rotula «7 proyectos» fuera de la disciplina Derecho; el texto (1269, 2663) y la tabla dicen ocho."
+      ],
+      "caso_fondef_certeza_juridica": "IT25I0151, instrumento Investigación Tecnológica (escalamiento de un resultado existente), 236.998.000 pesos, 24 meses, resolución exenta 7461 de 9 de septiembre de 2025; segunda fase de ID21I10206 (2021, 199.999.000 pesos, seminario de cierre el 8 de julio de 2024); cinco años de línea y 436.997.000 pesos acumulados («unos 437 millones»). Dirigido desde la Facultad de Ingeniería y Ciencias Aplicadas de la Universidad de los Andes. Líneas 1288-1297, 1195-1199."
+    },
+    "proyectos_ia_y_ensenanza_en_otras_disciplinas": {
+      "numero": 10,
+      "periodo": "2024-2026",
+      "disciplinas": ["Ciencias de la Educación (6 proyectos)", "Humanidades", "Informática", "Escuelas de Negocios", "Ciencias de la Salud"],
+      "reparto_de_los_otros_4": "FALTANTE",
+      "codigos": "FALTANTE",
+      "ejemplo": "uno estudia la formación universitaria en ingeniería de software en la era de la IA generativa",
+      "linea": "304, 1280-1284, 1773-1777",
+      "control": "Se nombran cinco disciplinas; el informe dice «seis» en 82, 1688 y 1774. No heredar."
+    },
+    "resultado_ensenanza_del_derecho_con_ia": { "valor": 0, "enunciado": "Ningún proyecto sobre enseñanza del Derecho con o sobre IA, de ninguna universidad chilena, en ningún año, entre los 49.014 adjudicados.", "linea": "170-174, 211-213, 1244-1246, 1769-1770" },
+    "salvedad": "La base registra proyectos adjudicados y no postulaciones: acredita que ningún proyecto sobre enseñanza del Derecho con IA fue financiado, no que ninguno se haya presentado, ni cuántos se rechazaron.",
+    "salvedad_linea": "82, 306, 1279, 1771, 1828",
+    "advertencias_de_metodo": [
+      "Las nóminas de fallo de Fondecyt traen número, responsable, grupo de evaluación e institución, pero no título, monto ni duración; esos campos sólo constan en el repositorio de datos abiertos (595-597, 2691-2695).",
+      "La clasificación disciplinar no sigue al objeto: el FONDEF de certeza jurídica ambiental está clasificado en «otras ingenierías y tecnologías». Los ocho proyectos se localizaron por objeto y palabras clave (2697-2700)."
+    ],
+    "otras_fuentes_anid_en_anexo_e": [
+      "Resolución exenta 7461 · fallo Investigación Tecnológica IDeA 2025 · 09-09-2025 · documentos.anid.cl",
+      "Nómina de proyectos aprobados Fondecyt Regular 2026 · 680 proyectos · documentos.anid.cl",
+      "Resolución exenta 71 · adjudicación IDeA I+D 2025 · documentos.anid.cl"
+    ]
+  },
+
+  "contexto_externo": [
+    {
+      "hecho": "La CNA ha dictado criterios y estándares específicos por carrera sólo para Pedagogía, Medicina y Odontología, las tres de acreditación obligatoria. Derecho no tiene criterios propios y su acreditación de carrera es voluntaria. No existe instrumento regulatorio para evaluar cómo una Facultad de Derecho enseña IA.",
+      "fecha": "FALTANTE (vigente al corte 06-09-2026)",
+      "linea": "337, 1349-1352",
+      "fuente": { "titulo": "Repositorio de criterios y estándares por carrera", "editor": "Comisión Nacional de Acreditación (CNA-Chile)", "fecha": "FALTANTE", "url": "FALTANTE (dominio cnachile.cl, línea 2716)" }
+    },
+    {
+      "hecho": "El Colegio de Abogados de Chile aprobó una guía de uso responsable de IA que exige competencia tecnológica, verificación diligente de resultados y verificación personal de citas normativas y jurisprudenciales, prohíbe delegar el juicio profesional y refuerza la confidencialidad. Nada dice sobre formación universitaria ni preparación de los egresados.",
+      "fecha": "2026-07-06",
+      "linea": "222-224, 337, 1343-1347, 1852, 1896-1900",
+      "fuente": { "titulo": "Guía de uso responsable de IA", "editor": "Colegio de Abogados de Chile (difundida por idealex.press y actualidadjuridica.doe.cl)", "fecha": "2026-07-06 (aprobación)", "url": "FALTANTE (dominios en línea 2722)" }
+    },
+    {
+      "hecho": "La Academia Judicial publicó un sitio y una guía sobre IA generativa para juezas y jueces, aprobada por su Consejo Directivo, con tutoriales de prompting, catálogo de herramientas y orientaciones de la Corte Suprema, anclada al Código de Ética Judicial. No menciona facultades de Derecho, pregrado ni estudiantes.",
+      "fecha": "2026-04-07",
+      "linea": "224-225, 337, 1338-1341",
+      "fuente": { "titulo": "Sitio y guía sobre IA generativa para juezas y jueces", "editor": "Academia Judicial de Chile", "fecha": "2026-04-07", "url": "FALTANTE (dominio ia.academiajudicial.cl, línea 2720)" }
+    },
+    {
+      "hecho": "La Política Nacional de Inteligencia Artificial contempla a las instituciones de educación superior para incorporar la IA como conocimiento transversal y fortalecer las carreras de computación. No tiene objetivo, acción ni mención sobre formación jurídica, abogados o facultades de Derecho.",
+      "fecha": "actualización 2024",
+      "linea": "225-226, 337, 1354-1357",
+      "fuente": { "titulo": "Política Nacional de Inteligencia Artificial · actualización 2024", "editor": "Ministerio de Ciencia, Tecnología, Conocimiento e Innovación (Minciencia)", "fecha": "2024", "url": "FALTANTE (dominio cens.cl, línea 2718)" }
+    },
+    {
+      "hecho": "El uso automatizado de IA para ingresar escritos hizo colapsar la Oficina Judicial Virtual: 38.477 escritos desde el sábado anterior hasta el mediodía del lunes, entre 500 y 900 por tribunal. La Corte Suprema bloqueó la dirección de origen y su Departamento de Informática redactó un escrito tipo de respuesta. El informe lo registra como el primer incidente institucional documentado en Chile atribuible directamente al uso profesional de estas herramientas, seis semanas antes de su corte.",
+      "fecha": "2026-07-28",
+      "linea": "415-419, 1317-1323, 1902-1904",
+      "fuente": { "titulo": "Uso de IA habría hecho colapsar plataforma del Poder Judicial", "editor": "T13", "fecha": "2026-07-28", "url": "FALTANTE (dominio t13.cl, línea 2732)" }
+    },
+    {
+      "hecho": "La Ley 21.719 regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales. Amplía los derechos de acceso, rectificación, cancelación y oposición con portabilidad y bloqueo, e instala un deber de responsabilidad proactiva. Entra en vigor en diciembre de 2026.",
+      "fecha": "publicada 2024-12-13; vigencia diciembre de 2026",
+      "linea": "complemento-pucv-v1.2.txt, 322 y 423 (no figura en el informe 01)",
+      "fuente": { "titulo": "Ley 21.719", "editor": "FALTANTE (el complemento no cita la publicación oficial)", "fecha": "2024-12-13", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "La Facultad de Derecho de la Universidad de Valparaíso presentó en un conversatorio su Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías, con coordinadora identificada y la presencia del decano y la vicedecana. Su primera capacitación docente sobre IA y cognición se ejecutó el 1 de septiembre de 2026, con un centro de neurociencia de la misma universidad. No hay acto de creación publicado. Está fuera de la cohorte y no altera el comparador.",
+      "fecha": "2026-09-04",
+      "linea": "510-517, 1906-1910, 2828-2834",
+      "fuente": { "titulo": "FALTANTE", "editor": "Facultad de Derecho, Universidad de Valparaíso", "fecha": "2026-09-04", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "En la prensa económica, principales estudios jurídicos del país con comités de IA constituidos, una asociación gremial de legaltech de veintiuna empresas y proyecciones de venta en millones de dólares. La única mención universitaria del artículo es la de un decano.",
+      "fecha": "2026-08-16",
+      "linea": "414-416, 1312-1315",
+      "fuente": { "titulo": "La IA ya entró a los estudios de abogados", "editor": "La Tercera · Pulso", "fecha": "2026-08-16", "url": "FALTANTE (dominio latercera.com, línea 2730)" }
+    },
+    {
+      "hecho": "La única pieza de prensa general sobre el objeto del informe recoge declaraciones de decanos y vicedecanos de cuatro Facultades sobre informática jurídica, ética e IA. No evalúa a las Facultades: transmite su autodescripción.",
+      "fecha": "2025-02-12",
+      "linea": "1303-1308",
+      "fuente": { "titulo": "«Informática jurídica», ética e IA: el nuevo enfoque de las Facultades de Derecho", "editor": "La Tercera", "fecha": "2025-02-12", "url": "FALTANTE (dominio latercera.com, línea 2728)" }
+    },
+    {
+      "hecho": "Derecho tenía 51.331 estudiantes de pregrado en 2024 y 11.401 matriculados de primer año: la segunda carrera universitaria con más matrícula nueva del país.",
+      "fecha": "2024",
+      "linea": "444-446",
+      "fuente": { "titulo": "Informe de Matrícula en Educación Superior en Chile 2024", "editor": "Servicio de Información de Educación Superior (SIES), Mineduc", "fecha": "julio de 2024", "url": "FALTANTE (dominio educacionsuperior.mineduc.cl, línea 2714)" },
+      "control": "La línea 1308 atribuye las dos cifras al artículo de La Tercera de 12-02-2025. Confirmar contra el informe SIES antes de citarlo como fuente."
+    },
+    {
+      "hecho": "Dos abogadas fundadoras de una plataforma de procuradores sostuvieron en la prensa jurídica especializada que hay una brecha estructural entre lo que enseñan las facultades de Derecho y lo que exige el ejercicio, y que el uso excesivo de modelos de escritos y de IA ha debilitado el razonamiento jurídico. Es una opinión; ninguna Facultad de la cohorte ha publicado respuesta ni dato que la confirme o desmienta.",
+      "fecha": "2026-02-21",
+      "linea": "1325-1331",
+      "fuente": { "titulo": "Entre el código y el oficio: dos visiones críticas sobre la formación jurídica", "editor": "Diario Constitucional", "fecha": "2026-02-21", "url": "FALTANTE (dominio diarioconstitucional.cl, línea 2734)" }
+    },
+    {
+      "hecho": "La Superintendencia de Insolvencia y Reemprendimiento y el Ministerio de Economía presentaron como «primer piloto» y «primera versión» probada internamente el asesor virtual de insolvencia construido con la UNAB. La nota universitaria dice «lanzó». La herramienta se aloja y opera en el sitio de la Superintendencia; la Facultad aportó el prototipo, con participación de la Dirección de Transferencia Tecnológica y de la Vicerrectoría de Investigación.",
+      "fecha": "2025-10-23",
+      "linea": "328, 1201-1206, 1359-1362",
+      "fuente": { "titulo": "Superir y UNAB presentan primer piloto de asesor virtual", "editor": "Ministerio de Economía; Superintendencia de Insolvencia y Reemprendimiento", "fecha": "2025-10-23", "url": "FALTANTE (dominios economia.gob.cl y superir.gob.cl, líneas 2724-2726)" }
+    },
+    {
+      "hecho": "81 % de los estudiantes de primer año de la Universidad de Chile declara usar herramientas de IA y sólo 18 % aprueba usarlas para completar trabajos o tareas. La encuesta está segregada por facultad y carrera, pero el desglose de Derecho no se publica.",
+      "fecha": "2025-05-13",
+      "linea": "1370-1374, 1990",
+      "fuente": { "titulo": "81 % de estudiantes de primer año usa inteligencia artificial", "editor": "Universidad de Chile", "fecha": "2025-05-13", "url": "FALTANTE (dominio uchile.cl, línea 2738)" }
+    },
+    {
+      "hecho": "Un estudio de mercado de 2025 sobre más de 200 profesionales sitúa a Chile último de la región en adopción de IA en áreas legales (24 %, frente a 28 % de promedio regional). La fuente es una empresa proveedora de legaltech y la muestra no es probabilística: señal, no hecho.",
+      "fecha": "2025",
+      "linea": "1376-1379",
+      "fuente": { "titulo": "FALTANTE", "editor": "FALTANTE (empresa proveedora de legaltech, no nombrada)", "fecha": "2025", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "No existe ninguna encuesta sobre uso de IA específicamente entre estudiantes o profesionales del Derecho en Chile; el informe la registra como ausencia comprobada.",
+      "fecha": "al corte 06-09-2026",
+      "linea": "1366-1367",
+      "fuente": { "titulo": "Informe 01 v3.2.0, sección 6", "editor": "D. H. Ojeda Cifuentes", "fecha": "2026-09-06", "url": "no aplica" }
+    },
+    {
+      "hecho": "El único registro publicado y revisado por pares de un programa curricular chileno de IA y Derecho es un artículo de 2021 en que los autores del minor de la Universidad Autónoma reconocen que su éxito depende del interés del estudiante, dado su carácter voluntario, y sugieren que hacerlo obligatorio mejoraría la preparación. Es autoevaluación.",
+      "fecha": "2021",
+      "linea": "1381-1385",
+      "fuente": { "titulo": "Sobre el minor en Inteligencia Artificial y Derecho", "editor": "Revista Pedagogía Universitaria y Didáctica del Derecho (RPUD), vol. 8, n.º 2; autores Contreras et al.", "fecha": "2021", "url": "FALTANTE (dominio pedagogiaderecho.uchile.cl, línea 2740)" }
+    },
+    {
+      "hecho": "El patrón de la cohorte se repite fuera de ella: de 16 instituciones con Facultad de Derecho revisadas, 6 arrojan algo localizable, 2 son sólidas y ninguna tiene norma ni acto formal publicado sobre IA a nivel de Facultad. La Universidad de Talca tiene un Fondecyt Regular 2026 sobre regulación de riesgos de la IA (39,7 millones) que no aparece en la comunicación de su Facultad.",
+      "fecha": "al corte 06-09-2026",
+      "linea": "2822-2890",
+      "fuente": { "titulo": "Informe 01 v3.2.0, anexo G", "editor": "D. H. Ojeda Cifuentes", "fecha": "2026-09-06", "url": "no aplica" }
+    },
+    {
+      "hecho": "El anexo E lista además dos fuentes cuyo contenido el cuerpo del informe no describe: un artículo del Diario Financiero sobre oportunidades y riesgos de la IA generativa para el sector jurídico, y un artículo de la RPUD sobre el mercado de los abogados.",
+      "fecha": "2024-01-12 (DF); 2021 (RPUD 8(1))",
+      "linea": "2736, 2742",
+      "fuente": { "titulo": "Oportunidades y riesgos de la IA generativa para el sector jurídico; «El mercado de los abogados y las abogadas» (León Reyes y Sandoval)", "editor": "Diario Financiero; RPUD", "fecha": "2024-01-12; 2021", "url": "FALTANTE" },
+      "control": "Sin contenido descrito en los insumos: no usar como apoyo de ninguna afirmación."
+    }
+  ],
+
+  "internacional": [
+    {
+      "hecho": "Case Western Reserve exige «Introduction to AI and the Law» a todos los estudiantes de primer año desde febrero de 2025, con formato de certificación y no de curso con créditos.",
+      "cifras": ["desde enero/febrero de 2025"],
+      "linea": "1415",
+      "fuente": { "autores_o_institucion": "Case Western Reserve University School of Law", "anio": "2025", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" },
+      "url_candidata_no_verificada": "https://www.abajournal.com/web/article/class-is-in-session-how-some-law-schools-are-training-students-in-generative-ai (fuera de los insumos: aldunate_experimento02/src/data/research.ts, línea 393)"
+    },
+    {
+      "hecho": "UNLV William S. Boyd exige «Introduction to the Responsible Use of AI» a los estudiantes de primer año desde el otoño de 2026. No publica el número de créditos.",
+      "cifras": ["desde otoño de 2026 (anunciado mayo de 2026)"],
+      "linea": "1417",
+      "fuente": { "autores_o_institucion": "UNLV William S. Boyd School of Law", "anio": "2026", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "UC Law San Francisco hace obligatorio, desde la promoción 2029, un laboratorio de ejercicio profesional asistido por IA para todo el JD, en segundo año y seis sesiones, sin créditos académicos y con certificado de finalización.",
+      "cifras": ["6 sesiones", "promoción 2029"],
+      "linea": "1419",
+      "fuente": { "autores_o_institucion": "UC Law San Francisco", "anio": "2026 (julio)", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "Son los tres casos verificables de facultades de Derecho con componente obligatorio de IA para todos sus estudiantes, sobre más de 190 facultades acreditadas en Estados Unidos. No se localizó ninguna fuera de Estados Unidos (Europa, Australia, América Latina) con asignatura obligatoria de IA o tecnología jurídica en pregrado. Dos de las tres usan certificación sin créditos. Una Facultad chilena con asignatura obligatoria con créditos estaría entre las primeras del mundo.",
+      "cifras": ["3 de más de 190", "2 de 3 sin créditos"],
+      "linea": "1421-1437",
+      "fuente": { "autores_o_institucion": "Informe 01 v3.2.0, sección 7 (síntesis del autor)", "anio": "2026", "titulo": "La escala internacional", "medio": "informe", "url": "no aplica" },
+      "control": "La discusión (1142) dice «sólo tres facultades en el mundo»; la sección 7 sólo afirma que no se localizaron otras. Usar la formulación de la sección 7."
+    },
+    {
+      "hecho": "Berkeley Law prohíbe usar IA para conceptualizar, esquematizar, redactar, revisar, traducir o editar cualquier trabajo calificado, incluida la corrección gramatical, y la prohíbe absolutamente en exámenes. Citar una fuente inexistente genera presunción de uso prohibido.",
+      "cifras": ["vigente desde el verano de 2026"],
+      "linea": "1444-1449, 2758",
+      "fuente": { "autores_o_institucion": "Berkeley Law", "anio": "2026", "titulo": "FALTANTE (política de uso de IA)", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "Columbia Law School permite la IA como apoyo al aprendizaje y prohíbe que sustituya el razonamiento jurídico o actúe como redactor no declarado. Obliga a declarar todo uso, con instrucción de errar del lado de la declaración y vía procesal identificada.",
+      "cifras": ["vigente desde 1-08-2026"],
+      "linea": "1449-1451, 2760",
+      "fuente": { "autores_o_institucion": "Columbia Law School", "anio": "2026", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "La University of Chicago Law School tiene la política más antigua con fecha verificable: prohibición absoluta en exámenes, y citar el uso de IA en nota al pie no exime de la prohibición.",
+      "cifras": ["otoño 2023, revisada 2025"],
+      "linea": "1451-1453, 2762",
+      "fuente": { "autores_o_institucion": "University of Chicago Law School", "anio": "2023 (rev. 2025)", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "En Marquette University Law School la infracción es falta grave que puede acarrear suspensión o expulsión; es la consecuencia más explícita del conjunto.",
+      "cifras": [],
+      "linea": "1453-1454, 2764",
+      "fuente": { "autores_o_institucion": "Marquette University Law School", "anio": "FALTANTE (vigente)", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "La London School of Economics usa una escala institucional de tres posiciones (sin uso autorizado, uso limitado, uso pleno) que cada departamento adopta y comunica. La corrección ortográfica y gramatical no queda prohibida ni en la posición más restrictiva.",
+      "cifras": ["3 posiciones", "verano de 2024"],
+      "linea": "1456-1460, 2766",
+      "fuente": { "autores_o_institucion": "London School of Economics", "anio": "2024", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "La University of New South Wales tiene un marco universitario de seis categorías de uso de IA en evaluación, con declaración estandarizada por curso.",
+      "cifras": ["6 categorías", "noviembre de 2025"],
+      "linea": "1459, 2768",
+      "fuente": { "autores_o_institucion": "University of New South Wales", "anio": "2025", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "Hay dos modelos de gobernanza. El estadounidense es una norma de facultad binaria, remitida al profesor. El británico y australiano es una política central graduada en la que cada unidad declara su posición. No se localizó ninguna política de IA dictada por una facultad de Derecho en Reino Unido, Australia, España ni América Latina. En Chile, la guía de Derecho UC pertenece al modelo estadounidense; las demás Facultades operan con instrumentos universitarios orientadores y sin obligación de declarar por unidad, combinación que no corresponde a ninguno de los dos modelos.",
+      "cifras": [],
+      "linea": "1439-1474, 2770-2773",
+      "fuente": { "autores_o_institucion": "Informe 01 v3.2.0, sección 7 y anexo F (síntesis del autor)", "anio": "2026", "titulo": "La norma de facultad: dos modelos de gobernanza", "medio": "informe", "url": "no aplica" }
+    },
+    {
+      "hecho": "Con GPT-4, la selección múltiple mejoró y los ensayos no mejoraron significativamente. El efecto se correlaciona inversamente con la habilidad previa: los estudiantes de peor desempeño mejoraron y los de mejor desempeño empeoraron, ambos efectos significativos.",
+      "cifras": ["48 estudiantes de Derecho", "diseño intrasujeto no aleatorizado, corrección ciega", "+28,9 puntos percentiles en selección múltiple", "peor desempeño: +45 puntos percentiles aprox.", "mejor desempeño: −20 aprox."],
+      "linea": "1486-1491, 2780",
+      "fuente": { "autores_o_institucion": "Choi, J. H. y Schwarcz, D.", "anio": "2023", "titulo": "AI Assistance in Legal Analysis: An Empirical Study (título tomado de research.ts; no figura en los insumos)", "medio": "Journal of Legal Education (revisado por pares)", "url": "FALTANTE" },
+      "url_candidata_no_verificada": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4539836 (aldunate_experimento02/src/data/research.ts, línea 237)",
+      "control": "research.ts describe este estudio como «ensayo aleatorizado»; el informe (1487, 2780) dice «intrasujeto no aleatorizado». Verificar contra el artículo."
+    },
+    {
+      "hecho": "Primer ensayo controlado aleatorizado del campo, con tres brazos: herramienta con recuperación aumentada, modelo de razonamiento y control sin IA. Hubo ganancias de productividad significativas en cinco de seis tareas jurídicas con límite de tiempo y una mejora de calidad modesta pero real. En la redacción de un acuerdo de confidencialidad el efecto fue negativo.",
+      "cifras": ["137 estudiantes de dos facultades", "6 tareas", "productividad +34 % a +140 % en 5 de 6 tareas", "calidad global +0,27 y +0,53 en escala de 7"],
+      "linea": "1493-1498, 2782",
+      "fuente": { "autores_o_institucion": "Schwarcz, Manning, Prescott, Barry, Cleveland y Rich", "anio": "2025 (publicado en 2026)", "titulo": "FALTANTE", "medio": "Journal of Law & Empirical Analysis (revisado por pares)", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "Es el único estudio que mide aprendizaje y no desempeño. La exposición previa a IA no deterioró la comprensión posterior: el grupo expuesto superó al control en una tarea de aplicación hecha sin IA.",
+      "cifras": ["aprox. 100 estudiantes", "aleatorizado, cuatro tareas secuenciales"],
+      "linea": "1500-1503, 2784",
+      "fuente": { "autores_o_institucion": "Bednar, Cleveland, Erbsen y Schwarcz", "anio": "2026", "titulo": "FALTANTE", "medio": "documento de trabajo, no revisado por pares", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "Experimento pedagógico de dos años en una universidad de Ámsterdam, no aleatorizado: la formación estructurada dio ventaja clara el primer año y la ventaja se diluyó el segundo, a medida que se generalizó la familiaridad con las herramientas.",
+      "cifras": ["2 años"],
+      "linea": "1505-1510, 2786",
+      "fuente": { "autores_o_institucion": "Schrepel", "anio": "2026", "titulo": "FALTANTE", "medio": "Law, Innovation and Technology", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "Las herramientas comerciales de investigación jurídica con IA alucinan entre 17 % y 33 % de las veces. Los proveedores disputaron la metodología y uno concedió acceso sólo después de la publicación inicial.",
+      "cifras": ["202 consultas jurídicas preregistradas", "Lexis+ AI: exactitud 65 %, alucinación 17 %", "Ask Practical Law AI: exactitud 19 %, alucinación 17 %", "Westlaw AI-Assisted Research: exactitud 41 %, alucinación 33 %", "GPT-4 (línea base): alucinación 43 %"],
+      "linea": "1514-1533, 2788",
+      "fuente": { "autores_o_institucion": "Magesh, Surani, Dahl, Suzgun, Manning y Ho (laboratorio de regulación de Stanford)", "anio": "2024 (publicado en 2025)", "titulo": "FALTANTE", "medio": "Journal of Empirical Legal Studies (revisado por pares)", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "La alucinación de los modelos generales en consultas jurídicas verificables va de 58 % a 88 % según el modelo.",
+      "cifras": ["más de 800.000 consultas", "58 %-88 %"],
+      "linea": "1535-1536, 2790",
+      "fuente": { "autores_o_institucion": "Dahl, Magesh, Suzgun y Ho", "anio": "2024", "titulo": "FALTANTE", "medio": "Journal of Legal Analysis (revisado por pares)", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "La alucinación aumenta con la distancia al corpus estadounidense. El informe infiere que el derecho chileno está tan lejos de ese corpus como el derecho estadual australiano, de modo que la competencia de verificación es condición del ejercicio.",
+      "cifras": ["Los Ángeles 45 %", "Londres 55 %", "Sídney 61 %", "derecho estadual australiano 100 %"],
+      "linea": "1537-1550, 2792",
+      "fuente": { "autores_o_institucion": "Curran y otros", "anio": "2025", "titulo": "FALTANTE", "medio": "AI4A2J-ICAIL25", "url": "FALTANTE" },
+      "control": "La cercanía del derecho chileno al caso australiano es inferencia del informe, no dato del estudio."
+    },
+    {
+      "hecho": "En total hay siete estudios, cinco revisados por pares, y del orden de tres a cuatro experimentales sobre efecto en educación jurídica, tres del mismo equipo de la Universidad de Minnesota. Ninguno es de fuera de Estados Unidos, no se localizó ningún ensayo aleatorizado en Europa, Australia ni América Latina, y no consta retractación de ninguno.",
+      "cifras": ["7 estudios", "5 revisados por pares", "3-4 experimentales"],
+      "linea": "1480-1484, 2794-2797",
+      "fuente": { "autores_o_institucion": "Informe 01 v3.2.0, anexo F (síntesis del autor)", "anio": "2026", "titulo": "Literatura experimental sobre efecto y fiabilidad", "medio": "informe", "url": "no aplica" }
+    },
+    {
+      "hecho": "Las actualizaciones vigentes de los estándares de acreditación de la educación jurídica estadounidense no mencionan la IA ni la competencia tecnológica. En una encuesta de 2024 del grupo de trabajo sobre derecho e IA de la misma asociación, la mayoría dice haber modificado sus políticas de integridad académica y casi todos anticipan cambios curriculares, pero la acreditación no se ha movido.",
+      "cifras": ["29 decanos y académicos (muestra pequeña)", "69 % modificó políticas de integridad académica", "85 % anticipa cambios curriculares"],
+      "linea": "1566-1573",
+      "fuente": { "autores_o_institucion": "FALTANTE (el texto no nombra la asociación acreditadora ni su grupo de trabajo)", "anio": "2024", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "En la región: el caso más institucionalizado es un laboratorio de Derecho e IA fundado en 2019 en una universidad mexicana; en Colombia hay un semillero de investigación de facultad; en Brasil, una línea de investigación consolidada y un LLM en regulación de IA, en posgrado; en Argentina, cursos de posgrado y educación ejecutiva. No se localizó ninguna facultad latinoamericana con política propia sobre IA en evaluaciones, asignatura obligatoria en pregrado ni estudio empírico sobre efecto en el aprendizaje jurídico.",
+      "cifras": ["laboratorio mexicano: 2 codirectores, 1 a 5 publicaciones indexadas por año, diplomado de 108 horas"],
+      "linea": "1552-1562, 2808-2810",
+      "fuente": { "autores_o_institucion": "FALTANTE (el texto no nombra las instituciones)", "anio": "FALTANTE", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    },
+    {
+      "hecho": "Ninguno de los centros de referencia tiene asignatura obligatoria; todos son electivos, clínicas, competencias o programas de extensión. Stanford CodeX opera entre Derecho y computación. Suffolk tiene una concentración electiva con laboratorio propio. Georgetown organiza desde 2018 una competencia de soluciones tecnológicas para el acceso a la justicia. Melbourne dicta desde 2015 una asignatura clínica electiva. Bucerius ofrece un programa de verano sin créditos.",
+      "cifras": ["Georgetown: doce semestres de operación", "Melbourne: diez años en 2025", "Bucerius: tres semanas, treinta plazas"],
+      "linea": "2799-2814",
+      "fuente": { "autores_o_institucion": "Stanford CodeX; Suffolk; Georgetown; Melbourne; Bucerius", "anio": "FALTANTE", "titulo": "FALTANTE", "medio": "FALTANTE", "url": "FALTANTE" }
+    }
+  ],
+
+  "discusion": [
+    {
+      "tesis": "La estructura se anuncia más rápido de lo que se constituye: la institucionalización ocurre por denominación antes que por constitución.",
+      "linea": "1045-1077",
+      "desarrollo_factual": [
+        "Entre 2025 y 2026 cuatro Facultades crearon unidades dedicadas a tecnología o IA; en ninguna de las cuatro se localizó decreto, acuerdo de consejo ni resolución constitutiva (1047-1054).",
+        "Sólo la UC tiene respaldo orgánico: su estructura publicada lista el Departamento de Derecho y Tecnología entre sus once departamentos, con director identificado (1054-1058).",
+        "Universidad de Chile: su página de historia cita un decreto del Rector de 5 de noviembre de 2003 que oficializa el cambio de nombre a Centro de Estudios en Derecho Informático, no la creación ni el nombre actual. El nombre vigente (CE3) se asocia a enero de 2025 y a la confirmación del director por el Consejo de Facultad, sin decreto. La antigüedad declarada viene de un centro fundado en 1988 (1060-1069; iniciativas.csv ini-uchile-001).",
+        "Universidad Diego Portales: la unidad se acredita con el nombramiento de su director y una hoja de ruta de talleres y un curso por implementar, sin asignatura, semestre, créditos ni matrícula (1071-1073; ini-udp-001 fechada 12-09-2025)."
+      ],
+      "control": "Las cuatro de clm-cohorte-002 incluyen el Programa DIAT de la PUCV (ver H-2)."
+    },
+    {
+      "tesis": "La norma disciplinaria es donde más lejos ha llegado una Facultad: se ha avanzado más en regular el uso de estas herramientas que en enseñarlas.",
+      "linea": "1079-1105",
+      "desarrollo_factual": [
+        "Dos de los instrumentos normativos del corpus son universitarios: los lineamientos de la Universidad de Chile, dictados por dos vicerrectorías y sin mención a Derecho, y el decálogo de la PUCV, elaborado por una unidad de integridad académica de la Vicerrectoría Académica, que según su texto «sugiere recomendaciones» (1081-1084).",
+        "La guía de la Facultad de Derecho de la UC fue aprobada por su Comité Directivo y su Consejo. Obliga a declarar herramienta y propósito y a conservar registros, y el incumplimiento es infracción grave a la probidad académica, sancionable conforme al régimen del plagio (1086-1091). Fecha: 21-08-2026 (iniciativas.csv ini-puc-chile-004).",
+        "La propia guía deja al profesor la facultad de determinar los usos permitidos en su curso: fija un piso de transparencia y descentraliza la regulación sustantiva (1093-1096).",
+        "Ese diseño, con prohibición o autorización remitida al profesor y prohibición absoluta en exámenes, es el dominante en las facultades de Derecho estadounidenses (1097-1100).",
+        "La conclusión C-2 añade un segundo instrumento de Facultad: la Resolución 13/2025 del decano de la Universidad Central, cuya dirección devuelve error y no se leyó (1665, 2621)."
+      ],
+      "control": "La discusión (1089-1091) llama a la guía UC «el único documento del corpus» con órgano aprobador y consecuencia; esa frase es anterior a la incorporación de la resolución de la Universidad Central (ronda 2)."
+    },
+    {
+      "tesis": "La formación continua funciona; el pregrado no aparece.",
+      "linea": "1107-1146",
+      "desarrollo_factual": [
+        "Única serie temporal documentada: el Programa de Derecho, Ciencia y Tecnología de la UC publica dos graduaciones consecutivas, con más de 90 titulados en 2024 y más de 100 en 2025, ambas con un diplomado de Derecho e IA (1109-1114).",
+        "El diploma de la Universidad de Chile figura cerrado en 2022. La edición de 2026 la publica otro centro, con datos declarados referenciales y reserva de suspensión, y no hay edición localizada en medio (1116-1121).",
+        "El diploma en Derecho e IA para funcionarios de la Contraloría (julio a noviembre de 2025) figura sin estado ni cifras y está dirigido a funcionarios públicos (1121-1126).",
+        "En ninguna de las once se localizó una línea curricular obligatoria de IA con syllabus, semestre, créditos y matrícula (1128-1131).",
+        "El único minor con egresados (Universidad Autónoma, cohorte 2025, ceremonia en enero de 2026) es electivo y suma 25 créditos en cinco asignaturas, tres de ellas de programación, diseño de aplicaciones y ciberseguridad. Se co-titula con Ingeniería, opera en una de las tres sedes y se cursa sobre electivos de formación general. Su nota de egreso no publica cuántos egresaron (1131-1137).",
+        "Lectura no acusatoria: la formación continua tiene ciclo de decisión corto, público voluntario y financiamiento directo, mientras el pregrado exige modificar planes de estudio (1139-1146)."
+      ],
+      "control": "Contradicciones con C-3 sobre la ficha 2023 de la Universidad de Chile y los «doce estudiantes» del minor (ver C-3). No usar «sólo tres facultades en el mundo» (1142); ver internacional."
+    },
+    {
+      "tesis": "La única medición de efecto del corpus no es jurídica: las Facultades han incorporado la IA como contenido y como objeto de regulación, pero no como objeto de medición educativa.",
+      "linea": "1150-1179",
+      "desarrollo_factual": [
+        "Ninguna de las 53 iniciativas alcanza el peldaño de evaluación; es la tercera ronda independiente que llega a esa ausencia (1152-1154).",
+        "Una universidad de la cohorte publica, sobre su ecosistema de asistentes de IA, un 20 % más de aprobación entre estudiantes que lo usaron más de 30 veces, sobre más de 15.000 estudiantes y 450.000 interacciones. Es la única cifra de resultado en las 74 fuentes (1157-1160). El texto no nombra la universidad.",
+        "No mueve la afirmación porque la medición es universitaria y no jurídica, y porque es correlacional: compara a usuarios frecuentes con no usuarios, sin diseño, muestra ni control declarados (1162-1166).",
+        "Un asistente docente de IA generativa de una Facultad de la cohorte acumula más de 300 consultas y fue incorporado al plan de mejora de la carrera. Es la práctica de un académico seleccionada para un showcase internacional, no una adopción institucional (1168-1172).",
+        "Lo más parecido a una evaluación de efecto lo produjo una vicerrectoría de transformación digital, fuera de las Facultades (1174-1179)."
+      ],
+      "control": ""
+    },
+    {
+      "tesis": "El problema de atribución no es un tecnicismo: atribuir a Derecho lo que es de la universidad produce una imagen falsa, y la distancia entre disponibilidad y uso no es medible con lo que se publica.",
+      "linea": "1181-1216",
+      "desarrollo_factual": [
+        "Hay capacidades universitarias en el corpus: licencias corporativas de asistentes generativos, plataformas de búsqueda con asistente, oficinas centrales de IA, agentes docentes piloto, programas transversales de vicerrectorías y laboratorios de innovación docente institucionales (1183-1187).",
+        "Convenio firmado por quien no es la Facultad: el acuerdo de la UDP con dos empresas tecnológicas lo emite y firma su Vicerrectoría de Investigación e Innovación; la Facultad no aparece como parte, el titular es prospectivo y no consta actividad derivada (1189-1193; ini-udp-003, 07-04-2026).",
+        "Proyecto conducido por otra Facultad: el FONDEF de certeza jurídica ambiental lo dirige una investigadora de la Facultad de Ingeniería y Ciencias Aplicadas de la Universidad de los Andes (1195-1199).",
+        "Herramienta que opera fuera de la universidad: el asesor virtual de insolvencia de la UNAB se aloja en la Superintendencia, que lo llama «primer piloto»; la Facultad aportó el prototipo (1201-1206).",
+        "Ninguna fuente informa cuántos estudiantes de Derecho usan las herramientas institucionales, en qué tareas ni con qué resultados: es la laguna que separa este mapeo de un informe de adopción (1213-1216)."
+      ],
+      "control": "El apartado cifra en quince los registros universitarios y las reatribuciones (1183, 1187); el resumen y H-4 dicen seis reatribuciones y clm-cohorte-007 dice nueve registros. No usar el número sin resolverlo."
+    }
+  ],
+
+  "_control_general": {
+    "errores_conocidos_no_heredados": [
+      "Cierre de la sección 10 (1920-1928): «la primera posición» de la PUCV, «máximo 18 sobre 30», «seis decisiones propuestas», «cuatro no cuestan dinero».",
+      "Sección 11 (1952): «la primera posición de la PUCV».",
+      "Valores correctos: techo del comparador 20/30 (Pontificia Universidad Católica de Chile); cuatro prioridades; la PUCV no tiene posición en el comparador."
+    ],
+    "discrepancias_internas_detectadas": [
+      "H-6 (315) con cifras anteriores a la ronda 2 para la Autónoma (12-20); vigente 17-17.",
+      "A-5 (2012) contradice C-6 (1695) y limitaciones (1940) sobre techos frente al piso de la primera.",
+      "«Seis disciplinas» (82, 1688, 1774) frente a cinco nombradas (304, 1280-1282).",
+      "Ocho proyectos fuera de la disciplina Derecho: 1.361 millones (2666, verificado) frente a 1.126 millones (A-7, 2034); la figura ANID del HTML rotula 7.",
+      "Reatribuciones o registros universitarios: 6 (198, 293), 9 (clm-cohorte-007) y 15 (1183-1187).",
+      "Denominadores de celdas: «doce de las 110» sólo en el entorno (293) y «trece de las 110» con instrumento formal (637), frente a 12/100 y 10/100 (14/110 y 12/110) en matriz-v2.",
+      "Convenios: 4 (326, 752) frente a 2 en iniciativas.csv; la tabla de mecanismos suma 55.",
+      "Figura de la línea de tiempo del HTML: 2021 y 2022 corridos, 2025 y 2026 intercambiados respecto de iniciativas.csv.",
+      "H-1: la iniciativa de 2008 no es una unidad.",
+      "H-2 dice «norma propia en una sola» y su límite y C-2 dicen dos.",
+      "Investigación «en cinco instituciones con código» (887) frente a 4 con instrumento formal más 1 sólo en el entorno.",
+      "C-3 frente a la discusión: ficha 2023 de la Universidad de Chile y «doce estudiantes» del minor.",
+      "C-2 nombra «Facultad de Derecho y Humanidades» de la Universidad Central; el CSV dice «Facultad de Ciencias Jurídicas y Sociales».",
+      "Anexo D (2627) cita el Fondecyt 1261853 de la Universidad de Chile, ausente de los siete proyectos de la sección 6.",
+      "Confianzas de las conclusiones: la figura del HTML (70, 70, 80, 80, 95, 80, 75, 90) no se reproduce con afirmaciones.csv, que es anterior (04-09-2026).",
+      "evidencias.csv conserva 30 evidencias en FUENTE_ABIERTA y 3 en PROPUESTO, anterior a la verificación completa declarada."
+    ],
+    "dependencia_de_la_ronda_2": "13 fuentes no contrastadas sostienen 25 puntos del comparador; 3 de ellas devuelven 404 y sostienen 7 puntos (UC 2, Central 3, UDD 2). El techo de 20/30 incluye 2 puntos de R2-UC-01.",
+    "direcciones_web": "El informe 01 sólo da dominios para las 31 fuentes externas y no da direcciones para la referencia internacional; tampoco figuran en los insumos ni en el HTML v3.2.0. Todas se marcan FALTANTE. Las dos 'url_candidata_no_verificada' vienen de un archivo del repositorio que no es insumo y requieren comprobación."
+  }
+}

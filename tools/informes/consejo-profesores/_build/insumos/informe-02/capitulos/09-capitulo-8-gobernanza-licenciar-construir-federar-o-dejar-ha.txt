@@ -1,0 +1,45 @@
+
+# Capítulo 8 · Gobernanza: licenciar, construir, federar o dejar hacer
+
+Toda universidad ha tomado ya, explícita o implícitamente, una decisión de infraestructura. Las que creen no haberla tomado han elegido de hecho la cuarta opción: que cada estudiante y cada docente use su cuenta personal, con las consecuencias de equidad y de datos que ello implica.
+
+
+## 8.1 La distancia entre la política declarada y la política vigente
+
+[FIGURA g04-politicas] Figura 4. El mismo dato admite dos titulares opuestos. El de UNESCO fue el optimista; el que importa para la gestión es el otro.
+
+La encuesta de UNESCO difundida en septiembre de 2025 —400 respuestas de Cátedras UNESCO y Redes UNITWIN en 90 países— se comunicó bajo el titular de que dos tercios de las instituciones de educación superior tienen o están desarrollando orientaciones sobre IA. El desglose es más informativo: el **19 %** tiene una política formal ya vigente y el **42 %** la tiene en desarrollo.
+
+La diferencia entre ambas cifras no es un matiz estadístico. Una política vigente obliga; una política en desarrollo no produce ningún efecto sobre un solo estudiante. Para dimensionar el avance conviene recordar que una encuesta anterior de la propia UNESCO situaba en menos del 10 % la proporción de escuelas y universidades con orientación formal. El progreso es real y la magnitud es la de haber duplicado una base muy baja, no la de haber cubierto el sistema.
+
+En la misma encuesta, nueve de cada diez encuestados declara usar herramientas de IA en su trabajo profesional. La asimetría entre práctica individual y norma institucional es el rasgo definitorio del periodo.
+
+[RECUADRO: Advertencia sobre esta cifra] Son 400 respuestas autoseleccionadas dentro de la red de Cátedras UNESCO, un colectivo por definición más movilizado que el promedio del sistema universitario mundial. La estimación del 19 % debe leerse como un techo optimista, no como una media global.
+
+
+## 8.2 Los cuatro modelos y sus consecuencias
+
+[TABLA] Tabla 10. Modelos de infraestructura de IA en educación superior. Elaboración propia a partir de los casos examinados.
+| Modelo | Casos verificados | Ventaja principal | Riesgo estructural |
+| **Licenciar** | California State University (ChatGPT Edu para más de 470.000 estudiantes en 23 campus); Arizona State con OpenAI desde enero de 2024 | Acceso universal inmediato y equidad formal de acceso | Dependencia de un proveedor único, coste recurrente y ninguna garantía pedagógica |
+| **Construir** | Tecnológico de Monterrey (TECgpt desde septiembre de 2023, y TECgpt Open Edition) | Soberanía sobre datos y sobre el modelo educativo; contenido curado propio | Coste de mantenimiento y rezago frente a la frontera tecnológica |
+| **Federar** | Northeastern, LSE, Champlain, y en 2026 University of San Francisco, Dartmouth, Syracuse, Northumbria, Virginia y Pittsburgh con Claude for Education | Diversificación de proveedores y capacidad de negociación | Complejidad de integración y gobernanza fragmentada |
+| **Dejar hacer** | La mayoría del sistema mundial, por omisión | Coste institucional cero | Brecha de acceso entre planes gratuitos y de pago; datos académicos fuera de todo control institucional |
+
+
+## 8.3 El caso California State University: el contraejemplo más útil
+
+California State University desplegó ChatGPT Edu para más de 470.000 estudiantes y 63.000 docentes y personal en 23 campus. En mayo de 2026 renovó el contrato por trece millones de dólares anuales durante tres años —39 millones en total—, en un contexto de recortes presupuestarios y pese a una petición del profesorado, presentada en enero, que solicitaba cancelarlo con el argumento de que ChatGPT Edu «no está diseñado, entrenado ni optimizado para la educación».
+
+El dato decisivo procede de la propia institución. Una encuesta interna de CSU a más de 94.000 estudiantes y empleados encontró que el **52 % del profesorado reportó un efecto negativo de la IA sobre su docencia** y que el **67 % de los estudiantes considera que sus profesores no les enseñan a usar IA de manera eficaz**.
+
+[RECUADRO: Qué demuestra y qué no demuestra este caso] **Demuestra** que es posible desplegar acceso universal a IA generativa a escala de casi medio millón de personas, y que hacerlo no produce por sí mismo integración pedagógica: dos años después, la mayoría del profesorado percibe un efecto negativo y la mayoría de los estudiantes no se siente enseñada. **No demuestra** que licenciar sea un error: demuestra que licenciar sin rediseño evaluativo, sin formación docente obligatoria y sin participación del profesorado en la decisión produce el nivel 1 con el presupuesto del nivel 5. Es el mejor argumento disponible a favor de definir la capa pedagógica objetivo antes de firmar el contrato.
+
+
+## 8.4 Europa: el único lugar donde evaluar con IA es una cuestión jurídica
+
+El Reglamento europeo de inteligencia artificial introduce una diferencia cualitativa que ninguna otra región tiene. Su Anexo III clasifica como **sistemas de alto riesgo** varios usos habituales en la universidad: los que determinan el acceso o la admisión, los que **evalúan resultados de aprendizaje** —incluida la corrección automatizada—, los que asignan el nivel educativo al que alguien puede acceder y los que **monitorizan y detectan comportamientos prohibidos durante los exámenes**, es decir, la supervisión remota.
+
+Los requisitos generales para sistemas de alto riesgo entraron en vigor el 2 de agosto de 2026; los casos de uso del Anexo III se han prorrogado hasta el 2 de diciembre de 2027 en virtud de las enmiendas de simplificación. Las obligaciones incluyen sistema de gestión de riesgos, gobernanza de datos, documentación técnica, registro de eventos, supervisión humana y niveles adecuados de exactitud y robustez. Las universidades públicas deben además realizar una **Evaluación de Impacto sobre Derechos Fundamentales** antes del despliegue.
+
+La consecuencia práctica es notable y todavía poco asimilada: en la Unión Europea, corregir automáticamente con IA o vigilar exámenes con IA deja de ser una decisión pedagógica discrecional y pasa a ser una actividad regulada con obligaciones documentales verificables. Es, hasta donde alcanza esta investigación, el único marco del mundo que somete la evaluación asistida a régimen jurídico específico.

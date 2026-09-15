@@ -1,0 +1,219 @@
+[Informe 01 v3.2.0 · líneas 2109-2327 del texto completo]
+
+Las once instituciones, una por una
+
+Perfil de cada institución con lo que su evidencia acredita, su cobertura
+ y las rutas del protocolo que quedan por recorrer. El catálogo completo de iniciativas por
+ institución, con nivel, atribución, dirección y fuentes, se entrega con el dataset.
+
+18/30
+ Pontificia Universidad Católica de Chile
+
+Facultad de Derecho UC · piloto de profundidad
+
+La estructura orgánica publicada lista el Departamento de Derecho y Tecnología como unidad formal, con director identificado. Es la única unidad de la cohorte con respaldo orgánico publicado y la única Facultad con norma propia aprobada por sus órganos, con deberes exigibles y consecuencia. Publica además la única serie temporal de formación continua del corpus, con dos graduaciones consecutivas y cifras de titulados. Con el contraste externo suma tres proyectos ANID de objeto jurídico-tecnológico.
+
+Cobertura
+
+12 de 13 rutas · 12 fuentes, 12 contrastadas (100 %) · 1 celdas sin concluir
+
+Índice
+
+Piso 18 · techo 20
+
+Rutas por recorrer
+
+malla-curricular
+
+18/30
+ Pontificia Universidad Católica de Valparaíso
+
+Facultad y Escuela de Derecho PUCV · piloto de profundidad
+
+Encabeza el comparador y es la única institución sin celdas sin concluir. Único caso del corpus con herramienta propia registrada, en funcionamiento y con reconocimiento externo de la Corte Suprema, y con convenio firmado con esa misma Corte. Su malla de pregrado, verificada en sus diez semestres, no contiene asignaturas de IA ni de tecnología jurídica; su unidad no publica acto de creación y no tiene página en el dominio institucional. Una de las tres del piloto: se la observa desde información privilegiada.
+
+Cobertura
+
+11 de 13 rutas · 14 fuentes, 14 contrastadas (100 %) · 0 celdas sin concluir
+
+Índice
+
+Piso 18 · techo 18 · banda cerrada
+
+Rutas por recorrer
+
+postgrado-formacion-continua, programas-syllabus
+
+6/30
+ Universidad Adolfo Ibáñez
+
+Facultad de Derecho UAI
+
+El contraste externo mejoró sustantivamente su perfil: el proyecto Fondecyt Regular 2026 sobre debido proceso e inteligencia artificial, con código, monto y duración verificados, acredita investigación con instrumento formal. La verificación corrigió en cambio la lectura de su nota institucional: de los tres proyectos anunciados sólo uno tiene objeto de IA. Su laboratorio dicta cursos para la Academia Judicial, que es formación externa y no oferta docente propia.
+
+Cobertura
+
+6 de 13 rutas · 3 fuentes, 3 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 6 · techo 14
+
+Rutas por recorrer
+
+centros-laboratorios, integridad-evaluacion, malla-curricular, politicas-ia, postgrado-formacion-continua, programas-syllabus, sitio-facultad
+
+10/30
+ Universidad Andrés Bello
+
+Facultad de Derecho UNAB
+
+Acredita transferencia con un piloto de asesor virtual construido para un organismo del Estado, validado por fuente estatal, y presencia en pregrado. Su cuenta pública declara incorporación de IA generativa como asistente virtual en la plataforma docente; la cifra de 179 atenciones que acompaña la nota corresponde a teleatención jurídica y no a inteligencia artificial.
+
+Cobertura
+
+8 de 13 rutas · 4 fuentes, 4 contrastadas (100 %) · 2 celdas sin concluir
+
+Índice
+
+Piso 10 · techo 14
+
+Rutas por recorrer
+
+centros-laboratorios, integridad-evaluacion, malla-curricular, politicas-ia, programas-syllabus
+
+12/30
+ Universidad Autónoma de Chile
+
+Facultad de Derecho U. Autónoma
+
+La institución menos investigada de la cohorte y la de mayor techo: banda de 12 a 20. Aporta el único minor con cohorte egresada del corpus —electivo, 25 créditos, co-titulado con Ingeniería, una sola sede, sin cifra de egresados publicada— y la única cobertura docente cuantificada, «cercana al 80 %», sin denominador. El contraste externo le acredita dos proyectos Fondecyt de objeto de IA, uno de ellos el de mayor monto de la cohorte.
+
+Cobertura
+
+5 de 13 rutas · 3 fuentes, 3 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 12 · techo 20
+
+Rutas por recorrer
+
+centros-laboratorios, herramientas-licencias-convenios, integridad-evaluacion, politicas-ia, postgrado-formacion-continua, programas-syllabus, sitio-facultad, vinculacion-transferencia
+
+8/30
+ Universidad Central de Chile
+
+Facultad de Derecho y Humanidades U. Central
+
+Su asistente docente basado en IA generativa, con más de 300 consultas acumuladas e incorporado al plan de mejora de la carrera, fue seleccionado para un showcase internacional. Es práctica docente de un académico y así se registra. Es la institución más perjudicada por la verificación: la única fuente que sostenía su capacidad de investigación no fue localizable en ningún dominio y esa capacidad baja a no localizada.
+
+Cobertura
+
+7 de 13 rutas · 4 fuentes, 4 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 8 · techo 16
+
+Rutas por recorrer
+
+integridad-evaluacion, malla-curricular, politicas-ia, postgrado-formacion-continua, programas-syllabus, vinculacion-transferencia
+
+12/30
+ Universidad de Chile
+
+Facultad de Derecho U. de Chile · piloto de profundidad
+
+La institución más investigada de la cohorte. Su centro hereda una genealogía de treinta y ocho años y el único instrumento citado oficializa una denominación anterior y distinta de la actual. Cuatro de las fuentes que el registro le atribuía corresponden a departamentos distintos del centro, y tres son anuncios de agenda sin acreditación de realización. El contraste externo le acredita dos proyectos Fondecyt de objeto de IA. Su encuesta de admisión mide uso de IA por carrera y no publica el desglose de Derecho.
+
+Cobertura
+
+12 de 13 rutas · 16 fuentes, 16 contrastadas (100 %) · 1 celdas sin concluir
+
+Índice
+
+Piso 12 · techo 14
+
+Rutas por recorrer
+
+malla-curricular
+
+5/30
+ Universidad de Concepción
+
+Facultad de Ciencias Jurídicas y Sociales UdeC
+
+Su taller de inteligencia artificial para académicos está ejecutado y es indatable: la nota lo fecha diciendo «ayer», sin día, mes ni año, y no publica participantes. El relator es director de una unidad de otra institución de la cohorte, lo que acredita demanda institucional y no capacidad instalada propia. Una de sus fuentes tiene además el certificado del servidor mal configurado, problema que se declara aquí porque afecta a la comprobación por terceros.
+
+Cobertura
+
+7 de 13 rutas · 4 fuentes, 4 contrastadas (100 %) · 3 celdas sin concluir
+
+Índice
+
+Piso 5 · techo 11
+
+Rutas por recorrer
+
+centros-laboratorios, integridad-evaluacion, malla-curricular, politicas-ia, postgrado-formacion-continua, programas-syllabus
+
+5/30
+ Universidad de los Andes
+
+Facultad de Derecho U. de los Andes
+
+El proyecto de inteligencia artificial para certeza jurídica ambiental, que su comunicación institucional presenta como reciente, es un FONDEF de escalamiento por 237 millones y 24 meses, segunda fase de uno de 2021, y lo dirige una investigadora de la Facultad de Ingeniería. Es el caso más claro del corpus de capacidad presente en el entorno institucional y no en la Facultad de Derecho. Su curso de compliance dedica uno de ocho módulos a la IA.
+
+Cobertura
+
+7 de 13 rutas · 5 fuentes, 5 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 5 · techo 13
+
+Rutas por recorrer
+
+centros-laboratorios, herramientas-licencias-convenios, integridad-evaluacion, malla-curricular, politicas-ia, sitio-facultad
+
+3/30
+ Universidad del Desarrollo
+
+Facultad de Derecho UDD
+
+El perfil de menor piso de la cohorte, con banda de 3 a 11. Sus tres fuentes verificadas acreditan una sesión de entrenamiento estudiantil en una plataforma transversal de la universidad, una charla de un invitado extranjero sobre regulación de la IA en el doctorado, y un proyecto estudiantil de emprendimiento con IA dentro de un programa institucional. Ninguna es formación curricular ni capacidad instalada de la Facultad.
+
+Cobertura
+
+6 de 13 rutas · 4 fuentes, 4 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 3 · techo 11
+
+Rutas por recorrer
+
+centros-laboratorios, herramientas-licencias-convenios, integridad-evaluacion, politicas-ia, postgrado-formacion-continua, programas-syllabus, vinculacion-transferencia
+
+6/30
+ Universidad Diego Portales
+
+Facultad de Derecho UDP
+
+Su unidad se acredita mediante el nombramiento de su director y una hoja de ruta: talleres y un curso por implementar, sin nombre de asignatura, semestre, créditos ni matrícula. El convenio con el sector tecnológico que el registro le atribuía lo firma su Vicerrectoría de Investigación e Innovación, no la Facultad. Su director de IA y Derecho dicta formación en otra institución de la cohorte, lo que acredita capacidad exportable.
+
+Cobertura
+
+7 de 13 rutas · 3 fuentes, 3 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 6 · techo 14
+
+Rutas por recorrer
+
+herramientas-licencias-convenios, integridad-evaluacion, malla-curricular, politicas-ia, postgrado-formacion-continua, programas-syllabus
+
+Anexo B
+

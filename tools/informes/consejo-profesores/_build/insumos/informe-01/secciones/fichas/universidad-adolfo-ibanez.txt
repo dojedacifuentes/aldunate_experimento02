@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+6/30
+ Universidad Adolfo Ibáñez
+
+Facultad de Derecho UAI
+
+El contraste externo mejoró sustantivamente su perfil: el proyecto Fondecyt Regular 2026 sobre debido proceso e inteligencia artificial, con código, monto y duración verificados, acredita investigación con instrumento formal. La verificación corrigió en cambio la lectura de su nota institucional: de los tres proyectos anunciados sólo uno tiene objeto de IA. Su laboratorio dicta cursos para la Academia Judicial, que es formación externa y no oferta docente propia.
+
+Cobertura
+
+6 de 13 rutas · 3 fuentes, 3 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 6 · techo 14
+
+Rutas por recorrer
+
+centros-laboratorios, integridad-evaluacion, malla-curricular, politicas-ia, postgrado-formacion-continua, programas-syllabus, sitio-facultad
+

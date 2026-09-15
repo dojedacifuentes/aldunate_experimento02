@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+12/30
+ Universidad Autónoma de Chile
+
+Facultad de Derecho U. Autónoma
+
+La institución menos investigada de la cohorte y la de mayor techo: banda de 12 a 20. Aporta el único minor con cohorte egresada del corpus —electivo, 25 créditos, co-titulado con Ingeniería, una sola sede, sin cifra de egresados publicada— y la única cobertura docente cuantificada, «cercana al 80 %», sin denominador. El contraste externo le acredita dos proyectos Fondecyt de objeto de IA, uno de ellos el de mayor monto de la cohorte.
+
+Cobertura
+
+5 de 13 rutas · 3 fuentes, 3 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 12 · techo 20
+
+Rutas por recorrer
+
+centros-laboratorios, herramientas-licencias-convenios, integridad-evaluacion, politicas-ia, postgrado-formacion-continua, programas-syllabus, sitio-facultad, vinculacion-transferencia
+

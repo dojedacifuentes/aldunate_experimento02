@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+18/30
+ Pontificia Universidad Católica de Chile
+
+Facultad de Derecho UC · piloto de profundidad
+
+La estructura orgánica publicada lista el Departamento de Derecho y Tecnología como unidad formal, con director identificado. Es la única unidad de la cohorte con respaldo orgánico publicado y la única Facultad con norma propia aprobada por sus órganos, con deberes exigibles y consecuencia. Publica además la única serie temporal de formación continua del corpus, con dos graduaciones consecutivas y cifras de titulados. Con el contraste externo suma tres proyectos ANID de objeto jurídico-tecnológico.
+
+Cobertura
+
+12 de 13 rutas · 12 fuentes, 12 contrastadas (100 %) · 1 celdas sin concluir
+
+Índice
+
+Piso 18 · techo 20
+
+Rutas por recorrer
+
+malla-curricular
+

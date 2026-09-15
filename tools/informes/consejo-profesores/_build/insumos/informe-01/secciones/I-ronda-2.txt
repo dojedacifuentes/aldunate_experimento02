@@ -1,0 +1,180 @@
+[Informe 01 v3.2.0 · líneas 3448-3625 del texto completo]
+
+Ampliación del corpus: las fuentes de la segunda ronda
+
+La ronda de ampliación aportó 32 referencias.
+ 10 ya estaban en el corpus y no se cuentan dos veces; las
+ 22 restantes son nuevas y se listan aquí. El corpus pasa de 74 a
+ 96 fuentes.
+
+Cómo leer estas fuentes, y en qué se diferencian de las anteriores
+
+Las 74 fuentes del corpus original están contrastadas: se abrió cada
+ publicación y se compararon siete campos contra el registro. Estas 22 llegan de una
+ ronda de ampliación documental y no han pasado por ese contraste. Se marcan como
+ «Ronda 2» y no como «contrastada», y su grado documental se conserva tal como la ronda lo declaró.
+
+Cuatro merecen advertencia expresa, y tres de ellas por la misma causa: la dirección publicada no resuelve. La resolución de la Universidad Central, que es la que corrige la conclusión C-2, devuelve error. También devuelven error la referencia del seminario de la Pontificia Universidad Católica de Chile y la del curso de la Universidad del Desarrollo, que sostienen dos puntos cada una. La cuarta es de otra clase: la resolución de la Universidad Autónoma existe pero es un documento escaneado sin texto seleccionable, de modo que su contenido no pudo leerse por medios automáticos. Las cuatro se integran con la confianza que la ronda les asigna, las cuatro quedan señaladas para recuperación, y ninguna de ellas mueve por sí sola una posición del comparador: si las cuatro cayeran a la vez, el orden publicado sólo intercambiaría dos puestos y lo que se ensancharía son las bandas.
+
+Una fuente de red social institucional figura entre las nuevas. Se registra con su grado, no
+ sostiene por sí sola ninguna celda de capacidad, y no acredita creación formal, norma con
+ consecuencias ni integración curricular.
+
+R2-UC-01
+
+Seminario de Investigación: Inteligencia Artificial y Derecho
+P. U. Católica de Chile · grado B · página institucionalhttps://derecho.uc.cl/images/old/stories/Programacion_de_cursos/2025_1/Contracíclicos/2020/Contracíclicos/Carlos_Amunategui_-_Formulario_de_Condiciones_y_Evaluaciones_Seminario_2025.pdf
+
+RONDA 2
+
+R2-UAI-01
+
+Proyectos en cursos de pre y posgrado
+U. Adolfo Ibáñez · grado B · página institucionalhttps://labjusticia.uai.cl/proyectos-cursos/
+
+RONDA 2
+
+R2-UAI-02
+
+Estudiantes UAI presentan prototipos para mejorar el acceso a la justicia de personas mayores
+U. Adolfo Ibáñez · grado C · noticia institucionalhttps://www.uai.cl/noticias/derecho/estudiantes-uai-presentan-prototipos-para-mejorar-el-acceso-a-la-justicia-de-personas-mayores
+
+RONDA 2
+
+R2-UNAB-01
+
+Lineamientos para el uso de inteligencia artificial generativa
+U. Andrés Bello · grado B · página institucionalhttps://ia.unab.cl/wp-content/uploads/2025/04/Lineamientos-para-el-uso-de-inteligencia-artificial-generativa_UNAB.pdf
+
+RONDA 2
+
+R2-UNAB-03
+
+Primera versión del Programa intensivo «Inteligencia artificial y nuevas tecnologías»
+U. Andrés Bello · grado E · red social institucionalhttps://es.linkedin.com/posts/derechounab_somosunab-derechounab-iaeducativa-activity-7290809556832571392-VAv_
+
+RONDA 2
+
+R2-UAUT-01
+
+IA+D · Grupo de Investigación en Inteligencia Artificial y Derecho
+U. Autónoma de Chile · grado B · página institucionalhttps://www.uautonoma.cl/investigacion/direccion-de-investigacion/grupos-de-investigacion/iad-grupo-de-investigacion-en-inteligencia-artificial-y-derecho/
+
+RONDA 2
+
+R2-UAUT-02
+
+Resolución VRIP N.º 118/2020
+U. Autónoma de Chile · grado A · acto formalhttps://www.uautonoma.cl/content/uploads/2024/10/Res-118-2020.pdf
+
+RONDA 2
+
+R2-UAUT-03
+
+Minor en Inteligencia Artificial y Derecho cumple 5 años
+U. Autónoma de Chile · grado C · noticia institucionalhttps://www.uautonoma.cl/noticias/minor-en-inteligencia-artificial-y-derecho-cumple-5-anos/
+
+RONDA 2
+
+R2-UAUT-04
+
+Minor reconoció a los primeros 12 estudiantes que completaron el programa
+U. Autónoma de Chile · grado C · noticia institucionalhttps://www.uautonoma.cl/noticias/minor-en-inteligencia-artificial-y-derecho-reconocio-a-primeros-12-estudiantes-que-completaron-exitosamente-el-programa/
+
+RONDA 2
+
+R2-UAUT-07
+
+Facultad de Derecho firma convenio con Legalfit
+U. Autónoma de Chile · grado C · noticia institucionalhttps://www.uautonoma.cl/noticias/facultad-de-derecho-firma-convenio-con-legalfit-para-modernizar-la-formacion-practica-de-futuros-abogados-con-metodologias-agiles/
+
+RONDA 2
+
+R2-UCEN-01
+
+Resolución N.º 13/2025 · Instructivo sobre uso académico de inteligencia artificial
+U. Central de Chile · grado A · acto formalhttps://www.ucentral.cl/ucentral/site/docs/20250723/20250723093952/resolucion_13_instructivo_uso_academico_inteligencia_artificial.pdf
+
+RONDA 2
+
+R2-UCEN-03
+
+Academia y Laboratorio LegalTech
+U. Central de Chile · grado B · página institucionalhttps://facdeh.ucentral.cl/legal-tech/academia-y-laboratorio-legaltech/
+
+RONDA 2
+
+R2-UCH-02
+
+Diploma en Derecho e Inteligencia Artificial · edición 2023
+U. de Chile · grado B · página institucionalhttps://postgrados.derecho.uchile.cl/diploma-en-derecho-e-inteligencia-artificial-2/
+
+RONDA 2
+
+R2-UAND-01
+
+Curso en Inteligencia Artificial en el Derecho · admisión octubre 2025
+U. de los Andes · grado B · página institucionalhttps://webapp.uandes.cl/postulacion/register?id=5063
+
+RONDA 2
+
+R2-UAND-02
+
+Curso en IA en el Derecho: transformando la práctica legal con LegalTech
+U. de los Andes · grado B · página institucionalhttps://postgrados.uandes.cl/cursos/curso-en-inteligencia-artificial-en-el-derecho-transformando-la-practica-legal-con-legaltech/
+
+RONDA 2
+
+R2-UDD-01
+
+Observatorio de Derecho y Tecnología
+U. del Desarrollo · grado B · página institucionalhttps://derecho.udd.cl/cdre/observatorio-de-derecho-y-tecnologia/
+
+RONDA 2
+
+R2-UDD-02
+
+Curso Herramientas de Inteligencia Artificial para Abogados
+U. del Desarrollo · grado B · página institucionalhttps://derecho.udd.cl/files/2025/12/curso-herramientas-de-inteligencia-artificial-para-abogados-23-01-2026.pdf
+
+RONDA 2
+
+R2-UDD-03
+
+II Versión · Curso Herramientas de IA para Abogados
+U. del Desarrollo · grado B · página institucionalhttps://derecho.udd.cl/files/2025/12/curso-herramientas-de-inteligencia-artificial-para-abogados-29-05-2026.pdf
+
+RONDA 2
+
+R2-UDD-04
+
+Reglamentos e Instructivos · Política de IA y Reglamento Operativo IAG
+U. del Desarrollo · grado B · página institucionalhttps://www.udd.cl/reglamentos-e-instructivos/
+
+RONDA 2
+
+R2-PUCV-01
+
+Información General · Diplomados Derecho PUCV
+P. U. Católica de Valparaíso · grado B · página institucionalhttps://www.pucv.cl/uuaa/diplomados-derecho/informacion-general
+
+RONDA 2
+
+R2-PUCV-02
+
+Derecho adecúa sus programas a las nuevas necesidades de la disciplina
+P. U. Católica de Valparaíso · grado C · noticia institucionalhttps://www.pucv.cl/pucv/noticias/vida-universitaria/derecho-adecua-sus-programas-a-las-nuevas-necesidades-de-la-disciplina
+
+RONDA 2
+
+R2-PUCV-04
+
+ScribeClaroPUCV es utilizada por el Poder Judicial
+P. U. Católica de Valparaíso · grado C · noticia institucionalhttps://www.pucv.cl/pucv/noticias/vida-universitaria/scribeclaropucv-plataforma-de-ia-para-mejorar-la-redaccion-es-utilizada
+
+RONDA 2
+
+Referencias que la ronda repetía y que ya constaban en el
+ corpus, con el identificador que ya tenían: R2-UC-02 = src-puc-chile-008 · R2-UNAB-02 = src-unab-001 · R2-UAUT-05 = src-uautonoma-002 · R2-UAUT-06 = src-uautonoma-001 · R2-UCEN-02 = src-ucentral-003 · R2-UCH-01 = src-uchile-002 · R2-UDEC-01 = src-udec-001 · R2-UDP-01 = src-udp-002 · R2-UDP-02 = src-udp-001 · R2-PUCV-03 = src-pucv-011.
+
+

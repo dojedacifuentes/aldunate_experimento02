@@ -1,0 +1,452 @@
+[
+ {
+  "archivo": "insumos\\informe-01\\secciones\\00-ficha.txt",
+  "titulo": "Ficha del documento",
+  "lineas": [
+   46,
+   161
+  ],
+  "palabras": 587
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\01-resumen-ejecutivo.txt",
+  "titulo": "Resumen ejecutivo",
+  "lineas": [
+   162,
+   250
+  ],
+  "palabras": 1128
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\02-ocho-hallazgos.txt",
+  "titulo": "Los ocho hallazgos principales",
+  "lineas": [
+   251,
+   348
+  ],
+  "palabras": 1803
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\03-como-leer.txt",
+  "titulo": "Cómo leer este documento",
+  "lineas": [
+   349,
+   406
+  ],
+  "palabras": 561
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\04-introduccion-y-objetivos.txt",
+  "titulo": "1 · Introducción",
+  "lineas": [
+   407,
+   498
+  ],
+  "palabras": 838
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\05-metodologia.txt",
+  "titulo": "3 · Metodología",
+  "lineas": [
+   499,
+   700
+  ],
+  "palabras": 2092
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\06-panorama.txt",
+  "titulo": "Panorama del conjunto",
+  "lineas": [
+   701,
+   795
+  ],
+  "palabras": 688
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\07-cobertura.txt",
+  "titulo": "Cobertura de la investigación",
+  "lineas": [
+   796,
+   852
+  ],
+  "palabras": 440
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\08-capacidades-comparadas.txt",
+  "titulo": "Capacidades institucionales comparadas",
+  "lineas": [
+   853,
+   892
+  ],
+  "palabras": 253
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\09-comparador.txt",
+  "titulo": "4 · El comparador ordinal",
+  "lineas": [
+   893,
+   1010
+  ],
+  "palabras": 1348
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\10-comprobacion.txt",
+  "titulo": "La comprobación que impide leer mal todo lo anterior",
+  "lineas": [
+   1011,
+   1042
+  ],
+  "palabras": 429
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\11-discusion.txt",
+  "titulo": "5 · Discusión",
+  "lineas": [
+   1043,
+   1221
+  ],
+  "palabras": 2036
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\12-contraste-externo.txt",
+  "titulo": "6 · Contraste externo: qué dicen los terceros",
+  "lineas": [
+   1222,
+   1400
+  ],
+  "palabras": 1698
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\13-escala-internacional.txt",
+  "titulo": "7 · La escala internacional",
+  "lineas": [
+   1401,
+   1578
+  ],
+  "palabras": 1770
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\14-institucion-apartada.txt",
+  "titulo": "8 · La institución que no está en el comparador",
+  "lineas": [
+   1579,
+   1636
+  ],
+  "palabras": 565
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\15-conclusiones.txt",
+  "titulo": "9 · Conclusiones",
+  "lineas": [
+   1637,
+   1716
+  ],
+  "palabras": 1387
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\16-implicancias.txt",
+  "titulo": "10 · Implicancias y decisiones",
+  "lineas": [
+   1717,
+   1933
+  ],
+  "palabras": 2198
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\17-limitaciones.txt",
+  "titulo": "11 · Limitaciones",
+  "lineas": [
+   1934,
+   1957
+  ],
+  "palabras": 454
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\18-agenda.txt",
+  "titulo": "12 · Agenda de investigación",
+  "lineas": [
+   1958,
+   2043
+  ],
+  "palabras": 539
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\19-nota-metodologica.txt",
+  "titulo": "Nota metodológica",
+  "lineas": [
+   2044,
+   2108
+  ],
+  "palabras": 447
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\A-fichas.txt",
+  "titulo": "Las once instituciones, una por una",
+  "lineas": [
+   2109,
+   2327
+  ],
+  "palabras": 1337
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\B-divergencias.txt",
+  "titulo": "Registro de divergencias de la verificación",
+  "lineas": [
+   2328,
+   2481
+  ],
+  "palabras": 1650
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\C-celdas.txt",
+  "titulo": "Las capacidades, celda por celda",
+  "lineas": [
+   2482,
+   2560
+  ],
+  "palabras": 440
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\D-rubrica.txt",
+  "titulo": "Comparador ordinal: rúbrica y cálculo",
+  "lineas": [
+   2561,
+   2660
+  ],
+  "palabras": 743
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\E-contraste-anid.txt",
+  "titulo": "Contraste externo: proyectos ANID y fuentes de terceros",
+  "lineas": [
+   2661,
+   2750
+  ],
+  "palabras": 723
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\F-internacional.txt",
+  "titulo": "Referencia internacional: normas, currículos y estudios",
+  "lineas": [
+   2751,
+   2819
+  ],
+  "palabras": 779
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\G-candidatas.txt",
+  "titulo": "Candidatas fuera de cohorte",
+  "lineas": [
+   2820,
+   2895
+  ],
+  "palabras": 652
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\H-registro-fuentes.txt",
+  "titulo": "Registro completo de fuentes",
+  "lineas": [
+   2896,
+   3447
+  ],
+  "palabras": 3019
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\I-ronda-2.txt",
+  "titulo": "Ampliación del corpus: las fuentes de la segunda ronda",
+  "lineas": [
+   3448,
+   3625
+  ],
+  "palabras": 1159
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\pontificia-universidad-catolica-de-chile.txt",
+  "titulo": "Ficha · Pontificia Universidad Católica de Chile"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\pontificia-universidad-catolica-de-valparaiso.txt",
+  "titulo": "Ficha · Pontificia Universidad Católica de Valparaíso"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-adolfo-ibanez.txt",
+  "titulo": "Ficha · Universidad Adolfo Ibáñez"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-andres-bello.txt",
+  "titulo": "Ficha · Universidad Andrés Bello"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-autonoma-de-chile.txt",
+  "titulo": "Ficha · Universidad Autónoma de Chile"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-central-de-chile.txt",
+  "titulo": "Ficha · Universidad Central de Chile"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-de-chile.txt",
+  "titulo": "Ficha · Universidad de Chile"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-de-concepcion.txt",
+  "titulo": "Ficha · Universidad de Concepción"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-de-los-andes.txt",
+  "titulo": "Ficha · Universidad de los Andes"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-del-desarrollo.txt",
+  "titulo": "Ficha · Universidad del Desarrollo"
+ },
+ {
+  "archivo": "insumos\\informe-01\\secciones\\fichas\\universidad-diego-portales.txt",
+  "titulo": "Ficha · Universidad Diego Portales"
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\00-nota-preliminar-como-leer-este-informe.txt",
+  "titulo": "Informe 02 · Nota preliminar · Cómo leer este informe",
+  "palabras": 707
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\01-resumen-ejecutivo-diez-conclusiones-y-su-grado-de-confianza.txt",
+  "titulo": "Informe 02 · Resumen ejecutivo · Diez conclusiones y su grado de confianza",
+  "palabras": 722
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\02-capitulo-1-la-universidad-ante-la-automatizacion-del-trabajo.txt",
+  "titulo": "Informe 02 · Capítulo 1 · La universidad ante la automatización del trabajo cognitivo",
+  "palabras": 915
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\03-capitulo-2-adopcion-la-curva-que-todos-citan-y-la-que-casi-n.txt",
+  "titulo": "Informe 02 · Capítulo 2 · Adopción: la curva que todos citan y la que casi nadie mira",
+  "palabras": 647
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\04-capitulo-3-evaluacion-la-ruptura-entre-el-producto-y-el-apre.txt",
+  "titulo": "Informe 02 · Capítulo 3 · Evaluación: la ruptura entre el producto y el aprendizaje",
+  "palabras": 2074
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\05-capitulo-4-competencias-de-la-reproduccion-al-juicio.txt",
+  "titulo": "Informe 02 · Capítulo 4 · Competencias: de la reproducción al juicio",
+  "palabras": 858
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\06-capitulo-5-metodologias-lo-que-la-evidencia-sostiene-y-lo-qu.txt",
+  "titulo": "Informe 02 · Capítulo 5 · Metodologías: lo que la evidencia sostiene y lo que no",
+  "palabras": 798
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\07-capitulo-6-el-rol-docente-el-eslabon-que-nadie-financio.txt",
+  "titulo": "Informe 02 · Capítulo 6 · El rol docente: el eslabón que nadie financió",
+  "palabras": 765
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\08-capitulo-7-el-estudiante-como-agente-uso-delegacion-y-descal.txt",
+  "titulo": "Informe 02 · Capítulo 7 · El estudiante como agente: uso, delegación y descalibración",
+  "palabras": 854
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\09-capitulo-8-gobernanza-licenciar-construir-federar-o-dejar-ha.txt",
+  "titulo": "Informe 02 · Capítulo 8 · Gobernanza: licenciar, construir, federar o dejar hacer",
+  "palabras": 967
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\10-capitulo-9-equidad-la-brecha-de-aprendizaje-asistido.txt",
+  "titulo": "Informe 02 · Capítulo 9 · Equidad: la brecha de aprendizaje asistido",
+  "palabras": 729
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\11-capitulo-10-universidad-y-mercado-profesional-el-peldano-que.txt",
+  "titulo": "Informe 02 · Capítulo 10 · Universidad y mercado profesional: el peldaño que se erosiona",
+  "palabras": 760
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\12-capitulo-11-mapa-internacional-seis-patrones-regionales-obse.txt",
+  "titulo": "Informe 02 · Capítulo 11 · Mapa internacional: seis patrones regionales observados en treinta instituciones",
+  "palabras": 1926
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\13-capitulo-12-curriculo-ensenar-sobre-la-ia-con-la-ia-o-para-t.txt",
+  "titulo": "Informe 02 · Capítulo 12 · Currículo: enseñar sobre la IA, con la IA o para trabajar con ella",
+  "palabras": 1158
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\14-capitulo-13-caso-especial-la-ensenanza-universitaria-del-der.txt",
+  "titulo": "Informe 02 · Capítulo 13 · Caso especial: la enseñanza universitaria del Derecho",
+  "palabras": 3164
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\15-capitulo-14-iberoamerica-proyectos-sin-ecosistema.txt",
+  "titulo": "Informe 02 · Capítulo 14 · Iberoamérica: proyectos sin ecosistema",
+  "palabras": 837
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\16-capitulo-15-estado-de-la-evidencia-cientifica-que-sabemos-y-.txt",
+  "titulo": "Informe 02 · Capítulo 15 · Estado de la evidencia científica: qué sabemos y qué se retractó",
+  "palabras": 705
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\17-capitulo-16-contraevidencia-inercia-y-limites.txt",
+  "titulo": "Informe 02 · Capítulo 16 · Contraevidencia, inercia y límites",
+  "palabras": 582
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\18-capitulo-17-matriz-comparada-de-instituciones.txt",
+  "titulo": "Informe 02 · Capítulo 17 · Matriz comparada de instituciones",
+  "palabras": 508
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\19-capitulo-18-seis-estudios-de-caso.txt",
+  "titulo": "Informe 02 · Capítulo 18 · Seis estudios de caso",
+  "palabras": 2180
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\20-capitulo-19-matriz-de-tesis.txt",
+  "titulo": "Informe 02 · Capítulo 19 · Matriz de tesis",
+  "palabras": 446
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\21-capitulo-20-cronologia-2022-2026.txt",
+  "titulo": "Informe 02 · Capítulo 20 · Cronología 2022-2026",
+  "palabras": 184
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\22-capitulo-21-escenarios-2026-2030.txt",
+  "titulo": "Informe 02 · Capítulo 21 · Escenarios 2026-2030",
+  "palabras": 404
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\23-capitulo-22-vacios-de-investigacion.txt",
+  "titulo": "Informe 02 · Capítulo 22 · Vacíos de investigación",
+  "palabras": 935
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\24-capitulo-23-conclusiones.txt",
+  "titulo": "Informe 02 · Capítulo 23 · Conclusiones",
+  "palabras": 716
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\25-capitulo-24-recomendaciones.txt",
+  "titulo": "Informe 02 · Capítulo 24 · Recomendaciones",
+  "palabras": 579
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\26-anexo-a-nota-metodologica.txt",
+  "titulo": "Informe 02 · Anexo A · Nota metodológica",
+  "palabras": 278
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\27-anexo-b-matriz-maestra-de-evidencia.txt",
+  "titulo": "Informe 02 · Anexo B · Matriz maestra de evidencia",
+  "palabras": 1442
+ },
+ {
+  "archivo": "insumos\\informe-02\\capitulos\\28-anexo-c-bibliografia-clasificada.txt",
+  "titulo": "Informe 02 · Anexo C · Bibliografía clasificada",
+  "palabras": 972
+ }
+]

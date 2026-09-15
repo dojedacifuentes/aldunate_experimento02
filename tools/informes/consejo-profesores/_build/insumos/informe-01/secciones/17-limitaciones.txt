@@ -1,0 +1,24 @@
+[Informe 01 v3.2.0 · líneas 1934-1957 del texto completo]
+
+11 · Limitaciones
+
+Lo que este método no puede ver, dicho antes de que lo diga un lector.
+
+El corpus sigue siendo mayoritariamente autodescriptivo. Las 31 fuentes de contraste externo acotan esa limitación estructural, y no la eliminan: 96 de 127 fuentes siguen siendo comunicación de las propias instituciones observadas. El contraste externo confirmó lo que dicen; no puede decir qué omitieron.
+
+La cobertura sigue siendo desigual. Tres instituciones recibieron un piloto de profundidad y ocho no. La razón bajó de 2,4 : 1 a 1,8 : 1 en rutas recorridas, pero en número de fuentes se mantiene en 3,7 : 1. Con 5 de las 100 celdas del comparador sin concluir, ningún techo alcanza ya el piso de la primera, y lo que queda sin resolver son dos empates y no un tramo entero del orden.
+
+El comparador ordinal mide formalización publicada. No mide calidad de la enseñanza, ni preparación de egresados, ni uso real. Una Facultad excelente que no publique sus instrumentos puntúa bajo, y eso es deliberado, pero un lector que confunda las dos cosas leerá mal la tabla.
+
+Una fuente no resistió la verificación y no fue localizable. La atribuida a una revista de la Universidad Central no aparece en ningún dominio ni buscador. Se degrada a pendiente de referencia bibliográfica completa, y su consecuencia —que la capacidad de investigación de esa institución baje a no localizada— se declara aquí porque perjudica a una institución sin que ella pueda responder en este documento.
+
+No existe línea base congelada de 2025. El documento antecedente contiene actividades fechadas en 2026, de modo que ninguna afirmación de crecimiento temporal es sostenible y la trayectoria de la mayoría de las iniciativas queda como desconocida.
+
+Dos dimensiones del protocolo siguen vacías. Recursos y capacidades, y continuidad, cobertura y resultados, no reúnen evidencia en ninguna institución. Ninguna publica presupuesto, dotación ni sostenibilidad, y ningún fondo de vinculación con el medio de la cohorte publica su monto.
+
+La ausencia de evidencia pública no es inexistencia, salvo donde el registro es exhaustivo. Toda afirmación negativa de este informe se refiere a lo que no fue localizado recorriendo un protocolo definido. La única excepción son las afirmaciones apoyadas en la base histórica de proyectos adjudicados, donde la ausencia en un registro completo sí es un dato — y aun ahí, sólo sobre financiamiento público competitivo.
+
+El autor participa en una de las iniciativas evaluadas. Ver la declaración de intereses en la sección 3. Ninguna afirmación sobre la PUCV se sostiene en fuente única, la rúbrica del comparador se cerró antes de calcular resultados, y la sección correspondiente publica su doble revisión, incluida la observación de que la primera posición de la PUCV se beneficia de ser la institución mejor investigada.
+
+19
+

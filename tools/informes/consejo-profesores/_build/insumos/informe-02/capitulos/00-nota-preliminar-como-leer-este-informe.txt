@@ -1,0 +1,28 @@
+
+# Nota preliminar · Cómo leer este informe
+
+Este informe no pregunta cómo usan las universidades la inteligencia artificial. Pregunta algo más incómodo: qué significa enseñar, aprender, evaluar y certificar conocimiento universitario cuando estudiantes y profesionales disponen de forma permanente de sistemas capaces de ejecutar una parte significativa del trabajo cognitivo que tradicionalmente debía realizar una persona por sí sola.
+
+La diferencia no es retórica. La primera pregunta se responde con un inventario de herramientas y se agota en dieciocho meses. La segunda obliga a examinar los supuestos sobre los que descansa el título universitario: que el producto entregado por un estudiante es evidencia razonable de lo que ese estudiante sabe hacer, y que las capacidades certificadas son escasas y valiosas en el mercado profesional. Ambos supuestos están bajo presión simultánea, y por primera vez existe evidencia empírica suficiente para decir algo preciso al respecto.
+
+
+## Cinco reglas que gobiernan cada afirmación de este texto
+
+El campo está saturado de cifras que circulan sin fuente, de anuncios institucionales presentados como resultados y de estudios frágiles amplificados por la prensa. Para no añadir ruido, este informe se somete a cinco reglas explícitas.
+
+1. **Existir no es implementar; implementar no es adoptar; adoptar no es funcionar.** Cada hallazgo se etiqueta según lo que realmente demuestra: existencia de la iniciativa, implementación verificada, adopción efectiva, resultados medidos o identificación causal en contexto experimental. La mayor parte de lo que se publica sobre IA en educación superior demuestra solo lo primero.
+2. **Comprar licencias no es transformar una universidad.** El informe distingue cinco profundidades: digitalización, adopción instrumental, integración pedagógica, transformación curricular y transformación sistémica. Se emplea la palabra «transformación» únicamente cuando hay cambio verificable en qué se enseña, cómo se evalúa o qué se certifica.
+3. **Los anuncios de proveedores no son evidencia de eficacia pedagógica.** Sirven para demostrar que algo existe, nunca para demostrar que funciona. Lo mismo vale para las cifras de resultados que una institución publica sobre sí misma sin metodología, grupo de comparación ni revisión externa.
+4. **La contraevidencia se busca deliberadamente y se publica.** Cada capítulo incluye lo que contradice su propia tesis. Cuando la evidencia es débil, se dice que es débil; cuando un estudio célebre tiene un problema metodológico, se señala.
+5. **Toda cifra lleva su advertencia de lectura.** Ninguna figura de este informe se presenta sin indicar qué mide exactamente, sobre qué población y con qué sesgo conocido.
+
+[RECUADRO: Una nota sobre la humildad de este documento] El hecho más instructivo de los últimos doce meses no es un despliegue tecnológico sino una retractación. En abril de 2026, la revista Humanities and Social Sciences Communications retiró el metaanálisis de Wang y Fan, la referencia más citada del mundo a favor de efectos positivos grandes de ChatGPT sobre el aprendizaje. Había acumulado 266 citas y cerca de 486.000 visualizaciones. El motivo: agrupaba estudios demasiado distintos en método y muestra como para combinarlos. Durante casi un año, políticas institucionales, presentaciones de rectoría y artículos académicos se apoyaron en una cifra que no se sostenía. Este informe está escrito con esa advertencia presente en cada página.
+
+
+## Qué contiene y qué no
+
+El foco es la **educación superior**. Los casos escolares aparecen solo cuando su hallazgo es transferible a la universidad: es el caso del experimento turco sobre retirada del andamiaje, cuyo diseño resuelve una pregunta que ningún estudio universitario ha resuelto todavía con la misma limpieza.
+
+El informe cubre once ejes —modelo universitario, evaluación, competencias, metodologías, rol docente, currículo, experiencia estudiantil, gobernanza, equidad, mercado profesional y enseñanza del Derecho— sobre una base de fuentes verificadas una a una entre 2022 y agosto de 2026. Incluye un mapa internacional de treinta instituciones de diez países, seis estudios de caso desarrollados en profundidad, una matriz comparada por dimensiones, una matriz de tesis con niveles de confianza declarados, una matriz maestra de evidencia con treinta y ocho hallazgos trazados uno a uno, una cronología de diecisiete hitos, tres escenarios para 2026-2030 y una agenda de investigación con los ocho vacíos que hoy impiden decidir con evidencia.
+
+No contiene predicciones tecnológicas, ni recomendaciones de compra, ni una defensa ni una condena de la inteligencia artificial en la universidad. Contiene el estado de la evidencia y lo que de él puede razonablemente deducirse.

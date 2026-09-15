@@ -1,0 +1,211 @@
+{
+  "_meta": {
+    "ronda": 3,
+    "fecha": "2026-09-15",
+    "corte": "2026-09-15",
+    "procedimiento": "Búsqueda web dirigida a las capacidades no localizadas y sin concluir del corpus vigente. Cada fuente se abrió y se verificó su contenido; los documentos en PDF se extrajeron y se leyeron.",
+    "alcance": "Diez instituciones de la cohorte, sin la PUCV. Se añaden hallazgos fuera de cohorte cuando afectan a una conclusión del informe."
+  },
+
+  "fuentes": [
+    {
+      "id": "r3-uaut-01",
+      "universidad": "uautonoma",
+      "cita_apa": "Bozzo Hauri, S., Bedecarratz Scholz, F., Cornejo Plaza, I., Díaz Fuenzalida, J. P., & López Hernández, H. (2024). Experiencias y resultados del Minor en Inteligencia Artificial y Derecho de la Universidad Autónoma de Chile. Revista de Educación y Derecho, 2(Extraordinario), 20-54. https://doi.org/10.1344/REYD2024.2-Extraordinario.49154",
+      "url": "https://revistes.ub.edu/index.php/RED/article/view/49154",
+      "verificada": true,
+      "que_acredita": "El Minor en Inteligencia Artificial y Derecho fue creado en 2018. El artículo evalúa su implementación y su impacto a partir de encuestas a estudiantes y docentes aplicadas en el primer semestre de 2024.",
+      "limite": "La evaluación se apoya en encuestas de percepción, no en una medición de resultados de aprendizaje con grupo de comparación."
+    },
+    {
+      "id": "r3-uaut-02",
+      "universidad": "uautonoma",
+      "cita_apa": "Contreras Vásquez, P., Azuaje Pirela, M., Díaz Fuenzalida, J. P., Bedecarratz Scholz, F., Bozzo Hauri, S., & Finol González, D. (2021). Enseñanzas y aprendizaje de la inteligencia artificial y derecho en Chile. Revista Pedagogía Universitaria y Didáctica del Derecho, 8(2), 281-302. https://doi.org/10.5354/0719-5885.2021.64456",
+      "url": "https://pedagogiaderecho.uchile.cl/index.php/RPUD/article/view/64456",
+      "verificada": true,
+      "que_acredita": "Análisis del diseño curricular del minor, asignatura por asignatura, con su justificación y su perfil de egreso.",
+      "limite": "Es un análisis pedagógico del diseño, sin datos empíricos sobre desempeño estudiantil."
+    },
+    {
+      "id": "r3-uaut-03",
+      "universidad": "uautonoma",
+      "cita_apa": "Universidad Autónoma de Chile. (s. f.). Lanzamiento Minor «Inteligencia artificial y derecho». https://www.uautonoma.cl/noticias/lanzamiento-minor-inteligencia-artificial-y-derecho/",
+      "url": "https://www.uautonoma.cl/noticias/lanzamiento-minor-inteligencia-artificial-y-derecho/",
+      "verificada": true,
+      "que_acredita": "El minor se compone de cinco asignaturas electivas, está abierto a estudiantes de Derecho y de Ingeniería Civil Informática, y entrega una microcredencial al completarlo. Sus contenidos comprenden programación, diseño de aplicaciones de IA, ética, protección de datos, ciberseguridad, contratos inteligentes y tributación de nuevas tecnologías.",
+      "limite": "Fuente institucional sin fecha declarada."
+    },
+    {
+      "id": "r3-uaut-04",
+      "universidad": "uautonoma",
+      "cita_apa": "Universidad Autónoma de Chile. (s. f.). Minor en Inteligencia Artificial y Derecho reconoció a primeros 12 estudiantes que completaron exitosamente el programa. https://www.uautonoma.cl/noticias/minor-en-inteligencia-artificial-y-derecho-reconocio-a-primeros-12-estudiantes-que-completaron-exitosamente-el-programa/",
+      "url": "https://www.uautonoma.cl/noticias/minor-en-inteligencia-artificial-y-derecho-reconocio-a-primeros-12-estudiantes-que-completaron-exitosamente-el-programa/",
+      "verificada": true,
+      "que_acredita": "Doce estudiantes completaron el programa en su primera cohorte reconocida.",
+      "limite": "Fuente institucional sin fecha declarada."
+    },
+    {
+      "id": "r3-uai-01",
+      "universidad": "uai",
+      "cita_apa": "Lillo, R. (2026, 1 de abril). Inteligencia artificial en la justicia: Desafíos para el debido proceso, la independencia judicial y la autonomía decisional [Presentación]. Academia Judicial de Chile. https://academiajudicial.cl/wp-content/uploads/2026/04/RLillo_AJ_01.04.26.pdf",
+      "url": "https://academiajudicial.cl/wp-content/uploads/2026/04/RLillo_AJ_01.04.26.pdf",
+      "verificada": true,
+      "que_acredita": "Documento del Laboratorio de Justicia Centrada en las Personas de la Facultad de Derecho UAI, entregado a la Academia Judicial. Presenta datos propios de una encuesta a jueces civiles chilenos (Lillo, Cantillana y Sanhueza, proyecto ANID 202332026): 10 % declara usar IA en su trabajo jurisdiccional, 24 % usa software de reconocimiento de voz, 51 % nunca ha recibido capacitación en tecnologías, y 98,4 % considera necesaria su participación en el diseño tecnológico.",
+      "limite": "Es una presentación, no un artículo revisado por pares. La encuesta no publica su tamaño muestral en este documento."
+    },
+    {
+      "id": "r3-udp-01",
+      "universidad": "udp",
+      "cita_apa": "Universidad Diego Portales. (s. f.). Curso Inteligencia artificial y derecho. Posgrados y Educación Continua UDP. https://posgrados.udp.cl/programas/curso-inteligencia-artificial-y-derecho/",
+      "url": "https://posgrados.udp.cl/programas/curso-inteligencia-artificial-y-derecho/",
+      "verificada": true,
+      "que_acredita": "Curso con programa detallado: contexto regulatorio chileno, fundamentos técnicos de la IA, regulación internacional comparada, ética y derechos fundamentales, y un taller práctico de tres semanas sobre prompting jurídico. Lo dicta un equipo multidisciplinario de académicos de Derecho e Ingeniería de la UDP con expositores externos.",
+      "limite": "La página no publica el número de ediciones dictadas ni cifras de egreso."
+    },
+    {
+      "id": "r3-ucen-01",
+      "universidad": "ucentral",
+      "cita_apa": "La Nación. (s. f.). Universidad Central lanza programa de Inteligencia Artificial y LegalTech. https://www.lanacion.cl/universidad-central-lanza-programa-de-inteligencia-artificial-y-legaltech/",
+      "url": "https://www.lanacion.cl/universidad-central-lanza-programa-de-inteligencia-artificial-y-legaltech/",
+      "verificada": true,
+      "que_acredita": "El Programa de Inteligencia Artificial y LegalTech de la Facultad de Derecho y Humanidades, dirigido por el profesor Gonzalo Álvarez, se estructura en tres pilares: docencia y gestión académica; investigación e innovación mediante Tech-Labs; y formación avanzada en diplomados y certificaciones. Declara el desarrollo de un agente académico de IA para estudiantes y la creación de una clínica socio-jurídica digital.",
+      "limite": "Fuente de prensa, sin fecha declarada en el resultado. Los productos declarados son proyectos anunciados, no ejecuciones acreditadas."
+    },
+    {
+      "id": "r3-ucen-02",
+      "universidad": "ucentral",
+      "cita_apa": "Universidad Central de Chile. (s. f.). Postula a la Academia de LegalTech UCentral. https://www.ucentral.cl/postula-a-la-academia-de-legaltech-ucentral",
+      "url": "https://www.ucentral.cl/postula-a-la-academia-de-legaltech-ucentral",
+      "verificada": true,
+      "que_acredita": "La Academia LegalTech opera en el marco de la Cátedra LegalTech dirigida por el profesor Pablo Contreras Vásquez, con convocatoria a estudiantes y titulados y sesiones cada dos semanas.",
+      "limite": "Fuente institucional sin fecha declarada."
+    },
+    {
+      "id": "r3-udec-01",
+      "universidad": "udec",
+      "cita_apa": "Parra Sepúlveda, D., & Concha Machuca, R. (2025). La inteligencia artificial explicable como fundamento para la gobernanza de la IA: Sus implicancias en la responsabilidad civil. Revista Chilena de Derecho y Tecnología, 14. https://doi.org/10.5354/0719-2584.2025.74040",
+      "url": "https://rchdt.uchile.cl/index.php/RCHDT/article/view/74040",
+      "verificada": true,
+      "que_acredita": "Artículo revisado por pares con la inteligencia artificial como objeto, coautorado por Ricardo Concha Machuca, profesor de Derecho Civil de la Universidad de Concepción.",
+      "limite": "Publicación individual, sin unidad especializada ni financiamiento adjudicado asociado que conste."
+    },
+    {
+      "id": "r3-unab-01",
+      "universidad": "unab",
+      "cita_apa": "Universidad Andrés Bello. (2024, 26 de septiembre). Lineamiento para el uso responsable de inteligencia artificial en UNAB. https://ia.unab.cl/wp-content/uploads/2024/10/IA-Lineamiento-para-el-uso-responsable-de-inteligencia-artificial-en-UNAB-20240926-002.pdf",
+      "url": "https://ia.unab.cl/wp-content/uploads/2024/10/IA-Lineamiento-para-el-uso-responsable-de-inteligencia-artificial-en-UNAB-20240926-002.pdf",
+      "verificada": true,
+      "que_acredita": "Lineamiento de alcance universitario sobre uso responsable de IA en docencia y evaluación. Obliga a informar a los estudiantes sobre las herramientas empleadas en el diseño del curso y a documentar su incorporación en los programas.",
+      "limite": "Es de la universidad y no de la Facultad de Derecho. No consta acto formal de aprobación."
+    },
+    {
+      "id": "r3-unab-02",
+      "universidad": "unab",
+      "cita_apa": "Universidad Andrés Bello. (s. f.). Estudiantes de Derecho UNAB participaron en programa de inteligencia artificial en Argentina. https://noticias.unab.cl/estudiantes-de-derecho-unab-participaron-en-programa-de-inteligencia-artificial-en-argentina/",
+      "url": "https://noticias.unab.cl/estudiantes-de-derecho-unab-participaron-en-programa-de-inteligencia-artificial-en-argentina/",
+      "verificada": true,
+      "que_acredita": "La Facultad de Derecho UNAB organizó el primer programa intensivo «Inteligencia Artificial y Nuevas Tecnologías» en conjunto con la Facultad de Derecho de la Universidad de Buenos Aires, con participación de estudiantes de pregrado.",
+      "limite": "Fuente institucional sin fecha declarada."
+    },
+    {
+      "id": "r3-fuera-01",
+      "universidad": "(fuera de cohorte)",
+      "cita_apa": "Universidad Austral de Chile, Facultad de Ciencias Jurídicas y Sociales. (2025). Protocolo de regulación del uso de la inteligencia artificial. https://derecho.uach.cl/index.php/archivos/197/ReglamentosPregrado/1295/Protocolo-de-inteligencia-artificial-2026.pdf",
+      "url": "https://derecho.uach.cl/index.php/archivos/197/ReglamentosPregrado/1295/Protocolo-de-inteligencia-artificial-2026.pdf",
+      "verificada": true,
+      "que_acredita": "Protocolo de facultad con dieciocho artículos, aplicable a pregrado, postgrado y educación continua. Regla de autorización expresa con prohibición en el silencio (art. 9), sancionada como deshonestidad académica conforme al art. 34 del Reglamento Académico Estudiantil. Responsabilidad personal y autoría del estudiante (art. 12). Declaración obligatoria de uso con indicación de la herramienta y de las instrucciones impartidas (art. 14). Deber de verificar que las fuentes generadas existan efectivamente (art. 15). Uso preferente limitado a corrección gramatical y de estilo en asignaturas de investigación (art. 17). Revisión anual a cargo del Comité de Análisis Curricular (art. 7).",
+      "limite": "La Universidad Austral de Chile no integra la cohorte de once instituciones examinadas."
+    }
+  ],
+
+  "cambios_propuestos": [
+    {
+      "universidad": "uautonoma",
+      "capacidad": "Presencia en pregrado",
+      "estado_anterior": "En operación",
+      "puntos_anterior": 2,
+      "estado_propuesto": "En operación con instrumento formal",
+      "puntos_propuesto": 3,
+      "motivo": "El Minor en Inteligencia Artificial y Derecho opera desde 2018 como línea formativa de pregrado, con cinco asignaturas electivas, créditos publicados, microcredencial y una primera cohorte de doce egresados reconocida. Su diseño curricular está documentado en dos artículos revisados por pares.",
+      "fuentes": ["r3-uaut-01", "r3-uaut-02", "r3-uaut-03", "r3-uaut-04"]
+    },
+    {
+      "universidad": "uai",
+      "capacidad": "Unidad especializada",
+      "estado_anterior": "Solo adyacente",
+      "puntos_anterior": 1,
+      "estado_propuesto": "En operación",
+      "puntos_propuesto": 2,
+      "motivo": "El Laboratorio de Justicia Centrada en las Personas produce investigación cuyo objeto declarado es la inteligencia artificial en la justicia, con datos propios y entrega a la Academia Judicial. La calificación de adyacente subestimaba su objeto.",
+      "fuentes": ["r3-uai-01"]
+    },
+    {
+      "universidad": "uai",
+      "capacidad": "Transferencia",
+      "estado_anterior": "Incipiente",
+      "puntos_anterior": 1,
+      "estado_propuesto": "En operación",
+      "puntos_propuesto": 2,
+      "motivo": "Al convenio con una empresa de tecnología legal se suma un curso dictado a la Academia Judicial en abril de 2026 y la entrega a esa institución de un documento con datos propios sobre uso de IA en el Poder Judicial. La transferencia hacia el sistema de justicia es sostenida y verificable.",
+      "fuentes": ["r3-uai-01"]
+    },
+    {
+      "universidad": "udp",
+      "capacidad": "Formación estructurada",
+      "estado_anterior": "Incipiente",
+      "puntos_anterior": 1,
+      "estado_propuesto": "En operación",
+      "puntos_propuesto": 2,
+      "motivo": "El curso de Inteligencia Artificial y Derecho publica programa detallado, con cuatro módulos temáticos y un taller práctico de tres semanas, dictado por un equipo multidisciplinario de la propia universidad. Deja de ser un anuncio y pasa a ser oferta con contenido acreditado.",
+      "fuentes": ["r3-udp-01"]
+    },
+    {
+      "universidad": "ucentral",
+      "capacidad": "Investigación",
+      "estado_anterior": "No localizada",
+      "puntos_anterior": 0,
+      "estado_propuesto": "Incipiente",
+      "puntos_propuesto": 1,
+      "motivo": "El Programa de Inteligencia Artificial y LegalTech declara la investigación como uno de sus tres pilares, mediante Tech-Labs, y opera junto a una Cátedra LegalTech con actividad académica regular. No consta financiamiento adjudicado ni producción sostenida, de modo que la capacidad queda en grado incipiente y no superior.",
+      "fuentes": ["r3-ucen-01", "r3-ucen-02"]
+    },
+    {
+      "universidad": "udec",
+      "capacidad": "Investigación",
+      "estado_anterior": "No localizada",
+      "puntos_anterior": 0,
+      "estado_propuesto": "Incipiente",
+      "puntos_propuesto": 1,
+      "motivo": "Un profesor de Derecho Civil de la Facultad coautoró en 2025 un artículo revisado por pares cuyo objeto es la gobernanza de la inteligencia artificial y sus efectos sobre la responsabilidad civil. Es producción individual, sin unidad ni financiamiento asociado, por lo que la capacidad no supera el grado incipiente.",
+      "fuentes": ["r3-udec-01"]
+    }
+  ],
+
+  "sin_cambio_pero_con_evidencia_nueva": [
+    {
+      "universidad": "uautonoma",
+      "capacidad": "Evaluación de efecto",
+      "estado": "No localizada",
+      "nota": "El artículo de 2024 evalúa la implementación y el impacto del minor a partir de encuestas a estudiantes y docentes. Es la aproximación más cercana del conjunto a una evaluación de efecto, y no la satisface: mide percepción y no resultados de aprendizaje, y carece de grupo de comparación. La capacidad se mantiene en cero y el informe deja constancia del antecedente."
+    },
+    {
+      "universidad": "unab",
+      "capacidad": "Norma propia",
+      "estado": "Solo en el entorno institucional",
+      "nota": "El lineamiento de 2024 queda ahora acreditado con documento fechado. Confirma el estado anterior: es de la universidad y no de la Facultad de Derecho, y no consta acto formal de aprobación."
+    },
+    {
+      "universidad": "unab",
+      "capacidad": "Presencia en pregrado",
+      "estado": "En operación",
+      "nota": "Se añade el programa intensivo de Inteligencia Artificial y Nuevas Tecnologías organizado con la Facultad de Derecho de la Universidad de Buenos Aires, con participación de estudiantes de pregrado."
+    }
+  ],
+
+  "hallazgo_fuera_de_cohorte": {
+    "institucion": "Universidad Austral de Chile, Facultad de Ciencias Jurídicas y Sociales",
+    "hallazgo": "Dispone de un protocolo propio de facultad sobre uso de inteligencia artificial, de 2025, con dieciocho artículos y reglas exigibles.",
+    "por_que_importa": "Solo dos de las once facultades de la cohorte cuentan con norma propia. El protocolo de la Universidad Austral es más completo que ambas e incorpora el deber de verificar que las fuentes generadas existan, que el capítulo internacional del informe identificaba como el instrumento de menor costo entre los examinados y que atribuía a una facultad estadounidense. Una facultad chilena ya lo tiene.",
+    "consecuencia": "El criterio de selección de la cohorte de once, heredado de la edición de 2025, omite al menos una facultad con la capacidad normativa más desarrollada del país. La próxima edición debe revisar ese criterio."
+  }
+}

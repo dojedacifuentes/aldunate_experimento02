@@ -1,0 +1,106 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 5",
+  "x": "Metodologías: lo que la evidencia sostiene y lo que no"
+ },
+ {
+  "t": "lead",
+  "x": "Este capítulo contiene el hallazgo más importante del informe para quien deba tomar decisiones pedagógicas. Dos ensayos aleatorizados publicados con pocas semanas de diferencia en 2025 llegaron a conclusiones aparentemente opuestas sobre el mismo objeto. No se contradicen: miden cosas distintas, y esa distinción es la regla operativa que el resto del sistema todavía no ha internalizado."
+ },
+ {
+  "t": "fig",
+  "id": "g02-rendimiento-vs-aprendizaje",
+  "cap": "Figura 2. El mismo patrón en dos poblaciones distintas: lo que se gana con la herramienta disponible no equivale a lo que queda cuando se retira, ni a lo que se creía haber ganado."
+ },
+ {
+  "t": "h2",
+  "x": "5.1 Harvard: un tutor bien diseñado duplica las ganancias"
+ },
+ {
+  "t": "p",
+  "x": "Greg Kestin, Kelly Miller, Anna Klales, Timothy Milbourne y Gregorio Ponti publicaron en Scientific Reports, el 3 de junio de 2025, un ensayo aleatorizado realizado en el curso Physical Sciences 2 de Harvard durante el otoño de 2023. Alrededor de 180 estudiantes alternaron semanalmente entre dos condiciones: una clase presencial guiada con métodos de aprendizaje activo muy refinados y una sesión en casa con un tutor de IA construido a propósito."
+ },
+ {
+  "t": "p",
+  "x": "El resultado: los estudiantes que usaron el tutor de IA obtuvieron aproximadamente **el doble de ganancias de aprendizaje**, en **menos tiempo**, y declararon mayor compromiso y motivación. Es un resultado notable, porque la condición de control no era una clase magistral mediocre sino aprendizaje activo bien ejecutado, el estándar de oro de la enseñanza universitaria de ciencias."
+ },
+ {
+  "t": "p",
+  "x": "El detalle decisivo está en el diseño del tutor: andamiajes redactados por expertos, razonamiento paso a paso y guardarraíles explícitos para evitar que entregara la respuesta. Estaba informado por los mismos principios pedagógicos que las clases presenciales del curso. No era un chatbot genérico."
+ },
+ {
+  "t": "h2",
+  "x": "5.2 Turquía: el acceso libre deja a los estudiantes peor que al principio"
+ },
+ {
+  "t": "p",
+  "x": "Hamsa Bastani, Osbert Bastani, Alp Sungu, Haosen Ge, Özge Kabakcı y Rei Mariman publicaron en PNAS un experimento de campo con cerca de mil estudiantes de secundaria en Turquía, en cuatro sesiones de noventa minutos. Tres condiciones: sin IA, con acceso libre a GPT-4 y con un tutor de IA que entregaba pistas diseñadas por docentes en lugar de respuestas."
+ },
+ {
+  "t": "table",
+  "cap": "Tabla 9. Resultados del experimento de Bastani et al., PNAS (2025). Las dos primeras filas miden desempeño con la herramienta disponible; la tercera mide aprendizaje retenido.",
+  "head": [
+   "Condición",
+   "Efecto",
+   "Momento de la medición"
+  ],
+  "w": [
+   3000,
+   1600,
+   4520
+  ],
+  "align": [
+   "left",
+   "center",
+   "left"
+  ],
+  "rows": [
+   [
+    "Acceso libre a GPT-4",
+    "**+48 %**",
+    "Durante la práctica, con la herramienta disponible"
+   ],
+   [
+    "Tutor de IA con pistas diseñadas por docentes",
+    "**+127 %**",
+    "Durante la práctica, con la herramienta disponible"
+   ],
+   [
+    "Acceso libre a GPT-4, tras retirar el acceso",
+    "**−17 %**",
+    "Evaluación posterior, comparado con quienes nunca la tuvieron"
+   ]
+  ]
+ },
+ {
+  "t": "p",
+  "x": "La tercera fila es el hallazgo. Los estudiantes con acceso libre no solo no aprendieron más: aprendieron **menos** que quienes nunca tuvieron la herramienta. Los autores lo describen como usar el sistema de muleta durante la práctica. Los andamiajes —pedir pistas en lugar de respuestas— mitigaron el daño."
+ },
+ {
+  "t": "p",
+  "x": "La limitación debe declararse: es un estudio en educación secundaria, en matemáticas, sobre un horizonte temporal corto. Su traslado a la universidad es una inferencia razonable, no un dato. Se incluye porque ningún estudio universitario ha replicado todavía ese diseño de retirada, que es exactamente el que responde a la pregunta que importa."
+ },
+ {
+  "t": "h2",
+  "x": "5.3 La regla que emerge de los dos estudios"
+ },
+ {
+  "t": "callout",
+  "h": "El andamiaje, no el acceso",
+  "c": "navy",
+  "x": "Puestos uno junto a otro, los dos ensayos dicen lo mismo desde direcciones opuestas: **la variable que determina el efecto no es la potencia del modelo sino el diseño de la interacción**. Un tutor con guardarraíles pedagógicos duplicó el aprendizaje; el mismo modelo subyacente, sin guardarraíles, lo dañó. Esto tiene una consecuencia directa para la política institucional: comprar licencias de acceso general —el gasto que la mayoría de las universidades ha realizado— es la intervención con menor probabilidad de producir aprendizaje, y puede producir el efecto contrario. El gasto pedagógicamente eficaz es el diseño de tareas y de andamiajes, que es trabajo docente, no software."
+ },
+ {
+  "t": "h2",
+  "x": "5.4 Lo que todavía no sabemos sobre las metodologías"
+ },
+ {
+  "t": "p",
+  "x": "El resto del catálogo metodológico —aprendizaje adaptativo, feedback automatizado, simulación con pacientes o clientes sintéticos, diálogo socrático asistido, investigación asistida— se encuentra en un estado de evidencia sensiblemente peor. Abundan los estudios de percepción, los pilotos de un semestre y las evaluaciones sin grupo de comparación; escasean los ensayos con medición de retención a medio plazo."
+ },
+ {
+  "t": "p",
+  "x": "Merece mención específica el caso de Harvard CS50, cuyo equipo documentó académicamente su suite de herramientas —asistente conversacional entrenado con el material del curso, explicador de fragmentos de código y revisor estilístico— bajo el principio declarado de aproximarse a una razón profesor-estudiante de 1:1 sin entregar la respuesta directa. Es un caso de diseño ejemplar y de evidencia todavía limitada a un curso."
+ }
+]

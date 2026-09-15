@@ -1,0 +1,107 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 19",
+  "x": "Matriz de tesis"
+ },
+ {
+  "t": "lead",
+  "x": "Doce afirmaciones que este informe defiende, con la evidencia que las respalda, la que las contradice y el nivel de confianza que les corresponde. Ninguna se eleva por encima de lo que su evidencia permite."
+ },
+ {
+  "t": "table",
+  "cap": "Tabla 15. Matriz de tesis con niveles de confianza. ALTA: evidencia experimental convergente. MEDIA-ALTA: un estudio sólido o varias fuentes coincidentes. MEDIA: evidencia parcial. BAJA: indicios. INSUFICIENTE: no puede sostenerse.",
+  "head": [
+   "Tesis",
+   "Evidencia a favor",
+   "Evidencia contraria o límite",
+   "Confianza"
+  ],
+  "w": [
+   2900,
+   2600,
+   2400,
+   1220
+  ],
+  "align": [
+   "left",
+   "left",
+   "left",
+   "center"
+  ],
+  "rows": [
+   [
+    "La IA generativa desacopla el producto académico del aprendizaje que se suponía que acreditaba",
+    "Scarfe et al.; Bastani et al.; brecha 94 %/12 %",
+    "El desacoplamiento es completo solo en evaluación no supervisada",
+    "**ALTA**"
+   ],
+   [
+    "La reforma evaluativa es la única transformación sistemática verificable",
+    "TEQSA; Sydney; Bath; 65 % de estudiantes percibe cambio",
+    "Concentrada en Australia y Reino Unido; poco visible en otras regiones",
+    "**ALTA**"
+   ],
+   [
+    "El diseño pedagógico, no el acceso, determina el efecto sobre el aprendizaje",
+    "Kestin et al. (+); Bastani et al. (−) con el mismo modelo base",
+    "Ambos estudios son de contextos acotados",
+    "**ALTA**"
+   ],
+   [
+    "La detección algorítmica fracasó y su fracaso causó la reforma",
+    "61,3 % de falsos positivos; 94 % de no detección; 12 instituciones la desactivaron",
+    "Algunas instituciones siguen invirtiendo en ella",
+    "**ALTA**"
+   ],
+   [
+    "La IA comprime la distribución del desempeño",
+    "Choi y Schwarcz (45 percentiles / techo a la baja); Doshi y Hauser",
+    "Dos dominios; falta replicación en STEM",
+    "**MEDIA-ALTA**"
+   ],
+   [
+    "La brecha se desplazó de la adopción a la capacidad docente",
+    "77 % de uso docente frente a 17 % de nivel avanzado y 80 % de falta de claridad",
+    "Muestras autoseleccionadas",
+    "**MEDIA-ALTA**"
+   ],
+   [
+    "La transformación declarada excede con mucho a la verificada",
+    "19 % de políticas vigentes; ausencia total de evidencia de resultados a escala",
+    "La documentación pública subestima lo que ocurre en el aula",
+    "**MEDIA-ALTA**"
+   ],
+   [
+    "La percepción del propio rendimiento asistido está descalibrada",
+    "METR: 39 puntos de brecha entre percepción y medición",
+    "n = 16; resultado reclasificado como histórico",
+    "**MEDIA-ALTA**"
+   ],
+   [
+    "Se erosiona el peldaño de entrada al trabajo profesional cualificado",
+    "Brynjolfsson et al.: −19 % en jóvenes de 22-25 años en ocupaciones expuestas",
+    "Sin desplazamiento agregado; atribución causal a la IA no es completa",
+    "**MEDIA**"
+   ],
+   [
+    "Se forma una brecha de aprendizaje asistido con dimensión de género, renta e idioma",
+    "Otis et al.: −22 % y persistencia con acceso igualado; 17 % de conectividad en países de ingreso bajo",
+    "Evidencia también de efecto nivelador en desempeño",
+    "**MEDIA**"
+   ],
+   [
+    "El coste de la evaluación válida es el principal riesgo de fracaso de la reforma",
+    "Los instrumentos robustos son intensivos en horas docentes; ninguna institución los presupuestó",
+    "Razonamiento estructural, no medición directa",
+    "**MEDIA**"
+   ],
+   [
+    "La IA daña de forma duradera capacidades cognitivas generales",
+    "Kosmyna et al.",
+    "Preliminar, n = 54, cuestionado metodológicamente, tarea única",
+    "**INSUFICIENTE**"
+   ]
+  ]
+ }
+]

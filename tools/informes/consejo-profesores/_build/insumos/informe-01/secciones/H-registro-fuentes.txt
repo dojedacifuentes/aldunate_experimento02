@@ -1,0 +1,552 @@
+[Informe 01 v3.2.0 · líneas 2896-3447 del texto completo]
+
+Registro completo de fuentes
+
+Las 74 fuentes del corpus original, todas contrastadas contra su publicación original al 6 de septiembre de 2026. Las 22 que aportó la ronda de ampliación se listan aparte, en el anexo I, y no han pasado ese contraste. La confianza documental de cada una se deriva de la jerarquía de
+ fuentes del protocolo por su tipo, y no es una medida de madurez institucional. Las 31 fuentes de
+ contraste externo se listan en el anexo E.
+
+Fuentes nacionales · 2 fuentes
+
+src-nacional-001
+
+Sistema de Acceso a la Educación Superior · buscador de oferta académica 2026
+Ministerio de Educación de Chile · base-oficial · no declaradahttps://acceso.mineduc.cl/
+
+CONTRASTADA
+
+src-nacional-002
+
+INDICES · Bases de datos de oferta académica de pregrado 2026
+Consejo Nacional de Educación · base-oficial · 2026-01-08https://cned.cl/institucional/bases-de-datos
+
+CONTRASTADA
+
+Pontificia Universidad Católica de Chile · 12 fuentes
+
+src-puc-chile-001
+
+Programa de Derecho, Ciencia y Tecnología UC
+Facultad de Derecho UC · pagina-institucional · no declaradahttps://derechocienciaytecnologia.uc.cl/
+
+CONTRASTADA
+
+src-puc-chile-002
+
+Graduación de la generación 2024 de los diplomados del Programa de Derecho, Ciencia y Tecnología UC
+Programa de Derecho, Ciencia y Tecnología UC · noticia-institucional · 2025-01-08https://derechocienciaytecnologia.uc.cl/2025/01/08/graduacion-de-la-generacion-2024-de-los-diplomados-del-programa-de-derecho-ciencia-y-tecnologia-uc
+
+CONTRASTADA
+
+src-puc-chile-003
+
+Graduación de la generación 2025 de los diplomados del Programa de Derecho, Ciencia y Tecnología UC
+Programa de Derecho, Ciencia y Tecnología UC · noticia-institucional · 2026-01-16https://derechocienciaytecnologia.uc.cl/2026/01/16/graduacion-de-la-generacion-2025-de-los-diplomados-del-programa-de-derecho-ciencia-y-tecnologia-uc
+
+CONTRASTADA
+
+src-puc-chile-004
+
+Derecho UC formaliza la creación del primer Departamento de Derecho y Tecnología en Chile
+Facultad de Derecho UC · noticia-institucional · 2025-12-31https://derecho.uc.cl/derecho-uc-formaliza-la-creacion-del-primer-departamento-de-derecho-y-tecnologia-en-chile
+
+CONTRASTADA
+
+src-puc-chile-005
+
+Estructura orgánica · Derecho UC Transparente
+Facultad de Derecho UC · pagina-institucional · no declaradahttps://derecho.uc.cl/facultad/derecho-uc-transparente/estructura-organica
+
+CONTRASTADA
+
+src-puc-chile-006
+
+Derecho UC inaugura año académico 2026 con foco en excelencia, innovación y proyección internacional
+Facultad de Derecho UC · noticia-institucional · 2026-05-14https://derecho.uc.cl/derecho-uc-inaugura-ano-academico-2026-con-foco-en-excelencia-innovacion-y-proyeccion-internacional
+
+CONTRASTADA
+
+src-puc-chile-007
+
+Expertos extranjeros y académicos de Derecho UC analizaron la ética en la inteligencia artificial
+Facultad de Derecho UC · noticia-institucional · 2026-04-10https://derecho.uc.cl/expertos-extranjeros-y-academicos-de-derecho-uc-analizaron-la-etica-en-la-inteligencia-artificial
+
+CONTRASTADA
+
+src-puc-chile-008
+
+Facultad de Derecho UC establece guía ética para uso de inteligencia artificial generativa
+Facultad de Derecho UC · politica · 2026-08-21https://derecho.uc.cl/facultad-de-derecho-uc-establece-guia-etica-para-uso-de-inteligencia-artificial-generativa
+
+CONTRASTADA
+
+src-puc-chile-009
+
+Matías Aránguiz asume como nuevo director del Programa de Derecho, Ciencia y Tecnología
+Facultad de Derecho UC · noticia-institucional · 2026-01-13https://derecho.uc.cl/matias-aranguiz-asume-como-nuevo-director-del-programa-de-derecho-ciencia-y-tecnologia
+
+CONTRASTADA
+
+src-puc-chile-010
+
+Seminario analiza el impacto jurídico de la inteligencia artificial en Chile, México y EE. UU.
+Programa de Derecho, Ciencia y Tecnología UC · noticia-institucional · 2025-04-03https://derechocienciaytecnologia.uc.cl/2025/04/03/seminario-analiza-el-impacto-juridico-de-la-inteligencia-artificial-en-chile-mexico-y-ee-uu
+
+CONTRASTADA
+
+src-puc-chile-011
+
+Diplomado en Derecho e Inteligencia Artificial · Educación Continua UC
+Educación Continua UC · programa-postgrado · no declaradahttps://educacioncontinua.uc.cl/programas/diplomado-en-derecho-e-inteligencia-artificial
+
+CONTRASTADA
+
+src-puc-chile-012
+
+AyudantIA UC
+Pontificia Universidad Católica de Chile · pagina-institucional · no declaradahttps://docencia.ia.uc.cl/ayudantia
+
+CONTRASTADA
+
+Pontificia Universidad Católica de Valparaíso · 14 fuentes
+
+src-pucv-001
+
+Legal Management Innovation Lab: nuevo laboratorio de innovación
+Facultad de Derecho PUCV · noticia-institucional · 2022-01-06https://pucv.cl/uuaa/derecho/noticias/legal-management-innovation-lab-nuevo-laboratorio-de-innovacion
+
+CONTRASTADA
+
+src-pucv-002
+
+Núcleo de Derecho, Inteligencia Artificial y Tecnología PUCV
+Facultad de Derecho PUCV · noticia-institucional · 2023-11-20https://pucv.cl/uuaa/derecho/noticias/nucleo-de-derecho-inteligencia-artificial-y-tecnologia-pucv-desarrolla
+
+CONTRASTADA
+
+src-pucv-003
+
+Tecnología jurídica en acción: el Programa DIAT PUCV integra la inteligencia artificial
+Facultad de Derecho PUCV · noticia-institucional · 2024-04-24https://pucv.cl/uuaa/derecho-pucv/noticias/tecnologia-juridica-en-accion-programa-diat-pucv-integra-la
+
+CONTRASTADA
+
+src-pucv-004
+
+ScribeClaroPU CV, herramienta para una redacción jurídica clara
+Facultad de Derecho PUCV · noticia-institucional · 2025-01-30https://pucv.cl/uuaa/derecho-pucv/noticias/scribeclaropucv-innovadora-herramienta-para-una-redaccion-juridica-clara
+
+CONTRASTADA
+
+src-pucv-005
+
+Destacada participación de estudiantes en la jornada de cierre del Taller de IA y Prompting Jurídico
+Facultad de Derecho PUCV · noticia-institucional · 2025-10-07https://pucv.cl/uuaa/derecho-pucv/noticias/destacada-participacion-de-estudiantes-en-la-jornada-de-cierre-del
+
+CONTRASTADA
+
+src-pucv-006
+
+Facultad y Escuela de Derecho PUCV se adjudican dos proyectos de Vinculación con el Medio
+Facultad de Derecho PUCV · noticia-institucional · 2026-06-03https://pucv.cl/uuaa/derecho-pucv/noticias/facultad-y-escuela-de-derecho-pucv-se-adjudican-dos-proyectos-de
+
+CONTRASTADA
+
+src-pucv-007
+
+Con gran participación de académicas y académicos se realizó Día de la IA
+Pontificia Universidad Católica de Valparaíso · noticia-institucional · 2026-01-09https://pucv.cl/pucv/noticias/destacadas/universidad-presento-decalogo-para-el-uso-etico-de-la-inteligencia
+
+CONTRASTADA
+
+src-pucv-008
+
+Profesor James M. Cooper encabezó workshop internacional sobre manejo de IA en el ámbito legal
+Facultad de Derecho PUCV · noticia-institucional · 2026-06-18https://pucv.cl/uuaa/derecho-pucv/noticias/profesor-james-m-cooper-encabezo-workshop-internacional-sobre-manejo-de
+
+CONTRASTADA
+
+src-pucv-009
+
+Diplomado Legal Management Program y Legal Management Innovation Lab
+Facultad de Derecho PUCV · noticia-institucional · 2023-04-18https://pucv.cl/uuaa/derecho/noticias/diplomado-legal-management-program-y-legal-management-innovation-lab
+
+CONTRASTADA
+
+src-pucv-010
+
+Laboratorio de Innovación Legal y Programa de Derecho e Inteligencia Artificial se adjudican Fondos Concursables de Vinculación con el Medio PUCV
+Facultad de Derecho PUCV · noticia-institucional · 2025-08-11https://pucv.cl/uuaa/derecho-pucv/noticias/laboratorio-de-innovacion-legal-y-programa-de-derecho-e-inteligencia
+
+CONTRASTADA
+
+src-pucv-011
+
+IV versión de Innova Day 2025
+Facultad de Derecho PUCV · noticia-institucional · no declaradahttps://pucv.cl/uuaa/derecho-pucv/noticias/exitosa-iv-version-de-innova-day-2025-fomentando-la-innovacion-legal
+
+CONTRASTADA
+
+src-pucv-012
+
+Derecho · pregrado PUCV
+Pontificia Universidad Católica de Valparaíso · curricular · no declaradahttps://pucv.cl/pucv/pregrado/derecho
+
+CONTRASTADA
+
+src-pucv-013
+
+Universidad habilita la herramienta Gemini IA para fortalecer el trabajo académico
+Pontificia Universidad Católica de Valparaíso · noticia-institucional · 2026-03-19https://pucv.cl/pucv/noticias/vida-universitaria/universidad-habilita-herramienta-gemini-ia-para-fortalecer-el-trabajo
+
+CONTRASTADA
+
+src-pucv-014
+
+Profesor Eduardo Aldunate publica artículo en revista indexada
+Facultad de Derecho PUCV · noticia-institucional · no declaradahttps://pucv.cl/uuaa/derechopublico/noticias/profesor-eduardo-aldunate-publica-articulo-en-prestigiosa-revista
+
+CONTRASTADA
+
+Universidad Adolfo Ibáñez · 3 fuentes
+
+src-uai-001
+
+Laboratorio de Justicia Centrada en las Personas UAI dicta curso de IA para la Academia Judicial
+Facultad de Derecho UAI · noticia-institucional · 2026-04-22https://uai.cl/noticias/derecho/laboratorio-de-justicia-centrada-en-las-personas-uai-dicta-curso-de-ia-para-la-academia-judicial
+
+CONTRASTADA
+
+src-uai-002
+
+Facultad de Derecho firma convenio con Legu, legaltech que impulsa el acceso al derecho mediante IA
+Universidad Adolfo Ibáñez · noticia-institucional · 2026-01-12https://alumni.uai.cl/news/noticias-uai/905/905-Facultad-de-Derecho-firma-convenio-con-Legu-legaltech-que-impulsa-el-acceso-al-derecho-mediante-IA
+
+CONTRASTADA
+
+src-uai-003
+
+Ricardo Lillo, Esteban Pereira y Javier Wilenmann se adjudican proyectos Fondecyt Regular 2026
+Universidad Adolfo Ibáñez · noticia-institucional · 2026-01-29https://uai.cl/noticias/derecho/ricardo-lillo-esteban-pereira-y-javier-wilenmann-se-adjudican-proyectos-fondecyt-regular-2026
+
+CONTRASTADA
+
+Universidad Andrés Bello · 4 fuentes
+
+src-unab-001
+
+Facultad de Derecho UNAB presentó su cuenta pública 2025
+Universidad Andrés Bello · resultado-institucional · 2026-03-01https://noticias.unab.cl/facultad-de-derecho-unab-presento-su-cuenta-publica-2025-con-foco-en-innovacion-internacionalizacion-y-fortalecimiento-academico
+
+CONTRASTADA
+
+src-unab-002
+
+UNAB lanzó Asesor Virtual de Insolvencia
+Universidad Andrés Bello · noticia-institucional · 2025-10-27https://noticias.unab.cl/unab-lanzo-asesor-virtual-de-insolvencia
+
+CONTRASTADA
+
+src-unab-003
+
+UNAB impulsa MIAsistentes, un ecosistema de inteligencia artificial para acompañar el aprendizaje
+Universidad Andrés Bello · noticia-institucional · 2026-08-31https://noticias.unab.cl/unab-impulsa-miasistentes-un-ecosistema-de-inteligencia-artificial-para-acompanar-el-aprendizaje-y-la-experiencia-universitaria
+
+CONTRASTADA
+
+src-unab-004
+
+Diplomado en Derecho, Innovación y Tecnología
+Postgrado UNAB · programa-postgrado · 2026-08-28https://postgrado.unab.cl/programas/diplomado-en-derecho-innovacion-y-tecnologia
+
+CONTRASTADA
+
+Universidad Autónoma de Chile · 3 fuentes
+
+src-uautonoma-001
+
+Alfabetización en IA generativa en Derecho alcanza al 80 % de docentes y se amplía a estudiantes
+Universidad Autónoma de Chile · noticia-institucional · 2026-05-27https://uautonoma.cl/noticias/alfabetizacion-en-ia-generativa-en-derecho-alcanza-al-80-de-docentes-y-se-amplia-a-estudiantes
+
+CONTRASTADA
+
+src-uautonoma-002
+
+Facultad de Derecho pone en marcha programa de formación en inteligencia artificial para estudiantes de sus clínicas jurídicas
+Universidad Autónoma de Chile · noticia-institucional · 2026-08-10https://uautonoma.cl/noticias/facultad-de-derecho-pone-en-marcha-innovador-programa-de-formacion-en-inteligencia-artificial-para-estudiantes-de-sus-clinicas-juridicas
+
+CONTRASTADA
+
+src-uautonoma-003
+
+Estudiantes de Derecho egresan del Minor en Inteligencia Artificial y Derecho
+Universidad Autónoma de Chile · noticia-institucional · 2026-01-09https://uautonoma.cl/noticias/estudiantes-de-derecho-egresan-del-minor-en-inteligencia-artificial-y-derecho
+
+CONTRASTADA
+
+Universidad Central de Chile · 4 fuentes
+
+src-ucentral-001
+
+U. Central destaca en el Latin America Innovation Showcase del QS Reimagine Education Conference 2025
+Universidad Central de Chile · noticia-institucional · 2025-12-03https://noticias.ucentral.cl/noticias/u-central-destaca-en-el-latin-america-innovation-showcase-del-qs-reimagine-education-conference-2025-con-innovadora-practica-docente
+
+CONTRASTADA
+
+src-ucentral-002
+
+Inteligencia artificial y derechos fundamentale s · Revista DIE
+Universidad Central de Chile · noticia-institucional · 2026-08-25https://noticias.ucentral.cl/noticias/inteligencia-artificial-derechos-fundamentales-revista-die
+
+CONTRASTADA
+
+src-ucentral-003
+
+Programa de IA y LegalTech · Facultad de Derecho y Humanidades
+Facultad de Ciencias Jurídicas y Sociales, Universidad Central · pagina-institucional · no declaradahttps://facdeh.ucentral.cl/legal-tech
+
+CONTRASTADA
+
+src-ucentral-004
+
+Universidad Central presenta IDEA UCEN, nueva plataforma de búsqueda
+Universidad Central de Chile · noticia-institucional · 2025-08-27https://noticias.ucentral.cl/noticias/universidad-central-presenta-idea-ucen-nueva-plataforma-de-busqueda
+
+CONTRASTADA
+
+Universidad de Chile · 16 fuentes
+
+src-uchile-001
+
+Historia · Centro de Estudios en Derecho, Tecnología y Sociedad (CE3)
+Facultad de Derecho, Universidad de Chile · pagina-institucional · no declaradahttps://derecho.uchile.cl/centro-estudios-derecho-tecnologia-sociedad/quienes-somos/historia
+
+CONTRASTADA
+
+src-uchile-002
+
+Diploma en Derecho e Inteligencia Artificial · edición 2022
+Postgrados Derecho, Universidad de Chile · programa-postgrado · 2022https://postgrados.derecho.uchile.cl/diploma-en-derecho-e-inteligencia-artificial
+
+CONTRASTADA
+
+src-uchile-003
+
+Diploma en Derecho e Inteligencia Artificial · segundo semestre de 2026
+Postgrados Derecho, Universidad de Chile · programa-postgrado · 2026-08-01https://postgrados.derecho.uchile.cl/diploma-derecho-e-inteligencia-artificial
+
+CONTRASTADA
+
+src-uchile-004
+
+¿De quién es la responsabilid ad civil cuando falla la IA?
+Facultad de Derecho, Universidad de Chile · noticia-institucional · no declaradahttps://derecho.uchile.cl/noticias/225314/de-quien-es-la-responsabilidad-civil-cuando-falla-la-ia
+
+CONTRASTADA
+
+src-uchile-005
+
+Tesis en Inteligencia Artificial · repositorio CE3
+Facultad de Derecho, Universidad de Chile · repositorio · no declaradahttps://derecho.uchile.cl/centro-estudios-derecho-tecnologia-sociedad/publicaciones/tesis/tesis-en-inteligencia-artificial
+
+CONTRASTADA
+
+src-uchile-006
+
+Publicaciones · Tesis del CE3
+Facultad de Derecho, Universidad de Chile · repositorio · no declaradahttps://derecho.uchile.cl/centro-estudios-derecho-tecnologia-sociedad/publicaciones/tesis
+
+CONTRASTADA
+
+src-uchile-007
+
+CE3 consolida liderazgo en el país y en Latinoamérica
+Facultad de Derecho, Universidad de Chile · resultado-institucional · 2026-01-08https://derecho.uchile.cl/noticias/236453/ce3-consolida-liderazgo-en-el-pais-y-en-latinoamerica
+
+CONTRASTADA
+
+src-uchile-008
+
+Congreso internacional aborda desafíos de la IA en el derecho privado
+Facultad de Derecho, Universidad de Chile · noticia-institucional · no declaradahttps://derecho.uchile.cl/noticias/228982/congreso-internacional-aborda-desafios-de-la-ia-en-el-derecho-privado
+
+CONTRASTADA
+
+src-uchile-009
+
+Workshop IA y Derecho Privado: casos prácticos
+Facultad de Derecho, Universidad de Chile · noticia-institucional · 2025-08-29https://derecho.uchile.cl/agenda/231464/workshop-ia-y-derecho-privado-casos-practicos
+
+CONTRASTADA
+
+src-uchile-010
+
+Consideracion es para una excepción de derechos de autor en la formación de sistemas de IA
+Facultad de Derecho, Universidad de Chile · noticia-institucional · 2026-06-16https://derecho.uchile.cl/agenda/241228/consideraciones-para-una-excepcion-de-derechos-de-autor-en-la
+
+CONTRASTADA
+
+src-uchile-011
+
+Profesor Alberto Cerda asume como director del CE3
+Facultad de Derecho, Universidad de Chile · noticia-institucional · 2025-01-03https://derecho.uchile.cl/noticias/224204/profesor-alberto-cerda-asume-como-director-del-ce3
+
+CONTRASTADA
+
+src-uchile-012
+
+Seminario Inteligencia Artificial y acceso a la justicia
+Facultad de Derecho, Universidad de Chile · noticia-institucional · 2025-05-14https://derecho.uchile.cl/agenda/227755/seminario-inteligencia-artificial--acceso-a-la-justicia
+
+CONTRASTADA
+
+src-uchile-013
+
+CE3 convoca a Programa de Visitas Académicas de América Latina y el Caribe
+Facultad de Derecho, Universidad de Chile · noticia-institucional · 2026-04-02https://derecho.uchile.cl/noticias/238418/ce3-convoca-a-programa-de-visitas-academicas-de-america-latina-y-el-caribe
+
+CONTRASTADA
+
+src-uchile-014
+
+Diploma en Derecho e Inteligencia Artificial para la Contraloría General de la República
+Siembra Abierta, Universidad de Chile · pagina-institucional · no declaradahttps://siembraabierta.uchile.cl/initiatives/161445
+
+CONTRASTADA
+
+src-uchile-015
+
+Lineamientos para el uso de IA en trabajos de titulación
+Universidad de Chile · politica · no declaradahttps://uchile.cl/informacion-y-bibliotecas/lineamientos-uso-ia-en-tesis
+
+CONTRASTADA
+
+src-uchile-016
+
+¡Atrévete a dar el salto con la IA Generativa!
+Vicerrectoría de Tecnologías de la Información, Universidad de Chile · pagina-institucional · 2025-09-09https://vti.uchile.cl/curso-sobre-ia-online
+
+CONTRASTADA
+
+Universidad de Concepción · 4 fuentes
+
+src-udec-001
+
+Facultad de Ciencias Jurídicas y Sociales UdeC realizó seminario sobre inteligencia artificial
+Facultad de Ciencias Jurídicas y Sociales UdeC · noticia-institucional · no declaradahttps://jur.udec.cl/content/facultad-de-ciencias-jur%C3%ADdicas-y-sociales-udec-realiz%C3%B3-seminario-sobre-inteligencia
+
+CONTRASTADA
+
+src-udec-002
+
+Seminario «Derecho en la Smart Era»
+Facultad de Ciencias Jurídicas y Sociales UdeC · noticia-institucional · 2025-10-02https://juridicasysociales.udec.cl/content/seminario-%E2%80%9Cderecho-en-la-smart-era%E2%80%9D-reuni%C3%B3-destacados-expositores-y-una-gran-audiencia-en-la
+
+CONTRASTADA
+
+src-udec-003
+
+Facultad realizó taller de inteligencia artificial para académicos y académicas
+Facultad de Ciencias Jurídicas y Sociales UdeC · noticia-institucional · no declaradahttps://jur.udec.cl/content/facultad-realiz%C3%B3-taller-de-inteligencia-artificial-para-acad%C3%A9micos-y-acad%C3%A9micas
+
+CONTRASTADA
+
+src-udec-004
+
+[genIA] · programa interdisciplinario UdeC
+Universidad de Concepción · pagina-institucional · no declaradahttps://genia.udec.cl/
+
+CONTRASTADA
+
+Universidad de los Andes · 5 fuentes
+
+src-uandes-001
+
+Investigación aplicará IA para mejorar la certeza jurídica en la evaluación ambiental de proyectos en Chile
+Universidad de los Andes · noticia-institucional · 2025-09-22https://uandes.cl/actualidad/noticias/investigacion-aplicara-ia-para-mejorar-la-certeza-juridica-en-la-evaluacion-ambiental-de-proyectos-en-chile
+
+CONTRASTADA
+
+src-uandes-002
+
+Investigación aplicará IA para agilizar la evaluación ambiental de proyectos en Chile
+Investiga UANDES · noticia-institucional · 2025-11-05https://investiga.uandes.cl/es/investigacion-aplicara-ia-para-agilizar-la-evaluacion-ambiental-de-proyectos-en-chile
+
+CONTRASTADA
+
+src-uandes-003
+
+Domus AI: la plataforma «anti permisología» que pone la inteligencia artificial al servicio de la construcción
+Universidad de los Andes · noticia-institucional · 2025-10-27https://uandes.cl/actualidad/noticias/ia-al-servicio-de-la-edificacion-prototipo-del-cet-e-ingenieria-fue-finalista-en-concurso-del-gobierno-y-el-bid
+
+CONTRASTADA
+
+src-uandes-004
+
+Curso en Compliance, ética pública y nuevas tecnologías
+Postgrados UANDES · programa-postgrado · no declaradahttps://postgrados.uandes.cl/cursos/curso-en-compliance-etica-publica-y-nuevas-tecnologias
+
+CONTRASTADA
+
+src-uandes-005
+
+Seminario: el uso de obras ajenas por los sistemas de inteligencia artificial generativa
+Postgrados UANDES · noticia-institucional · 2026-05-14https://postgrados.uandes.cl/seminarios/seminario-el-uso-de-obras-ajenas-por-los-sistemas-de-inteligencia-artificial-generativa-hacia-una-nueva-excepcion-de-los-derechos-de-autor
+
+CONTRASTADA
+
+Universidad del Desarrollo · 4 fuentes
+
+src-udd-001
+
+Carrera de Derecho · malla y admisión
+Facultad de Derecho UDD · curricular · no declaradahttps://derecho.udd.cl/carrera/derecho
+
+CONTRASTADA
+
+src-udd-002
+
+Estudiantes de debate y litigación UDD entrenan con inteligencia artificial en RealitecUDD
+Facultad de Derecho UDD · noticia-institucional · 2025-04-09https://derecho.udd.cl/noticias/2025/04/estudiantes-de-debate-y-litigacion-udd-entrenan-con-inteligencia-artificial-en-realitecudd
+
+CONTRASTADA
+
+src-udd-003
+
+Workshop del Doctorado aborda los desafíos regulatorios de la IA
+Facultad de Derecho UDD · noticia-institucional · 2026-01-14https://derecho.udd.cl/noticias/2026/01/workshop-del-doctorado-aborda-los-desafios-regulatorios-de-la-ia-y-el-rol-del-derecho-ante-los-avances-tecnologicos
+
+CONTRASTADA
+
+src-udd-004
+
+Estudiantes de Derecho UDD Concepción destacan en el cierre de una nueva edición de Incuba UDD
+Facultad de Derecho UDD · noticia-institucional · 2026-06-30https://derecho.udd.cl/noticias/2026/06/estudiantes-de-derecho-udd-concepcion-destacan-en-el-cierre-de-una-nueva-edicion-de-incuba-udd
+
+CONTRASTADA
+
+Universidad Diego Portales · 3 fuentes
+
+src-udp-001
+
+Académico Rafael Mery es nombrado director de Inteligencia Artificial y Derecho UDP
+Facultad de Derecho UDP · noticia-institucional · 2025-09-12https://derecho.udp.cl/academico-rafael-mery-es-nombrado-director-de-inteligencia-artificial-y-derecho-udp
+
+CONTRASTADA
+
+src-udp-002
+
+Dirección de Inteligencia Artificial y Derecho
+Facultad de Derecho UDP · pagina-institucional · no declaradahttps://derecho.udp.cl/direccion-de-inteligencia-artificial-y-derecho
+
+CONTRASTADA
+
+src-udp-003
+
+Nuevo convenio entre UDP y sector tecnológico busca potenciar desarrollos en inteligencia artificial y derecho
+Vicerrectoría de Investigación e Innovación UDP · noticia-institucional · 2026-04-07https://investigacioneinnovacion.udp.cl/nuevo-convenio-entre-udp-y-sector-tecnologico-busca-potenciar-desarrollos-en-inteligencia-artificial-y-derecho
+
+CONTRASTADA
+
+Anexo I
+

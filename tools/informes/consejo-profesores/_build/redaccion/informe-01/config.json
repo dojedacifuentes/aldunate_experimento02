@@ -1,0 +1,32 @@
+{
+  "salida": "../../salida/Informe-01-IA-escuelas-de-Derecho-Consejo.docx",
+  "titulo": "Informe sobre uso de IA en las Escuelas de Derecho",
+  "subtitulo": "Edición 2026",
+  "encabezado": "Uso de inteligencia artificial en las escuelas de Derecho · 2026",
+  "institucion": "Escuela de Derecho · Pontificia Universidad Católica de Valparaíso",
+  "unidad": "Documento de trabajo para el Consejo de Profesores",
+  "preparado_para": "Preparado para la Dirección de la Escuela de Derecho",
+  "autor": "Diego Hernán Ojeda Cifuentes",
+  "autor_titulo": "Licenciado en Ciencias Jurídicas",
+  "lugar_fecha": "Valparaíso, septiembre de 2026",
+  "figuras": "../../figuras/informe-01",
+  "cuerpo": [
+    "00-resumen.md",
+    "01-objetivos.md",
+    "02-metodologia.md",
+    "03-fichas-a.md",
+    "03-fichas-b.md",
+    "04-internacional.md",
+    "05-mapeo.md",
+    "06-conclusiones.md",
+    "07-referencias.md"
+  ],
+  "anexos": [
+    "A-metodologia-tecnica.md",
+    "B-matriz-y-resultados.md",
+    "C-instrumentos-y-anid.md"
+  ],
+  "sangria_francesa": [
+    "07-referencias.md"
+  ]
+}

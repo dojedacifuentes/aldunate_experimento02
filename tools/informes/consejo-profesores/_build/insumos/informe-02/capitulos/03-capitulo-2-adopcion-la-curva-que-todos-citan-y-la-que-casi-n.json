@@ -1,0 +1,71 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 2",
+  "x": "Adopción: la curva que todos citan y la que casi nadie mira"
+ },
+ {
+  "t": "lead",
+  "x": "La cifra que circula en presentaciones institucionales es que más del noventa por ciento de los estudiantes usa inteligencia artificial. Es cierta y, aislada, resulta inútil. Junto a ella existe una segunda serie, publicada en la misma encuesta, que cambia por completo el diagnóstico."
+ },
+ {
+  "t": "fig",
+  "id": "g01-uso-delegacion",
+  "cap": "Figura 1. La distancia entre ambas curvas —82 puntos porcentuales en 2026— es el espacio donde se decide la política universitaria."
+ },
+ {
+  "t": "h2",
+  "x": "2.1 Lo que dicen las dos curvas"
+ },
+ {
+  "t": "p",
+  "x": "El Higher Education Policy Institute británico ha medido lo mismo durante tres años sobre estudiantes de grado a tiempo completo. La proporción que declara usar IA generativa para trabajos evaluados pasó del 53 % en 2024 al 88 % en 2025 y al 94 % en 2026. La oleada más reciente se realizó en diciembre de 2025 sobre 1.054 estudiantes, con trabajo de campo de Savanta."
+ },
+ {
+  "t": "p",
+  "x": "En la misma encuesta, la proporción que declara **insertar directamente texto generado por IA** en el trabajo entregado pasó del 3 % al 8 % y al 12 %. Es decir: la adopción se saturó, pero la delegación total sigue siendo minoritaria, aunque se ha cuadruplicado en dos años."
+ },
+ {
+  "t": "p",
+  "x": "La lectura correcta es doble y ambas mitades importan. Por un lado, el uso es universal y ninguna política que suponga lo contrario es viable: prohibir es legislar sobre una realidad inexistente. Por otro, la mayoría de los estudiantes usa la herramienta para explicar conceptos, resumir lecturas, estructurar ideas o revisar redacción, no para sustituir el trabajo. Tratar a ese 94 % como sospechoso es tan erróneo como ignorar que el 12 % restante existe y crece."
+ },
+ {
+  "t": "callout",
+  "h": "Advertencia de lectura",
+  "c": "ochre",
+  "x": "Son datos autoinformados de una muestra británica, y el enunciado de las preguntas varió levemente entre oleadas. La serie indica magnitud y dirección con solidez; no es una medición estrictamente equivalente año a año. Además, el autoinforme sobre conducta sancionable subestima sistemáticamente: el 12 % debe leerse como un suelo, no como una estimación central."
+ },
+ {
+  "t": "h2",
+  "x": "2.2 Lo que la adopción no significa"
+ },
+ {
+  "t": "p",
+  "x": "Existe una tentación institucional de leer la penetración del uso como evidencia de transformación. No lo es. Las cifras de la misma encuesta que documentan el 94 % documentan también lo siguiente:"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "Solo el **38 %** de los estudiantes declara que su institución le provee herramientas de IA. La adopción ha sido mayoritariamente privada, con cuentas personales y planes gratuitos.",
+   "Solo el **36 %** se siente animado por su institución a usarla, y el 36 % percibe activamente lo contrario. La señal institucional es ambigua.",
+   "El **68 %** cree que las competencias de IA son esenciales para su futuro, pero solo el **48 %** siente que el profesorado le ayuda a desarrollarlas.",
+   "El **65 %** afirma que su evaluación **ha cambiado significativamente** en respuesta a la IA. Este es, con diferencia, el dato más importante de la encuesta y el que confirma que la reforma evaluativa ha llegado al aula, no solo a los documentos."
+  ]
+ },
+ {
+  "t": "p",
+  "x": "La combinación es reveladora: los estudiantes han adoptado la tecnología por su cuenta, perciben que la evaluación cambió a su alrededor y no perciben que la institución los esté acompañando. La universidad ha reaccionado defendiendo su evaluación antes que enseñando el uso."
+ },
+ {
+  "t": "h2",
+  "x": "2.3 El estado institucional del lado de la oferta"
+ },
+ {
+  "t": "p",
+  "x": "En Estados Unidos, EDUCAUSE reporta que alrededor del 74 % de las instituciones tiene al menos un despliegue de IA en producción que afecta directamente a estudiantes, frente al 28 % a principios de 2024; y la proporción de líderes institucionales que se declaran cautelosos cayó del 23 % en 2024 al 15 % en 2026. La cautela se ha disuelto más rápido que la evidencia que la justificaría."
+ },
+ {
+  "t": "p",
+  "x": "En el plano normativo, la encuesta de UNESCO difundida en septiembre de 2025 —400 respuestas de Cátedras UNESCO y Redes UNITWIN en 90 países— es más matizada de lo que sugiere su titular, y se analiza en el capítulo 8."
+ }
+]

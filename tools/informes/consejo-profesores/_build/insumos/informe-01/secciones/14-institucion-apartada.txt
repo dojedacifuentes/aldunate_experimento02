@@ -1,0 +1,58 @@
+[Informe 01 v3.2.0 · líneas 1579-1636 del texto completo]
+
+8 · La institución que no está en el comparador
+
+El comparador de este informe cubre diez instituciones y la cohorte del corpus once.
+ La diferencia no es un descuido: la Pontificia Universidad Católica de Valparaíso fue retirada del
+ orden y de las diez variables de capacidad, y la razón se explica aquí porque el lector tiene derecho
+ a evaluarla.
+
+Conflicto de interés, y por qué no basta con declararlo
+
+Quien firma este informe trabaja en el programa de inteligencia artificial y tecnología de la
+ Escuela de Derecho de esa universidad, participa en la organización de su certamen de innovación
+ legal y lleva seis años vinculado a la institución. El conflicto es actual, directo y sobre
+ el objeto medido.
+
+Las versiones anteriores lo administraron con una declaración de intereses y una doble revisión
+ publicada. Una declaración advierte al lector, pero no corrige el dato: traslada a quien lee un
+ problema que era del método.
+
+Hay además un segundo sesgo, y es medible. Esa institución fue una de las tres del piloto de
+ profundidad: se le recorrieron más rutas, se le localizaron catorce fuentes frente a una media de
+ 3,8 en las que quedaron fuera del piloto, y se le verificó una proporción mayor del corpus. En un
+ instrumento que puntúa capacidades acreditadas mediante evidencia pública,
+ investigar más a una institución eleva su puntuación sin que nada haya cambiado en ella.
+
+Por esa razón este informe no publica su puntuación ni su lugar. Una cifra calculada sobre un esfuerzo de investigación mayor que el aplicado a las demás no es comparable con las suyas, y presentarla como posición sería usar contra las otras diez justamente el instrumento del que esta institución acaba de ser retirada. Su perfil se describe capacidad por capacidad en el documento complementario, que no puntúa contra nadie y no ordena.
+
+Qué se hizo, exactamente
+
+La institución sale del comparador ordinal y de la matriz de capacidades, y no
+ recibe puntuación ni lugar. Permanece en la cohorte histórica y en el registro de fuentes,
+ porque el corpus documenta once instituciones y retirar sus fuentes empobrecería la descripción del
+ campo sin resolver ningún sesgo.
+
+Su examen se publica aparte, en un documento complementario que no puntúa ni compara, y que
+ evalúa proyecciones sobre la base ya verificada. Ese documento declara el mismo conflicto en su
+ primera página.
+
+Lo que esta decisión cuesta. El comparador pierde a una
+ institución sobre la que existe más evidencia que sobre casi ninguna otra, y el lector pierde la
+ posibilidad de situarla junto a las demás. Se acepta ese costo porque la alternativa —publicar un
+ orden en el que el autor tiene interés directo— compromete el instrumento entero y no sólo una fila.
+ Lo que se pierde en cobertura se gana en que el orden de las diez restantes signifique algo.
+
+Dos secciones que este informe ya no contiene
+
+Las versiones anteriores incluían una sección de implicancias para la Pontificia Universidad
+ Católica de Valparaíso y un anexo con su evidencia completa. Ambas se trasladaron al
+ documento complementario, junto con el examen de esa institución, por la razón
+ que explica la sección 8: el autor tiene un conflicto de interés directo sobre ella y su análisis
+ no puede convivir con el comparador sin contaminarlo.
+
+El material no se suprimió. Está publicado aparte, con la declaración de intereses en su primera
+ página, y sin puntuación ni lugar en ningún orden.
+
+16
+

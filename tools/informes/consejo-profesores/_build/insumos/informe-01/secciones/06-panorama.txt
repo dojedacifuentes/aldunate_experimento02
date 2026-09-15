@@ -1,0 +1,93 @@
+[Informe 01 v3.2.0 · líneas 701-795 del texto completo]
+
+Panorama del conjunto
+
+Antes de comparar instituciones conviene ver la forma del conjunto:
+ cuándo empezó, con qué instrumentos se está haciendo, hasta dónde ha llegado y en qué dirección
+ apunta.
+
+¿Desde cuándo existe este fenómeno en las Facultades chilenas?
+
+El campo entero cabe en dos años: 41 de las 49 iniciativas fechadas empiezan en 2025 o después
+
+[FIGURA SVG]
+
+El año es el de inicio declarado por la fuente, no el de su publicación. Cuatro
+ iniciativas no declaran fecha y no se les inventa una; una anuncia su inicio para 2027. Las dos
+ anteriores a 2020 son unidades que existían antes de la inteligencia artificial generativa y que
+ incorporaron el tema más tarde: su antigüedad no es antigüedad en esta materia.
+
+¿Con qué instrumentos institucionales se está incorporando la inteligencia artificial?
+
+Predominan los programas formativos y las herramientas; las normas, los convenios y las publicaciones son marginales
+
+[FIGURA SVG]
+
+De la Facultad, su centro o un equipo académico
+ De la universidad, un individuo o los estudiantes
+
+El mecanismo es ortogonal a la dimensión: la dimensión dice en qué ámbito académico
+ ocurre algo y el mecanismo, con qué instrumento se hace. La clasificación no aporta evidencia
+ nueva —reordena la que ya estaba verificada en el nombre, la unidad responsable y los productos de
+ cada registro— y por eso no reabre la verificación de ninguna fuente. La diferencia entre las dos
+ barras de «Herramienta» es el hallazgo H-4 en una sola imagen.
+
+Vocabulario de mecanismos institucionales
+
+Mecanismo | Qué comprende | 
+ Iniciativas | De la Facultad | 
+
+Unidad | Centro, programa, departamento, dirección, laboratorio o núcleo. | 7 | 7 | 
+
+Norma o política | Política, guía, lineamiento, decálogo o regla de integridad académica. | 4 | 2 | 
+
+Programa formativo | Diplomado, diploma, minor, curso, taller o capacitación. | 12 | 11 | 
+
+Asignatura o malla | Actividad dentro de una asignatura o línea declarada de la malla. | 4 | 4 | 
+
+Herramienta | Sistema, asistente, plataforma o licencia puesta a disposición. | 11 | 4 | 
+
+Proyecto | Investigación, I+D o adjudicación de fondo concursable. | 3 | 2 | 
+
+Actividad | Seminario, workshop o jornada de una sola ocurrencia. | 8 | 7 | 
+
+Convenio | Acuerdo o alianza con un tercero. | 4 | 3 | 
+
+Publicación | Revista, número monográfico o línea editorial. | 2 | 2 | 
+
+¿Hasta dónde llega la institucionalización de lo que se hace?
+
+La escalera se llena hasta el tercer peldaño y se detiene antes del cuarto
+
+[FIGURA SVG]
+
+El peldaño se aplica a la iniciativa y nunca a la universidad, y no se promedia: una
+ institución puede exhibir muchas actividades con baja institucionalización y otra pocas pero
+ formalizadas. Un promedio borraría justo esa diferencia.
+
+El cuarto peldaño está vacío, y esta vez sabemos que no es por falta de haber mirado
+
+Se localizaron métricas de cobertura —cerca del 80 % del profesorado de Derecho de una Facultad,
+ unos noventa participantes en un taller, dos cohortes graduadas, más de 300 consultas a un
+ asistente docente— y ninguna es una medición de efecto: cuántos asistieron no dice si algo cambió.
+ La ruta que acreditaría una evaluación publicada se recorrió en las once instituciones, y se consultó además de forma exhaustiva la base histórica de proyectos adjudicados por ANID. El resultado es
+ el mismo por dos caminos independientes. Bastaría una Facultad que midiera el efecto de una sola
+ actividad que ya realiza y lo publicara para que este peldaño dejara de estar vacío.
+
+¿Se está usando la IA para enseñar Derecho, o se la estudia como objeto jurídico?
+
+Tres de cada cuatro iniciativas usan la IA; una minoría la estudia como problema jurídico
+
+[FIGURA SVG]
+
+Cada iniciativa recibe una sola dirección, y las que integran las dos de forma
+ sustantiva se registran como «ambas» en vez de contarse dos veces. La categoría adyacente existe
+ para lo contrario: tratar como inteligencia artificial una tecnología digital que no lo es
+ —realidad virtual, un laboratorio de innovación legal, una plataforma de búsqueda— es el modo de
+ inflar un mapa sin inventar una sola fuente. El contraste externo invierte esta proporción: de los
+ siete proyectos ANID de disciplina Derecho con objeto de IA, siete son «Derecho de la IA» y ninguno
+ es «IA para el Derecho». Donde hay financiamiento competitivo, la IA es el objeto de estudio y no
+ la herramienta de trabajo.
+
+08
+

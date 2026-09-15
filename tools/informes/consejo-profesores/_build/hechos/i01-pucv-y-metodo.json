@@ -1,0 +1,643 @@
+{
+  "_meta": {
+    "objeto": "Base de hechos del capítulo PUCV y de la metodología para el Documento A (Consejo de Profesores, Escuela de Derecho PUCV).",
+    "preparado": "2026-09-13",
+    "insumos_leidos": [
+      "insumos/informe-01/complemento-pucv-v1.2.txt (completo: secciones 1 a 9 y anexo)",
+      "insumos/informe-01/informe-01-v3.2.0.txt: introducción y objetivos (407-494), sección 3 con declaración de intereses (499-695), panorama y cobertura (701-887), sección 8 (1579-1631), cierre de la sección 10 (1890-1928), secciones 11 y 12 (1934-2038), nota metodológica (2044-2101), anexo A PUCV y UC (2107-2151), anexo C (2480-2555), anexo D (2559-2655), anexo E (2659-2745), anexo G (2818-2890), anexo I (3446-3462 y 3596-3623)",
+      "aldunate_experimento02/docs/informes/CHECKPOINT-complemento-pucv.md (completo)",
+      "aldunate_experimento02/docs/HANDOFF-EMPUJAR-v3.md (líneas 95-140)",
+      "aldunate_experimento02/content/reports/01_ia_escuelas_derecho_chile/canonical/metodologia-v2.1.md (dimensiones y tabla de capacidades)",
+      "insumos/informe-01/cobertura.csv, matriz-v2.json (clave v2 y despues), decisiones.mjs, fuentes.csv, evidencias.csv e iniciativas.csv (filas PUCV)"
+    ],
+    "regla_de_prevalencia": "Donde el complemento v1.2 contradice al checkpoint o a la matriz, prevalece lo verificado (checkpoint + matriz-v2.json + rúbrica del anexo D) y la contradicción queda anotada en el campo correspondiente y en errores_a_no_heredar.",
+    "hallazgo_sobre_el_insumo": "El texto complemento-pucv-v1.2.txt NO incorpora las correcciones que el checkpoint prescribía para la v1.2: conserva D-3 con «+1 a +2», D-4 con «+1 punto en adopción en la enseñanza» y la aritmética «hasta 9 puntos». Tampoco trae D-7, D-8 ni D-9. Las decisiones de este archivo llevan la aritmética corregida.",
+    "convenciones": "FALTANTE = el dato no está en los insumos. SIN FUENTE IDENTIFICADA = el complemento lo afirma como verificado, pero no hay identificador de fuente en fuentes.csv, en los anexos H o I del informe ni en ningún CSV del repositorio."
+  },
+  "pucv": {
+    "declaracion_interes": {
+      "texto_complemento_seccion_1": "El autor es parte interesada: trabaja en el Programa de Derecho, Inteligencia Artificial y Tecnología (DIAT) de la Escuela de Derecho de la PUCV, participa en la organización del certamen de innovación legal de la Facultad y lleva seis años vinculado a la Universidad. El complemento lo califica de conflicto «actual, directo y sobre el objeto medido».",
+      "texto_informe_seccion_3": "El autor figura como Director de Operaciones en el equipo técnico del Programa DIAT, según la página pública del propio Programa. La iniciativa se registra y clasifica con las mismas reglas que las otras cincuenta y dos (53 iniciativas en total).",
+      "texto_informe_seccion_8": "Trabaja en el programa de IA y tecnología de la Escuela, participa en la organización del certamen de innovación legal y lleva seis años vinculado a la institución.",
+      "por_que_no_basta_declarar": "Una declaración advierte al lector, pero no corrige el dato: le traslada un problema que era del método. A eso se suma un segundo sesgo, medible: la PUCV fue una de las tres instituciones del piloto de profundidad, y en un instrumento que puntúa evidencia pública, investigar más a una institución sube mecánicamente su puntaje.",
+      "decision": "La PUCV sale del comparador ordinal y de la matriz de diez capacidades; no recibe lugar. Sigue en la cohorte histórica de once y en el registro de fuentes (sus 14 fuentes no se retiran). Su examen va en documento aparte, con la declaración en la primera página. El checkpoint cita esta decisión como D-037.",
+      "costo_declarado": "El comparador pierde a la institución sobre la que hay más evidencia, y el lector pierde la posibilidad de situarla. Se acepta porque publicar un orden en el que el autor tiene interés compromete el instrumento entero, no una fila.",
+      "regla_del_checkpoint": "La declaración de intereses se conserva íntegra: «Un documento que empuja a invertir en un área y oculta que su autor trabaja en ella es refutable de un golpe» (CHECKPOINT §4).",
+      "dato_del_registro_para_decision_editorial": "La nota de verificación de src-pucv-003 (24-04-2024) registra que esa página identifica como líderes del Programa DIAT a Johann Benfeld, Eduardo Aldunate y Diego Ojeda. Ninguna declaración vigente menciona al profesor Aldunate, y el Documento A se prepara a pedido suyo como director. Hay que decidir si se declara y cómo; este archivo no lo resuelve."
+    },
+    "sesgo_piloto": [
+      {
+        "indicador": "Fuentes localizadas",
+        "pucv": "14",
+        "media_demas": "3,8",
+        "verificacion": "Reproducible con cobertura.csv, pero 3,8 NO es la media de las otras diez: es la de las ocho fuera del piloto (30/8 = 3,75). La de las otras diez es 5,8. La sección 8 del informe lo formula bien («en las que quedaron fuera del piloto»); la tabla del complemento lo rotula «Media de las demás», que es impreciso."
+      },
+      {
+        "indicador": "Proporción del corpus verificada en la ronda inicial",
+        "pucv": "86 %",
+        "media_demas": "44 %",
+        "verificacion": "86 % es reproducible (12 de 14 en cobertura.csv del 04-09-2026). 44 % NO es reproducible con cobertura.csv: las otras diez dan 43,1 % agregado (25 de 58) y 41,8 % como media de proporciones; las ocho fuera del piloto, 40,0 %. Hay que usar la cifra con su cálculo declarado o marcarla como por confirmar. Es una cifra histórica: al corte del 06-09-2026, las 74 fuentes del corpus original están contrastadas en las once instituciones."
+      },
+      {
+        "indicador": "Celdas sin concluir tras la ronda 2",
+        "pucv": "0",
+        "media_demas": "0,5",
+        "verificacion": "Reproducible con matriz-v2.json («despues»): 5 celdas en las diez del comparador (U. de Chile 1, U. de Concepción 1, U. de los Andes 2, U. del Desarrollo 1)."
+      },
+      {
+        "indicador": "Rutas del protocolo recorridas (de 13)",
+        "pucv": "11",
+        "media_demas": "6,6 (media de las ocho fuera del piloto); la media del piloto es 11,7",
+        "verificacion": "Tabla de cobertura del informe y anexo A. Razón de 1,8 a 1 en rutas y de 3,7 a 1 en fuentes. No está en la tabla del complemento; se añade porque es el indicador que el informe usa para el sesgo."
+      },
+      {
+        "indicador": "Posición que habría ocupado en el comparador",
+        "pucv": "segunda de once, con banda cerrada 18–18",
+        "media_demas": "no aplica",
+        "verificacion": "Reproducible: P. U. Católica de Chile 20–20; PUCV 18–18; U. Autónoma de Chile y U. Central de Chile 17–17. El complemento la publica «precisamente porque el documento no la usa». El encargo del Documento A pide puntaje sin posición: reproducir o no esta fila es decisión editorial."
+      }
+    ],
+    "perfil": [
+      {
+        "capacidad": "Unidad especializada",
+        "estado": "OP (en operación, sin instrumento formal)",
+        "puntos": 2,
+        "que_la_sostiene": "Programa DIAT, antes Núcleo de Derecho, Inteligencia Artificial y Tecnología (así en 2023; Programa DIAT desde 2024), con director identificado y continuidad declarada desde 2020 (src-pucv-002, src-pucv-003). Legal Management Innovation Lab (LMIL), que en 2022 dependía de la Dirección de Incubación y Negocios de la Universidad y en 2025 aparece como unidad de la Escuela (src-pucv-001, src-pucv-011).",
+        "que_falta": "Instrumento formal: acto de creación publicado o unidad en un organigrama publicado. La única afirmación de origen dice «se oficializa en el 2020» sin instrumento. La unidad tiene cuatro denominaciones en fuentes de la Universidad y tres directores sin acto publicado en ninguna transición. Ni el Programa ni el Laboratorio tienen página en el dominio de la PUCV. Falta 1 punto, clase instrumento (D-1)."
+      },
+      {
+        "capacidad": "Norma propia",
+        "estado": "ENT (sólo en el entorno)",
+        "puntos": 1,
+        "que_la_sostiene": "Decálogo universitario sobre uso ético de la IA en docencia, presentado en el Día de la IA (src-pucv-007, 09-01-2026). Lo elaboró la Unidad de Integridad Académica, dependiente de la Vicerrectoría Académica, bajo la conducción de una profesora de la Escuela de Derecho. Según su propio texto «sugiere recomendaciones»; no consta decreto ni resolución.",
+        "que_falta": "Norma de la Escuela o de la Facultad con órgano aprobador identificado, deberes exigibles y régimen de consecuencias. Faltan 2 puntos, clase nivel (D-2)."
+      },
+      {
+        "capacidad": "Presencia en pregrado",
+        "estado": "OP",
+        "puntos": 2,
+        "que_la_sostiene": "Integración de IA en Filosofía del Derecho, 2024, con prompting y un chatbot de asignatura: dos sesiones documentadas con el caso «Los Exploradores de Cavernas», ChatGPT 3.5 y el chatbot «Jaime» (src-pucv-003, fuente única). ScribeClaroPUCV, destinada a estudiantes de Derecho desde primer año (src-pucv-004; iniciativa en la dimensión pregrado).",
+        "que_falta": "Código de asignatura con créditos y semestre publicados, o certificación con programa, horas y registro de participantes. No constan matrícula, semestre, evaluación ni continuidad de la experiencia. La malla vigente, verificada en sus diez semestres según el informe y el complemento, no tiene asignaturas de IA ni de tecnología jurídica. Salvedad: la ruta programas-syllabus no se recorrió en la PUCV (anexo A). Falta 1 punto, clase instrumento (D-3)."
+      },
+      {
+        "capacidad": "Formación estructurada",
+        "estado": "OP",
+        "puntos": 2,
+        "que_la_sostiene": "Talleres de alfabetización digital y de prompting jurídico 2024–2025. El Taller de IA Generativa y Prompting Jurídico 2025 tuvo tres sesiones (3, 10 y 24 de septiembre) y «cerca de 90 participantes», que eran estudiantes de distintas universidades, egresados y profesionales (src-pucv-005).",
+        "que_falta": "Acto del programa formativo publicado: código, horas, créditos y registro de participantes. Salvedad: la ruta postgrado-formacion-continua no se recorrió en la PUCV (anexo A). Falta 1 punto, clase instrumento. Ninguna de las seis decisiones del complemento la cierra; decisiones.mjs le asigna D-7, sin campos redactados."
+      },
+      {
+        "capacidad": "Herramienta desplegada",
+        "estado": "OPF (en operación, con instrumento formal)",
+        "puntos": 3,
+        "que_la_sostiene": "ScribeClaroPUCV, asistente web de redacción jurídica clara, accesible sin registro y construido en la Escuela bajo la dirección de la profesora Claudia Poblete (src-pucv-004, 30-01-2025). Instrumento: registro de propiedad intelectual, Certificado nº 2026-A-6558 de 23-06-2026, según el complemento (SIN FUENTE IDENTIFICADA). Reconocimiento externo en un boletín de la Comisión de Lenguaje Claro de la Corte Suprema, 2025, según el complemento (SIN FUENTE IDENTIFICADA). R2-PUCV-04, «ScribeClaroPUCV es utilizada por el Poder Judicial», viene de la ronda 2 y no fue contrastada.",
+        "que_falta": "Nada para la rúbrica: está completa. No publica métricas de uso ni resultados, y ése es el límite del registro."
+      },
+      {
+        "capacidad": "Adopción en la enseñanza",
+        "estado": "ENT",
+        "puntos": 1,
+        "que_la_sostiene": "Sólo instrumentos universitarios orientadores. La Universidad habilitó Gemini desde marzo de 2026 para la comunidad universitaria, por la Dirección de Servicios de Informática y Comunicaciones, sin mención de Derecho ni número de licencias (src-pucv-013). El decálogo universitario (src-pucv-007). Ambos se atribuyen a la Universidad, no a la Escuela.",
+        "que_falta": "Que la adopción conste como decisión de la Escuela; el complemento propone un acuerdo de Consejo de Escuela con deberes exigibles. Faltan 2 puntos, clase nivel. Ninguna de las seis decisiones del complemento la cierra: el complemento v1.2 le atribuye por error el efecto de D-4. decisiones.mjs le asigna D-9, sin campos redactados."
+      },
+      {
+        "capacidad": "Alcance declarado",
+        "estado": "OP",
+        "puntos": 2,
+        "que_la_sostiene": "Cifras publicadas de actividades: cerca de 90 participantes en el taller 2025 (src-pucv-005); alrededor de 100 en un encuentro de estudiantes de Derecho e Ingeniería 2025 (anexo del complemento; SIN FUENTE IDENTIFICADA). Destinatarios declarados de los fondos 2025: estudiantes de tercer a quinto año (src-pucv-010).",
+        "que_falta": "Cifras de penetración interna: las publicadas son de públicos mixtos y externos. Una serie de al menos dos años que separe a los estudiantes de la Escuela del público externo. La edición 2025 del certamen no publicó nota de resultados, según el anexo del complemento. Falta 1 punto, clase instrumento (D-4 corregida)."
+      },
+      {
+        "capacidad": "Investigación",
+        "estado": "OP",
+        "puntos": 2,
+        "que_la_sostiene": "FALTANTE: los insumos no nombran el objeto que sostiene esta celda. iniciativas.csv (04-09-2026) no trae ninguna iniciativa PUCV con mecanismo PROYECTO o PUBLICACION. Candidatos en los insumos: (a) participación como contraparte en el FONDEF IDeA IT25I0151, adjudicado a la U. de los Andes y dirigido desde su Facultad de Ingeniería, por 236.998.000 pesos a 24 meses, con un profesor de la Escuela en el equipo (anexo E del informe: «U. de los Andes (con PUCV)»); (b) un artículo de 2020 sobre IA en administraciones fiscales y derechos de los contribuyentes en revista internacional (anexo del complemento; SIN FUENTE IDENTIFICADA).",
+        "que_falta": "Según el complemento, «el código del proyecto adjudicado». El FONDEF tiene código, pero la adjudicación es de otra universidad (atribución compartida), y por eso no da OPF. Falta 1 punto, clase instrumento. Ninguna de las seis decisiones la cierra; decisiones.mjs le asigna D-8, sin campos redactados."
+      },
+      {
+        "capacidad": "Transferencia",
+        "estado": "OPF",
+        "puntos": 3,
+        "que_la_sostiene": "Convenio con la Corte Suprema de agosto de 2020 para modernizar su base de datos de jurisprudencia con IA. Lo firmaron la decana de la Facultad y el presidente de la Corte; hubo cincuenta pasantes, en un proyecto multiuniversitario de diecinueve instituciones, con actividad derivada documentada (complemento §4 y anexo; SIN FUENTE IDENTIFICADA). El anexo G del informe corrobora de forma indirecta que existió el proyecto multiuniversitario: la U. San Sebastián participó en 2022 «en el mismo proyecto multiuniversitario en que participó la PUCV». Asistente virtual de 2021 desarrollado en virtud de un convenio con el Servicio de Impuestos Internos (anexo del complemento; SIN FUENTE IDENTIFICADA).",
+        "que_falta": "Nada para la rúbrica: está completa. Límite de verificación: el instrumento no se traza a una fuente registrada en los insumos."
+      },
+      {
+        "capacidad": "Evaluación de efecto",
+        "estado": "NL (no localizada)",
+        "puntos": 0,
+        "que_la_sostiene": "Nada. La ruta se recorrió y no hay ninguna medición del efecto de la IA sobre el aprendizaje jurídico. La celda está en NL en las once instituciones, y la consulta exhaustiva de 49.014 proyectos ANID devuelve cero proyectos sobre enseñanza del Derecho con IA.",
+        "que_falta": "Un estudio publicado con diseño, muestra, instrumento, grupo de comparación y resultado. Faltan 3 puntos, clase inexistente (D-5)."
+      }
+    ],
+    "puntaje_simple": {
+      "piso": 18,
+      "techo": 18,
+      "maximo": 30,
+      "faltan": 12,
+      "celdas_sin_concluir": 0,
+      "calculo": "Unidad 2 + Norma 1 + Presencia 2 + Formación 2 + Herramienta 3 + Adopción 1 + Alcance 2 + Investigación 2 + Transferencia 3 + Evaluación 0 = 18. Rúbrica del anexo D sobre matriz-v2.json (clave v2, «P. U. Católica de Valparaíso»); recalculado con Node y coincide con «despues».",
+      "que_no_es": "No es una posición. El complemento dice: «el instrumento que ordena excluye a esta institución por construcción». La rúbrica mide trazabilidad publicada, no mérito.",
+      "dependencia_de_la_ronda_2": "Ninguna celda de la PUCV figura en «aplicados» de matriz-v2.json: sus 18 puntos no dependen de las 22 fuentes sin contrastar de la ronda 2. Dos de sus tres instrumentos que dan OPF (el certificado de propiedad intelectual y el convenio con la Corte Suprema) no tienen identificador de fuente en los insumos."
+    },
+    "puntos_faltantes": [
+      {
+        "forma": "Falta el instrumento",
+        "puntos": 5,
+        "capacidades": ["Unidad especializada (+1)", "Presencia en pregrado (+1)", "Formación estructurada (+1)", "Alcance declarado (+1)", "Investigación (+1)"],
+        "acto_que_lo_cierra": "Publicar lo ya decidido: el acto que crea el programa, el código y los créditos de la asignatura, el acto del programa formativo, el alcance real de lo que se ejecuta y el código del proyecto adjudicado. El complemento dice: «Ninguno de los cinco exige decidir nada nuevo. Exigen publicar lo decidido»."
+      },
+      {
+        "forma": "Falta el nivel",
+        "puntos": 4,
+        "capacidades": ["Norma propia (+2)", "Adopción en la enseñanza (+2)"],
+        "acto_que_lo_cierra": "Decidir en el nivel que la rúbrica pregunta. Hoy constan como instrumentos universitarios orientadores y valen 1 en vez de 3 por el nivel, no por su contenido. Se cierran con un acuerdo de Consejo de Escuela con deberes exigibles. Es la única de las tres formas que exige una decisión de gobierno."
+      },
+      {
+        "forma": "Falta todo",
+        "puntos": 3,
+        "capacidades": ["Evaluación de efecto (+3)"],
+        "acto_que_lo_cierra": "Producir evidencia que hoy no existe: una medición de efecto con diseño declarado y grupo de comparación, publicada aunque el resultado sea negativo. Ninguna institución observada la tiene y no hay proyecto financiado en la materia."
+      }
+    ],
+    "puntos_faltantes_lectura": "Nueve de los doce puntos (5 por instrumento y 4 por nivel) no dependen de construir nada: dependen de publicar y de decidir en el nivel correcto. El complemento lo resume así: la distancia entre lo que la Escuela hace y lo que puede acreditar es «en tres cuartas partes, una distancia documental». decisiones.mjs deriva el reparto 5/4/3 desde la matriz y coincide con el del complemento.",
+    "capacidades_completas": [
+      {
+        "capacidad": "Herramienta desplegada",
+        "instrumento": "Registro de propiedad intelectual de ScribeClaroPUCV, Certificado nº 2026-A-6558 de 23-06-2026 (según el complemento; SIN FUENTE IDENTIFICADA en los insumos). Límite: no publica métricas de uso."
+      },
+      {
+        "capacidad": "Transferencia",
+        "instrumento": "Convenio con la Corte Suprema de agosto de 2020, con la decana y el presidente de la Corte identificados y actividad derivada documentada. Según el complemento es el único convenio del corpus con contraparte de esa jerarquía y con continuidad verificable (SIN FUENTE IDENTIFICADA en los insumos)."
+      }
+    ],
+    "capacidades_completas_limite": "Que estén completas no significa que la Escuela sea mejor en ellas: en estas dos publicó el objeto que la rúbrica pide y en las otras ocho no. Son los dos únicos instrumentos formales citables de los diecisiete registros del conjunto PUCV.",
+    "hechos_base": [
+      {
+        "hecho": "Certamen de innovación legal (Innova Day) con cinco versiones entre 2022 y 2026",
+        "que_acredita": "Continuidad plurianual con participación de varias universidades y de otros países; según el complemento, es la serie de continuidad más larga que el corpus registra en su ámbito.",
+        "fuente": "src-pucv-011 (IV versión de Innova Day 2025, sin fecha declarada; su nota registra 9 proyectos estudiantiles, 10 profesionales, 326 y 809 votantes y participantes de seis países); src-pucv-006 (03-06-2026, quinta versión, existe desde 2022); src-pucv-001 (06-01-2022, creación del LMIL).",
+        "salvedades": "La iniciativa Innova Day está clasificada ADYACENTE: sólo su panel sobre automatización e IA aporta evidencia específica de IA (ev-pucv-016). Dos ediciones aparecen numeradas como cuarta. El anexo del complemento dice que la edición 2025 no publica nota de resultados, y la nota de src-pucv-011 registra cifras de la «IV versión 2025»: contradicción por resolver antes de citar cifras del certamen."
+      },
+      {
+        "hecho": "Herramienta de IA propia, desplegada y en uso externo (ScribeClaroPUCV)",
+        "que_acredita": "Asistente de redacción jurídica accesible sin registro, construido en la Escuela, con uso documentado fuera de la Universidad. No publica métricas de uso.",
+        "fuente": "src-pucv-004 (30-01-2025, contrastada). Uso externo: R2-PUCV-04 (ronda 2, sin contraste) y boletín de la Comisión de Lenguaje Claro de la Corte Suprema (SIN FUENTE IDENTIFICADA). Registro de propiedad intelectual 2026-A-6558 (SIN FUENTE IDENTIFICADA)."
+      },
+      {
+        "hecho": "Financiamiento concursable de vinculación con el medio en dos años consecutivos (2025 y 2026)",
+        "que_acredita": "Capacidad de formular y adjudicar proyectos con la IA en el objeto. No acredita presupuesto permanente: los montos no se publican, y un mismo responsable figura en las cuatro adjudicaciones.",
+        "fuente": "src-pucv-010 (11-08-2025; adjudicación recibida el 04-08-2025; destinatarios, estudiantes de tercer a quinto año); src-pucv-006 (03-06-2026, dos proyectos con IA explícita). Antecedente: concurso institucional de IA en educación 2023, en el que dos de las catorce iniciativas seleccionadas son de la Escuela (anexo del complemento; SIN FUENTE IDENTIFICADA)."
+      },
+      {
+        "hecho": "Experiencia de aula ejecutada dentro de una asignatura jurídica (Filosofía del Derecho, 2024)",
+        "que_acredita": "Prompting y un chatbot de asignatura dentro de un curso, en dos sesiones realizadas: ejecución, no anuncio. Fuente única, sin matrícula, semestre, créditos ni evaluación publicados, y sin prueba de continuidad.",
+        "fuente": "src-pucv-003 (24-04-2024, contrastada); ev-pucv-008."
+      },
+      {
+        "hecho": "Conducción desde Derecho del instrumento de integridad académica de la Universidad",
+        "que_acredita": "Participación de la unidad jurídica en la gobernanza universitaria de la materia. El instrumento es universitario y orientador: «sugiere recomendaciones», sin decreto ni resolución.",
+        "fuente": "src-pucv-007 (09-01-2026, contrastada); ev-pucv-013. Según el anexo del complemento, la nota institucional remite como referencia a un enlace compartido de un servicio comercial de IA."
+      },
+      {
+        "hecho": "Convenio con la Corte Suprema (agosto de 2020) para modernizar su base de jurisprudencia con IA",
+        "que_acredita": "Transferencia con instrumento formal y contraparte del máximo nivel. Firmado por la decana y el presidente de la Corte, con cincuenta pasantes, en un proyecto de diecinueve instituciones.",
+        "fuente": "SIN FUENTE IDENTIFICADA: complemento §4 y anexo; el resumen ejecutivo del informe (línea 235) lo menciona sin fuente. Corroboración indirecta en el anexo G del informe (U. San Sebastián en el mismo proyecto)."
+      },
+      {
+        "hecho": "Registro de propiedad intelectual de ScribeClaroPUCV (Certificado nº 2026-A-6558, 23-06-2026)",
+        "que_acredita": "Según el complemento, es el único instrumento formal citable del conjunto PUCV junto con el convenio de 2020.",
+        "fuente": "SIN FUENTE IDENTIFICADA: complemento §4 y anexo; la cifra sólo aparece en tools/informes/informe-01/v2.1.0/complemento.mjs y armonizar.mjs, sin dirección de fuente."
+      }
+    ],
+    "dossier_complemento_17_registros": [
+      {"fecha": "2020", "mecanismo": "Publicación indexada", "que_consta": "Artículo sobre uso de IA por administraciones fiscales y derechos de los contribuyentes en Latinoamérica, en revista internacional de derecho y tecnología.", "atribucion": "Escuela de Derecho", "estado_segun_complemento": "verificada", "fuente": "SIN FUENTE IDENTIFICADA"},
+      {"fecha": "2020", "mecanismo": "Unidad", "que_consta": "Primera mención pública al Núcleo de Derecho, IA y Tecnología, con director identificado, en un seminario sobre fiscalización tributaria e IA. La única afirmación de origen dice «se oficializa en el 2020», sin instrumento.", "atribucion": "Escuela de Derecho", "estado_segun_complemento": "sin acto de creación", "fuente": "La cita «se oficializa en el 2020» está en src-pucv-002 (20-11-2023); la del seminario de 2020 no tiene identificador"},
+      {"fecha": "2020", "mecanismo": "Convenio", "que_consta": "Convenio con la Corte Suprema (base de jurisprudencia con IA), firmado por la decana y el presidente de la Corte, cincuenta pasantes, proyecto de diecinueve instituciones.", "atribucion": "Facultad y Escuela de Derecho", "estado_segun_complemento": "verificada · instrumento formal", "fuente": "SIN FUENTE IDENTIFICADA"},
+      {"fecha": "2021", "mecanismo": "Herramienta", "que_consta": "Asistente virtual desarrollado en virtud de un convenio con el Servicio de Impuestos Internos, a cargo del Núcleo, con participación de un estudiante de informática.", "atribucion": "Escuela de Derecho", "estado_segun_complemento": "verificada", "fuente": "SIN FUENTE IDENTIFICADA"},
+      {"fecha": "2022–2026", "mecanismo": "Actividad recurrente", "que_consta": "Certamen de innovación legal del laboratorio, con ediciones documentadas desde 2022. La edición 2025 tiene convocatoria y no nota de resultados; dos ediciones aparecen numeradas como cuarta.", "atribucion": "Facultad de Derecho", "estado_segun_complemento": "serie verificada · cifras 2025 pendientes", "fuente": "src-pucv-001, src-pucv-011, src-pucv-006"},
+      {"fecha": "2023", "mecanismo": "Fondo", "que_consta": "Concurso institucional de IA en educación: dos de las catorce iniciativas seleccionadas son de la Escuela; una origina la herramienta de redacción jurídica.", "atribucion": "Escuela de Derecho · fondo de la universidad", "estado_segun_complemento": "verificada", "fuente": "SIN FUENTE IDENTIFICADA"},
+      {"fecha": "2024", "mecanismo": "Asignatura", "que_consta": "IA en Filosofía del Derecho mediante prompting y un chatbot de asignatura, dos sesiones. Fuente única; no consta repetición, matrícula, semestre, créditos ni evaluación.", "atribucion": "Escuela de Derecho", "estado_segun_complemento": "verificada · sin continuidad acreditada", "fuente": "src-pucv-003"},
+      {"fecha": "2024–2025", "mecanismo": "Formación", "que_consta": "Talleres de alfabetización digital y de prompting jurídico con módulos fechados; el de 2025 declara cerca de noventa participantes de distintas universidades, egresados y profesionales.", "atribucion": "Programa DIAT", "estado_segun_complemento": "verificada · alcance externo", "fuente": "src-pucv-005"},
+      {"fecha": "2025", "mecanismo": "Fondo", "que_consta": "Dos proyectos de vinculación con el medio adjudicados con IA en el objeto. Montos no publicados. Responsable único.", "atribucion": "Facultad y Escuela de Derecho", "estado_segun_complemento": "verificada · sin monto", "fuente": "src-pucv-010"},
+      {"fecha": "2025", "mecanismo": "Actividad", "que_consta": "Encuentro de estudiantes de Derecho e Ingeniería con alrededor de cien participantes; según el complemento, la cifra interna mejor documentada del dossier.", "atribucion": "Laboratorio y Programa, con la dirección de asuntos internacionales", "estado_segun_complemento": "verificada", "fuente": "SIN FUENTE IDENTIFICADA"},
+      {"fecha": "2025", "mecanismo": "Herramienta", "que_consta": "La Comisión de Lenguaje Claro de la Corte Suprema destaca la herramienta de redacción jurídica en su boletín oficial.", "atribucion": "Escuela de Derecho · Vicerrectoría Académica", "estado_segun_complemento": "verificada · reconocimiento externo", "fuente": "SIN FUENTE IDENTIFICADA (relacionada: R2-PUCV-04, ronda 2, sin contraste)"},
+      {"fecha": "2025", "mecanismo": "Proyecto", "que_consta": "Contraparte en el FONDEF de certeza jurídica ambiental, adjudicado a otra universidad y dirigido desde su Facultad de Ingeniería; un profesor de la Escuela integra el equipo.", "atribucion": "Escuela de Derecho como contraparte", "estado_segun_complemento": "verificada · atribución compartida", "fuente": "Anexo E del informe: FONDEF IDeA IT25I0151, U. de los Andes (con PUCV), 236.998.000 pesos, 24 meses"},
+      {"fecha": "2026", "mecanismo": "Norma", "que_consta": "Decálogo universitario sobre uso ético de la IA en docencia, conducido por una profesora de la Escuela desde la Unidad de Integridad Académica; «sugiere recomendaciones»; sin decreto ni resolución.", "atribucion": "Vicerrectoría Académica", "estado_segun_complemento": "verificada · orientador, no vinculante", "fuente": "src-pucv-007"},
+      {"fecha": "2026", "mecanismo": "Herramienta", "que_consta": "Registro de propiedad intelectual de la herramienta de redacción jurídica, Certificado nº 2026-A-6558 de 23 de junio.", "atribucion": "Escuela de Derecho", "estado_segun_complemento": "verificada · instrumento formal", "fuente": "SIN FUENTE IDENTIFICADA"},
+      {"fecha": "2026", "mecanismo": "Actividad", "que_consta": "Workshop internacional sobre manejo de IA en el ámbito legal, dirigido a exalumnos, con el profesor James M. Cooper (California Western School of Law) y la Fundación R.P. Eduardo Lobos. Sin fecha del workshop ni cifras.", "atribucion": "Escuela de Derecho", "estado_segun_complemento": "verificada · sin fecha ni cifras", "fuente": "src-pucv-008 (publicada el 18-06-2026)"},
+      {"fecha": "2026", "mecanismo": "Fondo", "que_consta": "Dos proyectos de vinculación con el medio con los mismos dos objetos y el mismo responsable del año anterior. Montos no publicados.", "atribucion": "Facultad y Escuela de Derecho", "estado_segun_complemento": "verificada · sin monto", "fuente": "src-pucv-006"},
+      {"fecha": "2026", "mecanismo": "Contexto", "que_consta": "La Universidad participa como mandante en un centro regional de supercómputo e IA aplicada, con financiamiento estatal de hasta siete millones de dólares. La Facultad de Derecho no participa ni es mencionada.", "atribucion": "Universidad", "estado_segun_complemento": "verificada · entorno", "fuente": "SIN FUENTE IDENTIFICADA"}
+    ],
+    "dossier_lectura_de_conjunto": [
+      "Mucha actividad desde 2020 y casi ninguna formalización: diecisiete registros en seis años, de siete clases de mecanismo, y dos instrumentos formales citables (el convenio de 2020 y el registro de propiedad intelectual de 2026). No hay decreto, resolución ni reglamento.",
+      "Todo lo normativo lo dicta la Universidad, y en tono de sugerencia: el decálogo, la política de integridad académica y el reglamento de disciplina son instrumentos de la Vicerrectoría Académica. La Facultad de Derecho no ha emitido ninguno.",
+      "Faltan cifras de forma sistemática: no hay cifras de uso de la herramienta, montos de fondos, asistentes (salvo dos actividades) ni resultados de la edición 2025 del certamen. Las dos cifras que existen (noventa y cien) son de públicos mixtos y externos.",
+      "Todo se concentra en una persona: la misma dirige el Programa y el Laboratorio y es responsable de las cuatro adjudicaciones de vinculación con el medio de 2025 y 2026. La dirección de la unidad pasó por tres personas desde 2020 sin acto publicado."
+    ],
+    "fuentes_pucv_del_corpus_no_usadas_en_el_dossier": [
+      "src-pucv-009 (18-04-2023): Diplomado Legal Management Program y LMIL, con Fondo de Desarrollo Institucional del Mineduc para internacionalización (metodología COIL). No menciona IA y es anuncio; no sostiene financiamiento de IA.",
+      "src-pucv-012 (sin fecha): página de pregrado de Derecho PUCV. En fuentes.csv del 04-09-2026 figura FUENTE_ABIERTA, con la nota «la revisión pública no permitió verificar una línea curricular obligatoria en IA»; el informe v3.2.0 y el complemento hablan después de malla verificada en diez semestres.",
+      "src-pucv-013 (19-03-2026): habilitación institucional de Gemini.",
+      "src-pucv-014 (sin fecha): artículo del profesor Eduardo Aldunate en revista indexada. PROPUESTO en fuentes.csv; no acredita actividad de IA y no alimenta ninguna evidencia."
+    ],
+    "lo_que_no_acredita": [
+      "No hay acto formal de creación del Programa DIAT ni del Laboratorio: la única afirmación de origen («se oficializa en el 2020») no cita instrumento.",
+      "No hay financiamiento permanente: todo lo localizado es concursable y ningún fondo publica su monto.",
+      "No hay línea curricular con créditos: la malla vigente no tiene asignaturas de IA ni de tecnología jurídica, y la experiencia de aula de 2024 no tiene continuidad acreditada.",
+      "No hay ninguna medición del efecto sobre el aprendizaje.",
+      "ScribeClaroPUCV no publica métricas de uso ni resultados.",
+      "No hay cifras de penetración interna: las publicadas (unos noventa y unos cien participantes) son de públicos mixtos y externos.",
+      "No hay norma de la Escuela o de la Facultad: lo normativo es universitario y orientador.",
+      "El Programa y el Laboratorio no tienen página en el dominio institucional; su única descripción estructurada vive en dominios externos de propiedad privada.",
+      "No hay resultados publicados de la edición 2025 del certamen, ni fecha ni cifras del workshop de 2026.",
+      "La Facultad de Derecho no participa en el centro regional de supercómputo e IA del que la Universidad es mandante.",
+      "El certamen no acredita por sí solo capacidad en IA: la iniciativa está clasificada como adyacente."
+    ],
+    "proyecciones": [
+      {
+        "id": "P-1",
+        "titulo": "Formación continua internacional por la vía de vinculación con el medio",
+        "parte_de": "Un certamen con cinco versiones y participantes de seis países, y dos adjudicaciones consecutivas de fondos de vinculación con el medio con IA en el objeto: el canal internacional ya está abierto y financiado por concurso. (El dato de seis países sale de la nota de src-pucv-011.)",
+        "propone": "Convertir ese canal en formación continua con docencia internacional en IA aplicada al Derecho, organizada como actividad de vinculación con el medio y no como programa de postgrado, porque el ciclo de decisión de vinculación es corto y su financiamiento ya existe, mientras que crear un postgrado exige aprobaciones que tardan más que la ventana tecnológica.",
+        "indicador": "Dos ediciones consecutivas con matrícula publicada, procedencia institucional de los participantes y docentes externos identificados.",
+        "riesgo": "Que la actividad internacional se siga midiendo por asistencia a un evento: el alcance de un certamen no es cobertura formativa."
+      },
+      {
+        "id": "P-2",
+        "titulo": "Cubrir el vacío que ninguna de las diez ha cubierto: medir el efecto",
+        "parte_de": "El hallazgo central del informe: en evaluación de efecto, las diez instituciones comparadas están en «no localizada» con las rutas recorridas. Es un hecho del campo, no una laguna de la investigación.",
+        "propone": "Ser la primera en producir esa evidencia, con un diseño modesto y publicable sobre una competencia acotada y con grupo de comparación: instrumento declarado, medida antes y después, y resultado publicado aunque sea negativo.",
+        "indicador": "Un informe con diseño, muestra, instrumento, grupo de comparación y resultado, publicado con sus datos.",
+        "riesgo": "Publicar una medición sin grupo de comparación. La única cifra de resultado localizada en Chile compara a quien usó una herramienta treinta veces con quien no la usó, lo que mide sobre todo la diferencia previa entre los grupos.",
+        "nota_del_complemento": "El complemento la presenta como la de mayor consecuencia: cambia lo que se puede afirmar sobre el campo y ninguna de las diez puede reclamarla hoy."
+      },
+      {
+        "id": "P-3",
+        "titulo": "Gestión de caso y de clientes con IA avanzada, y la metodología para construirla",
+        "parte_de": "Una herramienta propia desplegada y una experiencia de aula ejecutada. No falta capacidad técnica: falta un objeto de enseñanza que produzca algo verificable.",
+        "propone": "Enseñar a gestionar un caso y una cartera de clientes con asistentes de IA, y la metodología para construir esa gestión en un entorno de agentes: lectura de expedientes, extracción de hitos, control de plazos, redacción de minutas y trazabilidad de cada decisión. El producto es un panel de gestión funcionando.",
+        "indicador": "Un artefacto por estudiante o equipo, versionado, con su registro de construcción y su documentación, evaluable por terceros.",
+        "riesgo": "Que el curso derive en una demostración de herramientas y envejezca con ellas. Lo que debe quedar es el criterio jurídico sobre qué se delega, qué se verifica y qué no se delega nunca."
+      },
+      {
+        "id": "P-4",
+        "titulo": "Cerrar con protección de datos personales, con la ley que entra en vigor ahora",
+        "parte_de": "La Ley 21.719, publicada el 13 de diciembre de 2024, regula la protección y el tratamiento de datos personales, crea la Agencia de Protección de Datos Personales y entra en vigor en diciembre de 2026. Amplía los derechos de acceso, rectificación, cancelación y oposición con portabilidad y bloqueo, e impone un deber de responsabilidad proactiva a quien trata los datos. (Datos tomados del complemento; conviene contrastarlos con el Diario Oficial antes de publicar.)",
+        "propone": "Que el curso termine examinando el artefacto construido en P-3 contra el estándar de la ley: base de licitud, finalidad, minimización, encargado de tratamiento, transferencia internacional y medidas de seguridad.",
+        "indicador": "Cada artefacto entregado con su evaluación de cumplimiento y las decisiones de diseño que la ley obligó a cambiar.",
+        "riesgo": "Enseñar la ley en abstracto. El valor está en que el estudiante descubra que su propio prototipo no cumple y tenga que rehacerlo."
+      }
+    ],
+    "proyecciones_unidad": "P-3 construye el objeto, P-4 lo somete a la norma vigente desde diciembre de 2026, P-2 mide si enseñarlo así produjo aprendizaje y P-1 abre el canal para ofrecerlo fuera. Juntas forman un curso que genera su propia evidencia. El complemento advierte que son propuestas en condicional, no logros, y que «una proyección sin la cuarta parte [el riesgo] es publicidad».",
+    "optativo": {
+      "forma": "Asignatura optativa de pregrado con proyecto final entregable, diseñada desde el principio para producir datos de aprendizaje utilizables: la evaluación es su arquitectura, no un añadido.",
+      "tramos": [
+        {"tramo": 1, "nombre": "Línea base", "que_se_hace": "Resolver sin asistencia la misma tarea jurídica que se repetirá al final.", "que_queda_registrado": "El punto de comparación de cada estudiante consigo mismo."},
+        {"tramo": 2, "nombre": "Caso y clientes", "que_se_hace": "Gestionar un expediente y una cartera con asistentes avanzados: hitos, plazos, minutas.", "que_queda_registrado": "Qué se delegó y qué se verificó."},
+        {"tramo": 3, "nombre": "Metodología", "que_se_hace": "Construir el flujo de trabajo en un entorno de agentes.", "que_queda_registrado": "Versiones, decisiones y errores, no sólo el resultado."},
+        {"tramo": 4, "nombre": "El panel", "que_se_hace": "El artefacto de gestión, funcionando y documentado.", "que_queda_registrado": "El proyecto final."},
+        {"tramo": 5, "nombre": "Protección de datos", "que_se_hace": "Evaluar el propio panel contra la Ley 21.719 y corregir lo que no cumple.", "que_queda_registrado": "Hallazgos de cumplimiento y rectificaciones."},
+        {"tramo": 6, "nombre": "Medida final", "que_se_hace": "Repetir la tarea del tramo 1 y entregar el panel corregido.", "que_queda_registrado": "Medida final comparable con la línea base."}
+      ],
+      "datos_que_produce": [
+        {"dato": "Medida antes y después, por estudiante", "como": "La misma tarea en los tramos 1 y 6, corregida con rúbrica ciega respecto del momento.", "para_que": "La medida de efecto que ninguna institución del corpus tiene."},
+        {"dato": "Grupo de comparación", "como": "Estudiantes de la misma cohorte que no cursan el optativo resuelven la misma tarea.", "para_que": "Sin él no hay efecto atribuible, sólo diferencia entre quienes se inscribieron y quienes no."},
+        {"dato": "Rúbrica del artefacto", "como": "Criterios observables sobre el panel, publicados antes de evaluar.", "para_que": "Que un tercero pueda rehacer la corrección; una rúbrica cerrada después no es refutable."},
+        {"dato": "Registro de proceso", "como": "Versiones del artefacto y decisiones documentadas durante el semestre.", "para_que": "Distinguir aprendizaje de resultado afortunado y alimentar la investigación sobre cómo se aprende esto."},
+        {"dato": "Hallazgos de cumplimiento", "como": "Qué incumplía cada panel antes de la corrección del tramo 5.", "para_que": "Material de investigación sobre riesgos reales de la gestión jurídica asistida."},
+        {"dato": "Cobertura declarada", "como": "Matrícula, deserción y perfil de los inscritos.", "para_que": "Convertir la actividad en cobertura verificable, que falta en todo el corpus."}
+      ],
+      "exigencias": "Un curso que enseña protección de datos y recoge datos de sus estudiantes debe cumplir lo que enseña: base de licitud, finalidad declarada, minimización, anonimización antes de cualquier publicación y derecho a no participar en la investigación sin efecto en la calificación. Si el diseño de medición no resiste su propio módulo final, el curso está mal construido.",
+      "productos": [
+        "Un informe del curso con diseño, muestra, instrumento, grupo de comparación y resultado, publicado aunque no haya diferencia.",
+        "Un conjunto de datos anonimizado (medidas antes y después, rúbricas, hallazgos de cumplimiento) que permita a otra Facultad replicar la medición.",
+        "Base para postular a fondos de investigación en docencia y transferencia: problema documentado, instrumento probado, datos preliminares y equipo con antecedentes.",
+        "Una posición defendible en el campo por haber publicado la primera medición de efecto, no por hacer más actividades."
+      ],
+      "ventana": "Coinciden dos cosas: la Ley 21.719 entra en vigor en diciembre de 2026, y ninguna de las diez instituciones comparadas ha publicado una medición de efecto, de modo que la primera que lo haga fija el estándar. Ninguna de las dos ventanas exige presupuesto extraordinario, según el complemento.",
+      "debilidad_declarada": "Un optativo tiene matrícula pequeña y autoselección. El grupo de comparación mitiga el problema pero no lo elimina, y el informe resultante debe decirlo en su primera página."
+    },
+    "decisiones": [
+      {
+        "id": "D-1",
+        "enunciado": "Publicar el instrumento que crea la unidad, con denominación estable y dependencia orgánica.",
+        "evidencia": "La única mención a su origen es una afirmación de continuidad desde 2020 sin instrumento citado. La unidad aparece con cuatro denominaciones distintas en fuentes de la propia Universidad y ha tenido tres directores sin acto publicado en ninguna transición.",
+        "referente": "La Facultad de Derecho de la P. U. Católica de Chile publica su Departamento de Derecho y Tecnología en la estructura orgánica, con director y dependencia (anexo D: única unidad de la cohorte con respaldo orgánico publicado).",
+        "indicador": "Documento con número y fecha accesible desde el sitio de la Facultad, y unidad listada en el organigrama publicado.",
+        "efecto": "+1 punto en unidad especializada (OP → OPF). Clase: instrumento. Según el complemento, cierra la brecha más citada y la más barata.",
+        "plazo": "Semanas.",
+        "costo": "No requiere presupuesto.",
+        "correccion": "Ninguna: el efecto coincide con la rúbrica."
+      },
+      {
+        "id": "D-2",
+        "enunciado": "Dictar una norma de Facultad sobre uso de IA generativa en trabajos y evaluaciones, con órgano aprobador identificado.",
+        "evidencia": "El decálogo disponible es universitario: sugiere recomendaciones, no obliga, no tipifica, no establece consecuencias y no consta aprobado por decreto ni resolución.",
+        "referente": "La guía de Derecho UC, aprobada por Comité Directivo y Consejo, impone deberes de declaración y registro y califica su incumplimiento como infracción grave. En el plano internacional, Berkeley aporta un mecanismo transferible: citar una fuente inexistente genera presunción de uso prohibido, sin tipificar conductas.",
+        "indicador": "Instrumento aprobado, publicado y fechado, con deberes exigibles y régimen de consecuencias.",
+        "efecto": "+2 puntos en norma propia (ENT → OPF). Clase: nivel.",
+        "plazo": "Un semestre.",
+        "costo": "El tiempo de los órganos que la aprueben.",
+        "correccion": "El efecto es correcto. La justificación del complemento («diez de once no la tienen») está desactualizada: según matriz-v2.json y el anexo D, dos de las once tienen norma propia con instrumento formal (P. U. Católica de Chile y U. Central de Chile), así que son nueve de once las que no la tienen. La dirección de la resolución de la U. Central (R2-UCEN-01) devuelve error, y el checkpoint §6 lo resume como «dos con instrumento formal; una sola lo publica»."
+      },
+      {
+        "id": "D-3",
+        "enunciado": "Convertir la experiencia de aula en una asignatura con código, créditos y matrícula, o en una certificación declarada.",
+        "evidencia": "La integración de IA en Filosofía del Derecho se apoya en una fuente única de 2024, sin matrícula, semestre ni evaluación, y sin prueba pública de continuidad. La malla vigente, verificada en sus diez semestres, no tiene ninguna asignatura de IA ni de tecnología jurídica.",
+        "referente": "Según el complemento, ninguna Facultad de la cohorte lo ha hecho y en el mundo sólo tres; dos de las tres eligieron la certificación sin créditos para no abrir la reforma curricular. Precisión del informe (C-4, sección 7): son tres facultades en el mundo con un componente OBLIGATORIO. En la cohorte sí hay oferta electiva con código o créditos: el seminario DER201H-3 de la UC (no obligatorio) y el minor de la U. Autónoma con 25 créditos.",
+        "indicador": "Código de asignatura con créditos y semestre publicados, o certificación con programa, horas y registro de participantes.",
+        "efecto": "CORREGIDO: +1 punto en presencia en pregrado (OP → OPF). Clase: instrumento.",
+        "plazo": "Uno a dos años por la vía curricular; un semestre por la vía de la certificación.",
+        "costo": "FALTANTE: el complemento no lo declara.",
+        "correccion": "El complemento v1.2 dice «+1 a +2 puntos en presencia en pregrado». La capacidad está en OP (2 de 3) y el techo es 3, así que el máximo posible es +1 (CHECKPOINT §2.A). También promete que la vía de asignatura con créditos «situaría a la Facultad entre las primeras del mundo»; esa comparación internacional se refiere a componentes obligatorios, y hay que decirlo así. Observación de consistencia con el anexo D (no está en el checkpoint): una certificación sin créditos sólo alcanza OPF si se crea mediante un instrumento de las clases admitidas, como una resolución o un acuerdo de órgano colegiado."
+      },
+      {
+        "id": "D-4",
+        "enunciado": "Declarar el alcance real de lo que ya se ejecuta, separando lo interno de lo externo.",
+        "evidencia": "Las cifras publicadas (cerca de noventa participantes en un taller, alrededor de cien en una actividad conjunta) corresponden a públicos mixtos de varias universidades, egresados y profesionales. No hay ninguna cifra de penetración interna. La edición 2025 del certamen no publicó nota de resultados.",
+        "referente": "La U. Autónoma de Chile publica una cobertura declarada de su propio cuerpo docente (el informe registra «cerca del 80 % del profesorado de Derecho de una Facultad»). La P. U. Católica de Chile publica sus graduaciones con número de titulados año a año.",
+        "indicador": "Una serie de al menos dos años con cifras publicadas y desagregadas entre estudiantes de la Escuela y público externo.",
+        "efecto": "CORREGIDO: +1 punto en alcance declarado (OP → OPF). Clase: instrumento.",
+        "plazo": "Inmediato.",
+        "costo": "No requiere presupuesto. Según el complemento, los datos ya existen en los registros de cada actividad.",
+        "correccion": "El complemento v1.2 dice «+1 punto en adopción en la enseñanza». El título, la evidencia y el indicador son íntegramente sobre alcance declarado; adopción es otra capacidad y se cierra con otro acto: decidir en el nivel de la Escuela (CHECKPOINT §2.B; decisiones.mjs). Observación de consistencia con el anexo D (no está en el checkpoint): una serie de cifras no es ninguna de las clases de instrumento del anexo D, así que el +1 exige publicar la cifra mediante un objeto citable de esas clases; si no, la rúbrica no lo concede. Hay que resolverlo antes de prometer el punto."
+      },
+      {
+        "id": "D-5",
+        "enunciado": "Medir, una sola vez, el efecto de una sola actividad sobre una competencia acotada.",
+        "evidencia": "ScribeClaroPUCV está desplegada, tiene registro de propiedad intelectual y reconocimiento de la Corte Suprema, y no publica cuántas personas la usan ni con qué resultado. Ninguna iniciativa de la cohorte alcanza el peldaño de evaluación.",
+        "referente": "Ninguna de las otras diez. En el mundo, del orden de tres a cuatro estudios experimentales, todos estadounidenses. La literatura ofrece diseños replicables a escala de un curso, con muestras de entre 48 y 137 estudiantes (coincide con la sección 10 del informe).",
+        "indicador": "Un estudio publicado con diseño, muestra, grupo de comparación e instrumento declarados, sobre una competencia acotada (por ejemplo, claridad de la redacción en una asignatura concreta).",
+        "efecto": "+3 puntos en evaluación de efecto (NL → OPF). Clase: inexistente. Sería la primera iniciativa del corpus en el cuarto peldaño, hoy vacío en las once.",
+        "plazo": "Un semestre de aplicación más uno de análisis.",
+        "costo": "La más cara de las seis y aun así modesta, según el complemento. FALTANTE: no hay monto estimado.",
+        "correccion": "El complemento dice «la más cara de las cinco»: son seis decisiones. decisiones.mjs rotula la competencia como «declarada» y el complemento como «acotada». Observación de consistencia con el anexo D (no está en el checkpoint): +3 exige que la medición se sostenga en un objeto citable de las clases admitidas (por ejemplo, un código de proyecto adjudicado). Un estudio publicado sin esa forma cuenta, por la letra del anexo D, como OP (+2)."
+      },
+      {
+        "id": "D-6",
+        "enunciado": "Alojar el Programa y el Laboratorio en el dominio institucional de la Universidad.",
+        "evidencia": "Ni el Programa ni el Laboratorio tienen página en el sitio de la PUCV. Su única descripción estructurada (consejo académico, equipo, oferta formativa, histórico) vive en dominios externos de propiedad privada, que pueden caducar o cambiar de titular.",
+        "referente": "Todas las unidades comparables de la cohorte tienen página dentro del dominio institucional de su facultad o universidad.",
+        "indicador": "Páginas del Programa y del Laboratorio accesibles desde el sitio de la Facultad de Derecho PUCV, con la información que hoy vive fuera.",
+        "efecto": "No suma puntos por sí sola. Es condición para que las demás sean verificables por un tercero.",
+        "plazo": "Semanas.",
+        "costo": "Administrativo.",
+        "correccion": "Ninguna."
+      }
+    ],
+    "aritmetica_de_las_decisiones": {
+      "base": "Piso 18 de 30, banda cerrada, 12 puntos faltantes (5 instrumento, 4 nivel, 3 inexistente).",
+      "lo_que_dice_el_complemento_v12": "«Las seis decisiones que siguen suman, en conjunto, hasta 9 puntos. Cuatro de las seis no requieren presupuesto y tres consisten únicamente en publicar lo que se decida.» El «hasta 9» se sostiene sólo en el +2 imposible de D-3.",
+      "lo_verificado": {
+        "por_decision": {"D-1": 1, "D-2": 2, "D-3": 1, "D-4": 1, "D-5": 3, "D-6": 0},
+        "cierran_las_seis": 8,
+        "por_clase_las_seis": {"instrumento": 3, "nivel": 2, "inexistente": 3},
+        "puntos_huerfanos": 4,
+        "capacidades_sin_decision": ["Formación estructurada (+1, instrumento)", "Investigación (+1, instrumento)", "Adopción en la enseñanza (+2, nivel)"],
+        "fuente": "CHECKPOINT §2 (tabla «La consecuencia sobre la aritmética») y rúbrica del anexo D sobre matriz-v2.json; recalculado con Node sobre la matriz de los insumos."
+      },
+      "cierre_propuesto_por_decisiones_mjs": {
+        "decisiones_adicionales": [
+          {"id": "D-7", "capacidad": "Formación estructurada", "clase": "instrumento", "efecto": "+1 (OP → OPF)", "titulo": "Publicar el acto del programa formativo: código, horas, créditos y registro de participantes.", "evidencia": "FALTANTE", "referente": "FALTANTE", "indicador": "FALTANTE", "plazo": "FALTANTE", "costo": "FALTANTE"},
+          {"id": "D-8", "capacidad": "Investigación", "clase": "instrumento", "efecto": "+1 (OP → OPF)", "titulo": "Publicar el código y el instrumento de los proyectos adjudicados con objeto de IA.", "evidencia": "FALTANTE", "referente": "FALTANTE", "indicador": "FALTANTE", "plazo": "FALTANTE", "costo": "FALTANTE"},
+          {"id": "D-9", "capacidad": "Adopción en la enseñanza", "clase": "nivel", "efecto": "+2 (ENT → OPF)", "titulo": "Declarar la adopción de IA en la enseñanza como decisión de la Escuela, y no como orientación de la Universidad.", "evidencia": "FALTANTE", "referente": "FALTANTE", "indicador": "FALTANTE", "plazo": "FALTANTE", "costo": "FALTANTE"}
+        ],
+        "resultado": "Con D-1 a D-9 se cierran 12 de 12 (instrumento 5, nivel 4, inexistente 3) y ninguna capacidad queda sin decisión.",
+        "estado": "Sólo existe el mapa en decisiones.mjs. Los campos evidencia, referente, indicador y plazo de D-7, D-8 y D-9 no están redactados en ningún insumo (CHECKPOINT §5, pendiente 1). Para el Documento A hay dos salidas honestas: redactarlas con material verificado, o declarar que las seis decisiones cierran 8 de 12 y nombrar las tres capacidades que quedan abiertas. El checkpoint §3.4 dice: «Un documento que enumera doce brechas y propone cerrar ocho sin decir nada de las otras cuatro deja al lector haciendo la resta»."
+      },
+      "afirmaciones_del_encabezado_de_la_seccion_9_que_no_se_heredan": [
+        "«es la única institución de la cohorte cuya banda está cerrada»: falso tras la ronda 2. Según matriz-v2.json («despues»), también tienen banda cerrada la P. U. Católica de Chile (20–20), la U. Autónoma de Chile (17–17), la U. Central de Chile (17–17), la U. Adolfo Ibáñez (11–11), la U. Andrés Bello (11–11) y la U. Diego Portales (8–8).",
+        "«el efecto medible sobre la posición comparada»: la PUCV no tiene posición. El efecto se expresa en puntos de la rúbrica.",
+        "«Cuatro de las seis no requieren presupuesto»: por plazo y costo declarados, D-1 y D-4 no requieren presupuesto, D-2 cuesta el tiempo de los órganos, D-6 cuesta trabajo administrativo, D-3 no declara costo y D-5 es la más cara. La cifra de cuatro sólo se sostiene contando D-2 y D-6 como sin presupuesto."
+      ]
+    },
+    "limitaciones": [
+      "Lo escribe una parte interesada. Retirar a la PUCV del comparador elimina el sesgo del orden, no el de este examen: lo que se propone lo propone alguien que trabaja en el programa que se beneficiaría de su aprobación.",
+      "Son proyecciones, no compromisos. No hay acuerdo de Facultad, financiamiento asignado ni docentes comprometidos, y presentarlas de otro modo sería contar el anuncio como ejecución.",
+      "El diseño de medición es el punto débil: matrícula pequeña y autoselección. El grupo de comparación mitiga el problema, no lo elimina.",
+      "La base tiene huecos conocidos que las proyecciones heredan: no hay acto de creación del programa, el financiamiento es concursable y la herramienta no publica cifras de uso.",
+      "No se consultó a la institución: ni la Escuela, ni la Facultad, ni la Universidad revisaron el contenido, y ninguna habla a través de él.",
+      "Verificación (añadida en esta base): siete de los diecisiete registros del dossier, entre ellos los dos instrumentos que dan OPF, no tienen identificador de fuente en fuentes.csv, en los anexos H o I ni en ningún CSV del repositorio. El complemento los marca como «verificada», pero no se pueden trazar desde los insumos.",
+      "Rutas (añadida): en la PUCV se recorrieron 11 de 13 rutas (anexo A). Faltan postgrado-formacion-continua y programas-syllabus. La frase «las trece rutas del protocolo que le corresponden se recorrieron» no se sostiene, y la ausencia de instrumento en presencia en pregrado y en formación estructurada no está comprobada por esas rutas.",
+      "Cifras del sesgo (añadida): el 44 % de la tabla del complemento no se puede reproducir con cobertura.csv, y el 3,8 es la media de las ocho fuera del piloto, no de «las demás».",
+      "Desfase del insumo (añadida): fuentes.csv (04-09-2026) registra 12 fuentes PUCV CONTRASTADO, 1 FUENTE_ABIERTA (src-pucv-012) y 1 PROPUESTO (src-pucv-014), mientras el informe v3.2.0 (corte 06-09-2026) declara 14 de 14 contrastadas. Prevalece el informe, pero la diferencia no está documentada en los insumos."
+    ]
+  },
+  "metodologia": {
+    "pregunta_y_objetivos": {
+      "pregunta": "Qué capacidades institucionales públicamente verificables han construido once Escuelas y Facultades de Derecho chilenas en materia de IA, con qué grado de formalización, y qué puede y no puede afirmarse sobre ellas a partir de evidencia pública contrastada contra su publicación original y contra fuentes de terceros.",
+      "tesis_de_metodo": "La unidad de análisis no es la actividad sino la estructura que la sostiene, y la distancia entre ambas es el objeto de estudio. Un recuento de apariciones en prensa universitaria mide capacidad comunicacional, no institucional.",
+      "alcance": "Cohorte cerrada de once instituciones. Sólo evidencia públicamente accesible al 6 de septiembre de 2026. No evalúa desempeño, calidad ni resultados de aprendizaje. Lo que no aparece publicado queda fuera, y esa ausencia no equivale a inexistencia, salvo en afirmaciones cerradas por registros exhaustivos.",
+      "relevancia_para_una_escuela": "Formativa: la competencia que se enseña (leer, investigar, redactar, argumentar) es la misma sobre la que operan estos sistemas. Normativa: regular su uso en la evaluación es dictar derecho disciplinario sobre la propia comunidad. De escala: Derecho tenía 51.331 estudiantes de pregrado y 11.401 matriculados de primer año en 2024, y es la segunda carrera con más matrícula nueva del país (fuente citada en el anexo E: SIES-Mineduc, Informe de Matrícula en Educación Superior en Chile 2024).",
+      "objetivo_general": "Establecer, sobre evidencia pública verificable y trazable, qué capacidades institucionales en IA existen en once Escuelas y Facultades de Derecho chilenas al 6 de septiembre de 2026, distinguiendo actividad de estructura y estructura de resultado.",
+      "objetivos_especificos": [
+        "Construir un registro de fuentes públicas únicas con identificador estable, fecha declarada y estado editorial, que permita recorrer cualquier afirmación hasta el documento que la sostiene.",
+        "Contrastar las fuentes contra su publicación original y publicar cada divergencia, incluidas las desfavorables al argumento.",
+        "Recorrer la ruta de contraste externo en las once instituciones.",
+        "Medir la cobertura de la investigación en cada institución como indicador independiente de la madurez observada.",
+        "Publicar un comparador ordinal que incorpore su propia incertidumbre.",
+        "Situar los resultados frente a una referencia internacional, para distinguir el rezago chileno de la ausencia global.",
+        "(Superado por la sección 8) Situar a la PUCV frente a instituciones comparables y traducir sus brechas en decisiones con indicador verificable. En la v3.2.0 este objetivo se cumple fuera del comparador, en el documento complementario."
+      ]
+    },
+    "cohorte": {
+      "identificador": "COHORTE_IA_DERECHO_CHILE_11_V1",
+      "protocolo_vigente": "METODOLOGIA_IA_DERECHO_V2.2",
+      "criterio": "Selección no probabilística y cerrada. Reproduce la cohorte de un informe antecedente de 2025 para conservar la comparabilidad longitudinal. No representa al sistema universitario chileno: toda afirmación se refiere a estas once, y el informe evita decir «las universidades chilenas».",
+      "por_que_cerrada": "Un universo que crece a medida que se investiga vuelve inservible la comparación temporal. Incorporar candidatas exige una versión nueva del protocolo, no una decisión de redacción. El costo es que una institución relevante fuera de la lista no entra aunque su actividad sea notable.",
+      "once_y_diez": "La cohorte (corpus, rutas, registro de fuentes, fichas) es de once. El comparador y la matriz de capacidades son de diez, porque la PUCV se aparta por conflicto de interés. Todo recuento sobre trabajo de campo, fuentes o iniciativas dice once; todo recuento sobre capacidades, puntos o posiciones dice diez.",
+      "piloto_de_profundidad": "Tres instituciones (P. U. Católica de Chile, U. de Chile y PUCV) recibieron más rutas y más fuentes; las otras ocho no, por diseño de la investigación y no por menor actividad.",
+      "instituciones": [
+        {"nombre": "Pontificia Universidad Católica de Chile", "piloto": true, "rutas_de_13": 12, "fuentes": 12, "en_comparador": true, "piso_techo": "20–20"},
+        {"nombre": "Pontificia Universidad Católica de Valparaíso", "piloto": true, "rutas_de_13": 11, "fuentes": 14, "en_comparador": false, "piso_techo": "18–18 (fuera del comparador; sin posición)"},
+        {"nombre": "Universidad Adolfo Ibáñez", "piloto": false, "rutas_de_13": 6, "fuentes": 3, "en_comparador": true, "piso_techo": "11–11"},
+        {"nombre": "Universidad Andrés Bello", "piloto": false, "rutas_de_13": 8, "fuentes": 4, "en_comparador": true, "piso_techo": "11–11"},
+        {"nombre": "Universidad Autónoma de Chile", "piloto": false, "rutas_de_13": 5, "fuentes": 3, "en_comparador": true, "piso_techo": "17–17"},
+        {"nombre": "Universidad Central de Chile", "piloto": false, "rutas_de_13": 7, "fuentes": 4, "en_comparador": true, "piso_techo": "17–17"},
+        {"nombre": "Universidad de Chile", "piloto": true, "rutas_de_13": 12, "fuentes": 16, "en_comparador": true, "piso_techo": "12–14"},
+        {"nombre": "Universidad de Concepción", "piloto": false, "rutas_de_13": 7, "fuentes": 4, "en_comparador": true, "piso_techo": "5–7"},
+        {"nombre": "Universidad de los Andes", "piloto": false, "rutas_de_13": 7, "fuentes": 5, "en_comparador": true, "piso_techo": "5–9"},
+        {"nombre": "Universidad del Desarrollo", "piloto": false, "rutas_de_13": 6, "fuentes": 4, "en_comparador": true, "piso_techo": "8–10"},
+        {"nombre": "Universidad Diego Portales", "piloto": false, "rutas_de_13": 7, "fuentes": 3, "en_comparador": true, "piso_techo": "8–8"}
+      ],
+      "fuente_de_la_tabla": "Rutas y fuentes: tabla de cobertura del informe v3.2.0 (líneas 817-837). Piso y techo: anexo D y matriz-v2.json («despues»). No se usa la columna «celdas sin concluir» de esa tabla, que conserva cifras previas a la ronda 2 (ver errores_a_no_heredar).",
+      "asimetria": "Media del piloto 11,7 rutas y de las otras ocho 6,6: razón 1,8 a 1 en rutas (antes 2,4 a 1) y 3,7 a 1 en fuentes. La correlación entre rutas recorridas y piso, medida sobre las diez, es 0,34: existe, es débil y explica algo más de un décimo de la variación."
+    },
+    "protocolo": {
+      "numero_de_rutas": 13,
+      "rutas_identificadas": [
+        "sitio-facultad",
+        "centros-laboratorios",
+        "politicas-ia",
+        "integridad-evaluacion",
+        "malla-curricular",
+        "programas-syllabus",
+        "postgrado-formacion-continua",
+        "herramientas-licencias-convenios",
+        "proyectos-fondos",
+        "repositorios-publicaciones",
+        "vinculacion-transferencia",
+        "fuentes-externas-contraste (la ruta trece del informe: contraste con fuentes que no son las observadas)"
+      ],
+      "ruta_pendiente_de_nombre": "PENDIENTE: la decimotercera ruta no aparece nombrada en los insumos leídos.",
+      "rutas_recorridas_en_las_once": "Contraste externo, proyectos y fondos, y repositorios y publicaciones: son las que sostienen las afirmaciones de alcance nacional.",
+      "rutas_por_capacidad": "Según metodología 2.1: Unidad → centros-laboratorios; Norma → politicas-ia, integridad-evaluacion; Presencia en pregrado → malla-curricular, programas-syllabus; Formación → postgrado-formacion-continua; Herramienta → herramientas-licencias-convenios; Adopción → herramientas-licencias-convenios, integridad-evaluacion; Alcance → sin ruta propia (se lee de la cobertura declarada del registro); Investigación → proyectos-fondos, repositorios-publicaciones; Transferencia → vinculacion-transferencia; Evaluación de efecto → repositorios-publicaciones.",
+      "que_cuenta_como_evidencia": "Sólo material públicamente accesible con dirección propia. La jerarquía va de resoluciones y políticas oficiales a la prensa externa, y la confianza documental se asigna por tipo de fuente, no por interés del contenido. Un resultado de buscador, una síntesis de un modelo de lenguaje o la conclusión de otra investigación son pistas, no fuentes. Cinco documentos de investigación previa, producidos por modelos distintos en rondas independientes, sirvieron para localizar el corpus; ninguno se cita como evidencia.",
+      "cadena": "Fuente → evidencia → iniciativa → afirmación → conclusión. Ningún eslabón sustituye al anterior, y hay control explícito de doble conteo: se detectó que dos fuentes de la U. de los Andes describían el mismo FONDEF desde dos portales.",
+      "atribucion": "Cada iniciativa se atribuye a la unidad que la fuente identifica, no a la más favorable. Una licencia universitaria no es adopción de Derecho, un centro alojado en una dirección de incubación no es un laboratorio de la Facultad y una actividad de un centro de estudiantes no es de la Facultad. Quince registros del corpus corresponden a capacidades del entorno institucional.",
+      "direccion": "Cuatro etiquetas: uso de IA en el Derecho, Derecho aplicado a la IA, ambas, o adyacente. Criterio literal: si la fuente no menciona la IA, no puede elevar la madurez en IA. La verificación encontró dos fuentes que sostenían capacidad en IA sin nombrarla y dos casos donde la etiqueta adyacente resultó demasiado severa (un curso de compliance de la U. de los Andes y un proyecto estudiantil de la U. del Desarrollo).",
+      "dimensiones": "Ocho ámbitos: pregrado, formación continua, investigación, vinculación, uso institucional, gobernanza, recursos y capacidades, y continuidad, cobertura y resultados. Las dos últimas no reúnen evidencia en ninguna institución. La metodología 2.1 reconoce que esto es en parte un artefacto del modelo, porque son atributos y no ámbitos.",
+      "mecanismos": "Nueve clases (sección de panorama): Unidad (7 iniciativas, 7 de la Facultad); Norma o política (4; 2); Programa formativo (12; 11); Asignatura o malla (4; 4); Herramienta (11; 4); Proyecto (3; 2); Actividad (8; 7); Convenio (4; 3); Publicación (2; 2).",
+      "capacidades": [
+        {"capacidad": "Unidad especializada", "pregunta": "¿Existe una estructura dedicada dentro de la Facultad?"},
+        {"capacidad": "Norma propia", "pregunta": "¿La Facultad dictó reglas sobre el uso de IA?"},
+        {"capacidad": "Presencia en pregrado", "pregunta": "¿La IA aparece dentro de la enseñanza de pregrado?"},
+        {"capacidad": "Formación estructurada", "pregunta": "¿Hay diplomados, minors, cursos o capacitaciones con IA?"},
+        {"capacidad": "Herramienta desplegada", "pregunta": "¿Hay un sistema de IA efectivamente a disposición?"},
+        {"capacidad": "Adopción en la enseñanza", "pregunta": "¿Consta que la IA se usa dentro de la enseñanza del Derecho?"},
+        {"capacidad": "Alcance declarado", "pregunta": "¿El registro declara a quién alcanza lo que se hace?"},
+        {"capacidad": "Investigación", "pregunta": "¿Hay proyectos o publicaciones sobre IA?"},
+        {"capacidad": "Transferencia", "pregunta": "¿Hay convenios o servicios hacia fuera de la Facultad?"},
+        {"capacidad": "Evaluación de efecto", "pregunta": "¿Se midió si algo de esto mejoró el aprendizaje jurídico?"}
+      ],
+      "regla_de_calculo": "Ninguna celda se registra a mano: se calculan desde iniciativas, atribución, escalón, mecanismo, cobertura declarada y rutas. Una misma iniciativa puede acreditar varias capacidades."
+    },
+    "estados_y_escalera": {
+      "escalera": "Cinco peldaños aplicados a la iniciativa, nunca a la universidad, y sin promediar: sin evidencia pública localizada, exploración, operación, institucionalización y evaluación. La institucionalización exige al menos una señal formal (responsable identificado, continuidad documentada, política, recursos o integración curricular); acumular eventos no basta. La evaluación exige productos o resultados públicamente revisables, no continuidad.",
+      "distribucion_53_iniciativas": "19 son actividades aisladas o anuncios, 21 acreditan operación recurrente, 13 alcanzan alguna señal de institucionalización y 0 llegan a evaluación, en las once instituciones a la vez. 41 de las 49 iniciativas fechadas empiezan en 2025 o después.",
+      "estados": [
+        {"codigo": "OPF", "significado": "En operación, con instrumento formal publicado", "puntos": 3},
+        {"codigo": "OP", "significado": "En operación, acreditada por publicación institucional, sin instrumento citable", "puntos": 2},
+        {"codigo": "INC", "significado": "Incipiente", "puntos": 1},
+        {"codigo": "ENT", "significado": "Sólo en el entorno institucional", "puntos": 1},
+        {"codigo": "ADY", "significado": "Sólo adyacente", "puntos": 1},
+        {"codigo": "NL", "significado": "No localizada tras recorrer las rutas que la acreditarían", "puntos": 0},
+        {"codigo": "NC", "significado": "No concluyente: la ruta que la acreditaría no se recorrió", "puntos": "excluida del piso; aporta 2 al techo"}
+      ],
+      "instrumento_formal": "Objeto citable con identificador: decreto o resolución; acuerdo de órgano colegiado identificado; código de asignatura con créditos y semestre; código de proyecto adjudicado por fondo público competitivo; registro de propiedad intelectual con número y fecha; convenio firmado con partes identificadas; o unidad listada en un organigrama publicado. Una noticia de creación no lo es. (El anexo D dice «seis clases» y enumera siete.)",
+      "piso_y_techo": "Piso: suma de las celdas resueltas. Techo: piso más 2 por cada celda sin concluir. La anchura de la banda mide lo que el informe no sabe de cada institución y se dibuja en el mismo objeto que la posición.",
+      "decisiones_de_rubrica": [
+        "El techo usa 2 y no 3 porque OP (en operación sin instrumento) es el estado modal: de las 95 celdas resueltas del comparador, sólo 10 alcanzan OPF.",
+        "Las diez capacidades pesan igual porque el informe no tiene una teoría para ponderarlas. Según el anexo D, el orden de las tres primeras posiciones no cambia con ninguna ponderación de entre 0,5 y 2 veces el peso actual.",
+        "No hay penalización por antigüedad: un convenio de 2020 con actividad derivada puntúa igual que uno de 2026. El informe declara que esto favorece a instituciones con trayectoria larga, entre ellas la PUCV."
+      ],
+      "control_del_conflicto": "La rúbrica se cerró antes de calcular los resultados de cada institución y se publica íntegra en el anexo D.",
+      "enmienda_2_2": "Añade dos cosas sin recodificar registros: (1) desdobla «en operación» en OP y OPF; (2) crea el comparador ordinal con piso y techo. La 2.1 prohibía ordenar porque la cobertura era 3,7 veces mayor en tres instituciones; la 2.2 lo permite porque el índice no es un número único sino una banda. Sensibilidad: por cambio de método ninguna conclusión se hizo más fuerte; por evidencia nueva se reforzaron C-5 y C-8 y se debilitó la capacidad investigadora de la U. Central.",
+      "antecedente_2025": "Informe anterior sobre la misma cohorte, con escala de quince puntos en cinco dimensiones. Se trata como antecedente y no como fuente vigente: sus puntajes no se arrastran, sus cifras no se comparan y sus errores se corrigen por fe de erratas. No hay línea base congelada de 2025, porque el antecedente contiene actividades fechadas en 2026; ninguna afirmación del tipo «aumentó desde 2025» es publicable."
+    },
+    "fuentes_y_verificacion": {
+      "corpus": "96 fuentes públicas únicas de las instituciones observadas: 74 del corpus original, todas contrastadas (77 % del total), y 22 de la ronda de ampliación sin contraste sustantivo. La ronda aportó 32 referencias, de las cuales 10 ya estaban en el corpus. A eso se suman 31 fuentes de terceros (contraste externo, agrupadas en 19 entradas del anexo E): 127 fuentes en total, de las cuales 96 siguen siendo comunicación de las propias instituciones.",
+      "como_se_contrasto": "Se abrió la publicación original y se contrastaron siete campos contra el registro: existencia y título literal, fecha declarada, unidad responsable, condición de anuncio o ejecución, cifras de población o cobertura, límites del documento y respaldo efectivo de la afirmación que sostiene. Contrastado no es aceptado: la aceptación exige una decisión humana registrada.",
+      "cifras": "38 fuentes ya estaban contrastadas y las 36 restantes se abrieron una por una, hasta 74. Hubo aproximadamente una divergencia por cada tres registros, la misma tasa de la tanda anterior, lo que sugiere que es estructural del método. Las 23 divergencias se publican en el anexo B con su consecuencia. Según la declaración de intereses, el contraste de las 74 fuentes tomó dos días.",
+      "fuentes_que_no_resistieron": "Una dirección de la U. Central devolvía un bucle de redirección y su contenido se recuperó en otro dominio de la misma universidad. Otra, atribuida a una «Revista DIE» de la U. Central, no fue localizable y se degradó a pendiente de referencia bibliográfica completa, con la consecuencia de que la capacidad de investigación de esa institución bajó de OP a NL.",
+      "ronda_2": "13 de las 22 fuentes de la ronda de ampliación sostienen cierres de la matriz por 25 puntos (HANDOFF-EMPUJAR-v3, P1); contrastarlas es el trabajo pendiente de mayor valor. Tres direcciones no resuelven: R2-UCEN-01 (Resolución 13/2025 de la U. Central, que corrige la conclusión C-2), R2-UC-01 (seminario de la P. U. Católica de Chile) y R2-UDD-02 (curso de la U. del Desarrollo); las dos últimas sostienen dos puntos cada una. Hay una cuarta advertencia: una resolución de la U. Autónoma de Chile existe pero está escaneada sin texto seleccionable. Según el anexo I, si las cuatro cayeran a la vez el orden sólo intercambiaría dos puestos y se ensancharían las bandas. Ninguna celda de la PUCV depende de la ronda 2.",
+      "precision_obligatoria": "La sección 3 del informe dice «Se verificaron las 74 fuentes del corpus» y la de cobertura dice «con el corpus contrastado al cien por ciento en las once». En el Documento A debe decirse «las 74 fuentes del corpus original»: el corpus vigente es de 96 y 22 no están contrastadas.",
+      "asistencia_de_ia": "El informe declara asistencia de sistemas de IA en la localización de fuentes, en el contraste de cada publicación original y en la redacción. La responsabilidad editorial es humana y está firmada."
+    },
+    "contraste_externo": {
+      "que_es": "La ruta trece: contraste con fuentes que no son las propias instituciones observadas, recorrida en las once. Acota la limitación de un corpus autodescriptivo, pero no la elimina: el contraste confirma lo que las instituciones dicen y no puede revelar lo que omitieron.",
+      "clases_de_fuente": [
+        "Base histórica de proyectos adjudicados de ANID: 49.014 registros desde 1982, con código, título, monto, duración, institución, disciplina y palabras clave, consultada de forma exhaustiva y programática, no por muestreo. Es lo que permite afirmaciones de exhaustividad.",
+        "Resoluciones de fallo de ANID: acreditan la adjudicación, pero no publican título, monto ni duración; esos campos sólo constan en el repositorio de datos abiertos.",
+        "Prensa no universitaria: La Tercera y su suplemento económico, T13, Diario Financiero, Diario Constitucional, Emol.",
+        "Instituciones del sector jurídico: Colegio de Abogados de Chile, Academia Judicial, Superintendencia de Insolvencia y Reemprendimiento, Ministerio de Economía.",
+        "Reguladores y política pública: Comisión Nacional de Acreditación, Servicio de Información de Educación Superior del Mineduc, Política Nacional de Inteligencia Artificial."
+      ],
+      "resultados": [
+        "Siete proyectos ANID de disciplina Derecho con objeto de IA (fallos 2025 y 2026), los siete de «Derecho de la IA» y ninguno de «IA para el Derecho»: donde hay financiamiento competitivo, la IA es objeto de estudio y no herramienta de trabajo. Instituciones: U. Adolfo Ibáñez, U. de Talca, P. U. Católica de Chile, U. Autónoma de Chile (2), U. de Chile, U. San Sebastián.",
+        "Ocho proyectos con objeto jurídico-tecnológico clasificados fuera de la disciplina Derecho. Según el anexo E suman 1.361 millones de pesos (la suma de su tabla da 1.361.317.000) y ninguno lo lidera una Facultad de Derecho. Uno es el FONDEF IT25I0151 de la U. de los Andes con la PUCV.",
+        "Cero proyectos sobre enseñanza del Derecho con IA en los 49.014 registros, en cualquier universidad y año. Hay diez proyectos 2024–2026 que cruzan IA con enseñanza o educación superior en otras disciplinas (seis en Ciencias de la Educación). La ausencia pasa a ser de adjudicación: el registro acredita que no se financió ninguno, no que no se presentara ninguno.",
+        "La consulta exhaustiva de ANID convirtió nueve celdas «no concluyente» de evaluación de efecto en «no localizada»."
+      ],
+      "advertencias_de_metodo": "El acto administrativo no basta para saber de qué trata un proyecto. La clasificación disciplinar no sigue al objeto: el FONDEF de certeza jurídica ambiental está clasificado en ingeniería. Por eso los proyectos se localizaron por objeto y palabras clave."
+    },
+    "declaracion_de_intereses_y_medidas": {
+      "declaracion_seccion_3": "El autor participa en una de las iniciativas evaluadas: el Programa DIAT de la PUCV, en cuyo equipo técnico figura como Director de Operaciones según la página pública del Programa.",
+      "medidas_de_la_seccion_3": [
+        "Las fuentes que involucran al autor permanecen en el corpus y no se retiran.",
+        "La sección dedicada a la PUCV se somete a una doble revisión explícita (si el juicio resulta demasiado severo y si resulta demasiado indulgente) cuyo resultado se publica.",
+        "Ninguna afirmación sobre la PUCV se sostiene en una fuente única.",
+        "El comparador se calculó con la rúbrica cerrada antes de conocer el resultado de cada institución, y la rúbrica se publica íntegra (anexo D)."
+      ],
+      "medida_de_la_seccion_8": "Las versiones anteriores administraron el conflicto con declaración y doble revisión, y la sección 8 concluye que eso no basta. La PUCV se retira del comparador ordinal y de la matriz de capacidades, sin puntuación ni lugar en el informe, y su examen se publica en un documento complementario que declara el conflicto en su primera página.",
+      "tension_a_resolver": "Las medidas de la sección 3 están redactadas para una PUCV dentro del comparador («para que la posición de la PUCV no pudiera ajustarse a conveniencia»; «la sección dedicada a la PUCV»). La medida vigente es la de la sección 8. El Documento A debe presentar la secuencia (declaración, medidas, insuficiencia, retiro) y no las medidas de la sección 3 como si siguieran siendo el tratamiento.",
+      "asistencia_de_ia": "Declarada en la sección 3 y en la nota metodológica. El encargo del Documento A pide declararla en una nota breve del anexo metodológico.",
+      "dato_para_decision_editorial": "Ver pucv.declaracion_interes.dato_del_registro_para_decision_editorial (src-pucv-003 nombra al profesor Aldunate entre los líderes del Programa DIAT)."
+    },
+    "principios_nota_metodologica": [
+      "Once instituciones, no el sistema: la cohorte es cerrada y no probabilística.",
+      "Universidad no es Facultad: quince registros corresponden al entorno institucional y así se declaran.",
+      "Nada se arrastra del antecedente de 2025.",
+      "No hay línea base congelada: no se publican afirmaciones de crecimiento desde 2025.",
+      "Anuncio no es ejecución: una adjudicación, un convenio firmado, un piloto y una entrada de agenda con fecha pasada son cuatro cosas distintas, y ninguna acredita por sí sola actividad realizada.",
+      "Contrastado no es aceptado.",
+      "La ausencia no es inexistencia, salvo en registros exhaustivos y dentro de su alcance.",
+      "La escala se aplica a la iniciativa; el índice ordinal suma estados por institución sobre una rúbrica publicada, y es una operación distinta y declarada.",
+      "El índice mide formalización publicada, no calidad de la enseñanza, preparación de egresados ni uso real.",
+      "Las divergencias se publican (23), incluidas las que perjudican al argumento.",
+      "Los versionados no se reescriben hacia atrás.",
+      "Asistencia de IA declarada; responsabilidad editorial humana y firmada."
+    ],
+    "limitaciones": [
+      "El corpus sigue siendo mayoritariamente autodescriptivo: 96 de 127 fuentes son comunicación de las propias instituciones. Las 31 de contraste externo confirman lo que dicen, pero no pueden decir qué omitieron.",
+      "La cobertura sigue siendo desigual: tres instituciones con piloto de profundidad y ocho sin él. La razón bajó de 2,4:1 a 1,8:1 en rutas, pero se mantiene en 3,7:1 en fuentes. Con 5 de las 100 celdas del comparador sin concluir, ningún techo alcanza el piso de la primera, y lo que queda sin resolver son dos empates, no un tramo entero del orden.",
+      "El comparador mide formalización publicada, no calidad de la enseñanza, preparación de egresados ni uso real. Una Facultad excelente que no publique sus instrumentos puntúa bajo, y eso es deliberado.",
+      "Una fuente no resistió la verificación ni fue localizable (la atribuida a una revista de la U. Central). Se degradó y la capacidad de investigación de esa institución bajó a no localizada, lo que la perjudica sin que pueda responder en el documento.",
+      "No existe línea base congelada de 2025: ninguna afirmación de crecimiento temporal es sostenible.",
+      "Dos dimensiones del protocolo están vacías (recursos y capacidades; continuidad, cobertura y resultados). Ninguna institución publica presupuesto, dotación ni sostenibilidad, y ningún fondo de vinculación con el medio de la cohorte publica su monto.",
+      "La ausencia de evidencia pública no es inexistencia, salvo en la base histórica de proyectos adjudicados, y aun ahí sólo respecto del financiamiento público competitivo.",
+      "El autor participa en una de las iniciativas evaluadas (ver declaración). El texto de la v3.2.0 en este punto contiene un error que no se hereda: habla de «la primera posición de la PUCV» y de la doble revisión como tratamiento vigente. Versión correcta: la PUCV está fuera del comparador, sin posición, por la razón de la sección 8.",
+      "Añadida para el Documento A: 22 fuentes de la ronda de ampliación no están contrastadas, 13 de ellas sostienen 25 puntos del comparador, y tres de sus direcciones no resuelven."
+    ],
+    "agenda": [
+      {"id": "A-1", "pregunta": "¿Cuál es el acto formal que crea cada una de las unidades anunciadas entre 2025 y 2026?", "por_que_importa": "Distingue institucionalización anunciada de acreditada; afecta a C-1, la conclusión principal.", "como_se_cierra": "Solicitar a cada Facultad el decreto, acuerdo de consejo o resolución, o localizarlo en sus repositorios de transparencia. Cinco documentos cierran la pregunta."},
+      {"id": "A-2", "pregunta": "¿Existe alguna asignatura obligatoria de IA en las mallas vigentes de las once?", "por_que_importa": "C-4 registra una ausencia de evidencia pública. La v3.2.0 la convirtió en verificación directa para una institución (la malla PUCV); faltan diez.", "como_se_cierra": "Revisar las once mallas y los programas que nombren tecnología, innovación o IA, verificando obligatoriedad, semestre, créditos y matrícula."},
+      {"id": "A-3", "pregunta": "¿Cuántos estudiantes de Derecho usan efectivamente las herramientas institucionales?", "por_que_importa": "Mide la distancia entre disponibilidad y adopción, la laguna central del informe. Existe un dato no público: la encuesta de admisión de una de las once está segregada por carrera.", "como_se_cierra": "Solicitar el desglose por carrera de esa encuesta y datos de uso por unidad académica a las once."},
+      {"id": "A-4", "pregunta": "¿Qué mide realmente la única cifra de resultado del corpus?", "por_que_importa": "Es el único dato de efecto disponible y su diseño no está publicado.", "como_se_cierra": "Obtener diseño, muestra, grupo de control e instrumento, o registrarla definitivamente como señal no verificable."},
+      {"id": "A-5", "pregunta": "¿Qué ocurriría si se recorriera el piloto de profundidad en las ocho instituciones restantes?", "por_que_importa": "Según la v3.2.0, cuatro instituciones tendrían un techo igual o superior al piso de la primera.", "como_se_cierra": "Aplicar el piloto a las ocho no piloto, empezando por las de mayor techo.", "advertencia": "Texto desactualizado en la v3.2.0: con matriz-v2 («despues») ningún techo alcanza el piso de la primera (P. U. Católica de Chile, 20), como dice la propia sección 11. Además nombra entre las «ocho no piloto» a la P. U. Católica de Chile, que es del piloto. Si se usa, hay que reformularla: por ejemplo, empezar por las no piloto de mayor techo, U. Autónoma de Chile y U. Central de Chile (17), y por las que conservan celdas sin concluir."},
+      {"id": "A-6", "pregunta": "¿Puede reconstruirse una línea base congelada al 31-12-2025?", "por_que_importa": "Sin ella no hay comparación temporal posible.", "como_se_cierra": "Decisión humana sobre qué se considera público al cierre de 2025 en un antecedente editado retrospectivamente. No es automatizable."},
+      {"id": "A-7", "pregunta": "¿Qué muestran los ocho proyectos ANID con objeto jurídico-tecnológico clasificados fuera de la disciplina Derecho?", "por_que_importa": "Es investigación jurídico-tecnológica que las Facultades de Derecho no lideran; precisaría el hallazgo H-4.", "como_se_cierra": "Revisar equipo y afiliación declarada en las fichas públicas de ANID y contrastar con la comunicación de cada universidad.", "advertencia": "La v3.2.0 dice aquí «1.126 millones de pesos», pero el anexo E dice 1.361 millones y la suma de su tabla da 1.361.317.000. Usar 1.361 millones."}
+    ],
+    "candidatas_fuera_de_cohorte": {
+      "resumen": "Se revisaron dieciséis instituciones chilenas con Facultad o Escuela de Derecho fuera de la cohorte: seis arrojan algo localizable y, según el anexo G, «sólo dos son sólidas» (el anexo no dice cuáles; la U. de Valparaíso es «el candidato más fuerte»). Ninguna se incorpora, porque rompería la comparabilidad con el antecedente de 2025 y exigiría una versión nueva del protocolo.",
+      "candidatas": [
+        {"institucion": "Universidad de Valparaíso", "mecanismo": "Unidad", "que_consta": "Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías, presentado el 04-09-2026 por la Facultad de Derecho en un conversatorio, con coordinadora identificada y decano y vicedecana presentes. Primera capacitación docente sobre IA y cognición ejecutada el 01-09-2026 con un centro de neurociencia de la misma universidad. Sin acto de creación publicado. Es el candidato más fuerte y el más reciente."},
+        {"institucion": "Universidad Santo Tomás", "mecanismo": "Actividad", "que_consta": "Seminario «Inteligencia Artificial en Derecho: una mirada transversal desde lo público», Escuela de Derecho, sede Talca, 20-11-2025: seis ponencias sobre IA con expositores de cuatro universidades."},
+        {"institucion": "Universidad San Sebastián", "mecanismo": "Convenio y proyecto", "que_consta": "Convenio con la Corte de Apelaciones de San Miguel sobre IA (sin fecha; fuente del Poder Judicial pendiente de verificación manual) y participación en 2022 en el proyecto de jurisprudencia de la Corte Suprema, con seis estudiantes y 652 sentencias sistematizadas: el mismo proyecto multiuniversitario en que participó la PUCV. Además tiene un Fondecyt Regular 2025 de disciplina Derecho con objeto de IA (sección 6)."},
+        {"institucion": "Universidad Católica del Maule", "mecanismo": "Publicación", "que_consta": "Columna de divulgación de dos académicas sobre uso responsable de IA en el ejercicio del derecho, 23-04-2025."},
+        {"institucion": "Universidad Alberto Hurtado", "mecanismo": "Actividad", "que_consta": "Experiencia de aprendizaje con IA entre Derecho e Ingeniería (16-07-2026), emitida por Ingeniería y liderada por una académica jurídica de otra institución. Proyecto Fondecyt Exploración 2025 sobre IA y derechos humanos (31-07-2025) con participación de un académico de su Facultad de Derecho, sin código ni monto aislables. Además, FONDEF IDeA I+D 2026 ID26I10072 «ChileReconoce 2.0» (anexo E)."},
+        {"institucion": "Universidad de Talca", "mecanismo": "Sin evidencia de Facultad", "que_consta": "Dato negativo: pese a su tradición en informática jurídica, no se localizó unidad, norma, programa, asignatura ni herramienta de IA de su Facultad de Ciencias Jurídicas y Sociales. Tiene un Fondecyt Regular 2026 sobre regulación de riesgos de la IA por 39,7 millones de pesos (código 1260629), que consta en ANID y no en la comunicación de la Facultad."}
+      ],
+      "sin_evidencia_localizada": ["Universidad Austral de Chile", "Universidad Católica del Norte", "Universidad Católica de Temuco", "Universidad de Tarapacá", "Universidad Finis Terrae", "Universidad Mayor", "Universidad de Antofagasta", "Universidad de La Frontera", "Universidad Bernardo O'Higgins", "Universidad Gabriela Mistral"],
+      "lectura": "El patrón se replica fuera de la cohorte: ninguna de las dieciséis tiene norma, reglamento ni acto formal publicado sobre IA a nivel de Facultad de Derecho. En varias hay actividad universitaria en IA sin vínculo publicado con Derecho. Según el anexo G, que el hallazgo se sostenga en veintisiete instituciones refuerza que es una característica del campo y no de la cohorte elegida."
+    }
+  },
+  "errores_a_no_heredar": [
+    {"donde": "Informe v3.2.0, cierre de la sección 10 (líneas 1924-1925)", "dice": "«la primera posición de una cohorte cuyo máximo es 18 sobre 30»", "correcto": "La PUCV no tiene posición. El techo real del comparador es 20 de 30 (P. U. Católica de Chile, 20–20). Si se ordenara, la PUCV quedaría segunda (18–18), dato que el complemento publica sin usarlo.", "verificado_con": "matriz-v2.json («despues»); anexo D"},
+    {"donde": "Informe v3.2.0, cierre de la sección 10 (líneas 1921-1922)", "dice": "«ninguna de las seis decisiones propuestas consiste en comprar tecnología, y cuatro no cuestan dinero»", "correcto": "El cuerpo del informe tiene cuatro prioridades. Las seis decisiones (D-1 a D-6) son del complemento PUCV, cierran 8 de los 12 puntos faltantes y dejan cuatro huérfanos.", "verificado_con": "encargo; HANDOFF-EMPUJAR-v3 P2; CHECKPOINT §2"},
+    {"donde": "Informe v3.2.0, sección 11, último párrafo (línea 1952)", "dice": "«la sección correspondiente publica su doble revisión, incluida la observación de que la primera posición de la PUCV se beneficia de ser la institución mejor investigada»", "correcto": "La PUCV está fuera del comparador, sin posición. La doble revisión fue la medida de versiones anteriores y la sección 8 la declaró insuficiente.", "verificado_con": "sección 8 del informe"},
+    {"donde": "Informe v3.2.0, sección 3, declaración de intereses (líneas 682-688)", "dice": "Medidas redactadas para una PUCV dentro del comparador («para que la posición de la PUCV no pudiera ajustarse a conveniencia»)", "correcto": "Presentarlas como la etapa previa. El tratamiento vigente es el retiro de la sección 8.", "verificado_con": "sección 8"},
+    {"donde": "Informe v3.2.0, objetivo específico 7 (líneas 491-493)", "dice": "«Situar a la Pontificia Universidad Católica de Valparaíso frente a instituciones comparables»", "correcto": "Superado por la sección 8: la PUCV no se sitúa frente a otras, se examina aparte.", "verificado_con": "sección 8"},
+    {"donde": "Informe v3.2.0, anexo A, ficha PUCV (líneas 2134-2139)", "dice": "«18/30 ... Encabeza el comparador y es la única institución sin celdas sin concluir»", "correcto": "Sin posición. Tras la ronda 2, seis de las diez del comparador también tienen cero celdas sin concluir.", "verificado_con": "matriz-v2.json («despues»)"},
+    {"donde": "Informe v3.2.0, anexo A, otras fichas (por ejemplo, líneas 2115-2128 y 2153-2166)", "dice": "Cifras previas a la ronda 2: P. U. Católica de Chile «18/30, piso 18, techo 20»; U. Adolfo Ibáñez «6/30, piso 6, techo 14»; U. Andrés Bello «10/30»", "correcto": "Usar el anexo D y matriz-v2.json («despues»): P. U. Católica de Chile 20–20; U. Adolfo Ibáñez 11–11; U. Andrés Bello 11–11.", "verificado_con": "anexo D; matriz-v2.json"},
+    {"donde": "Informe v3.2.0, tabla de cobertura (líneas 817-837), columna «Celdas sin concluir»", "dice": "Valores previos a la ronda 2 (U. Adolfo Ibáñez 4, U. Autónoma 4, U. Central 4, U. Diego Portales 4, U. Andrés Bello 2...), que suman 31", "correcto": "Tras la ronda 2 son 5 en total: U. de Chile 1, U. de Concepción 1, U. de los Andes 2, U. del Desarrollo 1, y 0 en las demás. Así lo dice la propia sección de capacidades («5 de las 100 celdas»).", "verificado_con": "matriz-v2.json («despues»)"},
+    {"donde": "Informe v3.2.0, resumen (línea 236), y complemento §4", "dice": "«las trece rutas del protocolo que le corresponden se recorrieron enteras»", "correcto": "En la PUCV se recorrieron 11 de 13 rutas; faltan postgrado-formacion-continua y programas-syllabus. Lo que es cierto es que tiene 0 celdas sin concluir.", "verificado_con": "anexo A (línea 2143 y 2151); tabla de cobertura"},
+    {"donde": "Complemento v1.2, §9, encabezado", "dice": "«es la única institución de la cohorte cuya banda está cerrada»", "correcto": "Falso tras la ronda 2: también tienen banda cerrada la P. U. Católica de Chile, la U. Autónoma de Chile, la U. Central de Chile, la U. Adolfo Ibáñez, la U. Andrés Bello y la U. Diego Portales.", "verificado_con": "matriz-v2.json («despues»)"},
+    {"donde": "Complemento v1.2, §9, encabezado", "dice": "«Las seis decisiones que siguen suman, en conjunto, hasta 9 puntos»", "correcto": "Las seis cierran 8 puntos (D-1 +1, D-2 +2, D-3 +1, D-4 +1, D-5 +3, D-6 0) y quedan 4 huérfanos (formación +1, investigación +1, adopción +2). Con D-7 a D-9 de decisiones.mjs se cierran los 12.", "verificado_con": "CHECKPOINT §2 y §5; decisiones.mjs"},
+    {"donde": "Complemento v1.2, D-3, efecto", "dice": "«+1 a +2 puntos en presencia en pregrado»", "correcto": "+1 (OP → OPF); la capacidad está en 2 de 3.", "verificado_con": "CHECKPOINT §2.A"},
+    {"donde": "Complemento v1.2, D-4, efecto", "dice": "«+1 punto en adopción en la enseñanza»", "correcto": "+1 en alcance declarado. Adopción se cierra decidiendo en el nivel de la Escuela (D-9).", "verificado_con": "CHECKPOINT §2.B"},
+    {"donde": "Complemento v1.2, D-2, efecto", "dice": "«diez de once no la tienen»", "correcto": "Nueve de once: la P. U. Católica de Chile y la U. Central de Chile tienen norma propia con instrumento formal (la dirección de la resolución de la U. Central, R2-UCEN-01, no resuelve).", "verificado_con": "matriz-v2.json; anexo D; CHECKPOINT §6"},
+    {"donde": "Complemento v1.2, D-5, plazo", "dice": "«la más cara de las cinco»", "correcto": "De las seis.", "verificado_con": "recuento del propio complemento"},
+    {"donde": "Complemento v1.2, §9, introducción", "dice": "«el efecto medible sobre la posición comparada»", "correcto": "El efecto se mide en puntos de la rúbrica; la PUCV no tiene posición.", "verificado_con": "complemento §1 y §4; informe §8"},
+    {"donde": "Complemento v1.2, §1, tabla del sesgo", "dice": "«Media de las demás: 3,8 fuentes» y «44 %» de verificación inicial", "correcto": "3,8 es la media de las ocho fuera del piloto (la de las otras diez es 5,8). El 44 % no se reproduce con cobertura.csv (43,1 % agregado en las otras diez; 40,0 % en las ocho fuera del piloto).", "verificado_con": "cobertura.csv recalculado con Node"},
+    {"donde": "Complemento v1.2, portada y §2", "dice": "«Este documento no puntúa, no ordena y no compara»", "correcto": "El §4 publica el puntaje de 18 sobre 30. La formulación consistente es «publica su puntaje, pero no ordena ni compara», que es además lo que pide el encargo del Documento A.", "verificado_con": "complemento §4"},
+    {"donde": "Complemento v1.2, anexo (17 registros)", "dice": "Estado «verificada» en registros sin identificador de fuente (convenio con la Corte Suprema 2020, certificado 2026-A-6558, asistente SII 2021, fondo 2023, artículo 2020, encuentro Derecho–Ingeniería, boletín de Lenguaje Claro, centro de supercómputo)", "correcto": "En el Documento A, citarlos con su fuente original o marcarlos como dato del complemento sin fuente identificada.", "verificado_con": "fuentes.csv; anexos H e I del informe; búsqueda en los CSV del repositorio"},
+    {"donde": "Complemento v1.2, anexo, y nota de src-pucv-011 en fuentes.csv", "dice": "El anexo dice que la edición 2025 del certamen «no publica nota de resultados»; la nota de src-pucv-011 registra cifras de la «IV versión de Innova Day 2025» (9 proyectos, 10 profesionales, 326 y 809 votantes, seis países)", "correcto": "Contradicción no resuelta en los insumos. No citar cifras del certamen 2025 sin aclarar a qué edición corresponden.", "verificado_con": "fuentes.csv; complemento anexo"},
+    {"donde": "Informe v3.2.0, sección 3 (línea 573) y sección de cobertura (línea 847)", "dice": "«Se verificaron las 74 fuentes del corpus»; «Con el corpus contrastado al cien por ciento en las once»", "correcto": "74 de 96 (77 %): las 74 del corpus original están contrastadas y las 22 de la ronda 2 no.", "verificado_con": "portada del informe (líneas 21 y 66); anexo I; CHECKPOINT §6"},
+    {"donde": "Informe v3.2.0, sección 3 (líneas 636-638)", "dice": "«Sólo trece de las 110 celdas alcanzan el nuevo estado»", "correcto": "Con matriz-v2 son 12 de 110 (10 de las 100 del comparador más 2 de la PUCV). El anexo D dice 10 de 95 resueltas en el comparador.", "verificado_con": "matriz-v2.json recalculado con Node"},
+    {"donde": "Informe v3.2.0, anexo D (línea 2570)", "dice": "«Se admiten seis clases de instrumento» seguido de una enumeración de siete", "correcto": "Siete clases enumeradas (acto administrativo, acuerdo de órgano colegiado, código de asignatura, código de proyecto, registro de propiedad intelectual, convenio firmado, unidad en organigrama).", "verificado_con": "texto del anexo D"},
+    {"donde": "Informe v3.2.0, agenda A-5", "dice": "«Cuatro instituciones tienen hoy un techo igual o superior al piso de la primera» y nombra a la P. U. Católica de Chile entre las «ocho no piloto»", "correcto": "Ningún techo alcanza el piso de la primera (sección 11; matriz «despues»), y la P. U. Católica de Chile es del piloto.", "verificado_con": "matriz-v2.json; cobertura.csv; sección 11"},
+    {"donde": "Informe v3.2.0, agenda A-7", "dice": "«Son 1.126 millones de pesos»", "correcto": "1.361 millones según el anexo E (suma de la tabla: 1.361.317.000 pesos).", "verificado_con": "anexo E recalculado"},
+    {"donde": "Ficha del sitio (reports.ts), ya corregida el 09-09-2026, pero puede reaparecer por arrastre", "dice": "«corpus contrastado al 100 %»; «cinco Facultades sostienen una unidad especializada en operación»; «una sola ha dictado norma propia»", "correcto": "74 de 96 (77 %); seis Facultades del comparador con unidad especializada en operación (2 OPF + 4 OP); dos con norma propia con instrumento formal, una sola la publica con dirección que resuelve.", "verificado_con": "CHECKPOINT §6; matriz-v2.json"}
+  ]
+}

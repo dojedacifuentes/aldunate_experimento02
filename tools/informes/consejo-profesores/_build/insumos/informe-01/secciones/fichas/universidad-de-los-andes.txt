@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+5/30
+ Universidad de los Andes
+
+Facultad de Derecho U. de los Andes
+
+El proyecto de inteligencia artificial para certeza jurídica ambiental, que su comunicación institucional presenta como reciente, es un FONDEF de escalamiento por 237 millones y 24 meses, segunda fase de uno de 2021, y lo dirige una investigadora de la Facultad de Ingeniería. Es el caso más claro del corpus de capacidad presente en el entorno institucional y no en la Facultad de Derecho. Su curso de compliance dedica uno de ocho módulos a la IA.
+
+Cobertura
+
+7 de 13 rutas · 5 fuentes, 5 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 5 · techo 13
+
+Rutas por recorrer
+
+centros-laboratorios, herramientas-licencias-convenios, integridad-evaluacion, malla-curricular, politicas-ia, sitio-facultad
+

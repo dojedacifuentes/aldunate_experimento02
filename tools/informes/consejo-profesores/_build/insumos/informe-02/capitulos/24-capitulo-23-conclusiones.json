@@ -1,0 +1,76 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 23",
+  "x": "Conclusiones"
+ },
+ {
+  "t": "lead",
+  "x": "La pregunta con la que se abrió este informe era qué significa enseñar, aprender, evaluar y certificar conocimiento universitario cuando estudiantes y profesionales disponen permanentemente de sistemas capaces de ejecutar parte significativa del trabajo cognitivo. La evidencia recogida permite responder cuatro de esas cinco cosas con razonable seguridad, y deja la quinta abierta."
+ },
+ {
+  "t": "h2",
+  "x": "23.1 Sobre certificar"
+ },
+ {
+  "t": "p",
+  "x": "Es la función más dañada y la respuesta es la más clara. **El producto entregado sin supervisión ha dejado de ser evidencia de capacidad.** No para algunos estudiantes ni en algunos casos: de forma general y estructural. El experimento de Reading lo estableció y ningún trabajo posterior lo ha contradicho."
+ },
+ {
+  "t": "p",
+  "x": "La consecuencia es que la certificación debe apoyarse en desempeño observado, defensa oral, trazabilidad del proceso o supervisión efectiva. La universidad que no haga esa migración seguirá emitiendo títulos, pero esos títulos habrán dejado de contener la información que se les atribuye. El riesgo no es el fraude de un estudiante; es la pérdida silenciosa de significado de una credencial que la sociedad sigue tratando como si significara lo mismo."
+ },
+ {
+  "t": "h2",
+  "x": "23.2 Sobre evaluar"
+ },
+ {
+  "t": "p",
+  "x": "Aquí está la transformación real del periodo, y es una transformación por necesidad más que por convicción. El modelo de dos carriles resuelve el problema con una elegancia notable: separar lo que debe garantizarse de lo que debe desarrollarse, y trasladar la garantía del nivel de la asignatura al nivel del programa."
+ },
+ {
+  "t": "p",
+  "x": "Su límite es económico, no conceptual. Los instrumentos que recuperan validez —defensa oral, observación de desempeño, examen supervisado, proceso documentado— consumen tiempo docente en proporción al número de estudiantes. Ninguna institución de la muestra ha presupuestado ese coste. **Esta es la principal predicción de fracaso de este informe**, y es la única que puede desmentirse mirando presupuestos en lugar de discursos."
+ },
+ {
+  "t": "h2",
+  "x": "23.3 Sobre aprender"
+ },
+ {
+  "t": "p",
+  "x": "La respuesta es más precisa de lo que era hace un año y va en contra de la intuición institucional dominante. **El acceso a la herramienta no determina el efecto; el diseño de la interacción sí.** El mismo modelo subyacente duplicó el aprendizaje en Harvard con andamiajes de expertos y lo dañó en Turquía sin ellos."
+ },
+ {
+  "t": "p",
+  "x": "Esto invierte por completo la lógica de gasto observada. La inversión mayoritaria de las universidades —licencias de acceso general— es la intervención con menor probabilidad demostrada de producir aprendizaje, y puede producir el efecto contrario si no va acompañada de rediseño de tareas. La inversión con evidencia a favor —diseño pedagógico y andamiajes— es trabajo docente cualificado, no software, y es la que ninguna institución ha financiado a escala."
+ },
+ {
+  "t": "h2",
+  "x": "23.4 Sobre enseñar"
+ },
+ {
+  "t": "p",
+  "x": "El rol docente no se debilita: se desplaza y, en las funciones que importan, se vuelve más exigente. Diseñar tareas que produzcan aprendizaje en presencia de un sistema que puede ejecutarlas es intelectualmente más difícil que diseñar tareas que lo producían en su ausencia. Evaluar oralmente es más difícil que corregir un texto. Enseñar a desconfiar de una respuesta bien redactada es más difícil que enseñar a encontrarla."
+ },
+ {
+  "t": "p",
+  "x": "El problema es que estas funciones no están reconocidas en la carga docente, no están formadas —solo el 17 % del profesorado se sitúa en nivel avanzado— y no están financiadas. **El eslabón crítico del sistema es también el único que no ha recibido inversión.**"
+ },
+ {
+  "t": "h2",
+  "x": "23.5 Lo que queda abierto"
+ },
+ {
+  "t": "p",
+  "x": "La quinta pregunta —qué significa **saber** algo en este contexto— no puede responderse con la evidencia disponible, y este informe no va a fingir lo contrario."
+ },
+ {
+  "t": "p",
+  "x": "Hay indicios en direcciones opuestas. El estudio de Bastani sugiere que la capacidad autónoma se degrada cuando se delega sistemáticamente. Los datos de uso muestran que lo que más se delega son precisamente los procesos cognitivos de orden superior. Pero también es cierto que ninguna competencia intelectual ha existido nunca al margen de sus herramientas, que la escritura misma fue denunciada como destructora de la memoria, y que la pregunta por qué capacidades deben internalizarse y cuáles pueden externalizarse no tiene una respuesta atemporal."
+ },
+ {
+  "t": "quote",
+  "x": "Lo que sí puede afirmarse es más modesto y más útil: mientras la universidad certifique capacidades individuales, necesita saber qué capacidades exige que sus titulados posean sin asistencia. Esa lista —corta, explícita y defendible— es hoy el documento que casi ninguna institución ha escrito, y es probablemente el más importante que debería escribir.",
+  "a": "Conclusión central de este informe"
+ }
+]

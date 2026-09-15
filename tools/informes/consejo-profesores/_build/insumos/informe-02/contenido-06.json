@@ -1,0 +1,256 @@
+﻿[
+{"t":"h1","n":"Capítulo 15","x":"Estado de la evidencia científica: qué sabemos y qué se retractó"},
+
+{"t":"lead","x":"Cuatro años después del lanzamiento de ChatGPT, el volumen de literatura sobre IA en educación es enorme y su calidad media es baja. Este capítulo separa lo que puede sostenerse de lo que no, y documenta el episodio que mejor resume el estado del campo: la retractación de su estudio más citado."},
+
+{"t":"h2","x":"15.1 La retractación de Wang y Fan"},
+
+{"t":"p","x":"En mayo de 2025, Humanities and Social Sciences Communications, revista del grupo Springer Nature, publicó el metaanálisis de Jin Wang y Wenxiang Fan, de la Universidad Normal de Hangzhou, sobre el efecto de ChatGPT en el aprendizaje. Reportaba un impacto positivo **grande** sobre el rendimiento (g = 0,867) y moderado sobre la percepción del aprendizaje (g = 0,456) y el pensamiento de orden superior (g = 0,457), a partir de 51 estudios."},
+
+{"t":"p","x":"El artículo se convirtió en la referencia mundial del campo: acumuló cerca de **486.000 visualizaciones**, **266 citas** y una puntuación Altmetric de 1.023. Fue citado en informes institucionales, políticas universitarias y presentaciones de gobierno."},
+
+{"t":"p","x":"El **22 de abril de 2026** fue retractado. El motivo declarado son discrepancias en el metaanálisis, entre ellas la agregación de estudios demasiado distintos en método y muestra como para ser combinados. Las objeciones fueron planteadas inicialmente por dos investigadores externos, Magnus Ingebrigtsen y Marko Lukic."},
+
+{"t":"callout","h":"Por qué este episodio importa más que muchos despliegues","c":"brick","x":"Durante once meses, la cifra más citada del mundo a favor de los efectos positivos grandes de la IA en el aprendizaje no se sostenía. Decisiones de inversión, políticas institucionales y argumentos de rectoría se apoyaron en ella. El episodio no demuestra que la IA no funcione; demuestra que **el campo carecía —y en buena medida sigue careciendo— de los mecanismos de control de calidad necesarios para orientar decisiones de esta magnitud**. Cualquier documento sobre este tema fechado antes de abril de 2026 que cite ese metaanálisis debe releerse con esa información."},
+
+{"t":"h2","x":"15.2 Qué sostiene hoy la mejor evidencia"},
+
+{"t":"table","cap":"Tabla 13. Estado de la evidencia por afirmación. Se indica el mejor estudio disponible, su diseño y el nivel de confianza que este informe le atribuye.",
+ "head":["Afirmación","Mejor evidencia disponible","Diseño","Confianza"],
+ "w":[2700,3100,2000,1320],
+ "align":["left","left","left","center"],
+ "rows":[
+ ["Un tutor de IA bien diseñado mejora sustancialmente el aprendizaje","Kestin et al., Scientific Reports 2025 (Harvard, n ≈ 180)","ECA con control de aprendizaje activo","**ALTA**"],
+ ["El acceso sin andamiaje puede dañar el aprendizaje retenido","Bastani et al., PNAS 2025 (Turquía, n ≈ 1.000)","Experimento de campo con retirada","**ALTA**"],
+ ["La evaluación no supervisada perdió validez","Scarfe et al., PLOS ONE 2024 (Reading)","Inserción ciega en sistema real","**ALTA**"],
+ ["Los detectores fallan y discriminan","Estudio de Stanford 2023 sobre 7 detectores; decisiones de Vanderbilt y otras 11 instituciones","Evaluación comparativa + decisión institucional","**ALTA**"],
+ ["La IA comprime la distribución del desempeño","Choi y Schwarcz (Derecho); Doshi y Hauser (Science Advances 2024)","Dos ECA en dominios distintos","**MEDIA-ALTA**"],
+ ["La percepción de la propia productividad está descalibrada","METR 2025 (n = 16, 246 tareas)","ECA con medición objetiva","**MEDIA-ALTA**"],
+ ["La IA reduce la diversidad colectiva del contenido","Doshi y Hauser, Science Advances 2024","ECA","**MEDIA-ALTA**"],
+ ["La IA ahorra tiempo docente de forma neta","Evidencia contradictoria; revisión integrativa califica la base de deficiente","Estudios cortos y sin control","**BAJA**"],
+ ["La IA mejora el pensamiento crítico","Sin evidencia experimental sólida en ninguna dirección","—","**INSUFICIENTE**"],
+ ["La IA daña permanentemente la cognición","Kosmyna et al. 2025 es preliminar y metodológicamente cuestionado","EEG, n = 54, tarea única","**INSUFICIENTE**"],
+ ["Los despliegues institucionales masivos mejoran resultados de aprendizaje","Ningún estudio independiente localizado en ninguna institución de la muestra","—","**NO DEMOSTRADO**"]
+ ]},
+
+{"t":"h2","x":"15.3 El vacío principal"},
+
+{"t":"p","x":"La última fila de la tabla anterior es la conclusión más importante de este capítulo. Después de cuatro años, miles de millones de dólares comprometidos y despliegues que alcanzan a millones de estudiantes, **esta investigación no ha localizado un solo estudio independiente que demuestre que un despliegue institucional masivo de IA generativa haya mejorado resultados de aprendizaje en educación superior**."},
+
+{"t":"p","x":"La evidencia positiva sólida que existe procede toda de intervenciones pequeñas, cuidadosamente diseñadas y evaluadas: un curso, un tutor construido a propósito, un experimento con condiciones controladas. La evidencia sobre despliegues institucionales de escala es, sin excepción, autoinformada."},
+
+{"t":"h1","n":"Capítulo 16","x":"Contraevidencia, inercia y límites"},
+
+{"t":"lead","x":"Un informe que solo documenta lo que cambia produce una imagen falsa. Este capítulo reúne lo que no está cambiando, lo que ha ido en dirección contraria y las objeciones serias a la narrativa transformacional."},
+
+{"t":"h2","x":"16.1 La distancia entre la política y el aula"},
+
+{"t":"p","x":"El indicador más limpio de esta distancia es el contraste entre el 19 % de instituciones con política vigente y el 90 % de encuestados que ya usa IA en su trabajo profesional. Pero hay más:"},
+
+{"t":"bullets","items":[
+"Solo el **38 %** de los estudiantes declara recibir herramientas de IA de su institución, pese a que el 94 % las usa. La adopción es privada; la política, tardía.",
+"El **80 %** del profesorado percibe falta de claridad institucional sobre cómo aplicar la IA en su docencia. Publicar una política no es comunicarla.",
+"Solo el **31 %** del profesorado considera que su institución lo involucra de forma significativa en el diseño de esas políticas. Se está normando sin quienes deben aplicar la norma.",
+"Más del **27 %** de las universidades británicas que respondieron a una solicitud de información **ni siquiera registraba** de forma separada la mala conducta académica con IA. No se puede gestionar lo que no se mide."
+]},
+
+{"t":"h2","x":"16.2 Retrocesos documentados"},
+
+{"t":"p","x":"El periodo registra reversiones reales, no solo avances de distinta velocidad."},
+
+{"t":"numbers","items":[
+"**La detección algorítmica fue adoptada y luego abandonada.** Entre 2023 y 2026, al menos doce instituciones importantes desactivaron la detección de IA de Turnitin. Es un ciclo completo de adopción, evidencia adversa y retirada, en tres años.",
+"**La retractación del metaanálisis de referencia** invalidó la base cuantitativa sobre la que se apoyó buena parte del discurso institucional de 2025.",
+"**La renovación del contrato de CSU en mayo de 2026** ocurrió pese a la oposición documentada del profesorado, en contexto de recortes, y con datos internos que muestran que el 52 % del profesorado percibe un efecto negativo sobre su docencia. Es un caso de persistencia institucional frente a la evidencia propia.",
+"**METR reclasificó su propio resultado** como histórico. Es una práctica científica ejemplar y, a la vez, un recordatorio de que en este campo los hallazgos caducan con rapidez."
+]},
+
+{"t":"h2","x":"16.3 Las objeciones serias a la narrativa transformacional"},
+
+{"t":"p","x":"Existe una crítica académica consolidada que sostiene que la transformación está sobreestimada y que reproduce el ciclo de expectativas de tecnologías educativas anteriores —la enseñanza asistida por ordenador, la pizarra digital, los programas de un portátil por niño, los MOOC—. Todas prometieron personalización a escala; ninguna la entregó."},
+
+{"t":"p","x":"Este informe considera que la objeción es parcialmente correcta y que su límite es preciso. Es correcta respecto de las **promesas de personalización y de ahorro**, cuyo patrón discursivo es en efecto casi idéntico al de ciclos anteriores y cuya evidencia es igualmente débil. Es incorrecta respecto de la **evaluación**, y ahí está la diferencia decisiva: ninguna tecnología educativa anterior invalidó el instrumento con que la universidad certificaba. Los MOOC no obligaron a nadie a rediseñar un examen. La IA generativa sí, y por eso el cambio evaluativo documentado en el capítulo 3 es real aunque el resto de la narrativa resulte inflada."},
+
+{"t":"callout","h":"El resumen honesto","c":"navy","x":"La universidad no se está transformando porque haya sido convencida de las virtudes pedagógicas de la inteligencia artificial. Se está transformando en el punto exacto donde quedó sin alternativa: la evaluación. En todo lo demás —currículo, metodologías, formación docente, financiación— avanza al ritmo lento de siempre y con la evidencia débil de siempre. Reconocerlo no debilita el diagnóstico; lo hace utilizable."},
+
+{"t":"h1","n":"Capítulo 17","x":"Matriz comparada de instituciones"},
+
+{"t":"lead","x":"Nueve instituciones, siete dimensiones, una escala de cero a cinco. La matriz no ordena de mejor a peor: revela perfiles. Cada institución es fuerte donde decidió intervenir y débil donde no lo hizo, y ninguna cubre el conjunto."},
+
+{"t":"fig","id":"g09-matriz-instituciones","cap":"Figura 9. Leída por columnas, la matriz muestra que la evaluación y el currículo son las dimensiones con mayor dispersión, y la gobernanza la de nivel medio más alto: es donde el dinero llegó primero."},
+
+{"t":"h2","x":"17.1 Cómo leer la matriz"},
+
+{"t":"p","x":"Las puntuaciones son valoraciones analíticas del autor a partir de la evidencia pública disponible en agosto de 2026, aplicando la escala de la tabla 3. Tienen dos sesgos que conviene declarar: penalizan a las instituciones que documentan poco —no necesariamente a las que hacen poco— y favorecen a las anglófonas, cuya documentación es más accesible."},
+
+{"t":"table","cap":"Tabla 14. Justificación de las puntuaciones globales y evidencia disponible por institución.",
+ "head":["Institución","Nivel global","Fortaleza verificada","Evidencia de resultados"],
+ "w":[2200,900,3600,2420],
+ "align":["left","center","left","left"],
+ "rows":[
+ ["**University of Sydney**","4","Modelo de dos carriles operativo desde 2025; garantía trasladada al nivel de programa","Sin evaluación externa publicada de resultados de aprendizaje"],
+ ["**Ohio State University**","4","Requisito transversal de egreso con mecanismo curricular verificable y mapas por facultad","Implementación documentada; ningún resultado medido"],
+ ["**Case Western · Derecho**","4","Primer curso de IA obligatorio para primer año en una facultad de Derecho de EE. UU.","Ninguna"],
+ ["**Arizona State University**","3","Alianza institucional pionera y mecanismo interno de innovación distribuida","Autoinformada"],
+ ["**Tecnológico de Monterrey**","3","Modelo propio con soberanía de datos, único de su tipo en la región","Autoinformada, sin metodología pública"],
+ ["**Northeastern University**","3","Socio de diseño en despliegue federado con modo de aprendizaje socrático","Ninguna localizada"],
+ ["**University of Bath**","3","Adopción del modelo de dos carriles desde el curso 2026-27","Ninguna todavía; la implantación es reciente"],
+ ["**California State University**","2","La mayor infraestructura de acceso del mundo universitario","Encuesta interna con resultados desfavorables"],
+ ["**Universidad de Chile**","2","Lineamientos éticos propios y liderazgo en formación inicial docente","Ninguna localizada"]
+ ]},
+
+{"t":"h2","x":"17.2 Los tres patrones que revela"},
+
+{"t":"numbers","items":[
+"**La transformación es especializada, no integral.** Sydney transforma la evaluación y no el currículo; Ohio State el currículo y no la evaluación; CSU la infraestructura y ninguna de las dos. Nadie cubre el conjunto, y no por estar en una etapa temprana de un proceso que se completará solo, sino porque cada institución intervino donde tenía capacidad de decisión y presión.",
+"**La gobernanza avanza más rápido que la pedagogía.** Es la dimensión con mejores puntuaciones medias porque es la que se resuelve con presupuesto y una firma. Currículo y evaluación exigen acuerdo colegiado, y ese es un recurso más escaso que el dinero.",
+"**La evidencia es inversamente proporcional a la escala.** Las instituciones con despliegues más grandes son las que menos saben sobre sus efectos. Es exactamente el patrón contrario al que exigiría una decisión racional de inversión."
+]},
+
+{"t":"fig","id":"g11-declaracion-evidencia","cap":"Figura 11. El cuadrante superior derecho —transformación profunda con evidencia sólida— está prácticamente vacío. Es el hallazgo estructural del informe."},
+
+{"t":"h1","n":"Capítulo 18","x":"Seis estudios de caso"},
+
+{"t":"lead","x":"Seis instituciones examinadas en profundidad, escogidas por diversidad de modelo y no de geografía. Cada ficha responde a la misma pregunta doble, que es la única que importa cuando se busca una referencia para decidir: qué demuestra realmente este caso y qué no demuestra, por mucho que se cite como si lo demostrara."},
+
+{"t":"h2","x":"18.1 University of Sydney · el rediseño evaluativo"},
+
+{"t":"p","x":"**El problema.** A finales de 2023 la universidad enfrentaba la misma situación que el resto del sector australiano: una política de integridad que dependía de detectar el uso de IA, un regulador que anunciaba exigencias de aseguramiento del aprendizaje y evidencia creciente de que la detección no funcionaba. La respuesta habitual —endurecer la norma— no era viable."},
+
+{"t":"p","x":"**El modelo.** En lugar de regular el uso tarea por tarea, la universidad separó la evaluación en dos carriles y trasladó la garantía del nivel de la asignatura al del programa. El carril seguro verifica competencias nucleares en condiciones supervisadas; el carril abierto desarrolla criterio permitiendo el uso declarado. Cada tarea declara a qué carril pertenece."},
+
+{"t":"bullets","items":[
+"**Noviembre de 2024:** se anuncia el modelo de dos carriles.",
+"**Primer semestre de 2025:** despliegue progresivo en la enseñanza.",
+"**2025:** Cogniti —plataforma propia que permite a cada docente construir agentes de IA con instrucciones y materiales de su asignatura, desarrollada por el equipo de Innovación Educativa de Danny Liu sobre infraestructura Azure— gana el premio de investigación y educación del Australian Financial Review y llega a un centenar de instituciones que la ensayan.",
+"**Junio de 2026:** Cogniti se publica en el Microsoft Marketplace y queda disponible para universidades de todo el mundo."
+]},
+
+{"t":"p","x":"**Escala.** Cientos de docentes de la propia universidad utilizan Cogniti en asignaturas de distintas disciplinas; el modelo de dos carriles alcanza a la enseñanza de grado en su conjunto. La universidad no ha publicado tasas de adopción desagregadas por facultad."},
+
+{"t":"p","x":"**Evidencia independiente.** No existe evaluación externa de resultados de aprendizaje. Lo que sí existe es una señal indirecta relevante: el modelo ha sido adoptado por otras instituciones —la University of Bath desde el curso 2026-27— y encuadrado por el regulador nacional, lo que constituye validación institucional pero no empírica."},
+
+{"t":"callout","h":"Qué demuestra y qué no demuestra el caso Sydney","c":"navy","x":"**Demuestra** que es posible rediseñar la evaluación de una universidad completa sin prohibir la IA y sin depender de la detección, y que la solución conceptual —separar garantía de desarrollo, y situar la garantía a nivel de programa— es transferible: otras universidades ya la adoptaron. **No demuestra** que los estudiantes aprendan más, ni que la certificación resultante sea más válida en términos medibles. Tampoco resuelve el problema de coste: nadie ha publicado cuántas horas docentes adicionales consume el carril seguro."},
+
+{"t":"h2","x":"18.2 Ohio State University · el requisito de egreso"},
+
+{"t":"p","x":"**El problema.** Una universidad pública muy grande, con un estudiantado que ya usaba IA masivamente y un profesorado disperso en decenas de facultades sin criterio común. La pregunta institucional no era si permitir la IA, sino qué debía significar graduarse en ese contexto."},
+
+{"t":"p","x":"**El modelo.** Convertir la fluidez en IA en atributo de egreso y no en asignatura. La iniciativa AI Fluency establece que, desde la promoción de 2029, todo egresado será fluido en su campo **y** en IA. El mecanismo tiene tres piezas verificables: un seminario obligatorio de educación general con tres módulos nuevos; talleres integrados en la estructura de acompañamiento de primer año; y la obligación de que cada unidad académica publique su propio mapa de incorporación disciplinar hacia finales de 2026."},
+
+{"t":"p","x":"**Por qué la tercera pieza es la decisiva.** Un seminario general produce alfabetización básica y poco más. Obligar a cada facultad a responder por escrito qué significa la IA en su disciplina fuerza la conversación curricular donde realmente importa, y deja rastro documental auditable. Es el único mecanismo del mapa que convierte una declaración de rectoría en trabajo académico distribuido."},
+
+{"t":"callout","h":"Qué demuestra y qué no demuestra el caso Ohio State","c":"ochre","x":"**Demuestra** que una universidad pública grande puede modificar formalmente su perfil de egreso en menos de dos años, y que el mecanismo de mapas por facultad es una forma eficaz de trasladar la decisión al nivel disciplinar. **No demuestra** absolutamente nada sobre resultados: a agosto de 2026 no hay evaluación externa, ni grupo de comparación, ni medición de aprendizaje. Es implementación verificada con ambición curricular, citada con frecuencia como si fuera evidencia de eficacia. No lo es. Y su punto débil está declarado en la propia matriz de este informe: la evaluación permanece en nivel 2."},
+
+{"t":"h2","x":"18.3 California State University · el contraejemplo"},
+
+{"t":"p","x":"**El problema.** Equidad de acceso. Con más de 470.000 estudiantes, muchos de ellos de primera generación universitaria y con renta baja, dejar que cada uno resolviera su acceso a la IA con planes gratuitos o de pago producía una brecha inmediata. El razonamiento era correcto y el capítulo 9 lo respalda."},
+
+{"t":"p","x":"**El modelo.** Licenciar a escala máxima: ChatGPT Edu para todo el sistema, 23 campus, más de 470.000 estudiantes y 63.000 docentes y personal. Renovado en mayo de 2026 por trece millones de dólares anuales durante tres años, en contexto de recortes presupuestarios y pese a una petición del profesorado que pedía cancelarlo."},
+
+{"t":"p","x":"**Los resultados, medidos por la propia institución.** Una encuesta interna a más de 94.000 estudiantes y empleados encontró que el **52 % del profesorado reporta un efecto negativo de la IA sobre su docencia** y que el **67 % de los estudiantes considera que sus profesores no les enseñan a usarla de manera eficaz**. Es, con diferencia, el dato de resultados más honesto del mapa, y procede de la institución que peor sale retratada por él."},
+
+{"t":"callout","h":"Qué demuestra y qué no demuestra el caso California State","c":"brick","x":"**Demuestra** que el acceso universal es técnica y financieramente posible a escala de medio millón de personas, y —esto es lo importante— que **por sí solo no produce integración pedagógica ni percepción de mejora**. Dos años después del despliegue, la mayoría del profesorado percibe daño y la mayoría del estudiantado no se siente enseñada. **No demuestra** que licenciar sea un error. Demuestra que licenciar sin rediseño evaluativo, sin formación docente obligatoria y sin participación del profesorado en la decisión compra el nivel 1 al precio del nivel 5. Es el caso que toda rectoría debería leer antes de firmar un contrato."},
+
+{"t":"h2","x":"18.4 Harvard University · la evidencia"},
+
+{"t":"p","x":"**El problema.** No institucional sino pedagógico: si un tutor de IA puede aproximarse a una razón profesor-estudiante de uno a uno, ¿mejora eso el aprendizaje frente al mejor método presencial disponible, o solo frente a la clase magistral mediocre que suele usarse como control?"},
+
+{"t":"p","x":"**El modelo.** Construir el tutor con diseño pedagógico experto —andamiajes redactados por especialistas, razonamiento paso a paso, guardarraíles para no entregar la respuesta— y someterlo a un ensayo aleatorizado en un curso real, con el aprendizaje activo bien ejecutado como condición de control. En CS50, la misma lógica: un asistente entrenado con el material del curso, un explicador de código y un revisor de estilo, con el principio declarado de guiar mediante preguntas en vez de resolver."},
+
+{"t":"p","x":"**El resultado.** En Physical Sciences 2, alrededor de 180 estudiantes en diseño cruzado semanal: **el doble de ganancias de aprendizaje** con el tutor de IA, en **menos tiempo**, con mayor compromiso declarado. Publicado en Scientific Reports el 3 de junio de 2025."},
+
+{"t":"callout","h":"Qué demuestra y qué no demuestra el caso Harvard","c":"sage","x":"**Demuestra**, con el diseño más sólido disponible en todo este campo, que un tutor de IA cuidadosamente construido supera al aprendizaje activo presencial en una asignatura universitaria de ciencias. Es el único resultado del informe que cumple el estándar de causalidad. **No demuestra** que la IA genérica funcione: el efecto es atribuible al diseño pedagógico, no al modelo, y el capítulo 5 muestra el resultado opuesto cuando ese diseño falta. Tampoco demuestra escalabilidad: es un curso, en una universidad con recursos excepcionales, evaluado por el equipo que lo construyó. Su valor es de prueba de concepto rigurosa, no de política institucional."},
+
+{"t":"h2","x":"18.5 Tecnológico de Monterrey · la soberanía tecnológica"},
+
+{"t":"p","x":"**El problema.** Depender de un proveedor extranjero para la infraestructura cognitiva de una universidad implica ceder el control de los datos académicos, del contenido curado y de la continuidad del servicio. Para una institución latinoamericana grande, con 88.000 estudiantes y 19 campus, esa dependencia es además una decisión estratégica de largo plazo."},
+
+{"t":"p","x":"**El modelo.** Construir en vez de licenciar. TECgpt, lanzado el 28 de septiembre de 2023, fue el primer modelo de IA generativa propio de una universidad latinoamericana: entrenado con datos institucionales, con contenido curado, acceso a las bases de la biblioteca y a los materiales de los cursos. Posteriormente el ecosistema se abrió a otras instituciones con TECgpt Open Edition, y se sumó un sistema de apoyo a la facultad."},
+
+{"t":"p","x":"**Los resultados declarados.** La institución reporta más de 14.000 usuarios de TECgpt y ganancias de aprendizaje de veinte a treinta puntos con impacto en más de 10.000 estudiantes en 2025."},
+
+{"t":"callout","h":"Qué demuestra y qué no demuestra el caso Tec de Monterrey","c":"brick","x":"**Demuestra** que una universidad de tamaño medio puede construir y sostener su propia infraestructura de IA generativa, adelantándose a casi todo el mundo anglosajón, y que la soberanía sobre los datos académicos es una opción real y no solo un principio. **No demuestra** ninguna ganancia de aprendizaje. La cifra de «veinte a treinta puntos» es un autoinforme institucional sin metodología pública, sin grupo de control y sin revisión externa; consignarla es obligado porque es lo que la institución afirma, y tratarla como evidencia sería exactamente el error que este informe denuncia. El contraste con Harvard —donde una ganancia comparable está respaldada por un ensayo aleatorizado publicado— es la mejor ilustración disponible de la diferencia entre afirmar y demostrar."},
+
+{"t":"h2","x":"18.6 Case Western Reserve · la respuesta disciplinar"},
+
+{"t":"p","x":"**El problema.** El descrito en el capítulo 12: en Derecho, la cadena formativa completa coincide con lo que los modelos de lenguaje hacen con fluidez alta y fiabilidad insuficiente. Una facultad que no responde forma titulados que no saben verificar aquello que firman."},
+
+{"t":"p","x":"**El modelo.** Hacerlo obligatorio y hacerlo pronto. En 2025 la facultad lanzó «Introduction to AI and the Law», el primer programa de certificación en IA jurídica obligatorio para estudiantes de primer año en una facultad de Derecho estadounidense: herramientas jurídicas de IA, modelos de lenguaje, formulación de consultas, investigación jurídica, obligaciones éticas y regulación emergente. En 2026 lo amplió: además del curso, todos los estudiantes de primer año deben desarrollar sus propias herramientas de tecnología jurídica con programación asistida."},
+
+{"t":"p","x":"**El contexto que lo hace excepcional.** Según los datos más recientes de la American Bar Association, correspondientes a 2024, el 55 % de los programas ofrecía cursos especializados sobre IA, pero solo alrededor del 5 % del profesorado de Derecho la enseñaba en cursos independientes. Pasar de la oferta optativa al requisito de primer año es un salto que muy pocas facultades han dado."},
+
+{"t":"callout","h":"Qué demuestra y qué no demuestra el caso Case Western","c":"ochre","x":"**Demuestra** que una unidad académica puede moverse mucho más rápido que la universidad que la alberga cuando el daño a su núcleo formativo es evidente, y que el requisito de primer año es viable sin esperar consenso institucional. **No demuestra** que los estudiantes verifiquen mejor: no hay evaluación de resultados, ni comparación con cohortes anteriores, ni medición de la competencia que el curso dice desarrollar. Y deja intacto el problema mayor: la facultad enseña **sobre** IA sin haber rediseñado **cómo evalúa**. Es el patrón dominante del mapa, en su versión más avanzada."},
+
+{"t":"h2","x":"18.7 Los seis casos, uno junto a otro"},
+
+{"t":"table","cap":"Síntesis comparada de los seis estudios de caso. La última columna es la que conviene leer primero.",
+ "head":["Caso","Modelo","Nivel demostrativo","Lo que realmente aporta"],
+ "w":[1900,2100,1400,3720],
+ "align":["left","left","center","left"],
+ "rows":[
+ ["**University of Sydney**","Rediseño evaluativo de dos carriles","D2","La única solución conceptual completa al problema de la validez. Ya replicada por otras instituciones."],
+ ["**Ohio State University**","Requisito transversal de egreso","D2","El mejor mecanismo para trasladar la decisión curricular al nivel disciplinar."],
+ ["**California State University**","Licenciamiento a escala máxima","D4","La prueba de que el acceso universal no produce integración pedagógica. Evidencia negativa, y por eso valiosa."],
+ ["**Harvard University**","Tutor con andamiaje experto","D5","La única evidencia causal del informe. Establece que la variable es el diseño, no el modelo."],
+ ["**Tecnológico de Monterrey**","Construcción de modelo propio","D2","La viabilidad de la soberanía tecnológica institucional en América Latina."],
+ ["**Case Western · Derecho**","Requisito disciplinar de primer año","D2","La velocidad de respuesta cuando el daño formativo es evidente y localizado."]
+ ]},
+
+{"t":"callout","h":"El patrón que atraviesa los seis casos","c":"navy","x":"Cuatro de los seis casos son de nivel demostrativo D2: implementación verificada, ningún resultado medido. El único que alcanza D5 es el más pequeño —dos cursos— y el único que aporta datos de resultados a escala institucional lo hace en **contra** de su propia inversión. Dicho de otro modo: **el conocimiento sobre lo que funciona proviene de intervenciones pequeñas y bien evaluadas, y el gasto se concentra en intervenciones grandes y no evaluadas**. Mientras esa asimetría persista, el sector seguirá decidiendo a ciegas con presupuestos crecientes."},
+
+{"t":"h1","n":"Capítulo 19","x":"Matriz de tesis"},
+
+{"t":"lead","x":"Doce afirmaciones que este informe defiende, con la evidencia que las respalda, la que las contradice y el nivel de confianza que les corresponde. Ninguna se eleva por encima de lo que su evidencia permite."},
+
+{"t":"table","cap":"Tabla 15. Matriz de tesis con niveles de confianza. ALTA: evidencia experimental convergente. MEDIA-ALTA: un estudio sólido o varias fuentes coincidentes. MEDIA: evidencia parcial. BAJA: indicios. INSUFICIENTE: no puede sostenerse.",
+ "head":["Tesis","Evidencia a favor","Evidencia contraria o límite","Confianza"],
+ "w":[2900,2600,2400,1220],
+ "align":["left","left","left","center"],
+ "rows":[
+ ["La IA generativa desacopla el producto académico del aprendizaje que se suponía que acreditaba","Scarfe et al.; Bastani et al.; brecha 94 %/12 %","El desacoplamiento es completo solo en evaluación no supervisada","**ALTA**"],
+ ["La reforma evaluativa es la única transformación sistemática verificable","TEQSA; Sydney; Bath; 65 % de estudiantes percibe cambio","Concentrada en Australia y Reino Unido; poco visible en otras regiones","**ALTA**"],
+ ["El diseño pedagógico, no el acceso, determina el efecto sobre el aprendizaje","Kestin et al. (+); Bastani et al. (−) con el mismo modelo base","Ambos estudios son de contextos acotados","**ALTA**"],
+ ["La detección algorítmica fracasó y su fracaso causó la reforma","61,3 % de falsos positivos; 94 % de no detección; 12 instituciones la desactivaron","Algunas instituciones siguen invirtiendo en ella","**ALTA**"],
+ ["La IA comprime la distribución del desempeño","Choi y Schwarcz (45 percentiles / techo a la baja); Doshi y Hauser","Dos dominios; falta replicación en STEM","**MEDIA-ALTA**"],
+ ["La brecha se desplazó de la adopción a la capacidad docente","77 % de uso docente frente a 17 % de nivel avanzado y 80 % de falta de claridad","Muestras autoseleccionadas","**MEDIA-ALTA**"],
+ ["La transformación declarada excede con mucho a la verificada","19 % de políticas vigentes; ausencia total de evidencia de resultados a escala","La documentación pública subestima lo que ocurre en el aula","**MEDIA-ALTA**"],
+ ["La percepción del propio rendimiento asistido está descalibrada","METR: 39 puntos de brecha entre percepción y medición","n = 16; resultado reclasificado como histórico","**MEDIA-ALTA**"],
+ ["Se erosiona el peldaño de entrada al trabajo profesional cualificado","Brynjolfsson et al.: −19 % en jóvenes de 22-25 años en ocupaciones expuestas","Sin desplazamiento agregado; atribución causal a la IA no es completa","**MEDIA**"],
+ ["Se forma una brecha de aprendizaje asistido con dimensión de género, renta e idioma","Otis et al.: −22 % y persistencia con acceso igualado; 17 % de conectividad en países de ingreso bajo","Evidencia también de efecto nivelador en desempeño","**MEDIA**"],
+ ["El coste de la evaluación válida es el principal riesgo de fracaso de la reforma","Los instrumentos robustos son intensivos en horas docentes; ninguna institución los presupuestó","Razonamiento estructural, no medición directa","**MEDIA**"],
+ ["La IA daña de forma duradera capacidades cognitivas generales","Kosmyna et al.","Preliminar, n = 54, cuestionado metodológicamente, tarea única","**INSUFICIENTE**"]
+ ]},
+
+{"t":"h1","n":"Capítulo 20","x":"Cronología 2022-2026"},
+
+{"t":"fig","id":"g10-cronologia","cap":"Figura 10. Diecisiete hitos con consecuencia institucional. Obsérvese la densidad de la columna de evidencia a partir de mediados de 2024: el campo pasó de opinar a medir, y lo que midió no siempre confirmó lo que se opinaba."},
+
+{"t":"p","x":"La cronología permite una lectura de conjunto que las secciones temáticas no ofrecen. Se distinguen tres fases."},
+
+{"t":"bullets","items":[
+"**Fase defensiva (finales de 2022 a mediados de 2024).** Prohibiciones, retorno al examen presencial y apuesta por la detección. Predomina la reacción; la evidencia es prácticamente inexistente.",
+"**Fase de evidencia (mediados de 2024 a 2025).** Scarfe, Doshi y Hauser, Kestin, Bastani y METR publican en poco más de doce meses. Por primera vez es posible discutir con datos. La detección se abandona y comienza el rediseño evaluativo.",
+"**Fase de institucionalización y corrección (2025-2026).** Llegan los requisitos de egreso, la regulación europea y los despliegues masivos. Y llegan también las correcciones: la retractación del metaanálisis de referencia, la reclasificación del resultado de METR, los datos internos desfavorables de CSU. El campo empieza a autocorregirse al mismo tiempo que se institucionaliza."
+]},
+
+{"t":"h1","n":"Capítulo 21","x":"Escenarios 2026-2030"},
+
+{"t":"lead","x":"Tres futuros construidos exclusivamente a partir de las tendencias documentadas en este informe. No son predicciones tecnológicas: cada uno se define por qué variable institucional resulta determinante, y las tres variables ya son observables hoy."},
+
+{"t":"table","cap":"Tabla 16. Escenarios 2026-2030. La plausibilidad estimada refleja la fuerza de las señales tempranas ya observables, no una preferencia del autor.",
+ "head":["","Escenario A · Asimilación","Escenario B · Transformación híbrida","Escenario C · Reconfiguración profunda"],
+ "w":[1500,2540,2540,2540],
+ "align":["left","left","left","left"],
+ "rows":[
+ ["**Qué ocurre**","La IA se incorpora como herramienta; la arquitectura universitaria apenas cambia. La evaluación se endurece por vía presencial.","Cambian evaluación, competencias y algo del currículo; la estructura institucional se mantiene. Convive el examen seguro con el trabajo asistido.","La tutoría personalizada, la automatización de la enseñanza básica y las credenciales alternativas modifican funciones universitarias tradicionales."],
+ ["**Variable determinante**","Restricción presupuestaria y coste del rediseño","Capacidad de financiar horas docentes de evaluación y diseño","Aparición de evidencia sólida de que el tutor de IA supera a la enseñanza masiva, más aceptación del empleador"],
+ ["**Señales tempranas ya visibles**","Retorno del examen presencial; 19 % de políticas vigentes; formación docente sin financiar","Modelo de dos carriles en Australia y Reino Unido; requisitos de egreso; 65 % de estudiantes que percibe cambio evaluativo","Resultado de Kestin; caída del filtro por expediente del 73 % al 42 %; contratación por competencias"],
+ ["**Barreras**","Ninguna: es el resultado por defecto","Coste, gobernanza colegiada, acreditación","Ausencia de evidencia a escala; regulación europea; legitimidad social"],
+ ["**Plausibilidad**","**Alta** en la mayoría del sistema","**Alta** en el segmento de instituciones intensivas en investigación de países anglófonos","**Baja-media** antes de 2030, salvo en formación continua y credenciales cortas"]
+ ]},
+
+{"t":"p","x":"El escenario más probable no es ninguno de los tres en estado puro, sino su coexistencia estratificada: un pequeño grupo de instituciones bien financiadas en el escenario B, la mayor parte del sistema en el A, y la reconfiguración profunda ocurriendo fuera de la universidad —en la formación continua, las credenciales cortas y la formación corporativa— antes que dentro de ella."},
+
+{"t":"callout","h":"La señal que habría que vigilar","c":"teal","x":"El indicador que decidirá entre el escenario A y el B no es tecnológico: es presupuestario. Concretamente, si las instituciones empiezan a financiar horas docentes destinadas a evaluación oral, diseño de tareas y observación de desempeño. Si ese gasto no aparece en los presupuestos de 2027 y 2028, la reforma evaluativa se degradará en rúbricas nuevas sobre prácticas viejas y el escenario A se habrá impuesto por omisión."}
+]

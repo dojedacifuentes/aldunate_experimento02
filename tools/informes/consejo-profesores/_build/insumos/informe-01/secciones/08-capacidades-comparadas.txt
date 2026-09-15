@@ -1,0 +1,40 @@
+[Informe 01 v3.2.0 · líneas 853-892 del texto completo]
+
+Capacidades institucionales comparadas
+
+Responde «¿qué capacidad demuestra cada Facultad?» y no «¿cuánta
+ evidencia encontramos de ella?». Cada celda se calcula con una regla mecánica sobre el dataset y
+ puede rehacerse. Las ausencias se separan en dos: no localizada significa que se
+ recorrió la ruta que la habría encontrado, y no concluyente, que esa ruta no se
+ recorrió en esa institución.
+
+¿Qué capacidad institucional demuestra cada Facultad, y dónde no podemos saberlo?
+
+Diez capacidades, diez Facultades, y 5 de las 100 celdas todavía sin respuesta
+
+[FIGURA SVG]
+
+★ En operación, con instrumento formal publicado
+ En operación
+ Incipiente
+ Sólo en el entorno
+ · No localizada
+ ? No concluyente
+
+La cifra al final de cada fila son las rutas del protocolo recorridas, de trece. La
+ columna de la derecha del todo —evaluación de efecto— está completa por primera vez: la consulta
+ exhaustiva de la base ANID convirtió nueve celdas «no concluyente» en «no localizada», que es una
+ afirmación mucho más fuerte y mucho menos cómoda.
+
+¿Qué capacidades están extendidas y cuáles son todavía excepcionales?
+
+La misma matriz leída por filas: en cuántas de las diez Facultades consta cada capacidad
+
+[FIGURA SVG]
+
+Se ordena por capacidades en operación, que es lo único que la barra permite comparar
+ sin ambigüedad; no hay ninguna institución nombrada, de modo que no ordena Facultades sino cuánto
+ se ha extendido cada cosa. Investigación consta en cinco instituciones, todas con proyecto adjudicado y código citable; evaluación de efecto está en cero en las diez, y sin ninguna celda sin concluir que permita esperar otra cosa.
+
+10
+

@@ -1,0 +1,91 @@
+
+# Capítulo 18 · Seis estudios de caso
+
+Seis instituciones examinadas en profundidad, escogidas por diversidad de modelo y no de geografía. Cada ficha responde a la misma pregunta doble, que es la única que importa cuando se busca una referencia para decidir: qué demuestra realmente este caso y qué no demuestra, por mucho que se cite como si lo demostrara.
+
+
+## 18.1 University of Sydney · el rediseño evaluativo
+
+**El problema.** A finales de 2023 la universidad enfrentaba la misma situación que el resto del sector australiano: una política de integridad que dependía de detectar el uso de IA, un regulador que anunciaba exigencias de aseguramiento del aprendizaje y evidencia creciente de que la detección no funcionaba. La respuesta habitual —endurecer la norma— no era viable.
+
+**El modelo.** En lugar de regular el uso tarea por tarea, la universidad separó la evaluación en dos carriles y trasladó la garantía del nivel de la asignatura al del programa. El carril seguro verifica competencias nucleares en condiciones supervisadas; el carril abierto desarrolla criterio permitiendo el uso declarado. Cada tarea declara a qué carril pertenece.
+
+- **Noviembre de 2024:** se anuncia el modelo de dos carriles.
+- **Primer semestre de 2025:** despliegue progresivo en la enseñanza.
+- **2025:** Cogniti —plataforma propia que permite a cada docente construir agentes de IA con instrucciones y materiales de su asignatura, desarrollada por el equipo de Innovación Educativa de Danny Liu sobre infraestructura Azure— gana el premio de investigación y educación del Australian Financial Review y llega a un centenar de instituciones que la ensayan.
+- **Junio de 2026:** Cogniti se publica en el Microsoft Marketplace y queda disponible para universidades de todo el mundo.
+
+**Escala.** Cientos de docentes de la propia universidad utilizan Cogniti en asignaturas de distintas disciplinas; el modelo de dos carriles alcanza a la enseñanza de grado en su conjunto. La universidad no ha publicado tasas de adopción desagregadas por facultad.
+
+**Evidencia independiente.** No existe evaluación externa de resultados de aprendizaje. Lo que sí existe es una señal indirecta relevante: el modelo ha sido adoptado por otras instituciones —la University of Bath desde el curso 2026-27— y encuadrado por el regulador nacional, lo que constituye validación institucional pero no empírica.
+
+[RECUADRO: Qué demuestra y qué no demuestra el caso Sydney] **Demuestra** que es posible rediseñar la evaluación de una universidad completa sin prohibir la IA y sin depender de la detección, y que la solución conceptual —separar garantía de desarrollo, y situar la garantía a nivel de programa— es transferible: otras universidades ya la adoptaron. **No demuestra** que los estudiantes aprendan más, ni que la certificación resultante sea más válida en términos medibles. Tampoco resuelve el problema de coste: nadie ha publicado cuántas horas docentes adicionales consume el carril seguro.
+
+
+## 18.2 Ohio State University · el requisito de egreso
+
+**El problema.** Una universidad pública muy grande, con un estudiantado que ya usaba IA masivamente y un profesorado disperso en decenas de facultades sin criterio común. La pregunta institucional no era si permitir la IA, sino qué debía significar graduarse en ese contexto.
+
+**El modelo.** Convertir la fluidez en IA en atributo de egreso y no en asignatura. La iniciativa AI Fluency establece que, desde la promoción de 2029, todo egresado será fluido en su campo **y** en IA. El mecanismo tiene tres piezas verificables: un seminario obligatorio de educación general con tres módulos nuevos; talleres integrados en la estructura de acompañamiento de primer año; y la obligación de que cada unidad académica publique su propio mapa de incorporación disciplinar hacia finales de 2026.
+
+**Por qué la tercera pieza es la decisiva.** Un seminario general produce alfabetización básica y poco más. Obligar a cada facultad a responder por escrito qué significa la IA en su disciplina fuerza la conversación curricular donde realmente importa, y deja rastro documental auditable. Es el único mecanismo del mapa que convierte una declaración de rectoría en trabajo académico distribuido.
+
+[RECUADRO: Qué demuestra y qué no demuestra el caso Ohio State] **Demuestra** que una universidad pública grande puede modificar formalmente su perfil de egreso en menos de dos años, y que el mecanismo de mapas por facultad es una forma eficaz de trasladar la decisión al nivel disciplinar. **No demuestra** absolutamente nada sobre resultados: a agosto de 2026 no hay evaluación externa, ni grupo de comparación, ni medición de aprendizaje. Es implementación verificada con ambición curricular, citada con frecuencia como si fuera evidencia de eficacia. No lo es. Y su punto débil está declarado en la propia matriz de este informe: la evaluación permanece en nivel 2.
+
+
+## 18.3 California State University · el contraejemplo
+
+**El problema.** Equidad de acceso. Con más de 470.000 estudiantes, muchos de ellos de primera generación universitaria y con renta baja, dejar que cada uno resolviera su acceso a la IA con planes gratuitos o de pago producía una brecha inmediata. El razonamiento era correcto y el capítulo 9 lo respalda.
+
+**El modelo.** Licenciar a escala máxima: ChatGPT Edu para todo el sistema, 23 campus, más de 470.000 estudiantes y 63.000 docentes y personal. Renovado en mayo de 2026 por trece millones de dólares anuales durante tres años, en contexto de recortes presupuestarios y pese a una petición del profesorado que pedía cancelarlo.
+
+**Los resultados, medidos por la propia institución.** Una encuesta interna a más de 94.000 estudiantes y empleados encontró que el **52 % del profesorado reporta un efecto negativo de la IA sobre su docencia** y que el **67 % de los estudiantes considera que sus profesores no les enseñan a usarla de manera eficaz**. Es, con diferencia, el dato de resultados más honesto del mapa, y procede de la institución que peor sale retratada por él.
+
+[RECUADRO: Qué demuestra y qué no demuestra el caso California State] **Demuestra** que el acceso universal es técnica y financieramente posible a escala de medio millón de personas, y —esto es lo importante— que **por sí solo no produce integración pedagógica ni percepción de mejora**. Dos años después del despliegue, la mayoría del profesorado percibe daño y la mayoría del estudiantado no se siente enseñada. **No demuestra** que licenciar sea un error. Demuestra que licenciar sin rediseño evaluativo, sin formación docente obligatoria y sin participación del profesorado en la decisión compra el nivel 1 al precio del nivel 5. Es el caso que toda rectoría debería leer antes de firmar un contrato.
+
+
+## 18.4 Harvard University · la evidencia
+
+**El problema.** No institucional sino pedagógico: si un tutor de IA puede aproximarse a una razón profesor-estudiante de uno a uno, ¿mejora eso el aprendizaje frente al mejor método presencial disponible, o solo frente a la clase magistral mediocre que suele usarse como control?
+
+**El modelo.** Construir el tutor con diseño pedagógico experto —andamiajes redactados por especialistas, razonamiento paso a paso, guardarraíles para no entregar la respuesta— y someterlo a un ensayo aleatorizado en un curso real, con el aprendizaje activo bien ejecutado como condición de control. En CS50, la misma lógica: un asistente entrenado con el material del curso, un explicador de código y un revisor de estilo, con el principio declarado de guiar mediante preguntas en vez de resolver.
+
+**El resultado.** En Physical Sciences 2, alrededor de 180 estudiantes en diseño cruzado semanal: **el doble de ganancias de aprendizaje** con el tutor de IA, en **menos tiempo**, con mayor compromiso declarado. Publicado en Scientific Reports el 3 de junio de 2025.
+
+[RECUADRO: Qué demuestra y qué no demuestra el caso Harvard] **Demuestra**, con el diseño más sólido disponible en todo este campo, que un tutor de IA cuidadosamente construido supera al aprendizaje activo presencial en una asignatura universitaria de ciencias. Es el único resultado del informe que cumple el estándar de causalidad. **No demuestra** que la IA genérica funcione: el efecto es atribuible al diseño pedagógico, no al modelo, y el capítulo 5 muestra el resultado opuesto cuando ese diseño falta. Tampoco demuestra escalabilidad: es un curso, en una universidad con recursos excepcionales, evaluado por el equipo que lo construyó. Su valor es de prueba de concepto rigurosa, no de política institucional.
+
+
+## 18.5 Tecnológico de Monterrey · la soberanía tecnológica
+
+**El problema.** Depender de un proveedor extranjero para la infraestructura cognitiva de una universidad implica ceder el control de los datos académicos, del contenido curado y de la continuidad del servicio. Para una institución latinoamericana grande, con 88.000 estudiantes y 19 campus, esa dependencia es además una decisión estratégica de largo plazo.
+
+**El modelo.** Construir en vez de licenciar. TECgpt, lanzado el 28 de septiembre de 2023, fue el primer modelo de IA generativa propio de una universidad latinoamericana: entrenado con datos institucionales, con contenido curado, acceso a las bases de la biblioteca y a los materiales de los cursos. Posteriormente el ecosistema se abrió a otras instituciones con TECgpt Open Edition, y se sumó un sistema de apoyo a la facultad.
+
+**Los resultados declarados.** La institución reporta más de 14.000 usuarios de TECgpt y ganancias de aprendizaje de veinte a treinta puntos con impacto en más de 10.000 estudiantes en 2025.
+
+[RECUADRO: Qué demuestra y qué no demuestra el caso Tec de Monterrey] **Demuestra** que una universidad de tamaño medio puede construir y sostener su propia infraestructura de IA generativa, adelantándose a casi todo el mundo anglosajón, y que la soberanía sobre los datos académicos es una opción real y no solo un principio. **No demuestra** ninguna ganancia de aprendizaje. La cifra de «veinte a treinta puntos» es un autoinforme institucional sin metodología pública, sin grupo de control y sin revisión externa; consignarla es obligado porque es lo que la institución afirma, y tratarla como evidencia sería exactamente el error que este informe denuncia. El contraste con Harvard —donde una ganancia comparable está respaldada por un ensayo aleatorizado publicado— es la mejor ilustración disponible de la diferencia entre afirmar y demostrar.
+
+
+## 18.6 Case Western Reserve · la respuesta disciplinar
+
+**El problema.** El descrito en el capítulo 12: en Derecho, la cadena formativa completa coincide con lo que los modelos de lenguaje hacen con fluidez alta y fiabilidad insuficiente. Una facultad que no responde forma titulados que no saben verificar aquello que firman.
+
+**El modelo.** Hacerlo obligatorio y hacerlo pronto. En 2025 la facultad lanzó «Introduction to AI and the Law», el primer programa de certificación en IA jurídica obligatorio para estudiantes de primer año en una facultad de Derecho estadounidense: herramientas jurídicas de IA, modelos de lenguaje, formulación de consultas, investigación jurídica, obligaciones éticas y regulación emergente. En 2026 lo amplió: además del curso, todos los estudiantes de primer año deben desarrollar sus propias herramientas de tecnología jurídica con programación asistida.
+
+**El contexto que lo hace excepcional.** Según los datos más recientes de la American Bar Association, correspondientes a 2024, el 55 % de los programas ofrecía cursos especializados sobre IA, pero solo alrededor del 5 % del profesorado de Derecho la enseñaba en cursos independientes. Pasar de la oferta optativa al requisito de primer año es un salto que muy pocas facultades han dado.
+
+[RECUADRO: Qué demuestra y qué no demuestra el caso Case Western] **Demuestra** que una unidad académica puede moverse mucho más rápido que la universidad que la alberga cuando el daño a su núcleo formativo es evidente, y que el requisito de primer año es viable sin esperar consenso institucional. **No demuestra** que los estudiantes verifiquen mejor: no hay evaluación de resultados, ni comparación con cohortes anteriores, ni medición de la competencia que el curso dice desarrollar. Y deja intacto el problema mayor: la facultad enseña **sobre** IA sin haber rediseñado **cómo evalúa**. Es el patrón dominante del mapa, en su versión más avanzada.
+
+
+## 18.7 Los seis casos, uno junto a otro
+
+[TABLA] Síntesis comparada de los seis estudios de caso. La última columna es la que conviene leer primero.
+| Caso | Modelo | Nivel demostrativo | Lo que realmente aporta |
+| **University of Sydney** | Rediseño evaluativo de dos carriles | D2 | La única solución conceptual completa al problema de la validez. Ya replicada por otras instituciones. |
+| **Ohio State University** | Requisito transversal de egreso | D2 | El mejor mecanismo para trasladar la decisión curricular al nivel disciplinar. |
+| **California State University** | Licenciamiento a escala máxima | D4 | La prueba de que el acceso universal no produce integración pedagógica. Evidencia negativa, y por eso valiosa. |
+| **Harvard University** | Tutor con andamiaje experto | D5 | La única evidencia causal del informe. Establece que la variable es el diseño, no el modelo. |
+| **Tecnológico de Monterrey** | Construcción de modelo propio | D2 | La viabilidad de la soberanía tecnológica institucional en América Latina. |
+| **Case Western · Derecho** | Requisito disciplinar de primer año | D2 | La velocidad de respuesta cuando el daño formativo es evidente y localizado. |
+
+[RECUADRO: El patrón que atraviesa los seis casos] Cuatro de los seis casos son de nivel demostrativo D2: implementación verificada, ningún resultado medido. El único que alcanza D5 es el más pequeño —dos cursos— y el único que aporta datos de resultados a escala institucional lo hace en **contra** de su propia inversión. Dicho de otro modo: **el conocimiento sobre lo que funciona proviene de intervenciones pequeñas y bien evaluadas, y el gasto se concentra en intervenciones grandes y no evaluadas**. Mientras esa asimetría persista, el sector seguirá decidiendo a ciegas con presupuestos crecientes.

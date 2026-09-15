@@ -1,0 +1,42 @@
+
+# Capítulo 10 · Universidad y mercado profesional: el peldaño que se erosiona
+
+La pregunta de este capítulo es la que da sentido económico a todas las anteriores: si el trabajo profesional cambia, ¿cómo debería cambiar la formación que prepara para él? La evidencia de 2025 y 2026 permite responder con más precisión de la que existía hace un año, y la respuesta es incómoda.
+
+
+## 10.1 El dato central: los jóvenes, no el conjunto
+
+Erik Brynjolfsson, Bharat Chandar y Ruyu Chen, del Stanford Digital Economy Lab, analizan microdatos administrativos de ADP con alta frecuencia. Su hallazgo, actualizado en agosto de 2026, es preciso y conviene citarlo con sus dos mitades.
+
+- **No hay desplazamiento laboral generalizado** atribuible a la IA en el conjunto de la economía. Quien afirme lo contrario no se apoya en esta evidencia.
+- El empleo de **jóvenes de 22 a 25 años** en ocupaciones expuestas a IA está aproximadamente un **19 % por debajo** de donde estaría si hubiera seguido el ritmo de sus pares menos expuestos. La brecha se amplía de forma sostenida desde agosto de 2025.
+- Los trabajadores **experimentados no muestran** una brecha comparable en las mismas ocupaciones.
+- Las caídas se concentran donde la IA **sustituye** tareas humanas; donde las **complementa**, el empleo es plano o creciente.
+
+La estructura del hallazgo es la relevante para una universidad. El efecto no se distribuye por sector sino por **antigüedad**: golpea el primer peldaño. Y el primer peldaño es exactamente el punto donde la universidad entrega su producto.
+
+
+## 10.2 Qué piden los empleadores ahora
+
+Los datos de la National Association of Colleges and Employers para la promoción de 2026 en Estados Unidos muestran un mercado que se recompone antes que contraerse:
+
+[TABLA] Tabla 11. Señales del mercado de titulados. National Association of Colleges and Employers, Job Outlook 2026 y actualizaciones de tendencias.
+| Indicador | Dato | Lectura |
+| Empleos de entrada que exigen competencias de IA | **Más de un tercio** | Casi el triple que en otoño de 2025. La competencia dejó de ser diferencial y pasó a ser umbral. |
+| Empleadores que buscan talento temprano capaz de usar IA | **28 %** | La demanda es explícita, no implícita. |
+| Empleadores que asignan a practicantes proyectos con IA | **Casi 60 %** | La práctica profesional ya integra la herramienta; la formación va por detrás. |
+| Empleadores que contratan por competencias y no solo por promedio | **Casi 70 %** | Desplazamiento desde la credencial hacia la evidencia demostrable de capacidad. |
+| Empleadores que filtran por promedio académico | **42 %** en 2026, frente al **73 %** en 2019 | La señal tradicional del expediente ha perdido la mitad de su peso en siete años. |
+
+La última fila merece subrayarse. La caída del filtro por expediente del 73 % al 42 % es anterior a la IA generativa y responde a un movimiento más amplio hacia la contratación por competencias. Pero la IA acelera la lógica subyacente: si el expediente refleja productos que ahora pueden generarse, su valor informativo cae, y el mercado busca evidencia de capacidad demostrada en su lugar. **El mercado está llegando, por su cuenta, a la misma conclusión que la reforma evaluativa del capítulo 3.**
+
+
+## 10.3 El caso de la programación y la lección para toda profesión
+
+El estudio de METR examinado en el capítulo 7 tiene aquí una segunda lectura. Que dieciséis desarrolladores experimentados fueran un 19 % más lentos con IA en su propio código contradice la narrativa dominante sobre productividad en la profesión más expuesta de todas. Y sin embargo, la programación es también la ocupación donde el empleo juvenil cae con más claridad.
+
+Las dos cosas son compatibles y su combinación es exactamente el problema formativo. La IA es suficientemente buena para hacer innecesario el trabajo que hacía un programador de primer año, y todavía no lo bastante buena para sustituir el juicio de uno experimentado. Se elimina el peldaño por el que se llegaba a ser experimentado.
+
+[RECUADRO: La paradoja del peldaño perdido] Toda profesión cognitiva formaba a sus expertos haciéndoles ejecutar durante años tareas que ahora son automatizables: el asociado junior que revisaba contratos, el residente que redactaba historias clínicas, el auditor que cuadraba partidas, el periodista que transcribía. Ese trabajo era económicamente marginal y **formativamente decisivo**. Si desaparece del mercado, la única institución que puede reconstruirlo deliberadamente es la universidad, mediante simulación, práctica supervisada y observación de desempeño. Es un desplazamiento de responsabilidad formativa desde el empleador hacia la universidad, y ocurre sin que nadie lo haya decidido ni financiado.
+
+Esta es, a nuestro juicio, la implicación estratégica más importante del informe para el diseño curricular de la próxima década, y no aparece en prácticamente ninguna de las políticas institucionales examinadas.

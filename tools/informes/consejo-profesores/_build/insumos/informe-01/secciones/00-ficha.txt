@@ -1,0 +1,114 @@
+[Informe 01 v3.2.0 · líneas 46-161 del texto completo]
+
+Ficha del documento
+
+Qué es esto, y en qué se distingue de la versión anterior
+
+Versión | v3.2.0 · sucede a v3.1.0 del 09-09-2026 | 
+
+Estado | Informe de resultados sobre corpus verificado. Cada conclusión conserva el alcance que su cobertura permite. | 
+
+Fecha de corte | 6 de septiembre de 2026 | 
+
+Autoría | Diego Hernán Ojeda Cifuentes · Licenciado en Ciencias Jurídicas | 
+
+Destinatario | Prof. Eduardo Aldunate Lizana · Director de la Escuela de Derecho PUCV | 
+
+Cohorte | COHORTE_IA_DERECHO_CHILE_11_V1 · once instituciones, cerrada | 
+
+Protocolo | METODOLOGIA_IA_DERECHO_V2.2 · enmienda de la V2.1, que se conserva íntegra | 
+
+Capacidades comparadas | 10 sobre 10 instituciones = 100 celdas · la undécima de la cohorte se examina aparte, por la razón de la sección 8 | 
+
+Fuentes del corpus | 96 públicas únicas · 74 contrastadas (77 %) · 22 de la ronda de ampliación, sin contraste sustantivo | 
+
+Fuentes de contraste externo | 31 · ruta 13 recorrida en las once instituciones | 
+
+Iniciativas deduplicadas | 53 | 
+
+Evidencias | 75 | 
+
+Afirmaciones | 14 | 
+
+Divergencias registradas | 23 · anexo B | 
+
+Iniciativas con evaluación de efecto | 0 · ausencia ahora confirmada, no sólo no localizada | 
+
+Nota de versión
+
+Ésta es la v3.2.0, de cierre editorial. Baja el alcance de dos familias de afirmaciones hasta lo que su fuente permite. La base de ANID recoge proyectos adjudicados: acredita que ningún proyecto sobre enseñanza del Derecho con inteligencia artificial se financió, y no que ninguno se presentara, de modo que el informe deja de afirmar que nadie lo solicitó. Y la institución apartada del comparador deja de recibir puntuación y lugar también en el texto: la sección 8 declaraba que no los recibe y a la vez los publicaba. Ninguna cifra sobre las diez instituciones comparadas cambia, y el contraste que sí sostiene la base —otras seis disciplinas obtuvieron adjudicaciones y Derecho no— queda intacto. Las versiones anteriores siguen publicadas con las cifras que sostenían.
+
+Once y diez, y por qué las dos cifras son correctas
+
+La cohorte es de once instituciones: es la que define el corpus, la que recorre las rutas del protocolo, la que puebla el registro de fuentes y la que tiene una ficha en el anexo A. Todo recuento sobre trabajo de campo, fuentes o iniciativas dice once. El comparador y la matriz de capacidades son de diez: la undécima se aparta porque quien firma tiene un conflicto de interés directo sobre ella. Todo recuento sobre capacidades, puntos o posiciones dice diez. Cuando en este documento las dos cifras aparecen cerca, no se contradicen: cuentan cosas distintas.
+
+Contenido
+
+Índice
+
+El cuerpo va numerado del 1 al 12 y los anexos de la A a la I, sin saltos. La sección 2 se lee dentro de la 1, de la que es continuación natural, y por eso el sumario las numera seguidas.
+
+CUERPO
+
+01Resumen ejecutivo
+
+02Los ocho hallazgos principales
+
+03Cómo leer este documento
+
+041 · Introducción
+
+052 · Objetivos
+
+063 · Metodología
+
+07Panorama del conjunto
+
+08Cobertura de la investigación
+
+09Capacidades institucionales comparadas
+
+104 · El comparador ordinal
+
+11La comprobación que impide leer mal todo lo anterior
+
+125 · Discusión
+
+136 · Contraste externo: qué dicen los terceros
+
+147 · La escala internacional
+
+158 · La institución que no está en el comparador
+
+169 · Conclusiones
+
+1710 · Implicancias y decisiones
+
+1811 · Limitaciones
+
+1912 · Agenda de investigación
+
+20Nota metodológica
+
+ANEXOS
+
+ALas once instituciones, una por una
+
+BRegistro de divergencias de la verificación
+
+CLas capacidades, celda por celda
+
+DComparador ordinal: rúbrica y cálculo
+
+EContraste externo: proyectos ANID y fuentes de terceros
+
+FReferencia internacional: normas, currículos y estudios
+
+GCandidatas fuera de cohorte
+
+HRegistro completo de fuentes
+
+IAmpliación del corpus: fuentes de la segunda ronda
+
+01
+

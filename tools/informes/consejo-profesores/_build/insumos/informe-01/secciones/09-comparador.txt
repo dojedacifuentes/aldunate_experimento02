@@ -1,0 +1,116 @@
+[Informe 01 v3.2.0 · líneas 893-1010 del texto completo]
+
+4 · El comparador ordinal
+
+Este informe publica un orden entre instituciones. Conviene decir con precisión qué mide el índice, qué autoriza a publicarlo y qué sigue sin medir, porque un orden mal leído hace más daño que la ausencia de orden.
+
+Por qué un orden es defendible aquí
+
+El riesgo de ordenar no es genérico y se puede nombrar: con una cobertura de investigación 3,7 veces más profunda en tres instituciones que en las ocho restantes, un orden produciría un ranking del trabajo de campo disfrazado de ranking de universidades. Dos cosas lo contienen. La primera es que la asimetría en rutas recorridas es de 1,8 : 1 y el corpus original está contrastado al 100 % en las once. La segunda, y más importante, es de diseño: el índice no se
+ publica como un número sino como una banda que contiene su propia incertidumbre.
+
+Qué mide
+
+El Índice de Formalización de Capacidad suma, sobre las diez capacidades, el estado acreditado de
+ cada una en una escala de cero a tres. Un máximo teórico de 30 puntos. La rúbrica completa, con el
+ instrumento concreto que justifica cada punto en cada celda, se publica en el anexo D.
+
+Puntos | Estado | Qué acredita | 
+
+3 | En operación, con instrumento formal publicado | 
+ La capacidad funciona y existe un objeto citable con identificador que la sostiene: decreto o resolución, acuerdo de consejo, código de asignatura con créditos, código de proyecto adjudicado, registro de propiedad intelectual, convenio firmado con partes identificadas, o unidad listada en un organigrama publicado. | 
+
+2 | En operación | 
+ La Facultad, un centro suyo o un equipo académico sostiene un mecanismo que ya funciona, acreditado por publicación institucional pero sin instrumento formal citable. | 
+
+1 | Incipiente · Sólo en el entorno · Sólo adyacente | 
+ Existe algo, y no es lo que la capacidad pregunta: un anuncio o piloto, una capacidad de la universidad y no de la Facultad, o una estructura del ámbito tecnológico sin componente de IA acreditado. | 
+
+0 | No localizada | 
+ Se recorrieron las rutas del protocolo que la habrían encontrado y no se halló evidencia pública. No significa que la capacidad no exista. | 
+
+— | No concluyente | 
+ La ruta no se recorrió en esa institución. La celda se excluye del piso y aporta 2 puntos al techo. Es la fuente de la anchura de la banda. | 
+
+¿Cuánta capacidad formalizada acredita públicamente cada Facultad?
+
+Una sola de las diez instituciones del comparador llega a 20 puntos de 30, y el promedio de los pisos es 11,4
+
+[FIGURA SVG]
+
+Piso · lo que la evidencia acredita hoy
+ Techo · si todas las celdas sin concluir resultaran favorables
+
+La barra sólida es lo que la institución tiene acreditado. La banda punteada es lo que
+ este informe no sabe. Una institución con banda ancha no está peor evaluada que una con banda
+ estrecha: está peor investigada, y esas son cosas distintas que la figura obliga a leer juntas.
+ Seis de las diez tienen banda cerrada y ninguna tiene banda ancha: las cinco celdas sin concluir se reparten en cuatro instituciones. La Pontificia Universidad Católica de Valparaíso no aparece en esta figura; la sección 8 explica por qué, y el documento complementario la examina como caso.
+
+El orden, con su incertidumbre declarada
+
+# | Institución | 
+ Piso | Techo | Celdas s/c | Lectura | 
+
+1 | Pontificia Universidad Católica de Chile | 20 | 20 | 0 | banda cerrada | 
+
+2 | Universidad Autónoma de Chile | 17 | 17 | 0 | banda cerrada | 
+
+3 | Universidad Central de Chile | 17 | 17 | 0 | banda cerrada | 
+
+4 | Universidad de Chile | 12 | 14 | 1 | banda estrecha | 
+
+5 | Universidad Adolfo Ibáñez | 11 | 11 | 0 | banda cerrada | 
+
+6 | Universidad Andrés Bello | 11 | 11 | 0 | banda cerrada | 
+
+7 | Universidad del Desarrollo | 8 | 10 | 1 | banda estrecha | 
+
+8 | Universidad Diego Portales | 8 | 8 | 0 | banda cerrada | 
+
+9 | Universidad de los Andes | 5 | 9 | 2 | banda ancha | 
+
+10 | Universidad de Concepción | 5 | 7 | 1 | banda estrecha | 
+
+Ordenado por piso y, en caso de empate, por techo. El orden no es transitivo en
+ sentido estricto: una institución con piso 12 y techo 20 podría estar realmente por encima de una
+ con piso 18 y techo 18. La tabla lo dice en lugar de ocultarlo.
+
+Cómo se lee este orden, y cómo no
+
+Lo que el orden significa
+
+Mide capacidad institucional en materia de inteligencia artificial publicada de modo que un
+ tercero pueda verificarla. Nada más y nada menos. Una Facultad que dictó una norma con órgano
+ aprobador y consecuencia, que lista su unidad en un organigrama y que publica el código de sus
+ proyectos adjudicados obtiene una puntuación alta porque cualquiera puede comprobarlo. Una Facultad
+ que hace exactamente lo mismo sin publicar ninguno de esos instrumentos obtiene una puntuación baja.
+ La diferencia entre las dos no es de mérito académico: es de trazabilidad, y la trazabilidad es lo
+ único que un método basado en evidencia pública puede medir.
+
+Lo que no significa
+
+No es un ranking de calidad de la enseñanza, ni de calidad de las Facultades, ni de preparación
+ de sus egresados. No mide cuántos estudiantes usan estas herramientas, con qué criterio ni con qué
+ resultado, porque ninguna institución de la cohorte publica ese dato. Y no debe compararse con los
+ puntajes del informe antecedente de 2025, que usaba otra escala sobre otras dimensiones.
+
+El dato que el orden hace visible y que ninguna posición individual explica
+
+El máximo alcanzado en el comparador es de 20 puntos sobre 30, y lo alcanza una sola institución. El promedio de los pisos es de 11,4 y la mediana, de 11. Dicho de otro modo: la Facultad mejor situada de las diez comparadas deja sin acreditar un tercio de lo que una rúbrica razonable le pediría, y la Facultad mediana deja sin acreditar casi dos tercios. El orden importa mucho menos que el techo, y el techo es
+ bajo para todos. Un lector que use esta tabla para saber quién va primero habrá leído la mitad
+ menos interesante de la figura.
+
+Dónde se pierden los puntos, y qué forma tiene cada pérdida
+
+Las diez instituciones del comparador acreditan 114 de los 285 puntos que ponen en juego sus 95 celdas resueltas: tres de cada cinco puntos disponibles no están acreditados. Ese agregado es el dato menos interesante de la tabla. Lo interesante es que las pérdidas no tienen todas la misma forma, y que la forma dice qué habría que hacer para revertirlas.
+
+La ausencia unánime. Evaluación de efecto obtiene 0 de 30. No es que puntúe bajo: no puntúa. Las diez instituciones pierden los tres puntos, sin una sola excepción y sin una sola celda sin concluir que permita esperar otra cosa. Una capacidad en la que todo el campo obtiene cero no describe a las instituciones: describe al campo, y la sección 6 muestra que tampoco hay un peso de financiamiento público detrás.
+
+La ausencia bimodal. Investigación obtiene 13 de 30 repartidos en dos grupos casi sin término medio: cuatro instituciones acreditan proyecto adjudicado con código —el grado más alto de la rúbrica— y cinco no acreditan nada. Sólo una queda entre las dos. Aquí la puntuación no mide gradualidad sino un umbral: se entra al Fondecyt o no se entra, y el instrumento que acredita la capacidad es el mismo que la financia.
+
+La ausencia por umbral. Transferencia obtiene también 13 de 30, y su distribución es la contraria: ninguna institución obtiene cero y siete obtienen exactamente un punto. Todas hacen algo hacia fuera —seminarios, jornadas, actividades de una sola ocurrencia— y casi ninguna lo sostiene en un convenio firmado. Es la capacidad donde más barato sería subir, y donde subir exigiría convertir actividad en compromiso.
+
+Las tres formas se ordenan de mayor a menor pérdida así: evaluación de efecto pierde 30 puntos de 30; herramienta desplegada, 22; norma propia, 21; presencia en pregrado, 18; adopción, alcance, investigación y transferencia, 17 cada una; unidad especializada, 15; y formación estructurada, 12. Ninguna capacidad de las diez llega a dos tercios de lo que la rúbrica le pide, y la mejor poblada —la formación— es la que menos compromete a quien la ofrece. Las capacidades que exigen decidir algo difícil, dictar una regla o medir un resultado, son exactamente las que están vacías.
+
+11
+

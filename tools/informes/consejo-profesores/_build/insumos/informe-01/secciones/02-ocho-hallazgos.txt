@@ -1,0 +1,98 @@
+[Informe 01 v3.2.0 · líneas 251-348 del texto completo]
+
+Los ocho hallazgos principales
+
+Cada hallazgo declara el dato que lo sostiene, la lectura que permite y
+ el límite hasta el que llega. El límite no es un descargo: es parte del hallazgo, y por eso ninguno
+ se publica sin él. Los dos marcados en color son los que sólo puede sostener el contraste con fuentes de terceros.
+
+H-1
+ El fenómeno tiene dos años, no una década.
+
+Dato. 41 de las 49 iniciativas con fecha declarada comienzan en 2025 o después. Las dos anteriores a 2020 son unidades que existían antes de la inteligencia artificial generativa y que incorporaron el tema más tarde.
+
+Lectura. Lo que se observa no es la maduración de un proceso largo sino su apertura. Casi todo lo registrado es de primera generación, y eso explica más de lo que parece: que abunde la estructura recién creada, que escaseen los resultados y que ninguna Facultad haya tenido todavía tiempo material de evaluar lo que empezó el año pasado.
+
+Límite. La fecha es la de inicio declarado por la fuente, no la de la actividad real. Una Facultad que llevara años trabajando sin publicarlo aparecería aquí como recién llegada, y cuatro iniciativas no declaran fecha alguna.
+
+Se apoya en: Línea de tiempo · anexo A
+
+H-2
+ La estructura se crea antes que la regla, y ninguna de las dos se acredita con su acto.
+
+Dato. En seis de las diez Facultades del comparador consta una unidad especializada en operación. Instrumento normativo propio dictado por la Facultad, en una sola. El corpus registra siete unidades frente a cuatro normas, y de esas cuatro sólo dos son de una Facultad.
+
+Lectura. La institucionalización avanza por creación de órganos y no por producción de reglas. Es un orden posible y no el único: crear una unidad es un acto de una autoridad, y dictar una norma sobre uso de inteligencia artificial obliga antes a decidir qué se permite en una evaluación, qué se declara y qué consecuencia tiene no declararlo. Lo segundo es más difícil y más comprometedor que lo primero. La verificación añadió un dato que agrava el diagnóstico: de las cuatro unidades creadas entre 2025 y 2026, ninguna publica el acto que la constituye, y en la Universidad de Chile el único instrumento citado —un decreto del Rector de 5 de noviembre de 2003— oficializa una denominación anterior y distinta de la que hoy se usa.
+
+Límite. La ruta que acredita políticas propias se recorrió en las diez instituciones del comparador, y ninguna celda de esa capacidad queda sin concluir. La asimetría entre unidades y normas deja de estar acotada por cobertura: seis Facultades acreditan unidad en operación y sólo dos, una regla propia con instrumento citable.
+
+Se apoya en: clm-cohorte-002 · clm-cohorte-003 · matriz de capacidades
+
+H-3
+ La inteligencia artificial entra por la formación continua, no por la malla.
+
+Dato. Doce iniciativas son programas formativos —diplomados, minors, cursos, talleres—, once sostenidos por la propia Facultad, frente a cuatro que ocurren dentro de una asignatura o de una línea de malla. La formación estructurada consta en operación en siete de las diez; la presencia en pregrado, en cinco.
+
+Lectura. La formación continua y el postgrado son los espacios donde una Facultad decide en un semestre. La malla exige comités, acreditación y acuerdo de claustro, y responde en años. La distribución observada es exactamente la que produciría esa diferencia de velocidad, y no requiere suponer desinterés curricular. El único minor con egresados de la cohorte —Universidad Autónoma— es electivo, suma 25 créditos en cinco asignaturas de las cuales tres son informáticas, se co-titula con Ingeniería y está diseñado, según su propia página, para no aumentar la carga académica porque se cursa sobre electivos de formación general.
+
+Límite. Las rutas de malla y de programas de asignatura quedaron sin recorrer en tres de las diez. Que el pregrado aparezca menos poblado es compatible con que se haya buscado menos.
+
+Se apoya en: clm-cohorte-005 · clm-cohorte-006 · mecanismos institucionales
+
+H-4
+ Buena parte de lo que se atribuye a las Facultades pertenece a sus universidades.
+
+Dato. De las once herramientas del corpus, siete son capacidades de la universidad y no de la Facultad de Derecho. Doce de las 110 celdas de la matriz muestran una capacidad presente sólo en el entorno institucional. La verificación añadió seis reatribuciones por esta causa.
+
+Lectura. Existe una capa de infraestructura universitaria —licencias generales, asistentes institucionales, lineamientos de rectoría— disponible para Derecho pero no desarrollada por Derecho. Confundir disponibilidad con adopción es el error más frecuente al leer estos anuncios, y se comete de buena fe. Los casos más nítidos que la verificación sacó a la luz: el convenio de la Universidad Diego Portales con el sector tecnológico lo firma su Vicerrectoría de Investigación e Innovación y no su Facultad de Derecho; el proyecto FONDEF de certeza jurídica ambiental lo dirige la Facultad de Ingeniería de la Universidad de los Andes; y el asistente de insolvencia de la Universidad Andrés Bello se aloja y opera en la Superintendencia del Estado, con participación de la Vicerrectoría de Investigación.
+
+Límite. Que una capacidad sea universitaria no impide que la Facultad de Derecho la use intensamente: impide acreditarlo con lo publicado. La distinción es sobre la atribución de la evidencia, no sobre el uso real.
+
+Se apoya en: clm-cohorte-007 · clm-cohorte-004 · anexo B
+
+H-5
+ Nadie ha medido si algo de esto funciona, y ahora sabemos que tampoco lo ha intentado con financiamiento público.
+
+Dato. Ninguna de las 53 iniciativas alcanza el cuarto peldaño de la escalera, que exige resultados públicamente revisables. La consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 devuelve cero proyectos sobre enseñanza del Derecho con inteligencia artificial, en cualquier universidad chilena y en cualquier año. Existen, en cambio, diez proyectos 2024-2026 que cruzan IA con enseñanza o educación superior: seis en Ciencias de la Educación, y el resto en Humanidades, Informática, Negocios y Salud. Uno de ellos estudia la formación universitaria en ingeniería de software en la era de la IA generativa. Ninguno es de Derecho.
+
+Lectura. El campo produce actividad y estructura, y todavía no produce conocimiento sobre sus propios efectos. Las cifras que existen son de cobertura —cuánta gente participó— y contar asistentes no dice si alguien aprendió mejor. El contraste externo fija la naturaleza de esta ausencia: no es que no se haya encontrado la medición, es que no consta ninguna adjudicación para hacerla, mientras otras disciplinas sí las obtuvieron. La base recoge proyectos adjudicados, de modo que acredita que nadie lo consiguió y no que nadie lo intentara: una postulación rechazada no deja rastro en ese registro.
+
+Límite. La ausencia está confirmada por el lado del financiamiento público competitivo efectivamente obtenido: el registro consultado recoge adjudicaciones y no postulaciones, de modo que no permite saber cuántas hubo ni cuántas se rechazaron. Una Facultad podría haber medido con recursos propios y no haberlo publicado; ese caso queda fuera del alcance de cualquier método basado en evidencia pública.
+
+Se apoya en: clm-cohorte-001 · anexo E · base histórica ANID
+
+H-6
+ Cuánto se investigó y cuánto se hace siguen siendo variables distintas, aunque menos.
+
+Dato. La Universidad Autónoma de Chile pasó de 2 a 5 rutas recorridas de trece y su índice de formalización tiene una banda de 12 a 20 puntos. La Universidad de Chile, con 12 rutas, obtiene una banda de 12 a 14. La institución menos investigada de la cohorte sigue acreditando tanta capacidad en operación como la más investigada.
+
+Lectura. Si el trabajo de campo y la capacidad institucional fueran la misma variable, ese par de valores no podría existir. Es la razón por la que el comparador ordinal de la sección 4 se publica como banda y no como número: quien tiene celdas sin concluir aparece con una banda ancha, y esa anchura es exactamente la medida de lo que aún no sabemos sobre esa institución.
+
+Límite. La demostración vale en la dirección que importa: prueba que la cobertura no determina el resultado, no que sea irrelevante. Con 5 de las 100 celdas del comparador sin concluir, el margen de duda queda concentrado en cuatro instituciones y para las otras seis el piso es ya la medida.
+
+Se apoya en: clm-metodo-001 · sección 11
+
+H-7
+ La relación con el mundo externo es conversación, no todavía vínculo estable.
+
+Dato. La capacidad de transferencia aparece como incipiente en siete de las diez: lo registrado son ocho actividades de una sola ocurrencia —seminarios, jornadas, workshops— frente a cuatro convenios con terceros en todo el corpus, uno de ellos de 2020 y otro en estado de piloto declarado por su propia contraparte estatal.
+
+Lectura. Las Facultades están discutiendo el asunto en público mucho más de lo que lo están incorporando a relaciones institucionales duraderas. Un seminario acredita interés y capacidad de convocatoria; un convenio acredita que alguien de fuera comprometió recursos, que es un hecho de otra naturaleza. El contraste externo permitió por primera vez distinguirlos con documentación de la contraparte: la Superintendencia de Insolvencia y Reemprendimiento describe como «primer piloto» y «primera versión» lo que la nota universitaria presenta como lanzamiento.
+
+Límite. Un convenio firmado es acto ejecutado, pero de los cuatro registrados sólo dos acreditan actividad derivada.
+
+Se apoya en: clm-cohorte-008 · anexo B · anexo E
+
+H-8
+ Ninguna institución chilena tiene mandato para verificar lo que las Facultades dicen de sí mismas.
+
+Dato. La Comisión Nacional de Acreditación ha dictado criterios y estándares específicos por carrera sólo para Pedagogía, Medicina y Odontología, las tres de acreditación obligatoria. Derecho no tiene criterios propios y su acreditación de carrera es voluntaria. La guía del Colegio de Abogados aprobada el 6 de julio de 2026 regula al abogado en ejercicio y no menciona la formación universitaria. El sitio de inteligencia artificial de la Academia Judicial, de 7 de abril de 2026, se dirige a juezas y jueces. La Política Nacional de Inteligencia Artificial contempla a las instituciones de educación superior sin una sola mención a la formación jurídica.
+
+Lectura. Es el hallazgo que ordena a los demás y el que justifica que este informe exista. El corpus de partida estaba compuesto íntegramente por comunicación institucional de las propias observadas, y esa autodescripción no tiene contraparte. No hay regulador que la contraste, gremio que la exija ni política pública que la contemple. En ese vacío, la calidad de lo que una Facultad publica sobre sí misma depende enteramente de su propia disciplina, y el costo de no publicar es cero.
+
+Límite. El hallazgo describe el estado de la verificación institucional, no la calidad de las Facultades. Una institución puede hacer un trabajo excelente y no publicarlo, y en ausencia de regulador nadie lo sabrá.
+
+Se apoya en: anexo E · CNA-Chile, Colegio de Abogados, Academia Judicial, Minciencia
+
+03
+

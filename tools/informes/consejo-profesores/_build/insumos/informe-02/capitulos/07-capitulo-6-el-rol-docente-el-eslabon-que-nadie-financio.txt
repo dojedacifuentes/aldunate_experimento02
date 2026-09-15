@@ -1,0 +1,39 @@
+
+# Capítulo 6 · El rol docente: el eslabón que nadie financió
+
+La discusión sobre el profesorado ha cambiado de naturaleza. Hasta 2024 giraba en torno a la resistencia; hoy la adopción docente supera el setenta por ciento y el problema es otro: quienes ya usan la herramienta declaran no saber cómo enseñarla, no haber sido formados y no haber participado en las políticas que deben aplicar.
+
+[FIGURA g03-brecha-preparacion] Figura 3. Ningún indicador de esta figura mide adopción. Todos miden capacidad institucional para acompañar una adopción que ya ocurrió.
+
+
+## 6.1 La brecha se desplazó
+
+Según las encuestas del Digital Education Council —1.681 docentes de 52 instituciones en 28 países en la oleada de 2025—, el uso docente de IA en la enseñanza pasó del 61 % en 2025 al 77 % en 2026, frente al 88 % de los estudiantes. La brecha de adopción se ha estrechado a once puntos y dejará de ser un problema relevante en poco tiempo.
+
+Los indicadores que no se estrechan son otros. El 83 % del profesorado está preocupado por la capacidad de sus estudiantes de evaluar críticamente los productos de IA. El 80 % percibe falta de claridad institucional sobre cómo aplicarla. Solo el 17 % se sitúa en nivel avanzado o experto, mientras el 40 % declara estar al inicio de su alfabetización. Y solo el 31 % considera que su institución lo involucra de manera significativa en el diseño de la política de IA.
+
+Del lado estudiantil, el reflejo es exacto: el 57 % dice que sus evaluaciones vienen con orientación insuficiente sobre IA y solo el 29 % cree que sus docentes están preparados para orientarlos.
+
+
+## 6.2 El ahorro de tiempo docente: una promesa con evidencia contradictoria
+
+El argumento económico más repetido para la adopción institucional es que la IA liberará tiempo docente. La evidencia disponible no lo desmiente, pero está lejos de sostenerlo con la solidez con que se afirma.
+
+- **A favor.** Un estudio publicado en el Journal of Chemical Education documenta mejoras de eficiencia y de calidad del feedback en cursos de Química. Un trabajo sobre corrección híbrida instructor-IA en cursos de hidráulica reporta una reducción del tiempo de corrección del 88 % —de 50 a 6 minutos por informe, incluida la verificación— con cobertura completa de la rúbrica.
+- **En contra.** Un estudio reciente encuentra que los borradores de feedback asistidos por IA aumentan la cantidad y la extensión del feedback pero **no reducen el tiempo medido por unidad**: la IA facilita iniciar el feedback, no terminarlo. El docente sigue revisando, adaptando y decidiendo si enviarlo.
+- **Sobre el conjunto.** Una revisión integrativa publicada en Frontiers in Education en 2025 califica la base de evidencia de metodológicamente deficiente: predominan los estudios de corto plazo y las evaluaciones subjetivas, y son muy escasos los datos longitudinales o las comparaciones controladas.
+
+La lectura prudente es que la IA **redistribuye** el trabajo docente antes que reducirlo: menos tiempo en producir la primera versión, más tiempo en verificar, personalizar y decidir. Presupuestar la reforma evaluativa contando con un ahorro de horas que la evidencia no respalda es un riesgo institucional concreto.
+
+
+## 6.3 Las funciones que se fortalecen
+
+Frente a la automatización parcial de la preparación de materiales, la generación de ejercicios y el borrador de feedback, hay funciones docentes cuyo valor relativo aumenta de forma directa, y conviene nombrarlas porque son las que deberían recibir el tiempo liberado:
+
+- **Diseño de tareas y de andamiajes.** Es, según la evidencia del capítulo 5, la variable que determina si la IA ayuda o daña. Es trabajo intelectual de alta cualificación y hoy está mayoritariamente sin reconocer en la carga docente.
+- **Evaluación oral y observación del desempeño.** El instrumento más robusto es también el más intensivo en tiempo docente.
+- **Supervisión epistemológica.** Enseñar a distinguir lo verificado de lo plausible, que es la competencia más escasa del nuevo entorno.
+- **Modelamiento experto.** Mostrar cómo piensa un jurista, un clínico o un ingeniero ante un caso real —incluido cómo usa y cómo desconfía de sus herramientas— es formativamente irreemplazable.
+- **Mentoría y formación ética.** La función menos automatizable y la que ninguna institución de la muestra ha incrementado en horas.
+
+[RECUADRO: El eslabón sin financiar] Todas las instituciones examinadas han financiado infraestructura. California State University comprometió trece millones de dólares anuales durante tres años en licencias. Ninguna de las instituciones de la muestra ha documentado una inversión comparable en rediseño de tareas, formación docente obligatoria y horas de evaluación oral. Si la evidencia dice que el diseño pedagógico es la variable causal y el gasto se concentra en el acceso, entonces el gasto está mal asignado respecto de lo que se sabe.

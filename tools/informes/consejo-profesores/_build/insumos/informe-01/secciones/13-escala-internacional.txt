@@ -1,0 +1,176 @@
+[Informe 01 v3.2.0 · líneas 1401-1578 del texto completo]
+
+7 · La escala internacional
+
+Sin una referencia externa, cada ausencia de la cohorte chilena se lee como rezago.
+ Este capítulo existe para distinguir el rezago de la ausencia global, y en dos puntos importantes corrige la lectura pesimista que la cohorte chilena, leída sola, invita a hacer.
+
+La asignatura obligatoria de inteligencia artificial es excepcional en todo el mundo
+
+Este informe sostiene, y mantiene, que ninguna de las once instituciones chilenas acredita una
+ línea curricular obligatoria de inteligencia artificial con syllabus, semestre, créditos y matrícula.
+ Formulada así, la afirmación sugiere que existe un estándar internacional del que Chile se aparta.
+ No existe.
+
+Facultad | Desde | Qué exige exactamente | 
+
+Case Western Reserve | enero 2025 | «Introduction to AI and the Law», obligatorio para todos los estudiantes de primer año desde febrero de 2025. Se estructura como certificación, no como curso con créditos. | 
+
+UNLV · William S. Boyd | mayo 2026 | «Introduction to the Responsible Use of AI», requerido a los estudiantes de primer año desde otoño de 2026. Número de créditos no publicado. | 
+
+UC Law San Francisco | julio 2026 | Laboratorio obligatorio de ejercicio profesional asistido por IA para todos los estudiantes de JD desde la promoción 2029, en segundo año, en seis sesiones. Explícitamente sin créditos académicos: los participantes obtienen certificado de finalización. | 
+
+Son los tres casos verificables de facultades de Derecho con un componente
+ obligatorio de inteligencia artificial para todos sus estudiantes, sobre más de ciento noventa
+ facultades acreditadas en Estados Unidos. No se localizó ninguna facultad de Derecho fuera de
+ Estados Unidos con asignatura obligatoria de inteligencia artificial o de tecnología jurídica en
+ pregrado, ni en Europa, ni en Australia, ni en América Latina. Dos de las tres estadounidenses
+ lo estructuran deliberadamente como certificación sin créditos, que es la forma de añadir un
+ componente sin abrir la reforma del plan de estudios.
+
+Consecuencia para la lectura del informe
+
+Una Facultad chilena que instaurara una asignatura obligatoria de inteligencia artificial
+ con créditos estaría entre las primeras del mundo, no poniéndose al día. Y la ausencia de
+ una no la sitúa por debajo de ningún estándar consolidado, porque tal estándar no existe. La crítica
+ que este informe sostiene sobre el pregrado chileno no es «van tarde respecto del mundo» sino algo
+ más modesto y más exigible: a mediados de 2026, once Facultades no publican una sola línea
+ obligatoria, y el instrumento con el que otras la evitaron —la certificación sin créditos— tampoco
+ se ha usado.
+
+La norma de facultad: dos modelos de gobernanza, y Chile usa el más exigente
+
+El contraste internacional muestra dos arquitecturas distintas, y saber cuál se está usando cambia
+ lo que es razonable exigirle a una Facultad chilena.
+
+El modelo estadounidense es de norma de facultad, binaria y remitida al profesor.
+ Berkeley Law, en su política vigente desde el verano de 2026, prohíbe el uso de IA para conceptualizar,
+ esquematizar, redactar, revisar, traducir o editar cualquier trabajo entregado para calificación
+ —incluida la corrección gramatical— y lo prohíbe absolutamente en exámenes. Su innovación más
+ transferible es procesal: una cita a una fuente inexistente genera presunción de uso prohibido,
+ lo que traslada la carga probatoria sin necesidad de tipificar conductas. Columbia obliga a declarar
+ todo uso de IA que contribuya a un trabajo escrito y ordena «errar del lado de la declaración», con vía
+ procesal identificada. Chicago, cuya política es de 2023 y es la más antigua con fecha verificable,
+ añade una regla sustantiva que vale la pena citar: citar el uso de IA en una nota al pie no exime
+ de la prohibición. Marquette es el caso con consecuencia más explícita: la infracción es falta
+ grave que puede acarrear suspensión o expulsión.
+
+El modelo británico y australiano es distinto: política central de la universidad
+ con escalas graduadas que cada unidad adopta y comunica. La London School of Economics opera con tres
+ posiciones —sin uso autorizado, uso limitado, uso pleno— y la Universidad de Nueva Gales del Sur con
+ seis categorías de uso en evaluación. En este modelo, la obligación de la facultad no es dictar la
+ norma sino declarar en qué posición se sitúa cada evaluación. No se localizó ninguna política
+ de inteligencia artificial dictada por una facultad de Derecho como tal en Reino Unido ni en
+ Australia, ni ninguna en España o América Latina.
+
+Dónde deja esto a la cohorte chilena
+
+La guía de la Facultad de Derecho de la Universidad Católica —aprobada por Comité Directivo y
+ Consejo, con deberes de declaración y registro y calificación de infracción grave— es un instrumento
+ del modelo estadounidense, y es homologable a los mejores de esa familia. Es también el único de la
+ cohorte. Las diez Facultades restantes operan bajo instrumentos universitarios de carácter
+ orientador, que es la forma del modelo británico sin su contrapartida: en el modelo
+ británico la unidad debe declarar su posición, y en la cohorte chilena esa declaración no consta en
+ ninguna de las diez. La combinación —política central orientadora sin obligación de declaración por
+ unidad— no corresponde a ninguno de los dos modelos internacionales y deja la regulación sustantiva
+ sin titular identificable.
+
+La evidencia sobre efectos existe, es minúscula, y dice cosas incómodas
+
+Este informe sostiene que ninguna Facultad de la cohorte ha medido el efecto de lo que hace. La
+ pregunta natural es cuánto se ha medido en el mundo, y la respuesta calibra la severidad del juicio:
+ del orden de tres a cuatro estudios experimentales serios en total, todos estadounidenses y
+ tres de ellos del mismo equipo de la Universidad de Minnesota. No hay un campo maduro del que
+ Chile esté ausente; el campo apenas se está formando.
+
+Choi y Schwarcz (2023), revisado por pares. 48 estudiantes de Derecho, diseño
+ intrasujeto no aleatorizado, corrección ciega. Con GPT-4 la selección múltiple mejoró 28,9 puntos
+ percentiles y los ensayos no mejoraron de forma significativa. El hallazgo más citable no es
+ ése: el efecto está inversamente correlacionado con la habilidad previa. Los
+ estudiantes de peor desempeño mejoraron unos 45 puntos percentiles y los de mejor desempeño
+ empeoraron unos 20, ambos efectos estadísticamente significativos y en direcciones opuestas.
+
+Schwarcz y otros (2025, publicado en 2026), revisado por pares. El primer ensayo
+ controlado aleatorizado del campo: 137 estudiantes de dos facultades, seis tareas jurídicas reales
+ con límite de tiempo, tres brazos —una herramienta con recuperación aumentada, un modelo de
+ razonamiento y un control sin IA—. Ganancias de productividad significativas en cinco de las seis
+ tareas, entre 34 % y 140 %. La calidad global mejoró de forma modesta pero real. Y no mejoró
+ uniformemente: en la redacción de un acuerdo de confidencialidad el efecto fue negativo.
+
+Bednar y otros (2026), documento de trabajo aún no revisado por pares. Es el
+ único que mide aprendizaje y no desempeño. Contra la hipótesis del desaprendizaje, la
+ exposición previa a IA no deterioró la comprensión posterior: el grupo expuesto superó al control en
+ una tarea de aplicación realizada sin acceso a IA.
+
+El único trabajo europeo cercano —un experimento pedagógico de dos años en una universidad de
+ Ámsterdam, publicado en 2026— no es aleatorizado y su hallazgo es de otra clase: la formación
+ estructurada dio ventaja clara el primer año y la ventaja se diluyó el segundo a
+ medida que la familiaridad con estas herramientas se generalizó. Es un dato relevante para cualquier
+ Facultad que planifique su intervención como una ventaja competitiva y no como una capacidad
+ permanente.
+
+La fiabilidad de las herramientas jurídicas, medida
+
+¿Qué tan fiables son las herramientas de investigación jurídica con IA?
+
+Las herramientas comerciales especializadas alucinan entre el 17 % y el 33 % de las veces
+
+[FIGURA SVG]
+
+Estudio del laboratorio de regulación de Stanford, publicado en 2025 en revista revisada
+ por pares, sobre 202 consultas jurídicas preregistradas. Los proveedores han disputado públicamente
+ la metodología y uno de ellos concedió acceso sólo después de la publicación inicial de los
+ resultados; ambas circunstancias se declaran aquí.
+
+Herramienta | Exactitud | Alucinación | 
+
+Lexis+ AI · LexisNexis | 65 | 17 | 
+
+Ask Practical Law AI · Thomson Reuters | 19 | 17 | 
+
+Westlaw AI-Assisted Research | 41 | 33 | 
+
+GPT-4 · línea base | — | 43 | 
+
+Un estudio complementario sobre más de 800.000 consultas verificables sitúa la
+ alucinación de los modelos generales entre el 58 % y el 88 % según el modelo. Y un tercero, de 2025,
+ mide la variación por jurisdicción: 45 % en Los Ángeles, 55 % en Londres, 61 % en Sídney y
+ 100 % en derecho estadual australiano. Cuanto más lejos del corpus estadounidense,
+ peor el desempeño.
+
+Por qué este dato es el argumento más fuerte a favor de enseñar esto, y no en contra
+
+Una lectura apresurada concluiría que si las herramientas fallan tanto, lo prudente es
+ prohibirlas. La cifra de jurisdicción dice lo contrario para Chile: el desempeño se degrada fuera del
+ derecho estadounidense, y el derecho chileno está tan lejos del corpus de entrenamiento como el
+ derecho estadual australiano. Un estudiante chileno que use estas herramientas sin haber sido
+ formado para verificarlas opera en el peor punto de la curva. La competencia de verificación no es
+ un complemento del razonamiento jurídico: en este contexto es una condición de su ejercicio, y es
+ exactamente lo que una Facultad de Derecho —y no una vicerrectoría de informática— está en
+ condiciones de enseñar.
+
+Qué hace la región
+
+El caso más institucionalizado de América Latina es un laboratorio de Derecho e inteligencia
+ artificial fundado en 2019 en una universidad mexicana, con dos codirectores, entre una y cinco
+ publicaciones indexadas por año y un diplomado de 108 horas. En Colombia lo equivalente es un
+ semillero de investigación de facultad, explícitamente no un centro. En Brasil hay una línea de
+ investigación consolidada y un LLM en regulación de inteligencia artificial, todo en posgrado. En
+ Argentina, cursos de posgrado y educación ejecutiva. No se localizó ninguna facultad de
+ Derecho latinoamericana con política propia sobre IA en evaluaciones, con asignatura obligatoria en
+ pregrado, ni con estudio empírico sobre el efecto de la IA en el aprendizaje jurídico. Las
+ tres ausencias que este informe documenta en Chile son, en esos tres puntos, ausencias regionales.
+
+Los reguladores tampoco han llegado, y eso es global
+
+La revisión de las actualizaciones vigentes de los estándares de acreditación de la educación
+ jurídica estadounidense no devuelve ninguna mención explícita a inteligencia artificial ni a
+ competencia tecnológica. La encuesta de 2024 del grupo de trabajo sobre derecho e inteligencia
+ artificial de esa misma asociación —sobre una muestra pequeña, 29 decanos y académicos— reporta que
+ el 69 % ya modificó sus políticas de integridad académica y el 85 % anticipa cambios curriculares,
+ pero la acreditación no se ha movido. El vacío regulatorio que la sección 6 documenta en Chile es,
+ en su forma general, un vacío internacional. La diferencia es que en Estados Unidos la actividad
+ normativa se ha desplazado a las facultades, y en Chile —salvo una— todavía no.
+
+15
+

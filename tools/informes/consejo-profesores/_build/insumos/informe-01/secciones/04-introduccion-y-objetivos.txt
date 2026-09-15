@@ -1,0 +1,92 @@
+[Informe 01 v3.2.0 · líneas 407-498 del texto completo]
+
+1 · Introducción
+
+La incorporación de sistemas de inteligencia artificial a la enseñanza y al ejercicio
+ del Derecho dejó de ser una hipótesis sobre el futuro de la profesión.
+
+Es un hecho verificable en programas de formación continua con cohortes graduadas, en
+ departamentos incorporados a organigramas de Facultad, en guías de uso con órgano aprobador y
+ sanción asociada, y en herramientas desplegadas dentro de asignaturas jurídicas. Es también un hecho
+ fuera de la universidad: en agosto de 2026 la prensa económica documentaba comités de inteligencia
+ artificial constituidos en los principales estudios jurídicos del país, y en julio de ese mismo año
+ un abogado que había automatizado el ingreso de escritos con inteligencia artificial hizo colapsar
+ la Oficina Judicial Virtual con 38.477 presentaciones, obligando a la Corte Suprema a bloquear su
+ dirección y a redactar un escrito tipo de respuesta. La pregunta pertinente ya no es si las Escuelas
+ de Derecho chilenas están haciendo algo, sino qué han construido exactamente, con qué respaldo
+ formal, con qué alcance y con qué resultados conocidos.
+
+Esa pregunta es difícil de responder porque el material disponible induce a error. La actividad
+ institucional se comunica mediante noticias, y la noticia tiene una gramática propia: anuncia
+ creaciones sin citar el acto que las crea, atribuye a una Facultad lo que pertenece a una
+ vicerrectoría, y describe con el mismo entusiasmo un convenio firmado y un programa en marcha. Un
+ recuento de apariciones en prensa universitaria mide capacidad comunicacional. No mide capacidad
+ institucional.
+
+Este informe adopta por eso una posición metodológica deliberadamente incómoda: sostiene que la
+ unidad de análisis no es la actividad sino la estructura que la sostiene, y que la distancia entre
+ ambas es precisamente el objeto de estudio. Una Facultad que dicta tres seminarios al año y una que
+ integró la materia a su organigrama, a su régimen disciplinario y a su oferta permanente no están
+ en el mismo punto, aunque produzcan el mismo número de titulares.
+
+La relevancia de la pregunta para una Escuela de Derecho no es tecnológica sino formativa y
+ normativa. Formativa, porque la competencia profesional que se enseña —leer, investigar, redactar,
+ argumentar— es exactamente aquella sobre la que estos sistemas operan, de modo que la decisión sobre
+ su uso no puede delegarse en la infraestructura informática de la universidad. Normativa, porque una
+ Facultad que regula el uso de estas herramientas en la evaluación está dictando derecho
+ disciplinario sobre su propia comunidad, y la calidad de ese instrumento es un problema jurídico
+ antes que técnico.
+
+Hay además una razón de escala que conviene tener presente. Con 51.331 estudiantes de pregrado en
+ 2024 y 11.401 matriculados de primer año, Derecho es la segunda carrera universitaria con más
+ matrícula nueva del país. Lo que once Facultades decidan sobre cómo se enseña a razonar
+ jurídicamente en presencia de estos sistemas no es una cuestión de política interna: alcanza a una
+ fracción considerable de quienes ejercerán la profesión en los próximos treinta años.
+
+Pregunta de investigación
+
+Qué capacidades institucionales públicamente verificables han construido once Escuelas y
+ Facultades de Derecho chilenas en materia de inteligencia artificial, con qué grado de
+ formalización, y qué puede y no puede afirmarse sobre ellas a partir de evidencia pública
+ contrastada contra su publicación original y contra fuentes de terceros.
+
+El alcance está acotado por construcción. El estudio observa una cohorte cerrada de once
+ instituciones, se limita a evidencia públicamente accesible al 6 de septiembre de 2026, y no evalúa
+ desempeño, calidad ni resultados de aprendizaje. Lo que no aparece publicado queda fuera, y esa
+ ausencia no equivale a inexistencia: significa que este método no puede verla. La única excepción son las afirmaciones que el contraste con bases oficiales permite cerrar por el lado negativo, donde la ausencia en un registro exhaustivo sí es un dato.
+
+2 · Objetivos
+
+Objetivo general
+
+Establecer, sobre evidencia pública verificable y trazable, qué capacidades institucionales en
+ materia de inteligencia artificial existen en once Escuelas y Facultades de Derecho chilenas al 6 de
+ septiembre de 2026, distinguiendo actividad de estructura y estructura de resultado.
+
+Objetivos específicos
+
+Construir un registro de fuentes públicas únicas, con identificador estable, fecha declarada y
+ estado editorial, que permita recorrer cualquier afirmación hacia atrás hasta el documento que la
+ sostiene.
+
+Contrastar la totalidad de las fuentes contra su publicación original y publicar cada
+ divergencia encontrada, incluidas las desfavorables al propio argumento.
+
+Recorrer la ruta de contraste externo en las once instituciones, para que el corpus deje de
+ estar compuesto exclusivamente por la autodescripción de las observadas.
+
+Medir la cobertura alcanzada por la investigación en cada institución como indicador
+ independiente de la madurez observada.
+
+Publicar un comparador ordinal entre instituciones que incorpore su propia incertidumbre, de
+ modo que la posición y la duda se lean en el mismo objeto.
+
+Situar los resultados frente a una referencia internacional, para distinguir el rezago chileno
+ de la ausencia global.
+
+Situar a la Pontificia Universidad Católica de Valparaíso frente a instituciones comparables,
+ reconociendo la evidencia favorable localizada y las brechas que la evidencia pública deja al
+ descubierto, y traducirlas en decisiones con indicador verificable.
+
+06
+

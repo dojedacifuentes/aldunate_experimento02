@@ -1,0 +1,127 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 4",
+  "x": "Competencias: de la reproducción al juicio"
+ },
+ {
+  "t": "lead",
+  "x": "Si una máquina produce textos, código, análisis y síntesis de calidad razonable a coste casi nulo, la pregunta por el perfil de egreso deja de ser académica. Lo que cambia no es el catálogo de competencias sino su jerarquía: capacidades que eran secundarias pasan a ser el núcleo, y capacidades que definían al buen titulado dejan de diferenciarlo."
+ },
+ {
+  "t": "h2",
+  "x": "4.1 Qué gana y qué pierde valor relativo"
+ },
+ {
+  "t": "p",
+  "x": "La formulación importa. Ninguna competencia desaparece: redactar bien sigue siendo valioso. Lo que cambia es su capacidad de **diferenciar** a un profesional de otro cuando ambos disponen del mismo sistema. Esa es la métrica relevante para un perfil de egreso."
+ },
+ {
+  "t": "table",
+  "cap": "Tabla 8. Reordenamiento de la jerarquía de competencias universitarias. Elaboración propia a partir de la evidencia experimental recogida y de los marcos de UNESCO, la OCDE y la Comisión Europea.",
+  "head": [
+   "Gana valor como diferenciador",
+   "Por qué",
+   "Pierde valor como diferenciador",
+   "Por qué"
+  ],
+  "w": [
+   2400,
+   2280,
+   2200,
+   2240
+  ],
+  "align": [
+   "left",
+   "left",
+   "left",
+   "left"
+  ],
+  "rows": [
+   [
+    "**Formulación del problema**",
+    "El sistema responde bien a preguntas bien planteadas y mal a preguntas mal planteadas. La calidad se decide antes del prompt.",
+    "Redacción instrumental estándar",
+    "Informes, resúmenes y correspondencia formal son ya producibles con calidad suficiente."
+   ],
+   [
+    "**Verificación y vigilancia epistémica**",
+    "Detectar el error plausible es hoy la competencia más escasa. Las tasas de alucinación del capítulo 13 lo cuantifican.",
+    "Búsqueda y recopilación de información",
+    "La recuperación y síntesis inicial dejaron de ser trabajo cualificado."
+   ],
+   [
+    "**Calibración de la propia confianza**",
+    "La evidencia de METR muestra una descalibración de casi 40 puntos entre productividad percibida y medida.",
+    "Producción de primeras versiones",
+    "El borrador dejó de ser el cuello de botella del trabajo intelectual."
+   ],
+   [
+    "**Criterio disciplinar y gusto**",
+    "Saber cuál de cinco salidas plausibles es la correcta exige un conocimiento que el sistema no aporta.",
+    "Codificación rutinaria",
+    "Sujeta a la misma automatización, con las salvedades del capítulo 10."
+   ],
+   [
+    "**Responsabilidad profesional**",
+    "La firma sigue siendo humana. Las sanciones judiciales del capítulo 13 lo demuestran de forma literal.",
+    "Memorización de contenido recuperable",
+    "Ya había perdido valor con la digitalización; ahora es residual."
+   ],
+   [
+    "**Metacognición y autorregulación**",
+    "Saber cuándo conviene no usar la herramienta es la competencia que separa el aprendizaje del rendimiento.",
+    "Ejecución de procedimientos estandarizados",
+    "Automatizable cuando el procedimiento está bien especificado."
+   ],
+   [
+    "**Comunicación oral y defensa**",
+    "Se ha convertido además en el instrumento evaluativo más robusto, lo que refuerza su valor formativo.",
+    "Traducción y edición de estilo",
+    "Prácticamente resueltas para uso general, con excepciones especializadas."
+   ]
+  ]
+ },
+ {
+  "t": "callout",
+  "h": "El error que conviene evitar",
+  "c": "teal",
+  "x": "La conclusión no es que haya que dejar de enseñar a escribir. Es exactamente la contraria: escribir sigue siendo la principal tecnología para pensar con precisión, y ese valor es interno al que escribe, no reside en el texto producido. Lo que cambia es que ese valor ya no puede acreditarse mediante el texto entregado. Enseñar a escribir se vuelve más importante y evaluar la escritura entregada se vuelve menos informativo. Son dos afirmaciones compatibles y la política universitaria tiende a confundirlas."
+ },
+ {
+  "t": "h2",
+  "x": "4.2 Ohio State: el primer requisito transversal de egreso"
+ },
+ {
+  "t": "p",
+  "x": "Ohio State University es el caso mejor documentado de transformación de nivel 4, es decir, de modificación formal del perfil de egreso. Su iniciativa AI Fluency establece que, a partir de la promoción de 2029, todo egresado será fluido tanto en su campo de estudio como en inteligencia artificial."
+ },
+ {
+  "t": "p",
+  "x": "Lo relevante no es el anuncio sino el mecanismo, que sí es verificable en fuentes institucionales primarias:"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "Un **General Education Launch Seminar obligatorio** que incorpora tres módulos nuevos: qué es la IA generativa y cómo funciona; cómo usarla de manera eficaz y ética; y cómo usarla de forma reflexiva a lo largo de la trayectoria universitaria.",
+   "Talleres de IA generativa integrados en la **First Year Success Series**, es decir, dentro de la estructura de acompañamiento de primer año, no como oferta optativa.",
+   "La obligación de que **cada unidad académica publique su propio mapa** de incorporación de IA a la disciplina hacia finales de 2026. Es este punto —y no el seminario general— el que convierte la iniciativa en transformación curricular: obliga a cada facultad a responder qué significa la IA en su campo."
+  ]
+ },
+ {
+  "t": "p",
+  "x": "El límite del caso también debe declararse. A agosto de 2026 la iniciativa demuestra implementación, no resultados. No existe evaluación externa, ni grupo de comparación, ni medición de aprendizaje. Es un caso de nivel demostrativo D2 con una ambición de nivel 4. Su valor como referencia es de diseño institucional, no de eficacia probada."
+ },
+ {
+  "t": "h2",
+  "x": "4.3 Los marcos internacionales y su límite común"
+ },
+ {
+  "t": "p",
+  "x": "Tres marcos estructuran hoy el discurso sobre competencias: los AI Competency Frameworks de UNESCO para docentes y para estudiantes, publicados en 2024; el marco de alfabetización en IA elaborado por la OCDE con la Comisión Europea; y, en el terreno de la demanda, los informes de habilidades del Foro Económico Mundial."
+ },
+ {
+  "t": "p",
+  "x": "Comparten una virtud y un defecto. La virtud es que desplazan la conversación desde el manejo de herramientas hacia el juicio, la ética y la agencia humana. El defecto es estructural: **definen principios y delegan la implementación** en sistemas locales cuya capacidad es enormemente desigual. Un marco de competencias sin financiación de formación docente y sin rediseño evaluativo es un documento, no una política."
+ }
+]

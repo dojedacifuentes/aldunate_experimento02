@@ -1,0 +1,46 @@
+[
+{"t":"h1","n":"Capítulo 22","x":"Vacíos de investigación"},
+
+{"t":"lead","x":"Un informe honesto termina señalando lo que no puede decir. Después de recorrer la mejor evidencia disponible, ocho preguntas centrales para cualquier decisión universitaria siguen sin respuesta, y no por falta de interés: por falta de estudios que las hayan planteado. Este capítulo las enumera, explica por qué existen esos huecos y propone la agenda mínima que los cerraría."},
+
+{"t":"h2","x":"22.1 Las ocho preguntas sin respuesta"},
+
+{"t":"table","cap":"Vacíos de investigación ordenados por consecuencia práctica. Ninguna de estas preguntas tiene hoy respuesta con evidencia suficiente.",
+ "head":["Pregunta abierta","Por qué importa para decidir","Qué haría falta para responderla"],
+ "w":[2900,3200,3020],
+ "align":["left","left","left"],
+ "rows":[
+ ["**¿Qué le ocurre al aprendizaje a lo largo de una carrera completa?**","Toda la evidencia disponible mide semanas o un semestre. Una carrera dura entre cuatro y siete años, y el efecto que importa es el acumulado.","Estudios longitudinales de cohorte con medición de capacidad autónoma al ingreso, a mitad y al egreso."],
+ ["**¿Funciona el rediseño evaluativo?**","El modelo de dos carriles es la respuesta dominante del sector y se está replicando. Nadie ha medido si produce mejores juicios sobre el aprendizaje.","Comparación de cohortes antes y después del rediseño, con medida externa de competencia y no solo de calificación."],
+ ["**¿Cuánto cuesta realmente la evaluación válida?**","Es la variable que este informe identifica como principal riesgo de fracaso, y se argumenta de forma estructural porque no hay datos.","Contabilidad de horas docentes por instrumento evaluativo, comparada entre modelos y tamaños de curso."],
+ ["**¿Producen algo los despliegues institucionales masivos?**","Se han comprometido decenas de millones de dólares. Ninguna afirmación sobre estos despliegues supera el nivel demostrativo D2.","Evaluación independiente con grupo de comparación en al menos una institución de gran escala."],
+ ["**¿Qué competencias se degradan y cuáles no?**","La discusión sobre deterioro cognitivo se apoya en un estudio pequeño y cuestionado. Sin especificidad, no se puede diseñar qué proteger.","Baterías de tareas por competencia, con retirada de la herramienta, en población universitaria."],
+ ["**¿Se puede enseñar la calibración de la confianza?**","La brecha de casi cuarenta puntos entre productividad percibida y medida es el hallazgo más transferible del informe, y no hay ninguna intervención probada.","Ensayos de intervención comparando estimación previa con desempeño medido, con seguimiento."],
+ ["**¿Qué ocurre fuera del inglés?**","Casi toda la evidencia procede de sistemas anglófonos, con modelos que rinden mejor en inglés. La extrapolación al español o al portugués es una suposición.","Replicación de los estudios clave en otras lenguas y sistemas universitarios."],
+ ["**¿Cómo cambia el trabajo profesional que la universidad prepara?**","Es la pregunta del capítulo 12: si el peldaño de entrada se erosiona, el currículo debe absorberlo. No hay estudios de la práctica profesional real.","Investigación de campo en firmas y servicios sobre qué tareas hacen hoy los titulados recientes."]
+ ]},
+
+{"t":"h2","x":"22.2 Por qué existen estos huecos"},
+
+{"t":"p","x":"Los vacíos no son aleatorios: siguen un patrón que se explica por los incentivos del campo."},
+
+{"t":"numbers","items":[
+"**Las instituciones publican éxitos, no resultados.** Una universidad que despliega IA a gran escala tiene razones para comunicar adopción y ninguna para publicar que su profesorado percibe daño. La excepción localizada —la encuesta interna de California State University— es reveladora precisamente por su rareza.",
+"**Nadie financia la evaluación educativa.** El presupuesto de IA se destina a licencias y plataformas. Medir efectos exige diseño, tiempo y grupos de comparación, y compite con el gasto visible en una partida que ya se percibe como cara.",
+"**El objeto de estudio se mueve más rápido que el método.** Un estudio longitudinal serio tarda tres o cuatro años; los modelos cambian cada seis meses. METR reclasificó su propio resultado como histórico apenas siete meses después de publicarlo. Ese desfase desincentiva estructuralmente la investigación robusta y favorece la encuesta rápida.",
+"**La revisión por pares no ha aguantado la presión.** La retractación del metaanálisis de Wang y Fan, después de 266 citas y once meses de circulación, muestra que el filtro de calidad falló justo donde más se lo necesitaba."
+]},
+
+{"t":"h2","x":"22.3 Una agenda mínima"},
+
+{"t":"p","x":"No hacen falta cientos de estudios. Cuatro, bien diseñados, cambiarían el estado del conocimiento más que todo lo publicado en los últimos dos años."},
+
+{"t":"bullets","items":[
+"**Un estudio de retirada en población universitaria.** Replicar el diseño de Bastani —medir el desempeño cuando se quita la herramienta— en un curso universitario real. Es el único diseño que separa rendimiento asistido de aprendizaje, y todavía no se ha hecho en la universidad. Coste bajo, valor altísimo.",
+"**Una evaluación independiente de un despliegue institucional.** Una sola universidad de gran escala que acepte evaluación externa con grupo de comparación resolvería el vacío más caro del campo. Hoy no existe ninguna.",
+"**Una contabilidad honesta del coste evaluativo.** Cuántas horas docentes consume realmente un examen oral frente a una entrega escrita, por estudiante y por curso. Es un estudio de gestión, no de pedagogía, y decidiría si la reforma evaluativa es viable.",
+"**Una réplica en español y portugués.** Repetir los dos o tres estudios decisivos en universidades iberoamericanas. Cerraría el vacío lingüístico y daría a la región algo que hoy no tiene: evidencia propia en lugar de casos citables."
+]},
+
+{"t":"callout","h":"La oportunidad que esto abre","c":"teal","x":"El vacío de evidencia es un problema para quien tiene que decidir y una oportunidad para quien quiera investigar. Los cuatro estudios anteriores son baratos comparados con cualquier contrato de licencias, están al alcance de una facultad mediana y ocupan un espacio que hoy está vacío **en todo el mundo**, no solo en Iberoamérica. Una institución que evalúe con rigor y publique sus resultados —incluidos los adversos— haría una contribución desproporcionada a su tamaño, y lo haría en el momento exacto en que el campo más la necesita."}
+]

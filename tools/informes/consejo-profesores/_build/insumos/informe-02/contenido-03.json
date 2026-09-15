@@ -1,0 +1,163 @@
+﻿[
+{"t":"h1","n":"Capítulo 4","x":"Competencias: de la reproducción al juicio"},
+
+{"t":"lead","x":"Si una máquina produce textos, código, análisis y síntesis de calidad razonable a coste casi nulo, la pregunta por el perfil de egreso deja de ser académica. Lo que cambia no es el catálogo de competencias sino su jerarquía: capacidades que eran secundarias pasan a ser el núcleo, y capacidades que definían al buen titulado dejan de diferenciarlo."},
+
+{"t":"h2","x":"4.1 Qué gana y qué pierde valor relativo"},
+
+{"t":"p","x":"La formulación importa. Ninguna competencia desaparece: redactar bien sigue siendo valioso. Lo que cambia es su capacidad de **diferenciar** a un profesional de otro cuando ambos disponen del mismo sistema. Esa es la métrica relevante para un perfil de egreso."},
+
+{"t":"table","cap":"Tabla 8. Reordenamiento de la jerarquía de competencias universitarias. Elaboración propia a partir de la evidencia experimental recogida y de los marcos de UNESCO, la OCDE y la Comisión Europea.",
+ "head":["Gana valor como diferenciador","Por qué","Pierde valor como diferenciador","Por qué"],
+ "w":[2400,2280,2200,2240],
+ "align":["left","left","left","left"],
+ "rows":[
+ ["**Formulación del problema**","El sistema responde bien a preguntas bien planteadas y mal a preguntas mal planteadas. La calidad se decide antes del prompt.","Redacción instrumental estándar","Informes, resúmenes y correspondencia formal son ya producibles con calidad suficiente."],
+ ["**Verificación y vigilancia epistémica**","Detectar el error plausible es hoy la competencia más escasa. Las tasas de alucinación del capítulo 13 lo cuantifican.","Búsqueda y recopilación de información","La recuperación y síntesis inicial dejaron de ser trabajo cualificado."],
+ ["**Calibración de la propia confianza**","La evidencia de METR muestra una descalibración de casi 40 puntos entre productividad percibida y medida.","Producción de primeras versiones","El borrador dejó de ser el cuello de botella del trabajo intelectual."],
+ ["**Criterio disciplinar y gusto**","Saber cuál de cinco salidas plausibles es la correcta exige un conocimiento que el sistema no aporta.","Codificación rutinaria","Sujeta a la misma automatización, con las salvedades del capítulo 10."],
+ ["**Responsabilidad profesional**","La firma sigue siendo humana. Las sanciones judiciales del capítulo 13 lo demuestran de forma literal.","Memorización de contenido recuperable","Ya había perdido valor con la digitalización; ahora es residual."],
+ ["**Metacognición y autorregulación**","Saber cuándo conviene no usar la herramienta es la competencia que separa el aprendizaje del rendimiento.","Ejecución de procedimientos estandarizados","Automatizable cuando el procedimiento está bien especificado."],
+ ["**Comunicación oral y defensa**","Se ha convertido además en el instrumento evaluativo más robusto, lo que refuerza su valor formativo.","Traducción y edición de estilo","Prácticamente resueltas para uso general, con excepciones especializadas."]
+ ]},
+
+{"t":"callout","h":"El error que conviene evitar","c":"teal","x":"La conclusión no es que haya que dejar de enseñar a escribir. Es exactamente la contraria: escribir sigue siendo la principal tecnología para pensar con precisión, y ese valor es interno al que escribe, no reside en el texto producido. Lo que cambia es que ese valor ya no puede acreditarse mediante el texto entregado. Enseñar a escribir se vuelve más importante y evaluar la escritura entregada se vuelve menos informativo. Son dos afirmaciones compatibles y la política universitaria tiende a confundirlas."},
+
+{"t":"h2","x":"4.2 Ohio State: el primer requisito transversal de egreso"},
+
+{"t":"p","x":"Ohio State University es el caso mejor documentado de transformación de nivel 4, es decir, de modificación formal del perfil de egreso. Su iniciativa AI Fluency establece que, a partir de la promoción de 2029, todo egresado será fluido tanto en su campo de estudio como en inteligencia artificial."},
+
+{"t":"p","x":"Lo relevante no es el anuncio sino el mecanismo, que sí es verificable en fuentes institucionales primarias:"},
+
+{"t":"bullets","items":[
+"Un **General Education Launch Seminar obligatorio** que incorpora tres módulos nuevos: qué es la IA generativa y cómo funciona; cómo usarla de manera eficaz y ética; y cómo usarla de forma reflexiva a lo largo de la trayectoria universitaria.",
+"Talleres de IA generativa integrados en la **First Year Success Series**, es decir, dentro de la estructura de acompañamiento de primer año, no como oferta optativa.",
+"La obligación de que **cada unidad académica publique su propio mapa** de incorporación de IA a la disciplina hacia finales de 2026. Es este punto —y no el seminario general— el que convierte la iniciativa en transformación curricular: obliga a cada facultad a responder qué significa la IA en su campo."
+]},
+
+{"t":"p","x":"El límite del caso también debe declararse. A agosto de 2026 la iniciativa demuestra implementación, no resultados. No existe evaluación externa, ni grupo de comparación, ni medición de aprendizaje. Es un caso de nivel demostrativo D2 con una ambición de nivel 4. Su valor como referencia es de diseño institucional, no de eficacia probada."},
+
+{"t":"h2","x":"4.3 Los marcos internacionales y su límite común"},
+
+{"t":"p","x":"Tres marcos estructuran hoy el discurso sobre competencias: los AI Competency Frameworks de UNESCO para docentes y para estudiantes, publicados en 2024; el marco de alfabetización en IA elaborado por la OCDE con la Comisión Europea; y, en el terreno de la demanda, los informes de habilidades del Foro Económico Mundial."},
+
+{"t":"p","x":"Comparten una virtud y un defecto. La virtud es que desplazan la conversación desde el manejo de herramientas hacia el juicio, la ética y la agencia humana. El defecto es estructural: **definen principios y delegan la implementación** en sistemas locales cuya capacidad es enormemente desigual. Un marco de competencias sin financiación de formación docente y sin rediseño evaluativo es un documento, no una política."},
+
+{"t":"h1","n":"Capítulo 5","x":"Metodologías: lo que la evidencia sostiene y lo que no"},
+
+{"t":"lead","x":"Este capítulo contiene el hallazgo más importante del informe para quien deba tomar decisiones pedagógicas. Dos ensayos aleatorizados publicados con pocas semanas de diferencia en 2025 llegaron a conclusiones aparentemente opuestas sobre el mismo objeto. No se contradicen: miden cosas distintas, y esa distinción es la regla operativa que el resto del sistema todavía no ha internalizado."},
+
+{"t":"fig","id":"g02-rendimiento-vs-aprendizaje","cap":"Figura 2. El mismo patrón en dos poblaciones distintas: lo que se gana con la herramienta disponible no equivale a lo que queda cuando se retira, ni a lo que se creía haber ganado."},
+
+{"t":"h2","x":"5.1 Harvard: un tutor bien diseñado duplica las ganancias"},
+
+{"t":"p","x":"Greg Kestin, Kelly Miller, Anna Klales, Timothy Milbourne y Gregorio Ponti publicaron en Scientific Reports, el 3 de junio de 2025, un ensayo aleatorizado realizado en el curso Physical Sciences 2 de Harvard durante el otoño de 2023. Alrededor de 180 estudiantes alternaron semanalmente entre dos condiciones: una clase presencial guiada con métodos de aprendizaje activo muy refinados y una sesión en casa con un tutor de IA construido a propósito."},
+
+{"t":"p","x":"El resultado: los estudiantes que usaron el tutor de IA obtuvieron aproximadamente **el doble de ganancias de aprendizaje**, en **menos tiempo**, y declararon mayor compromiso y motivación. Es un resultado notable, porque la condición de control no era una clase magistral mediocre sino aprendizaje activo bien ejecutado, el estándar de oro de la enseñanza universitaria de ciencias."},
+
+{"t":"p","x":"El detalle decisivo está en el diseño del tutor: andamiajes redactados por expertos, razonamiento paso a paso y guardarraíles explícitos para evitar que entregara la respuesta. Estaba informado por los mismos principios pedagógicos que las clases presenciales del curso. No era un chatbot genérico."},
+
+{"t":"h2","x":"5.2 Turquía: el acceso libre deja a los estudiantes peor que al principio"},
+
+{"t":"p","x":"Hamsa Bastani, Osbert Bastani, Alp Sungu, Haosen Ge, Özge Kabakcı y Rei Mariman publicaron en PNAS un experimento de campo con cerca de mil estudiantes de secundaria en Turquía, en cuatro sesiones de noventa minutos. Tres condiciones: sin IA, con acceso libre a GPT-4 y con un tutor de IA que entregaba pistas diseñadas por docentes en lugar de respuestas."},
+
+{"t":"table","cap":"Tabla 9. Resultados del experimento de Bastani et al., PNAS (2025). Las dos primeras filas miden desempeño con la herramienta disponible; la tercera mide aprendizaje retenido.",
+ "head":["Condición","Efecto","Momento de la medición"],
+ "w":[3000,1600,4520],
+ "align":["left","center","left"],
+ "rows":[
+ ["Acceso libre a GPT-4","**+48 %**","Durante la práctica, con la herramienta disponible"],
+ ["Tutor de IA con pistas diseñadas por docentes","**+127 %**","Durante la práctica, con la herramienta disponible"],
+ ["Acceso libre a GPT-4, tras retirar el acceso","**−17 %**","Evaluación posterior, comparado con quienes nunca la tuvieron"]
+ ]},
+
+{"t":"p","x":"La tercera fila es el hallazgo. Los estudiantes con acceso libre no solo no aprendieron más: aprendieron **menos** que quienes nunca tuvieron la herramienta. Los autores lo describen como usar el sistema de muleta durante la práctica. Los andamiajes —pedir pistas en lugar de respuestas— mitigaron el daño."},
+
+{"t":"p","x":"La limitación debe declararse: es un estudio en educación secundaria, en matemáticas, sobre un horizonte temporal corto. Su traslado a la universidad es una inferencia razonable, no un dato. Se incluye porque ningún estudio universitario ha replicado todavía ese diseño de retirada, que es exactamente el que responde a la pregunta que importa."},
+
+{"t":"h2","x":"5.3 La regla que emerge de los dos estudios"},
+
+{"t":"callout","h":"El andamiaje, no el acceso","c":"navy","x":"Puestos uno junto a otro, los dos ensayos dicen lo mismo desde direcciones opuestas: **la variable que determina el efecto no es la potencia del modelo sino el diseño de la interacción**. Un tutor con guardarraíles pedagógicos duplicó el aprendizaje; el mismo modelo subyacente, sin guardarraíles, lo dañó. Esto tiene una consecuencia directa para la política institucional: comprar licencias de acceso general —el gasto que la mayoría de las universidades ha realizado— es la intervención con menor probabilidad de producir aprendizaje, y puede producir el efecto contrario. El gasto pedagógicamente eficaz es el diseño de tareas y de andamiajes, que es trabajo docente, no software."},
+
+{"t":"h2","x":"5.4 Lo que todavía no sabemos sobre las metodologías"},
+
+{"t":"p","x":"El resto del catálogo metodológico —aprendizaje adaptativo, feedback automatizado, simulación con pacientes o clientes sintéticos, diálogo socrático asistido, investigación asistida— se encuentra en un estado de evidencia sensiblemente peor. Abundan los estudios de percepción, los pilotos de un semestre y las evaluaciones sin grupo de comparación; escasean los ensayos con medición de retención a medio plazo."},
+
+{"t":"p","x":"Merece mención específica el caso de Harvard CS50, cuyo equipo documentó académicamente su suite de herramientas —asistente conversacional entrenado con el material del curso, explicador de fragmentos de código y revisor estilístico— bajo el principio declarado de aproximarse a una razón profesor-estudiante de 1:1 sin entregar la respuesta directa. Es un caso de diseño ejemplar y de evidencia todavía limitada a un curso."},
+
+{"t":"h1","n":"Capítulo 6","x":"El rol docente: el eslabón que nadie financió"},
+
+{"t":"lead","x":"La discusión sobre el profesorado ha cambiado de naturaleza. Hasta 2024 giraba en torno a la resistencia; hoy la adopción docente supera el setenta por ciento y el problema es otro: quienes ya usan la herramienta declaran no saber cómo enseñarla, no haber sido formados y no haber participado en las políticas que deben aplicar."},
+
+{"t":"fig","id":"g03-brecha-preparacion","cap":"Figura 3. Ningún indicador de esta figura mide adopción. Todos miden capacidad institucional para acompañar una adopción que ya ocurrió."},
+
+{"t":"h2","x":"6.1 La brecha se desplazó"},
+
+{"t":"p","x":"Según las encuestas del Digital Education Council —1.681 docentes de 52 instituciones en 28 países en la oleada de 2025—, el uso docente de IA en la enseñanza pasó del 61 % en 2025 al 77 % en 2026, frente al 88 % de los estudiantes. La brecha de adopción se ha estrechado a once puntos y dejará de ser un problema relevante en poco tiempo."},
+
+{"t":"p","x":"Los indicadores que no se estrechan son otros. El 83 % del profesorado está preocupado por la capacidad de sus estudiantes de evaluar críticamente los productos de IA. El 80 % percibe falta de claridad institucional sobre cómo aplicarla. Solo el 17 % se sitúa en nivel avanzado o experto, mientras el 40 % declara estar al inicio de su alfabetización. Y solo el 31 % considera que su institución lo involucra de manera significativa en el diseño de la política de IA."},
+
+{"t":"p","x":"Del lado estudiantil, el reflejo es exacto: el 57 % dice que sus evaluaciones vienen con orientación insuficiente sobre IA y solo el 29 % cree que sus docentes están preparados para orientarlos."},
+
+{"t":"h2","x":"6.2 El ahorro de tiempo docente: una promesa con evidencia contradictoria"},
+
+{"t":"p","x":"El argumento económico más repetido para la adopción institucional es que la IA liberará tiempo docente. La evidencia disponible no lo desmiente, pero está lejos de sostenerlo con la solidez con que se afirma."},
+
+{"t":"bullets","items":[
+"**A favor.** Un estudio publicado en el Journal of Chemical Education documenta mejoras de eficiencia y de calidad del feedback en cursos de Química. Un trabajo sobre corrección híbrida instructor-IA en cursos de hidráulica reporta una reducción del tiempo de corrección del 88 % —de 50 a 6 minutos por informe, incluida la verificación— con cobertura completa de la rúbrica.",
+"**En contra.** Un estudio reciente encuentra que los borradores de feedback asistidos por IA aumentan la cantidad y la extensión del feedback pero **no reducen el tiempo medido por unidad**: la IA facilita iniciar el feedback, no terminarlo. El docente sigue revisando, adaptando y decidiendo si enviarlo.",
+"**Sobre el conjunto.** Una revisión integrativa publicada en Frontiers in Education en 2025 califica la base de evidencia de metodológicamente deficiente: predominan los estudios de corto plazo y las evaluaciones subjetivas, y son muy escasos los datos longitudinales o las comparaciones controladas."
+]},
+
+{"t":"p","x":"La lectura prudente es que la IA **redistribuye** el trabajo docente antes que reducirlo: menos tiempo en producir la primera versión, más tiempo en verificar, personalizar y decidir. Presupuestar la reforma evaluativa contando con un ahorro de horas que la evidencia no respalda es un riesgo institucional concreto."},
+
+{"t":"h2","x":"6.3 Las funciones que se fortalecen"},
+
+{"t":"p","x":"Frente a la automatización parcial de la preparación de materiales, la generación de ejercicios y el borrador de feedback, hay funciones docentes cuyo valor relativo aumenta de forma directa, y conviene nombrarlas porque son las que deberían recibir el tiempo liberado:"},
+
+{"t":"bullets","items":[
+"**Diseño de tareas y de andamiajes.** Es, según la evidencia del capítulo 5, la variable que determina si la IA ayuda o daña. Es trabajo intelectual de alta cualificación y hoy está mayoritariamente sin reconocer en la carga docente.",
+"**Evaluación oral y observación del desempeño.** El instrumento más robusto es también el más intensivo en tiempo docente.",
+"**Supervisión epistemológica.** Enseñar a distinguir lo verificado de lo plausible, que es la competencia más escasa del nuevo entorno.",
+"**Modelamiento experto.** Mostrar cómo piensa un jurista, un clínico o un ingeniero ante un caso real —incluido cómo usa y cómo desconfía de sus herramientas— es formativamente irreemplazable.",
+"**Mentoría y formación ética.** La función menos automatizable y la que ninguna institución de la muestra ha incrementado en horas."
+]},
+
+{"t":"callout","h":"El eslabón sin financiar","c":"brick","x":"Todas las instituciones examinadas han financiado infraestructura. California State University comprometió trece millones de dólares anuales durante tres años en licencias. Ninguna de las instituciones de la muestra ha documentado una inversión comparable en rediseño de tareas, formación docente obligatoria y horas de evaluación oral. Si la evidencia dice que el diseño pedagógico es la variable causal y el gasto se concentra en el acceso, entonces el gasto está mal asignado respecto de lo que se sabe."},
+
+{"t":"h1","n":"Capítulo 7","x":"El estudiante como agente: uso, delegación y descalibración"},
+
+{"t":"lead","x":"El cambio de rol del estudiante suele describirse con optimismo: de receptor pasivo a agente que formula problemas, coordina herramientas y verifica resultados. La evidencia disponible respalda parcialmente esa descripción y añade dos matices incómodos: lo que más se delega es precisamente el trabajo cognitivo de orden superior, y la percepción del propio rendimiento está sistemáticamente equivocada."},
+
+{"t":"h2","x":"7.1 La taxonomía de Bloom invertida"},
+
+{"t":"p","x":"Los datos de uso publicados por Anthropic sobre estudiantes universitarios muestran un patrón que merece atención. Cerca del 47 % de las interacciones son directas —instrucción, resultado, implicación mínima—, lo que corresponde a automatización más que a aumento de capacidades. Y la distribución por niveles cognitivos está invertida respecto de lo que cabría esperar: las categorías más frecuentes son «crear» (39,8 %) y «analizar» (30,2 %), mientras «recordar» es marginal."},
+
+{"t":"p","x":"Dicho de otro modo: los estudiantes no delegan las tareas mecánicas para concentrarse en las complejas. **Delegan las complejas.** Delegan exactamente los procesos que la formación universitaria existe para desarrollar."},
+
+{"t":"p","x":"Un matiz esperanzador acompaña al hallazgo: los usuarios con más antigüedad iteran más y delegan menos. La colaboración madura con la práctica. Eso convierte la enseñanza explícita de patrones de uso en una intervención con sentido, no en una aspiración vaga."},
+
+{"t":"p","x":"La advertencia es obligada: son datos de un proveedor sobre su propia plataforma, sin muestreo representativo. Sirven para describir patrones de interacción, no para estimar prevalencia poblacional."},
+
+{"t":"h2","x":"7.2 La descalibración: el hallazgo más transferible"},
+
+{"t":"p","x":"En julio de 2025, METR publicó un ensayo aleatorizado con dieciséis desarrolladores de software experimentados que completaron 246 tareas reales en sus propios repositorios de código abierto, con asignación aleatoria del permiso de usar IA. El resultado fue que tardaron un **19 % más** con la herramienta. Habían predicho que serían un 24 % más rápidos. Y después de haber experimentado la ralentización, seguían estimando que habían sido un **20 % más rápidos**."},
+
+{"t":"p","x":"La brecha entre productividad percibida y medida fue de casi cuarenta puntos porcentuales, **en expertos, en su propio dominio, sobre su propio código**. METR ha marcado posteriormente el resultado como histórico, advirtiendo que no refleja necesariamente las herramientas ni los flujos de trabajo actuales; la advertencia es pertinente y no afecta al punto pedagógico."},
+
+{"t":"p","x":"Porque el punto pedagógico es este: si expertos en su propia especialidad no pueden estimar correctamente si la herramienta les ayudó, no hay razón para suponer que un estudiante de segundo año pueda hacerlo. **La calibración de la propia confianza no es una competencia deseable; es un prerrequisito de la autorregulación del aprendizaje**, y hoy no se enseña ni se evalúa en prácticamente ningún currículo."},
+
+{"t":"h2","x":"7.3 Sobre el debate de la degradación cognitiva"},
+
+{"t":"p","x":"Ningún estudio de este campo ha tenido tanta repercusión mediática como «Your Brain on ChatGPT», del MIT Media Lab, que registró mediante electroencefalografía la actividad de 54 participantes escritores de ensayos en tres condiciones: sin herramientas, con buscador y con un modelo de lenguaje. Reportó menor conectividad cerebral en el grupo con LLM, ensayos más homogéneos en vocabulario y estructura, y persistencia de los efectos tras retirar la herramienta."},
+
+{"t":"p","x":"Es también uno de los estudios metodológicamente más débiles del campo, y este informe considera obligatorio decirlo. La muestra es muy pequeña; un comentario publicado señala problemas en el análisis electroencefalográfico, inconsistencias en el reporte de resultados y transparencia limitada; y los hallazgos se refieren a una única tarea, la escritura de ensayos, en un contexto específico. La menor conectividad durante una tarea delegada es, además, la observación esperable: delegar consume menos recursos cognitivos por definición. Que eso constituya un daño duradero es una inferencia que el diseño no permite establecer."},
+
+{"t":"callout","h":"Cómo debe usarse este estudio","c":"ochre","x":"«Your Brain on ChatGPT» ha sido citado en presentaciones institucionales de todo el mundo como prueba de que la IA daña el cerebro. No lo es. Es una hipótesis interesante con evidencia preliminar y limitaciones serias. La evidencia sólida sobre pérdida de aprendizaje no viene de la neuroimagen sino del diseño experimental de Bastani: retirar la herramienta y medir qué queda. Cuando se necesite un dato duro sobre este punto, la cifra defendible es el −17 %, no la conectividad electroencefalográfica."},
+
+{"t":"h2","x":"7.4 Homogeneización: más creatividad individual, menos diversidad colectiva"},
+
+{"t":"p","x":"Anil Doshi y Oliver Hauser publicaron en Science Advances, en julio de 2024, un experimento sobre escritura de relatos breves con y sin acceso a ideas generadas por IA. El acceso hizo que los relatos fueran evaluados como más creativos, mejor escritos y más disfrutables, **especialmente entre los escritores menos creativos**. Pero los relatos asistidos resultaron más parecidos entre sí que los escritos sin ayuda."},
+
+{"t":"p","x":"Los autores lo describen como un dilema social: individualmente cada autor mejora, colectivamente el espacio de contenido novedoso se estrecha. Trasladado a la universidad, el efecto tiene dos caras que conviene mantener juntas. La cara buena es niveladora y aparece de nuevo, con más fuerza, en el estudio de Derecho del capítulo 13. La cara mala es que un sistema formativo que produce trabajos individualmente mejores y colectivamente más parecidos está perdiendo exactamente aquello que justifica reunir a miles de personas a pensar en el mismo lugar."}
+]

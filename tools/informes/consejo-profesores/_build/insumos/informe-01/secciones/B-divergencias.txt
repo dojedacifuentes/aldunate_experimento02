@@ -1,0 +1,154 @@
+[Informe 01 v3.2.0 · líneas 2328-2481 del texto completo]
+
+Registro de divergencias de la verificación
+
+Las 23 divergencias encontradas al contrastar cada fuente
+ contra su publicación original, 14 de ellas materiales. Se publican íntegras, incluidas las que
+ perjudican al argumento del informe y las que corrigen una calificación previa a favor de la
+ fuente. Corregirlas en silencio destruiría la prueba de que el procedimiento funciona.
+
+La proporción —aproximadamente un registro con divergencia por cada tres verificados— coincide con la que arrojó la primera tanda de verificación. Que la tasa se repita en dos tandas independientes
+ sugiere que es estructural del método de construcción del corpus a partir de investigación previa, y
+ no un accidente. Es la razón por la que ninguna afirmación de este informe se apoya en un registro
+ que no haya sido abierto.
+
+DIV-01 · src-ucentral-002 · divergencia material
+
+No localizable
+
+La fuente atribuida a una «Revista DIE · Inteligencia artificial y derechos fundamentales» no fue localizable en ningún dominio de la institución ni en la web abierta tras búsqueda dirigida. El subdominio de noticias de esa universidad devuelve un bucle de redirección. Consecuencia: la fuente se degrada a pendiente de referencia bibliográfica completa y la capacidad de investigación de la institución baja de «en operación» a «no localizada». Es la divergencia de mayor consecuencia del lote y perjudica a una institución que no puede responder en este documento.
+
+DIV-02 · src-ucentral-001 · divergencia material
+
+Dirección rota
+
+La dirección registrada devuelve bucle de redirección. El contenido existe y se recuperó en otro dominio de la misma universidad. Consecuencia: se corrige la dirección en el registro. Además, la nota atribuye la práctica a un académico individual y declara «más de 300 consultas» de una herramienta incorporada al plan de mejora de la carrera: es práctica docente de un profesor, no adopción institucional.
+
+DIV-03 · src-udp-003 · divergencia material
+
+Atribución errónea de unidad
+
+El convenio con el sector tecnológico lo emite la Vicerrectoría de Investigación e Innovación y lo firma su vicerrectora. La Facultad de Derecho no aparece como parte. Consecuencia: el registro se reatribuye de Facultad a universidad. El título del registro invertía además el orden de la materia respecto del publicado.
+
+DIV-04 · src-uandes-001 · src-uandes-002 · divergencia material
+
+Doble conteo y atribución
+
+Las dos fuentes describen la misma iniciativa desde dos portales de la misma universidad, y el proyecto lo dirige una investigadora de la Facultad de Ingeniería y Ciencias Aplicadas. Consecuencia: se fusionan en una iniciativa y se reatribuye a la universidad. El título publicado de la segunda no coincide con el registrado y presenta como creada («crean herramienta») una plataforma que su propio cuerpo describe como pendiente de validar y transferir.
+
+DIV-05 · src-uai-003 · divergencia material
+
+Sobreatribución numérica
+
+De los tres proyectos Fondecyt anunciados, sólo uno tiene objeto de inteligencia artificial: los otros dos son de derecho contractual y de derecho penal económico. La cifra de 24 proyectos que cita la nota es institucional de toda la universidad. Consecuencia: la evidencia sostiene un proyecto, no tres.
+
+DIV-06 · src-unab-002 · divergencia material
+
+Estado de madurez
+
+La nota universitaria dice «lanzó»; la fuente estatal del Ministerio de Economía y de la Superintendencia lo describe como «primer piloto» y «primera versión» testeada internamente, y la propia nota universitaria llama «prototipo» a lo desarrollado. La herramienta se aloja y opera en el sitio del organismo estatal. Participan además la Dirección de Transferencia Tecnológica y la Vicerrectoría de Investigación. Consecuencia: se registra como piloto con atribución compartida.
+
+DIV-07 · src-uautonoma-001 · divergencia material
+
+Precisión de la cifra clave
+
+La cobertura docente es «cercana al 80 %», no «80 %», y la nota no publica denominador ni numerador absolutos. Mide asistencia a una decena de talleres sobre una herramienta específica, no competencia adquirida ni uso en aula: la propia nota sitúa la implementación en aula en una etapa posterior aún no reportada. Consecuencia: la única cobertura docente cuantificada del corpus se conserva con cuatro salvedades declaradas.
+
+DIV-08 · src-uautonoma-003 · divergencia material
+
+Cifra ausente y naturaleza del programa
+
+La nota de egreso del minor no entrega ningún número de egresados. El programa es electivo, suma 25 créditos en cinco asignaturas de las cuales tres son informáticas, se co-titula con la Facultad de Ingeniería, opera sólo en una de las tres sedes y está diseñado para no aumentar la carga académica porque se cursa sobre electivos de formación general. Consecuencia: se conserva como único ciclo formativo completado del corpus, con esas cinco precisiones.
+
+DIV-09 · src-pucv-012 · divergencia material
+
+Hallazgo negativo por verificación directa
+
+Se revisó el plan de estudios completo, asignatura por asignatura, en sus diez semestres. No existe ninguna asignatura de inteligencia artificial, informática jurídica, legaltech, tecnología ni innovación digital. La nota de actualización curricular tampoco las menciona. Consecuencia: la fuente evidencia ausencia y no presencia; se recodifica como evidencia de la brecha curricular.
+
+DIV-10 · src-uchile-001 · divergencia material
+
+Instrumento que no acredita lo que se le atribuye
+
+El único instrumento citado en la página de historia —decreto del Rector de 5 de noviembre de 2003— oficializa el cambio de denominación a un nombre anterior y distinto del actual. La denominación vigente se asocia a enero de 2025 y a confirmación del Consejo de Facultad, sin decreto. La página no menciona inteligencia artificial en ningún punto. Consecuencia: no acredita acto de creación ni actividad en IA.
+
+DIV-11 · src-uchile-004 · 008 · 009 · 012 · divergencia material
+
+Atribución a la unidad equivocada
+
+Cuatro fuentes atribuidas al centro de la Facultad corresponden en realidad a los Departamentos de Derecho Privado y de Derecho Procesal. Consecuencia: se reatribuyen; el centro queda con seis fuentes propias y no con once.
+
+DIV-12 · src-uchile-014 · divergencia material
+
+Naturaleza y vigencia del programa
+
+Es una ficha en plataforma central de vinculación con el medio, no una publicación de la Facultad. Declara período de julio a noviembre de 2025, ya concluido y sin campo de estado, dirigido a funcionarios de la Contraloría y no a estudiantes de Derecho, sin cifras de cupos, matriculados ni titulados. Consecuencia: no acredita oferta formativa vigente de la Facultad.
+
+DIV-13 · src-uchile-005 · 006 · divergencia menor
+
+Volumen menor al sugerido
+
+El repositorio de tesis en inteligencia artificial contiene cuatro entradas, de 2008, 2023 y dos de 2025, con un vacío de quince años. La segunda dirección es una página índice sin tesis listadas y redundante con la primera. Ninguna declara fecha de actualización.
+
+DIV-14 · src-uchile-007 · divergencia menor
+
+Antigüedad heredada
+
+Los «38 años» declarados cuentan desde 1988, es decir desde el centro predecesor, no desde la denominación actual. Las cifras de 500 postulantes, 60 cupos y 350 titulados corresponden a la oferta global del centro y no a formación en inteligencia artificial.
+
+DIV-15 · src-uchile-009 · 010 · 012 · divergencia menor
+
+Anuncio, no ejecución
+
+Tres entradas de agenda redactadas en clave prospectiva, con fechas ya transcurridas y sin actualización posterior que acredite realización. Una de ellas anuncia actividad para el 16 de junio de 2026 y sigue publicada como convocatoria. Consecuencia: valor probatorio de anuncio, no de ejecución.
+
+DIV-16 · src-uandes-004 · divergencia menor
+
+Corrección a favor de la fuente
+
+Se preveía que el curso sólo mencionara «nuevas tecnologías». Sí menciona inteligencia artificial, en la descripción general y en un módulo propio. La precisión pertinente es de proporción: uno de ocho módulos, dos de dieciséis horas.
+
+DIV-17 · src-udd-004 · divergencia menor
+
+Corrección a favor de la fuente
+
+Se preveía que fuera meramente adyacente. Menciona inteligencia artificial explícitamente en un proyecto estudiantil. La precisión es de atribución: es iniciativa estudiantil dentro de un programa de emprendimiento de la universidad, y uno de los dos proyectos citados no tiene relación con tecnología.
+
+DIV-18 · src-pucv-014 · divergencia menor
+
+Corrección a favor de la fuente
+
+Se verificó que el artículo sí trata sobre inteligencia artificial —uso por administraciones fiscales y derechos de los contribuyentes, en revista internacional indexada—. La precisión es de alcance: es investigación individual de 2020 y acredita investigación, no formación ni docencia.
+
+DIV-19 · src-udec-003 · divergencia material
+
+Fuente indatable
+
+La nota fecha la actividad diciendo «ayer», sin día, mes ni año, y no fue posible fijarla. No publica número de participantes. El relator es director de una unidad de otra universidad de la cohorte. Consecuencia: acredita demanda institucional; no acredita capacidad instalada propia ni permite datar la actividad.
+
+DIV-20 · src-nacional-001 · divergencia menor
+
+Fuente que no sostiene lo que se le pedía
+
+El portal no menciona inteligencia artificial en absoluto y no permite filtrar oferta por ese criterio. Su título registrado no es el de la página y el proceso vigente que despliega es posterior al declarado. Consecuencia: no puede sostener ninguna cifra de cobertura de IA en la oferta académica nacional.
+
+DIV-21 · src-puc-chile-006 · divergencia menor
+
+Alcance de lo acreditado
+
+La oficialización de la opción de integrar IA en los cursos es real y está fechada, pero es una opción habilitada al profesor en el formulario de condiciones y evaluaciones, no currículo obligatorio ni política de enseñanza. Prueba el mecanismo, no su uso.
+
+DIV-22 · src-puc-chile-010 · src-udp-003 · src-unab-002 · src-uandes-002 · divergencia menor
+
+Títulos que no coinciden con lo publicado
+
+Cuatro registros citan títulos con orden invertido, palabras omitidas o paráfrasis. El patrón sugiere cita reconstruida y no copiada. Consecuencia: se corrigen a la forma literal publicada.
+
+DIV-23 · Corpus PUCV · Innova Day · divergencia material
+
+Cifras no verificables al corte
+
+La edición 2025 del certamen tiene página de convocatoria y no publica nota de resultados. No se localizó, en ninguna fuente pública, ninguna cifra de votantes de ninguna edición, y dos ediciones distintas aparecen numeradas como cuarta en el sitio del laboratorio. Consecuencia: las cifras de participación de esa edición se retiran del cuerpo del informe y se registran como pendientes de fuente. La serie de continuidad se conserva porque las ediciones sí constan.
+
+Anexo C
+

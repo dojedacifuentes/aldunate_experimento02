@@ -1,0 +1,100 @@
+[Informe 01 v3.2.0 · líneas 2561-2660 del texto completo]
+
+Comparador ordinal: rúbrica y cálculo
+
+La rúbrica se cerró antes de calcular los resultados de cada institución, como medida de control
+ del conflicto de interés declarado en la sección 3. Lo que sigue permite rehacer el cálculo o
+ disputarlo celda por celda.
+
+Regla de puntuación
+
+3 puntos · la capacidad está en operación y existe un objeto citable
+ con identificador que la sostiene. Se admiten seis clases de instrumento: acto administrativo
+ —decreto o resolución—; acuerdo de un órgano colegiado identificado; código de asignatura con
+ créditos y semestre publicados; código de proyecto adjudicado por un fondo público competitivo;
+ registro de propiedad intelectual con número y fecha; convenio firmado con partes identificadas; o
+ unidad listada en un organigrama publicado. Una noticia de creación no es un instrumento.
+
+2 puntos · en operación, acreditada por publicación institucional, sin
+ instrumento citable.
+
+1 punto · incipiente, sólo en el entorno institucional, o sólo adyacente.
+
+0 puntos · no localizada tras recorrer las rutas del protocolo que la
+ acreditarían.
+
+Excluida · no concluyente. No suma al piso y aporta 2 puntos al techo, que es
+ el valor medio de los estados posibles distintos de cero.
+
+Tres decisiones de la rúbrica que conviene discutir
+
+Por qué el techo usa 2 y no 3. Asignar 3 a cada celda sin concluir supondría que
+ toda capacidad no investigada está no sólo en operación sino formalizada, lo que contradice la
+ distribución observada: de las 95 celdas resueltas del comparador, sólo 10 alcanzan el estado con instrumento. Usar
+ 2 supone que estaría en operación sin instrumento, que es el estado modal.
+
+Por qué las diez capacidades pesan igual. Ponderarlas exigiría una teoría sobre
+ cuál importa más, y el informe no la tiene. Un lector que sostenga que la norma propia vale más que
+ el alcance declarado puede reponderar con los datos del anexo C; el orden de las tres primeras
+ posiciones no cambia bajo ninguna ponderación que dé a cada capacidad entre 0,5 y 2 veces su peso
+ actual.
+
+Por qué no hay penalización por antigüedad. Un convenio de 2020 con actividad
+ derivada documentada puntúa igual que uno de 2026. Es discutible y favorece a las instituciones con
+ trayectoria más larga, entre ellas la PUCV. Se declara aquí porque el sesgo, si opera, opera a favor
+ de la institución destinataria del informe.
+
+Las diez celdas que alcanzan el estado con instrumento formal, y cuál es
+
+Institución | Capacidad | Instrumento | 
+
+P. U. Católica de Chile | Unidad especializada | Departamento listado en la estructura orgánica publicada de la Facultad, con director identificado | 
+
+P. U. Católica de Chile | Norma propia | Guía aprobada por Comité Directivo y Consejo de la Facultad, con deberes exigibles y régimen de consecuencias | 
+
+P. U. Católica de Chile | Adopción en la enseñanza | Opción de integrar IA oficializada en el formulario institucional de condiciones y evaluaciones, mayo de 2026 | 
+
+P. U. Católica de Chile | Investigación | Fondecyt Regular 2026 nº 1262017 · Fondecyt Iniciación 2025 nº 11251741 · FONDEF IDeA I+D 2026 nº ID26I10704 | 
+
+U. Adolfo Ibáñez | Investigación | Fondecyt Regular 2026 nº 1262567, 57.300.000 pesos, 48 meses, objeto de IA explícito | 
+
+U. Autónoma de Chile | Unidad especializada | Instituto de Investigación en Derecho creado por Resolución VRIP 118/2020, adscrito a la Facultad de Derecho | 
+
+U. Central de Chile | Norma propia | Resolución 13/2025 del decano, que aprueba el instructivo de uso académico de inteligencia artificial | 
+
+U. Autónoma de Chile | Formación estructurada | Minor con cinco asignaturas y 25 créditos publicados, con cohorte egresada y ceremonia fechada | 
+
+U. Autónoma de Chile | Investigación | Fondecyt Regular 2025 nº 1250613 · Fondecyt Regular 2026 nº 1262066 | 
+
+U. de Chile | Investigación | Fondecyt Regular 2025 nº 1250142 · Fondecyt Regular 2026 nº 1261853 | 
+
+Diez filas para diez celdas. Dos de ellas acreditan la capacidad mediante varios instrumentos —los proyectos adjudicados—, que se agrupan en una sola fila. La Pontificia Universidad Católica de Valparaíso no figura aquí: sus dos instrumentos formales se publican en el documento complementario, por la razón de la sección 8.
+
+Cálculo completo
+
+El estado de cada celda está en el anexo C; la tabla de puntos de arriba lo convierte en puntaje. Repetirlo aquí daría la misma información dos veces y ninguna de las dos legible.
+
+Institución | Piso | Techo | 
+
+Pontificia Universidad Católica de Chile | 20 | 20 | 
+
+Universidad Autónoma de Chile | 17 | 17 | 
+
+Universidad Central de Chile | 17 | 17 | 
+
+Universidad de Chile | 12 | 14 | 
+
+Universidad Adolfo Ibáñez | 11 | 11 | 
+
+Universidad Andrés Bello | 11 | 11 | 
+
+Universidad del Desarrollo | 8 | 10 | 
+
+Universidad Diego Portales | 8 | 8 | 
+
+Universidad de los Andes | 5 | 9 | 
+
+Universidad de Concepción | 5 | 7 | 
+
+Anexo E
+

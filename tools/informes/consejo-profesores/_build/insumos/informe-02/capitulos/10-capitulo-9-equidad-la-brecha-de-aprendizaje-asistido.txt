@@ -1,0 +1,33 @@
+
+# Capítulo 9 · Equidad: la brecha de aprendizaje asistido
+
+La discusión sobre equidad en este campo suele reducirse al acceso. El acceso es la parte fácil y la que primero se resuelve. Las brechas persistentes son otras tres: de uso, de infraestructura y de idioma. Y al menos una de ellas se agranda aunque el acceso se iguale.
+
+[FIGURA g08-genero] Figura 8. La composición de usuarios se aleja de la paridad de forma consistente entre plataformas, y el patrón se reproduce dentro de las poblaciones estudiantiles.
+
+
+## 9.1 La brecha de género no se explica por el acceso
+
+El trabajo más sólido disponible es el de Nicholas Otis, Solène Delecourt, Katelyn Cranney y Rembrand Koning, publicado como documento de trabajo de la Harvard Business School: un metaanálisis de 18 estudios que cubren 143.008 personas en 25 países. Su resultado central es que las mujeres tienen un **22 % menos de probabilidades** de usar IA generativa que los hombres.
+
+El hallazgo que convierte esto en un problema universitario y no solo en una estadística de mercado es el siguiente: **la brecha persiste incluso cuando el acceso se iguala**. Igualar el acceso —que es lo que hace un despliegue institucional de licencias— es necesario y demostradamente insuficiente. En muestras de estudiantes universitarios de Estados Unidos y Suecia las diferencias alcanzaron 25 y 31 puntos porcentuales respectivamente.
+
+Si la fluidez con estas herramientas se convierte en un diferenciador profesional —y los datos del capítulo 10 sugieren que ya lo es—, una brecha de uso que no se cierra con acceso se traduce directamente en desigualdad de resultados de egreso.
+
+
+## 9.2 El efecto nivelador y su reverso
+
+En la dirección contraria hay evidencia igualmente sólida. Los estudios de mejor diseño coinciden en que **la IA beneficia desproporcionadamente a quienes partían de un rendimiento menor**. El experimento de Doshi y Hauser lo encontró en escritura creativa. El estudio de Choi y Schwarcz en análisis jurídico, examinado en el capítulo 13, lo cuantifica con precisión notable: los estudiantes de peor desempeño previo ganaron alrededor de 45 puntos percentiles.
+
+Este es probablemente el argumento más fuerte a favor del acceso universal financiado institucionalmente. Y tiene un reverso que la universidad debe afrontar con franqueza: si la herramienta comprime la distribución del desempeño, **comprime también la capacidad de la evaluación para discriminar entre estudiantes**. Un sistema cuya función incluye señalizar capacidades diferenciales al mercado profesional no puede ignorar que su instrumento pierde resolución.
+
+
+## 9.3 Infraestructura e idioma
+
+La brecha material sigue siendo la más brutal y la menos discutida en la literatura anglófona. En países de ingreso bajo solo el 17 % de los establecimientos educativos tiene acceso a internet, frente al 90 % en los de ingreso alto. Las revisiones sistemáticas sobre educación superior en el Sur global identifican de forma consistente la conectividad inestable, la ausencia de computación de alto rendimiento y la falta de repositorios digitales como las barreras dominantes. El Fondo Monetario Internacional ha advertido que el impacto de la IA sobre el crecimiento en las economías avanzadas podría más que duplicar el de los países de ingreso bajo.
+
+A ello se añade la brecha lingüística, que es específicamente académica: el rendimiento de los modelos es sistemáticamente inferior fuera del inglés, y desigual entre variedades del español y del portugués. Un estudiante que trabaja en su lengua obtiene un asistente peor, y además —según el estudio de Stanford sobre detectores— tiene mayor probabilidad de ser acusado falsamente de haberlo usado.
+
+[RECUADRO: El concepto: brecha de aprendizaje asistido] Reuniendo las tres dimensiones, lo que se está formando no es una brecha de acceso a una herramienta sino una **brecha de aprendizaje asistido**: diferencias acumulativas en la capacidad de usar sistemas de IA de manera que produzcan comprensión en lugar de sustituirla. Depende del acceso, pero también de la alfabetización previa, del idioma de trabajo, del capital cultural que permite desconfiar de una respuesta bien redactada y —crucialmente— de si alguien enseñó a hacerlo. Es una brecha que las instituciones pueden cerrar mediante enseñanza explícita, y que el mercado no cerrará solo.
+
+Debe registrarse también la cara positiva, bien documentada: para estudiantes con dislexia, con trastorno por déficit de atención, con discapacidad auditiva y para estudiantes internacionales, estas herramientas han supuesto una mejora de accesibilidad real y sustantiva. Cualquier política restrictiva que ignore este punto impone un coste desproporcionado precisamente a quienes más se benefician.

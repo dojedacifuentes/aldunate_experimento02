@@ -1,0 +1,22 @@
+
+# Capítulo 24 · Recomendaciones
+
+Ocho recomendaciones ordenadas por relación entre impacto esperado y coste. Todas se derivan directamente de la evidencia expuesta; ninguna requiere adquirir tecnología adicional.
+
+
+## Prioridad inmediata
+
+1. **Escribir la lista de capacidades que se exigen sin asistencia.** Antes que cualquier política de uso, cada programa debe responder por escrito qué debe saber hacer un titulado por sí solo. Es corto, es barato, y de él se deriva todo lo demás: qué se evalúa en carril seguro, qué se enseña y qué puede delegarse legítimamente. Casi ninguna institución lo ha hecho, y sin ese documento las políticas de IA carecen de criterio.
+2. **Separar los dos carriles y declararlo en cada asignatura.** Adoptar la distinción entre evaluación segura y evaluación abierta, situar la garantía a nivel de programa y explicitar en cada tarea a qué carril pertenece. Elimina la ambigüedad que hoy perjudica por igual al estudiante honesto y al docente. Coste: rediseño documental, no tecnología.
+3. **No usar la detección algorítmica como estrategia central de imputación o sanción.** Mientras persistan tasas relevantes de falsos positivos —discriminatorios contra hablantes no nativos— y de falsos negativos, y no exista validación local robusta, un detector no puede ser prueba única de infracción. Puede conservar usos diagnósticos, formativos o exploratorios si se valida localmente. Los recursos liberados deben ir a diseño de tareas. Coste: negativo.
+4. **Enseñar verificación como competencia evaluada, no como advertencia.** Comprobar que una fuente existe, dice lo que se afirma y sigue vigente es hoy un paso separado del proceso de investigación, porque el proceso que lo garantizaba fue automatizado. En Derecho es urgente; en toda disciplina es necesario. Debe tener rúbrica propia.
+
+
+## Prioridad estructural
+
+1. **Presupuestar horas de evaluación oral y de diseño de tareas.** Es la recomendación cara y la que decide si la reforma es real. Sin una partida específica, la migración hacia evaluación válida se degradará en cambio cosmético. Si hay que elegir entre licencias y horas docentes, la evidencia favorece inequívocamente a las horas.
+2. **Invertir en diseño de andamiajes antes que en acceso.** Los resultados de Harvard y de Turquía son consistentes con un papel determinante del diseño de la interacción y de sus guardarraíles; la comparación entre dos experimentos en poblaciones distintas no permite aislar ese factor como única causa de sus diferencias. Un tutor con guardarraíles construido sobre un modelo modesto supera a un modelo excelente sin diseño pedagógico.
+3. **Enseñar calibración de la confianza de forma explícita.** Si expertos se equivocan en cuarenta puntos al estimar su propia productividad asistida, ningún estudiante puede autorregularse sin entrenamiento específico. Es enseñable: basta con tareas donde se compare el rendimiento estimado con el medido.
+4. **Evaluar y publicar.** Ninguna institución de la muestra ha publicado evidencia independiente de resultados. Una universidad que despliega IA a escala y no mide sus efectos está tomando la decisión de mayor coste de la década sin información. Publicar los resultados adversos es, además, la contribución más valiosa que una institución puede hacer hoy al campo.
+
+[RECUADRO: Una recomendación específica para América Latina] La región no necesita, en primer lugar, más despliegues tecnológicos. Necesita la capa que convierte iniciativas en conocimiento: evaluación independiente, comparabilidad entre instituciones y publicación de resultados —incluidos los negativos—. Un consorcio regional que evalúe con rigor tres o cuatro intervenciones existentes produciría más valor, y a un coste mucho menor, que un nuevo despliegue institucional. Y ocuparía un espacio que hoy está vacío en todo el mundo, no solo en la región.

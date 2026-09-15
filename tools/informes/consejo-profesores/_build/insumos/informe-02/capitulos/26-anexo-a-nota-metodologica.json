@@ -1,0 +1,33 @@
+[
+ {
+  "t": "h1",
+  "n": "Anexo A",
+  "x": "Nota metodológica"
+ },
+ {
+  "t": "h2",
+  "x": "A.1 Alcance y procedimiento"
+ },
+ {
+  "t": "p",
+  "x": "Esta investigación se realizó mediante búsqueda directa y verificación individual de fuentes entre 2022 y agosto de 2026, con prioridad en el periodo 2024-2026. El foco es la educación superior; los casos de educación secundaria se incorporaron únicamente cuando su diseño resolvía una pregunta sin equivalente universitario, como ocurre con el experimento de retirada de Bastani et al."
+ },
+ {
+  "t": "p",
+  "x": "Cada afirmación sustantiva se clasificó según tres criterios independientes: el tipo de fuente (evidencia académica revisada por pares, organismo internacional o público, fuente institucional primaria, proveedor, prensa especializada u otras); el nivel demostrativo (existencia, implementación, adopción, resultados, causalidad); y el estado epistemológico (verificado, reportado, emergente, controvertido, no demostrado)."
+ },
+ {
+  "t": "h2",
+  "x": "A.2 Limitaciones declaradas"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "**Sesgo anglófono.** Pese a la búsqueda deliberada en español y portugués, la documentación pública de instituciones anglófonas es sustancialmente más accesible y detallada. Las puntuaciones de la matriz institucional lo reflejan y penalizan a quien documenta menos.",
+   "**Sesgo de publicación.** Las instituciones publican sus éxitos y no sus fracasos. La única excepción localizada es la encuesta interna de California State University, y es reveladora precisamente por su rareza.",
+   "**Cifras excluidas.** Se descartaron datos sobre políticas y presupuestos de universidades españolas que circulan ampliamente pero cuya fuente primaria no pudo verificarse. Se prefirió la ausencia a la cita insegura.",
+   "**Puntuaciones analíticas.** Las escalas de las figuras 10 y 11 son valoraciones del autor a partir de la evidencia pública, no mediciones. Se declaran como tales en cada figura.",
+   "**Caducidad rápida.** El campo se mueve deprisa y sus hallazgos caducan: la retractación de Wang y Fan y la reclasificación del resultado de METR ocurrieron durante la elaboración de este informe."
+  ]
+ }
+]

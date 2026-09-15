@@ -1,0 +1,177 @@
+[Informe 01 v3.2.0 · líneas 1043-1221 del texto completo]
+
+5 · Discusión
+
+La estructura se anuncia más rápido de lo que se constituye
+
+El hallazgo más consistente del corpus es que entre 2025 y 2026 cuatro Facultades de Derecho
+ crearon unidades dedicadas a tecnología o inteligencia artificial. Es un cambio de naturaleza
+ respecto de la sucesión de seminarios que caracterizaba el fenómeno: nombrar una estructura
+ compromete a la institución de un modo que organizar un evento no compromete.
+
+La verificación completa encontró, sin embargo, que en ninguna de esas cuatro creaciones se
+ localizó el acto que la constituye. No hay decreto, acuerdo de consejo ni resolución citada en
+ ninguna de las fuentes que las anuncian. Lo que existe en un caso —y sólo en uno— es respaldo
+ orgánico: la estructura publicada de la Facultad de Derecho de la Universidad Católica lista el
+ Departamento de Derecho y Tecnología entre sus once departamentos, con director identificado. Un
+ organigrama es evidencia más fuerte que una noticia de creación, porque el organigrama tiene que
+ sostenerse en el tiempo.
+
+El contraste con la Universidad de Chile es instructivo. La página de historia del centro de la Facultad cita un instrumento —decreto del Rector de
+ 5 de noviembre de 2003— y ese decreto oficializa el cambio de denominación a Centro de Estudios
+ en Derecho Informático, no la creación ni la denominación actual. El nombre con que hoy se
+ identifica la unidad aparece asociado a enero de 2025 y a la confirmación de su director por el
+ Consejo de Facultad, sin decreto citado. La antigüedad de treinta y ocho años que la propia
+ institución declara se hereda de un centro fundado en 1988, anterior por dos décadas a la
+ inteligencia artificial generativa. Nada de esto desmerece el trabajo del centro; lo que muestra es
+ que la genealogía institucional publicada no distingue entre continuidad de una casa y creación de
+ una capacidad nueva, y que un lector externo no puede establecer cuándo empieza lo que se le
+ presenta como reciente.
+
+En el extremo opuesto, la unidad de la Universidad Diego Portales se acredita mediante el
+ nombramiento de su director y una hoja de ruta: talleres y un curso por implementar, sin nombre de
+ asignatura, semestre, créditos ni matrícula. Entre el organigrama y el nombramiento hay una
+ distancia institucional considerable, y el recuento de «cuatro Facultades» la oculta si no se
+ explicita. La conclusión que el corpus admite es más precisa que la que el titular sugiere: la
+ institucionalización está ocurriendo por denominación antes que por constitución. Nombrar una unidad
+ es un acto real y tiene efectos, pero no es lo mismo que dotarla.
+
+La norma disciplinaria es donde más lejos ha llegado una Facultad
+
+De los instrumentos normativos del corpus, dos son universitarios: los lineamientos de la
+ Universidad de Chile los dictan dos vicerrectorías y no mencionan Derecho, y el decálogo de la PUCV
+ lo elabora una unidad de integridad académica dependiente de la Vicerrectoría Académica y, según su
+ propia formulación, «sugiere recomendaciones».
+
+El tercero es de otra clase. La guía de la Facultad de Derecho de la Universidad Católica fue
+ aprobada por su Comité Directivo y por su Consejo, obliga a declarar herramienta y propósito, exige
+ conservar registros, y establece que su incumplimiento constituye infracción grave a los deberes de
+ probidad académica, sancionable conforme al régimen del plagio. Es el único documento del corpus con
+ órgano aprobador identificado y consecuencia jurídica asociada, y por eso es el único que puntúa 3
+ en la capacidad de norma propia.
+
+Merece atención un matiz que la propia guía introduce y que ninguna lectura optimista debería
+ omitir: el profesor conserva la facultad de determinar libremente los usos permitidos en su curso. El
+ instrumento fija un piso de transparencia y descentraliza la regulación sustantiva. Eso puede ser
+ prudencia pedagógica o puede ser una forma de no decidir; la evidencia pública no permite
+ distinguirlo. La referencia internacional que se examina en la sección 7 muestra que ese diseño
+ —prohibición o autorización remitida al profesor, con prohibición absoluta en exámenes— es
+ exactamente el modelo dominante en las facultades de Derecho estadounidenses, de modo que no es una
+ anomalía local sino la forma estándar que adopta este instrumento cuando existe.
+
+La observación general es que las Facultades de Derecho han avanzado más en regular el uso de
+ estas herramientas que en enseñarlas. Tiene sentido disciplinar: la infracción académica es un
+ problema que una Facultad sabe tratar, y el diseño curricular es un problema que exige acuerdos más
+ amplios.
+
+La formación continua funciona; el pregrado no aparece
+
+La formación continua es el único eje del corpus con serie temporal documentada, y la serie es de
+ una sola institución. El Programa de Derecho, Ciencia y Tecnología de la Universidad Católica publica
+ dos graduaciones consecutivas —más de noventa titulados en 2024 y más de cien en 2025—, en ambos
+ casos incluyendo un diplomado específicamente de Derecho e Inteligencia Artificial, dictado a través
+ de la educación continua de la Facultad. Es la única evidencia del corpus que acredita a la vez
+ continuidad, cifras y atribución a Derecho.
+
+La verificación deshizo aquí una atribución errónea que el registro arrastraba. El diploma
+ equivalente de la Universidad de Chile figura cerrado desde 2022, y la edición anunciada para 2026 se
+ publica bajo un centro distinto del que lo dictaba, con advertencia expresa de que sus datos son
+ referenciales y de que puede suspenderse si no se alcanza un mínimo de estudiantes. Entre ambas
+ fechas no hay edición localizada. Eso no es una serie: es una discontinuidad con reapertura
+ anunciada. La verificación añade un segundo caso: el diploma en Derecho e
+ Inteligencia Artificial para funcionarios de la Contraloría figura en una plataforma central de
+ vinculación con el medio con período declarado de julio a noviembre de 2025, sin campo de estado, sin
+ cifra de matriculados ni de titulados, y dirigido a funcionarios públicos y no a estudiantes de
+ Derecho. Registrarlo como formación de la Facultad sería una atribución indebida en dos sentidos a la
+ vez.
+
+El contraste con el pregrado es el dato más incómodo del informe, y se puede formular con precisión porque hay una malla verificada asignatura por asignatura. En ninguna de las
+ once instituciones se localizó una línea curricular obligatoria en inteligencia artificial con
+ syllabus, semestre, créditos y matrícula. Lo que hay son talleres, experiencias acotadas a una
+ asignatura, y compromisos de integración enunciados sin cronograma. El único minor con egresados
+ —Universidad Autónoma de Chile, cohorte 2025, ceremonia de enero de 2026— es electivo, suma 25
+ créditos en cinco asignaturas de las cuales tres son de programación, diseño de aplicaciones y
+ ciberseguridad, se co-titula con la Facultad de Ingeniería, opera en una sola de las tres sedes de la
+ Facultad y está diseñado, según la página del propio programa, para no aumentar la carga académica
+ porque se cursa sobre electivos de formación general. Su nota de egreso no publica cuántos
+ estudiantes egresaron.
+
+La asimetría admite una lectura que no es acusatoria. La formación continua puede innovar porque
+ su ciclo de decisión es corto, su público es voluntario y su financiamiento es directo. El pregrado
+ exige modificar planes de estudio, y ese es un procedimiento lento en cualquier Facultad de Derecho
+ del mundo —la sección 7 muestra que sólo tres facultades en el mundo tienen un componente obligatorio
+ de inteligencia artificial, y que dos de las tres lo estructuran como certificación sin créditos
+ precisamente para no tocar la malla—. Que la innovación se aloje primero donde el procedimiento lo
+ permite es esperable. Que a septiembre de 2026 siga sin haber una sola línea obligatoria publicada en
+ once instituciones es, de todos modos, un dato sobre el ritmo.
+
+La única medición de efecto del corpus no es jurídica
+
+Ninguna de las 53 iniciativas registradas alcanza el peldaño de evaluación. Es la tercera ronda
+ independiente de investigación que llega a la misma ausencia, y la verificación sustantiva completa
+ no la modificó.
+
+Sí encontró, en cambio, algo que el informe está obligado a discutir en lugar de refugiarse en la
+ redacción afortunada de su propia afirmación. Una universidad de la cohorte publica, sobre su
+ ecosistema de asistentes basados en IA, un veinte por ciento más de aprobación entre los estudiantes
+ que lo usaron más de treinta veces, sobre más de quince mil estudiantes y cuatrocientas cincuenta mil
+ interacciones. Es la única cifra de resultado en las 74 fuentes del corpus.
+
+No mueve la afirmación, por dos razones. La primera es de alcance: la medición es universitaria y
+ no jurídica, y la afirmación se refiere a efecto sobre el aprendizaje del Derecho. La segunda es de
+ diseño: comparar a quien usó una herramienta treinta veces con quien no la usó mide, entre otras
+ cosas, la diferencia entre ambos grupos antes de la herramienta. Sin diseño, muestra y control
+ declarados, la cifra es correlacional.
+
+La segunda cifra que se aproxima a un resultado es más modesta y también más honesta sobre su
+ escala: el asistente docente basado en IA generativa de una Facultad de la cohorte acumula «más de
+ 300 consultas» y ha sido incorporado al plan de mejora de la carrera. Es una práctica docente de un
+ académico, seleccionada para un showcase internacional, y su propia nota no la presenta como otra
+ cosa. Registrarla como adopción institucional sería sobredimensionarla.
+
+Lo que todo esto revela es una asimetría de capacidades que debería inquietar a una Escuela de
+ Derecho: lo más parecido a una evaluación de efecto que existe en este corpus lo produjo una
+ vicerrectoría de transformación digital. Las Facultades han incorporado la inteligencia artificial
+ como contenido de enseñanza y como objeto de regulación, pero todavía no como objeto de medición
+ educativa. La capacidad de evaluar el aprendizaje mediado por estas herramientas está, por ahora,
+ fuera de ellas. Y la sección siguiente muestra que tampoco consta financiada.
+
+El problema de atribución no es un tecnicismo
+
+Quince registros del corpus corresponden a capacidades de la universidad y no de la Facultad de
+ Derecho: licencias corporativas de asistentes generativos, plataformas de búsqueda bibliográfica con
+ asistente incorporado, oficinas centrales de inteligencia artificial, agentes docentes en fase
+ piloto, programas transversales liderados desde vicerrectorías, laboratorios de innovación docente de
+ alcance institucional. El registro acumula quince reatribuciones por esta causa, y tres de ellas merecen nombrarse porque cada una ilustra una forma distinta del mismo error.
+
+Convenio firmado por quien no es la Facultad. El acuerdo de la Universidad Diego
+ Portales con dos empresas tecnológicas para potenciar desarrollos en Derecho e inteligencia
+ artificial lo emite y lo firma su Vicerrectoría de Investigación e Innovación. La Facultad de Derecho
+ no aparece como parte. El titular de la propia nota es prospectivo —«busca potenciar»— y no consta
+ actividad derivada.
+
+Proyecto conducido por otra Facultad. El proyecto de inteligencia artificial
+ para la certeza jurídica en evaluación ambiental lo dirige una investigadora de la Facultad de
+ Ingeniería y Ciencias Aplicadas de la Universidad de los Andes. Los juristas figuran como
+ integrantes sin afiliación declarada en el cuerpo de la nota. Atribuirlo a la Facultad de Derecho
+ invertiría la relación real entre las unidades.
+
+Herramienta que opera fuera de la universidad. El asesor virtual de insolvencia
+ de la Universidad Andrés Bello se aloja y opera en el sitio de la Superintendencia de Insolvencia y
+ Reemprendimiento, y la fuente estatal lo describe como «primer piloto» y «primera versión» testeada
+ internamente, mientras la nota universitaria dice «lanzó». En el desarrollo participan además la
+ Dirección de Transferencia Tecnológica y la Vicerrectoría de Investigación. La Facultad aportó el
+ prototipo, que es un mérito real y distinto del que el titular sugiere.
+
+Ninguno de esos registros es despreciable, y sería un error metodológico descontarlos:
+ constituyen el entorno en que una Facultad opera y, en varios casos, la condición material de que
+ pueda hacer algo. Pero atribuirlos a Derecho produciría una imagen falsa. Entre «la universidad
+ habilitó un asistente generativo para toda su comunidad» y «los estudiantes de Derecho lo usan en
+ tareas jurídicas bajo criterios definidos por su Facultad» hay exactamente el problema que este
+ informe intenta medir. La distancia es medible en principio y no lo es en la práctica, porque las
+ universidades publican la disponibilidad y no el uso. Ninguna de las fuentes del corpus informa
+ cuántos estudiantes de Derecho utilizan las herramientas institucionales, en qué tareas ni con qué
+ resultados. Ésa es la laguna que separa este mapeo de un informe de adopción.
+
+13
+

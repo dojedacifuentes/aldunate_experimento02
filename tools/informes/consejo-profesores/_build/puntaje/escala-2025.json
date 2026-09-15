@@ -1,0 +1,1907 @@
+{
+  "generado": "2026-09-15",
+  "escala": {
+    "origen": "Informe mapeo sobre IA y Derecho en Universidades, edición 2, aprobado por el Consejo de Profesores en 2025.",
+    "base": "Matriz de capacidades del Informe 01 v3.2.0, corte de la evidencia 6 de septiembre de 2026.",
+    "dimensiones": [
+      {
+        "id": "pregrado",
+        "nombre": "Formación Académica (Pregrado)",
+        "capacidades": [
+          "Presencia en pregrado"
+        ],
+        "definicion2025": "Cursos obligatorios y optativos, talleres y otras instancias formativas sobre IA o materias afines, dirigidas a estudiantes de pregrado."
+      },
+      {
+        "id": "continua",
+        "nombre": "Formación Continua y Postgrado",
+        "capacidades": [
+          "Formación estructurada"
+        ],
+        "definicion2025": "Diplomados y cursos de IA o materias afines para abogados, o abiertos a estudiantes de Derecho."
+      },
+      {
+        "id": "investigacion",
+        "nombre": "Investigación y Desarrollo",
+        "capacidades": [
+          "Unidad especializada",
+          "Investigación"
+        ],
+        "definicion2025": "Laboratorios, centros o programas relacionados con la IA, producción de publicaciones y proyectos, y participación en concursos o fondos."
+      },
+      {
+        "id": "vinculacion",
+        "nombre": "Vinculación con el Medio",
+        "capacidades": [
+          "Transferencia",
+          "Alcance declarado"
+        ],
+        "definicion2025": "Convenios con tribunales, fiscalías, estudios jurídicos o empresas de tecnología legal; seminarios, conferencias y talleres abiertos."
+      },
+      {
+        "id": "uso",
+        "nombre": "Uso Interno Institucional de IA",
+        "capacidades": [
+          "Herramienta desplegada",
+          "Adopción en la enseñanza",
+          "Norma propia"
+        ],
+        "definicion2025": "IA aplicada a la enseñanza y al trabajo jurídico, y protocolos institucionales para su uso responsable."
+      }
+    ],
+    "fuera_de_la_escala": [
+      "Evaluación de efecto"
+    ],
+    "tope_dimension": 3,
+    "total_maximo": 15,
+    "regla": "Cada capacidad se evalúa de 0 a 3 con la rúbrica del informe de 2026. La dimensión es el promedio de las capacidades que le corresponden, de modo que conserve el máximo de 3 de la escala de 2025. El total es la suma de las cinco dimensiones, sobre 15.",
+    "tramos": [
+      {
+        "desde": 10,
+        "nombre": "institución líder, con desarrollo robusto y consistente"
+      },
+      {
+        "desde": 7,
+        "nombre": "desarrollo sólido, con varias áreas activas y continuidad evidente"
+      },
+      {
+        "desde": 4,
+        "nombre": "avance inicial, con iniciativas parciales o esporádicas"
+      },
+      {
+        "desde": 0,
+        "nombre": "desarrollo incipiente"
+      }
+    ]
+  },
+  "promedios": {
+    "pregrado": 1.3,
+    "continua": 1.9,
+    "investigacion": 1.55,
+    "vinculacion": 1.35,
+    "uso": 1,
+    "total": 7.1
+  },
+  "empates": [],
+  "orden": [
+    {
+      "posicion": 1,
+      "id": "uautonoma",
+      "nombre": "Universidad Autónoma de Chile",
+      "sigla": "U. Autónoma",
+      "total": 11.67,
+      "tramo": "institución líder, con desarrollo robusto y consistente"
+    },
+    {
+      "posicion": 2,
+      "id": "puc-chile",
+      "nombre": "Pontificia Universidad Católica de Chile",
+      "sigla": "UC",
+      "total": 10.83,
+      "tramo": "institución líder, con desarrollo robusto y consistente"
+    },
+    {
+      "posicion": 3,
+      "id": "ucentral",
+      "nombre": "Universidad Central de Chile",
+      "sigla": "U. Central",
+      "total": 9.83,
+      "tramo": "desarrollo sólido, con varias áreas activas y continuidad evidente"
+    },
+    {
+      "posicion": 4,
+      "id": "uai",
+      "nombre": "Universidad Adolfo Ibáñez",
+      "sigla": "UAI",
+      "total": 8.17,
+      "tramo": "desarrollo sólido, con varias áreas activas y continuidad evidente"
+    },
+    {
+      "posicion": 5,
+      "id": "uchile",
+      "nombre": "Universidad de Chile",
+      "sigla": "U. de Chile",
+      "total": 6.67,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas"
+    },
+    {
+      "posicion": 6,
+      "id": "unab",
+      "nombre": "Universidad Andrés Bello",
+      "sigla": "UNAB",
+      "total": 6.33,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas"
+    },
+    {
+      "posicion": 7,
+      "id": "udp",
+      "nombre": "Universidad Diego Portales",
+      "sigla": "UDP",
+      "total": 5.83,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas"
+    },
+    {
+      "posicion": 8,
+      "id": "udd",
+      "nombre": "Universidad del Desarrollo",
+      "sigla": "UDD",
+      "total": 5.17,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas"
+    },
+    {
+      "posicion": 9,
+      "id": "uandes",
+      "nombre": "Universidad de los Andes",
+      "sigla": "U. de los Andes",
+      "total": 3.33,
+      "tramo": "desarrollo incipiente"
+    },
+    {
+      "posicion": 10,
+      "id": "udec",
+      "nombre": "Universidad de Concepción",
+      "sigla": "UdeC",
+      "total": 3.17,
+      "tramo": "desarrollo incipiente"
+    }
+  ],
+  "universidades": {
+    "puc-chile": {
+      "id": "puc-chile",
+      "nombre": "Pontificia Universidad Católica de Chile",
+      "nombre_corto": "P. U. Católica de Chile",
+      "sigla": "UC",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": true,
+              "nota": "Seminario DER201H-3 íntegramente de IA y Derecho, 2025. No obligatorio."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 3,
+          "techo": 3,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 1.5,
+          "techo": 1.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 2.33,
+          "techo": 2.33,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 10.83,
+      "total_techo": 10.83,
+      "tiene_banda": false,
+      "tramo": "institución líder, con desarrollo robusto y consistente",
+      "celdas_sin_informacion_concluyente": 0,
+      "celdas_sin_contrastar": 1,
+      "celdas_url_caida": 1,
+      "indice_2026": 68.9,
+      "indice_2026_techo": 68.9,
+      "posicion": 2
+    },
+    "pucv": {
+      "id": "pucv",
+      "nombre": "Pontificia Universidad Católica de Valparaíso",
+      "nombre_corto": "P. U. Católica de Valparaíso",
+      "sigla": "PUCV",
+      "en_ranking": false,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 1.5,
+          "techo": 1.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 1.5,
+          "techo": 1.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 1.67,
+          "techo": 1.67,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 6.67,
+      "total_techo": 6.67,
+      "tiene_banda": false,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas",
+      "celdas_sin_informacion_concluyente": 0,
+      "celdas_sin_contrastar": 0,
+      "celdas_url_caida": 0,
+      "indice_2026": 38.3,
+      "indice_2026_techo": 38.3,
+      "posicion": null
+    },
+    "uai": {
+      "id": "uai",
+      "nombre": "Universidad Adolfo Ibáñez",
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "sigla": "UAI",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "Curso de pregrado con prototipos que incorporan IA."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 2.5,
+          "techo": 2.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Laboratorio de Justicia Centrada en las Personas: usa IA, su objeto no es IA."
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 0.67,
+          "techo": 0.67,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "IA utilizada dentro de proyectos formativos del curso 2025."
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Rutas recorridas sin localizar norma propia de Facultad."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 8.17,
+      "total_techo": 8.17,
+      "tiene_banda": false,
+      "tramo": "desarrollo sólido, con varias áreas activas y continuidad evidente",
+      "celdas_sin_informacion_concluyente": 0,
+      "celdas_sin_contrastar": 2,
+      "celdas_url_caida": 0,
+      "indice_2026": 40,
+      "indice_2026_techo": 40,
+      "posicion": 4
+    },
+    "unab": {
+      "id": "unab",
+      "nombre": "Universidad Andrés Bello",
+      "nombre_corto": "U. Andrés Bello",
+      "sigla": "UNAB",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 0,
+          "techo": 0,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "No se localizó estructura de Derecho dedicada a IA o LegalTech."
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 1.33,
+          "techo": 1.33,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "Lineamientos de la universidad, no norma propia de Derecho."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 6.33,
+      "total_techo": 6.33,
+      "tiene_banda": false,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas",
+      "celdas_sin_informacion_concluyente": 0,
+      "celdas_sin_contrastar": 1,
+      "celdas_url_caida": 0,
+      "indice_2026": 34.7,
+      "indice_2026_techo": 34.7,
+      "posicion": 6
+    },
+    "uautonoma": {
+      "id": "uautonoma",
+      "nombre": "Universidad Autónoma de Chile",
+      "nombre_corto": "U. Autónoma de Chile",
+      "sigla": "U. Autónoma",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 3,
+          "techo": 3,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 3,
+          "techo": 3,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 3,
+          "techo": 3,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "IA+D creado por Resolución VRIP 118/2020 y adscrito a Derecho."
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "Convenio Legalfit: prácticas con automatización e IA."
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 0.67,
+          "techo": 0.67,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Usa herramientas de terceros; sin sistema propio desplegado."
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "No se localizó regla propia de Facultad."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 11.67,
+      "total_techo": 11.67,
+      "tiene_banda": false,
+      "tramo": "institución líder, con desarrollo robusto y consistente",
+      "celdas_sin_informacion_concluyente": 0,
+      "celdas_sin_contrastar": 2,
+      "celdas_url_caida": 0,
+      "indice_2026": 60.3,
+      "indice_2026_techo": 60.3,
+      "posicion": 1
+    },
+    "ucentral": {
+      "id": "ucentral",
+      "nombre": "Universidad Central de Chile",
+      "nombre_corto": "U. Central de Chile",
+      "sigla": "U. Central",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "Academia y Laboratorio LegalTech selecciona desde segundo año."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "Ciclos semestrales, mentoring y certificación."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 1.5,
+          "techo": 1.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Convenio con la Cámara de Comercio de Sevilla para IA y LegalTech."
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 2.33,
+          "techo": 2.33,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": true,
+              "nota": "Resolución 13/2025 del decano aprueba instructivo de uso académico de IA."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 9.83,
+      "total_techo": 9.83,
+      "tiene_banda": false,
+      "tramo": "desarrollo sólido, con varias áreas activas y continuidad evidente",
+      "celdas_sin_informacion_concluyente": 0,
+      "celdas_sin_contrastar": 3,
+      "celdas_url_caida": 1,
+      "indice_2026": 60.8,
+      "indice_2026_techo": 60.8,
+      "posicion": 3
+    },
+    "uchile": {
+      "id": "uchile",
+      "nombre": "Universidad de Chile",
+      "nombre_corto": "U. de Chile",
+      "sigla": "U. de Chile",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 0,
+          "techo": 2,
+          "tiene_banda": true,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "No concluyente",
+              "puntos": 0,
+              "sin_informacion_concluyente": true,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [
+            "Presencia en pregrado"
+          ],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 2.5,
+          "techo": 2.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "En operación con instrumento formal",
+              "puntos": 3,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 1.5,
+          "techo": 1.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 0.67,
+          "techo": 0.67,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 6.67,
+      "total_techo": 8.67,
+      "tiene_banda": true,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas",
+      "celdas_sin_informacion_concluyente": 1,
+      "celdas_sin_contrastar": 0,
+      "celdas_url_caida": 0,
+      "indice_2026": 39.2,
+      "indice_2026_techo": 46.9,
+      "posicion": 5
+    },
+    "udec": {
+      "id": "udec",
+      "nombre": "Universidad de Concepción",
+      "nombre_corto": "U. de Concepción",
+      "sigla": "UdeC",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 0,
+          "techo": 2,
+          "tiene_banda": true,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "No concluyente",
+              "puntos": 0,
+              "sin_informacion_concluyente": true,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [
+            "Presencia en pregrado"
+          ],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 0.5,
+          "techo": 0.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Se localizaron actividades, no una unidad especializada."
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 0.67,
+          "techo": 0.67,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "No se localizó instrumento propio de Facultad."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 3.17,
+      "total_techo": 5.17,
+      "tiene_banda": true,
+      "tramo": "desarrollo incipiente",
+      "celdas_sin_informacion_concluyente": 1,
+      "celdas_sin_contrastar": 0,
+      "celdas_url_caida": 0,
+      "indice_2026": 16.9,
+      "indice_2026_techo": 24.7,
+      "posicion": 10
+    },
+    "uandes": {
+      "id": "uandes",
+      "nombre": "Universidad de los Andes",
+      "nombre_corto": "U. de los Andes",
+      "sigla": "U. de los Andes",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 0,
+          "techo": 2,
+          "tiene_banda": true,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "No concluyente",
+              "puntos": 0,
+              "sin_informacion_concluyente": true,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [
+            "Presencia en pregrado"
+          ],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 0.5,
+          "techo": 0.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "No se localizó unidad de IA o LegalTech dependiente de Derecho."
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 0.5,
+          "techo": 0.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 0.33,
+          "techo": 1,
+          "tiene_banda": true,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "No concluyente",
+              "puntos": 0,
+              "sin_informacion_concluyente": true,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "No se localizó norma propia de Derecho."
+            }
+          ],
+          "sin_informacion_concluyente": [
+            "Adopción en la enseñanza"
+          ],
+          "apoyada_en_fuente_sin_contrastar": false
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 3.33,
+      "total_techo": 6,
+      "tiene_banda": true,
+      "tramo": "desarrollo incipiente",
+      "celdas_sin_informacion_concluyente": 2,
+      "celdas_sin_contrastar": 0,
+      "celdas_url_caida": 0,
+      "indice_2026": 12.8,
+      "indice_2026_techo": 28.3,
+      "posicion": 9
+    },
+    "udd": {
+      "id": "udd",
+      "nombre": "Universidad del Desarrollo",
+      "nombre_corto": "U. del Desarrollo",
+      "sigla": "UDD",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": true,
+              "nota": "II Versión del curso de IA para Abogados en 2026: continuidad verificable."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "Observatorio de Derecho y Tecnología, dependiente de un centro de Facultad."
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": true
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 0.5,
+          "techo": 0.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 0.67,
+          "techo": 1.33,
+          "tiene_banda": true,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "No concluyente",
+              "puntos": 0,
+              "sin_informacion_concluyente": true,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "Solo en el entorno institucional",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": true,
+              "url_caida": false,
+              "nota": "Política y reglamento de la universidad, no de Derecho."
+            }
+          ],
+          "sin_informacion_concluyente": [
+            "Adopción en la enseñanza"
+          ],
+          "apoyada_en_fuente_sin_contrastar": true
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 5.17,
+      "total_techo": 5.83,
+      "tiene_banda": true,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas",
+      "celdas_sin_informacion_concluyente": 1,
+      "celdas_sin_contrastar": 3,
+      "celdas_url_caida": 1,
+      "indice_2026": 27.5,
+      "indice_2026_techo": 35.3,
+      "posicion": 8
+    },
+    "udp": {
+      "id": "udp",
+      "nombre": "Universidad Diego Portales",
+      "nombre_corto": "U. Diego Portales",
+      "sigla": "UDP",
+      "en_ranking": true,
+      "dimensiones": {
+        "pregrado": {
+          "nombre": "Formación Académica (Pregrado)",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Presencia en pregrado",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "continua": {
+          "nombre": "Formación Continua y Postgrado",
+          "puntaje": 2,
+          "techo": 2,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Formación estructurada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Taller y curso anunciados; falta programa de ejecución."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "investigacion": {
+          "nombre": "Investigación y Desarrollo",
+          "puntaje": 1,
+          "techo": 1,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Unidad especializada",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Investigación",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "vinculacion": {
+          "nombre": "Vinculación con el Medio",
+          "puntaje": 1.5,
+          "techo": 1.5,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Transferencia",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            },
+            {
+              "capacidad": "Alcance declarado",
+              "estado": "En operación",
+              "puntos": 2,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": null
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        },
+        "uso": {
+          "nombre": "Uso Interno Institucional de IA",
+          "puntaje": 0.33,
+          "techo": 0.33,
+          "tiene_banda": false,
+          "capacidades": [
+            {
+              "capacidad": "Herramienta desplegada",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "No se localizó sistema de IA de Facultad."
+            },
+            {
+              "capacidad": "Adopción en la enseñanza",
+              "estado": "Incipiente",
+              "puntos": 1,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Incorporación anunciada desde primer y penúltimo semestre; falta ejecución."
+            },
+            {
+              "capacidad": "Norma propia",
+              "estado": "No localizada",
+              "puntos": 0,
+              "sin_informacion_concluyente": false,
+              "sin_contrastar": false,
+              "url_caida": false,
+              "nota": "Declara orientación al uso de IA; no se localizó norma publicada."
+            }
+          ],
+          "sin_informacion_concluyente": [],
+          "apoyada_en_fuente_sin_contrastar": false
+        }
+      },
+      "fuera_de_la_escala": [
+        {
+          "capacidad": "Evaluación de efecto",
+          "estado": "No localizada",
+          "puntos": 0
+        }
+      ],
+      "total": 5.83,
+      "total_techo": 5.83,
+      "tiene_banda": false,
+      "tramo": "avance inicial, con iniciativas parciales o esporádicas",
+      "celdas_sin_informacion_concluyente": 0,
+      "celdas_sin_contrastar": 0,
+      "celdas_url_caida": 0,
+      "indice_2026": 33.9,
+      "indice_2026_techo": 33.9,
+      "posicion": 7
+    }
+  }
+}

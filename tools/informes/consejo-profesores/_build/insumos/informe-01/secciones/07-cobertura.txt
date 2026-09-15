@@ -1,0 +1,57 @@
+[Informe 01 v3.2.0 · líneas 796-852 del texto completo]
+
+Cobertura de la investigación
+
+Cuánto se investigó cada institución, que no es lo mismo que cuánto hace.
+ Va antes que cualquier comparación porque sin este denominador la comparación engaña.
+
+¿Con qué profundidad se investigó cada institución?
+
+El trabajo de campo es desigual: el piloto de profundidad recibió 1,8 veces más rutas que el resto
+
+[FIGURA SVG]
+
+Rutas recorridas
+
+Piloto de profundidad
+
+Las dos cifras miden nuestro trabajo, no el de la institución. Las tres rutas que se recorren en las once instituciones —contraste externo, proyectos y fondos, y repositorios y publicaciones— son las que sostienen las afirmaciones de alcance nacional. La marca de la izquierda señala a las tres instituciones del piloto de profundidad.
+
+Institución | Piloto | 
+ Rutas | Fuentes | 
+ Contrastadas | Celdas sin concluir | 
+
+Pontificia Universidad Católica de Chile | sí | 12 | 12 | 12 (100 %) | 1 | 
+
+Pontificia Universidad Católica de Valparaíso | sí | 11 | 14 | 14 (100 %) | 0 | 
+
+Universidad Adolfo Ibáñez | — | 6 | 3 | 3 (100 %) | 4 | 
+
+Universidad Andrés Bello | — | 8 | 4 | 4 (100 %) | 2 | 
+
+Universidad Autónoma de Chile | — | 5 | 3 | 3 (100 %) | 4 | 
+
+Universidad Central de Chile | — | 7 | 4 | 4 (100 %) | 4 | 
+
+Universidad de Chile | sí | 12 | 16 | 16 (100 %) | 1 | 
+
+Universidad de Concepción | — | 7 | 4 | 4 (100 %) | 3 | 
+
+Universidad de los Andes | — | 7 | 5 | 5 (100 %) | 4 | 
+
+Universidad del Desarrollo | — | 6 | 4 | 4 (100 %) | 4 | 
+
+Universidad Diego Portales | — | 7 | 3 | 3 (100 %) | 4 | 
+
+Media del piloto: 11.7 rutas. Media de las otras ocho:
+ 6.6 rutas. Razón de 1,8 a 1 en rutas recorridas. En número de
+ fuentes la razón sigue siendo de 3,7 a 1 y no ha mejorado: la cobertura ganada es de rutas
+ recorridas, no de material acumulado, y esa distinción es la que hace publicable el comparador
+ ordinal de la sección siguiente.
+
+Un sesgo de segundo orden, y por qué no opera
+
+Una proporción desigual de fuentes contrastadas dejaría a la institución sobre la que el informe debe ser más cuidadoso como la mejor comprobada, que es exactamente el sesgo que una declaración de intereses no corrige. Con el corpus contrastado al cien por ciento en las once, esa proporción es la misma para todas y el sesgo no tiene por dónde entrar. Con el corpus original verificado al 100 %, ese sesgo desaparece en él: las once instituciones están contrastadas en la misma proporción. Las 22 fuentes de la ronda de ampliación no reparten esa garantía por igual, y por eso ninguna de ellas mueve una celda sin que la matriz lo declare. La matriz de capacidades no lleva marca de verificación: con el corpus contrastado por igual en las once, una marca que distinguiera fuentes abiertas de fuentes por abrir no separaría nada.
+
+09
+

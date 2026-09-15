@@ -1,0 +1,58 @@
+[Informe 01 v3.2.0 · líneas 349-406 del texto completo]
+
+Cómo leer este documento
+
+La regla que gobierna todo lo demás
+
+Una ausencia sólo informa si se recorrió la ruta del protocolo que la habría encontrado. Por eso
+ el informe distingue no localizada —se buscó donde correspondía y no había— de
+ no concluyente —no se buscó ahí—. De las 100 celdas de la matriz de capacidades, 5 son de la segunda clase. Esa cifra no habla de las
+ Facultades: habla de este trabajo de campo.
+
+Qué es y qué no es este documento
+
+Este documento es un informe de resultados: su corpus está contrastado al cien por ciento contra las publicaciones originales y una parte proviene de terceros ajenos a las instituciones observadas. Eso no lo convierte en una evaluación de calidad de las once Facultades, y conviene decirlo antes que después: sigue siendo
+ un mapeo de capacidades públicamente verificables, y lo que una institución no publica queda
+ fuera por construcción.
+
+Qué sí publica este informe
+
+Una cadena completa y recorrible hacia atrás: fuente → evidencia → iniciativa → afirmación →
+ conclusión. Cada afirmación trae su razonamiento, su contraevidencia, sus límites y su confianza
+ declarada, y cada evidencia dice qué prueba exactamente su fuente y qué no alcanza a probar. Las 23
+ divergencias que la verificación encontró entre el registro y las publicaciones originales se
+ publican íntegras en el anexo B, incluidas las que perjudican al propio argumento del informe.
+
+Qué autoriza a publicar un orden entre instituciones
+
+Un orden entre instituciones sólo es defendible si mide lo que dice medir y no el trabajo de campo de quien lo construye. Conviene ser explícito sobre por qué aquí lo mide, y sobre dónde sigue siendo peligroso.
+
+La asimetría existe y está medida. En rutas del protocolo la razón entre el piloto de profundidad y el resto es de 1,8 : 1; en número de fuentes, de 3,7 : 1. El comparador se construye sobre
+ capacidades acreditadas y no sobre volumen de evidencia, que es precisamente la corrección que hace
+ posible publicarlo.
+
+El índice se publica como banda y no como número. Cada institución aparece con
+ un piso —lo que su evidencia acredita— y un techo —lo que acreditaría si todas sus celdas sin
+ concluir resultaran favorables—. Una banda ancha significa que no lo sabemos, y se ve a simple
+ vista en la misma figura donde se ve la posición.
+
+El índice mide formalización publicada, no calidad institucional. Una Facultad
+ que hace un trabajo excelente sin publicar su acto de creación, sin declarar el alcance de lo que
+ hace y sin medir su efecto obtiene una puntuación baja. Eso es deliberado: el informe mide
+ exactamente lo que un tercero puede verificar, porque en Chile —hallazgo H-8— nadie más lo
+ verifica.
+
+No se promedia ni se suma entre dimensiones distintas. El índice es una suma
+ de estados sobre una rúbrica publicada en el anexo D, replicable con el dataset, y su cálculo se
+ entrega celda por celda para que cualquiera pueda rehacerlo o disputarlo.
+
+Advertencia de uso
+
+Este documento contiene un orden entre instituciones. Ese orden es refutable y está construido
+ para serlo: la rúbrica es pública, el dato de cada celda es público y la fuente de cada dato es
+ pública. Si una institución considera que su posición es incorrecta, el camino para corregirla no
+ es discutir con el informe sino publicar el instrumento que falta —y esa es, exactamente, la tesis
+ del documento.
+
+04
+

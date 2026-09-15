@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+10/30
+ Universidad Andrés Bello
+
+Facultad de Derecho UNAB
+
+Acredita transferencia con un piloto de asesor virtual construido para un organismo del Estado, validado por fuente estatal, y presencia en pregrado. Su cuenta pública declara incorporación de IA generativa como asistente virtual en la plataforma docente; la cifra de 179 atenciones que acompaña la nota corresponde a teleatención jurídica y no a inteligencia artificial.
+
+Cobertura
+
+8 de 13 rutas · 4 fuentes, 4 contrastadas (100 %) · 2 celdas sin concluir
+
+Índice
+
+Piso 10 · techo 14
+
+Rutas por recorrer
+
+centros-laboratorios, integridad-evaluacion, malla-curricular, politicas-ia, programas-syllabus
+

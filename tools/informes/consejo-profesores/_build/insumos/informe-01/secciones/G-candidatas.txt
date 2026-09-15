@@ -1,0 +1,76 @@
+[Informe 01 v3.2.0 · líneas 2820-2895 del texto completo]
+
+Candidatas fuera de cohorte
+
+Se revisaron dieciséis instituciones chilenas con Facultad o Escuela de
+ Derecho fuera de la cohorte. Seis arrojan algo localizable y sólo dos son sólidas. Ninguna se
+ incorpora al comparador: hacerlo rompería la comparabilidad longitudinal con el antecedente de 2025
+ y exigiría una versión nueva del protocolo. Se registran aquí para que la decisión de excluirlas sea
+ auditable.
+
+Universidad de Valparaíso · Unidad
+
+Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías
+
+Fecha declarada: 04-09-2026 · Emisor: Facultad de Derecho
+
+Presentado en un conversatorio, con coordinadora identificada y decano y vicedecana presentes. Primera capacitación docente sobre IA y cognición ya ejecutada el 1-09-2026, en colaboración con un centro de neurociencia de la misma universidad. Sin acto de creación publicado: reproduce exactamente el patrón que este informe describe. Es el candidato más fuerte fuera de cohorte y el más reciente.
+
+Universidad Santo Tomás · Actividad
+
+Seminario «Inteligencia Artificial en Derecho: una mirada transversal desde lo público»
+
+Fecha declarada: 20-11-2025 · Emisor: Escuela de Derecho, sede Talca
+
+Encuentro interinstitucional con seis ponencias, todas sobre IA, con expositores de cuatro universidades. Acredita que la actividad existe fuera del eje metropolitano y de la cohorte.
+
+Universidad San Sebastián · Convenio y proyecto
+
+Convenio con la Corte de Apelaciones de San Miguel sobre IA · participación en el proyecto de jurisprudencia de la Corte Suprema
+
+Fecha declarada: sin fechar · 2022 · Emisor: Facultad de Derecho
+
+El convenio consta por titular de una fuente del Poder Judicial que no fue posible leer automáticamente y requiere verificación manual. La participación de 2022 en el proyecto de la Corte Suprema —seis estudiantes, 652 sentencias sistematizadas— es el mismo proyecto multiuniversitario en que participó la PUCV.
+
+Universidad Católica del Maule · Publicación
+
+Columna sobre uso responsable de IA en el ejercicio del derecho
+
+Fecha declarada: 23-04-2025 · Emisor: Escuela de Derecho
+
+Divulgación de dos académicas. Cuenta como publicación con dirección propia, nada más.
+
+Universidad Alberto Hurtado · Actividad
+
+Experiencia de aprendizaje con IA entre Derecho e Ingeniería · proyecto Fondecyt Exploración 2025 sobre IA y derechos humanos
+
+Fecha declarada: 16-07-2026 · 31-07-2025 · Emisor: Facultad de Ingeniería, con participación de Derecho
+
+La actividad la emite Ingeniería y la académica jurídica que la lidera es de otra institución. El proyecto Fondecyt sí tiene participación de un académico de su Facultad de Derecho; no fue posible aislar su código ni su monto en la base.
+
+Universidad de Talca · —
+
+Nada localizable de su Facultad de Ciencias Jurídicas y Sociales
+
+Fecha declarada: — · Emisor: —
+
+Dato negativo relevante. Pese a su tradición en informática jurídica, no se localizó ninguna unidad, norma, programa, asignatura ni herramienta de IA publicada por su Facultad de Derecho con dirección propia. Sí tiene un proyecto Fondecyt Regular 2026 sobre regulación de riesgos de la IA, por 39,7 millones de pesos, que consta en la base de ANID y no en la comunicación de la Facultad. Es tradición sin continuidad visible en la comunicación institucional.
+
+Instituciones donde no se localizó nada
+
+Universidad Austral de Chile, Universidad Católica del Norte, Universidad
+ Católica de Temuco, Universidad de Tarapacá, Universidad Finis Terrae, Universidad Mayor, Universidad
+ de Antofagasta, Universidad de La Frontera, Universidad Bernardo O'Higgins y Universidad Gabriela
+ Mistral. En varias de ellas existe actividad universitaria en inteligencia artificial —centros
+ regionales, diplomados de ingeniería, certificación docente institucional— sin vínculo publicado con
+ su Facultad de Derecho, que es la misma distinción de atribución que gobierna el resto del informe.
+
+El patrón que este informe describe se replica íntegramente fuera de la cohorte:
+ ninguna de las dieciséis candidatas tiene norma, reglamento ni acto formal publicado sobre
+ inteligencia artificial a nivel de Facultad de Derecho. La unidad más nueva del país en esta
+ materia —presentada el 4 de septiembre de 2026— se creó mediante una presentación pública en un
+ conversatorio. Que el hallazgo se sostenga en veintisiete instituciones y no en once refuerza que
+ es una característica del campo y no de la cohorte elegida.
+
+Anexo H
+

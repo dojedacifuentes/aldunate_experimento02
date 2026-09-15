@@ -1,0 +1,32 @@
+[Informe 01 v3.2.0 · líneas 1011-1042 del texto completo]
+
+La comprobación que impide leer mal todo lo anterior
+
+Si cuánto se investiga y cuánto hacen las Facultades fueran la misma
+ variable, el informe entero estaría midiendo su propio trabajo de campo, y el comparador ordinal de
+ la sección anterior sería un artefacto. La comprobación es directa: se cruzan las dos.
+
+¿Cuánto de lo que vemos es lo que hacen las Facultades, y cuánto es dónde miramos?
+
+La Universidad Autónoma de Chile acredita más capacidad formalizada que la Universidad de Chile con menos de la mitad del trabajo de campo
+
+[FIGURA SVG]
+
+El eje vertical es el piso del índice de formalización; el horizontal, las rutas del
+ protocolo recorridas. El halo gris de cada punto es proporcional a sus celdas sin concluir: un
+ punto bajo con halo grande no dice «hace poco», dice «no lo sabemos». La diagonal marca dónde
+ caerían los puntos si las dos variables fueran la misma.
+
+La Universidad Autónoma de Chile recorrió 5 de trece rutas y obtiene un piso de 17 puntos. La Universidad de Chile recorrió 12 —más del doble— y obtiene 12. Si el trabajo de campo determinara el resultado, ese par de valores no podría existir, y menos aún en ese orden. Medida sobre las diez, la correlación entre rutas recorridas y piso del índice es de 0,34: existe, es débil, y da cuenta de algo más de un décimo de la variación. De las dos instituciones que recorrieron doce rutas, una encabeza el comparador y la otra es cuarta, por debajo de dos investigadas con cinco y con siete. Si el trabajo de campo determinara la posición, ese reparto no podría darse.
+
+Conviene enunciar la comprobación en su forma más útil y también más limitada. Prueba que la
+ cobertura no determina el resultado, y por tanto que un orden construido sobre capacidades
+ acreditadas no es equivalente a un orden construido sobre volumen de evidencia. No prueba que la cobertura sea irrelevante. El margen de duda no es general sino concentrado: las cinco celdas sin concluir se reparten en cuatro instituciones, y sólo una de ellas —la Universidad de los Andes— tiene más de una. Para las seis restantes el piso no es un piso: es la medida.
+
+La verificación aportó además una comprobación empírica del sesgo, en la dirección menos cómoda para quien investiga. Al abrir las fuentes de instituciones fuera del piloto, el
+ registro las subestimaba en dos casos y las sobreestimaba en tres. El sesgo de cobertura no opera
+ sólo inflando a los observados: distorsiona en ambas direcciones, y la única corrección es abrir
+ cada fuente.
+
+12
+

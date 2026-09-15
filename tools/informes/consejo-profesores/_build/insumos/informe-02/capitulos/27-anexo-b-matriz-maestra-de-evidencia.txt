@@ -1,0 +1,57 @@
+
+# Anexo B · Matriz maestra de evidencia
+
+Cada afirmación sustantiva del informe, con su fuente, el tipo de fuente, lo que esa fuente realmente demuestra y su estado epistemológico. Esta tabla es la columna vertebral auditable del documento: cualquier lector puede recorrerla y comprobar si una conclusión descansa sobre un experimento, sobre una encuesta o sobre un comunicado.
+
+
+## B.1 Cómo leer la matriz
+
+- **Tipo de fuente.** **A** evidencia académica revisada por pares · **B** organismo internacional o público · **C** fuente institucional primaria · **D** proveedor · **E** prensa especializada · **F** otras.
+- **Nivel demostrativo.** **D1** la iniciativa existe · **D2** fue implementada · **D3** hay adopción efectiva · **D4** hay resultados medidos · **D5** puede atribuirse causalidad.
+- **Estado epistemológico.** VERIFICADO, REPORTADO, EMERGENTE, CONTROVERTIDO o NO DEMOSTRADO, según la convergencia de fuentes y la calidad del diseño.
+
+
+## B.2 La matriz
+
+[TABLA] Matriz maestra de evidencia. Treinta y ocho hallazgos con su trazabilidad completa. Las filas marcadas como NO DEMOSTRADO o CONTROVERTIDO son tan importantes como las verificadas.
+| ID | Hallazgo | Fuente | Tipo | Nivel | Estado |
+| E-01 | 94 % de los estudiantes de grado británicos usa IA generativa para trabajos evaluados (53 % en 2024, 88 % en 2025) | HEPI, Student Generative AI Survey 2026 (n = 1.054) | B | D3 | VERIFICADO |
+| E-02 | Solo el 12 % inserta texto generado por IA directamente en la entrega (3 % en 2024, 8 % en 2025) | HEPI, misma encuesta | B | D3 | VERIFICADO |
+| E-03 | 65 % de los estudiantes afirma que su evaluación cambió significativamente por la IA | HEPI 2026 | B | D3 | VERIFICADO |
+| E-04 | Solo el 38 % recibe herramientas de IA de su institución; solo el 36 % se siente animado a usarlas | HEPI 2026 | B | D3 | VERIFICADO |
+| E-05 | 94 % de las entregas generadas por IA pasó sin detección en exámenes reales y obtuvo notas superiores | Scarfe, Watcham, Clarke y Roesch, PLOS ONE 19(6): e0305354 (2024) | A | D4 | VERIFICADO |
+| E-06 | Tasa media de falsos positivos del 61,3 % en siete detectores aplicados a textos de hablantes no nativos | Estudio de Stanford (2023) | A | D4 | VERIFICADO |
+| E-07 | Al menos doce instituciones importantes desactivaron la detección de IA de Turnitin | Vanderbilt (ago. 2023) y cobertura sectorial a marzo de 2026 | C/E | D2 | VERIFICADO |
+| E-08 | Casos probados de mala conducta con IA: 1,6 → 5,1 por mil estudiantes; proyección de 7,5 | The Guardian por acceso a la información (155 universidades, 131 respuestas); Times Higher Education | B/E | D3 | VERIFICADO |
+| E-09 | Más del 27 % de las universidades británicas no registraba la mala conducta con IA por separado | Misma investigación | B/E | D3 | VERIFICADO |
+| E-10 | Un tutor de IA con andamiaje experto duplicó las ganancias de aprendizaje frente al aprendizaje activo presencial | Kestin, Miller, Klales, Milbourne y Ponti, Scientific Reports (3 jun. 2025), n ≈ 180 | A | D5 | VERIFICADO |
+| E-11 | El acceso libre a GPT-4 mejoró el desempeño un 48 % durante la práctica y lo empeoró un 17 % al retirarlo | Bastani, Bastani, Sungu, Ge, Kabakçı y Mariman, PNAS (2025), n ≈ 1.000 | A | D5 | VERIFICADO |
+| E-12 | El andamiaje diseñado por docentes elevó la mejora al 127 % y mitigó el daño posterior | Misma fuente | A | D5 | VERIFICADO |
+| E-13 | Desarrolladores expertos fueron un 19 % más lentos con IA y siguieron creyéndose un 20 % más rápidos | METR (jul. 2025), n = 16, 246 tareas reales | A | D5 | VERIFICADO |
+| E-14 | El metaanálisis más citado a favor de efectos positivos grandes fue retractado el 22 de abril de 2026 | Wang y Fan, HSSC 12, art. 621 (2025); nota de retractación HSSC 13 (2026) | A | D4 | VERIFICADO |
+| E-15 | La IA aumenta la creatividad individual y reduce la diversidad colectiva del contenido | Doshi y Hauser, Science Advances 10(28), eadn5290 (2024) | A | D5 | VERIFICADO |
+| E-16 | La IA sube 45 puntos percentiles a los estudiantes de peor desempeño y empeora a los mejores | Choi y Schwarcz, Journal of Legal Education | A | D5 | VERIFICADO |
+| E-17 | Herramientas jurídicas comerciales alucinan entre el 17 % y el 33 %; GPT-4 el 43 % | Magesh, Surani, Dahl, Suzgun, Manning y Ho, Journal of Empirical Legal Studies (2025) | A | D4 | VERIFICADO |
+| E-18 | 1.981 resoluciones judiciales con citas fabricadas constatadas por tribunales al 28 de agosto de 2026 | Charlotin, AI Hallucination Cases Database, HEC Paris | B | D4 | VERIFICADO |
+| E-19 | Las mujeres tienen un 22 % menos de probabilidades de usar IA generativa, y la brecha persiste con acceso igualado | Otis, Delecourt, Cranney y Koning, HBS Working Paper 25-023 (18 estudios, 143.008 personas, 25 países) | A | D4 | VERIFICADO |
+| E-20 | Empleo de jóvenes de 22-25 años en ocupaciones expuestas a IA, 19 % por debajo de su trayectoria esperada | Brynjolfsson, Chandar y Chen, Stanford Digital Economy Lab, actualización de ago. 2026 | A | D4 | VERIFICADO |
+| E-21 | Solo el 19 % de las instituciones tiene política formal vigente; 42 % la tiene en desarrollo | UNESCO, encuesta a Cátedras UNESCO y Redes UNITWIN (400 respuestas, 90 países, sept. 2025) | B | D2 | VERIFICADO |
+| E-22 | 77 % del profesorado usa IA en su docencia frente al 88 % de los estudiantes; solo el 17 % en nivel avanzado | Digital Education Council, encuestas 2025 (n = 1.681) y 2026 | E | D3 | REPORTADO |
+| E-23 | 52 % del profesorado de CSU reporta efecto negativo de la IA sobre su docencia | Encuesta interna de California State University (más de 94.000 respuestas) | C | D4 | VERIFICADO |
+| E-24 | CSU renovó su contrato con OpenAI por 13 M USD anuales pese a la petición del profesorado | EdSource, CalMatters, Inside Higher Ed (may. 2026) | E | D2 | VERIFICADO |
+| E-25 | Oxford, primera universidad británica en ofrecer ChatGPT Edu a todo el personal y estudiantado | Universidad de Oxford (19 sept. 2025) | C | D2 | VERIFICADO |
+| E-26 | HKU exige dos cursos de alfabetización en IA para graduarse desde la cohorte 2025-26 | University of Hong Kong, normativa de currículo de grado | C | D2 | VERIFICADO |
+| E-27 | NTU hace obligatoria la alfabetización en IA para todos los estudiantes de grado desde agosto de 2026 | NTU Singapur | C | D2 | VERIFICADO |
+| E-28 | China convierte la IA en asignatura obligatoria; más de 600 universidades con grados de IA frente a 35 en 2018 | Plan «IA + Educación» del Ministerio de Educación y otros cuatro organismos (abr. 2026) | B | D2 | VERIFICADO |
+| E-29 | El Reglamento europeo clasifica como alto riesgo la evaluación de resultados de aprendizaje y el proctoring | Anexo III del Reglamento europeo de IA; vigencia general desde el 2 ago. 2026, Anexo III prorrogado a dic. 2027 | B | D1 | VERIFICADO |
+| E-30 | 193 iniciativas de IA educativa activas en 22 países de América Latina y el Caribe | BID con Ceibal y Socialab, «¡IA Presente!» (2025) | B | D1 | VERIFICADO |
+| E-31 | TECgpt reporta más de 14.000 usuarios y ganancias de aprendizaje de 20 a 30 puntos | Tecnológico de Monterrey, AI Day 2025 | C/D | D2 | REPORTADO |
+| E-32 | La IA daña de forma duradera capacidades cognitivas generales | Kosmyna et al., arXiv 2506.08872 (n = 54); comentario crítico en arXiv 2601.00856 | A | D4 | CONTROVERTIDO |
+| E-33 | La IA ahorra tiempo docente de forma neta | Evidencia contradictoria; revisión integrativa (Frontiers in Education, 2025) califica la base de deficiente | A | D4 | CONTROVERTIDO |
+| E-34 | Un despliegue institucional masivo de IA mejora los resultados de aprendizaje | Ningún estudio independiente localizado en ninguna institución del mapa | — | — | NO DEMOSTRADO |
+| E-35 | La IA generativa mejora el pensamiento crítico | Sin evidencia experimental sólida en ninguna dirección | — | — | NO DEMOSTRADO |
+| E-36 | El NextGen bar exam debuta en julio de 2026 y desplaza el peso hacia destrezas aplicadas del ejercicio | National Conference of Bar Examiners; primeras jurisdicciones Maryland, Missouri y Oregón | B | D2 | VERIFICADO |
+| E-37 | La contratación de asociados cayó un 5 % en 2025 y solo el 38 % procedió directamente de la promoción egresada | Análisis del sector jurídico estadounidense sobre despachos AmLaw 200 | E | D3 | REPORTADO |
+| E-38 | La University of Chicago Law School pilota escritura jurídica sin IA como base con escritura con IA superpuesta | University of Chicago Law School, piloto del curso 2026-2027 | C | D1 | VERIFICADO |
+
+[RECUADRO: Lo que la matriz muestra de un vistazo] De treinta y ocho hallazgos, **treinta y uno están verificados**, tres son reportados por su propia institución, proveedor o sector, dos son controvertidos y dos no están demostrados. Pero la distribución por nivel demostrativo es la lectura importante: los hallazgos de nivel **D5 —identificación causal en contexto experimental— son solo seis**, y todos proceden de experimentos pequeños, de modo que su alcance de generalización queda declarado como local o de población similar, nunca universal. Ninguna afirmación sobre despliegues institucionales de escala supera el nivel D2. El informe es sólido en lo que se sabe y explícito en lo que no, y esa proporción —seis resultados causales frente a decenas de implementaciones sin medir— es el estado real del campo en agosto de 2026.

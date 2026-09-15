@@ -1,0 +1,87 @@
+[
+ {
+  "t": "h1",
+  "n": "Anexo C",
+  "x": "Bibliografía clasificada"
+ },
+ {
+  "t": "h2",
+  "x": "C.1 Evidencia académica revisada por pares"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö. y Mariman, R. «Generative AI without guardrails can harm learning: Evidence from high school mathematics». *PNAS* (2025). Versión previa: SSRN 4895486.",
+   "Choi, J. H. y Schwarcz, D. «AI Assistance in Legal Analysis: An Empirical Study». *Journal of Legal Education*. SSRN 4539836.",
+   "Choi, J. H., Monahan, A. y Schwarcz, D. «Lawyering in the Age of Artificial Intelligence». *Minnesota Law Review* (2024).",
+   "Doshi, A. R. y Hauser, O. P. «Generative AI enhances individual creativity but reduces the collective diversity of novel content». *Science Advances* 10(28), eadn5290 (2024).",
+   "Kestin, G., Miller, K., Klales, A., Milbourne, T. y Ponti, G. «AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting». *Scientific Reports* (3 de junio de 2025).",
+   "Kosmyna, N. et al. «Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task». arXiv 2506.08872 (2025). *Preprint con limitaciones metodológicas documentadas; véase el comentario en arXiv 2601.00856.*",
+   "Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D. y Ho, D. E. «Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools». *Journal of Empirical Legal Studies* (2025). Preprint: arXiv 2405.20362.",
+   "Otis, N. G., Delecourt, S., Cranney, K. y Koning, R. «Global Evidence on Gender Gaps and Generative AI». Harvard Business School Working Paper 25-023.",
+   "Ho, C. M. «What AI Can't Say: Oral Competence in Legal Education». *Santa Clara Law Review* 66(3).",
+   "Scarfe, P., Watcham, K., Clarke, A. y Roesch, E. «A real-world test of artificial intelligence infiltration of a university examinations system: A Turing Test case study». *PLOS ONE* 19(6): e0305354 (2024).",
+   "Wang, J. y Fan, W. «The effect of ChatGPT on students' learning performance, learning perception, and higher-order thinking: insights from a meta-analysis». *Humanities and Social Sciences Communications* 12, art. 621 (2025). **RETRACTADO el 22 de abril de 2026**; nota de retractación: *HSSC* 13 (2026), doi 10.1057/s41599-026-07310-z."
+  ]
+ },
+ {
+  "t": "h2",
+  "x": "C.2 Organismos internacionales y públicos"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "Banco Interamericano de Desarrollo y Ceibal. «¡IA Presente!»: 193 iniciativas de IA educativa en 22 países de América Latina y el Caribe (2025).",
+   "Brynjolfsson, E., Chandar, B. y Chen, R. «Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence». Stanford Digital Economy Lab, actualización de agosto de 2026.",
+   "CEPAL y CENIA. *Índice Latinoamericano de Inteligencia Artificial (ILIA) 2025*, tercera edición, 19 países.",
+   "Comisión Europea. Reglamento de Inteligencia Artificial, Anexo III (sistemas de alto riesgo en educación). Requisitos generales en vigor desde el 2 de agosto de 2026; usos del Anexo III prorrogados hasta el 2 de diciembre de 2027.",
+   "HEPI. *Student Generative AI Survey 2025* (Policy Note 61) y *2026* (Informe 199; n = 1.054, trabajo de campo de diciembre de 2025, Savanta).",
+   "METR. «Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity» (julio de 2025) y actualización de febrero de 2026.",
+   "National Association of Colleges and Employers. *Job Outlook 2026* y actualizaciones de tendencias sobre competencias de IA en empleos de entrada.",
+   "TEQSA. «Assessment reform for the age of artificial intelligence» y «Enacting assessment reform in a time of artificial intelligence» (septiembre de 2025).",
+   "UNESCO. *Guidance for Generative AI in Education and Research* (2023); *AI Competency Frameworks for Teachers and for Students* (2024); encuesta a Cátedras UNESCO y Redes UNITWIN, 400 respuestas de 90 países (septiembre de 2025)."
+  ]
+ },
+ {
+  "t": "h2",
+  "x": "C.3 Fuentes institucionales primarias"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "California State University. Contrato con OpenAI y encuesta interna a más de 94.000 estudiantes y empleados (2026).",
+   "Case Western Reserve University School of Law. «Introduction to AI and the Law», obligatoria para primer año (2025, ampliada en 2026).",
+   "Ohio State University, Office of Academic Affairs. Iniciativa AI Fluency y actualización de febrero de 2026.",
+   "Tecnológico de Monterrey. TECgpt (28 de septiembre de 2023) y TECgpt Open Edition.",
+   "Universidad de Chile. Lineamientos éticos para la docencia universitaria con IA. Ministerio de Ciencia de Chile, programa «Futuros Docentes en IA».",
+   "Legal Writing Institute. «Critique v. Composition: Rethinking Memos, Motions, and Briefs in the Era of AI and the NextGen Bar» e «Integrating Generative AI into Legal Writing Pedagogy».",
+   "National Conference of Bar Examiners. NextGen Bar Exam: debut en julio de 2026 y calendario de adopción por jurisdicción.",
+   "Universidad de Valparaíso, Facultad de Derecho. LIDET, Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías.",
+   "University of Chicago Law School. Módulos obligatorios de IA para estudiantes de primer año (2026) y piloto de investigación y escritura jurídica sin IA como base con IA superpuesta (curso 2026-2027).",
+   "University of Sydney. Política de inteligencia artificial y evaluación: modelo de dos carriles (noviembre de 2024).",
+   "Vanderbilt University. «Guidance on AI Detection and Why We're Disabling Turnitin's AI Detector» (agosto de 2023)."
+  ]
+ },
+ {
+  "t": "h2",
+  "x": "C.4 Proveedores y prensa especializada"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "Anthropic. *Education Report* sobre patrones de uso estudiantil; Claude for Education (LSE, Northeastern, Champlain College, 2025; ampliación en 2026).",
+   "Charlotin, D. *AI Hallucination Cases Database*, Smart Law Hub, HEC Paris. 1.981 casos al 28 de agosto de 2026.",
+   "Digital Education Council. *Global AI Faculty Survey 2025* (n = 1.681, 52 instituciones, 28 países) y *AI in Higher Education Global Survey 2026*.",
+   "EDUCAUSE. *AI Landscape Study* (2024, 2025) y *The Impact of AI on Work in Higher Education* (2026).",
+   "*The Guardian* / *Times Higher Education*. Investigación mediante Freedom of Information sobre mala conducta académica con IA en 155 universidades británicas.",
+   "*Inside Higher Ed*, *EdSource*, *CalMatters*. Cobertura del contrato de California State University con OpenAI y de la oposición del profesorado."
+  ]
+ },
+ {
+  "t": "rule"
+ },
+ {
+  "t": "p",
+  "x": "*Informe elaborado en calidad de investigador y consultor experto en modelos educativos, innovación y transformación institucional. Todas las fuentes fueron verificadas individualmente en agosto de 2026. Las valoraciones analíticas se identifican como tales en el punto en que aparecen.*"
+ }
+]

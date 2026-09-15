@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+5/30
+ Universidad de Concepción
+
+Facultad de Ciencias Jurídicas y Sociales UdeC
+
+Su taller de inteligencia artificial para académicos está ejecutado y es indatable: la nota lo fecha diciendo «ayer», sin día, mes ni año, y no publica participantes. El relator es director de una unidad de otra institución de la cohorte, lo que acredita demanda institucional y no capacidad instalada propia. Una de sus fuentes tiene además el certificado del servidor mal configurado, problema que se declara aquí porque afecta a la comprobación por terceros.
+
+Cobertura
+
+7 de 13 rutas · 4 fuentes, 4 contrastadas (100 %) · 3 celdas sin concluir
+
+Índice
+
+Piso 5 · techo 11
+
+Rutas por recorrer
+
+centros-laboratorios, integridad-evaluacion, malla-curricular, politicas-ia, postgrado-formacion-continua, programas-syllabus
+

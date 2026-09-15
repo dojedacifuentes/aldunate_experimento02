@@ -1,0 +1,3255 @@
+{
+ "metodo": {
+  "nombre": "Índice de capacidades institucionales en inteligencia artificial",
+  "sigla": "ICIA",
+  "version": "1.0",
+  "matriz": "matriz-v2.json, clave v2 (Informe 01 v3.2.0, corte 06-09-2026)",
+  "resumen": "Diez capacidades evaluadas con la rúbrica del Informe 01 (3, 2, 1 o 0 puntos) y agrupadas en cuatro dimensiones. Cada dimensión se expresa de 0 a 100 y el índice es su promedio ponderado. Las celdas no concluyentes se excluyen del piso y suman 2 puntos al techo, de modo que la incertidumbre se muestra como banda.",
+  "dimensiones": [
+   {
+    "id": "GOB",
+    "nombre": "Gobierno y reglas",
+    "capacidades": [
+     "Unidad especializada",
+     "Norma propia"
+    ],
+    "peso": 25,
+    "cercania": "mediata"
+   },
+   {
+    "id": "DOC",
+    "nombre": "Docencia",
+    "capacidades": [
+     "Presencia en pregrado",
+     "Formación estructurada",
+     "Adopción en la enseñanza"
+    ],
+    "peso": 35,
+    "cercania": "directa"
+   },
+   {
+    "id": "REC",
+    "nombre": "Recursos, investigación y vínculo",
+    "capacidades": [
+     "Herramienta desplegada",
+     "Investigación",
+     "Transferencia"
+    ],
+    "peso": 15,
+    "cercania": "indirecta"
+   },
+   {
+    "id": "RES",
+    "nombre": "Alcance y efecto",
+    "capacidades": [
+     "Alcance declarado",
+     "Evaluación de efecto"
+    ],
+    "peso": 25,
+    "cercania": "mediata"
+   }
+  ],
+  "criterio_pesos": "Cercanía de la capacidad al aprendizaje jurídico del estudiante: directa 35, mediata 25, indirecta 15.",
+  "formula": "ICIA = (75·GOB + 70·DOC + 30·REC + 75·RES) / 18, donde cada sigla es la suma de puntos de la dimensión; equivale al promedio ponderado de los subíndices 0-100.",
+  "estados": {
+   "OPF": {
+    "nombre": "En operación con instrumento formal",
+    "puntos": 3
+   },
+   "OP": {
+    "nombre": "En operación",
+    "puntos": 2
+   },
+   "INC": {
+    "nombre": "Incipiente",
+    "puntos": 1
+   },
+   "ENT": {
+    "nombre": "Solo en el entorno institucional",
+    "puntos": 1
+   },
+   "ADY": {
+    "nombre": "Solo adyacente",
+    "puntos": 1
+   },
+   "NL": {
+    "nombre": "No localizada",
+    "puntos": 0
+   },
+   "NC": {
+    "nombre": "No concluyente",
+    "puntos": null
+   }
+  },
+  "reglas_nc": "NC no suma al piso y suma 2 puntos al techo, valor medio de los estados distintos de cero.",
+  "solidez": "Índice verificado: el mismo índice si las celdas cerradas con fuentes de la ronda 2 sin contraste se tratan como no concluyentes. La diferencia con el índice acreditado mide cuánto descansa en evidencia pendiente de contraste.",
+  "reglas_empate": "Se ordena por piso; a igual piso, por techo y luego alfabéticamente. Dos instituciones con el mismo piso comparten posición.",
+  "apartada": "La Pontificia Universidad Católica de Valparaíso se calcula con el mismo sistema y no recibe posición, por el conflicto de interés declarado del autor.",
+  "ronda2": {
+   "referencias": 32,
+   "ya_en_corpus": [
+    "R2-UC-02",
+    "R2-UNAB-02",
+    "R2-UAUT-05",
+    "R2-UAUT-06",
+    "R2-UCEN-02",
+    "R2-UCH-01",
+    "R2-UDEC-01",
+    "R2-UDP-01",
+    "R2-UDP-02",
+    "R2-PUCV-03"
+   ],
+   "direcciones_caidas": [
+    "R2-UCEN-01",
+    "R2-UC-01",
+    "R2-UDD-02"
+   ],
+   "escaneadas": [
+    "R2-UAUT-02"
+   ]
+  }
+ },
+ "instituciones": [
+  {
+   "id": "puc-chile",
+   "nombre": "Pontificia Universidad Católica de Chile",
+   "nombre_corto": "P. U. Católica de Chile",
+   "sigla": "UC",
+   "en_ranking": true,
+   "posicion": 1,
+   "indice": {
+    "piso": 68.9,
+    "techo": 68.9,
+    "piso18": 1240,
+    "techo18": 1240
+   },
+   "tiene_banda": false,
+   "subindices": {
+    "GOB": {
+     "piso": 100,
+     "techo": 100
+    },
+    "DOC": {
+     "piso": 77.8,
+     "techo": 77.8
+    },
+    "REC": {
+     "piso": 55.6,
+     "techo": 55.6
+    },
+    "RES": {
+     "piso": 33.3,
+     "techo": 33.3
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 66.7,
+    "techo": 66.7
+   },
+   "indice_verificado": {
+    "piso": 61.1,
+    "techo": 68.9
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 7.8,
+   "pct_sobre_fuentes_sin_contrastar": 11.3,
+   "indice_sin_direcciones_caidas": {
+    "piso": 61.1,
+    "techo": 68.9
+   },
+   "rango_posiciones_grilla": {
+    "min": 1,
+    "max": 1
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 12.5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 12.5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UC-01"
+     ],
+     "sin_contrastar": true,
+     "url_caida": true,
+     "escaneada": false,
+     "nota_r2": "Seminario DER201H-3 íntegramente de IA y Derecho, 2025. No obligatorio."
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 11.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 20,
+    "techo": 20,
+    "nc": 0
+   }
+  },
+  {
+   "id": "pucv",
+   "nombre": "Pontificia Universidad Católica de Valparaíso",
+   "nombre_corto": "P. U. Católica de Valparaíso",
+   "sigla": "PUCV",
+   "en_ranking": false,
+   "posicion": null,
+   "indice": {
+    "piso": 53.6,
+    "techo": 53.6,
+    "piso18": 965,
+    "techo18": 965
+   },
+   "tiene_banda": false,
+   "subindices": {
+    "GOB": {
+     "piso": 50,
+     "techo": 50
+    },
+    "DOC": {
+     "piso": 55.6,
+     "techo": 55.6
+    },
+    "REC": {
+     "piso": 88.9,
+     "techo": 88.9
+    },
+    "RES": {
+     "piso": 33.3,
+     "techo": 33.3
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 60,
+    "techo": 60
+   },
+   "indice_verificado": {
+    "piso": 53.6,
+    "techo": 53.6
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 0,
+   "pct_sobre_fuentes_sin_contrastar": 0,
+   "indice_sin_direcciones_caidas": {
+    "piso": 53.6,
+    "techo": 53.6
+   },
+   "rango_posiciones_grilla": null,
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 4.2,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 3.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 18,
+    "techo": 18,
+    "nc": 0
+   }
+  },
+  {
+   "id": "uai",
+   "nombre": "Universidad Adolfo Ibáñez",
+   "nombre_corto": "U. Adolfo Ibáñez",
+   "sigla": "UAI",
+   "en_ranking": true,
+   "posicion": 6,
+   "indice": {
+    "piso": 34.2,
+    "techo": 34.2,
+    "piso18": 615,
+    "techo18": 615
+   },
+   "tiene_banda": false,
+   "subindices": {
+    "GOB": {
+     "piso": 16.7,
+     "techo": 16.7
+    },
+    "DOC": {
+     "piso": 66.7,
+     "techo": 66.7
+    },
+    "REC": {
+     "piso": 44.4,
+     "techo": 44.4
+    },
+    "RES": {
+     "piso": 0,
+     "techo": 0
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 36.7,
+    "techo": 36.7
+   },
+   "indice_verificado": {
+    "piso": 14.4,
+    "techo": 38.3
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 19.7,
+   "pct_sobre_fuentes_sin_contrastar": 57.7,
+   "indice_sin_direcciones_caidas": {
+    "piso": 34.2,
+    "techo": 34.2
+   },
+   "rango_posiciones_grilla": {
+    "min": 4,
+    "max": 8
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "ADY",
+     "estado_nombre": "Solo adyacente",
+     "puntos": 1,
+     "aporte_al_indice": 4.2,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UAI-01"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Laboratorio de Justicia Centrada en las Personas: usa IA, su objeto no es IA."
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Rutas recorridas sin localizar norma propia de Facultad."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UAI-01",
+      "R2-UAI-02"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Curso de pregrado con prototipos que incorporan IA."
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UAI-01"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "IA utilizada dentro de proyectos formativos del curso 2025."
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 11,
+    "techo": 11,
+    "nc": 0
+   }
+  },
+  {
+   "id": "unab",
+   "nombre": "Universidad Andrés Bello",
+   "nombre_corto": "U. Andrés Bello",
+   "sigla": "UNAB",
+   "en_ranking": true,
+   "posicion": 5,
+   "indice": {
+    "piso": 34.7,
+    "techo": 34.7,
+    "piso18": 625,
+    "techo18": 625
+   },
+   "tiene_banda": false,
+   "subindices": {
+    "GOB": {
+     "piso": 16.7,
+     "techo": 16.7
+    },
+    "DOC": {
+     "piso": 44.4,
+     "techo": 44.4
+    },
+    "REC": {
+     "piso": 44.4,
+     "techo": 44.4
+    },
+    "RES": {
+     "piso": 33.3,
+     "techo": 33.3
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 36.7,
+    "techo": 36.7
+   },
+   "indice_verificado": {
+    "piso": 30.6,
+    "techo": 38.9
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 4.2,
+   "pct_sobre_fuentes_sin_contrastar": 12,
+   "indice_sin_direcciones_caidas": {
+    "piso": 34.7,
+    "techo": 34.7
+   },
+   "rango_posiciones_grilla": {
+    "min": 4,
+    "max": 7
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "No se localizó estructura de Derecho dedicada a IA o LegalTech."
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 4.2,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UNAB-01"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Lineamientos de la universidad, no norma propia de Derecho."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 3.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 3.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 11,
+    "techo": 11,
+    "nc": 0
+   }
+  },
+  {
+   "id": "uautonoma",
+   "nombre": "Universidad Autónoma de Chile",
+   "nombre_corto": "U. Autónoma de Chile",
+   "sigla": "U. Autónoma",
+   "en_ranking": true,
+   "posicion": 3,
+   "indice": {
+    "piso": 56.4,
+    "techo": 56.4,
+    "piso18": 1015,
+    "techo18": 1015
+   },
+   "tiene_banda": false,
+   "subindices": {
+    "GOB": {
+     "piso": 50,
+     "techo": 50
+    },
+    "DOC": {
+     "piso": 77.8,
+     "techo": 77.8
+    },
+    "REC": {
+     "piso": 55.6,
+     "techo": 55.6
+    },
+    "RES": {
+     "piso": 33.3,
+     "techo": 33.3
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 56.7,
+    "techo": 56.7
+   },
+   "indice_verificado": {
+    "piso": 40.6,
+    "techo": 52.2
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 15.8,
+   "pct_sobre_fuentes_sin_contrastar": 28.1,
+   "indice_sin_direcciones_caidas": {
+    "piso": 56.4,
+    "techo": 56.4
+   },
+   "rango_posiciones_grilla": {
+    "min": 2,
+    "max": 3
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 12.5,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UAUT-01",
+      "R2-UAUT-02"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": true,
+     "nota_r2": "IA+D creado por Resolución VRIP 118/2020 y adscrito a Derecho."
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "No se localizó regla propia de Facultad."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 11.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UAUT-05",
+      "R2-UAUT-06"
+     ],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Usa herramientas de terceros; sin sistema propio desplegado."
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 3.3,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UAUT-07"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Convenio Legalfit: prácticas con automatización e IA."
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 17,
+    "techo": 17,
+    "nc": 0
+   }
+  },
+  {
+   "id": "ucentral",
+   "nombre": "Universidad Central de Chile",
+   "nombre_corto": "U. Central de Chile",
+   "sigla": "U. Central",
+   "en_ranking": true,
+   "posicion": 2,
+   "indice": {
+    "piso": 59.2,
+    "techo": 59.2,
+    "piso18": 1065,
+    "techo18": 1065
+   },
+   "tiene_banda": false,
+   "subindices": {
+    "GOB": {
+     "piso": 83.3,
+     "techo": 83.3
+    },
+    "DOC": {
+     "piso": 66.7,
+     "techo": 66.7
+    },
+    "REC": {
+     "piso": 44.4,
+     "techo": 44.4
+    },
+    "RES": {
+     "piso": 33.3,
+     "techo": 33.3
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 56.7,
+    "techo": 56.7
+   },
+   "indice_verificado": {
+    "piso": 31.1,
+    "techo": 55
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 28.1,
+   "pct_sobre_fuentes_sin_contrastar": 47.4,
+   "indice_sin_direcciones_caidas": {
+    "piso": 46.7,
+    "techo": 55
+   },
+   "rango_posiciones_grilla": {
+    "min": 2,
+    "max": 3
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 12.5,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UCEN-01"
+     ],
+     "sin_contrastar": true,
+     "url_caida": true,
+     "escaneada": false,
+     "nota_r2": "Resolución 13/2025 del decano aprueba instructivo de uso académico de IA."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UCEN-03"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Academia y Laboratorio LegalTech selecciona desde segundo año."
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UCEN-03"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Ciclos semestrales, mentoring y certificación."
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 3.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 3.3,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UCEN-02"
+     ],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Convenio con la Cámara de Comercio de Sevilla para IA y LegalTech."
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 17,
+    "techo": 17,
+    "nc": 0
+   }
+  },
+  {
+   "id": "uchile",
+   "nombre": "Universidad de Chile",
+   "nombre_corto": "U. de Chile",
+   "sigla": "U. de Chile",
+   "en_ranking": true,
+   "posicion": 4,
+   "indice": {
+    "piso": 39.2,
+    "techo": 46.9,
+    "piso18": 705,
+    "techo18": 845
+   },
+   "tiene_banda": true,
+   "subindices": {
+    "GOB": {
+     "piso": 50,
+     "techo": 50
+    },
+    "DOC": {
+     "piso": 33.3,
+     "techo": 55.6
+    },
+    "REC": {
+     "piso": 44.4,
+     "techo": 44.4
+    },
+    "RES": {
+     "piso": 33.3,
+     "techo": 33.3
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 40,
+    "techo": 46.7
+   },
+   "indice_verificado": {
+    "piso": 39.2,
+    "techo": 46.9
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 0,
+   "pct_sobre_fuentes_sin_contrastar": 0,
+   "indice_sin_direcciones_caidas": {
+    "piso": 39.2,
+    "techo": 46.9
+   },
+   "rango_posiciones_grilla": {
+    "min": 4,
+    "max": 6
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 4.2,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "NC",
+     "estado_nombre": "No concluyente",
+     "puntos": null,
+     "aporte_al_indice": null,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "OPF",
+     "estado_nombre": "En operación con instrumento formal",
+     "puntos": 3,
+     "aporte_al_indice": 5,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 12,
+    "techo": 14,
+    "nc": 1
+   }
+  },
+  {
+   "id": "udec",
+   "nombre": "Universidad de Concepción",
+   "nombre_corto": "U. de Concepción",
+   "sigla": "UdeC",
+   "en_ranking": true,
+   "posicion": 9,
+   "indice": {
+    "piso": 15.3,
+    "techo": 23.1,
+    "piso18": 275,
+    "techo18": 415
+   },
+   "tiene_banda": true,
+   "subindices": {
+    "GOB": {
+     "piso": 0,
+     "techo": 0
+    },
+    "DOC": {
+     "piso": 22.2,
+     "techo": 44.4
+    },
+    "REC": {
+     "piso": 22.2,
+     "techo": 22.2
+    },
+    "RES": {
+     "piso": 16.7,
+     "techo": 16.7
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 16.7,
+    "techo": 23.3
+   },
+   "indice_verificado": {
+    "piso": 15.3,
+    "techo": 23.1
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 0,
+   "pct_sobre_fuentes_sin_contrastar": 0,
+   "indice_sin_direcciones_caidas": {
+    "piso": 15.3,
+    "techo": 23.1
+   },
+   "rango_posiciones_grilla": {
+    "min": 8,
+    "max": 10
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Se localizaron actividades, no una unidad especializada."
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "No se localizó instrumento propio de Facultad."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "NC",
+     "estado_nombre": "No concluyente",
+     "puntos": null,
+     "aporte_al_indice": null,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 4.2,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 5,
+    "techo": 7,
+    "nc": 1
+   }
+  },
+  {
+   "id": "uandes",
+   "nombre": "Universidad de los Andes",
+   "nombre_corto": "U. de los Andes",
+   "sigla": "U. de los Andes",
+   "en_ranking": true,
+   "posicion": 10,
+   "indice": {
+    "piso": 12.8,
+    "techo": 28.3,
+    "piso18": 230,
+    "techo18": 510
+   },
+   "tiene_banda": true,
+   "subindices": {
+    "GOB": {
+     "piso": 0,
+     "techo": 0
+    },
+    "DOC": {
+     "piso": 22.2,
+     "techo": 66.7
+    },
+    "REC": {
+     "piso": 33.3,
+     "techo": 33.3
+    },
+    "RES": {
+     "piso": 0,
+     "techo": 0
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 16.7,
+    "techo": 30
+   },
+   "indice_verificado": {
+    "piso": 12.8,
+    "techo": 28.3
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 0,
+   "pct_sobre_fuentes_sin_contrastar": 0,
+   "indice_sin_direcciones_caidas": {
+    "piso": 12.8,
+    "techo": 28.3
+   },
+   "rango_posiciones_grilla": {
+    "min": 9,
+    "max": 10
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "No se localizó unidad de IA o LegalTech dependiente de Derecho."
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "No se localizó norma propia de Derecho."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "NC",
+     "estado_nombre": "No concluyente",
+     "puntos": null,
+     "aporte_al_indice": null,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "NC",
+     "estado_nombre": "No concluyente",
+     "puntos": null,
+     "aporte_al_indice": null,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 5,
+    "techo": 9,
+    "nc": 2
+   }
+  },
+  {
+   "id": "udd",
+   "nombre": "Universidad del Desarrollo",
+   "nombre_corto": "U. del Desarrollo",
+   "sigla": "UDD",
+   "en_ranking": true,
+   "posicion": 8,
+   "indice": {
+    "piso": 27.5,
+    "techo": 35.3,
+    "piso18": 495,
+    "techo18": 635
+   },
+   "tiene_banda": true,
+   "subindices": {
+    "GOB": {
+     "piso": 50,
+     "techo": 50
+    },
+    "DOC": {
+     "piso": 33.3,
+     "techo": 55.6
+    },
+    "REC": {
+     "piso": 22.2,
+     "techo": 22.2
+    },
+    "RES": {
+     "piso": 0,
+     "techo": 0
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 26.7,
+    "techo": 33.3
+   },
+   "indice_verificado": {
+    "piso": 7.2,
+    "techo": 39.4
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 20.3,
+   "pct_sobre_fuentes_sin_contrastar": 73.7,
+   "indice_sin_direcciones_caidas": {
+    "piso": 19.7,
+    "techo": 35.3
+   },
+   "rango_posiciones_grilla": {
+    "min": 5,
+    "max": 9
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UDD-01"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Observatorio de Derecho y Tecnología, dependiente de un centro de Facultad."
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 4.2,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UDD-04"
+     ],
+     "sin_contrastar": true,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Política y reglamento de la universidad, no de Derecho."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 7.8,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UDD-02",
+      "R2-UDD-03"
+     ],
+     "sin_contrastar": true,
+     "url_caida": true,
+     "escaneada": false,
+     "nota_r2": "II Versión del curso de IA para Abogados en 2026: continuidad verificable."
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "NC",
+     "estado_nombre": "No concluyente",
+     "puntos": null,
+     "aporte_al_indice": null,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "ENT",
+     "estado_nombre": "Solo en el entorno institucional",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 8,
+    "techo": 10,
+    "nc": 1
+   }
+  },
+  {
+   "id": "udp",
+   "nombre": "Universidad Diego Portales",
+   "nombre_corto": "U. Diego Portales",
+   "sigla": "UDP",
+   "en_ranking": true,
+   "posicion": 7,
+   "indice": {
+    "piso": 30,
+    "techo": 30,
+    "piso18": 540,
+    "techo18": 540
+   },
+   "tiene_banda": false,
+   "subindices": {
+    "GOB": {
+     "piso": 33.3,
+     "techo": 33.3
+    },
+    "DOC": {
+     "piso": 33.3,
+     "techo": 33.3
+    },
+    "REC": {
+     "piso": 11.1,
+     "techo": 11.1
+    },
+    "RES": {
+     "piso": 33.3,
+     "techo": 33.3
+    }
+   },
+   "indice_pesos_iguales": {
+    "piso": 26.7,
+    "techo": 26.7
+   },
+   "indice_verificado": {
+    "piso": 30,
+    "techo": 30
+   },
+   "puntos_sobre_fuentes_sin_contrastar": 0,
+   "pct_sobre_fuentes_sin_contrastar": 0,
+   "indice_sin_direcciones_caidas": {
+    "piso": 30,
+    "techo": 30
+   },
+   "rango_posiciones_grilla": {
+    "min": 5,
+    "max": 8
+   },
+   "celdas": [
+    {
+     "clave": "Unidad",
+     "capacidad": "Unidad especializada",
+     "dimension": "GOB",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Norma",
+     "capacidad": "Norma propia",
+     "dimension": "GOB",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UDP-02"
+     ],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Declara orientación al uso de IA; no se localizó norma publicada."
+    },
+    {
+     "clave": "Presencia",
+     "capacidad": "Presencia en pregrado",
+     "dimension": "DOC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Formacion",
+     "capacidad": "Formación estructurada",
+     "dimension": "DOC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UDP-02"
+     ],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Taller y curso anunciados; falta programa de ejecución."
+    },
+    {
+     "clave": "Herramienta",
+     "capacidad": "Herramienta desplegada",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "No se localizó sistema de IA de Facultad."
+    },
+    {
+     "clave": "Adopcion",
+     "capacidad": "Adopción en la enseñanza",
+     "dimension": "DOC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 3.9,
+     "cerrada_en_ronda2": true,
+     "fuentes_r2": [
+      "R2-UDP-02"
+     ],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": "Incorporación anunciada desde primer y penúltimo semestre; falta ejecución."
+    },
+    {
+     "clave": "Alcance",
+     "capacidad": "Alcance declarado",
+     "dimension": "RES",
+     "estado": "OP",
+     "estado_nombre": "En operación",
+     "puntos": 2,
+     "aporte_al_indice": 8.3,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Investigacion",
+     "capacidad": "Investigación",
+     "dimension": "REC",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Transferencia",
+     "capacidad": "Transferencia",
+     "dimension": "REC",
+     "estado": "INC",
+     "estado_nombre": "Incipiente",
+     "puntos": 1,
+     "aporte_al_indice": 1.7,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    },
+    {
+     "clave": "Evaluacion",
+     "capacidad": "Evaluación de efecto",
+     "dimension": "RES",
+     "estado": "NL",
+     "estado_nombre": "No localizada",
+     "puntos": 0,
+     "aporte_al_indice": 0,
+     "cerrada_en_ronda2": false,
+     "fuentes_r2": [],
+     "sin_contrastar": false,
+     "url_caida": false,
+     "escaneada": false,
+     "nota_r2": null
+    }
+   ],
+   "indice_simple": {
+    "piso": 8,
+    "techo": 8,
+    "nc": 0
+   }
+  }
+ ],
+ "ranking": [
+  {
+   "posicion": 1,
+   "nombre_corto": "P. U. Católica de Chile",
+   "sigla": "UC",
+   "piso": 68.9,
+   "techo": 68.9
+  },
+  {
+   "posicion": 2,
+   "nombre_corto": "U. Central de Chile",
+   "sigla": "U. Central",
+   "piso": 59.2,
+   "techo": 59.2
+  },
+  {
+   "posicion": 3,
+   "nombre_corto": "U. Autónoma de Chile",
+   "sigla": "U. Autónoma",
+   "piso": 56.4,
+   "techo": 56.4
+  },
+  {
+   "posicion": 4,
+   "nombre_corto": "U. de Chile",
+   "sigla": "U. de Chile",
+   "piso": 39.2,
+   "techo": 46.9
+  },
+  {
+   "posicion": 5,
+   "nombre_corto": "U. Andrés Bello",
+   "sigla": "UNAB",
+   "piso": 34.7,
+   "techo": 34.7
+  },
+  {
+   "posicion": 6,
+   "nombre_corto": "U. Adolfo Ibáñez",
+   "sigla": "UAI",
+   "piso": 34.2,
+   "techo": 34.2
+  },
+  {
+   "posicion": 7,
+   "nombre_corto": "U. Diego Portales",
+   "sigla": "UDP",
+   "piso": 30,
+   "techo": 30
+  },
+  {
+   "posicion": 8,
+   "nombre_corto": "U. del Desarrollo",
+   "sigla": "UDD",
+   "piso": 27.5,
+   "techo": 35.3
+  },
+  {
+   "posicion": 9,
+   "nombre_corto": "U. de Concepción",
+   "sigla": "UdeC",
+   "piso": 15.3,
+   "techo": 23.1
+  },
+  {
+   "posicion": 10,
+   "nombre_corto": "U. de los Andes",
+   "sigla": "U. de los Andes",
+   "piso": 12.8,
+   "techo": 28.3
+  }
+ ],
+ "empates": [],
+ "solapes": [
+  [
+   "U. Andrés Bello",
+   "U. del Desarrollo"
+  ],
+  [
+   "U. Adolfo Ibáñez",
+   "U. del Desarrollo"
+  ],
+  [
+   "U. Diego Portales",
+   "U. del Desarrollo"
+  ],
+  [
+   "U. del Desarrollo",
+   "U. de los Andes"
+  ],
+  [
+   "U. de Concepción",
+   "U. de los Andes"
+  ]
+ ],
+ "campo": [
+  {
+   "dimension": "GOB",
+   "nombre": "Gobierno y reglas",
+   "piso": 40,
+   "techo": 40
+  },
+  {
+   "dimension": "DOC",
+   "nombre": "Docencia",
+   "piso": 47.8,
+   "techo": 58.9
+  },
+  {
+   "dimension": "REC",
+   "nombre": "Recursos, investigación y vínculo",
+   "piso": 37.8,
+   "techo": 37.8
+  },
+  {
+   "dimension": "RES",
+   "nombre": "Alcance y efecto",
+   "piso": 21.7,
+   "techo": 21.7
+  }
+ ],
+ "distribucion_capacidades": [
+  {
+   "clave": "Unidad",
+   "capacidad": "Unidad especializada",
+   "dimension": "GOB",
+   "conteo": {
+    "OPF": 2,
+    "OP": 4,
+    "INC": 0,
+    "ENT": 0,
+    "ADY": 1,
+    "NL": 3,
+    "NC": 0
+   }
+  },
+  {
+   "clave": "Norma",
+   "capacidad": "Norma propia",
+   "dimension": "GOB",
+   "conteo": {
+    "OPF": 2,
+    "OP": 0,
+    "INC": 0,
+    "ENT": 3,
+    "ADY": 0,
+    "NL": 5,
+    "NC": 0
+   }
+  },
+  {
+   "clave": "Presencia",
+   "capacidad": "Presencia en pregrado",
+   "dimension": "DOC",
+   "conteo": {
+    "OPF": 0,
+    "OP": 5,
+    "INC": 2,
+    "ENT": 0,
+    "ADY": 0,
+    "NL": 0,
+    "NC": 3
+   }
+  },
+  {
+   "clave": "Formacion",
+   "capacidad": "Formación estructurada",
+   "dimension": "DOC",
+   "conteo": {
+    "OPF": 1,
+    "OP": 6,
+    "INC": 3,
+    "ENT": 0,
+    "ADY": 0,
+    "NL": 0,
+    "NC": 0
+   }
+  },
+  {
+   "clave": "Herramienta",
+   "capacidad": "Herramienta desplegada",
+   "dimension": "REC",
+   "conteo": {
+    "OPF": 0,
+    "OP": 2,
+    "INC": 0,
+    "ENT": 4,
+    "ADY": 0,
+    "NL": 4,
+    "NC": 0
+   }
+  },
+  {
+   "clave": "Adopcion",
+   "capacidad": "Adopción en la enseñanza",
+   "dimension": "DOC",
+   "conteo": {
+    "OPF": 1,
+    "OP": 3,
+    "INC": 2,
+    "ENT": 2,
+    "ADY": 0,
+    "NL": 0,
+    "NC": 2
+   }
+  },
+  {
+   "clave": "Alcance",
+   "capacidad": "Alcance declarado",
+   "dimension": "RES",
+   "conteo": {
+    "OPF": 0,
+    "OP": 6,
+    "INC": 0,
+    "ENT": 1,
+    "ADY": 0,
+    "NL": 3,
+    "NC": 0
+   }
+  },
+  {
+   "clave": "Investigacion",
+   "capacidad": "Investigación",
+   "dimension": "REC",
+   "conteo": {
+    "OPF": 4,
+    "OP": 0,
+    "INC": 0,
+    "ENT": 1,
+    "ADY": 0,
+    "NL": 5,
+    "NC": 0
+   }
+  },
+  {
+   "clave": "Transferencia",
+   "capacidad": "Transferencia",
+   "dimension": "REC",
+   "conteo": {
+    "OPF": 0,
+    "OP": 3,
+    "INC": 6,
+    "ENT": 1,
+    "ADY": 0,
+    "NL": 0,
+    "NC": 0
+   }
+  },
+  {
+   "clave": "Evaluacion",
+   "capacidad": "Evaluación de efecto",
+   "dimension": "RES",
+   "conteo": {
+    "OPF": 0,
+    "OP": 0,
+    "INC": 0,
+    "ENT": 0,
+    "ADY": 0,
+    "NL": 10,
+    "NC": 0
+   }
+  }
+ ],
+ "ronda2": {
+  "cierres": 26,
+  "cierres_sin_contrastar": 13,
+  "puntos_rubrica_sin_contrastar": 25,
+  "cierres_con_direccion_caida": 3,
+  "puntos_rubrica_con_direccion_caida": 7
+ },
+ "sensibilidad": {
+  "escenarios": [
+   {
+    "id": "E1",
+    "descripcion": "Pesos iguales por capacidad (equivale al índice de 30 puntos de la v3.2.0 llevado a 0-100)",
+    "ranking": [
+     {
+      "nombre_corto": "P. U. Católica de Chile",
+      "piso": 66.7,
+      "techo": 66.7,
+      "posicion": 1
+     },
+     {
+      "nombre_corto": "U. Autónoma de Chile",
+      "piso": 56.7,
+      "techo": 56.7,
+      "posicion": 2
+     },
+     {
+      "nombre_corto": "U. Central de Chile",
+      "piso": 56.7,
+      "techo": 56.7,
+      "posicion": 2
+     },
+     {
+      "nombre_corto": "U. de Chile",
+      "piso": 40,
+      "techo": 46.7,
+      "posicion": 4
+     },
+     {
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "piso": 36.7,
+      "techo": 36.7,
+      "posicion": 5
+     },
+     {
+      "nombre_corto": "U. Andrés Bello",
+      "piso": 36.7,
+      "techo": 36.7,
+      "posicion": 5
+     },
+     {
+      "nombre_corto": "U. del Desarrollo",
+      "piso": 26.7,
+      "techo": 33.3,
+      "posicion": 7
+     },
+     {
+      "nombre_corto": "U. Diego Portales",
+      "piso": 26.7,
+      "techo": 26.7,
+      "posicion": 7
+     },
+     {
+      "nombre_corto": "U. de los Andes",
+      "piso": 16.7,
+      "techo": 30,
+      "posicion": 9
+     },
+     {
+      "nombre_corto": "U. de Concepción",
+      "piso": 16.7,
+      "techo": 23.3,
+      "posicion": 9
+     }
+    ],
+    "cambios": [
+     {
+      "nombre_corto": "U. Autónoma de Chile",
+      "de": 3,
+      "a": 2
+     },
+     {
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "de": 6,
+      "a": 5
+     },
+     {
+      "nombre_corto": "U. del Desarrollo",
+      "de": 8,
+      "a": 7
+     },
+     {
+      "nombre_corto": "U. de los Andes",
+      "de": 10,
+      "a": 9
+     }
+    ],
+    "spearman": 0.988,
+    "pucv": {
+     "piso": 60,
+     "techo": 60
+    }
+   },
+   {
+    "id": "E2",
+    "descripcion": "Criterio alternativo de pesos: compromiso institucional (Gobierno 35, Docencia 25, Recursos 15, Alcance y efecto 25)",
+    "ranking": [
+     {
+      "nombre_corto": "P. U. Católica de Chile",
+      "piso": 71.1,
+      "techo": 71.1,
+      "posicion": 1
+     },
+     {
+      "nombre_corto": "U. Central de Chile",
+      "piso": 60.8,
+      "techo": 60.8,
+      "posicion": 2
+     },
+     {
+      "nombre_corto": "U. Autónoma de Chile",
+      "piso": 53.6,
+      "techo": 53.6,
+      "posicion": 3
+     },
+     {
+      "nombre_corto": "U. de Chile",
+      "piso": 40.8,
+      "techo": 46.4,
+      "posicion": 4
+     },
+     {
+      "nombre_corto": "U. Andrés Bello",
+      "piso": 31.9,
+      "techo": 31.9,
+      "posicion": 5
+     },
+     {
+      "nombre_corto": "U. Diego Portales",
+      "piso": 30,
+      "techo": 30,
+      "posicion": 6
+     },
+     {
+      "nombre_corto": "U. del Desarrollo",
+      "piso": 29.2,
+      "techo": 34.7,
+      "posicion": 7
+     },
+     {
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "piso": 29.2,
+      "techo": 29.2,
+      "posicion": 7
+     },
+     {
+      "nombre_corto": "U. de Concepción",
+      "piso": 13.1,
+      "techo": 18.6,
+      "posicion": 9
+     },
+     {
+      "nombre_corto": "U. de los Andes",
+      "piso": 10.6,
+      "techo": 21.7,
+      "posicion": 10
+     }
+    ],
+    "cambios": [
+     {
+      "nombre_corto": "U. Diego Portales",
+      "de": 7,
+      "a": 6
+     },
+     {
+      "nombre_corto": "U. del Desarrollo",
+      "de": 8,
+      "a": 7
+     },
+     {
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "de": 6,
+      "a": 7
+     }
+    ],
+    "spearman": 0.979,
+    "pucv": {
+     "piso": 53.1,
+     "techo": 53.1
+    }
+   },
+   {
+    "id": "E3",
+    "descripcion": "Las tres direcciones que hoy devuelven error dejan de contar (R2-UCEN-01, R2-UC-01, R2-UDD-02)",
+    "ranking": [
+     {
+      "nombre_corto": "P. U. Católica de Chile",
+      "piso": 61.1,
+      "techo": 68.9,
+      "posicion": 1
+     },
+     {
+      "nombre_corto": "U. Autónoma de Chile",
+      "piso": 56.4,
+      "techo": 56.4,
+      "posicion": 2
+     },
+     {
+      "nombre_corto": "U. Central de Chile",
+      "piso": 46.7,
+      "techo": 55,
+      "posicion": 3
+     },
+     {
+      "nombre_corto": "U. de Chile",
+      "piso": 39.2,
+      "techo": 46.9,
+      "posicion": 4
+     },
+     {
+      "nombre_corto": "U. Andrés Bello",
+      "piso": 34.7,
+      "techo": 34.7,
+      "posicion": 5
+     },
+     {
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "piso": 34.2,
+      "techo": 34.2,
+      "posicion": 6
+     },
+     {
+      "nombre_corto": "U. Diego Portales",
+      "piso": 30,
+      "techo": 30,
+      "posicion": 7
+     },
+     {
+      "nombre_corto": "U. del Desarrollo",
+      "piso": 19.7,
+      "techo": 35.3,
+      "posicion": 8
+     },
+     {
+      "nombre_corto": "U. de Concepción",
+      "piso": 15.3,
+      "techo": 23.1,
+      "posicion": 9
+     },
+     {
+      "nombre_corto": "U. de los Andes",
+      "piso": 12.8,
+      "techo": 28.3,
+      "posicion": 10
+     }
+    ],
+    "cambios": [
+     {
+      "nombre_corto": "U. Autónoma de Chile",
+      "de": 3,
+      "a": 2
+     },
+     {
+      "nombre_corto": "U. Central de Chile",
+      "de": 2,
+      "a": 3
+     }
+    ],
+    "spearman": 0.988,
+    "pucv": {
+     "piso": 53.6,
+     "techo": 53.6
+    }
+   },
+   {
+    "id": "E4",
+    "descripcion": "Todas las celdas cerradas con fuentes de la ronda 2 sin contraste dejan de contar",
+    "ranking": [
+     {
+      "nombre_corto": "P. U. Católica de Chile",
+      "piso": 61.1,
+      "techo": 68.9,
+      "posicion": 1
+     },
+     {
+      "nombre_corto": "U. Autónoma de Chile",
+      "piso": 40.6,
+      "techo": 52.2,
+      "posicion": 2
+     },
+     {
+      "nombre_corto": "U. de Chile",
+      "piso": 39.2,
+      "techo": 46.9,
+      "posicion": 3
+     },
+     {
+      "nombre_corto": "U. Central de Chile",
+      "piso": 31.1,
+      "techo": 55,
+      "posicion": 4
+     },
+     {
+      "nombre_corto": "U. Andrés Bello",
+      "piso": 30.6,
+      "techo": 38.9,
+      "posicion": 5
+     },
+     {
+      "nombre_corto": "U. Diego Portales",
+      "piso": 30,
+      "techo": 30,
+      "posicion": 6
+     },
+     {
+      "nombre_corto": "U. de Concepción",
+      "piso": 15.3,
+      "techo": 23.1,
+      "posicion": 7
+     },
+     {
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "piso": 14.4,
+      "techo": 38.3,
+      "posicion": 8
+     },
+     {
+      "nombre_corto": "U. de los Andes",
+      "piso": 12.8,
+      "techo": 28.3,
+      "posicion": 9
+     },
+     {
+      "nombre_corto": "U. del Desarrollo",
+      "piso": 7.2,
+      "techo": 39.4,
+      "posicion": 10
+     }
+    ],
+    "cambios": [
+     {
+      "nombre_corto": "U. Autónoma de Chile",
+      "de": 3,
+      "a": 2
+     },
+     {
+      "nombre_corto": "U. de Chile",
+      "de": 4,
+      "a": 3
+     },
+     {
+      "nombre_corto": "U. Central de Chile",
+      "de": 2,
+      "a": 4
+     },
+     {
+      "nombre_corto": "U. Diego Portales",
+      "de": 7,
+      "a": 6
+     },
+     {
+      "nombre_corto": "U. de Concepción",
+      "de": 9,
+      "a": 7
+     },
+     {
+      "nombre_corto": "U. Adolfo Ibáñez",
+      "de": 6,
+      "a": 8
+     },
+     {
+      "nombre_corto": "U. de los Andes",
+      "de": 10,
+      "a": 9
+     },
+     {
+      "nombre_corto": "U. del Desarrollo",
+      "de": 8,
+      "a": 10
+     }
+    ],
+    "spearman": 0.879,
+    "pucv": {
+     "piso": 53.6,
+     "techo": 53.6
+    }
+   }
+  ],
+  "grilla": {
+   "vectores": 231,
+   "descripcion": "Toda combinación de pesos en múltiplos de 5, con cada dimensión entre 10 y 40 y suma 100.",
+   "mismas_tres_primeras": 231,
+   "mismo_primer_lugar": 231,
+   "orden_identico": 26,
+   "rangos": {
+    "P. U. Católica de Chile": {
+     "min": 1,
+     "max": 1
+    },
+    "U. Central de Chile": {
+     "min": 2,
+     "max": 3
+    },
+    "U. Autónoma de Chile": {
+     "min": 2,
+     "max": 3
+    },
+    "U. de Chile": {
+     "min": 4,
+     "max": 6
+    },
+    "U. Andrés Bello": {
+     "min": 4,
+     "max": 7
+    },
+    "U. Adolfo Ibáñez": {
+     "min": 4,
+     "max": 8
+    },
+    "U. Diego Portales": {
+     "min": 5,
+     "max": 8
+    },
+    "U. del Desarrollo": {
+     "min": 5,
+     "max": 9
+    },
+    "U. de Concepción": {
+     "min": 8,
+     "max": 10
+    },
+    "U. de los Andes": {
+     "min": 9,
+     "max": 10
+    }
+   }
+  }
+ },
+ "validacion": {
+  "indice_simple_reproduce_v320": true,
+  "orden_identico_con_pesos_iguales": true,
+  "detalle": [
+   {
+    "institucion": "P. U. Católica de Chile",
+    "piso30": 20,
+    "techo30": 20,
+    "iguales_0a100": [
+     66.7,
+     66.7
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "P. U. Católica de Valparaíso",
+    "piso30": 18,
+    "techo30": 18,
+    "iguales_0a100": [
+     60,
+     60
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. Adolfo Ibáñez",
+    "piso30": 11,
+    "techo30": 11,
+    "iguales_0a100": [
+     36.7,
+     36.7
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. Andrés Bello",
+    "piso30": 11,
+    "techo30": 11,
+    "iguales_0a100": [
+     36.7,
+     36.7
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. Autónoma de Chile",
+    "piso30": 17,
+    "techo30": 17,
+    "iguales_0a100": [
+     56.7,
+     56.7
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. Central de Chile",
+    "piso30": 17,
+    "techo30": 17,
+    "iguales_0a100": [
+     56.7,
+     56.7
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. de Chile",
+    "piso30": 12,
+    "techo30": 14,
+    "iguales_0a100": [
+     40,
+     46.7
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. de Concepción",
+    "piso30": 5,
+    "techo30": 7,
+    "iguales_0a100": [
+     16.7,
+     23.3
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. de los Andes",
+    "piso30": 5,
+    "techo30": 9,
+    "iguales_0a100": [
+     16.7,
+     30
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. del Desarrollo",
+    "piso30": 8,
+    "techo30": 10,
+    "iguales_0a100": [
+     26.7,
+     33.3
+    ],
+    "coincide": true
+   },
+   {
+    "institucion": "U. Diego Portales",
+    "piso30": 8,
+    "techo30": 8,
+    "iguales_0a100": [
+     26.7,
+     26.7
+    ],
+    "coincide": true
+   }
+  ]
+ }
+}

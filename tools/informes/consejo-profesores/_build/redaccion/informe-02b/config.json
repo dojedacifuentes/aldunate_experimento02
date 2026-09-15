@@ -1,0 +1,32 @@
+{
+  "salida": "../../salida/Informe-02b-Transformacion-ensenanza-Consejo.docx",
+  "titulo": "Informe sobre la transformación de la enseñanza universitaria ante la inteligencia artificial",
+  "subtitulo": "Edición 2026",
+  "encabezado": "Transformación de la enseñanza ante la inteligencia artificial · 2026",
+  "institucion": "Escuela de Derecho · Pontificia Universidad Católica de Valparaíso",
+  "unidad": "Documento de trabajo para el Consejo de Profesores",
+  "preparado_para": "Preparado para la Dirección de la Escuela de Derecho",
+  "autor": "Diego Hernán Ojeda Cifuentes",
+  "autor_titulo": "Licenciado en Ciencias Jurídicas",
+  "lugar_fecha": "Valparaíso, septiembre de 2026",
+  "figuras": "../../figuras/informe-02b",
+  "sangria_francesa": ["09-referencias.md"],
+  "cuerpo": [
+    "00-resumen.md",
+    "01-objetivos.md",
+    "02-metodologia.md",
+    "03-fichas-a.md",
+    "03-fichas-b.md",
+    "04-mapa-internacional.md",
+    "05-evidencia-aprendizaje.md",
+    "06-derecho.md",
+    "07-mapeo.md",
+    "08-conclusiones.md",
+    "09-referencias.md"
+  ],
+  "anexos": [
+    "A-metodologia-tecnica.md",
+    "B-matriz-y-niveles.md",
+    "C-uso-de-ia.md"
+  ]
+}

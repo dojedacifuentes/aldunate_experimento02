@@ -35,3 +35,7 @@ npm-debug.log*
 /.npm-cache/
 dist/
 .tmp/
+
+# cadena de informes del Consejo de Profesores
+/tools/informes/consejo-profesores/_build/node_modules
+/tools/informes/consejo-profesores/_build/prueba

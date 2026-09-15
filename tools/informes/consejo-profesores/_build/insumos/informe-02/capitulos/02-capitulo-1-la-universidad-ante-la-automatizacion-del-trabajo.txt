@@ -1,0 +1,48 @@
+
+# Capítulo 1 · La universidad ante la automatización del trabajo cognitivo
+
+Antes de examinar qué han hecho las universidades conviene precisar por qué esta tecnología plantea un problema distinto del que plantearon el aula virtual, los MOOC o la pizarra digital. La respuesta no está en su potencia sino en su ubicación: opera dentro de la tarea evaluada, no alrededor de ella.
+
+
+## 1.1 Qué distingue a la IA generativa de las tecnologías educativas anteriores
+
+Las tecnologías educativas de las tres décadas anteriores modificaban el **entorno** del aprendizaje: dónde ocurría (educación a distancia), con qué materiales (repositorios digitales), en qué formato (multimedia), a qué escala (MOOC) o con qué administración (plataformas de gestión del aprendizaje). Ninguna intervenía en el acto cognitivo mismo. Un estudiante con acceso a la mejor biblioteca digital del mundo seguía teniendo que leer, comprender, seleccionar, ordenar y redactar.
+
+La IA generativa hace exactamente eso: lee, comprende en un sentido funcional, selecciona, ordena y redacta. No amplía el entorno del trabajo intelectual; **ejecuta el trabajo intelectual**. Y lo hace a un coste marginal cercano a cero, con disponibilidad permanente y sin dejar rastro externo.
+
+De ahí se siguen tres consecuencias que ninguna tecnología educativa anterior tuvo:
+
+- **Es indistinguible en el producto.** El resultado de la asistencia no es reconocible en el objeto entregado, a diferencia de una calculadora, un corrector ortográfico o una traducción automática de generación anterior.
+- **Es de propósito general.** Un mismo sistema opera sobre la redacción jurídica, la depuración de código, el análisis estadístico, la revisión bibliográfica y el diseño de un experimento. No hay disciplina protegida por su especificidad técnica.
+- **Es simultáneamente herramienta de aprendizaje y sustituto del aprendizaje.** Puede explicar un concepto hasta que se entienda, o puede producir el trabajo que demostraría que se entendió. La misma interfaz sirve para las dos cosas y la institución no puede saber cuál ocurrió.
+
+[RECUADRO: El punto que suele omitirse] La discusión pública se ha centrado en si la IA «hace trampa». Es una formulación pobre. El problema real es que la universidad certificaba capacidades a partir de productos, y ese vínculo se ha roto de manera general —no solo para quien quiere engañar—. Un estudiante honesto que usa IA de forma declarada y razonable también entrega un producto que ya no informa sobre lo que sabe hacer sin ella. La integridad académica es un subconjunto del problema; el problema es la validez.
+
+
+## 1.2 Las cuatro funciones universitarias bajo presión
+
+La universidad contemporánea cumple funciones que suelen analizarse por separado pero que la IA generativa presiona a la vez.
+
+[TABLA] Tabla 2. Funciones universitarias y grado de presión ejercido por la disponibilidad general de IA generativa. Elaboración propia a partir de la evidencia recogida en este informe.
+| Función | En qué consiste | Presión | Naturaleza de la presión |
+| **Formación** | Desarrollar capacidades que el estudiante no tenía | Alta | La misma herramienta puede desarrollar la capacidad o sustituirla. El resultado depende del diseño de la tarea, no de la tecnología. |
+| **Certificación** | Garantizar ante terceros que el titulado sabe hacer algo | Muy alta | El producto dejó de ser prueba. Es la función más dañada y la que explica casi toda la reforma observada. |
+| **Señalización** | Ofrecer al mercado una señal fiable de capacidad escasa | Alta | Si la capacidad certificada deja de ser escasa, la señal pierde valor. Los datos de empleo juvenil sugieren que esto ya ocurre en ciertas ocupaciones. |
+| **Producción de conocimiento** | Investigar y publicar | Media | Aumenta la productividad aparente y también el volumen de literatura de baja calidad. La evidencia es todavía preliminar. |
+| **Socialización** | Formar criterio, comunidad y responsabilidad profesional | Baja | Es la función menos sustituible y, previsiblemente, la que más valor relativo gana. |
+
+
+## 1.3 Cinco profundidades: la escala que ordena todo el informe
+
+La confusión más extendida en este campo consiste en llamar transformación a la compra de licencias. Para evitarla, cada institución y cada iniciativa de este informe se sitúa en una escala de seis niveles.
+
+[TABLA] Tabla 3. Escala de profundidad de la transformación institucional. Se emplea de forma sistemática en la matriz comparada del capítulo 17 y en la figura 10.
+| Nivel | Denominación | Qué ocurre realmente | Señal que lo distingue |
+| **0** | Ausencia o restricción | La IA está prohibida, bloqueada o simplemente no existe política. | Reglamento que la prohíbe, o silencio institucional. |
+| **1** | Herramienta | Se autoriza o se provee acceso sin cambiar nada más. | Hay contrato de licencia y no hay documento pedagógico. |
+| **2** | Política y alfabetización | Se emiten normas de uso, cláusulas de syllabus y formación básica. | Existe una política citable y un plan de formación. |
+| **3** | Integración pedagógica | Cambian efectivamente actividades, tareas o instrumentos de evaluación. | Los programas de asignatura de este año difieren de los de 2022. |
+| **4** | Transformación curricular | Cambian perfiles de egreso, resultados de aprendizaje o estructura curricular. | Un documento de gobierno académico aprobó competencias nuevas. |
+| **5** | Transformación sistémica | Cambian de forma coordinada currículo, evaluación, docencia, competencias, infraestructura y gobernanza. | Ninguna institución de la muestra alcanza este nivel en todas las dimensiones. |
+
+[RECUADRO: Resultado adelantado] En la muestra de nueve instituciones analizadas en profundidad, ninguna alcanza el nivel 5 en el conjunto de las dimensiones. La institución más avanzada en evaluación —la University of Sydney— está en nivel 3 en currículo. La más avanzada en currículo —Ohio State— está en nivel 2 en evaluación. La que más ha invertido en infraestructura —California State University— está en nivel 1 en evaluación. La transformación observada es real, pero es parcial por diseño o por omisión, no por etapa de un proceso que vaya a completarse solo.

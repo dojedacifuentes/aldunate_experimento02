@@ -1,0 +1,948 @@
+{
+  "meta": {
+    "documento": "Documento B, parte a: base de evidencia",
+    "origen": "La universidad ante la automatización del trabajo cognitivo, v0.3.0 (informe-02-v0.3.0.txt; contenido-01 a 04c.json; resumen-01.json; corpus-de-evidencia.md; Graficos.ps1)",
+    "alcance": "Nota preliminar, resumen ejecutivo y capítulos 1 a 12",
+    "estado": "BORRADOR: comprobación en origen en curso",
+    "fecha": "2026-09-13"
+  },
+  "capitulos": [
+    {
+      "numero_origen": "Nota preliminar",
+      "titulo_origen": "Cómo leer este informe",
+      "tema": "Reglas epistémicas, alcance del informe y la retractación de Wang y Fan como advertencia de humildad",
+      "afirmaciones": [
+        {
+          "id": "I02A-NP-01",
+          "texto": "En abril de 2026 la revista Humanities and Social Sciences Communications retractó el metaanálisis de Wang y Fan sobre el efecto de ChatGPT en el aprendizaje, que había acumulado 266 citas y cerca de 486.000 visualizaciones.",
+          "cifras": ["22-04-2026 (fecha de retractación, anexo C)", "266 citas", "≈ 486.000 visualizaciones", "g = 0,867 en rendimiento (corpus)", "k = 51 estudios, nov. 2022 a feb. 2025 (corpus)"],
+          "poblacion_contexto": "Metaanálisis de estudios sobre estudiantes; el informe no precisa niveles educativos",
+          "diseno": "otro: metaanálisis (retractado)",
+          "etiqueta_origen": "E-14 · A · D4 · VERIFICADO (anexo B); el corpus lo marca CONTROVERTIDO → NO_DEMOSTRADO",
+          "fuente": {
+            "autores": "Wang, J. y Fan, W.",
+            "anio": "2025",
+            "titulo": "The effect of ChatGPT on students' learning performance, learning perception, and higher-order thinking: insights from a meta-analysis",
+            "revista_o_editor": "Humanities and Social Sciences Communications",
+            "volumen_paginas": "12, art. 621; nota de retractación en HSSC 13 (2026), doi 10.1057/s41599-026-07310-z",
+            "url_o_doi": "https://www.nature.com/articles/s41599-025-04787-y"
+          },
+          "comprobado_en_origen": false,
+          "advertencias": [
+            "No comprobado en origen en esta parte (fuera del límite de diez estudios). La fecha 22-04-2026 figura también entre los pendientes conocidos del proyecto.",
+            "Discrepancia entre insumos sobre el motivo: la nota preliminar dice que agrupaba estudios demasiado distintos en método y muestra; el corpus dice «Se documentaron errores sustantivos de extracción de datos y de análisis».",
+            "Discrepancia sobre la duración: la nota preliminar dice «Durante casi un año»; resumen-01.json dice «Durante once meses».",
+            "Las cifras de 266 citas y 486.000 visualizaciones no tienen fuente citada en el corpus de evidencia."
+          ]
+        },
+        {
+          "id": "I02A-NP-02",
+          "texto": "El informe declara cubrir once ejes, un mapa de treinta instituciones de diez países, seis estudios de caso, una matriz maestra de 38 hallazgos, una cronología de 17 hitos, tres escenarios 2026-2030 y ocho vacíos de investigación, sobre fuentes que describe como verificadas una a una entre 2022 y agosto de 2026.",
+          "cifras": ["11 ejes", "30 instituciones", "10 países", "6 estudios de caso", "38 hallazgos", "17 hitos", "3 escenarios", "8 vacíos"],
+          "poblacion_contexto": "Educación superior; casos escolares solo cuando el hallazgo es transferible (experimento de Bastani et al.)",
+          "diseno": "otro: declaración del propio informe",
+          "etiqueta_origen": "sin etiqueta en el informe",
+          "fuente": {
+            "autores": "Informe 02 (autor no consignado en los insumos leídos)",
+            "anio": "2026",
+            "titulo": "La universidad ante la automatización del trabajo cognitivo, v0.3.0",
+            "revista_o_editor": "Documento de trabajo, plataforma aldunate_experimento02",
+            "volumen_paginas": "Nota preliminar",
+            "url_o_doi": "FALTANTE"
+          },
+          "comprobado_en_origen": false,
+          "advertencias": [
+            "No hay protocolo de búsqueda declarado: el texto no puede presentarse como revisión sistemática.",
+            "Al 01-09-2026, 18 de 24 fuentes no tenían verificación individual. Eso contradice la fórmula «verificadas una a una» y la portada («Todas las fuentes verificadas individualmente · agosto de 2026»).",
+            "resumen-01.json repite «Todas las cifras proceden de fuentes verificadas individualmente»: no debe heredarse."
+          ]
+        },
+        {
+          "id": "I02A-NP-03",
+          "texto": "El informe clasifica sus hallazgos por tipo de fuente (A a F), nivel demostrativo (D1 existencia a D5 causalidad) y estado epistemológico; de los 38 hallazgos de su matriz maestra, 31 figuran como verificados, 3 como reportados, 2 como controvertidos y 2 como no demostrados, y solo 6 alcanzan el nivel D5.",
+          "cifras": ["38 hallazgos", "31 verificados", "3 reportados", "2 controvertidos", "2 no demostrados", "6 en D5 (E-10, E-11, E-12, E-13, E-15, E-16)"],
+          "poblacion_contexto": "Matriz maestra de evidencia del propio informe (anexo B)",
+          "diseno": "otro: clasificación propia del informe",
+          "etiqueta_origen": "anexo B, B.1 y callout final",
+          "fuente": {
+            "autores": "Informe 02",
+            "anio": "2026",
+            "titulo": "Anexo B. Matriz maestra de evidencia",
+            "revista_o_editor": "Documento de trabajo",
+            "volumen_paginas": "Anexo B",
+            "url_o_doi": "FALTANTE"
+          },
+          "comprobado_en_origen": false,
+          "advertencias": [
+            "Recuento comprobado contra la tabla del anexo B (contenido-07.json): coincide.",
+            "La etiqueta VERIFICADO del anexo B se asignó aunque, al 01-09-2026, 18 de 24 fuentes no tenían verificación individual.",
+            "Clasificación inconsistente: METR y Brynjolfsson et al. figuran como tipo A (revisada por pares) en el anexo B, pero el anexo C los lista en C.2 (organismos internacionales y públicos). Otis et al. es un Working Paper de la HBS y también figura como A."
+          ]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Resumen ejecutivo",
+      "titulo_origen": "Diez conclusiones y su grado de confianza",
+      "tema": "Las diez conclusiones del informe con su nivel de confianza declarado; se complementa con resumen-01.json",
+      "afirmaciones": [
+        {
+          "id": "I02A-RE-01",
+          "texto": "El 94 % de los estudiantes de grado británicos usa IA generativa para trabajos evaluados, y solo el 12 % inserta directamente texto generado en la entrega.",
+          "cifras": ["94 %", "12 %"],
+          "poblacion_contexto": "Estudiantes de grado a tiempo completo del Reino Unido; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "Conclusión 1 · ALTA (tabla 1)",
+          "fuente": {"autores": "HEPI", "anio": "2026", "titulo": "Student Generative AI Survey 2026", "revista_o_editor": "Higher Education Policy Institute", "volumen_paginas": "Informe 199", "url_o_doi": "https://www.hepi.ac.uk/wp-content/uploads/2026/03/HEPI-Report-199-Gen-AI-Survey-2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C02-01)."]
+        },
+        {
+          "id": "I02A-RE-02",
+          "texto": "En un experimento ciego en módulos de Psicología, el 94 % de las entregas generadas por IA pasó sin detección y obtuvo notas superiores a las de los estudiantes.",
+          "cifras": ["94 %"],
+          "poblacion_contexto": "Exámenes de Psicología de la University of Reading, Reino Unido; universitario",
+          "diseno": "experimento de campo ciego (estudio de caso según su propio título)",
+          "etiqueta_origen": "Conclusión 2 · ALTA (tabla 1)",
+          "fuente": {"autores": "Scarfe, P., Watcham, K., Clarke, A. y Roesch, E.", "anio": "2024", "titulo": "A real-world test of artificial intelligence infiltration of a university examinations system: A Turing Test case study", "revista_o_editor": "PLOS ONE", "volumen_paginas": "19(6): e0305354", "url_o_doi": "10.1371/journal.pone.0305354"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C03-01).", "Discrepancia interna: el resumen ejecutivo y resumen-01.json dicen «cinco módulos»; el capítulo 3 dice «varios módulos»."]
+        },
+        {
+          "id": "I02A-RE-03",
+          "texto": "Los detectores de IA marcaron erróneamente como generados por IA el 61,3 % de los ensayos de hablantes no nativos de inglés en una evaluación de siete herramientas.",
+          "cifras": ["61,3 %", "7 detectores"],
+          "poblacion_contexto": "Ensayos de hablantes no nativos de inglés; nivel educativo no precisado en el informe",
+          "diseno": "otro: evaluación comparada de herramientas",
+          "etiqueta_origen": "Conclusión 3 · ALTA (tabla 1)",
+          "fuente": {"autores": "FALTANTE en los insumos (el informe dice «un estudio de Stanford de 2023»)", "anio": "2023", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C03-02)."]
+        },
+        {
+          "id": "I02A-RE-04",
+          "texto": "Un tutor con andamiaje duplicó las ganancias de aprendizaje en Harvard, y el acceso libre sin andamiaje dejó a los estudiantes turcos un 17 % por debajo de quienes nunca tuvieron la herramienta.",
+          "cifras": ["≈ 2x", "−17 %"],
+          "poblacion_contexto": "Harvard: estudiantes universitarios de física. Turquía: estudiantes de secundaria (el resumen ejecutivo no lo dice)",
+          "diseno": "experimento aleatorizado (dos estudios)",
+          "etiqueta_origen": "Conclusión 4 · ALTA (tabla 1)",
+          "fuente": {"autores": "Kestin et al. (2025); Bastani et al. (2025)", "anio": "2025", "titulo": "Véanse I02A-C05-01 e I02A-C05-03", "revista_o_editor": "Scientific Reports; PNAS", "volumen_paginas": "Véanse las fichas del capítulo 5", "url_o_doi": "10.1038/s41598-025-97652-6; 10.1073/pnas.2422633122"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "El resumen ejecutivo habla de «estudiantes turcos» sin indicar que eran de secundaria; resumen-01.json tampoco lo dice. Lo aclara el capítulo 5."]
+        },
+        {
+          "id": "I02A-RE-05",
+          "texto": "Desarrolladores expertos fueron un 19 % más lentos con IA y siguieron creyendo que habían sido un 20 % más rápidos.",
+          "cifras": ["+19 % de tiempo", "20 % percibido más rápido"],
+          "poblacion_contexto": "Desarrolladores de software de código abierto experimentados; profesional",
+          "diseno": "experimento aleatorizado",
+          "etiqueta_origen": "Conclusión 5 · MEDIA-ALTA (tabla 1)",
+          "fuente": {"autores": "METR", "anio": "2025", "titulo": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity", "revista_o_editor": "METR", "volumen_paginas": "julio de 2025; actualización de febrero de 2026", "url_o_doi": "FALTANTE en los insumos"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C07-02)."]
+        },
+        {
+          "id": "I02A-RE-06",
+          "texto": "Solo el 19 % de las instituciones encuestadas por UNESCO tiene una política formal de IA vigente, aunque el titular hablaba de dos tercios.",
+          "cifras": ["19 %", "«dos tercios»"],
+          "poblacion_contexto": "400 respuestas de Cátedras UNESCO y Redes UNITWIN en 90 países; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "Conclusión 6 · MEDIA-ALTA (tabla 1)",
+          "fuente": {"autores": "UNESCO", "anio": "2025", "titulo": "Encuesta a Cátedras UNESCO y Redes UNITWIN", "revista_o_editor": "UNESCO", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE en los insumos"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C08-01)."]
+        },
+        {
+          "id": "I02A-RE-07",
+          "texto": "Con el 77 % del profesorado ya usando IA, el 80 % declara falta de claridad institucional y solo el 17 % se sitúa en nivel avanzado.",
+          "cifras": ["77 %", "80 %", "17 %"],
+          "poblacion_contexto": "Docentes de educación superior, muestra internacional; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "Conclusión 7 · MEDIA-ALTA (tabla 1); E-22 · E · D3 · REPORTADO (anexo B)",
+          "fuente": {"autores": "Digital Education Council", "anio": "2025 y 2026", "titulo": "Global AI Faculty Survey 2025; AI in Higher Education Global Survey 2026", "revista_o_editor": "Digital Education Council", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE en los insumos"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C06-01)."]
+        },
+        {
+          "id": "I02A-RE-08",
+          "texto": "La IA comprime la distribución del desempeño: beneficia mucho a los estudiantes de menor rendimiento previo y puede perjudicar a los de mayor rendimiento.",
+          "cifras": [],
+          "poblacion_contexto": "Estudiantes de Derecho (Choi y Schwarcz, capítulo 13) y escritores de relatos (Doshi y Hauser)",
+          "diseno": "experimento aleatorizado (según el informe)",
+          "etiqueta_origen": "Conclusión 8 · MEDIA-ALTA (tabla 1)",
+          "fuente": {"autores": "Choi, J. H. y Schwarcz, D.; Doshi, A. R. y Hauser, O. P.", "anio": "s. f. (Choi y Schwarcz); 2024 (Doshi y Hauser)", "titulo": "AI Assistance in Legal Analysis: An Empirical Study; Generative AI enhances individual creativity but reduces the collective diversity of novel content", "revista_o_editor": "Journal of Legal Education; Science Advances", "volumen_paginas": "SSRN 4539836; 10(28), eadn5290", "url_o_doi": "FALTANTE para Choi y Schwarcz"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La cifra que sostiene esta conclusión (45 puntos percentiles) está en el capítulo 13, fuera del alcance de esta parte.", "El año de publicación de Choi y Schwarcz en el Journal of Legal Education falta en el anexo C."]
+        },
+        {
+          "id": "I02A-RE-09",
+          "texto": "Las mujeres tienen un 22 % menos de probabilidades de usar IA generativa, y la brecha persiste incluso cuando el acceso se iguala.",
+          "cifras": ["22 %"],
+          "poblacion_contexto": "Metaanálisis de 18 estudios, 143.008 personas, 25 países; población general y muestras universitarias",
+          "diseno": "otro: metaanálisis",
+          "etiqueta_origen": "Conclusión 9 · MEDIA (tabla 1)",
+          "fuente": {"autores": "Otis, N. G., Delecourt, S., Cranney, K. y Koning, R.", "anio": "FALTANTE", "titulo": "Global Evidence on Gender Gaps and Generative AI", "revista_o_editor": "Harvard Business School", "volumen_paginas": "Working Paper 25-023", "url_o_doi": "FALTANTE en los insumos"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C09-01)."]
+        },
+        {
+          "id": "I02A-RE-10",
+          "texto": "El empleo de jóvenes de 22 a 25 años en ocupaciones expuestas a IA está un 19 % por debajo de su trayectoria esperada, sin brecha equivalente en trabajadores experimentados.",
+          "cifras": ["22-25 años", "−19 %"],
+          "poblacion_contexto": "Trabajadores de Estados Unidos en microdatos de nómina de ADP; mercado laboral",
+          "diseno": "otro: análisis de datos administrativos",
+          "etiqueta_origen": "Conclusión 10 · MEDIA (tabla 1)",
+          "fuente": {"autores": "Brynjolfsson, E., Chandar, B. y Chen, R.", "anio": "2026 (actualización de agosto)", "titulo": "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence", "revista_o_editor": "Stanford Digital Economy Lab", "volumen_paginas": "actualización de agosto de 2026", "url_o_doi": "https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso (véase I02A-C10-01)."]
+        },
+        {
+          "id": "I02A-RE-11",
+          "texto": "El resumen del informe afirma que, en educación superior, no se localizó ningún estudio independiente que demuestre que los despliegues institucionales masivos de IA mejoran el aprendizaje.",
+          "cifras": [],
+          "poblacion_contexto": "Instituciones del mapa internacional; universitario",
+          "diseno": "otro: afirmación de ausencia de evidencia",
+          "etiqueta_origen": "E-34 · NO DEMOSTRADO (anexo B)",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "resumen-01.json, sección Contexto", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin protocolo de búsqueda declarado, la ausencia de estudios no puede afirmarse como resultado exhaustivo; solo como «no se localizó».", "resumen-01.json menciona «miles de millones comprometidos»; ninguna fuente de los insumos sostiene esa magnitud (la mayor cifra documentada es el contrato de CSU, 39 millones de dólares en tres años)."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 1",
+      "titulo_origen": "La universidad ante la automatización del trabajo cognitivo",
+      "tema": "Por qué la IA generativa difiere de tecnologías educativas anteriores; las funciones universitarias bajo presión; la escala de profundidad 0-5",
+      "afirmaciones": [
+        {
+          "id": "I02A-C01-01",
+          "texto": "El informe valora la presión que ejerce la IA generativa sobre cada función universitaria: muy alta sobre la certificación, alta sobre la formación y la señalización, media sobre la producción de conocimiento y baja sobre la socialización.",
+          "cifras": [],
+          "poblacion_contexto": "Educación superior en general",
+          "diseno": "opinión (elaboración propia del autor, tabla 2)",
+          "etiqueta_origen": "sin etiqueta; «elaboración propia»",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 2", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 1.2", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Valoración cualitativa sin medición. Debe presentarse como juicio analítico, no como dato."]
+        },
+        {
+          "id": "I02A-C01-02",
+          "texto": "El informe usa una escala de seis niveles de profundidad (0 ausencia o restricción, 1 herramienta, 2 política y alfabetización, 3 integración pedagógica, 4 transformación curricular, 5 transformación sistémica) para situar instituciones e iniciativas.",
+          "cifras": ["niveles 0 a 5"],
+          "poblacion_contexto": "Instituciones de educación superior del mapa y de la matriz",
+          "diseno": "otro: instrumento analítico propio (tabla 3)",
+          "etiqueta_origen": "sin etiqueta",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 3", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 1.3", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La nota preliminar habla de «cinco profundidades», pero la tabla 3 tiene seis niveles (0 a 5).", "La tabla 3 remite a «la figura 10» para la matriz; según Graficos.ps1, la matriz es g09 y g10 es la cronología. Hay que revisar la numeración de figuras."]
+        },
+        {
+          "id": "I02A-C01-03",
+          "texto": "En la muestra de nueve instituciones analizadas en profundidad, ninguna alcanza el nivel 5 en el conjunto de las dimensiones: University of Sydney está en nivel 3 en currículo, Ohio State en nivel 2 en evaluación y California State University en nivel 1 en evaluación.",
+          "cifras": ["9 instituciones", "Sydney currículo 3", "Ohio State evaluación 2", "CSU evaluación 1"],
+          "poblacion_contexto": "Nueve instituciones de educación superior de Australia, EE. UU., Reino Unido, México y Chile",
+          "diseno": "opinión (puntuaciones analíticas del autor)",
+          "etiqueta_origen": "sin etiqueta; la figura g09 advierte «Puntuaciones analíticas del autor, no mediciones»",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Resultado adelantado; figura g09 (matriz de instituciones)", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 1.3; Graficos.ps1", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Los valores coinciden con Graficos.ps1 (g09). En esa matriz, sin embargo, varias instituciones tienen 5 en una dimensión (Sydney en evaluación, Ohio State en competencias, Case Western en currículo, Tecnológico de Monterrey en gobernanza). La frase «ninguna alcanza el nivel 5» solo vale para el conjunto.", "Inconsistencia de nivel para CSU: el capítulo 8 dice que produce «el nivel 1 con el presupuesto del nivel 5», la tabla 12 la sitúa en nivel 2 y resumen-01.json dice «política y alfabetización» (nivel 2)."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 2",
+      "titulo_origen": "Adopción: la curva que todos citan y la que casi nadie mira",
+      "tema": "Uso estudiantil frente a delegación total; adopción privada; despliegue institucional",
+      "afirmaciones": [
+        {
+          "id": "I02A-C02-01",
+          "texto": "Según el Higher Education Policy Institute, la proporción de estudiantes de grado que declara usar IA generativa para trabajos evaluados pasó del 53 % en 2024 al 88 % en 2025 y al 94 % en 2026; la oleada de 2026 encuestó a 1.054 estudiantes en diciembre de 2025, con trabajo de campo de Savanta.",
+          "cifras": ["53 % (2024)", "88 % (2025)", "94 % (2026)", "n = 1.054", "diciembre de 2025"],
+          "poblacion_contexto": "Estudiantes de grado a tiempo completo del Reino Unido; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "E-01 · B · D3 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "HEPI (Higher Education Policy Institute)", "anio": "2026", "titulo": "Student Generative AI Survey 2026", "revista_o_editor": "Higher Education Policy Institute", "volumen_paginas": "Informe 199 (2026); Policy Note 61 (2025)", "url_o_doi": "https://www.hepi.ac.uk/wp-content/uploads/2026/03/HEPI-Report-199-Gen-AI-Survey-2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "Autoinforme; el enunciado varió entre oleadas (advertencia del propio informe)."]
+        },
+        {
+          "id": "I02A-C02-02",
+          "texto": "En la misma serie de HEPI, la proporción que declara insertar directamente texto generado por IA en el trabajo entregado pasó del 3 % al 8 % y al 12 %.",
+          "cifras": ["3 % (2024)", "8 % (2025)", "12 % (2026)", "diferencia de 82 puntos con el uso en 2026"],
+          "poblacion_contexto": "Estudiantes de grado a tiempo completo del Reino Unido; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "E-02 · B · D3 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "HEPI", "anio": "2026", "titulo": "Student Generative AI Survey 2026", "revista_o_editor": "Higher Education Policy Institute", "volumen_paginas": "Informe 199", "url_o_doi": "https://www.hepi.ac.uk/wp-content/uploads/2026/03/HEPI-Report-199-Gen-AI-Survey-2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "El propio informe advierte que el 12 % debe leerse como un piso, porque el autoinforme de conductas sancionables subestima."]
+        },
+        {
+          "id": "I02A-C02-03",
+          "texto": "En la encuesta HEPI 2026, solo el 38 % de los estudiantes declara que su institución le provee herramientas de IA; el 36 % se siente animado por su institución a usarla y otro 36 % percibe lo contrario.",
+          "cifras": ["38 %", "36 %", "36 %"],
+          "poblacion_contexto": "Estudiantes de grado del Reino Unido; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "E-04 · B · D3 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "HEPI", "anio": "2026", "titulo": "Student Generative AI Survey 2026", "revista_o_editor": "Higher Education Policy Institute", "volumen_paginas": "Informe 199", "url_o_doi": "https://www.hepi.ac.uk/wp-content/uploads/2026/03/HEPI-Report-199-Gen-AI-Survey-2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C02-04",
+          "texto": "En la encuesta HEPI 2026, el 68 % de los estudiantes cree que las competencias de IA son esenciales para su futuro, pero solo el 48 % siente que el profesorado le ayuda a desarrollarlas.",
+          "cifras": ["68 %", "48 %"],
+          "poblacion_contexto": "Estudiantes de grado del Reino Unido; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "sin fila propia en el anexo B",
+          "fuente": {"autores": "HEPI", "anio": "2026", "titulo": "Student Generative AI Survey 2026", "revista_o_editor": "Higher Education Policy Institute", "volumen_paginas": "Informe 199", "url_o_doi": "https://www.hepi.ac.uk/wp-content/uploads/2026/03/HEPI-Report-199-Gen-AI-Survey-2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C02-05",
+          "texto": "En la encuesta HEPI 2026, el 65 % de los estudiantes afirma que su evaluación ha cambiado significativamente en respuesta a la IA.",
+          "cifras": ["65 %"],
+          "poblacion_contexto": "Estudiantes de grado del Reino Unido; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "E-03 · B · D3 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "HEPI", "anio": "2026", "titulo": "Student Generative AI Survey 2026", "revista_o_editor": "Higher Education Policy Institute", "volumen_paginas": "Informe 199", "url_o_doi": "https://www.hepi.ac.uk/wp-content/uploads/2026/03/HEPI-Report-199-Gen-AI-Survey-2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C02-06",
+          "texto": "En Estados Unidos, EDUCAUSE reporta que alrededor del 74 % de las instituciones tiene al menos un despliegue de IA en producción que afecta directamente a estudiantes, frente al 28 % a principios de 2024, y que los líderes que se declaran cautelosos bajaron del 23 % en 2024 al 15 % en 2026.",
+          "cifras": ["≈ 74 %", "28 % (inicios de 2024)", "23 % (2024)", "20 % (2025, corpus)", "15 % (2026)"],
+          "poblacion_contexto": "Instituciones de educación superior de EE. UU. y sus líderes; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "corpus: B/E · D2; sin fila en el anexo B",
+          "fuente": {"autores": "EDUCAUSE", "anio": "2025-2026", "titulo": "The Impact of AI on Work in Higher Education (2026); 2025 EDUCAUSE AI Landscape Study", "revista_o_editor": "EDUCAUSE", "volumen_paginas": "FALTANTE", "url_o_doi": "https://www.educause.edu/research/2026/the-impact-of-ai-on-work-in-higher-education"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El corpus de evidencia dice: «PENDIENTE VERIFICAR: el 74 % / 28 % procede de una síntesis secundaria; confirmar en el informe original». El capítulo 2 lo presenta sin esa advertencia.", "No comprobado en origen en esta parte."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 3",
+      "titulo_origen": "Evaluación: la ruptura entre el producto y el aprendizaje",
+      "tema": "Pérdida de validez de la evaluación no supervisada; fracaso de la detección; sanciones; modelo de dos carriles; regímenes de uso e instrumentos",
+      "afirmaciones": [
+        {
+          "id": "I02A-C03-01",
+          "texto": "Scarfe, Watcham, Clarke y Roesch insertaron entregas generadas íntegramente por ChatGPT en el sistema real de exámenes de módulos de Psicología de la University of Reading, con corrección ciega; el 94 % no fue detectado y, en promedio, obtuvieron calificaciones superiores a las de los estudiantes reales.",
+          "cifras": ["94 % no detectadas", "≈ 5 % de las respuestas de cada módulo", "26-06-2024"],
+          "poblacion_contexto": "Exámenes de grado en Psicología, University of Reading, Reino Unido; universitario",
+          "diseno": "experimento de campo ciego («Turing Test case study»)",
+          "etiqueta_origen": "E-05 · A · D4 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Scarfe, P., Watcham, K., Clarke, A. y Roesch, E.", "anio": "2024", "titulo": "A real-world test of artificial intelligence infiltration of a university examinations system: A Turing Test case study", "revista_o_editor": "PLOS ONE", "volumen_paginas": "19(6): e0305354", "url_o_doi": "10.1371/journal.pone.0305354"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C03-02",
+          "texto": "Un estudio de Stanford de 2023 evaluó siete detectores sobre ensayos de hablantes no nativos de inglés y encontró una tasa media de falsos positivos del 61,3 %.",
+          "cifras": ["7 detectores", "61,3 %"],
+          "poblacion_contexto": "Ensayos de hablantes no nativos de inglés; el informe no precisa el nivel educativo",
+          "diseno": "otro: evaluación comparada de herramientas",
+          "etiqueta_origen": "E-06 · A · D4 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "FALTANTE en los insumos", "anio": "2023", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "El anexo C no incluye esta referencia: el informe no identifica autores, título ni revista."]
+        },
+        {
+          "id": "I02A-C03-03",
+          "texto": "Vanderbilt University desactivó el detector de IA de Turnitin en agosto de 2023, con el argumento de que, con 75.000 trabajos procesados en 2022 y una tasa de falsos positivos del 1 % declarada por el proveedor, unos 750 trabajos habrían sido marcados erróneamente.",
+          "cifras": ["agosto de 2023", "75.000 trabajos", "1 %", "≈ 750"],
+          "poblacion_contexto": "Vanderbilt University, EE. UU.; universitario",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "E-07 · C/E · D2 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Vanderbilt University", "anio": "2023", "titulo": "FALTANTE (comunicado de desactivación)", "revista_o_editor": "Vanderbilt University", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte. Sin referencia en el anexo C ni en el corpus de evidencia."]
+        },
+        {
+          "id": "I02A-C03-04",
+          "texto": "A marzo de 2026, al menos doce instituciones importantes, entre ellas Yale, Johns Hopkins y Northwestern, habían desactivado la detección de IA de Turnitin.",
+          "cifras": ["≥ 12 instituciones", "marzo de 2026"],
+          "poblacion_contexto": "Universidades de EE. UU.; universitario",
+          "diseno": "otro: cobertura sectorial",
+          "etiqueta_origen": "E-07 · C/E · D2 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "FALTANTE («cobertura sectorial a marzo de 2026»)", "anio": "2026", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Fuente no identificada en los insumos; no comprobado.", "resumen-01.json menciona solo a Yale y Johns Hopkins."]
+        },
+        {
+          "id": "I02A-C03-05",
+          "texto": "Una investigación de The Guardian, mediante solicitudes de acceso a la información a 155 universidades británicas (respondieron 131), documentó que los casos probados de mala conducta académica con IA pasaron de 1,6 por cada mil estudiantes en 2022-23 a 5,1 en 2023-24 (casi 7.000 casos), con una proyección cercana a 7,5 para 2024-25, y que más del 27 % de las universidades que respondieron no registraba esa conducta por separado.",
+          "cifras": ["155 universidades", "131 respuestas", "1,6 ‰ (2022-23)", "5,1 ‰ (2023-24)", "≈ 7.000 casos", "7,5 ‰ proyectado (2024-25)", "> 27 %"],
+          "poblacion_contexto": "Universidades del Reino Unido; universitario",
+          "diseno": "otro: periodismo de datos mediante solicitudes de acceso a la información",
+          "etiqueta_origen": "E-08 y E-09 · B/E · D3 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "The Guardian (autoría no consignada); recogida por Times Higher Education", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "The Guardian", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte; sin referencia completa en los insumos.", "El cálculo del informe («detecta y prueba algo así como el 0,7 % de una conducta que afecta al 12 %») mezcla bases: siete casos por mil equivalen al 0,7 % de todos los estudiantes, no de quienes incurren en la conducta. Además, cruza datos de 2023-25 con la encuesta HEPI de 2026.", "La leyenda de la figura 2 («multiplicado por más de cuatro en tres años») descansa en el valor proyectado de 7,5; con datos observados, el aumento fue de 1,6 a 5,1 (×3,2) en un año.", "resumen-01.json habla de «unos siete casos por cada mil», que es la proyección y no un dato observado."]
+        },
+        {
+          "id": "I02A-C03-06",
+          "texto": "En el Russell Group, los estudiantes sancionados por mala conducta con IA pasaron de unos 700 a más de 2.000 en un año.",
+          "cifras": ["≈ 700", "> 2.000"],
+          "poblacion_contexto": "Universidades del Russell Group, Reino Unido; universitario",
+          "diseno": "otro: periodismo de datos",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "FALTANTE", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Cifra sin fuente identificada en los insumos. No usar sin localizar la fuente."]
+        },
+        {
+          "id": "I02A-C03-07",
+          "texto": "La University of Sydney formalizó en noviembre de 2024 un modelo de evaluación de dos carriles, desplegado progresivamente desde el primer semestre de 2025: un carril seguro y supervisado, sin ayudas externas y decidido a nivel de programa, y un carril abierto con uso declarado de IA y decidido a nivel de asignatura.",
+          "cifras": ["noviembre de 2024", "semestre 1 de 2025"],
+          "poblacion_contexto": "University of Sydney, Australia; universitario",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "corpus: C · D2/D3",
+          "fuente": {"autores": "University of Sydney", "anio": "2024", "titulo": "Artificial intelligence and assessment", "revista_o_editor": "University of Sydney (intranet de enseñanza y aprendizaje)", "volumen_paginas": "no aplica", "url_o_doi": "https://intranet.sydney.edu.au/education-students/teaching-learning/academic-integrity/artificial-intelligence-and-assessment.html"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte."]
+        },
+        {
+          "id": "I02A-C03-08",
+          "texto": "El regulador australiano TEQSA fijó dos principios para la reforma evaluativa: preparar para participar ética y activamente en una sociedad con IA ubicua, y formar juicios fiables sobre el aprendizaje mediante enfoques múltiples, inclusivos y contextualizados; en septiembre de 2025 publicó una guía de aplicación.",
+          "cifras": ["2 principios", "septiembre de 2025"],
+          "poblacion_contexto": "Sistema de educación superior australiano; universitario",
+          "diseno": "documento institucional (regulador público)",
+          "etiqueta_origen": "corpus: B · D2 · VERIFICADO",
+          "fuente": {"autores": "TEQSA", "anio": "2025", "titulo": "Assessment reform for the age of artificial intelligence; Enacting assessment reform in a time of artificial intelligence", "revista_o_editor": "Tertiary Education Quality and Standards Agency", "volumen_paginas": "no aplica", "url_o_doi": "https://www.teqsa.gov.au/sites/default/files/2025-09/enacting-assessment-reform-in-a-time-of-artificial-intelligence.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte."]
+        },
+        {
+          "id": "I02A-C03-09",
+          "texto": "La University of Bath anunció que abandonará su sistema de semáforo y adoptará un enfoque de dos carriles basado en principios desde el curso 2026-27.",
+          "cifras": ["curso 2026-27"],
+          "poblacion_contexto": "University of Bath, Reino Unido; universitario",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "University of Bath", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "University of Bath", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin fuente identificada en los insumos."]
+        },
+        {
+          "id": "I02A-C03-10",
+          "texto": "El informe propone una tipología de seis regímenes de uso de IA en la evaluación (prohibida, restringida, permitida con declaración, integrada, requerida y evaluada como competencia) y sostiene que la abrumadora mayoría de las políticas examinadas se sitúa en el régimen de uso permitido con declaración.",
+          "cifras": ["6 regímenes"],
+          "poblacion_contexto": "Políticas institucionales de educación superior examinadas por el autor",
+          "diseno": "opinión (elaboración propia, tabla 6)",
+          "etiqueta_origen": "sin etiqueta; «elaboración propia»",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 6", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 3.5", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["«Abrumadora mayoría» sin recuento ni lista de las políticas examinadas: es un juicio, no un dato."]
+        },
+        {
+          "id": "I02A-C03-11",
+          "texto": "El informe valora la validez residual de los instrumentos de evaluación: muy baja para el ensayo domiciliario y el cuestionario en línea; alta para el examen presencial supervisado; y muy alta para la defensa oral, el desempeño observado y el trabajo asistido por IA con defensa oral posterior.",
+          "cifras": [],
+          "poblacion_contexto": "Instrumentos de evaluación universitaria",
+          "diseno": "opinión (valoración propia, tabla 7)",
+          "etiqueta_origen": "sin etiqueta; «valoración propia»",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 7", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 3.6", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Solo el diagnóstico del ensayo no supervisado tiene respaldo experimental directo (Scarfe et al.). El resto de la escala es juicio del autor."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 4",
+      "titulo_origen": "Competencias: de la reproducción al juicio",
+      "tema": "Reordenamiento de la jerarquía de competencias; Ohio State AI Fluency; marcos internacionales",
+      "afirmaciones": [
+        {
+          "id": "I02A-C04-01",
+          "texto": "El informe sostiene que ganan valor como diferenciadores la formulación del problema, la verificación, la calibración de la propia confianza, el criterio disciplinar, la responsabilidad profesional, la metacognición y la comunicación oral, y que lo pierden la redacción instrumental, la búsqueda de información, las primeras versiones, la codificación rutinaria, la memorización, los procedimientos estandarizados y la traducción.",
+          "cifras": [],
+          "poblacion_contexto": "Perfiles de egreso universitarios",
+          "diseno": "opinión (elaboración propia a partir de marcos de UNESCO, OCDE y Comisión Europea; tabla 8)",
+          "etiqueta_origen": "sin etiqueta; «elaboración propia»",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 8", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 4.1", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Juicio analítico; la tabla invoca los marcos, pero no cita qué parte de cada uno sostiene cada fila."]
+        },
+        {
+          "id": "I02A-C04-02",
+          "texto": "La iniciativa AI Fluency de Ohio State University establece que, desde la promoción de 2029, todo egresado deberá ser fluido en su campo y en IA, mediante un General Education Launch Seminar obligatorio con tres módulos nuevos, talleres en la First Year Success Series y la obligación de que cada unidad académica publique su mapa de incorporación de IA hacia fines de 2026.",
+          "cifras": ["promoción de 2029", "3 módulos", "fines de 2026"],
+          "poblacion_contexto": "Ohio State University, EE. UU.; universitario",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "corpus: C · D2; el informe lo describe como «nivel demostrativo D2 con una ambición de nivel 4»",
+          "fuente": {"autores": "Ohio State University, Office of Academic Affairs", "anio": "2025-2026", "titulo": "AI Fluency; actualización de febrero de 2026", "revista_o_editor": "Ohio State University", "volumen_paginas": "no aplica", "url_o_doi": "https://oaa.osu.edu/ai-fluency"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte.", "El propio informe declara que, a agosto de 2026, no hay evaluación externa, grupo de comparación ni medición de aprendizaje."]
+        },
+        {
+          "id": "I02A-C04-03",
+          "texto": "UNESCO publicó en 2024 marcos de competencias en IA para docentes y para estudiantes; la OCDE elaboró con la Comisión Europea un marco de alfabetización en IA; y el Foro Económico Mundial publica informes sobre la demanda de habilidades.",
+          "cifras": ["2024"],
+          "poblacion_contexto": "Marcos internacionales; todos los niveles",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "UNESCO; OCDE y Comisión Europea; Foro Económico Mundial", "anio": "2024 (UNESCO); FALTANTE (OCDE-CE y FEM)", "titulo": "AI Competency Frameworks for Teachers and for Students; marco de alfabetización en IA (título FALTANTE); informes de habilidades (título FALTANTE)", "revista_o_editor": "UNESCO; OCDE; FEM", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Referencias incompletas en los insumos, salvo UNESCO (anexo C)."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 5",
+      "titulo_origen": "Metodologías: lo que la evidencia sostiene y lo que no",
+      "tema": "Dos ensayos aleatorizados: tutor con andamiaje (Harvard) y acceso libre con retirada (Turquía); el andamiaje y no el acceso",
+      "afirmaciones": [
+        {
+          "id": "I02A-C05-01",
+          "texto": "Kestin, Miller, Klales, Milbourne y Ponti publicaron en Scientific Reports un ensayo aleatorizado en el curso Physical Sciences 2 de Harvard, en otoño de 2023, en que unos 180 estudiantes alternaron semanalmente entre una clase de aprendizaje activo y un tutor de IA; con el tutor obtuvieron aproximadamente el doble de ganancias de aprendizaje, en menos tiempo y con mayor compromiso y motivación.",
+          "cifras": ["n ≈ 180", "≈ 2x ganancias", "otoño de 2023", "03-06-2025"],
+          "poblacion_contexto": "Estudiantes de física introductoria, Harvard University, EE. UU.; universitario",
+          "diseno": "experimento aleatorizado (diseño cruzado)",
+          "etiqueta_origen": "E-10 · A · D5 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Kestin, G., Miller, K., Klales, A., Milbourne, T. y Ponti, G.", "anio": "2025", "titulo": "AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting", "revista_o_editor": "Scientific Reports", "volumen_paginas": "FALTANTE", "url_o_doi": "https://www.nature.com/articles/s41598-025-97652-6"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C05-02",
+          "texto": "El tutor del estudio de Harvard tenía andamiajes redactados por expertos, razonamiento paso a paso y guardarraíles explícitos para no entregar la respuesta.",
+          "cifras": [],
+          "poblacion_contexto": "Harvard University, Physical Sciences 2; universitario",
+          "diseno": "experimento aleatorizado (descripción de la intervención)",
+          "etiqueta_origen": "E-10 (anexo B)",
+          "fuente": {"autores": "Kestin, G., Miller, K., Klales, A., Milbourne, T. y Ponti, G.", "anio": "2025", "titulo": "AI tutoring outperforms in-class active learning", "revista_o_editor": "Scientific Reports", "volumen_paginas": "FALTANTE", "url_o_doi": "https://www.nature.com/articles/s41598-025-97652-6"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C05-03",
+          "texto": "Bastani, Bastani, Sungu, Ge, Kabakcı y Mariman realizaron en Turquía un experimento de campo con cerca de mil estudiantes de secundaria, en cuatro sesiones de noventa minutos: el acceso libre a GPT-4 mejoró el desempeño un 48 % durante la práctica, el tutor con pistas diseñadas por docentes lo mejoró un 127 %, y, al retirar la herramienta, el grupo de acceso libre rindió un 17 % menos que quienes nunca la tuvieron.",
+          "cifras": ["n ≈ 1.000", "4 sesiones de 90 min", "+48 %", "+127 %", "−17 %"],
+          "poblacion_contexto": "Estudiantes de secundaria en Turquía (matemáticas; cursos 9.º a 11.º según el corpus); secundario",
+          "diseno": "experimento aleatorizado de campo",
+          "etiqueta_origen": "E-11 y E-12 · A · D5 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö. y Mariman, R.", "anio": "2025", "titulo": "Generative AI without guardrails can harm learning: Evidence from high school mathematics", "revista_o_editor": "Proceedings of the National Academy of Sciences (PNAS)", "volumen_paginas": "FALTANTE; versión previa SSRN 4895486", "url_o_doi": "10.1073/pnas.2422633122"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso, incluida la corrección publicada por PNAS el 20-08-2025.", "El propio informe declara que es un estudio de secundaria, en matemáticas y de horizonte corto; su traslado a la universidad es una inferencia.", "Grafía del apellido: el anexo C escribe «Kabakcı»; el anexo B y Graficos.ps1, «Kabakçı»."]
+        },
+        {
+          "id": "I02A-C05-04",
+          "texto": "El informe concluye de ambos ensayos que la variable que determina el efecto es el diseño de la interacción y no el acceso: un tutor con guardarraíles duplicó el aprendizaje y el mismo modelo sin guardarraíles lo dañó.",
+          "cifras": [],
+          "poblacion_contexto": "Inferencia que cruza un estudio universitario (Harvard) y uno secundario (Turquía)",
+          "diseno": "opinión (síntesis del autor)",
+          "etiqueta_origen": "Tesis «El diseño pedagógico, no el acceso, determina el efecto» · ALTA (tabla 15)",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "5.3 La regla que emerge de los dos estudios", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 5.3", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La frase «el mismo modelo subyacente» cruza dos estudios con poblaciones, materias y diseños distintos. Dentro del estudio de Bastani, el tutor con andamiaje no «duplicó el aprendizaje»: lo que el informe dice es que mitigó el daño. La duplicación corresponde a Harvard.", "Pendiente de confirmar en origen qué modelo usó el tutor de Kestin et al."]
+        },
+        {
+          "id": "I02A-C05-05",
+          "texto": "El equipo de Harvard CS50 documentó académicamente su conjunto de herramientas de IA (asistente conversacional, explicador de código y revisor de estilo) bajo el principio de aproximarse a una razón profesor-estudiante de 1:1 sin entregar la respuesta directa.",
+          "cifras": ["1:1"],
+          "poblacion_contexto": "Curso CS50, Harvard University; universitario",
+          "diseno": "estudio de caso",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "FALTANTE (equipo de CS50)", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El informe dice que el caso está «documentado académicamente», pero no cita la publicación."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 6",
+      "titulo_origen": "El rol docente: el eslabón que nadie financió",
+      "tema": "La brecha se desplazó de la adopción a la preparación docente; evidencia contradictoria sobre ahorro de tiempo; funciones docentes que ganan valor",
+      "afirmaciones": [
+        {
+          "id": "I02A-C06-01",
+          "texto": "Según las encuestas del Digital Education Council (1.681 docentes de 52 instituciones en 28 países en la oleada de 2025), el uso docente de IA en la enseñanza pasó del 61 % en 2025 al 77 % en 2026, frente al 88 % de los estudiantes.",
+          "cifras": ["n = 1.681", "52 instituciones", "28 países", "61 % (2025)", "77 % (2026)", "88 % estudiantes"],
+          "poblacion_contexto": "Docentes de educación superior, muestra internacional de instituciones miembros; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "E-22 · E · D3 · REPORTADO (anexo B)",
+          "fuente": {"autores": "Digital Education Council", "anio": "2025 y 2026", "titulo": "Global AI Faculty Survey 2025; AI in Higher Education Global Survey 2026", "revista_o_editor": "Digital Education Council", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "El informe no dice de qué encuesta sale el 88 % de estudiantes; coincide con el dato HEPI 2025 del Reino Unido, que es otra población."]
+        },
+        {
+          "id": "I02A-C06-02",
+          "texto": "El 83 % del profesorado está preocupado por la capacidad de sus estudiantes para evaluar críticamente los productos de IA, el 80 % percibe falta de claridad institucional, solo el 17 % se sitúa en nivel avanzado o experto, el 40 % dice estar al inicio de su alfabetización y solo el 31 % considera que su institución lo involucra en el diseño de la política de IA.",
+          "cifras": ["83 %", "80 %", "17 %", "40 %", "31 %"],
+          "poblacion_contexto": "Docentes de educación superior, muestra internacional; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "E-22 · E · D3 · REPORTADO (anexo B)",
+          "fuente": {"autores": "Digital Education Council", "anio": "2025", "titulo": "Global AI Faculty Survey 2025", "revista_o_editor": "Digital Education Council", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C06-03",
+          "texto": "Del lado estudiantil, el 57 % dice que sus evaluaciones vienen con orientación insuficiente sobre IA y solo el 29 % cree que sus docentes están preparados para orientarlos.",
+          "cifras": ["57 %", "29 %"],
+          "poblacion_contexto": "Estudiantes de educación superior; encuesta no identificada con precisión en el informe",
+          "diseno": "encuesta",
+          "etiqueta_origen": "sin fila propia en el anexo B",
+          "fuente": {"autores": "Digital Education Council (atribución de Graficos.ps1)", "anio": "2026", "titulo": "AI in Higher Education Global Survey 2026", "revista_o_editor": "Digital Education Council", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "El capítulo no dice de qué encuesta salen estas cifras; solo la figura g03 las atribuye en conjunto al Digital Education Council."]
+        },
+        {
+          "id": "I02A-C06-04",
+          "texto": "Un trabajo sobre corrección híbrida entre instructor e IA en cursos de hidráulica reporta una reducción del tiempo de corrección del 88 %, de 50 a 6 minutos por informe; un estudio en el Journal of Chemical Education documenta mejoras de eficiencia y calidad del feedback en Química; y otro estudio encuentra que los borradores asistidos aumentan la cantidad de feedback sin reducir el tiempo por unidad.",
+          "cifras": ["−88 %", "50 → 6 minutos por informe"],
+          "poblacion_contexto": "Cursos universitarios de hidráulica y química; universitario",
+          "diseno": "otro: estudios de caso y evaluaciones de corto plazo (según la revisión citada)",
+          "etiqueta_origen": "E-33 · A · D4 · CONTROVERTIDO (anexo B, para el ahorro neto de tiempo)",
+          "fuente": {"autores": "FALTANTE", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "Journal of Chemical Education (uno de los estudios); los demás FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Ninguno de los tres estudios está identificado en los insumos. No usar las cifras de 88 % ni de 50 a 6 minutos sin localizar la fuente."]
+        },
+        {
+          "id": "I02A-C06-05",
+          "texto": "Una revisión integrativa publicada en Frontiers in Education en 2025 califica de metodológicamente deficiente la base de evidencia sobre el ahorro de tiempo docente con IA, por el predominio de estudios de corto plazo y evaluaciones subjetivas.",
+          "cifras": ["2025"],
+          "poblacion_contexto": "Literatura sobre docencia universitaria asistida por IA",
+          "diseno": "otro: revisión integrativa",
+          "etiqueta_origen": "E-33 · A · D4 · CONTROVERTIDO (anexo B)",
+          "fuente": {"autores": "FALTANTE", "anio": "2025", "titulo": "FALTANTE", "revista_o_editor": "Frontiers in Education", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Autores y título faltan en los insumos."]
+        },
+        {
+          "id": "I02A-C06-06",
+          "texto": "El informe afirma que ninguna institución de su muestra ha documentado una inversión en rediseño de tareas, formación docente obligatoria y horas de evaluación oral comparable a la inversión en licencias, como los trece millones de dólares anuales de California State University.",
+          "cifras": ["13 millones de USD anuales durante 3 años"],
+          "poblacion_contexto": "Instituciones de la muestra del informe; universitario",
+          "diseno": "otro: afirmación de ausencia en la documentación pública",
+          "etiqueta_origen": "sin etiqueta",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "El eslabón sin financiar", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 6.3", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Ausencia en la documentación pública, no ausencia comprobada de gasto. El propio anexo A reconoce que la matriz «penaliza a quien documenta menos»."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 7",
+      "titulo_origen": "El estudiante como agente: uso, delegación y descalibración",
+      "tema": "Qué delegan los estudiantes; descalibración de la percepción de productividad; debilidad del estudio de neuroimagen; homogeneización",
+      "afirmaciones": [
+        {
+          "id": "I02A-C07-01",
+          "texto": "Según datos de uso publicados por Anthropic sobre estudiantes universitarios, cerca del 47 % de las interacciones son directas y las categorías cognitivas más frecuentes son crear (39,8 %) y analizar (30,2 %), mientras recordar es marginal.",
+          "cifras": ["≈ 47 %", "39,8 %", "30,2 %"],
+          "poblacion_contexto": "Usuarios universitarios de la plataforma Claude; universitario",
+          "diseno": "otro: análisis de datos de uso de un proveedor",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "Anthropic", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "Anthropic", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Referencia ausente del anexo C y del corpus.", "El propio informe advierte que son datos de un proveedor sobre su propia plataforma, sin muestreo representativo.", "La afirmación de que «los usuarios con más antigüedad iteran más y delegan menos» no tiene fuente trazable en los insumos."]
+        },
+        {
+          "id": "I02A-C07-02",
+          "texto": "En julio de 2025, METR publicó un ensayo aleatorizado con 16 desarrolladores experimentados que completaron 246 tareas reales en sus propios repositorios: con IA tardaron un 19 % más; habían predicho ser un 24 % más rápidos y, después, estimaron haberlo sido un 20 %.",
+          "cifras": ["n = 16", "246 tareas", "+19 % de tiempo", "24 % predicho más rápido", "20 % estimado más rápido", "brecha de ≈ 39-40 puntos"],
+          "poblacion_contexto": "Desarrolladores de software de código abierto experimentados; profesional",
+          "diseno": "experimento aleatorizado (asignación aleatoria por tarea)",
+          "etiqueta_origen": "E-13 · A · D5 · VERIFICADO (anexo B); tesis MEDIA-ALTA (tabla 15)",
+          "fuente": {"autores": "METR", "anio": "2025", "titulo": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity", "revista_o_editor": "METR", "volumen_paginas": "julio de 2025; actualización de febrero de 2026", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "El informe dice que METR marcó después el resultado como «histórico»; la fuente de esa reclasificación no está citada."]
+        },
+        {
+          "id": "I02A-C07-03",
+          "texto": "El estudio «Your Brain on ChatGPT» del MIT Media Lab registró con electroencefalografía la actividad de 54 participantes que escribían ensayos sin herramientas, con buscador o con un modelo de lenguaje, y reportó menor conectividad cerebral en el grupo con modelo de lenguaje; un comentario publicado le señala problemas de análisis y de reporte.",
+          "cifras": ["n = 54", "3 condiciones"],
+          "poblacion_contexto": "Participantes adultos en tarea de escritura de ensayos; el informe no precisa el nivel",
+          "diseno": "otro: experimento de laboratorio con neuroimagen (preprint)",
+          "etiqueta_origen": "E-32 · A · D4 · CONTROVERTIDO (anexo B); tesis INSUFICIENTE (tabla 15)",
+          "fuente": {"autores": "Kosmyna, N. et al.", "anio": "2025", "titulo": "Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task", "revista_o_editor": "arXiv (preprint); comentario crítico en arXiv 2601.00856", "volumen_paginas": "arXiv 2506.08872", "url_o_doi": "arXiv:2506.08872"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte.", "Es un preprint, pero el anexo B lo clasifica como tipo A (revisada por pares).", "El propio informe desaconseja usarlo como prueba de daño cognitivo."]
+        },
+        {
+          "id": "I02A-C07-04",
+          "texto": "Doshi y Hauser publicaron en Science Advances, en julio de 2024, un experimento sobre escritura de relatos breves: el acceso a ideas generadas por IA hizo que los relatos fueran evaluados como más creativos y mejor escritos, sobre todo entre los escritores menos creativos, pero los relatos asistidos resultaron más parecidos entre sí.",
+          "cifras": ["julio de 2024"],
+          "poblacion_contexto": "Escritores participantes en un experimento en línea; el informe no precisa el nivel (no universitario específico)",
+          "diseno": "experimento aleatorizado",
+          "etiqueta_origen": "E-15 · A · D5 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Doshi, A. R. y Hauser, O. P.", "anio": "2024", "titulo": "Generative AI enhances individual creativity but reduces the collective diversity of novel content", "revista_o_editor": "Science Advances", "volumen_paginas": "10(28), eadn5290", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte (fuera del límite de diez estudios).", "El informe no indica el tamaño de la muestra."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 8",
+      "titulo_origen": "Gobernanza: licenciar, construir, federar o dejar hacer",
+      "tema": "Política declarada frente a vigente; cuatro modelos de infraestructura; el caso CSU; el Reglamento europeo de IA",
+      "afirmaciones": [
+        {
+          "id": "I02A-C08-01",
+          "texto": "La encuesta de UNESCO difundida en septiembre de 2025, con 400 respuestas de Cátedras UNESCO y Redes UNITWIN en 90 países, se comunicó con el titular de que dos tercios de las instituciones tienen o desarrollan orientaciones sobre IA; el 19 % tiene una política formal vigente y el 42 % la tiene en desarrollo.",
+          "cifras": ["400 respuestas", "90 países", "19 %", "42 %", "«dos tercios»", "9 de cada 10 usan IA en su trabajo", "< 10 % en una encuesta anterior de UNESCO"],
+          "poblacion_contexto": "Integrantes de Cátedras UNESCO y Redes UNITWIN, instituciones de educación superior; universitario",
+          "diseno": "encuesta",
+          "etiqueta_origen": "E-21 · B · D2 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "UNESCO", "anio": "2025", "titulo": "Encuesta a Cátedras UNESCO y Redes UNITWIN (título FALTANTE)", "revista_o_editor": "UNESCO", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "Aritmética: 19 % + 42 % = 61 %, no dos tercios (≈ 67 %). Hay que revisar en origen qué se sumó para el titular.", "La encuesta anterior de UNESCO («menos del 10 %») no está identificada."]
+        },
+        {
+          "id": "I02A-C08-02",
+          "texto": "El informe distingue cuatro modelos de infraestructura: licenciar (California State University; Arizona State con OpenAI desde enero de 2024), construir (Tecnológico de Monterrey con TECgpt desde septiembre de 2023), federar (Northeastern, LSE, Champlain y, en 2026, University of San Francisco, Dartmouth, Syracuse, Northumbria, Virginia y Pittsburgh con Claude for Education) y dejar hacer.",
+          "cifras": ["enero de 2024", "septiembre de 2023"],
+          "poblacion_contexto": "Instituciones de educación superior de EE. UU., México y Reino Unido; universitario",
+          "diseno": "otro: tipología propia sobre casos documentados",
+          "etiqueta_origen": "sin etiqueta; «elaboración propia» (tabla 10)",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 10", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 8.2", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Los casos individuales de Claude for Education en 2026 y la alianza ASU-OpenAI no tienen fuente citada en los insumos."]
+        },
+        {
+          "id": "I02A-C08-03",
+          "texto": "California State University desplegó ChatGPT Edu para más de 470.000 estudiantes y 63.000 docentes y funcionarios en 23 campus, y en mayo de 2026 renovó el contrato por 13 millones de dólares anuales durante tres años (39 millones), pese a recortes presupuestarios y a una petición del profesorado presentada en enero para cancelarlo.",
+          "cifras": ["> 470.000 estudiantes", "63.000 docentes y personal", "23 campus", "13 M USD anuales", "39 M USD en 3 años", "≈ 17 M USD acuerdo inicial (corpus)"],
+          "poblacion_contexto": "Sistema California State University, EE. UU.; universitario",
+          "diseno": "otro: prensa especializada",
+          "etiqueta_origen": "E-24 · E · D2 · VERIFICADO (anexo B); corpus: CONTROVERTIDO",
+          "fuente": {"autores": "EdSource; CalMatters; Inside Higher Ed; Academe Blog", "anio": "2026", "titulo": "Cal State renews controversial system-wide contract with OpenAI (EdSource) y otros", "revista_o_editor": "EdSource; CalMatters; Inside Higher Ed", "volumen_paginas": "no aplica", "url_o_doi": "https://edsource.org/2026/cal-state-renews-controversial-system-wide-contract-with-openai/758919"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte."]
+        },
+        {
+          "id": "I02A-C08-04",
+          "texto": "Una encuesta interna de California State University a más de 94.000 estudiantes y empleados encontró que el 52 % del profesorado reporta un efecto negativo de la IA sobre su docencia y que el 67 % de los estudiantes considera que sus profesores no les enseñan a usarla eficazmente.",
+          "cifras": ["> 94.000 respuestas", "52 %", "67 %"],
+          "poblacion_contexto": "Estudiantes, docentes y empleados de California State University; universitario",
+          "diseno": "encuesta (institucional)",
+          "etiqueta_origen": "E-23 · C · D4 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "California State University (vía prensa)", "anio": "2026", "titulo": "Encuesta interna (título FALTANTE)", "revista_o_editor": "California State University", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE (el corpus cita prensa, no el informe de la encuesta)"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte; el corpus remite a prensa, no al documento de la encuesta.", "El capítulo 8 dice que la encuesta refleja la situación «dos años después» del despliegue; los insumos no dan la fecha de inicio del despliegue."]
+        },
+        {
+          "id": "I02A-C08-05",
+          "texto": "El Anexo III del Reglamento europeo de IA clasifica como de alto riesgo los sistemas que determinan el acceso o la admisión, evalúan resultados de aprendizaje, asignan el nivel educativo o vigilan conductas prohibidas en exámenes; según el informe, los requisitos generales rigen desde el 2 de agosto de 2026 y los usos del Anexo III se prorrogaron al 2 de diciembre de 2027.",
+          "cifras": ["02-08-2026", "02-12-2027"],
+          "poblacion_contexto": "Instituciones educativas de la Unión Europea; todos los niveles",
+          "diseno": "documento institucional (norma jurídica)",
+          "etiqueta_origen": "E-29 · B · D1 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Unión Europea (el anexo C dice «Comisión Europea»)", "anio": "2024 (reglamento); enmiendas de simplificación sin fecha en los insumos", "titulo": "Reglamento de Inteligencia Artificial, Anexo III", "revista_o_editor": "FALTANTE (Diario Oficial de la UE)", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte. Conviene verificar en EUR-Lex la adopción y el contenido de las «enmiendas de simplificación» y qué obligaciones de alto riesgo rigieron efectivamente desde el 02-08-2026, porque los usos educativos son todos del Anexo III.", "El anexo C atribuye el reglamento a la «Comisión Europea»; un reglamento lo adoptan el Parlamento Europeo y el Consejo."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 9",
+      "titulo_origen": "Equidad: la brecha de aprendizaje asistido",
+      "tema": "Brecha de género que persiste con acceso igualado; efecto nivelador; infraestructura e idioma; accesibilidad",
+      "afirmaciones": [
+        {
+          "id": "I02A-C09-01",
+          "texto": "Otis, Delecourt, Cranney y Koning, en un documento de trabajo de la Harvard Business School que agrega 18 estudios con 143.008 personas en 25 países, estiman que las mujeres tienen un 22 % menos de probabilidades de usar IA generativa que los hombres, y que la brecha persiste aunque se iguale el acceso.",
+          "cifras": ["18 estudios", "143.008 personas", "25 países", "−22 %", "25 y 31 puntos en estudiantes universitarios de EE. UU. y Suecia"],
+          "poblacion_contexto": "Población general y muestras de estudiantes universitarios; varios países",
+          "diseno": "otro: metaanálisis y análisis de datos de uso",
+          "etiqueta_origen": "E-19 · A · D4 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Otis, N. G., Delecourt, S., Cranney, K. y Koning, R.", "anio": "FALTANTE", "titulo": "Global Evidence on Gender Gaps and Generative AI", "revista_o_editor": "Harvard Business School", "volumen_paginas": "Working Paper 25-023", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso."]
+        },
+        {
+          "id": "I02A-C09-02",
+          "texto": "En países de ingreso bajo, solo el 17 % de los establecimientos educativos tiene acceso a internet, frente al 90 % en los de ingreso alto.",
+          "cifras": ["17 %", "90 %"],
+          "poblacion_contexto": "Establecimientos educativos por nivel de ingreso del país; todos los niveles",
+          "diseno": "otro: estadística internacional",
+          "etiqueta_origen": "sin fila en el anexo B; citado en la tesis de brecha (tabla 15)",
+          "fuente": {"autores": "FALTANTE", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Cifra sin fuente en los insumos. No usar sin localizarla.", "La tabla 15 habla de «17 % de conectividad en países de ingreso bajo»; el capítulo, de establecimientos educativos. No son la misma medida."]
+        },
+        {
+          "id": "I02A-C09-03",
+          "texto": "El informe afirma que el Fondo Monetario Internacional advirtió que el impacto de la IA sobre el crecimiento en las economías avanzadas podría más que duplicar el de los países de ingreso bajo.",
+          "cifras": ["> 2x"],
+          "poblacion_contexto": "Economías nacionales",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "Fondo Monetario Internacional", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "FMI", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin referencia en los insumos."]
+        },
+        {
+          "id": "I02A-C09-04",
+          "texto": "El informe sostiene que el rendimiento de los modelos es inferior fuera del inglés y desigual entre variedades del español y del portugués, y que estas herramientas mejoraron la accesibilidad para estudiantes con dislexia, déficit atencional o discapacidad auditiva y para estudiantes internacionales.",
+          "cifras": [],
+          "poblacion_contexto": "Estudiantes de educación superior; universitario",
+          "diseno": "opinión (sin estudio citado)",
+          "etiqueta_origen": "sin etiqueta",
+          "fuente": {"autores": "FALTANTE", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El informe dice que la mejora de accesibilidad está «bien documentada», pero no cita ninguna fuente. Tampoco cita las «revisiones sistemáticas sobre educación superior en el Sur global» que menciona."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 10",
+      "titulo_origen": "Universidad y mercado profesional: el peldaño que se erosiona",
+      "tema": "Caída del empleo juvenil en ocupaciones expuestas; demanda de competencias de IA; la paradoja del peldaño perdido",
+      "afirmaciones": [
+        {
+          "id": "I02A-C10-01",
+          "texto": "Brynjolfsson, Chandar y Chen, del Stanford Digital Economy Lab, encuentran con microdatos de ADP que, en la actualización de agosto de 2026, el empleo de jóvenes de 22 a 25 años en ocupaciones expuestas a IA está cerca de un 19 % por debajo de la trayectoria de sus pares menos expuestos, sin brecha comparable en trabajadores experimentados y sin desplazamiento generalizado en el conjunto de la economía.",
+          "cifras": ["22-25 años", "≈ −19 %", "brecha creciente desde agosto de 2025"],
+          "poblacion_contexto": "Trabajadores de EE. UU. en datos de nómina de ADP; mercado laboral",
+          "diseno": "otro: análisis de datos administrativos (no experimental)",
+          "etiqueta_origen": "E-20 · A · D4 · VERIFICADO (anexo B); tesis MEDIA (tabla 15)",
+          "fuente": {"autores": "Brynjolfsson, E., Chandar, B. y Chen, R.", "anio": "2026 (actualización de agosto)", "titulo": "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence", "revista_o_editor": "Stanford Digital Economy Lab", "volumen_paginas": "actualización de agosto de 2026", "url_o_doi": "https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf"},
+          "comprobado_en_origen": false,
+          "advertencias": ["PENDIENTE: comprobación en origen en curso.", "La tabla 15 reconoce que la atribución causal a la IA no es completa."]
+        },
+        {
+          "id": "I02A-C10-02",
+          "texto": "Según la National Association of Colleges and Employers, para la promoción de 2026 en Estados Unidos más de un tercio de los empleos de entrada exige competencias de IA, el 28 % de los empleadores busca talento temprano capaz de usarla, casi el 60 % asigna a practicantes proyectos con IA, casi el 70 % contrata por competencias y el 42 % filtra por promedio académico, frente al 73 % en 2019.",
+          "cifras": ["> 1/3", "≈ triple que en otoño de 2025", "28 %", "≈ 60 %", "≈ 70 %", "42 % (2026)", "73 % (2019)"],
+          "poblacion_contexto": "Empleadores de EE. UU. que contratan titulados; mercado laboral",
+          "diseno": "encuesta",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "National Association of Colleges and Employers", "anio": "2025-2026", "titulo": "Job Outlook 2026 y actualizaciones de tendencias", "revista_o_editor": "NACE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte; sin URL en los insumos.", "El propio informe reconoce que la caída del filtro por promedio es anterior a la IA generativa."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 11",
+      "titulo_origen": "Mapa internacional: seis patrones regionales observados en treinta instituciones",
+      "tema": "Treinta instituciones de diez países por profundidad verificada; modelos regionales; ninguna en nivel sistémico",
+      "afirmaciones": [
+        {
+          "id": "I02A-C11-01",
+          "texto": "De las treinta instituciones del mapa, ocho están en nivel 4 (University of Hong Kong, Nanyang Technological University, National University of Singapore, Ohio State, University of Sydney y las facultades de Derecho de Case Western Reserve, University of Chicago y UNLV Boyd), once en nivel 3, nueve en nivel 2, dos en nivel 1 y ninguna en los niveles 0 y 5.",
+          "cifras": ["30 instituciones", "10 países", "nivel 4: 8", "nivel 3: 11", "nivel 2: 9", "nivel 1: 2", "nivel 0: 0", "nivel 5: 0"],
+          "poblacion_contexto": "Instituciones de educación superior con iniciativas documentadas; muestra sesgada al alza; universitario",
+          "diseno": "opinión (clasificación analítica del autor sobre documentos institucionales)",
+          "etiqueta_origen": "sin etiqueta; tabla 12 y figura 7 (g12)",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 12; figura g12", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 11.1", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El recuento de la tabla 12 coincide con Graficos.ps1 (g12).", "El propio informe declara que la muestra sobreestima el nivel medio del sistema.", "Las fuentes institucionales de cada una de las treinta filas no están en los insumos, salvo HKU, NTU, Oxford y China (anexo B)."]
+        },
+        {
+          "id": "I02A-C11-02",
+          "texto": "El mapa incluye tres universidades chilenas en nivel 2: la Pontificia Universidad Católica de Chile (integración declarada de competencias de IA con base común y aplicaciones por disciplina), la Universidad de Chile (lineamientos éticos para la docencia con IA y rol central en la hoja de ruta 2025-2026 de MetaRed TIC Chile) y la Universidad Andrés Bello (lineamientos de uso responsable publicados en 2024).",
+          "cifras": ["nivel 2", "2024", "2025-2026"],
+          "poblacion_contexto": "Universidades chilenas; universitario",
+          "diseno": "documento institucional (según el informe)",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "Pontificia Universidad Católica de Chile; Universidad de Chile; Universidad Andrés Bello", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado; sin fuentes en los insumos. Al tratarse de instituciones chilenas, es la información más sensible para el Consejo y conviene cruzarla con el corpus del Informe 01."]
+        },
+        {
+          "id": "I02A-C11-03",
+          "texto": "La University of Hong Kong exige desde 2025-26 el curso AILT1001 y un segundo curso de alfabetización en IA para graduarse, y Nanyang Technological University hizo obligatoria la alfabetización en IA para todo el estudiantado de grado desde agosto de 2026.",
+          "cifras": ["2025-26", "2 cursos", "agosto de 2026"],
+          "poblacion_contexto": "HKU (Hong Kong) y NTU (Singapur); universitario",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "E-26 y E-27 · C · D2 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "University of Hong Kong; Nanyang Technological University", "anio": "2025-2026", "titulo": "Normativa de currículo de grado (HKU); anuncio de NTU (título FALTANTE)", "revista_o_editor": "HKU; NTU", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte."]
+        },
+        {
+          "id": "I02A-C11-04",
+          "texto": "El informe sostiene que tres de los ocho casos de nivel 4 son facultades de Derecho (Case Western Reserve, University of Chicago y UNLV Boyd) con cursos o módulos de IA obligatorios en primer año desde 2025 o 2026.",
+          "cifras": ["3 de 8", "2025 (Case Western)", "principios de 2026 (Chicago)", "otoño de 2026 (UNLV)"],
+          "poblacion_contexto": "Facultades de Derecho de EE. UU.; universitario",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "sin fila propia en el anexo B (salvo E-38, piloto de Chicago en escritura)",
+          "fuente": {"autores": "Case Western Reserve University School of Law; University of Chicago Law School; UNLV William S. Boyd School of Law", "anio": "2025-2026", "titulo": "Introduction to AI and the Law (Case Western); otros FALTANTE", "revista_o_editor": "Instituciones respectivas", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La afirmación de que estas facultades «se movieron antes y más rápido que la institución que las alberga» no puede evaluarse: sus universidades no están en el mapa.", "El desarrollo de este tema corresponde al capítulo 13 (parte b)."]
+        },
+        {
+          "id": "I02A-C11-05",
+          "texto": "El informe afirma que cinco de las treinta instituciones del mapa son iberoamericanas.",
+          "cifras": ["5 de 30 (según el informe)"],
+          "poblacion_contexto": "Instituciones iberoamericanas del mapa; universitario",
+          "diseno": "otro: recuento del propio informe",
+          "etiqueta_origen": "sin etiqueta",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "11.3 Lo que el mapa revela", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 11.3", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Error de recuento: la tabla 12 contiene seis instituciones iberoamericanas (Tecnológico de Monterrey, UNAM, Universidad de los Andes, Pontificia Universidad Católica de Chile, Universidad de Chile y Universidad Andrés Bello). No heredar «cinco»."]
+        },
+        {
+          "id": "I02A-C11-06",
+          "texto": "El informe plantea como hipótesis que la gobernanza es un cuello de botella central, porque currículo y evaluación se deciden en órganos colegiados con tiempos largos, mientras la infraestructura se decide con una firma, y reconoce que la muestra no permite estimar su peso causal.",
+          "cifras": [],
+          "poblacion_contexto": "Instituciones del mapa; universitario",
+          "diseno": "opinión (hipótesis)",
+          "etiqueta_origen": "sin etiqueta; formulada como hipótesis",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "La pregunta que el mapa deja abierta", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 11.3", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Tensión interna: el texto admite que la muestra no permite estimar el peso causal y cierra con «Ese es el verdadero cuello de botella». Debe presentarse solo como hipótesis."]
+        }
+      ]
+    },
+    {
+      "numero_origen": "Capítulo 12",
+      "titulo_origen": "Currículo: enseñar sobre la IA, con la IA o para trabajar con ella",
+      "tema": "Tres modelos curriculares; predominio del currículo aditivo; expansión de la oferta en Asia; ausencia del tercer modelo",
+      "afirmaciones": [
+        {
+          "id": "I02A-C12-01",
+          "texto": "El informe clasifica siete de los ocho casos de nivel 4 del mapa como variantes del modelo de enseñar sobre la IA (contenido nuevo y obligatorio), uno (University of Sydney) como enseñar con la IA por la vía de la evaluación, y ninguno como enseñar para entornos mediados por IA.",
+          "cifras": ["7 de 8", "1 de 8", "0 de 8"],
+          "poblacion_contexto": "Casos de nivel 4 del mapa internacional; universitario",
+          "diseno": "opinión (clasificación analítica del autor)",
+          "etiqueta_origen": "sin etiqueta; tabla 14",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "Tabla 14; 12.2", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 12.1-12.2", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La tabla 14 atribuye al profesorado un «83 %» que «declara no dominar la herramienta». En el capítulo 6, el 83 % corresponde a docentes preocupados por la capacidad crítica de sus estudiantes; si se derivó como complemento del 17 % en nivel avanzado, el informe no lo declara. No heredar."]
+        },
+        {
+          "id": "I02A-C12-02",
+          "texto": "Más de 600 universidades chinas ofrecen grados de IA en 2026, frente a las 35 aprobadas en 2018, y en abril de 2026 el Ministerio de Educación y otros cuatro organismos publicaron el plan de acción «IA + Educación», que hace de la IA una asignatura fundamental obligatoria y prevé integrarla en las asignaturas públicas universitarias en 2026-2027, con dieciocho universidades piloto.",
+          "cifras": ["> 600 universidades", "35 en 2018", "abril de 2026", "18 universidades piloto", "curso 2026-2027"],
+          "poblacion_contexto": "Sistema universitario chino; universitario",
+          "diseno": "documento institucional (plan estatal)",
+          "etiqueta_origen": "E-28 · B · D2 · VERIFICADO (anexo B)",
+          "fuente": {"autores": "Ministerio de Educación de China y otros cuatro organismos", "anio": "2026", "titulo": "Plan de acción «IA + Educación»", "revista_o_editor": "Gobierno de China", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No comprobado en origen en esta parte.", "La afirmación de que el sistema «recortó miles de programas universitarios» y los reemplazó en parte por titulaciones de IA no tiene fuente en los insumos."]
+        },
+        {
+          "id": "I02A-C12-03",
+          "texto": "En México, más de 190 universidades ofrecen programas relacionados con IA, con alrededor de 3.600 estudiantes matriculados, sin regulación nacional unificada.",
+          "cifras": ["> 190 universidades", "≈ 3.600 estudiantes"],
+          "poblacion_contexto": "Universidades mexicanas; universitario",
+          "diseno": "otro: estadística sectorial",
+          "etiqueta_origen": "sin fila en el anexo B",
+          "fuente": {"autores": "FALTANTE", "anio": "FALTANTE", "titulo": "FALTANTE", "revista_o_editor": "FALTANTE", "volumen_paginas": "FALTANTE", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin fuente en los insumos.", "Unos 3.600 estudiantes repartidos en más de 190 universidades (menos de 20 por universidad) es una combinación poco plausible: revisar en origen antes de usarla."]
+        },
+        {
+          "id": "I02A-C12-04",
+          "texto": "El informe no localizó ninguna institución que haya rediseñado su currículo con el propósito explícito de reconstruir la práctica formativa de los primeros años de ejercicio profesional que el mercado deja de proveer.",
+          "cifras": [],
+          "poblacion_contexto": "Instituciones del mapa y políticas examinadas; universitario",
+          "diseno": "otro: afirmación de ausencia",
+          "etiqueta_origen": "sin etiqueta",
+          "fuente": {"autores": "Informe 02", "anio": "2026", "titulo": "12.4 Lo que falta: el tercer modelo", "revista_o_editor": "Documento de trabajo", "volumen_paginas": "Capítulo 12.4", "url_o_doi": "FALTANTE"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin protocolo de búsqueda declarado, vale como «no se localizó», no como ausencia demostrada."]
+        }
+      ]
+    }
+  ],
+  "datos_figuras": [],
+  "tesis_del_capitulo": []
+}

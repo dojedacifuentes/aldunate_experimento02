@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+8/30
+ Universidad Central de Chile
+
+Facultad de Derecho y Humanidades U. Central
+
+Su asistente docente basado en IA generativa, con más de 300 consultas acumuladas e incorporado al plan de mejora de la carrera, fue seleccionado para un showcase internacional. Es práctica docente de un académico y así se registra. Es la institución más perjudicada por la verificación: la única fuente que sostenía su capacidad de investigación no fue localizable en ningún dominio y esa capacidad baja a no localizada.
+
+Cobertura
+
+7 de 13 rutas · 4 fuentes, 4 contrastadas (100 %) · 4 celdas sin concluir
+
+Índice
+
+Piso 8 · techo 16
+
+Rutas por recorrer
+
+integridad-evaluacion, malla-curricular, politicas-ia, postgrado-formacion-continua, programas-syllabus, vinculacion-transferencia
+

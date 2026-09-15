@@ -1,0 +1,121 @@
+﻿[
+{"t":"h1","n":"Capítulo 8","x":"Gobernanza: licenciar, construir, federar o dejar hacer"},
+
+{"t":"lead","x":"Toda universidad ha tomado ya, explícita o implícitamente, una decisión de infraestructura. Las que creen no haberla tomado han elegido de hecho la cuarta opción: que cada estudiante y cada docente use su cuenta personal, con las consecuencias de equidad y de datos que ello implica."},
+
+{"t":"h2","x":"8.1 La distancia entre la política declarada y la política vigente"},
+
+{"t":"fig","id":"g04-politicas","cap":"Figura 4. El mismo dato admite dos titulares opuestos. El de UNESCO fue el optimista; el que importa para la gestión es el otro."},
+
+{"t":"p","x":"La encuesta de UNESCO difundida en septiembre de 2025 —400 respuestas de Cátedras UNESCO y Redes UNITWIN en 90 países— se comunicó bajo el titular de que dos tercios de las instituciones de educación superior tienen o están desarrollando orientaciones sobre IA. El desglose es más informativo: el **19 %** tiene una política formal ya vigente y el **42 %** la tiene en desarrollo."},
+
+{"t":"p","x":"La diferencia entre ambas cifras no es un matiz estadístico. Una política vigente obliga; una política en desarrollo no produce ningún efecto sobre un solo estudiante. Para dimensionar el avance conviene recordar que una encuesta anterior de la propia UNESCO situaba en menos del 10 % la proporción de escuelas y universidades con orientación formal. El progreso es real y la magnitud es la de haber duplicado una base muy baja, no la de haber cubierto el sistema."},
+
+{"t":"p","x":"En la misma encuesta, nueve de cada diez encuestados declara usar herramientas de IA en su trabajo profesional. La asimetría entre práctica individual y norma institucional es el rasgo definitorio del periodo."},
+
+{"t":"callout","h":"Advertencia sobre esta cifra","c":"ochre","x":"Son 400 respuestas autoseleccionadas dentro de la red de Cátedras UNESCO, un colectivo por definición más movilizado que el promedio del sistema universitario mundial. La estimación del 19 % debe leerse como un techo optimista, no como una media global."},
+
+{"t":"h2","x":"8.2 Los cuatro modelos y sus consecuencias"},
+
+{"t":"table","cap":"Tabla 10. Modelos de infraestructura de IA en educación superior. Elaboración propia a partir de los casos examinados.",
+ "head":["Modelo","Casos verificados","Ventaja principal","Riesgo estructural"],
+ "w":[1500,2700,2400,2520],
+ "align":["left","left","left","left"],
+ "rows":[
+ ["**Licenciar**","California State University (ChatGPT Edu para más de 470.000 estudiantes en 23 campus); Arizona State con OpenAI desde enero de 2024","Acceso universal inmediato y equidad formal de acceso","Dependencia de un proveedor único, coste recurrente y ninguna garantía pedagógica"],
+ ["**Construir**","Tecnológico de Monterrey (TECgpt desde septiembre de 2023, y TECgpt Open Edition)","Soberanía sobre datos y sobre el modelo educativo; contenido curado propio","Coste de mantenimiento y rezago frente a la frontera tecnológica"],
+ ["**Federar**","Northeastern, LSE, Champlain, y en 2026 University of San Francisco, Dartmouth, Syracuse, Northumbria, Virginia y Pittsburgh con Claude for Education","Diversificación de proveedores y capacidad de negociación","Complejidad de integración y gobernanza fragmentada"],
+ ["**Dejar hacer**","La mayoría del sistema mundial, por omisión","Coste institucional cero","Brecha de acceso entre planes gratuitos y de pago; datos académicos fuera de todo control institucional"]
+ ]},
+
+{"t":"h2","x":"8.3 El caso California State University: el contraejemplo más útil"},
+
+{"t":"p","x":"California State University desplegó ChatGPT Edu para más de 470.000 estudiantes y 63.000 docentes y personal en 23 campus. En mayo de 2026 renovó el contrato por trece millones de dólares anuales durante tres años —39 millones en total—, en un contexto de recortes presupuestarios y pese a una petición del profesorado, presentada en enero, que solicitaba cancelarlo con el argumento de que ChatGPT Edu «no está diseñado, entrenado ni optimizado para la educación»."},
+
+{"t":"p","x":"El dato decisivo procede de la propia institución. Una encuesta interna de CSU a más de 94.000 estudiantes y empleados encontró que el **52 % del profesorado reportó un efecto negativo de la IA sobre su docencia** y que el **67 % de los estudiantes considera que sus profesores no les enseñan a usar IA de manera eficaz**."},
+
+{"t":"callout","h":"Qué demuestra y qué no demuestra este caso","c":"brick","x":"**Demuestra** que es posible desplegar acceso universal a IA generativa a escala de casi medio millón de personas, y que hacerlo no produce por sí mismo integración pedagógica: dos años después, la mayoría del profesorado percibe un efecto negativo y la mayoría de los estudiantes no se siente enseñada. **No demuestra** que licenciar sea un error: demuestra que licenciar sin rediseño evaluativo, sin formación docente obligatoria y sin participación del profesorado en la decisión produce el nivel 1 con el presupuesto del nivel 5. Es el mejor argumento disponible a favor de definir la capa pedagógica objetivo antes de firmar el contrato."},
+
+{"t":"h2","x":"8.4 Europa: el único lugar donde evaluar con IA es una cuestión jurídica"},
+
+{"t":"p","x":"El Reglamento europeo de inteligencia artificial introduce una diferencia cualitativa que ninguna otra región tiene. Su Anexo III clasifica como **sistemas de alto riesgo** varios usos habituales en la universidad: los que determinan el acceso o la admisión, los que **evalúan resultados de aprendizaje** —incluida la corrección automatizada—, los que asignan el nivel educativo al que alguien puede acceder y los que **monitorizan y detectan comportamientos prohibidos durante los exámenes**, es decir, la supervisión remota."},
+
+{"t":"p","x":"Los requisitos generales para sistemas de alto riesgo entraron en vigor el 2 de agosto de 2026; los casos de uso del Anexo III se han prorrogado hasta el 2 de diciembre de 2027 en virtud de las enmiendas de simplificación. Las obligaciones incluyen sistema de gestión de riesgos, gobernanza de datos, documentación técnica, registro de eventos, supervisión humana y niveles adecuados de exactitud y robustez. Las universidades públicas deben además realizar una **Evaluación de Impacto sobre Derechos Fundamentales** antes del despliegue."},
+
+{"t":"p","x":"La consecuencia práctica es notable y todavía poco asimilada: en la Unión Europea, corregir automáticamente con IA o vigilar exámenes con IA deja de ser una decisión pedagógica discrecional y pasa a ser una actividad regulada con obligaciones documentales verificables. Es, hasta donde alcanza esta investigación, el único marco del mundo que somete la evaluación asistida a régimen jurídico específico."},
+
+{"t":"h1","n":"Capítulo 9","x":"Equidad: la brecha de aprendizaje asistido"},
+
+{"t":"lead","x":"La discusión sobre equidad en este campo suele reducirse al acceso. El acceso es la parte fácil y la que primero se resuelve. Las brechas persistentes son otras tres: de uso, de infraestructura y de idioma. Y al menos una de ellas se agranda aunque el acceso se iguale."},
+
+{"t":"fig","id":"g08-genero","cap":"Figura 8. La composición de usuarios se aleja de la paridad de forma consistente entre plataformas, y el patrón se reproduce dentro de las poblaciones estudiantiles."},
+
+{"t":"h2","x":"9.1 La brecha de género no se explica por el acceso"},
+
+{"t":"p","x":"El trabajo más sólido disponible es el de Nicholas Otis, Solène Delecourt, Katelyn Cranney y Rembrand Koning, publicado como documento de trabajo de la Harvard Business School: un metaanálisis de 18 estudios que cubren 143.008 personas en 25 países. Su resultado central es que las mujeres tienen un **22 % menos de probabilidades** de usar IA generativa que los hombres."},
+
+{"t":"p","x":"El hallazgo que convierte esto en un problema universitario y no solo en una estadística de mercado es el siguiente: **la brecha persiste incluso cuando el acceso se iguala**. Igualar el acceso —que es lo que hace un despliegue institucional de licencias— es necesario y demostradamente insuficiente. En muestras de estudiantes universitarios de Estados Unidos y Suecia las diferencias alcanzaron 25 y 31 puntos porcentuales respectivamente."},
+
+{"t":"p","x":"Si la fluidez con estas herramientas se convierte en un diferenciador profesional —y los datos del capítulo 10 sugieren que ya lo es—, una brecha de uso que no se cierra con acceso se traduce directamente en desigualdad de resultados de egreso."},
+
+{"t":"h2","x":"9.2 El efecto nivelador y su reverso"},
+
+{"t":"p","x":"En la dirección contraria hay evidencia igualmente sólida. Los estudios de mejor diseño coinciden en que **la IA beneficia desproporcionadamente a quienes partían de un rendimiento menor**. El experimento de Doshi y Hauser lo encontró en escritura creativa. El estudio de Choi y Schwarcz en análisis jurídico, examinado en el capítulo 13, lo cuantifica con precisión notable: los estudiantes de peor desempeño previo ganaron alrededor de 45 puntos percentiles."},
+
+{"t":"p","x":"Este es probablemente el argumento más fuerte a favor del acceso universal financiado institucionalmente. Y tiene un reverso que la universidad debe afrontar con franqueza: si la herramienta comprime la distribución del desempeño, **comprime también la capacidad de la evaluación para discriminar entre estudiantes**. Un sistema cuya función incluye señalizar capacidades diferenciales al mercado profesional no puede ignorar que su instrumento pierde resolución."},
+
+{"t":"h2","x":"9.3 Infraestructura e idioma"},
+
+{"t":"p","x":"La brecha material sigue siendo la más brutal y la menos discutida en la literatura anglófona. En países de ingreso bajo solo el 17 % de los establecimientos educativos tiene acceso a internet, frente al 90 % en los de ingreso alto. Las revisiones sistemáticas sobre educación superior en el Sur global identifican de forma consistente la conectividad inestable, la ausencia de computación de alto rendimiento y la falta de repositorios digitales como las barreras dominantes. El Fondo Monetario Internacional ha advertido que el impacto de la IA sobre el crecimiento en las economías avanzadas podría más que duplicar el de los países de ingreso bajo."},
+
+{"t":"p","x":"A ello se añade la brecha lingüística, que es específicamente académica: el rendimiento de los modelos es sistemáticamente inferior fuera del inglés, y desigual entre variedades del español y del portugués. Un estudiante que trabaja en su lengua obtiene un asistente peor, y además —según el estudio de Stanford sobre detectores— tiene mayor probabilidad de ser acusado falsamente de haberlo usado."},
+
+{"t":"callout","h":"El concepto: brecha de aprendizaje asistido","c":"navy","x":"Reuniendo las tres dimensiones, lo que se está formando no es una brecha de acceso a una herramienta sino una **brecha de aprendizaje asistido**: diferencias acumulativas en la capacidad de usar sistemas de IA de manera que produzcan comprensión en lugar de sustituirla. Depende del acceso, pero también de la alfabetización previa, del idioma de trabajo, del capital cultural que permite desconfiar de una respuesta bien redactada y —crucialmente— de si alguien enseñó a hacerlo. Es una brecha que las instituciones pueden cerrar mediante enseñanza explícita, y que el mercado no cerrará solo."},
+
+{"t":"p","x":"Debe registrarse también la cara positiva, bien documentada: para estudiantes con dislexia, con trastorno por déficit de atención, con discapacidad auditiva y para estudiantes internacionales, estas herramientas han supuesto una mejora de accesibilidad real y sustantiva. Cualquier política restrictiva que ignore este punto impone un coste desproporcionado precisamente a quienes más se benefician."},
+
+{"t":"h1","n":"Capítulo 10","x":"Universidad y mercado profesional: el peldaño que se erosiona"},
+
+{"t":"lead","x":"La pregunta de este capítulo es la que da sentido económico a todas las anteriores: si el trabajo profesional cambia, ¿cómo debería cambiar la formación que prepara para él? La evidencia de 2025 y 2026 permite responder con más precisión de la que existía hace un año, y la respuesta es incómoda."},
+
+{"t":"h2","x":"10.1 El dato central: los jóvenes, no el conjunto"},
+
+{"t":"p","x":"Erik Brynjolfsson, Bharat Chandar y Ruyu Chen, del Stanford Digital Economy Lab, analizan microdatos administrativos de ADP con alta frecuencia. Su hallazgo, actualizado en agosto de 2026, es preciso y conviene citarlo con sus dos mitades."},
+
+{"t":"bullets","items":[
+"**No hay desplazamiento laboral generalizado** atribuible a la IA en el conjunto de la economía. Quien afirme lo contrario no se apoya en esta evidencia.",
+"El empleo de **jóvenes de 22 a 25 años** en ocupaciones expuestas a IA está aproximadamente un **19 % por debajo** de donde estaría si hubiera seguido el ritmo de sus pares menos expuestos. La brecha se amplía de forma sostenida desde agosto de 2025.",
+"Los trabajadores **experimentados no muestran** una brecha comparable en las mismas ocupaciones.",
+"Las caídas se concentran donde la IA **sustituye** tareas humanas; donde las **complementa**, el empleo es plano o creciente."
+]},
+
+{"t":"p","x":"La estructura del hallazgo es la relevante para una universidad. El efecto no se distribuye por sector sino por **antigüedad**: golpea el primer peldaño. Y el primer peldaño es exactamente el punto donde la universidad entrega su producto."},
+
+{"t":"h2","x":"10.2 Qué piden los empleadores ahora"},
+
+{"t":"p","x":"Los datos de la National Association of Colleges and Employers para la promoción de 2026 en Estados Unidos muestran un mercado que se recompone antes que contraerse:"},
+
+{"t":"table","cap":"Tabla 11. Señales del mercado de titulados. National Association of Colleges and Employers, Job Outlook 2026 y actualizaciones de tendencias.",
+ "head":["Indicador","Dato","Lectura"],
+ "w":[3200,1700,4220],
+ "align":["left","center","left"],
+ "rows":[
+ ["Empleos de entrada que exigen competencias de IA","**Más de un tercio**","Casi el triple que en otoño de 2025. La competencia dejó de ser diferencial y pasó a ser umbral."],
+ ["Empleadores que buscan talento temprano capaz de usar IA","**28 %**","La demanda es explícita, no implícita."],
+ ["Empleadores que asignan a practicantes proyectos con IA","**Casi 60 %**","La práctica profesional ya integra la herramienta; la formación va por detrás."],
+ ["Empleadores que contratan por competencias y no solo por promedio","**Casi 70 %**","Desplazamiento desde la credencial hacia la evidencia demostrable de capacidad."],
+ ["Empleadores que filtran por promedio académico","**42 %** en 2026, frente al **73 %** en 2019","La señal tradicional del expediente ha perdido la mitad de su peso en siete años."]
+ ]},
+
+{"t":"p","x":"La última fila merece subrayarse. La caída del filtro por expediente del 73 % al 42 % es anterior a la IA generativa y responde a un movimiento más amplio hacia la contratación por competencias. Pero la IA acelera la lógica subyacente: si el expediente refleja productos que ahora pueden generarse, su valor informativo cae, y el mercado busca evidencia de capacidad demostrada en su lugar. **El mercado está llegando, por su cuenta, a la misma conclusión que la reforma evaluativa del capítulo 3.**"},
+
+{"t":"h2","x":"10.3 El caso de la programación y la lección para toda profesión"},
+
+{"t":"p","x":"El estudio de METR examinado en el capítulo 7 tiene aquí una segunda lectura. Que dieciséis desarrolladores experimentados fueran un 19 % más lentos con IA en su propio código contradice la narrativa dominante sobre productividad en la profesión más expuesta de todas. Y sin embargo, la programación es también la ocupación donde el empleo juvenil cae con más claridad."},
+
+{"t":"p","x":"Las dos cosas son compatibles y su combinación es exactamente el problema formativo. La IA es suficientemente buena para hacer innecesario el trabajo que hacía un programador de primer año, y todavía no lo bastante buena para sustituir el juicio de uno experimentado. Se elimina el peldaño por el que se llegaba a ser experimentado."},
+
+{"t":"callout","h":"La paradoja del peldaño perdido","c":"navy","x":"Toda profesión cognitiva formaba a sus expertos haciéndoles ejecutar durante años tareas que ahora son automatizables: el asociado junior que revisaba contratos, el residente que redactaba historias clínicas, el auditor que cuadraba partidas, el periodista que transcribía. Ese trabajo era económicamente marginal y **formativamente decisivo**. Si desaparece del mercado, la única institución que puede reconstruirlo deliberadamente es la universidad, mediante simulación, práctica supervisada y observación de desempeño. Es un desplazamiento de responsabilidad formativa desde el empleador hacia la universidad, y ocurre sin que nadie lo haya decidido ni financiado."},
+
+{"t":"p","x":"Esta es, a nuestro juicio, la implicación estratégica más importante del informe para el diseño curricular de la próxima década, y no aparece en prácticamente ninguna de las políticas institucionales examinadas."}
+]

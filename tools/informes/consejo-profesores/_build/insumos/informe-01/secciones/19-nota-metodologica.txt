@@ -1,0 +1,65 @@
+[Informe 01 v3.2.0 · líneas 2044-2108 del texto completo]
+
+Nota metodológica
+
+Once instituciones, no el sistema. La cohorte es cerrada y no probabilística.
+ Toda afirmación se refiere a esas once. El documento evita la expresión «las universidades chilenas»
+ cuando el universo analizado es esta cohorte.
+
+Universidad no es Facultad. Una licencia institucional disponible para toda la
+ comunidad no es adopción de Derecho. Quince registros del corpus corresponden a capacidades del
+ entorno institucional y así se declaran.
+
+Nada se arrastra del antecedente. Los puntajes del informe de 2025 no se
+ heredan, sus cifras no se comparan aritméticamente con las de éste, y sus errores se corrigen por
+ fe de erratas.
+
+No hay línea base congelada. Ninguna afirmación de la forma «tal capacidad
+ aumentó desde 2025» es publicable mientras el documento antecedente contenga actividades fechadas
+ en 2026.
+
+Anuncio no es ejecución. Una adjudicación, un convenio firmado, un piloto y una
+ entrada de agenda con fecha transcurrida son cuatro cosas distintas y ninguna acredita actividad
+ realizada por sí sola.
+
+Contrastado no es aceptado. Contrastado significa que la fuente fue abierta y
+ comparada contra el registro. La aceptación exige decisión humana registrada, y el procedimiento la
+ exige en un punto identificado del flujo.
+
+La ausencia no es inexistencia. Toda afirmación negativa se refiere a lo que no
+ fue localizado recorriendo un protocolo definido. La única excepción son las apoyadas en registros
+ exhaustivos, donde la ausencia sí es un dato, y sólo dentro del alcance de ese registro.
+
+La escala se aplica a la iniciativa. Nunca a la universidad, y no se promedia.
+ El índice ordinal suma estados por institución sobre una rúbrica publicada, que es una operación
+ distinta y declarada como tal.
+
+El índice mide formalización publicada. No mide calidad de la enseñanza,
+ preparación de egresados ni uso real, y ninguna de esas tres cosas es observable con evidencia
+ pública en la cohorte.
+
+Las divergencias se publican. Corregir en silencio destruye la prueba de que el
+ procedimiento funciona. Las 23 encontradas se publican con su consecuencia, incluidas las que
+ perjudican al argumento del informe.
+
+Los versionados no se reescriben hacia atrás. Cada versión publicada se conserva accesible con las cifras que sostenía, y el registro de cambios de cada una se publica junto a ella.
+
+Asistencia de IA declarada. El informe se produjo con asistencia de sistemas de
+ inteligencia artificial en la localización de fuentes, en el contraste de cada publicación original
+ y en la redacción. La responsabilidad editorial es humana y está firmada.
+
+Informe 01 · v3.2.0
+Fecha de corte 6 de septiembre de 2026
+
+Protocolo METODOLOGIA_IA_DERECHO_V2.2
+Cohorte COHORTE_IA_DERECHO_CHILE_11_V1
+
+Diego Hernán Ojeda Cifuentes
+
+Licenciado en Ciencias Jurídicas
+Escuela de Derecho · Pontificia Universidad Católica de Valparaíso
+
+Programa DIAT
+
+Anexo A
+

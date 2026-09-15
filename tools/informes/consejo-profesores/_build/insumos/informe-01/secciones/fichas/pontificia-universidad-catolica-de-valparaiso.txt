@@ -1,0 +1,21 @@
+ATENCIÓN: esta ficha conserva cifras de la matriz anterior (v1): el «NN/30», el piso, el techo y frases como «encabeza el comparador» o «banda de 12 a 20» NO son vigentes. Las cifras vigentes están en puntaje/resultados.json. El texto cualitativo sí es utilizable.
+
+18/30
+ Pontificia Universidad Católica de Valparaíso
+
+Facultad y Escuela de Derecho PUCV · piloto de profundidad
+
+Encabeza el comparador y es la única institución sin celdas sin concluir. Único caso del corpus con herramienta propia registrada, en funcionamiento y con reconocimiento externo de la Corte Suprema, y con convenio firmado con esa misma Corte. Su malla de pregrado, verificada en sus diez semestres, no contiene asignaturas de IA ni de tecnología jurídica; su unidad no publica acto de creación y no tiene página en el dominio institucional. Una de las tres del piloto: se la observa desde información privilegiada.
+
+Cobertura
+
+11 de 13 rutas · 14 fuentes, 14 contrastadas (100 %) · 0 celdas sin concluir
+
+Índice
+
+Piso 18 · techo 18 · banda cerrada
+
+Rutas por recorrer
+
+postgrado-formacion-continua, programas-syllabus
+

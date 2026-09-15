@@ -1,0 +1,80 @@
+[Informe 01 v3.2.0 · líneas 1637-1716 del texto completo]
+
+9 · Conclusiones
+
+¿Qué puede sostener este estudio, y con qué firmeza?
+
+Las ocho conclusiones, con la clase de afirmación que son y la confianza declarada de lo que las sostiene
+
+[FIGURA SVG]
+
+Hecho sobre el corpus
+ Inferencia
+
+La barra es la confianza de la afirmación más débil en que se apoya cada conclusión: una
+ conclusión no es más firme que su apoyo más flojo. La escala arranca en 50 y no en 0 porque ninguna
+ baja de 70; la referencia se dibuja para que esa elección quede a la vista. El orden es el del documento y no el de la confianza. Las dos conclusiones dibujadas en el segundo color son inferencias: se derivan de la evidencia disponible en lugar de constar en una fuente, y su cadena de razonamiento se publica entera junto a cada una.
+
+Cada conclusión cita las afirmaciones del dataset que la sostienen y ninguna introduce información
+ que no aparezca antes en el documento.
+
+C-1
+ La institucionalización avanza por denominación, no por constitución
+
+Cuatro Facultades de Derecho crearon entre 2025 y 2026 unidades dedicadas a tecnología o inteligencia artificial, y en ninguna de las cuatro se localizó el acto formal que la constituye. Sólo una tiene respaldo orgánico publicado: figura en la estructura de la Facultad, con director identificado. Las otras tres se acreditan mediante noticias de creación y nombramientos. La verificación completa añadió un caso de mayor antigüedad y del mismo tipo: la unidad de la Universidad de Chile cita un decreto rectoral de 2003 que oficializa una denominación anterior y distinta de la que hoy usa.
+
+Hecho sobre el corpus. Se apoya en clm-cohorte-002 y en el anexo B.
+
+C-2
+ Dos Facultades dictaron norma propia; sólo una publica el instrumento
+
+Dos Facultades del comparador dictaron norma propia con acto citable: la Facultad de Derecho y Humanidades de la Universidad Central aprobó una resolución de su decano que pone en vigor un instructivo sobre uso académico de inteligencia artificial. Son dos, no una. La corrección viene con una reserva que el informe no disimula: la dirección publicada de esa resolución devuelve un error y el documento no pudo abrirse para contrastar sus siete campos, de modo que la conclusión se apoya en la existencia acreditada del acto y no en su contenido leído. Por eso su confianza baja de 85 a 70 en lugar de subir. El instrumento de la otra Facultad sí se abrió: impone deberes de declaración y registro y califica su incumplimiento como infracción grave sancionable conforme al régimen del plagio. La regulación del uso sigue avanzando más deprisa que su enseñanza, y el contraste internacional muestra que ese diseño es el modelo dominante allí donde el instrumento existe.
+
+Hecho sobre el corpus. Se apoya en clm-cohorte-003 y en la sección 7.
+
+C-3
+ La continuidad dejó de ser excepcional, y sigue sin llegar a resultados
+
+La continuidad plurianual consta ya en varios ejes y en varias instituciones. La Universidad del Desarrollo publica una segunda versión de su curso de herramientas de inteligencia artificial para abogados, con calendario, horas y arancel; la Universidad de Chile conserva fichas separadas de su diploma para 2022 y 2023; y la Universidad Autónoma documenta un minor con cinco años de trayectoria. La continuidad, por tanto, ya no es excepcional.
+
+Lo que se mantiene es el eje: toda la continuidad localizada sigue estando en formación, y ninguna en el currículo obligatorio ni en la evaluación. Y conviene separar tres cosas que el corpus mezclaba. Hay continuidad de oferta, que es una página que sigue publicada; hay continuidad de ejecución, que exige una segunda versión con fechas; y hay continuidad con resultados, que exige titulados contados. La primera abunda, la segunda aparece ahora en tres instituciones, y de la tercera sólo hay dos casos: dos graduaciones consecutivas con más de noventa y más de cien titulados en una institución, y doce estudiantes que completaron el minor en otra. La confianza de esta conclusión baja de 85 a 80 porque la afirmación se ha vuelto más matizada y menos nítida, no porque su apoyo sea más débil.
+
+Hecho sobre el corpus. Se apoya en clm-cohorte-005.
+
+C-4
+ No hay línea curricular obligatoria documentada en ninguna de las once
+
+No se localizó en ninguna institución de la cohorte evidencia pública de una asignatura obligatoria en inteligencia artificial con syllabus, semestre, créditos y matrícula. Lo que existe son talleres, electivos y experiencias acotadas a una asignatura. El único minor con egresados es electivo, se co-titula con Ingeniería, opera en una sola sede y está diseñado para no aumentar la carga académica. La afirmación se fortalece en un caso por verificación directa de una malla completa, y se relativiza en su severidad por el contraste internacional: sólo tres facultades en el mundo tienen un componente obligatorio y dos de las tres son certificaciones sin créditos.
+
+Hecho sobre el corpus, de alcance acotado. Se apoya en clm-cohorte-006 y en la sección 7.
+
+C-5
+ Ninguna iniciativa acredita evaluación de efecto, y ninguna figura entre lo adjudicado
+
+Ninguna de las 53 iniciativas alcanza el peldaño de evaluación. La única medición de resultado del corpus la publica una vicerrectoría de transformación digital sobre el conjunto de su universidad, es correlacional y no distingue estudiantes de Derecho. La razón por la que ésta es la conclusión de mayor confianza declarada es que la consulta exhaustiva de los 49.014 proyectos adjudicados por ANID desde 1982 no devuelve un solo proyecto sobre enseñanza del Derecho con inteligencia artificial, mientras sí devuelve diez que cruzan IA con enseñanza en otras seis disciplinas. La ausencia deja de ser de evidencia y pasa a ser de adjudicación: el registro acredita que ningún proyecto se financió, no que ninguno se presentara.
+
+Hecho sobre el corpus y sobre el registro público de financiamiento. Se apoya en clm-cohorte-001 y en el anexo E.
+
+C-6
+ La cobertura desigual acota la comparación ordinal, y no la impide
+
+La investigación alcanzó una cobertura 1,8 veces mayor en tres instituciones que en las ocho restantes, y el corpus original está contrastado al 100 % en todas. Eso hace publicable un comparador construido sobre capacidades acreditadas —no sobre volumen de evidencia— siempre que incorpore su propia incertidumbre. El comparador se publica como banda por esa razón. Con 5 de las 100 celdas del comparador sin concluir, ninguna institución tiene ya un techo igual o superior al piso de la primera, y el único orden que sigue sin resolverse es el de los dos empates: la Autónoma con la Central en 17, y la Adolfo Ibáñez con la Andrés Bello en 11.
+
+Inferencia, acotada por el análisis de sensibilidad. Se apoya en clm-metodo-001 y en la sección 11.
+
+C-7
+ El fenómeno está en tránsito de la actividad a la estructura, sin llegar al resultado
+
+La distribución de las 53 iniciativas en la escalera describe un campo a medio camino: 19 siguen siendo actividades aisladas o anuncios, 21 acreditan operación recurrente, 13 alcanzan alguna señal de institucionalización, y 0 llegan a evaluación. La secuencia está poblada en sus tres primeros tramos y vacía en el cuarto, y lo está en las once instituciones a la vez. Que la ausencia sea simultánea sugiere una causa común —el costo de medir aprendizaje, y la inexistencia de un instrumento de financiamiento que las Facultades hayan usado— antes que una diferencia de mérito entre Facultades.
+
+Inferencia. Se apoya en clm-cohorte-001, clm-cohorte-002 y clm-cohorte-006.
+
+C-8
+ Ninguna institución chilena tiene mandato para verificar lo que las Facultades afirman
+
+La Comisión Nacional de Acreditación no ha dictado criterios específicos para Derecho, cuya acreditación de carrera es además voluntaria. La guía del Colegio de Abogados de julio de 2026 regula al abogado en ejercicio y no menciona la formación universitaria. El sitio de inteligencia artificial de la Academia Judicial se dirige a juezas y jueces. La Política Nacional de Inteligencia Artificial contempla a las instituciones de educación superior sin mención alguna a la formación jurídica. Es la conclusión que explica por qué el resto de este informe encuentra lo que encuentra: no existe incentivo externo para publicar el acto, declarar el alcance o medir el efecto.
+
+Hecho sobre el estado de la verificación institucional. Se apoya en el anexo E.
+
+17
+

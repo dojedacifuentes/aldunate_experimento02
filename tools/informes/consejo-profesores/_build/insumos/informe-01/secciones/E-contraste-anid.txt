@@ -1,0 +1,90 @@
+[Informe 01 v3.2.0 · líneas 2661-2750 del texto completo]
+
+Contraste externo: proyectos ANID y fuentes de terceros
+
+Ocho proyectos con objeto jurídico-tecnológico clasificados fuera de la disciplina Derecho
+
+Los siete de disciplina Derecho se publican en la sección 6. Estos ocho
+ suman 1.361 millones de pesos y ninguno lo lidera una Facultad de Derecho. Es el hallazgo H-4 medido
+ en dinero público.
+
+Código | Instrumento | 
+ Institución | Título | Monto ($) | 
+ Meses | 
+
+IT25I0151 | FONDEF IDeA Investigación Tecnológica 2025 | U. de los Andes (con PUCV) | Escalamiento y validación de un sistema integrado para la certeza jurídica en materia ambiental mediante inteligencia artificial | 236.998.000 | 24 | 
+
+ID21I10206 | FONDEF IDeA I+D 2021 | U. de los Andes | Desarrollo de herramienta computacional para la certeza jurídica en materia ambiental (fase anterior de IT25I0151) | 199.999.000 | 24 | 
+
+ID26I10072 | FONDEF IDeA I+D 2026 | U. Alberto Hurtado | ChileReconoce 2.0: solución jurídico-tecnológica | 227.700.000 | 24 | 
+
+ID26I10704 | FONDEF IDeA I+D 2026 | P. U. Católica de Chile | Plataforma de gestión de protección de víctimas | 227.000.000 | 24 | 
+
+SUC250019 | Startup Ciencia 2025 | Instituto Milenio Fundamentos de los Datos | Asistente inteligente para el análisis de fuentes formales del derecho | 134.492.000 | 12 | 
+
+RP24I10007 | Corfo Desafíos Públicos 2024 | DATAQU | Transformación digital en la gestión judicial: innovación con modelos de lenguaje para la automatización de demandas | 149.520.000 | — | 
+
+RP24I10013 | Corfo Desafíos Públicos 2024 | ANALITIC | Automatización de análisis y clasificación de documentos de causas judiciales para el Consejo de Defensa del Estado | 149.848.000 | — | 
+
+11251741 | Fondecyt Iniciación 2025 | P. U. Católica de Chile | Conservación de datos personales | 35.760.000 | 36 | 
+
+Dos advertencias de método sobre esta fuente
+
+El acto administrativo no basta. Las nóminas de fallo que ANID publica para
+ Fondecyt entregan cuatro campos —número de proyecto, investigador responsable, grupo de evaluación e
+ institución— y no traen título, monto ni duración. Los tres campos que permiten
+ saber de qué trata un proyecto sólo constan en el repositorio de datos abiertos. La trazabilidad
+ pública existe, pero exige salir del sitio institucional del organismo.
+
+La clasificación disciplinar no sigue al objeto. El FONDEF de certeza jurídica
+ ambiental está clasificado en «otras ingenierías y tecnologías», grupo medioambiente, área OCDE
+ ingeniería y tecnología. Un recuento que se fiara de la disciplina declarada lo perdería. Los ocho
+ proyectos de esta tabla se localizaron por objeto y palabras clave, no por disciplina.
+
+Fuentes de contraste externo incorporadas
+
+Emisor | Documento | Dominio | 
+
+ANID | Histórico de proyectos adjudicados · 49.014 registros 1982-2026 | github.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados | 
+
+ANID | Resolución exenta 7461 · fallo Investigación Tecnológica IDeA 2025 · 09-09-2025 | documentos.anid.cl | 
+
+ANID | Nómina de proyectos aprobados Fondecyt Regular 2026 · 680 proyectos | documentos.anid.cl | 
+
+ANID | Resolución exenta 71 · adjudicación IDeA I+D 2025 | documentos.anid.cl | 
+
+SIES · Mineduc | Informe de Matrícula en Educación Superior en Chile 2024 · julio 2024 | educacionsuperior.mineduc.cl | 
+
+CNA-Chile | Repositorio de criterios y estándares por carrera | cnachile.cl | 
+
+Minciencia | Política Nacional de Inteligencia Artificial · actualización 2024 | cens.cl | 
+
+Academia Judicial | Sitio y guía sobre IA generativa para juezas y jueces · 07-04-2026 | ia.academiajudicial.cl | 
+
+Colegio de Abogados | Guía de uso responsable de IA · aprobada 06-07-2026 | idealex.press · actualidadjuridica.doe.cl | 
+
+Ministerio de Economía | Superir y UNAB presentan primer piloto de asesor virtual · 23-10-2025 | economia.gob.cl | 
+
+Superintendencia de Insolvencia | Presentación del piloto de asesor virtual de insolvencia | superir.gob.cl | 
+
+La Tercera | «Informática jurídica», ética e IA: el nuevo enfoque de las Facultades de Derecho · 12-02-2025 | latercera.com | 
+
+La Tercera · Pulso | La IA ya entró a los estudios de abogados · 16-08-2026 | latercera.com | 
+
+T13 | Uso de IA habría hecho colapsar plataforma del Poder Judicial · 28-07-2026 | t13.cl | 
+
+Diario Constitucional | Entre el código y el oficio: dos visiones críticas sobre la formación jurídica · 21-02-2026 | diarioconstitucional.cl | 
+
+Diario Financiero | Oportunidades y riesgos de la IA generativa para el sector jurídico · 12-01-2024 | df.cl | 
+
+U. de Chile | 81 % de estudiantes de primer año usa inteligencia artificial · 13-05-2025 | uchile.cl | 
+
+RPUD 8(2) 2021 | Contreras et al., «Sobre el minor en Inteligencia Artificial y Derecho» | pedagogiaderecho.uchile.cl | 
+
+RPUD 8(1) 2021 | León Reyes y Sandoval, «El mercado de los abogados y las abogadas» | pedagogiaderecho.uchile.cl | 
+
+Diecinueve entradas para 31 fuentes: varias filas agrupan documentos del mismo
+ emisor. El registro completo con direcciones se entrega con el dataset.
+
+Anexo F
+

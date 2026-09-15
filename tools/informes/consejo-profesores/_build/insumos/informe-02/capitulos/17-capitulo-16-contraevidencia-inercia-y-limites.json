@@ -1,0 +1,63 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 16",
+  "x": "Contraevidencia, inercia y límites"
+ },
+ {
+  "t": "lead",
+  "x": "Un informe que solo documenta lo que cambia produce una imagen falsa. Este capítulo reúne lo que no está cambiando, lo que ha ido en dirección contraria y las objeciones serias a la narrativa transformacional."
+ },
+ {
+  "t": "h2",
+  "x": "16.1 La distancia entre la política y el aula"
+ },
+ {
+  "t": "p",
+  "x": "El indicador más limpio de esta distancia es el contraste entre el 19 % de instituciones con política vigente y el 90 % de encuestados que ya usa IA en su trabajo profesional. Pero hay más:"
+ },
+ {
+  "t": "bullets",
+  "items": [
+   "Solo el **38 %** de los estudiantes declara recibir herramientas de IA de su institución, pese a que el 94 % las usa. La adopción es privada; la política, tardía.",
+   "El **80 %** del profesorado percibe falta de claridad institucional sobre cómo aplicar la IA en su docencia. Publicar una política no es comunicarla.",
+   "Solo el **31 %** del profesorado considera que su institución lo involucra de forma significativa en el diseño de esas políticas. Se está normando sin quienes deben aplicar la norma.",
+   "Más del **27 %** de las universidades británicas que respondieron a una solicitud de información **ni siquiera registraba** de forma separada la mala conducta académica con IA. No se puede gestionar lo que no se mide."
+  ]
+ },
+ {
+  "t": "h2",
+  "x": "16.2 Retrocesos documentados"
+ },
+ {
+  "t": "p",
+  "x": "El periodo registra reversiones reales, no solo avances de distinta velocidad."
+ },
+ {
+  "t": "numbers",
+  "items": [
+   "**La detección algorítmica fue adoptada y luego abandonada.** Entre 2023 y 2026, al menos doce instituciones importantes desactivaron la detección de IA de Turnitin. Es un ciclo completo de adopción, evidencia adversa y retirada, en tres años.",
+   "**La retractación del metaanálisis de referencia** invalidó la base cuantitativa sobre la que se apoyó buena parte del discurso institucional de 2025.",
+   "**La renovación del contrato de CSU en mayo de 2026** ocurrió pese a la oposición documentada del profesorado, en contexto de recortes, y con datos internos que muestran que el 52 % del profesorado percibe un efecto negativo sobre su docencia. Es un caso de persistencia institucional frente a la evidencia propia.",
+   "**METR reclasificó su propio resultado** como histórico. Es una práctica científica ejemplar y, a la vez, un recordatorio de que en este campo los hallazgos caducan con rapidez."
+  ]
+ },
+ {
+  "t": "h2",
+  "x": "16.3 Las objeciones serias a la narrativa transformacional"
+ },
+ {
+  "t": "p",
+  "x": "Existe una crítica académica consolidada que sostiene que la transformación está sobreestimada y que reproduce el ciclo de expectativas de tecnologías educativas anteriores —la enseñanza asistida por ordenador, la pizarra digital, los programas de un portátil por niño, los MOOC—. Todas prometieron personalización a escala; ninguna la entregó."
+ },
+ {
+  "t": "p",
+  "x": "Este informe considera que la objeción es parcialmente correcta y que su límite es preciso. Es correcta respecto de las **promesas de personalización y de ahorro**, cuyo patrón discursivo es en efecto casi idéntico al de ciclos anteriores y cuya evidencia es igualmente débil. Es incorrecta respecto de la **evaluación**, y ahí está la diferencia decisiva: ninguna tecnología educativa anterior invalidó el instrumento con que la universidad certificaba. Los MOOC no obligaron a nadie a rediseñar un examen. La IA generativa sí, y por eso el cambio evaluativo documentado en el capítulo 3 es real aunque el resto de la narrativa resulte inflada."
+ },
+ {
+  "t": "callout",
+  "h": "El resumen honesto",
+  "c": "navy",
+  "x": "La universidad no se está transformando porque haya sido convencida de las virtudes pedagógicas de la inteligencia artificial. Se está transformando en el punto exacto donde quedó sin alternativa: la evaluación. En todo lo demás —currículo, metodologías, formación docente, financiación— avanza al ritmo lento de siempre y con la evidencia débil de siempre. Reconocerlo no debilita el diagnóstico; lo hace utilizable."
+ }
+]

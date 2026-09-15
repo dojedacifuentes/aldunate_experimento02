@@ -1,0 +1,21 @@
+{
+    "salida":  "../../prueba/salida/seco-informe-01.docx",
+    "titulo":  "Uso y enseÃ±anza de inteligencia artificial en las escuelas de Derecho chilenas",
+    "subtitulo":  "Informe sobre capacidades institucionales, septiembre de 2026",
+    "encabezado":  "IA en las escuelas de Derecho chilenas",
+    "institucion":  "Escuela de Derecho Â· Pontificia Universidad CatÃ³lica de ValparaÃ­so",
+    "unidad":  "Documento de trabajo para el Consejo de Profesores",
+    "preparado_para":  "Preparado para la DirecciÃ³n de la Escuela de Derecho",
+    "autor":  "Diego HernÃ¡n Ojeda Cifuentes",
+    "autor_titulo":  "Licenciado en Ciencias JurÃ­dicas",
+    "lugar_fecha":  "ValparaÃ­so, septiembre de 2026",
+    "figuras":  "../../figuras/informe-01",
+    "cuerpo":  [
+
+               ],
+    "anexos":  [
+                   "A-metodologia.md",
+                   "B-matriz-y-resultados.md",
+                   "C-instrumentos-y-anid.md"
+               ]
+}

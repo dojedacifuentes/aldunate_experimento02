@@ -1,0 +1,12 @@
+university_id,official_name,cohort_id,cohort_version,unit_name,status,notes
+puc-chile,Pontificia Universidad Católica de Chile,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad de Derecho UC,PENDIENTE_VERIFICACION,La estructura orgánica publicada lista el Departamento de Derecho y Tecnología como unidad formal.
+uchile,Universidad de Chile,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,"Facultad de Derecho, Universidad de Chile",PENDIENTE_VERIFICACION,El CE3 es la unidad de referencia en derecho y tecnología; su especificidad en IA se evalúa aparte.
+udp,Universidad Diego Portales,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad de Derecho UDP,PENDIENTE_VERIFICACION,"La unidad oficial es Dirección de Inteligencia Artificial y Derecho, no «Centro»."
+uandes,Universidad de los Andes,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,"Facultad de Derecho, Universidad de los Andes",PENDIENTE_VERIFICACION,Dos de sus cinco fuentes corresponden a unidades que no son Derecho.
+uai,Universidad Adolfo Ibáñez,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad de Derecho UAI,PENDIENTE_VERIFICACION,El Laboratorio de Justicia Centrada en las Personas es la unidad con actividad recurrente.
+unab,Universidad Andrés Bello,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad de Derecho UNAB,PENDIENTE_VERIFICACION,La cuenta pública de la Facultad es la fuente principal: la institución describiéndose a sí misma.
+udd,Universidad del Desarrollo,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad de Derecho UDD,PENDIENTE_VERIFICACION,"Su evidencia curricular está orientada a Admisión 2027: anuncio, no ejecución."
+uautonoma,Universidad Autónoma de Chile,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,"Facultad de Derecho, Universidad Autónoma de Chile",PENDIENTE_VERIFICACION,"Opera en tres sedes: Santiago, Talca y Temuco."
+ucentral,Universidad Central de Chile,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad de Ciencias Jurídicas y Sociales (FACDEH),PENDIENTE_VERIFICACION,En 2026 la Cátedra LegalTech fue sustituida por el Programa IA & LegalTech; la Cátedra se conserva como antecedente.
+pucv,Pontificia Universidad Católica de Valparaíso,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad y Escuela de Derecho PUCV,PENDIENTE_VERIFICACION,"En 2026 la unidad es Programa DIAT, no «Centro DIAT». Una de las tres del piloto: se la observa desde información privilegiada."
+udec,Universidad de Concepción,COHORTE_IA_DERECHO_CHILE_11_V1,1.0.0,Facultad de Ciencias Jurídicas y Sociales,PENDIENTE_VERIFICACION,Mantiene dos dominios y sólo uno tiene el certificado bien configurado (ISSUE-002).

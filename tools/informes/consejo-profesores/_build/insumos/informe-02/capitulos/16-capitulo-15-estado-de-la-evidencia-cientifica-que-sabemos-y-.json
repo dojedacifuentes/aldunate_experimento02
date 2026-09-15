@@ -1,0 +1,139 @@
+[
+ {
+  "t": "h1",
+  "n": "Capítulo 15",
+  "x": "Estado de la evidencia científica: qué sabemos y qué se retractó"
+ },
+ {
+  "t": "lead",
+  "x": "Cuatro años después del lanzamiento de ChatGPT, el volumen de literatura sobre IA en educación es enorme y su calidad media es baja. Este capítulo separa lo que puede sostenerse de lo que no, y documenta el episodio que mejor resume el estado del campo: la retractación de su estudio más citado."
+ },
+ {
+  "t": "h2",
+  "x": "15.1 La retractación de Wang y Fan"
+ },
+ {
+  "t": "p",
+  "x": "En mayo de 2025, Humanities and Social Sciences Communications, revista del grupo Springer Nature, publicó el metaanálisis de Jin Wang y Wenxiang Fan, de la Universidad Normal de Hangzhou, sobre el efecto de ChatGPT en el aprendizaje. Reportaba un impacto positivo **grande** sobre el rendimiento (g = 0,867) y moderado sobre la percepción del aprendizaje (g = 0,456) y el pensamiento de orden superior (g = 0,457), a partir de 51 estudios."
+ },
+ {
+  "t": "p",
+  "x": "El artículo se convirtió en la referencia mundial del campo: acumuló cerca de **486.000 visualizaciones**, **266 citas** y una puntuación Altmetric de 1.023. Fue citado en informes institucionales, políticas universitarias y presentaciones de gobierno."
+ },
+ {
+  "t": "p",
+  "x": "El **22 de abril de 2026** fue retractado. El motivo declarado son discrepancias en el metaanálisis, entre ellas la agregación de estudios demasiado distintos en método y muestra como para ser combinados. Las objeciones fueron planteadas inicialmente por dos investigadores externos, Magnus Ingebrigtsen y Marko Lukic."
+ },
+ {
+  "t": "callout",
+  "h": "Por qué este episodio importa más que muchos despliegues",
+  "c": "brick",
+  "x": "Durante once meses, la cifra más citada del mundo a favor de los efectos positivos grandes de la IA en el aprendizaje no se sostenía. Decisiones de inversión, políticas institucionales y argumentos de rectoría se apoyaron en ella. El episodio no demuestra que la IA no funcione; demuestra que **el campo carecía —y en buena medida sigue careciendo— de los mecanismos de control de calidad necesarios para orientar decisiones de esta magnitud**. Cualquier documento sobre este tema fechado antes de abril de 2026 que cite ese metaanálisis debe releerse con esa información."
+ },
+ {
+  "t": "h2",
+  "x": "15.2 Qué sostiene hoy la mejor evidencia"
+ },
+ {
+  "t": "table",
+  "cap": "Tabla 13. Estado de la evidencia por afirmación. Se indica el mejor estudio disponible, su diseño y el nivel de confianza que este informe le atribuye.",
+  "head": [
+   "Afirmación",
+   "Mejor evidencia disponible",
+   "Diseño",
+   "Confianza"
+  ],
+  "w": [
+   2700,
+   3100,
+   2000,
+   1320
+  ],
+  "align": [
+   "left",
+   "left",
+   "left",
+   "center"
+  ],
+  "rows": [
+   [
+    "Un tutor de IA bien diseñado mejora sustancialmente el aprendizaje",
+    "Kestin et al., Scientific Reports 2025 (Harvard, n ≈ 180)",
+    "ECA con control de aprendizaje activo",
+    "**ALTA**"
+   ],
+   [
+    "El acceso sin andamiaje puede dañar el aprendizaje retenido",
+    "Bastani et al., PNAS 2025 (Turquía, n ≈ 1.000)",
+    "Experimento de campo con retirada",
+    "**ALTA**"
+   ],
+   [
+    "La evaluación no supervisada perdió validez",
+    "Scarfe et al., PLOS ONE 2024 (Reading)",
+    "Inserción ciega en sistema real",
+    "**ALTA**"
+   ],
+   [
+    "Los detectores fallan y discriminan",
+    "Estudio de Stanford 2023 sobre 7 detectores; decisiones de Vanderbilt y otras 11 instituciones",
+    "Evaluación comparativa + decisión institucional",
+    "**ALTA**"
+   ],
+   [
+    "La IA comprime la distribución del desempeño",
+    "Choi y Schwarcz (Derecho); Doshi y Hauser (Science Advances 2024)",
+    "Dos ECA en dominios distintos",
+    "**MEDIA-ALTA**"
+   ],
+   [
+    "La percepción de la propia productividad está descalibrada",
+    "METR 2025 (n = 16, 246 tareas)",
+    "ECA con medición objetiva",
+    "**MEDIA-ALTA**"
+   ],
+   [
+    "La IA reduce la diversidad colectiva del contenido",
+    "Doshi y Hauser, Science Advances 2024",
+    "ECA",
+    "**MEDIA-ALTA**"
+   ],
+   [
+    "La IA ahorra tiempo docente de forma neta",
+    "Evidencia contradictoria; revisión integrativa califica la base de deficiente",
+    "Estudios cortos y sin control",
+    "**BAJA**"
+   ],
+   [
+    "La IA mejora el pensamiento crítico",
+    "Sin evidencia experimental sólida en ninguna dirección",
+    "—",
+    "**INSUFICIENTE**"
+   ],
+   [
+    "La IA daña permanentemente la cognición",
+    "Kosmyna et al. 2025 es preliminar y metodológicamente cuestionado",
+    "EEG, n = 54, tarea única",
+    "**INSUFICIENTE**"
+   ],
+   [
+    "Los despliegues institucionales masivos mejoran resultados de aprendizaje",
+    "Ningún estudio independiente localizado en ninguna institución de la muestra",
+    "—",
+    "**NO DEMOSTRADO**"
+   ]
+  ]
+ },
+ {
+  "t": "h2",
+  "x": "15.3 El vacío principal"
+ },
+ {
+  "t": "p",
+  "x": "La última fila de la tabla anterior es la conclusión más importante de este capítulo. Después de cuatro años, miles de millones de dólares comprometidos y despliegues que alcanzan a millones de estudiantes, **esta investigación no ha localizado un solo estudio independiente que demuestre que un despliegue institucional masivo de IA generativa haya mejorado resultados de aprendizaje en educación superior**."
+ },
+ {
+  "t": "p",
+  "x": "La evidencia positiva sólida que existe procede toda de intervenciones pequeñas, cuidadosamente diseñadas y evaluadas: un curso, un tutor construido a propósito, un experimento con condiciones controladas. La evidencia sobre despliegues institucionales de escala es, sin excepción, autoinformada."
+ }
+]

@@ -1,0 +1,103 @@
+[
+ {
+  "t": "h1",
+  "n": "Resumen ejecutivo",
+  "x": "Diez conclusiones y su grado de confianza"
+ },
+ {
+  "t": "lead",
+  "x": "El resultado central de esta investigación es que la transformación es real pero profundamente asimétrica: se concentra casi por completo en la evaluación, avanza mucho menos en el currículo, apenas ha tocado la formación docente y prácticamente no ha producido evidencia de resultados. La universidad está cambiando aquello que se vio obligada a cambiar, no aquello que decidió cambiar."
+ },
+ {
+  "t": "h2",
+  "x": "Las diez conclusiones"
+ },
+ {
+  "t": "table",
+  "cap": "Tabla 1. Conclusiones principales con su nivel de confianza declarado. El nivel refleja la calidad y convergencia de la evidencia disponible, no la fuerza de la convicción del autor.",
+  "head": [
+   "#",
+   "Conclusión",
+   "Confianza"
+  ],
+  "w": [
+   420,
+   7200,
+   1500
+  ],
+  "align": [
+   "center",
+   "left",
+   "center"
+  ],
+  "rows": [
+   [
+    "1",
+    "La adopción estudiantil está saturada, pero la delegación total es minoritaria. El 94 % de los estudiantes de grado británicos usa IA generativa para trabajos evaluados; solo el 12 % inserta directamente texto generado en la entrega. Confundir ambas cifras produce políticas equivocadas.",
+    "ALTA"
+   ],
+   [
+    "2",
+    "La evaluación escrita no supervisada ya no puede presumirse, por sí sola, como evidencia suficiente de capacidad individual. En un experimento ciego en cinco módulos de Psicología, el 94 % de las entregas generadas por IA pasó sin detección y obtuvo notas superiores a las humanas.",
+    "ALTA"
+   ],
+   [
+    "3",
+    "La detección algorítmica no puede sostener la estrategia central de imputación, y esa insuficiencia es lo que empuja la reforma evaluativa. Los detectores marcaron erróneamente como IA el 61,3 % de los ensayos de hablantes no nativos de inglés en una evaluación de siete herramientas.",
+    "ALTA"
+   ],
+   [
+    "4",
+    "Lo que determina si la IA ayuda o daña el aprendizaje es el diseño pedagógico, no el acceso a la herramienta. Un tutor con andamiaje duplicó las ganancias en Harvard; el acceso libre sin andamiaje dejó a los estudiantes turcos un 17 % por debajo de quienes nunca lo tuvieron.",
+    "ALTA"
+   ],
+   [
+    "5",
+    "La percepción de productividad propia está sistemáticamente descalibrada. Desarrolladores expertos fueron un 19 % más lentos con IA y siguieron creyendo que habían sido un 20 % más rápidos. Es el argumento empírico más fuerte para enseñar verificación y calibración.",
+    "MEDIA-ALTA"
+   ],
+   [
+    "6",
+    "La transformación declarada supera con enorme margen a la transformación verificada. Solo el 19 % de las instituciones encuestadas por UNESCO tiene política formal vigente, pese al titular de «dos tercios».",
+    "MEDIA-ALTA"
+   ],
+   [
+    "7",
+    "El cuello de botella se ha desplazado de la adopción a la capacidad docente. Con el 77 % del profesorado ya usando IA, el 80 % declara falta de claridad institucional y solo el 17 % se sitúa en nivel avanzado.",
+    "MEDIA-ALTA"
+   ],
+   [
+    "8",
+    "La IA comprime la distribución del desempeño: beneficia mucho a los estudiantes de menor rendimiento previo y puede perjudicar a los de mayor rendimiento. Esto es simultáneamente una promesa de equidad y una amenaza a la capacidad discriminante de la evaluación.",
+    "MEDIA-ALTA"
+   ],
+   [
+    "9",
+    "Se está formando una brecha de aprendizaje asistido con dimensión de género, de renta y de idioma. Las mujeres tienen un 22 % menos de probabilidades de usar IA generativa, y la brecha persiste incluso cuando el acceso se iguala.",
+    "MEDIA"
+   ],
+   [
+    "10",
+    "El peldaño de entrada al trabajo profesional cualificado se está erosionando justo donde la universidad interviene. El empleo de jóvenes de 22 a 25 años en ocupaciones expuestas a IA está un 19 % por debajo de su trayectoria esperada, sin brecha equivalente en trabajadores experimentados.",
+    "MEDIA"
+   ]
+  ]
+ },
+ {
+  "t": "h2",
+  "x": "La tesis en una frase"
+ },
+ {
+  "t": "quote",
+  "x": "La inteligencia artificial generativa no es una herramienta educativa más: es una tecnología cognitiva de propósito general que interviene precisamente en aquellas tareas que en la universidad cumplían al mismo tiempo cuatro funciones —aprender, producir conocimiento, ejercer la profesión y demostrar competencia—. Al automatizar la cuarta, desacopla las otras tres.",
+  "a": "Hipótesis de trabajo de este informe. La evidencia recogida la confirma para la función evaluativa, la respalda parcialmente para el aprendizaje y aún no la resuelve para la producción de conocimiento."
+ },
+ {
+  "t": "p",
+  "x": "Durante siglos, el ensayo domiciliario, el informe, el trabajo final y el memorándum jurídico funcionaron como un dispositivo económico notable: la misma actividad enseñaba, producía algo útil, entrenaba para el ejercicio profesional y servía de prueba. Esa coincidencia se ha roto. La actividad sigue produciendo algo útil y sigue entrenando para un ejercicio profesional que también ha cambiado, pero ha dejado de garantizar que se aprendió y ha dejado de probar que se sabe."
+ },
+ {
+  "t": "p",
+  "x": "Todo lo que sigue en este informe es, en el fondo, el desarrollo de esa fractura y de las respuestas institucionales que ha provocado."
+ }
+]

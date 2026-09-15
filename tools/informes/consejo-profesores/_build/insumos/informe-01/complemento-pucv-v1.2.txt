@@ -1,0 +1,692 @@
+﻿
+
+Informe complementario · La PUCV como caso de proyección · v1.2
+
+Prototipo académico experimental
+No es una publicación oficial de la PUCV
+
+COMPLEMENTO · v1.2
+
+Informe 01 · documento complementario
+
+La PUCV como caso de proyección, no como caso comparado
+
+Por qué esta institución se retira del comparador de diez, qué conflicto de interés lo obliga, y qué puede proyectarse sobre la base que ya existe.
+
+Conflicto de interés declarado
+
+Documento
+
+ComplementarioNo sustituye al Informe 01
+
+Corte
+
+06-09-2026El mismo del informe principal
+
+Autoría
+
+Diego H. Ojeda CifuentesParte interesada. Véase §1
+
+Naturaleza
+
+ProyeccionesNo es evaluación ni ranking
+
+Este documento no puntúa, no ordena y no compara. El comparador ordinal del Informe 01 cubre diez instituciones y la Pontificia Universidad Católica de Valparaíso no es una de ellas, por decisión metodológica que aquí se explica y se funda.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+La razón del documento
+
+1 · Por qué la PUCV sale del comparador
+
+Declaración de conflicto de interés
+
+Quien firma este informe es parte interesada en una de las instituciones que estudia.
+ Trabajo en el Programa de Derecho, Inteligencia Artificial y Tecnología de la Escuela de Derecho de la
+ Pontificia Universidad Católica de Valparaíso, participo en la organización del certamen de innovación
+ legal de la Facultad, y llevo seis años vinculado a la Universidad.
+
+No es un conflicto potencial ni remoto: es actual, directo y sobre el objeto medido. Las versiones
+ anteriores de este informe lo administraron con una declaración y una doble revisión publicada. Este
+ documento sostiene que eso no basta.
+
+Una declaración de intereses advierte al lector, pero no corrige el dato. Si el
+ investigador tiene un interés en una de las once instituciones que ordena, la advertencia traslada al
+ lector un problema que era del método.
+
+Hay además un segundo sesgo, y éste es medible. La PUCV fue una de las tres instituciones del piloto
+ de profundidad: se investigó con más rutas, se le localizaron más fuentes y se le verificó una
+ proporción mayor. En un instrumento que puntúa capacidades acreditadas mediante evidencia pública,
+ investigar más a una institución produce mecánicamente una puntuación más alta, sin que
+ nada haya cambiado en la institución.
+
+El sesgo, en cifras del propio corpus | PUCV | Media de las demás | 
+
+Fuentes localizadas | 14 | 3,8 | 
+
+Proporción del corpus verificada en la ronda inicial | 86 % | 44 % | 
+
+Celdas sin concluir tras la ronda 2 | 0 | 0,5 | 
+
+Posición que habría ocupado en el comparador | segunda de once, con banda cerrada 18–18 | 
+
+La última fila se publica precisamente porque el documento no la usa. Ocultarla sería
+ administrar el sesgo en la dirección contraria.
+
+La decisión
+
+La PUCV se retira del comparador ordinal y de las diez variables de capacidad. El
+ Informe 01 compara diez instituciones. Ésta se examina aquí, aparte, y no como posición sino como
+ proyección: qué podría construirse sobre lo que ya existe, y qué haría falta para demostrarlo.
+
+La cohorte histórica de once no cambia: sigue siendo el universo del corpus, y las fuentes de la
+ PUCV siguen en el registro. Lo que cambia es que no se le asigna puntuación ni lugar.
+
+Lo que esta decisión cuesta. El comparador pierde a una institución
+ sobre la que existe más evidencia que sobre casi ninguna otra, y el lector pierde la posibilidad de
+ situarla. Se acepta ese costo porque la alternativa —publicar un orden en el que el autor tiene
+ interés— compromete el instrumento entero, no sólo una fila.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+Alcance
+
+2 · Qué hace este documento y qué no hace
+
+Lo que sí hace
+
+Describe la base existente con las mismas fuentes verificadas del corpus.
+
+Evalúa proyecciones: qué es construible sobre esa base, con qué instrumento y con qué indicador.
+
+Identifica un vacío del campo que esta institución está en condiciones de cubrir antes que otras.
+
+Propone un diseño concreto y medible, con los datos que produciría.
+
+Lo que no hace
+
+No puntúa, no ordena y no compara con las otras diez.
+
+No evalúa la calidad de la enseñanza ni el desempeño de ninguna unidad ni de ninguna persona.
+
+No presenta las proyecciones como logros: son propuestas, y se escriben en condicional.
+
+No habla en nombre de la Universidad, de la Facultad ni de la Escuela de Derecho.
+
+Cómo leer una proyección
+
+Cada una de las cuatro proyecciones de la sección 5 declara cuatro cosas: de qué evidencia parte,
+ qué propone, qué indicador la haría verificable y qué la puede
+ hacer fracasar. Una proyección sin la cuarta parte es publicidad.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+Punto de partida
+
+3 · De dónde parte esto
+
+Las proyecciones de este documento no se apoyan en intenciones. Se apoyan en cinco hechos
+ que el corpus verificó contra su publicación original, y que se enumeran aquí sin adjetivos.
+
+Hecho verificado | Qué acredita exactamente | 
+
+Certamen de innovación legal con cinco versiones entre 2022 y 2026 | 
+ Continuidad plurianual sostenida, con participación de varias universidades y de otros países. Es la serie más larga que el corpus registra en su ámbito. | 
+
+Herramienta de IA propia, desplegada y en uso externo | 
+ Un asistente de redacción jurídica accesible sin registro, construido en la Escuela de Derecho, cuyo uso se documenta fuera de la Universidad. No publica métricas de uso. | 
+
+Financiamiento concursable de vinculación con el medio en dos años consecutivos | 
+ Capacidad de formular y adjudicar proyectos con la IA en el objeto. No acredita presupuesto permanente. | 
+
+Experiencia de aula ejecutada dentro de una asignatura jurídica | 
+ Prompting y un asistente conversacional dentro de un curso. Fuente única, sin matrícula ni evaluación publicadas. | 
+
+Conducción de Derecho en el instrumento de integridad académica de la Universidad | 
+ Participación de la unidad jurídica en la gobernanza universitaria de la materia. El instrumento es universitario y de carácter orientador. | 
+
+Y lo que esa base no acredita. No hay acto formal de creación del
+ programa que la sostiene; el financiamiento localizado es íntegramente concursable; no hay línea
+ curricular con créditos; y no hay ninguna medición de efecto sobre el aprendizaje. Las cuatro
+ proyecciones siguientes se dirigen exactamente a esos cuatro huecos.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+El dato
+
+4 · El perfil completo, capacidad por capacidad
+
+El informe principal retira a esta institución del comparador. Retirarla del orden no
+ es retirarle el dato: la rúbrica se le aplicó igual que a las demás, y el resultado se publica aquí
+ entero. Ocultarlo sería administrar el conflicto de interés en la dirección contraria, y dejaría al
+ lector con una institución apartada de la que no puede saber nada.
+
+Qué es este número y qué no es
+
+Los 18 puntos que siguen son la suma de la rúbrica del anexo D aplicada a este perfil.
+ No son una posición. Un orden se construye comparando, y el instrumento que
+ ordena excluye a esta institución por construcción: no hay lugar en el que ponerla, y ponerla
+ igualmente sería reintroducir por la puerta de atrás lo que la sección 8 del informe principal
+ retiró por la de delante. El número está aquí para que el lector pueda auditar la decisión —ver
+ qué se retiró— y para que las proyecciones de las secciones siguientes se apoyen en una base
+ verificable en lugar de en adjetivos.
+
+¿Qué acredita esta Escuela, y qué le falta para acreditar el resto?
+
+Dos capacidades completas, cinco a las que sólo les falta el instrumento, dos que
+ existen un nivel más arriba y una que no consta
+
+[FIGURA SVG]
+
+Cada capacidad vale hasta tres puntos. Los peldaños llenos son lo que la evidencia
+ pública acredita hoy; los punteados, lo que la rúbrica pide y no encuentra. El perfil no tiene
+ ninguna celda sin concluir: las trece rutas del protocolo que le corresponden se recorrieron, de
+ modo que cada ausencia es una ausencia comprobada y no un hueco de investigación. La figura no
+ ordena y no admite lectura comparativa.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+Los doce puntos que faltan tienen tres formas, y sólo una es cara
+
+El reparto importa más que la suma, porque cada forma se cierra con un acto distinto y cuesta
+ una cosa distinta. Doce puntos repartidos en doce capacidades vacías serían un problema de
+ construcción institucional. Repartidos como están, son sobre todo un problema de publicación.
+
+Forma | Puntos | Qué falta, y qué acto lo cierra | 
+
+Falta el instrumento | 5 | 
+ Cinco capacidades están en operación y ninguna publica el objeto citable que
+ las acredita. Unidad especializada, presencia en pregrado, formación estructurada,
+ alcance declarado e investigación pierden un punto cada una, y cada una lo recupera
+ publicando un documento que en la mayoría de los casos ya existe: el acto que crea el
+ programa, el código y los créditos de la asignatura, el del programa formativo, el alcance
+ real de lo que se ejecuta y el código del proyecto adjudicado. Ninguno de los cinco exige
+ decidir nada nuevo. Exigen publicar lo decidido. | 
+
+Falta el nivel | 4 | 
+ Dos capacidades existen en la Universidad y no en la Escuela. La regla
+ de uso de inteligencia artificial y la adopción declarada en la enseñanza constan como
+ instrumentos universitarios de carácter orientador, no como decisiones de la unidad
+ jurídica. Valen un punto en lugar de tres por esa razón y no por su contenido. Se cierran
+ decidiendo en el nivel que la rúbrica pregunta —un acuerdo de Consejo de Escuela con
+ deberes exigibles—, no construyendo nada nuevo. Es el único de los tres huecos que exige
+ una decisión de gobierno. | 
+
+Falta todo | 3 | 
+ La evaluación de efecto no consta, y no consta en ninguna de las instituciones observadas. Es la única de las tres formas que no se cierra con un trámite: exige
+ producir evidencia que hoy no existe. También es la única donde el esfuerzo no compra una
+ posición sino una primicia, porque las diez instituciones del comparador están igualmente
+ en cero y no hay un solo proyecto financiado en la materia. Las secciones 5 a 7 desarrollan
+ exactamente esta vía. | 
+
+Nueve de los doce puntos que faltan —los cinco del instrumento y los cuatro del nivel— no
+ dependen de construir nada. Dependen de publicar y de decidir dónde corresponde. Es la lectura
+ más incómoda de este documento y también la más accionable: la distancia entre lo que
+ esta Escuela hace y lo que puede acreditar es, en tres cuartas partes, una distancia
+ documental.
+
+Lo que el perfil sí acredita, y con qué
+
+Las dos capacidades completas son las únicas de todo el corpus en las que esta institución
+ alcanza el grado más alto de la rúbrica, y las dos lo alcanzan por la misma razón: existe un objeto
+ con identificador que cualquiera puede comprobar sin preguntarle nada a la institución.
+
+Capacidad | Instrumento formal que la acredita | 
+
+Herramienta desplegada | 
+ Registro de propiedad intelectual de ScribeClaroPUCV, Certificado nº 2026-A-6558 de
+ 23-06-2026. Un asistente de redacción jurídica construido en la Escuela, accesible sin
+ registro y con uso documentado fuera de la Universidad. No publica métricas de uso, y ése
+ es el límite del registro. | 
+
+Transferencia | 
+ Convenio con la Corte Suprema de agosto de 2020, con decana y presidente de la Corte
+ identificados y actividad derivada documentada. Es el único convenio del corpus con
+ contraparte de esa jerarquía y con continuidad verificable. | 
+
+Límite. Que estas dos capacidades estén completas no dice que
+ la Escuela sea mejor en ellas que las demás: dice que en estas dos publicó el objeto que la rúbrica
+ pide, y que en las otras ocho no. La rúbrica mide trazabilidad, no mérito, y ésa es la única cosa
+ que un método basado en evidencia pública puede medir.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+Proyecciones
+
+5 · Cuatro cosas construibles sobre esa base
+
+P-1Formación continua internacional por la vía de vinculación con el medio
+
+Parte de
+
+Un certamen con cinco versiones y participantes de seis países, y dos adjudicaciones consecutivas de fondos de vinculación con el medio con la IA en el objeto. El canal internacional ya está abierto y ya está financiado por concurso.
+
+Propone
+
+Convertir ese canal en oferta de formación continua con docencia internacional en inteligencia artificial aplicada al Derecho, articulada como actividad de vinculación con el medio y no como programa de postgrado. La diferencia importa: el ciclo de decisión de vinculación es corto y su financiamiento ya existe, mientras que crear un programa de postgrado exige aprobaciones que tardan más que la ventana tecnológica.
+
+Indicador
+
+Dos ediciones consecutivas con matrícula publicada, procedencia institucional de los participantes y docentes externos identificados. Dos puntos hacen una serie; uno no.
+
+Riesgo
+
+Que la actividad internacional siga midiéndose por asistencia a un evento. El alcance de un certamen no es cobertura formativa, y contarlo como tal repetiría el error que el informe principal señala en otras instituciones.
+
+P-2Cubrir el vacío que ninguna de las diez ha cubierto: medir el efecto
+
+Parte de
+
+El hallazgo central del informe principal. En la capacidad «evaluación de efecto», las diez instituciones comparadas quedan en «no localizada»: las rutas se recorrieron y no se encontró ninguna medición del efecto de la IA sobre el aprendizaje jurídico. No es una laguna de la investigación: es un hecho sobre el campo.
+
+Propone
+
+Ser la primera en producir esa evidencia, con un diseño modesto y publicable, sobre una competencia acotada y con grupo de comparación. No hace falta un ensayo clínico: hace falta un instrumento declarado, una medida antes y después, y la publicación del resultado aunque sea negativo.
+
+Indicador
+
+Un informe con diseño, muestra, instrumento, grupo de comparación y resultado, publicado con sus datos. Es la única celda de la matriz que hoy nadie ocupa.
+
+Riesgo
+
+Publicar una medición sin grupo de comparación. La única cifra de resultado que el corpus localizó en todo Chile compara a quien usó una herramienta treinta veces con quien no la usó, lo que mide sobre todo la diferencia entre ambos grupos antes de la herramienta. Repetir ese diseño no cubriría el vacío: lo llenaría de ruido.
+
+Por qué P-2 es la de mayor consecuencia. Las otras tres proyecciones
+ mejoran la posición de una institución. Ésta cambia lo que se puede afirmar sobre el campo entero, y es
+ la única que ninguna de las diez comparadas está hoy en condiciones de reclamar.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+P-3Gestión de caso y de clientes con IA avanzada, y la metodología para construirla
+
+Parte de
+
+Una herramienta propia ya desplegada y una experiencia de aula ya ejecutada. Lo que falta no es capacidad técnica: es un objeto de enseñanza que produzca algo verificable.
+
+Propone
+
+Enseñar la gestión de un caso y de una cartera de clientes con asistentes de IA avanzados, y enseñar además la metodología para construir esa gestión en un entorno de trabajo con agentes —lectura de expedientes, extracción de hitos, control de plazos, redacción de minutas, trazabilidad de cada decisión—. El producto del curso no es un ensayo sobre la IA: es un panel de gestión funcionando.
+
+Indicador
+
+Un artefacto entregable por estudiante o por equipo, versionado, con su registro de construcción y su documentación. Un panel que funciona es evaluable por terceros; una exposición sobre paneles no lo es.
+
+Riesgo
+
+Que el curso derive en una demostración de herramientas y envejezca con ellas. Lo que debe quedar es el criterio jurídico sobre qué se delega, qué se verifica y qué no se delega nunca; la herramienta concreta es el vehículo, no el contenido.
+
+P-4Cerrar en protección de datos personales, con la ley que entra en vigor ahora
+
+Parte de
+
+La Ley 21.719, publicada el 13 de diciembre de 2024, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales, entra en vigor en diciembre de 2026. Su régimen amplía los derechos de acceso, rectificación, cancelación y oposición con portabilidad y bloqueo, e instala un deber de responsabilidad proactiva sobre quien trata los datos.
+
+Propone
+
+Que el arco del curso termine donde termina el problema real: un panel de gestión jurídica trata datos personales de terceros, muchas veces sensibles, y a menudo los envía a un proveedor externo. El cierre no es un módulo teórico sino el examen del propio artefacto construido en P-3 contra el estándar de la ley: base de licitud, finalidad, minimización, encargado de tratamiento, transferencia internacional y medidas de seguridad.
+
+Indicador
+
+Cada artefacto entregado acompañado de su evaluación de cumplimiento, con las decisiones de diseño que la ley obligó a cambiar. Eso es a la vez producto formativo y evidencia de aprendizaje.
+
+Riesgo
+
+Enseñar la ley en abstracto. El valor está en que el estudiante descubra que su propio prototipo no cumple, y tenga que rehacerlo. Sin ese choque, el módulo es un anexo.
+
+Por qué las cuatro forman una sola cosa
+
+P-3 construye el objeto, P-4 lo somete a la norma que rige desde diciembre de 2026, P-2 mide si
+ enseñarlo así produjo aprendizaje, y P-1 abre el canal por el que eso puede ofrecerse fuera. Separadas
+ son cuatro iniciativas más. Juntas son un curso que genera su propia evidencia, que es
+ exactamente lo que el corpus no encontró en ninguna de las diez instituciones comparadas.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+El instrumento
+
+6 · Un optativo cuyo proyecto final es la medición
+
+La forma concreta que toman las cuatro proyecciones es una asignatura optativa de
+ pregrado, con proyecto final entregable, diseñada desde el principio para producir datos de
+ aprendizaje utilizables. No se le añade una evaluación al final: la evaluación es su arquitectura.
+
+El arco
+
+Tramo | Qué se hace | Qué queda registrado | 
+
+1 | Línea base | La misma tarea jurídica que se repetirá al final, resuelta sin asistencia. Es el punto de comparación de cada estudiante consigo mismo. | 
+
+2 | Caso y clientes | Gestión de un expediente y de una cartera con asistentes avanzados: hitos, plazos, minutas. Registro de qué se delegó y qué se verificó. | 
+
+3 | Metodología | Construcción del flujo de trabajo en un entorno de agentes. Quedan versiones, decisiones y errores, no sólo el resultado. | 
+
+4 | El panel | El artefacto de gestión, funcionando y documentado. Es el proyecto final. | 
+
+5 | Protección de datos | Evaluación del propio panel contra la Ley 21.719 y rectificación de lo que no cumple. | 
+
+6 | Medida final | La tarea del tramo 1, repetida. Y la entrega del panel corregido. | 
+
+Qué datos produce, y para qué sirven
+
+Dato | Cómo se obtiene | Para qué sirve después | 
+
+Medida antes y después, por estudiante | La misma tarea en el tramo 1 y en el 6, corregida con rúbrica ciega respecto del momento. | Es la medida de efecto que ninguna institución del corpus tiene. | 
+
+Grupo de comparación | Estudiantes de la misma cohorte que no cursan el optativo, resolviendo la misma tarea. | Sin esto no hay efecto atribuible, sólo diferencia entre quienes se inscribieron y quienes no. | 
+
+Rúbrica del artefacto | Criterios observables sobre el panel entregado, publicados antes de evaluar. | Permite que un tercero rehaga la corrección. Una rúbrica cerrada después no es refutable. | 
+
+Registro de proceso | Versiones del artefacto y decisiones documentadas a lo largo del semestre. | Distingue aprendizaje de resultado afortunado, y alimenta la investigación sobre cómo se aprende esto. | 
+
+Hallazgos de cumplimiento | Qué incumplía cada panel antes de la corrección del tramo 5. | Material de investigación sobre riesgos reales de la gestión jurídica asistida. | 
+
+Cobertura declarada | Matrícula, deserción y perfil de los inscritos. | Convierte la actividad en cobertura verificable, que es lo que hoy falta en todo el corpus. | 
+
+La exigencia que el propio curso se impone
+
+Un optativo que enseña protección de datos y que a la vez recoge datos de sus estudiantes tiene que
+ cumplir lo que enseña. Base de licitud, finalidad declarada, minimización, anonimización antes
+ de cualquier publicación y derecho a no participar en la investigación sin efecto sobre la
+ calificación. Si el diseño de medición no resiste su propio módulo final, el curso está mal
+ construido.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+Qué sale de ahí
+
+7 · Los productos, y por qué importan fuera del aula
+
+Un informe del curso
+
+Con diseño, muestra, instrumento, grupo de comparación y resultado, publicado aunque el resultado
+ sea que no hubo diferencia. Un resultado negativo publicado es más valioso para el campo que un
+ resultado positivo sin diseño, y hoy no existe ninguno de los dos.
+
+Un conjunto de datos anonimizado
+
+Las medidas antes y después, las rúbricas y los hallazgos de cumplimiento, depurados de datos
+ personales. Es lo que permite que otra Facultad replique la medición en vez de creerla.
+
+Base para postular a proyectos
+
+Los fondos de investigación en docencia y en transferencia piden lo mismo que aquí se produce:
+ un problema documentado, un instrumento probado, datos preliminares y un equipo con antecedentes.
+ El curso genera las cuatro cosas como subproducto de funcionar.
+
+Una posición defendible en el campo
+
+No por haber hecho más actividades, sino por haber publicado la primera medición de efecto. Es la
+ única capacidad del comparador que hoy está vacía en las diez instituciones.
+
+La ventana, y qué cuesta dejarla pasar
+
+Dos cosas coinciden en el tiempo. La Ley 21.719 entra en vigor en diciembre de 2026, de modo que
+ todas las Facultades tendrán que abordar la materia y muchas lo harán como módulo teórico. Y ninguna
+ de las diez instituciones comparadas ha publicado una medición de efecto, de modo que la primera que
+ lo haga fija el estándar de cómo se mide.
+
+Las dos ventanas se cierran solas. La primera cuando la materia se vuelva rutina;
+ la segunda cuando alguien más publique. Ninguna de las dos exige presupuesto extraordinario: exigen
+ decidir ahora qué se va a medir y publicarlo aunque salga mal.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+Honestidad del documento
+
+8 · Limitaciones de este complemento
+
+Lo escribe una parte interesada. Retirar a la PUCV del comparador elimina el sesgo
+ del orden, no el de este documento. Todo lo que aquí se propone lo propone alguien que trabaja en el
+ programa que se beneficiaría de que se aprobara.
+
+Son proyecciones, no compromisos. Nada de lo descrito existe. No hay acuerdo de
+ Facultad, no hay financiamiento asignado y no hay docentes comprometidos. Presentarlo de otro modo
+ sería exactamente el defecto que el informe principal reprocha a otras instituciones: contar el
+ anuncio como ejecución.
+
+El diseño de medición es el punto débil. Un optativo tiene matrícula pequeña y
+ autoselección: quien se inscribe ya está interesado. El grupo de comparación mitiga eso pero no lo
+ elimina, y el informe resultante deberá decirlo en su primera página.
+
+La base de partida tiene huecos conocidos. El programa que sostendría esto no
+ tiene acto formal de creación localizado, su financiamiento es concursable y su herramienta propia no
+ publica cifras de uso. Las proyecciones no los resuelven; los heredan.
+
+No se consultó a la institución. Este documento se construye sobre evidencia
+ pública. Ni la Escuela de Derecho ni la Facultad ni la Universidad han revisado su contenido, y
+ ninguna de ellas habla a través de él.
+
+Una nota final sobre el método
+
+La razón de que este documento exista aparte no es diplomática. Un instrumento que ordena
+ instituciones sólo sirve si quien lo aplica no tiene interés en el resultado. Como aquí lo tiene, la
+ salida honesta no era matizar la posición de la PUCV: era retirarla del instrumento y decir
+ por qué, dejando el orden de las diez restantes en pie y verificable por cualquiera.
+
+Lo que se pierde en cobertura se gana en que el comparador siga significando algo.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+9 · Implicancias y ventana de decisión
+
+Las conclusiones dicen qué muestra la evidencia. Esto dice qué decisiones abre esa
+ evidencia, con qué indicador se comprobaría más adelante si se tomaron, y qué cuesta no tomarlas.
+
+Ninguno de estos bloques afirma qué debe hacer la institución. Enuncia un problema observado, la
+ evidencia que lo sostiene, el referente donde ese mismo problema ya tiene un mecanismo, el indicador
+ verificable y el efecto medible sobre la posición comparada. Se ordenan por relación entre esfuerzo y
+ efecto, no por importancia.
+
+La aritmética de la decisión, en una línea
+
+La PUCV acredita hoy 18 puntos de 30 y es la única institución de la cohorte cuya banda está
+ cerrada: no hay evidencia pendiente de aparecer que suba esa cifra. Las seis decisiones que siguen
+ suman, en conjunto, hasta 9 puntos. Cuatro de las seis no requieren presupuesto y
+ tres consisten únicamente en publicar lo que se decida. La que más cuesta —medir una vez— es también
+ la única que hoy nadie en Chile ha hecho.
+
+D-1
+ Publicar el instrumento que crea la unidad, con denominación estable y dependencia orgánica.
+
+Evidencia
+
+La única mención a su origen es una afirmación de continuidad desde 2020 sin instrumento citado. La unidad aparece con cuatro denominaciones distintas en fuentes de la propia universidad y ha tenido tres directores sin acto publicado en ninguna transición.
+
+Referente
+
+La Facultad de Derecho de la Universidad Católica publica su Departamento de Derecho y Tecnología en la estructura orgánica, con director y dependencia.
+
+Indicador
+
+Documento con número y fecha accesible desde el sitio de la Facultad, y unidad listada en el organigrama publicado.
+
+Efecto
+
++1 punto en unidad especializada. Cierra la brecha más citada del informe y la más barata de todas.
+
+Plazo
+
+Semanas. No requiere presupuesto.
+
+D-2
+ Dictar una norma de Facultad sobre uso de IA generativa en trabajos y evaluaciones, con órgano aprobador identificado.
+
+Evidencia
+
+El decálogo disponible es universitario, sugiere recomendaciones, no obliga, no tipifica, no establece consecuencia y no consta aprobado por decreto ni resolución.
+
+Referente
+
+La guía de Derecho UC, aprobada por Comité Directivo y Consejo, impone deberes de declaración y registro y califica su incumplimiento como infracción grave. Internacionalmente, Berkeley aporta un mecanismo transferible: la cita a fuente inexistente genera presunción de uso prohibido, sin necesidad de tipificar conductas.
+
+Indicador
+
+Instrumento aprobado, publicado y fechado, con deberes exigibles y régimen de consecuencias.
+
+Efecto
+
++2 puntos en norma propia. Es la capacidad donde la cohorte entera está más vacía: diez de once no la tienen.
+
+Plazo
+
+Un semestre. Coste: el tiempo de los órganos que la aprueben.
+
+D-3
+ Convertir la experiencia de aula en una asignatura con código, créditos y matrícula, o en una certificación declarada.
+
+Evidencia
+
+La integración de IA en Filosofía del Derecho se apoya en una fuente única de 2024, sin matrícula, semestre ni evaluación, y sin prueba pública de continuidad. La malla vigente, verificada en sus diez semestres, no contiene ninguna asignatura de IA ni de tecnología jurídica.
+
+Referente
+
+Ninguna Facultad de la cohorte lo ha hecho, y en el mundo sólo tres. Dos de las tres eligieron la certificación sin créditos precisamente para no abrir la reforma curricular: es el camino corto y está disponible.
+
+Indicador
+
+Código de asignatura con créditos y semestre publicado, o certificación con programa, horas y registro de participantes.
+
+Efecto
+
++1 a +2 puntos en presencia en pregrado. Situaría a la Facultad entre las primeras del mundo si se opta por la asignatura con créditos.
+
+Plazo
+
+Uno a dos años por la vía curricular; un semestre por la vía de la certificación.
+
+D-4
+ Declarar el alcance real de lo que ya se ejecuta, separando lo interno de lo externo.
+
+Evidencia
+
+Las cifras publicadas —cerca de noventa participantes en un taller, alrededor de cien en una actividad conjunta— corresponden a públicos mixtos de varias universidades, egresados y profesionales. No hay ninguna cifra de penetración interna. La edición 2025 del certamen no publicó nota de resultados.
+
+Referente
+
+La Universidad Autónoma publica una cobertura declarada de su propio cuerpo docente. La Universidad Católica publica sus graduaciones con número de titulados, año a año.
+
+Indicador
+
+Una serie de al menos dos años con cifras publicadas y desagregadas entre estudiantes de la propia Escuela y público externo.
+
+Efecto
+
++1 punto en adopción en la enseñanza. Es puramente publicación: los datos ya existen en los registros de cada actividad.
+
+Plazo
+
+Inmediato. No requiere presupuesto.
+
+D-5
+ Medir, una sola vez, el efecto de una sola actividad sobre una competencia acotada.
+
+Evidencia
+
+ScribeClaroPUCV está desplegada, tiene registro de propiedad intelectual, tiene reconocimiento de la Corte Suprema y no publica cuántas personas la usan ni con qué resultado. Ninguna iniciativa de la cohorte alcanza el peldaño de evaluación.
+
+Referente
+
+En ninguna de las otras diez. Y en el mundo, del orden de tres a cuatro estudios experimentales, todos estadounidenses. La literatura disponible ofrece diseños replicables a escala de un curso, con muestras entre 48 y 137 estudiantes.
+
+Indicador
+
+Un estudio publicado con diseño, muestra, grupo de comparación e instrumento declarados, sobre una competencia acotada —por ejemplo, claridad de la redacción en una asignatura concreta—.
+
+Efecto
+
++3 puntos en evaluación de efecto. Sería la primera iniciativa del corpus en alcanzar el cuarto peldaño, que hoy está vacío en las once instituciones.
+
+Plazo
+
+Un semestre de aplicación más uno de análisis. Es la más cara de las cinco y sigue siendo modesta.
+
+D-6
+ Alojar el Programa y el Laboratorio en el dominio institucional de la universidad.
+
+Evidencia
+
+Ni el Programa ni el Laboratorio tienen página en el sitio de la PUCV. Su única descripción estructurada —consejo académico, equipo, oferta formativa, histórico— vive en dominios externos de propiedad privada, que pueden caducar o cambiar de titular.
+
+Referente
+
+Todas las unidades comparables de la cohorte tienen página dentro del dominio institucional de su facultad o universidad.
+
+Indicador
+
+Página del Programa y del Laboratorio accesibles desde el sitio de la Facultad de Derecho PUCV, con la misma información que hoy vive fuera.
+
+Efecto
+
+No suma puntos por sí sola, y es condición de que las demás sean verificables por un tercero.
+
+Plazo
+
+Semanas. Coste administrativo.
+
+Informe 01 · complementoLa PUCV como caso de proyección · v1.2
+
+Anexo H
+
+Anexo · La evidencia completa
+
+Diecisiete registros ordenados cronológicamente, con la unidad a la que se
+ atribuye cada uno y su estado tras la verificación. Se publica completo porque la sección 8 del informe principal hace afirmaciones sobre esta institución y el lector debe poder comprobarlas sin reconstruir el corpus.
+
+Fecha | Mecanismo | Qué consta | 
+ Atribución | Estado | 
+
+2020 | Publicación indexada | Artículo sobre uso de inteligencia artificial por administraciones fiscales y derechos de los contribuyentes en Latinoamérica, en revista internacional de derecho y tecnología. Acredita interés de la Escuela por la materia cinco años antes de la ola de 2025. | Escuela de Derecho | verificada | 
+
+2020 | Unidad | Primera mención pública al Núcleo de Derecho, Inteligencia Artificial y Tecnología, con director identificado, en un seminario sobre fiscalización tributaria e IA. La única afirmación de origen dice que «se oficializa en el 2020», sin instrumento citado. | Escuela de Derecho | sin acto de creación | 
+
+2020 | Convenio | Convenio con la Corte Suprema para el proyecto de modernización de su base de datos de jurisprudencia mediante inteligencia artificial, firmado por la decana de la Facultad y el presidente de la Corte, con cincuenta pasantes. Proyecto multiuniversitario de diecinueve instituciones. | Facultad y Escuela de Derecho | verificada · instrumento formal | 
+
+2021 | Herramienta | Asistente virtual desarrollado en virtud de convenio con el Servicio de Impuestos Internos, a cargo del Núcleo, con participación de un estudiante de informática. | Escuela de Derecho | verificada | 
+
+2022–2026 | Actividad recurrente | Certamen de innovación legal del laboratorio de la Escuela, con ediciones documentadas desde 2022. La serie de continuidad más larga del corpus. La edición 2025 tiene convocatoria y no publica nota de resultados; dos ediciones aparecen numeradas como cuarta. | Facultad de Derecho | serie verificada · cifras 2025 pendientes | 
+
+2023 | Fondo | Adjudicación en el concurso institucional de inteligencia artificial en educación: dos de las catorce iniciativas seleccionadas son de la Escuela de Derecho. Una de ellas origina la herramienta de redacción jurídica. | Escuela de Derecho · fondo de la universidad | verificada | 
+
+2024 | Asignatura | Integración de inteligencia artificial en el curso de Filosofía del Derecho mediante prompting y un chatbot de asignatura, con dos sesiones documentadas. Fuente única; no consta que se haya repetido ni su matrícula, semestre, créditos o evaluación. | Escuela de Derecho | verificada · sin continuidad acreditada | 
+
+2024–2025 | Formación | Talleres de alfabetización digital y de prompting jurídico, con módulos fechados. El taller de 2025 declara cerca de noventa participantes, que son estudiantes de distintas universidades, egresados y profesionales, no de la propia Escuela. | Programa DIAT | verificada · alcance externo | 
+
+2025 | Fondo | Dos proyectos de vinculación con el medio adjudicados con inteligencia artificial en el objeto. Montos no publicados. Responsable único. | Facultad y Escuela de Derecho | verificada · sin monto | 
+
+2025 | Actividad | Encuentro entre estudiantes de Derecho e Ingeniería con alrededor de cien participantes. Es la cifra interna mejor documentada del dossier. | Laboratorio y Programa, con dirección de asuntos internacionales | verificada | 
+
+2025 | Herramienta | La Comisión de Lenguaje Claro de la Corte Suprema destaca la herramienta de redacción jurídica mediante boletín oficial. Reconocimiento externo de una institución del Estado. | Escuela de Derecho · Vicerrectoría Académica | verificada · reconocimiento externo | 
+
+2025 | Proyecto | Participación como contraparte en el FONDEF de certeza jurídica ambiental, adjudicado a otra universidad y dirigido desde su Facultad de Ingeniería. Un profesor de la Escuela integra el equipo. | Escuela de Derecho como contraparte | verificada · atribución compartida | 
+
+2026 | Norma | Presentación del decálogo universitario sobre uso ético de la inteligencia artificial en docencia, conducido por una profesora de la Escuela desde la Unidad de Integridad Académica. Según su propia formulación, «sugiere recomendaciones». Sin decreto ni resolución. La nota institucional remite, como referencia, a un enlace compartido de un servicio comercial de inteligencia artificial. | Vicerrectoría Académica | verificada · orientador, no vinculante | 
+
+2026 | Herramienta | Registro de propiedad intelectual de la herramienta de redacción jurídica, Certificado nº 2026-A-6558 de 23 de junio. Es el único instrumento formal citable de todo el conjunto PUCV. | Escuela de Derecho | verificada · instrumento formal | 
+
+2026 | Actividad | Workshop internacional sobre manejo de inteligencia artificial en el ámbito legal, con expositor extranjero y dirigido a exalumnos. La nota no declara la fecha del workshop, sólo la de su publicación, ni cifras de asistencia. | Escuela de Derecho | verificada · sin fecha ni cifras | 
+
+2026 | Fondo | Dos proyectos de vinculación con el medio adjudicados, con los mismos dos objetos del año anterior y el mismo responsable. Montos no publicados. | Facultad y Escuela de Derecho | verificada · sin monto | 
+
+2026 | Contexto | La universidad participa como mandante en un centro regional de supercómputo e inteligencia artificial aplicada, con financiamiento estatal de hasta siete millones de dólares. La Facultad de Derecho no participa ni es mencionada. | Universidad | verificada · entorno | 
+
+Lo que el dossier muestra cuando se lee entero
+
+Actividad densa desde 2020 y formalización casi nula. Diecisiete registros en
+ seis años, de siete clases distintas de mecanismo, y dos instrumentos formales citables en
+ todo el conjunto: un convenio de 2020 y un registro de propiedad intelectual de 2026. No
+ hay decreto, resolución ni reglamento en ninguno de los diecisiete.
+
+Todo lo normativo lo dicta la universidad, y sugiere. El decálogo, la política de
+ integridad académica y el reglamento de disciplina son instrumentos de la Vicerrectoría Académica.
+ La Facultad de Derecho no ha emitido ninguno.
+
+Ausencia sistemática de cifras. No hay cifras de uso de la herramienta, ni montos
+ de ningún fondo, ni asistentes de ningún seminario salvo dos actividades, ni resultados de la
+ edición 2025 del certamen. Las dos cifras que existen —noventa y cien participantes— corresponden a
+ públicos mixtos y externos.
+
+Concentración en una persona. Una misma persona dirige el Programa y el
+ Laboratorio y es responsable de las cuatro adjudicaciones de vinculación con el medio de 2025 y
+ 2026. La dirección de la unidad ha pasado por tres personas desde 2020 sin acto publicado en ninguna
+ transición.
+

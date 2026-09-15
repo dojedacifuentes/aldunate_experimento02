@@ -1,0 +1,425 @@
+{
+  "_meta": {
+    "estado": "EN CONSTRUCCION",
+    "origen": "Informe 02 v0.3.0, «La universidad ante la automatización del trabajo cognitivo», capítulos 13 a 24 y anexos A, B y C; resumen-01.json; corpus-de-evidencia.md; Graficos.ps1",
+    "fecha_extraccion": "2026-09-13",
+    "alcance": "Parte b de la base de evidencia del Documento B. Las figuras 1 a 7 y los capítulos 1 a 12 corresponden a la parte a.",
+    "criterio_comprobado_en_origen": "true solo cuando esta extracción contrastó autores, año, revista, población y cifra principal contra la publicación original o su registro bibliográfico primario (Europe PMC, Crossref, PMC, arXiv, página del editor). Las demás afirmaciones quedan en false aunque el informe las marque VERIFICADO.",
+    "criterio_url": "Cuando el informe no da dirección, url_o_doi se toma de corpus-de-evidencia.md o de las fichas de fuentes del sitio (src/data/research.ts, repositorio aldunate_experimento02, solo lectura). [FALTANTE] indica que ningún insumo la trae.",
+    "criterio_clase_de_respaldo": "El informe no clasifica sus recomendaciones por tipo de respaldo (decisión abierta del autor). La clase_de_respaldo es una clasificación de esta extracción: experimental (ECA o experimento de campo), descriptiva (encuesta o registro), institucional (documentos y prácticas de instituciones), razonamiento estructural (inferencia del autor sin medición directa).",
+    "pendientes_heredados": [
+      "No hay protocolo de búsqueda declarado: el trabajo no puede presentarse como revisión sistemática.",
+      "18 de 24 fuentes del sitio sin verificación individual al 01-09-2026, pese a que el cierre del Anexo C afirma que todas fueron verificadas individualmente en agosto de 2026.",
+      "PNAS publicó una corrección al artículo de Bastani et al. (ver afirmaciones del capítulo 15).",
+      "El metaanálisis de Wang y Fan fue retractado el 22-04-2026."
+    ]
+  },
+  "capitulos": [
+    {
+      "numero_origen": "13",
+      "titulo_origen": "Caso especial: la enseñanza universitaria del Derecho",
+      "tema": "Exposición del Derecho a la IA generativa: alucinaciones de herramientas jurídicas, citas fabricadas en tribunales, efectos heterogéneos sobre el aprendizaje jurídico, respuesta de las facultades, validez de instrumentos de evaluación, examen de acceso, mercado de asociados junior e Iberoamérica.",
+      "afirmaciones": [
+        {
+          "id": "i02b-13-01",
+          "texto": "En la evaluación de Magesh et al., Lexis+ AI alucinó en el 17 % de las consultas y respondió correctamente el 65 %; Westlaw AI-Assisted Research alucinó en el 33 % y respondió correctamente el 42 %; GPT-4 sin recuperación jurídica especializada alucinó en el 43 %.",
+          "cifras": ["17 %", "65 %", "33 %", "42 %", "43 %"],
+          "poblacion_contexto": "Herramientas comerciales de investigación jurídica de Estados Unidos (LexisNexis y Thomson Reuters) y GPT-4, evaluadas con un conjunto de consultas jurídicas; contexto profesional, no educativo.",
+          "diseno": "otro: evaluación empírica preregistrada de herramientas",
+          "etiqueta_origen": "Anexo B E-17: A · D4 · VERIFICADO",
+          "fuente": {"autores": "Varun Magesh; Faiz Surani; Matthew Dahl; Mirac Suzgun; Christopher D. Manning; Daniel E. Ho", "anio": "2025", "titulo": "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools", "revista_o_editor": "Journal of Empirical Legal Studies (Wiley)", "volumen_paginas": "22(2): 216-242", "url_o_doi": "https://doi.org/10.1111/jels.12413"},
+          "comprobado_en_origen": true,
+          "advertencias": [
+            "Crossref confirma autores, revista, volumen 22, número 2, páginas 216-242, publicación en línea el 23-04-2025 e impresa en junio de 2025. El informe no da volumen ni páginas.",
+            "El resumen de la versión preliminar (arXiv 2405.20362, v1 del 30-05-2024) no da cifras por herramienta: dice que Lexis+ AI, Westlaw AI-Assisted Research y Ask Practical Law AI «each hallucinate between 17% and 33%». Las cifras por herramienta (17, 33, 43; 65 y 42 de acierto) solo se contrastaron con reseñas secundarias (LLRX, AI Law Librarians), porque Wiley devuelve 403 a la consulta automatizada.",
+            "Las herramientas se probaron en sus versiones de 2024; las tasas pueden haber cambiado.",
+            "La figura 8 (g06) lleva por título «entre una de cada seis y una de cada dos veces»; las herramientas comerciales van de 17 % a 33 % (una de cada seis a una de cada tres, como dice el texto de 13.2). El 43 % corresponde a GPT-4, que no es herramienta jurídica comercial. El título de la figura no debe heredarse."
+          ]
+        },
+        {
+          "id": "i02b-13-02",
+          "texto": "Ask Practical Law AI entregó respuestas incompletas en más del 60 % de las consultas.",
+          "cifras": ["más del 60 %"],
+          "poblacion_contexto": "Herramienta comercial de Thomson Reuters; contexto profesional.",
+          "diseno": "otro: evaluación empírica preregistrada de herramientas",
+          "etiqueta_origen": "Anexo B E-17 (misma fuente): A · D4 · VERIFICADO",
+          "fuente": {"autores": "Magesh, Surani, Dahl, Suzgun, Manning y Ho", "anio": "2025", "titulo": "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools", "revista_o_editor": "Journal of Empirical Legal Studies", "volumen_paginas": "22(2): 216-242", "url_o_doi": "https://doi.org/10.1111/jels.12413"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Cifra contrastada solo con reseña secundaria («incomplete answers (refusals or ungrounded responses) on more than 60% of queries»); no se leyó el texto completo de la revista.", "El informe omite que, según el resumen del preprint, Ask Practical Law AI también está dentro del rango de alucinación de 17 % a 33 %."]
+        },
+        {
+          "id": "i02b-13-03",
+          "texto": "Los autores del estudio de Stanford concluyen que las afirmaciones de los proveedores sobre herramientas libres de alucinaciones estaban sobredimensionadas.",
+          "cifras": [],
+          "poblacion_contexto": "Proveedores comerciales de investigación jurídica en Estados Unidos.",
+          "diseno": "otro: evaluación empírica preregistrada de herramientas",
+          "etiqueta_origen": "Anexo B E-17: A · D4 · VERIFICADO",
+          "fuente": {"autores": "Magesh, Surani, Dahl, Suzgun, Manning y Ho", "anio": "2024 (preprint) y 2025 (revista)", "titulo": "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools", "revista_o_editor": "arXiv 2405.20362; Journal of Empirical Legal Studies", "volumen_paginas": "22(2): 216-242", "url_o_doi": "https://arxiv.org/abs/2405.20362"},
+          "comprobado_en_origen": true,
+          "advertencias": ["Confirmado en el resumen de arXiv: «the providers' claims are overstated»."]
+        },
+        {
+          "id": "i02b-13-04",
+          "texto": "La base de datos de Damien Charlotin, que solo registra resoluciones en que un tribunal constató el uso de contenido alucinado, superaba los 1.200 casos a inicios de 2026, alcanzaba 1.668 en julio de 2026 y registraba 1.981 el 28 de agosto de 2026.",
+          "cifras": ["más de 1.200", "1.668", "1.981"],
+          "poblacion_contexto": "Resoluciones judiciales de varias jurisdicciones; contexto profesional (ejercicio de la abogacía).",
+          "diseno": "otro: registro acumulado de casos",
+          "etiqueta_origen": "Anexo B E-18: B · D4 · VERIFICADO",
+          "fuente": {"autores": "Damien Charlotin (Smart Law Hub, HEC Paris)", "anio": "2026", "titulo": "AI Hallucination Cases Database", "revista_o_editor": "Base de datos en línea, HEC Paris", "volumen_paginas": "No aplica", "url_o_doi": "https://www.damiencharlotin.com/hallucinations/"},
+          "comprobado_en_origen": false,
+          "advertencias": [
+            "La página devolvió 403 a la consulta automatizada el 13-09-2026; no se pudo contrastar ni el criterio de inclusión ni las cifras. Una cifra histórica a una fecha pasada no es comprobable en un registro que se actualiza.",
+            "Un resumen de búsqueda secundario menciona 2.039 casos «as of August 2026»; no está contrastado y probablemente corresponde a una fecha posterior al 28-08-2026.",
+            "Es un registro de detección, no una tasa: el crecimiento mezcla más uso, más escrutinio judicial y mejor cobertura del registro.",
+            "En 13.11 el informe habla de «1.981 resoluciones judiciales sancionando citas fabricadas»: el criterio declarado es la constatación judicial, no la sanción. No debe heredarse «sancionando».",
+            "Clasificación inconsistente en el propio informe: tipo B en el Anexo B y «Proveedores y prensa especializada» (C.4) en el Anexo C."
+          ]
+        },
+        {
+          "id": "i02b-13-05",
+          "texto": "En el estudio de Choi y Schwarcz, el acceso a GPT-4 elevó en alrededor de 45 puntos percentiles el desempeño de los estudiantes de Derecho de peor rendimiento previo y empeoró las calificaciones de los de mejor rendimiento previo.",
+          "cifras": ["alrededor de 45 puntos percentiles"],
+          "poblacion_contexto": "Estudiantes de Derecho de Estados Unidos (University of Minnesota Law School, según reseñas); nivel universitario (pregrado profesional de Derecho, J.D.).",
+          "diseno": "experimento aleatorizado (según el informe); diseño no contrastado en el texto original",
+          "etiqueta_origen": "Anexo B E-16: A · D5 · VERIFICADO; tabla 18: MEDIA-ALTA; tabla 21: MEDIA-ALTA",
+          "fuente": {"autores": "Jonathan H. Choi; Daniel Schwarcz", "anio": "2025", "titulo": "AI Assistance in Legal Analysis: An Empirical Study", "revista_o_editor": "Journal of Legal Education", "volumen_paginas": "73(2): 384-420", "url_o_doi": "https://jle.aals.org/home/vol73/iss2/5/ ; SSRN 4539836"},
+          "comprobado_en_origen": false,
+          "advertencias": [
+            "PENDIENTE_CHOI"
+          ]
+        },
+        {
+          "id": "i02b-13-06",
+          "texto": "En el conjunto de la muestra, el acceso a GPT-4 mejoró la calidad del análisis jurídico de forma ligera e inconsistente y aumentó la velocidad de forma amplia y consistente.",
+          "cifras": [],
+          "poblacion_contexto": "Estudiantes de Derecho de Estados Unidos que resolvieron tareas jurídicas realistas con o sin GPT-4; nivel universitario (J.D.).",
+          "diseno": "experimento aleatorizado",
+          "etiqueta_origen": "Tabla 15 del informe (sin etiqueta epistémica propia)",
+          "fuente": {"autores": "Jonathan H. Choi; Amy B. Monahan; Daniel Schwarcz", "anio": "2024", "titulo": "Lawyering in the Age of Artificial Intelligence", "revista_o_editor": "Minnesota Law Review", "volumen_paginas": "109(1): 147-218", "url_o_doi": "https://scholarship.law.umn.edu/minnlrev/vol109/iss1/3/ ; SSRN 4626276"},
+          "comprobado_en_origen": true,
+          "advertencias": [
+            "DISCREPANCIA DE ATRIBUCIÓN: el informe atribuye la tabla 15 completa y la descripción del ensayo de 13.4 («asignados al azar a resolver tareas jurídicas realistas con o sin GPT-4, con corrección ciega y medición de tiempos», «primer ensayo aleatorizado») al artículo de Choi y Schwarcz en el Journal of Legal Education. Ese diseño y el hallazgo de mejora ligera e inconsistente de calidad con aumento amplio y consistente de velocidad son los del resumen de Choi, Monahan y Schwarcz en la Minnesota Law Review 109: 147 (2024): «access to GPT-4 only slightly and inconsistently improved the quality ... but induced large and consistent increases in speed».",
+            "El informe presenta ese artículo de la Minnesota Law Review como «trabajo relacionado» en otro párrafo. La tabla 15 combina dos estudios distintos en una sola fila de resultados y no debe copiarse como si fuera uno.",
+            "Según el resumen de la Minnesota Law Review, donde la IA ayudó, los participantes de menor destreza tuvieron las mayores mejoras y el ahorro de tiempo fue similar para todos; ese resumen no informa que los mejores empeoraran."
+          ]
+        },
+        {
+          "id": "i02b-13-07",
+          "texto": "Un trabajo del mismo equipo publicado en la Minnesota Law Review encuentra que la IA aumenta la velocidad en tareas jurídicas aplicadas sin dañar la calidad.",
+          "cifras": [],
+          "poblacion_contexto": "Estudiantes de Derecho de Estados Unidos (University of Minnesota Law School); nivel universitario.",
+          "diseno": "experimento aleatorizado",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "Jonathan H. Choi; Amy B. Monahan; Daniel Schwarcz", "anio": "2024", "titulo": "Lawyering in the Age of Artificial Intelligence", "revista_o_editor": "Minnesota Law Review", "volumen_paginas": "109(1): 147-218", "url_o_doi": "https://scholarship.law.umn.edu/minnlrev/vol109/iss1/3/"},
+          "comprobado_en_origen": true,
+          "advertencias": ["La página del repositorio de la University of Minnesota confirma cita (109 Minn. L. Rev. 147, 2024) y resumen. La fórmula «sin dañar la calidad» coincide con el titular de la nota de prensa de la facultad; el resumen habla de mejoras de calidad «modest and inconsistent»."]
+        },
+        {
+          "id": "i02b-13-08",
+          "texto": "Case Western Reserve University School of Law lanzó en 2025 «Introduction to AI and the Law», presentado como el primer programa de certificación en IA jurídica obligatorio para primer año en una facultad de Derecho estadounidense, y en 2026 exigió además a todo primer año desarrollar herramientas de tecnología jurídica con programación asistida por IA.",
+          "cifras": ["2025", "2026"],
+          "poblacion_contexto": "Estudiantes de primer año de Derecho, Case Western Reserve University (Estados Unidos); universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo C, C.3 (fuente institucional primaria); matriz institucional nivel global 4",
+          "fuente": {"autores": "Case Western Reserve University School of Law", "anio": "2025-2026", "titulo": "Introduction to AI and the Law", "revista_o_editor": "Case Western Reserve University", "volumen_paginas": "No aplica", "url_o_doi": "https://www.abajournal.com/web/article/class-is-in-session-how-some-law-schools-are-training-students-in-generative-ai (ficha del sitio; nota de prensa, no documento de la facultad)"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La primacía («el primer programa») no se contrastó.", "La dirección disponible es una nota de ABA Journal, no un documento institucional primario, pese a la clasificación C.3."]
+        },
+        {
+          "id": "i02b-13-09",
+          "texto": "UNLV William S. Boyd School of Law incorpora desde el otoño de 2026 la asignatura obligatoria de primer año «Introduction to Responsible Use of AI».",
+          "cifras": ["otoño de 2026"],
+          "poblacion_contexto": "Estudiantes de primer año de Derecho, University of Nevada, Las Vegas; universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "[FALTANTE]", "anio": "2026", "titulo": "[FALTANTE]", "revista_o_editor": "[FALTANTE]", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El informe no cita fuente y la institución no figura en el Anexo C."]
+        },
+        {
+          "id": "i02b-13-10",
+          "texto": "La University of Chicago Law School implantó desde principios de 2026 módulos obligatorios de IA para todo primer año en su primer trimestre, y pilota para el curso 2026-2027 una asignatura de investigación y escritura jurídica con escritura sin IA como base y uso de IA superpuesto para investigación, revisión, iteración de borradores y preparación del alegato oral.",
+          "cifras": ["2026", "2026-2027"],
+          "poblacion_contexto": "Estudiantes de primer año de Derecho, University of Chicago (Estados Unidos); universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo B E-38 (piloto): C · D1 · VERIFICADO",
+          "fuente": {"autores": "University of Chicago Law School", "anio": "2026", "titulo": "AI strategy statement (ficha del sitio); módulos obligatorios y piloto de escritura jurídica", "revista_o_editor": "University of Chicago Law School", "volumen_paginas": "No aplica", "url_o_doi": "https://www.law.uchicago.edu/news/ai-strategy-statement"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Nivel D1: el piloto existe como anuncio; no hay resultados.", "El informe dice que es el modelo de dos carriles aplicado «por primera vez en Derecho»; la primacía no está contrastada."]
+        },
+        {
+          "id": "i02b-13-11",
+          "texto": "Según datos de la American Bar Association correspondientes a 2024, el 55 % de los programas de Derecho ofrecía cursos especializados sobre IA, pero solo alrededor del 5 % del profesorado de Derecho la enseñaba en cursos independientes.",
+          "cifras": ["55 %", "alrededor del 5 %", "2024"],
+          "poblacion_contexto": "Facultades de Derecho de Estados Unidos; universitario.",
+          "diseno": "encuesta",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "American Bar Association", "anio": "2024", "titulo": "[FALTANTE]", "revista_o_editor": "American Bar Association", "volumen_paginas": "[FALTANTE]", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El informe no identifica el documento de la ABA ni figura en el Anexo C.", "Las dos cifras tienen denominadores distintos (programas y profesorado); no son comparables entre sí."]
+        },
+        {
+          "id": "i02b-13-12",
+          "texto": "La afirmación de que GPT-4 aprobó el examen de acceso a la abogacía en el percentil 90 fue corregida por un reanálisis publicado en Artificial Intelligence and Law, que mostró que el percentil dependía de una población de referencia inadecuada.",
+          "cifras": ["percentil 90"],
+          "poblacion_contexto": "Examen de acceso a la abogacía de Estados Unidos (Uniform Bar Exam); contexto profesional.",
+          "diseno": "otro: reanálisis metodológico",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "[FALTANTE]", "anio": "[FALTANTE]", "titulo": "[FALTANTE]", "revista_o_editor": "Artificial Intelligence and Law", "volumen_paginas": "[FALTANTE]", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El informe no da autor, año ni título del reanálisis, y no figura en el Anexo C. No se identificó en esta extracción."]
+        },
+        {
+          "id": "i02b-13-13",
+          "texto": "Existe literatura que sostiene que la competencia oral es lo que la IA no puede sustituir en la formación jurídica y que su desplazamiento por la evaluación escrita fue una decisión de conveniencia administrativa.",
+          "cifras": [],
+          "poblacion_contexto": "Formación jurídica en Estados Unidos; universitario.",
+          "diseno": "opinión",
+          "etiqueta_origen": "Anexo C, C.1 (clasificada como evidencia académica revisada por pares)",
+          "fuente": {"autores": "C. M. Ho", "anio": "[FALTANTE]", "titulo": "What AI Can't Say: Oral Competence in Legal Education", "revista_o_editor": "Santa Clara Law Review", "volumen_paginas": "66(3)", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Es un artículo argumentativo, no evidencia empírica, aunque el Anexo C lo ubique en C.1.", "El informe no dice en el texto que la cita corresponda a Ho; la asociación se infiere del Anexo C."]
+        },
+        {
+          "id": "i02b-13-14",
+          "texto": "El NextGen bar exam debuta en julio de 2026 en un número limitado de jurisdicciones, entre las primeras Maryland, Missouri y Oregón; la mayoría transitará hacia él entre julio de 2026 y julio de 2028, y el NCBE prevé de cuatro a cinco años para su implantación completa.",
+          "cifras": ["julio de 2026", "julio de 2028", "cuatro a cinco años"],
+          "poblacion_contexto": "Examen de acceso a la abogacía en Estados Unidos; profesional.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo B E-36: B · D2 · VERIFICADO",
+          "fuente": {"autores": "National Conference of Bar Examiners", "anio": "2026", "titulo": "NextGen Bar Exam: debut en julio de 2026 y calendario de adopción por jurisdicción", "revista_o_editor": "NCBE", "volumen_paginas": "No aplica", "url_o_doi": "https://nextgenbarexam.ncbex.org/"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El NCBE es una organización sin fines de lucro, no un organismo público, aunque el Anexo B lo tipifique B."]
+        },
+        {
+          "id": "i02b-13-15",
+          "texto": "El NextGen bar exam reduce el número de materias, desplaza el peso hacia la aplicación de conceptos en escenarios realistas y destrezas fundamentales, incluida la redacción jurídica, se rinde en los computadores de los examinandos en sedes designadas, y el estado de Washington canceló la administración de julio de 2026.",
+          "cifras": ["julio de 2026"],
+          "poblacion_contexto": "Examen de acceso a la abogacía en Estados Unidos; profesional.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo B E-36: B · D2 · VERIFICADO",
+          "fuente": {"autores": "National Conference of Bar Examiners", "anio": "2026", "titulo": "NextGen Bar Exam", "revista_o_editor": "NCBE", "volumen_paginas": "No aplica", "url_o_doi": "https://nextgenbarexam.ncbex.org/"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La cancelación en Washington no tiene fuente propia en el informe."]
+        },
+        {
+          "id": "i02b-13-16",
+          "texto": "En el mercado jurídico estadounidense, la contratación total de asociados cayó un 5 % en 2025, solo el 38 % de las contrataciones procedió directamente de la promoción egresada y la contratación lateral supera a la de entrada, mientras la contratación de asociados en grandes despachos se mantiene plana pese al crecimiento de ingresos.",
+          "cifras": ["−5 %", "38 %", "2025"],
+          "poblacion_contexto": "Grandes despachos de Estados Unidos (AmLaw 200); profesional.",
+          "diseno": "otro: análisis sectorial",
+          "etiqueta_origen": "Anexo B E-37: E · D3 · REPORTADO; tabla 17 advierte leer como tendencia y no como medición causal",
+          "fuente": {"autores": "[FALTANTE]", "anio": "[FALTANTE]", "titulo": "Análisis del sector jurídico estadounidense sobre despachos AmLaw 200 (descripción del informe, no título)", "revista_o_editor": "[FALTANTE]", "volumen_paginas": "[FALTANTE]", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Fuente no identificada en el informe ni en el Anexo C. No debe usarse como dato sin localizar el análisis original.", "La lectura de sustitución por IA es inferencia del autor; la tabla no aísla la causa."]
+        },
+        {
+          "id": "i02b-13-17",
+          "texto": "La Facultad de Derecho de la Universidad de Valparaíso creó el LIDET, Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías, con el propósito declarado de observar críticamente la transformación de las profesiones jurídicas y de la formación universitaria.",
+          "cifras": [],
+          "poblacion_contexto": "Facultad de Derecho, Universidad de Valparaíso (Chile); universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo C, C.3",
+          "fuente": {"autores": "Universidad de Valparaíso, Facultad de Derecho", "anio": "[FALTANTE]", "titulo": "LIDET, Laboratorio de Innovación Docente, Derecho, Ética y Tecnologías", "revista_o_editor": "Universidad de Valparaíso", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La valoración de que es la iniciativa iberoamericana que aborda la docencia y no solo el contenido es del autor, «de lo localizado», sin protocolo de búsqueda declarado."]
+        },
+        {
+          "id": "i02b-13-18",
+          "texto": "La Pontificia Universidad Católica de Chile creó una mención en Inteligencia Artificial y Tecnología en su Magíster en Derecho y ofrece un diplomado en Derecho e IA en educación continua.",
+          "cifras": [],
+          "poblacion_contexto": "Posgrado y educación continua en Derecho, Chile.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "Pontificia Universidad Católica de Chile", "anio": "[FALTANTE]", "titulo": "[FALTANTE]", "revista_o_editor": "Pontificia Universidad Católica de Chile", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin fuente en el informe ni en el Anexo C."]
+        },
+        {
+          "id": "i02b-13-19",
+          "texto": "La Universidad Autónoma de Chile desarrolla un proyecto de IA y Derecho desde su Centro de Regulación y Consumo, con un módulo Jean Monnet sobre IA y derecho privado europeo y una microcredencial internacional que partió con más de ochenta estudiantes.",
+          "cifras": ["más de ochenta estudiantes"],
+          "poblacion_contexto": "Educación continua y posgrado en Derecho, Chile.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "Universidad Autónoma de Chile", "anio": "[FALTANTE]", "titulo": "[FALTANTE]", "revista_o_editor": "Universidad Autónoma de Chile", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin fuente en el informe ni en el Anexo C."]
+        },
+        {
+          "id": "i02b-13-20",
+          "texto": "La Universidade de Santiago de Compostela incorpora Derecho e Inteligencia Artificial en su máster de derecho transnacional y tecnologías digitales para 2025-2026, con orientación a legal tech.",
+          "cifras": ["2025-2026"],
+          "poblacion_contexto": "Máster en Derecho, España; posgrado.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "Universidade de Santiago de Compostela", "anio": "2025", "titulo": "[FALTANTE]", "revista_o_editor": "Universidade de Santiago de Compostela", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin fuente en el informe ni en el Anexo C."]
+        },
+        {
+          "id": "i02b-13-21",
+          "texto": "Ninguna de las facultades de Derecho examinadas en el informe documentó un rediseño evaluativo comparable al modelo australiano de dos carriles, y ningún currículo examinado diferencia la enseñanza del uso de IA por nivel de competencia.",
+          "cifras": [],
+          "poblacion_contexto": "Facultades de Derecho examinadas por el informe (Estados Unidos, Chile, España); universitario.",
+          "diseno": "opinión: valoración del autor a partir de su revisión",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "Autor del Informe 02", "anio": "2026", "titulo": "La universidad ante la automatización del trabajo cognitivo, v0.3.0", "revista_o_editor": "aldunate_experimento02", "volumen_paginas": "cap. 13.5 y 13.4", "url_o_doi": "No aplica"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Afirmación negativa que depende de una búsqueda sin protocolo declarado; debe presentarse como «no se localizó» y no como hecho establecido."]
+        }
+      ],
+      "tablas_origen": {
+        "tabla_16_validez_instrumentos_juridicos": {
+          "nota": "Valoración propia del autor «a partir de la evidencia del capítulo y de las prácticas documentadas»; no es medición.",
+          "filas": [
+            {"instrumento": "Memorándum o informe en derecho domiciliario", "validez_residual": "Muy baja", "que_evalua": "Ya no informa sobre capacidad de análisis; conserva valor formativo si se acompaña de defensa."},
+            {"instrumento": "Comentario de sentencia escrito", "validez_residual": "Baja", "que_evalua": "Producible con calidad aceptable; recupera validez si se exige contrastar la sentencia real con una versión alterada."},
+            {"instrumento": "Caso práctico escrito no supervisado", "validez_residual": "Baja", "que_evalua": "Mide acceso a la herramienta, no razonamiento jurídico."},
+            {"instrumento": "Trabajo de investigación con fuentes", "validez_residual": "Baja-media", "que_evalua": "Recupera validez si se evalúa explícitamente la verificación de cada cita."},
+            {"instrumento": "Crítica de un borrador defectuoso", "validez_residual": "Alta", "que_evalua": "Juicio, detección de error y criterio; difícil de delegar porque el fallo está escondido."},
+            {"instrumento": "Examen presencial supervisado", "validez_residual": "Alta", "que_evalua": "Recupera plena validez, con los costos pedagógicos conocidos."},
+            {"instrumento": "Moot court y alegato oral", "validez_residual": "Muy alta", "que_evalua": "Argumentación en tiempo real bajo interrogatorio adversarial."},
+            {"instrumento": "Defensa oral del trabajo escrito", "validez_residual": "Muy alta", "que_evalua": "Complemento que devuelve validez a lo anterior; su límite es el tiempo docente."},
+            {"instrumento": "Clínica jurídica y práctica supervisada", "validez_residual": "Muy alta", "que_evalua": "Desempeño con responsabilidad real; el instrumento más robusto y el más caro."}
+          ]
+        }
+      },
+      "advertencias_del_capitulo": [
+        "13.11 afirma que tres de los ocho casos de nivel 4 del mapa internacional son facultades de Derecho; el mapa está en el capítulo 11 (parte a) y no se contrastó aquí.",
+        "El capítulo presenta al Derecho como disciplina sin anclaje extratextual; es tesis del autor y el propio capítulo reconoce que litigación oral, negociación y entrevista son formación jurídica menos expuesta."
+      ]
+    },
+    {
+      "numero_origen": "14",
+      "titulo_origen": "Iberoamérica: proyectos sin ecosistema",
+      "tema": "Iniciativas de IA educativa en América Latina, España y Chile; distinción entre casos y evidencia acumulable.",
+      "afirmaciones": [
+        {
+          "id": "i02b-14-01",
+          "texto": "La convocatoria «¡IA Presente!» del Banco Interamericano de Desarrollo con Ceibal, implementada por Socialab, identificó 193 iniciativas de IA educativa activas en 22 países de América Latina y el Caribe.",
+          "cifras": ["193 iniciativas", "22 países"],
+          "poblacion_contexto": "Iniciativas de IA educativa de todos los niveles en América Latina y el Caribe; no específicamente universitario.",
+          "diseno": "otro: mapeo por convocatoria",
+          "etiqueta_origen": "Anexo B E-30: B · D1 · VERIFICADO",
+          "fuente": {"autores": "Banco Interamericano de Desarrollo; Ceibal; Socialab", "anio": "2025", "titulo": "¡IA Presente!", "revista_o_editor": "BID", "volumen_paginas": "No aplica", "url_o_doi": "https://www.iadb.org/en/blog/education/how-ai-transforming-education-latin-america-and-caribbean-lessons-193-solutions"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Una convocatoria abierta registra iniciativas postulantes; no es censo ni muestra representativa."]
+        },
+        {
+          "id": "i02b-14-02",
+          "texto": "Ceibal de Uruguay creó EduIALab, laboratorio regional de IA para la educación, junto al Banco Mundial, el BID y el IDRC de Canadá.",
+          "cifras": [],
+          "poblacion_contexto": "Región latinoamericana; sistema educativo en general.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "Ceibal", "anio": "[FALTANTE]", "titulo": "EduIALab", "revista_o_editor": "[FALTANTE]", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin fuente en el informe ni en el Anexo C."]
+        },
+        {
+          "id": "i02b-14-03",
+          "texto": "La tercera edición del Índice Latinoamericano de Inteligencia Artificial, presentada por la CEPAL y el CENIA de Chile, evalúa 19 países sobre más de 100 subindicadores en tres dimensiones: factores habilitantes; investigación, desarrollo y adopción; y gobernanza.",
+          "cifras": ["19 países", "más de 100 subindicadores", "tres dimensiones"],
+          "poblacion_contexto": "Países de América Latina; nivel país, no educativo.",
+          "diseno": "otro: índice compuesto",
+          "etiqueta_origen": "Anexo C, C.2",
+          "fuente": {"autores": "CEPAL; CENIA", "anio": "2025", "titulo": "Índice Latinoamericano de Inteligencia Artificial (ILIA) 2025, tercera edición", "revista_o_editor": "CEPAL", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": []
+        },
+        {
+          "id": "i02b-14-04",
+          "texto": "El Tecnológico de Monterrey lanzó TECgpt el 28 de septiembre de 2023, primer modelo de IA generativa propio de una universidad latinoamericana, y luego abrió el ecosistema con TECgpt Open Edition.",
+          "cifras": ["28 de septiembre de 2023"],
+          "poblacion_contexto": "Tecnológico de Monterrey (México); universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo C, C.3",
+          "fuente": {"autores": "Tecnológico de Monterrey", "anio": "2023", "titulo": "TECgpt y TECgpt Open Edition", "revista_o_editor": "Tecnológico de Monterrey", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["La primacía regional es declaración institucional no contrastada."]
+        },
+        {
+          "id": "i02b-14-05",
+          "texto": "El Tecnológico de Monterrey declaró en su AI Day de 2025 más de 14.000 usuarios de TECgpt y ganancias de aprendizaje de veinte a treinta puntos con impacto en más de 10.000 estudiantes en 2025.",
+          "cifras": ["más de 14.000 usuarios", "20 a 30 puntos", "más de 10.000 estudiantes"],
+          "poblacion_contexto": "Estudiantes del Tecnológico de Monterrey (México); universitario.",
+          "diseno": "documento institucional (autoinforme)",
+          "etiqueta_origen": "Anexo B E-31: C/D · D2 · REPORTADO",
+          "fuente": {"autores": "Tecnológico de Monterrey", "anio": "2025", "titulo": "AI Day 2025", "revista_o_editor": "Tecnológico de Monterrey", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El propio informe advierte que la cifra de ganancia es un autoinforme sin metodología pública, sin grupo de control y sin revisión externa: no es evidencia de resultados.", "No se indica en qué escala se miden los «puntos»."]
+        },
+        {
+          "id": "i02b-14-06",
+          "texto": "MetaRed TIC Chile definió una hoja de ruta 2025-2026 con la inteligencia artificial como eje estratégico, con participación central de la Universidad de Chile.",
+          "cifras": ["2025-2026"],
+          "poblacion_contexto": "Red de direcciones de tecnologías de información de universidades chilenas; universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "MetaRed TIC Chile", "anio": "2025", "titulo": "[FALTANTE]", "revista_o_editor": "MetaRed", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Sin fuente en el informe ni en el Anexo C."]
+        },
+        {
+          "id": "i02b-14-07",
+          "texto": "El programa «Futuros Docentes en IA», alianza público-privada impulsada desde el Ministerio de Ciencia, hizo un piloto en 2025 con cuatro universidades y cerca de 200 futuros docentes, e inició su escalamiento nacional desde marzo de 2026 con nueve universidades del CRUCH.",
+          "cifras": ["2025", "cuatro universidades", "cerca de 200 futuros docentes", "marzo de 2026", "nueve universidades"],
+          "poblacion_contexto": "Estudiantes de pedagogía (formación inicial docente) en universidades chilenas; universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo C, C.3",
+          "fuente": {"autores": "Ministerio de Ciencia, Tecnología, Conocimiento e Innovación de Chile", "anio": "2025-2026", "titulo": "Futuros Docentes en IA", "revista_o_editor": "Ministerio de Ciencia de Chile", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["No hay datos de resultados del piloto."]
+        },
+        {
+          "id": "i02b-14-08",
+          "texto": "La Universidad de Chile desarrolló lineamientos éticos para la docencia universitaria con IA derivados de su modelo educativo, y la Universidad Andrés Bello publicó lineamientos de uso responsable en 2024.",
+          "cifras": ["2024"],
+          "poblacion_contexto": "Universidades chilenas; universitario.",
+          "diseno": "documento institucional",
+          "etiqueta_origen": "Anexo C, C.3 (Universidad de Chile); Universidad Andrés Bello sin entrada en el Anexo C",
+          "fuente": {"autores": "Universidad de Chile; Universidad Andrés Bello", "anio": "[FALTANTE] (U. de Chile); 2024 (UNAB)", "titulo": "Lineamientos éticos para la docencia universitaria con IA; lineamientos de uso responsable", "revista_o_editor": "Universidad de Chile; Universidad Andrés Bello", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": []
+        },
+        {
+          "id": "i02b-14-09",
+          "texto": "Esta investigación no localizó en Chile un rediseño evaluativo institucional comparable al australiano ni una modificación formal de perfiles de egreso comparable a la de Ohio State.",
+          "cifras": [],
+          "poblacion_contexto": "Universidades chilenas; universitario.",
+          "diseno": "opinión: valoración del autor a partir de su búsqueda",
+          "etiqueta_origen": "Sin etiqueta en el origen; el sitio registra la afirmación clm-chile-evidencia",
+          "fuente": {"autores": "Autor del Informe 02", "anio": "2026", "titulo": "La universidad ante la automatización del trabajo cognitivo, v0.3.0", "revista_o_editor": "aldunate_experimento02", "volumen_paginas": "cap. 14.3", "url_o_doi": "No aplica"},
+          "comprobado_en_origen": false,
+          "advertencias": ["Afirmación de ausencia sin protocolo de búsqueda; el Informe 01 del mismo proyecto examina escuelas de Derecho chilenas y debe contrastarse con él antes de repetirla."]
+        },
+        {
+          "id": "i02b-14-10",
+          "texto": "La Conferencia de Rectores de las Universidades Españolas encuestó en abril y mayo de 2025 a los responsables de implantación de IA en las universidades españolas, y su posicionamiento formal de junio de 2024 sostiene que la IA no debe prohibirse sino enseñarse.",
+          "cifras": ["abril y mayo de 2025", "junio de 2024"],
+          "poblacion_contexto": "Universidades españolas; universitario.",
+          "diseno": "encuesta; documento institucional",
+          "etiqueta_origen": "Sin etiqueta en el origen",
+          "fuente": {"autores": "CRUE Universidades Españolas, grupo de trabajo de Inteligencia Artificial y Gobernanza del Dato (sectorial de Digitalización)", "anio": "2024-2025", "titulo": "[FALTANTE]", "revista_o_editor": "CRUE", "volumen_paginas": "No aplica", "url_o_doi": "[FALTANTE]"},
+          "comprobado_en_origen": false,
+          "advertencias": ["El informe no reporta resultados de esa encuesta y excluyó expresamente cifras españolas que no pudo rastrear a fuente primaria (ver Anexo A)."]
+        }
+      ],
+      "advertencias_del_capitulo": ["La caracterización de Chile como «perfil de nivel 2» y el diagnóstico «proyectos, no ecosistema» son valoraciones del autor."]
+    },
+    "__PENDIENTE_CAPITULOS_15_A_18__"
+  ],
+  "datos_figuras": ["__PENDIENTE_FIGURAS__"],
+  "tesis_del_capitulo": ["__PENDIENTE_TESIS__"],
+  "recomendaciones": ["__PENDIENTE_RECOMENDACIONES__"],
+  "medidas_resumen": [
+    {"decision": "1. Escribir la lista de capacidades exigidas sin asistencia", "que_implica": "Cada programa responde por escrito qué debe saber hacer un titulado por sí solo. De ahí se deriva todo lo demás. Casi ninguna institución lo ha hecho.", "costo": "Nulo", "plazo": "Un semestre"},
+    {"decision": "2. Declarar dos carriles de evaluación", "que_implica": "Separar la evaluación que garantiza (supervisada, sobre lo nuclear) de la que desarrolla (abierta, con uso declarado), y situar la garantía a nivel de programa, no de asignatura.", "costo": "Documental", "plazo": "Un año"},
+    {"decision": "3. Dejar de invertir en detección automática", "que_implica": "La evidencia es concluyente en ambas direcciones: falsos positivos discriminatorios y falsos negativos masivos. Los recursos liberados van a diseño de tareas.", "costo": "Negativo", "plazo": "Inmediato"},
+    {"decision": "4. Evaluar la verificación como competencia", "que_implica": "Comprobar que una fuente existe, dice lo que se afirma y sigue vigente es hoy un paso separado, porque el proceso que lo garantizaba se automatizó. Requiere rúbrica propia.", "costo": "Bajo", "plazo": "Un año"},
+    {"decision": "5. Presupuestar horas de evaluación oral y diseño de tareas", "que_implica": "Es la medida cara y la que decide si la reforma es real. Sin partida específica, el rediseño se degrada en rúbricas nuevas sobre prácticas viejas.", "costo": "Alto", "plazo": "Dos a tres años"}
+  ],
+  "conclusiones": ["__PENDIENTE_CONCLUSIONES__"],
+  "referencias": ["__PENDIENTE_REFERENCIAS__"]
+}
