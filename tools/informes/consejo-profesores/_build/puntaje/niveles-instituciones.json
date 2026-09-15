@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "fuente": "Informe experto v0.3.0, «La universidad ante la automatización del trabajo cognitivo», agosto de 2026. Matriz del capítulo 17 y figura 9, con los datos de tools/informes/informe-02/Graficos.ps1 (bloque G9). Mapa del capítulo 11.",
+    "naturaleza": "Las puntuaciones son valoraciones analíticas del autor a partir de la evidencia pública disponible, no mediciones.",
+    "sesgos_declarados": [
+      "Penalizan a las instituciones que documentan poco, no necesariamente a las que hacen poco.",
+      "Favorecen a las anglófonas, cuya documentación es más accesible.",
+      "La muestra del mapa solo incluye instituciones que documentan públicamente, de modo que sobrestima el nivel medio del sistema."
+    ]
+  },
+
+  "escala": {
+    "minimo": 0,
+    "maximo": 5,
+    "niveles": [
+      { "nivel": 0, "nombre": "Ausencia o restricción", "senal": "Reglamento que la prohíbe, o silencio institucional" },
+      { "nivel": 1, "nombre": "Herramienta", "senal": "Hay contrato de licencia y no hay documento pedagógico" },
+      { "nivel": 2, "nombre": "Política y alfabetización", "senal": "Existe una política citable y un plan de formación" },
+      { "nivel": 3, "nombre": "Integración pedagógica", "senal": "Los programas de asignatura de este año difieren de los de 2022" },
+      { "nivel": 4, "nombre": "Transformación curricular", "senal": "Un documento de gobierno académico aprobó competencias nuevas" },
+      { "nivel": 5, "nombre": "Transformación sistémica", "senal": "Cambio coordinado de todas las dimensiones" }
+    ]
+  },
+
+  "dimensiones": [
+    { "id": "metodologias", "nombre": "Metodologías" },
+    { "id": "competencias", "nombre": "Competencias" },
+    { "id": "evaluacion", "nombre": "Evaluación" },
+    { "id": "curriculo", "nombre": "Currículo" },
+    { "id": "rol_docente", "nombre": "Rol docente" },
+    { "id": "gobernanza", "nombre": "Gobernanza" },
+    { "id": "equidad", "nombre": "Equidad" }
+  ],
+
+  "matriz": [
+    {
+      "id": "sydney", "nombre": "University of Sydney", "pais": "Australia", "nivel_global": 4,
+      "dimensiones": { "metodologias": 4, "competencias": 3, "evaluacion": 5, "curriculo": 3, "rol_docente": 4, "gobernanza": 4, "equidad": 3 },
+      "fortaleza": "Modelo de dos carriles operativo desde 2025; garantía trasladada al nivel de programa",
+      "evidencia_de_resultados": "Sin evaluación externa publicada de resultados de aprendizaje"
+    },
+    {
+      "id": "ohio-state", "nombre": "Ohio State University", "pais": "Estados Unidos", "nivel_global": 4,
+      "dimensiones": { "metodologias": 3, "competencias": 5, "evaluacion": 2, "curriculo": 4, "rol_docente": 3, "gobernanza": 3, "equidad": 3 },
+      "fortaleza": "Requisito transversal de egreso con mecanismo curricular verificable y mapas por facultad",
+      "evidencia_de_resultados": "Implementación documentada; ningún resultado medido"
+    },
+    {
+      "id": "case-western", "nombre": "Case Western Reserve · Derecho", "pais": "Estados Unidos", "nivel_global": 4,
+      "dimensiones": { "metodologias": 3, "competencias": 4, "evaluacion": 3, "curriculo": 5, "rol_docente": 3, "gobernanza": 2, "equidad": 2 },
+      "fortaleza": "Primer curso de IA obligatorio para primer año en una facultad de Derecho de Estados Unidos",
+      "evidencia_de_resultados": "Ninguna"
+    },
+    {
+      "id": "arizona-state", "nombre": "Arizona State University", "pais": "Estados Unidos", "nivel_global": 3,
+      "dimensiones": { "metodologias": 3, "competencias": 3, "evaluacion": 2, "curriculo": 3, "rol_docente": 3, "gobernanza": 4, "equidad": 3 },
+      "fortaleza": "Alianza institucional pionera y mecanismo interno de innovación distribuida",
+      "evidencia_de_resultados": "Autoinformada"
+    },
+    {
+      "id": "tec-monterrey", "nombre": "Tecnológico de Monterrey", "pais": "México", "nivel_global": 3,
+      "dimensiones": { "metodologias": 3, "competencias": 3, "evaluacion": 2, "curriculo": 3, "rol_docente": 4, "gobernanza": 5, "equidad": 3 },
+      "fortaleza": "Modelo propio con soberanía de datos, único de su tipo en la región",
+      "evidencia_de_resultados": "Autoinformada, sin metodología pública"
+    },
+    {
+      "id": "northeastern", "nombre": "Northeastern University", "pais": "Estados Unidos", "nivel_global": 3,
+      "dimensiones": { "metodologias": 3, "competencias": 3, "evaluacion": 2, "curriculo": 2, "rol_docente": 3, "gobernanza": 4, "equidad": 3 },
+      "fortaleza": "Socio de diseño en despliegue federado con modo de aprendizaje socrático",
+      "evidencia_de_resultados": "Ninguna localizada"
+    },
+    {
+      "id": "bath", "nombre": "University of Bath", "pais": "Reino Unido", "nivel_global": 3,
+      "dimensiones": { "metodologias": 3, "competencias": 2, "evaluacion": 4, "curriculo": 2, "rol_docente": 2, "gobernanza": 2, "equidad": 2 },
+      "fortaleza": "Adopción del modelo de dos carriles desde el curso 2026-27",
+      "evidencia_de_resultados": "Ninguna todavía; la implantación es reciente"
+    },
+    {
+      "id": "cal-state", "nombre": "California State University", "pais": "Estados Unidos", "nivel_global": 2,
+      "dimensiones": { "metodologias": 2, "competencias": 2, "evaluacion": 1, "curriculo": 2, "rol_docente": 2, "gobernanza": 4, "equidad": 4 },
+      "fortaleza": "La mayor infraestructura de acceso del mundo universitario",
+      "evidencia_de_resultados": "Encuesta interna con resultados desfavorables"
+    },
+    {
+      "id": "uchile", "nombre": "Universidad de Chile", "pais": "Chile", "nivel_global": 2,
+      "dimensiones": { "metodologias": 2, "competencias": 2, "evaluacion": 1, "curriculo": 1, "rol_docente": 3, "gobernanza": 2, "equidad": 2 },
+      "fortaleza": "Lineamientos éticos propios y liderazgo en formación inicial docente",
+      "evidencia_de_resultados": "Ninguna localizada"
+    }
+  ],
+
+  "_mapa_pendiente": "Las treinta instituciones del capítulo 11, con su país, su nivel verificado y qué acredita cada una, están en _build/insumos/informe-02/capitulos/12-capitulo-11-*.txt. Falta trasladarlas a este archivo."
+}

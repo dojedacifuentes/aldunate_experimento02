@@ -23,13 +23,13 @@ El `config.json` está creado en `_build/redaccion/informe-02b/` con los once ar
 
 ## De dónde sale el contenido
 
-El informe experto de base está en `_build/insumos/informe-02/capitulos/`, en veinticuatro archivos de texto. Lo que necesitas está sobre todo en tres:
+El informe experto completo está en `_build/insumos/informe-02/informe-experto-v0.3.0-rechazado.pdf`, setenta y siete páginas, y cortado en veinticuatro archivos de texto en `_build/insumos/informe-02/capitulos/`.
 
-- **`02-capitulo-1-...txt`**, tabla 3: la escala de seis niveles de profundidad de la transformación, de 0 (ausencia) a 5 (sistémica), con la señal que distingue cada uno.
-- **`18-capitulo-17-...txt`**: la matriz comparada de nueve instituciones, con su nivel global, su fortaleza verificada y la evidencia de resultados de cada una.
-- **`12-capitulo-11-...txt`**: el mapa de treinta instituciones en diez países, cada una con su nivel verificado y qué acredita exactamente.
+**La matriz ya está construida y no hay que reconstruirla.** Está en `_build/puntaje/niveles-instituciones.json`: nueve instituciones, siete dimensiones y una escala de cero a cinco, con la fortaleza verificada y la evidencia de resultados de cada una.
 
-Las seis dimensiones de transformación son currículo, evaluación, docencia, competencias, infraestructura y gobernanza.
+Las siete dimensiones son **metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad**. Conviene saber, antes de escribir, que sus promedios confirman lo que el propio informe sostiene: gobernanza es la más alta con 3,33 y evaluación la más baja con 2,44. Ninguna institución alcanza el nivel 5 en el conjunto.
+
+Lo que sí falta trasladar a ese archivo es el mapa de las treinta instituciones de diez países, que está en `_build/insumos/informe-02/capitulos/12-capitulo-11-...txt` con el nivel verificado y lo que acredita cada una.
 
 ## Reglas que no puedes romper
 
@@ -43,12 +43,11 @@ Las seis dimensiones de transformación son currículo, evaluación, docencia, c
 
 ## Orden de trabajo
 
-1. Confirma las siete columnas de la matriz del capítulo 17 en los datos de la figura 9. El texto nombra seis dimensiones más una columna de evidencia de resultados, y hay que verificar cuál es la séptima.
-2. Construye `_build/puntaje/niveles-instituciones.json` con las nueve instituciones de la matriz y las treinta del mapa, con su nivel y su país.
-3. Genera los gráficos.
-4. Redacta en el orden IV, V, VII, VI, VIII, IX, y al final I, II y III. El resumen y la metodología se escriben con el resto a la vista.
-5. Escribe el anexo C sobre uso de inteligencia artificial en la elaboración. Toma como modelo el apartado 4 del anexo de `_build/redaccion/informe-02/A-anexo.md`.
-6. Adapta `auditar-cifras.mjs`: hoy comprueba una escala de cinco dimensiones sobre quince, y aquí debe comprobar niveles de cero a cinco.
+1. Traslada las treinta instituciones del mapa internacional a `_build/puntaje/niveles-instituciones.json`, que ya contiene la matriz de nueve.
+2. Genera los gráficos.
+3. Redacta en el orden IV, V, VII, VI, VIII, IX, y al final I, II y III. El resumen y la metodología se escriben con el resto a la vista.
+4. Escribe el anexo C sobre uso de inteligencia artificial en la elaboración. Toma como modelo el apartado 4 del anexo de `_build/redaccion/informe-02/A-anexo.md`.
+5. Adapta `auditar-cifras.mjs`: hoy comprueba una escala de cinco dimensiones sobre quince, y aquí debe comprobar niveles de cero a cinco.
 
 ## Antes de entregar
 
@@ -62,9 +61,28 @@ node construir-docx.mjs redaccion/informe-02b/config.json   # "avisos": []
 
 Y el PDF desde PowerShell con `word-a-pdf.ps1`. Requiere Word instalado y Edge en su ruta habitual.
 
+## Qué rechazó el profesor, con ejemplos
+
+El informe experto que está en el repositorio es **el que fue rechazado**. Léelo para saber qué contenido hay disponible, y no para imitar su forma. Sus rasgos son justamente los que el profesor objetó.
+
+Tiene veinticuatro capítulos y tres anexos en setenta y siete páginas, y su portada abre con cuatro cifras grandes en caja. Eso es el «buen compilado de información» que el profesor dice que no le sirve.
+
+Sus títulos son ensayísticos y llevan metáfora o gancho. Estos son suyos, y ninguno debe aparecer en la nueva versión:
+
+- «El rol docente: el eslabón que nadie financió»
+- «Adopción: la curva que todos citan y la que casi nadie mira»
+- «Universidad y mercado profesional: el peldaño que se erosiona»
+- «La pirámide se estrecha»
+- «Gobernanza: licenciar, construir, federar o dejar hacer»
+- «Hoja de ruta para una facultad de Derecho»
+
+Escríbelos descriptivos y numerados, como en el Informe 01: «VI. El efecto sobre el aprendizaje», «2.3. Investigación y desarrollo».
+
+El contenido del informe rechazado, en cambio, es sólido y verificado. Lo que cambia es la forma: menos capítulos, títulos descriptivos, fichas institucionales con gráfico, y lo técnico al anexo.
+
 ## Dos cosas que debes pedirme antes de redactar
 
-1. **El informe antiguo de enseñanza que el profesor rechazó.** Se mencionó que venía adjunto y no llegó. Puede traer observaciones suyas que no constan en el correo.
+1. **Si hubo observaciones del profesor además del correo.** El informe rechazado ya está en el repositorio, pero no consta si lo devolvió con comentarios propios.
 2. **Confirmación de si el alcance vuelve a ser universitario o sigue acotado al Derecho.** La versión anterior de 43 páginas se tituló «Inteligencia artificial generativa y enseñanza del Derecho» y estrechó el objeto. El material institucional que ahora se usa —las nueve instituciones de la matriz y las treinta del mapa— es de alcance universitario, con el Derecho como uno de sus capítulos. El plan supone ese alcance más amplio; conviene confirmarlo.
 
 ## Contexto de por qué el formato es así
