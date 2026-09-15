@@ -4,6 +4,34 @@ Estado al 15 de septiembre de 2026. Este documento permite retomar el trabajo si
 
 ---
 
+## 0. Son dos informes distintos
+
+Este directorio produce **dos documentos con objetos diferentes**. Conviene fijarlo antes de tocar nada, porque el nombre corto de cada uno no lo dice.
+
+### Informe 01 · Uso de inteligencia artificial en las Escuelas de Derecho
+
+Qué capacidades han construido **once facultades de Derecho chilenas**: unidades, normas propias, presencia en pregrado, formación continua, investigación, transferencia y uso interno. Es un mapeo institucional nacional, con un capítulo de contraste internacional.
+
+- Escala de cinco dimensiones sobre quince puntos, heredada del informe que el Consejo aprobó en 2025.
+- Informe experto de base: v3.2.0, corte del 6 de septiembre de 2026.
+- En el sitio: `/informes/ia-escuelas-derecho-chile`
+- Borradores en `_build/redaccion/informe-01/`
+
+### Informe 02 · La universidad ante la automatización del trabajo cognitivo
+
+**Cómo cambia la enseñanza universitaria** ante la inteligencia artificial generativa: metodologías, evaluación, competencias, currículo, rol docente, gobernanza y equidad. Su alcance es universitario, no solo jurídico, y el Derecho es uno de sus capítulos, tratado como caso crítico.
+
+- Escala de seis niveles de profundidad de la transformación, de 0 a 5.
+- Informe experto de base: v0.3.0, agosto de 2026, setenta y siete páginas.
+- En el sitio: `/informes/transformacion-ensenanza-derecho`
+- Borradores en `_build/redaccion/informe-02/` y, la reestructuración pendiente, en `_build/redaccion/informe-02b/`
+
+### Una confusión que conviene evitar
+
+La versión para el Consejo del Informe 02 se tituló **«Inteligencia artificial generativa y enseñanza del Derecho»**, lo que estrechó su objeto y la acerca en apariencia al Informe 01. No son lo mismo: el primero mide qué tienen las facultades chilenas, el segundo examina cómo cambia la enseñanza en cualquier universidad. La reestructuración pendiente debe recuperar el alcance universitario del informe experto de base.
+
+---
+
 ## 1. Qué pidió el profesor
 
 Correo de Eduardo Aldunate Lizana, sin entrar al contenido de los informes:
@@ -21,22 +49,25 @@ El usuario añadió después dos precisiones. La primera: replicar el formato de
 
 ## 2. Dónde está el trabajo
 
-Todo vive fuera de este repositorio, en `C:\Users\Asus\Desktop\ALDUNEITOR\CONSEJO-PROFESORES\`:
+Todo está versionado en este repositorio, en `tools/informes/consejo-profesores/`. No hace falta ningún archivo del escritorio.
 
 ```
-CONSEJO-PROFESORES/
-  ENTREGA-2026-09-15/          los cuatro archivos entregados (docx y pdf)
-  PROMPT-PARA-GEMINI-O-CHATGPT.md   encargo de investigación autocontenido
-  PROMPT-INVESTIGACION-PROFUNDA.md  encargo para un agente con contexto
+consejo-profesores/
+  README.md                          cómo operar la cadena
+  PROMPT-PROXIMA-SESION.md           el encargo para retomar
+  PROMPT-PARA-GEMINI-O-CHATGPT.md    encargo de investigación autocontenido
+  PROMPT-INVESTIGACION-PROFUNDA.md   encargo para un agente con contexto
   _build/
-    redaccion/informe-01/      Informe 01, terminado
-    redaccion/informe-02/      Informe 02, versión temática de 43 páginas
-    redaccion/informe-02b/     Informe 02, edición de fichas · SOLO CONFIG
-    redaccion/plan-informe-02b.md   la estructura y el índice del próximo trabajo
-    puntaje/                   matriz, escalas y scripts de cálculo
-    figuras/                   PNG y SVG generados
-    hechos/                    hallazgos de cada ronda de búsqueda
-    salida/                    docx y pdf compilados
+    redaccion/informe-01/       Escuelas de Derecho chilenas · terminado
+    redaccion/informe-02/       Transformación de la enseñanza · versión temática
+    redaccion/informe-02b/      Transformación de la enseñanza · fichas · SOLO CONFIG
+    redaccion/plan-informe-02b.md    la estructura y el índice del próximo trabajo
+    puntaje/                    matriz, escalas y scripts de cálculo
+    hechos/                     hallazgos de cada ronda de búsqueda
+    insumos/                    corpus de origen, incluido el informe rechazado
+    estilo/                     guía de estilo y reglas de redacción
+    figuras/                    PNG y SVG generados
+    salida/                     docx y pdf compilados
 ```
 
 ---
@@ -55,7 +86,9 @@ Orden vigente: U. Autónoma 11,67 · UC 10,83 · U. Central 9,83 · UAI 8,17 · 
 
 ### Informe 02 · versión temática, terminada
 
-**Inteligencia artificial generativa y enseñanza del Derecho.** 43 páginas, 14.857 palabras. Cuerpo temático en once capítulos.
+El de **transformación de la enseñanza universitaria**, derivado del informe experto «La universidad ante la automatización del trabajo cognitivo». 43 páginas, 14.857 palabras, cuerpo temático en once capítulos.
+
+Se entregó bajo el título «Inteligencia artificial generativa y enseñanza del Derecho», que estrechó su objeto al ámbito jurídico. El informe experto de base tiene alcance universitario, y la reestructuración pendiente debe recuperarlo.
 
 ### Informe 02b · por hacer
 
@@ -120,15 +153,18 @@ Controles antes de entregar: `auditar-cifras.mjs` debe dar 73 comprobaciones cor
 
 ## 7. Lo próximo, en orden
 
-1. **Confirmar las siete columnas de la matriz** del capítulo 17 del informe experto, en los datos de la figura 9. El texto nombra seis dimensiones —currículo, evaluación, docencia, competencias, infraestructura y gobernanza— más una columna de evidencia de resultados, y hay que verificar cuál es la séptima.
-2. **Construir `puntaje/niveles-instituciones.json`** con las nueve instituciones de la matriz y las treinta del mapa internacional, con su nivel y su país.
-3. **Generar los gráficos** reutilizando `figuras-por-institucion.mjs` como plantilla.
-4. **Redactar** en el orden IV, V, VII, VI, VIII, IX, y al final I, II y III.
-5. **Escribir el anexo C** sobre uso de inteligencia artificial en la elaboración, que por instrucción expresa no puede aparecer en el cuerpo.
-6. **Adaptar `auditar-cifras.mjs`**, que hoy comprueba la escala de cinco dimensiones sobre quince y aquí debe comprobar niveles de cero a cinco.
+1. **Trasladar el mapa de las treinta instituciones** del capítulo 11 a `puntaje/niveles-instituciones.json`, que ya contiene la matriz de nueve por siete dimensiones. Las siete son metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad, y quedaron resueltas con los datos del bloque G9 de `tools/informes/informe-02/Graficos.ps1`.
+2. **Generar los gráficos** reutilizando `figuras-por-institucion.mjs` como plantilla.
+3. **Redactar** en el orden IV, V, VII, VI, VIII, IX, y al final I, II y III.
+4. **Escribir el anexo C** sobre uso de inteligencia artificial en la elaboración, que por instrucción expresa no puede aparecer en el cuerpo.
+5. **Adaptar `auditar-cifras.mjs`**, que hoy comprueba la escala de cinco dimensiones sobre quince y aquí debe comprobar niveles de cero a cinco.
 
 ---
 
-## 8. Asunto pendiente con el usuario
+## 8. Asuntos pendientes con el usuario
 
-El usuario mencionó que adjuntaba **el informe antiguo de enseñanza que fue rechazado**, y ese archivo no llegó. Conviene pedirlo antes de redactar, porque puede contener observaciones del profesor que no constan en el correo transcrito.
+El informe de enseñanza que fue rechazado ya está en el repositorio, en `_build/insumos/informe-02/informe-experto-v0.3.0-rechazado.pdf`, con sus setenta y siete páginas. Quedan dos cosas por preguntar antes de redactar.
+
+La primera es si el profesor devolvió observaciones propias además del correo transcrito en el apartado 1.
+
+La segunda es si el alcance del Informe 02 vuelve a ser universitario o sigue acotado al Derecho. La versión de 43 páginas se entregó bajo un título que lo estrechaba al ámbito jurídico, mientras que el informe experto de base y su material institucional son de alcance universitario. El plan supone el alcance amplio, con el Derecho como capítulo, y conviene confirmarlo.

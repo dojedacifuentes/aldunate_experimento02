@@ -17,7 +17,17 @@ Todo el material está en `tools/informes/consejo-profesores/`. Lee, en este ord
 
 ## Qué hay que hacer
 
-Redactar el **Informe 02, edición de fichas institucionales**: una reestructuración del informe sobre transformación de la enseñanza universitaria ante la inteligencia artificial, para que adopte la forma del Informe 01 que el Consejo ya aprobó.
+Redactar el **Informe 02, edición de fichas institucionales**.
+
+Antes de empezar, fija la distinción, porque el directorio produce dos documentos con objetos distintos y es fácil confundirlos.
+
+El **Informe 01** ya está terminado y mide qué capacidades han construido once facultades de Derecho chilenas. Sirve de modelo de forma, y su contenido no es el tuyo.
+
+El **Informe 02**, que es el tuyo, examina **cómo cambia la enseñanza universitaria** ante la inteligencia artificial generativa: metodologías, evaluación, competencias, currículo, rol docente, gobernanza y equidad. Su alcance es universitario, no solo jurídico, y el Derecho es uno de sus capítulos, tratado como caso crítico. Deriva del informe experto «La universidad ante la automatización del trabajo cognitivo».
+
+Cuidado con un detalle: la versión anterior de ese Informe 02 se entregó bajo el título «Inteligencia artificial generativa y enseñanza del Derecho», que estrechó su objeto. El informe experto de base tiene alcance universitario, y la reestructuración debe recuperarlo, salvo que el usuario indique lo contrario.
+
+Lo que se te pide es que el Informe 02 adopte la forma del Informe 01: fichas institucionales con gráfico de barras, mapeo general y conclusiones numeradas.
 
 El `config.json` está creado en `_build/redaccion/informe-02b/` con los once archivos del cuerpo y tres anexos. Falta escribir todos esos archivos.
 

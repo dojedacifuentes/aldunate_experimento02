@@ -6,6 +6,34 @@ El traspaso con el contexto de las decisiones está en [`docs/HANDOFF-CONSEJO-PR
 
 ---
 
+## Son dos informes distintos
+
+Este directorio produce **dos documentos con objetos diferentes**. Conviene fijarlo antes de tocar nada, porque el nombre corto de cada uno no lo dice.
+
+### Informe 01 · Uso de inteligencia artificial en las Escuelas de Derecho
+
+Qué capacidades han construido **once facultades de Derecho chilenas**: unidades, normas propias, presencia en pregrado, formación continua, investigación, transferencia y uso interno. Es un mapeo institucional nacional, con un capítulo de contraste internacional.
+
+- Escala de cinco dimensiones sobre quince puntos, heredada del informe que el Consejo aprobó en 2025.
+- Informe experto de base: v3.2.0, corte del 6 de septiembre de 2026.
+- En el sitio: `/informes/ia-escuelas-derecho-chile`
+- Borradores en `_build/redaccion/informe-01/`
+
+### Informe 02 · La universidad ante la automatización del trabajo cognitivo
+
+**Cómo cambia la enseñanza universitaria** ante la inteligencia artificial generativa: metodologías, evaluación, competencias, currículo, rol docente, gobernanza y equidad. Su alcance es universitario, no solo jurídico, y el Derecho es uno de sus capítulos, tratado como caso crítico.
+
+- Escala de seis niveles de profundidad de la transformación, de 0 a 5.
+- Informe experto de base: v0.3.0, agosto de 2026, setenta y siete páginas.
+- En el sitio: `/informes/transformacion-ensenanza-derecho`
+- Borradores en `_build/redaccion/informe-02/` y, la reestructuración pendiente, en `_build/redaccion/informe-02b/`
+
+### Una confusión que conviene evitar
+
+La versión para el Consejo del Informe 02 se tituló **«Inteligencia artificial generativa y enseñanza del Derecho»**, lo que estrechó su objeto y la acerca en apariencia al Informe 01. No son lo mismo: el primero mide qué tienen las facultades chilenas, el segundo examina cómo cambia la enseñanza en cualquier universidad. La reestructuración pendiente debe recuperar el alcance universitario del informe experto de base.
+
+---
+
 ## Qué hay aquí
 
 ```
@@ -14,9 +42,9 @@ consejo-profesores/
   PROMPT-INVESTIGACION-PROFUNDA.md   encargo para un agente con contexto del proyecto
   _build/
     redaccion/
-      informe-01/        Informe 01, terminado · 9 capítulos y 3 anexos
-      informe-02/        Informe 02, versión temática · 12 capítulos y 1 anexo
-      informe-02b/       Informe 02, edición de fichas · solo config.json
+      informe-01/        Escuelas de Derecho chilenas · terminado
+      informe-02/        Transformación de la enseñanza · versión temática, terminada
+      informe-02b/       Transformación de la enseñanza · edición de fichas, pendiente
       plan-informe-02b.md   estructura e índice del trabajo pendiente
     puntaje/             matriz, escalas y scripts de cálculo
     hechos/              hallazgos de cada ronda de búsqueda, con sus fuentes
@@ -125,6 +153,8 @@ La numeración de capítulos y apartados la escribe el redactor dentro del títu
 
 ## Lo próximo
 
-El Informe 02 debe adoptar la forma de fichas del Informe 01. La estructura, el índice y el orden de trabajo están en [`_build/redaccion/plan-informe-02b.md`](_build/redaccion/plan-informe-02b.md), y el `config.json` ya está creado.
+El Informe 02, el de transformación de la enseñanza, debe adoptar la forma de fichas del Informe 01. La estructura, el índice y el orden de trabajo están en [`_build/redaccion/plan-informe-02b.md`](_build/redaccion/plan-informe-02b.md), y el `config.json` ya está creado.
 
-Queda un dato por confirmar antes de redactar: el informe experto nombra seis dimensiones de transformación, pero la matriz de su capítulo 17 tiene siete columnas. Hay que verificar cuál es la séptima en los datos de la figura 9.
+La matriz ya está construida en [`_build/puntaje/niveles-instituciones.json`](_build/puntaje/niveles-instituciones.json): nueve instituciones, siete dimensiones —metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad— y una escala de cero a cinco. Falta trasladar a ese archivo el mapa de las treinta instituciones del capítulo 11.
+
+El encargo completo para retomar está en [`PROMPT-PROXIMA-SESION.md`](PROMPT-PROXIMA-SESION.md).
