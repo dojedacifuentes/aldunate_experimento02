@@ -60,7 +60,7 @@ consejo-profesores/
   _build/
     redaccion/informe-01/       Escuelas de Derecho chilenas · terminado
     redaccion/informe-02/       Transformación de la enseñanza · versión temática
-    redaccion/informe-02b/      Transformación de la enseñanza · fichas · SOLO CONFIG
+    redaccion/informe-02b/      Transformación de la enseñanza · decisiones · TERMINADO
     redaccion/metodologia-informe-02b.md  la metodología del próximo trabajo
     redaccion/plan-informe-02b.md    la estructura y el índice del próximo trabajo
     puntaje/                    matriz, escalas y scripts de cálculo
@@ -93,9 +93,15 @@ Se entregó bajo el título «Inteligencia artificial generativa y enseñanza de
 
 ### Informe 02b · por hacer
 
-Reestructuración del anterior con la forma del Informe 01. La metodología está fijada en `redaccion/metodologia-informe-02b.md` y la estructura en `redaccion/plan-informe-02b.md`. El `config.json` está creado con los once archivos del cuerpo y los tres anexos. Falta todo lo demás.
+Terminado el 16 de septiembre de 2026, en `redaccion/informe-02b/`. Trece capítulos y tres anexos, 15.220 palabras de borrador, 15 figuras, 8 tablas y 52 páginas compiladas.
 
-La decisión metodológica del 15 de septiembre de 2026 conviene no revertirla. La unidad de análisis es la dimensión de la enseñanza y no la institución, porque nueve fichas de universidades extranjeras serían otra vez el compilado que el profesor rechazó. El nivel 3 de la escala funciona como umbral: por debajo, la evidencia es una declaración institucional; por encima, es un rastro de enseñanza. Eso convierte en medición la distancia entre política y aula, que es la debilidad conocida del análisis documental.
+**No es una edición de fichas institucionales.** Ese plan existió y el usuario lo descartó ese mismo día, con una razón que conviene no olvidar: nueve fichas de universidades extranjeras son el mismo compilado que el profesor rechazó en agosto, ordenado por institución en lugar de por tema.
+
+La unidad de análisis es la **función pedagógica y su redistribución**. La automatización desagregó las funciones de la enseñanza en lugar de eliminarlas, y las partes que se producían como subproducto de otra tarea quedaron sin responsable. El caso claro es la verificación de fuentes: hasta 2022 quien encontraba una sentencia la había leído, y hoy verificar es un paso separado que nadie tiene encargado.
+
+La escala de nivel demostrativo se aplica **dos veces a cada función**, al diagnóstico y a la respuesta. La media del diagnóstico es 4,17 y la de la respuesta 2,00, de modo que el campo sabe qué pasó e ignora qué hacer. La calibración tiene diagnóstico 4 y ninguna respuesta localizada.
+
+El alcance es universitario, con el Derecho como caso particular en el capítulo X, según confirmó el usuario el 16 de septiembre de 2026. Esa pregunta queda cerrada.
 
 ---
 

@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "instrumento": "Informe 02, edición de decisiones. Unidad de análisis: la función pedagógica y su redistribución.",
+    "fuente": "Informe experto v0.3.0, «La universidad ante la automatización del trabajo cognitivo», agosto de 2026, y su anexo B de matriz maestra de evidencia.",
+    "corte": "15 de septiembre de 2026",
+    "naturaleza": "Los niveles declaran qué acredita la mejor fuente disponible sobre cada afirmación. No son puntuaciones de instituciones ni valoraciones de calidad.",
+    "regla": "El nivel lo fija la mejor fuente disponible, no el número de fuentes que mencionan el asunto. Una fuente de proveedor o de prensa acredita que una iniciativa existe y no que se haya implementado."
+  },
+
+  "escala": {
+    "minimo": 0,
+    "maximo": 5,
+    "niveles": [
+      { "nivel": 0, "nombre": "Sin respuesta identificada", "senal": "No se localizó ninguna intervención institucional dirigida a este residuo" },
+      { "nivel": 1, "nombre": "Existencia", "senal": "La iniciativa existe y está anunciada" },
+      { "nivel": 2, "nombre": "Implementación", "senal": "Fue implementada y consta el documento que lo acredita" },
+      { "nivel": 3, "nombre": "Adopción", "senal": "Hay adopción efectiva medida sobre una población" },
+      { "nivel": 4, "nombre": "Resultados", "senal": "Hay resultados medidos con grupo de comparación" },
+      { "nivel": 5, "nombre": "Causalidad", "senal": "Un diseño aleatorizado permite atribuir el efecto" }
+    ]
+  },
+
+  "funciones": [
+    {
+      "id": "produccion",
+      "orden": 1,
+      "nombre": "La producción de textos",
+      "capitulo": "IV",
+      "reparto_2022": "El estudiante buscaba las fuentes, las leía, las seleccionaba y redactaba. La verificación de que una fuente decía lo que se le atribuía era un subproducto automático de haberla encontrado y leído.",
+      "automatizado": "La búsqueda de fuentes y la redacción del texto.",
+      "residuo": "La verificación de lo que el texto afirma, que dejó de producirse sola y no está encargada a nadie.",
+      "diagnostico": {
+        "nivel": 4,
+        "fuente_principal": "Magesh, Surani, Dahl, Suzgun, Manning y Ho, Journal of Empirical Legal Studies",
+        "que_acredita": "Las herramientas jurídicas profesionales con recuperación sobre bases propietarias alucinan entre el 17 % y el 33 % de las consultas, y producen texto indistinguible del correcto.",
+        "apoyo": [
+          "Charlotin, Smart Law Hub de HEC Paris: 1.981 resoluciones judiciales con uso de contenido alucinado constatado al 28 de agosto de 2026, frente a 1.200 a inicios de año.",
+          "HEPI, Student Generative AI Survey 2026, n = 1.054: el 94 % de los estudiantes de grado usa inteligencia artificial generativa para trabajos evaluados."
+        ]
+      },
+      "respuesta": {
+        "nivel": 2,
+        "fuente_principal": "Case Western Reserve University, Facultad de Derecho",
+        "que_acredita": "Primer curso de inteligencia artificial obligatorio para estudiantes de primer año en una facultad de Derecho de Estados Unidos. Implementado y documentado.",
+        "evidencia_de_resultados": "Ninguna"
+      }
+    },
+    {
+      "id": "evaluacion",
+      "orden": 2,
+      "nombre": "La evaluación",
+      "capitulo": "V",
+      "reparto_2022": "El docente infería el aprendizaje a partir del producto entregado, porque producir el trabajo exigía haber aprendido a hacerlo.",
+      "automatizado": "La producción del entregable.",
+      "residuo": "La inferencia del aprendizaje a partir del producto, que dejó de ser válida sin que se haya puesto otra cosa en su lugar.",
+      "diagnostico": {
+        "nivel": 4,
+        "fuente_principal": "Scarfe, Watcham, Clarke y Roesch, PLOS ONE 19(6): e0305354 (2024)",
+        "que_acredita": "En condiciones reales de examen, el 94 % de las entregas generadas con inteligencia artificial pasó sin detección y obtuvo notas superiores a las de los estudiantes reales.",
+        "apoyo": [
+          "Estudio de Stanford (2023): tasa media de falsos positivos del 61,3 % en siete detectores aplicados a textos de hablantes no nativos de inglés.",
+          "HEPI 2026: el 65 % de los estudiantes afirma que su evaluación cambió de forma significativa por la inteligencia artificial."
+        ]
+      },
+      "respuesta": {
+        "nivel": 2,
+        "fuente_principal": "University of Sydney, modelo de dos carriles",
+        "que_acredita": "Operativo desde el primer semestre de 2025, con la garantía trasladada al nivel de programa. University of Bath lo adopta desde el curso 2026-27.",
+        "evidencia_de_resultados": "Sin evaluación externa publicada de resultados de aprendizaje"
+      }
+    },
+    {
+      "id": "practica",
+      "orden": 3,
+      "nombre": "La práctica",
+      "capitulo": "VI",
+      "reparto_2022": "La dificultad del ejercicio obligaba a practicar, de modo que el esfuerzo de resolverlo era el mecanismo del aprendizaje.",
+      "automatizado": "La resolución del ejercicio.",
+      "residuo": "La dificultad deseable, que era lo que producía la práctica y hoy se elimina junto con el trabajo de resolver.",
+      "diagnostico": {
+        "nivel": 5,
+        "fuente_principal": "Bastani, Bastani, Sungu, Ge, Kabakcı y Mariman, PNAS (2025)",
+        "que_acredita": "Experimento de campo con cerca de mil estudiantes en cuatro centros de Turquía. El acceso libre a la herramienta dejó a los estudiantes por debajo del punto de partida una vez retirada.",
+        "apoyo": []
+      },
+      "respuesta": {
+        "nivel": 4,
+        "fuente_principal": "Harvard University, tutor con andamiaje",
+        "que_acredita": "Alrededor de 180 estudiantes alternaron semanalmente entre dos condiciones. El tutor diseñado con andamiaje duplicó las ganancias de aprendizaje frente a la clase activa.",
+        "evidencia_de_resultados": "Resultados medidos en un curso y una institución; sin réplica publicada"
+      }
+    },
+    {
+      "id": "retroalimentacion",
+      "orden": 4,
+      "nombre": "La retroalimentación",
+      "capitulo": "VII",
+      "reparto_2022": "El docente daba retroalimentación escasa y con demora, y su escasez garantizaba que fuera deliberada.",
+      "automatizado": "La corrección inmediata y abundante.",
+      "residuo": "El criterio para saber cuándo la corrección automática se equivoca, que antes no hacía falta porque la corrección venía de quien sabía.",
+      "diagnostico": {
+        "nivel": 4,
+        "fuente_principal": "Los dos ensayos de 2025, leídos juntos",
+        "que_acredita": "La misma herramienta produce resultados opuestos según el diseño de la tarea. Con andamiaje duplica las ganancias; sin él deja a los estudiantes peor que al principio.",
+        "apoyo": [
+          "Digital Education Council, oleada 2025, 1.681 docentes de 52 instituciones en 28 países: el 83 % está preocupado por la capacidad de sus estudiantes de evaluar críticamente los productos de inteligencia artificial.",
+          "El 57 % de los estudiantes declara que sus evaluaciones vienen con orientación insuficiente y solo el 29 % cree que sus docentes están preparados para orientarlos."
+        ]
+      },
+      "respuesta": {
+        "nivel": 2,
+        "fuente_principal": "Northeastern University",
+        "que_acredita": "Socio de diseño en un despliegue federado con modo de aprendizaje socrático, que retiene la respuesta y devuelve preguntas.",
+        "evidencia_de_resultados": "Ninguna localizada"
+      }
+    },
+    {
+      "id": "calibracion",
+      "orden": 5,
+      "nombre": "La calibración",
+      "capitulo": "VIII",
+      "reparto_2022": "La dificultad percibida al trabajar informaba al estudiante sobre su propio nivel, y esa señal sostenía la autorregulación del aprendizaje.",
+      "automatizado": "La fluidez del producto final, que hoy es alta con independencia de lo que el estudiante sepa.",
+      "residuo": "La estimación realista de lo que uno sabe hacer, que ningún currículo enseña ni evalúa.",
+      "diagnostico": {
+        "nivel": 4,
+        "fuente_principal": "METR (2025), ensayo aleatorizado",
+        "que_acredita": "Dieciséis desarrolladores experimentados completaron 246 tareas reales en sus propios repositorios. Tardaron un 19 % más con la herramienta, habían predicho ser un 24 % más rápidos, y después de experimentar la ralentización seguían estimando haber sido un 20 % más rápidos.",
+        "apoyo": [
+          "METR marcó posteriormente el resultado como histórico y advirtió que no refleja necesariamente las herramientas actuales. La advertencia no afecta al punto pedagógico, que es la brecha de casi cuarenta puntos entre desempeño percibido y medido en expertos de su propio dominio."
+        ]
+      },
+      "respuesta": {
+        "nivel": 0,
+        "fuente_principal": "Ninguna",
+        "que_acredita": "No se localizó ninguna intervención curricular dirigida a enseñar o evaluar la calibración de la propia confianza.",
+        "evidencia_de_resultados": "No aplica"
+      }
+    },
+    {
+      "id": "acreditacion",
+      "orden": 6,
+      "nombre": "La acreditación",
+      "capitulo": "IX",
+      "reparto_2022": "El título certificaba la capacidad de producir trabajo profesional, y el primer empleo era el peldaño donde esa capacidad se ponía a prueba.",
+      "automatizado": "El costo de producir ese trabajo.",
+      "residuo": "Aquello que el título certifica, una vez que producir dejó de ser caro.",
+      "diagnostico": {
+        "nivel": 4,
+        "fuente_principal": "Brynjolfsson, Chandar y Chen, Stanford Digital Economy Lab, microdatos administrativos de ADP, actualización de agosto de 2026",
+        "que_acredita": "El empleo de jóvenes de 22 a 25 años en ocupaciones expuestas a inteligencia artificial está aproximadamente un 19 % por debajo de donde estaría si hubiera seguido el ritmo de sus pares menos expuestos, con la brecha ampliándose desde agosto de 2025. Los trabajadores experimentados no muestran una brecha comparable.",
+        "apoyo": [
+          "No hay desplazamiento laboral generalizado atribuible a la inteligencia artificial en el conjunto de la economía. El efecto se distribuye por antigüedad y no por sector.",
+          "National Association of Colleges and Employers, promoción de 2026: más de un tercio de los empleos de entrada exige competencias de inteligencia artificial, casi el triple que en otoño de 2025."
+        ]
+      },
+      "respuesta": {
+        "nivel": 2,
+        "fuente_principal": "Ohio State University",
+        "que_acredita": "Requisito transversal de egreso con mecanismo curricular verificable y mapas de competencias por facultad.",
+        "evidencia_de_resultados": "Implementación documentada; ningún resultado medido"
+      }
+    }
+  ]
+}

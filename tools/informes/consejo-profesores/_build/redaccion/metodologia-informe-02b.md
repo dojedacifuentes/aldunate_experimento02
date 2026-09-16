@@ -1,172 +1,177 @@
 # Metodología del Informe 02
 
-Documento de diseño metodológico. Lo que sigue fija la unidad de análisis, la escala, la regla de evidencia y los sesgos declarados del informe sobre la transformación de la enseñanza universitaria ante la inteligencia artificial. Buena parte de este texto migra después al capítulo III y al anexo A del documento entregable.
+Documento de diseño metodológico. Fija qué clase de instrumento es este informe, cuál es su unidad de análisis, cómo se mide y qué queda fuera. Buena parte de este texto migra después al capítulo de metodología y al anexo A del documento entregable.
 
-Fecha: 15 de septiembre de 2026. Insumo de base: informe experto v0.3.0, «La universidad ante la automatización del trabajo cognitivo», setenta y siete páginas, con su índice en `insumos/informe-02/indice-borrador-v0.3.0.pdf`.
-
----
-
-## 1. La restricción que impone el encargo
-
-De las cinco condiciones que puso el profesor Aldunate, cuatro son de forma y una es de método. Las de forma piden un documento tradicional, gráficos fácilmente discernibles, prosa que no se parezca a la de un modelo de lenguaje y el detalle técnico en anexo. La de método es una sola frase: «Aun cuando pueda ser muy útil, no me sirve un buen compilado de información».
-
-Esa frase describe con precisión lo que se rechazó. El borrador v0.3.0 reúne veinticuatro capítulos y tres anexos, con un aparato de evidencia que clasifica cada afirmación por tipo de fuente, nivel demostrativo y estado epistemológico. Es un buen compilado, y el adjetivo no es irónico: la calidad del material es alta y la trazabilidad es completa. El problema está en que el material se organiza por temas, de modo que el lector recibe todo lo que se sabe sobre cada asunto y ninguna respuesta a una pregunta.
-
-La diferencia entre un compilado y un informe es metodológica antes que estilística. Un compilado tiene fuentes ordenadas por materia. Un informe tiene una unidad de análisis, una regla que decide qué valor toma esa unidad en cada caso, y un resultado que podría haber salido distinto. Que el resultado pudiera haber sido otro es la prueba de que hubo medición en lugar de recopilación.
-
-De ahí que el trabajo empiece por la unidad de análisis antes que por el índice.
+Fecha: 16 de septiembre de 2026. Sustituye por completo la versión del 15 de septiembre, que organizaba el informe en fichas institucionales. Insumo de base: informe experto v0.3.0, «La universidad ante la automatización del trabajo cognitivo», setenta y siete páginas, con su índice en `insumos/informe-02/indice-borrador-v0.3.0.pdf`.
 
 ---
 
-## 2. Qué instrumentos existen y por qué ninguno sirve sin ajuste
+## 1. Qué clase de documento hay que escribir
 
-La revisión de septiembre de 2026 localizó cuatro familias de instrumentos para evaluar el estado de una institución de educación superior frente a la inteligencia artificial. Ninguna resuelve el problema de este informe, y las razones del descarte son las que justifican el instrumento propio.
+El profesor Aldunate puso cinco condiciones. Cuatro son de forma: documento tradicional, gráficos fácilmente discernibles, prosa que no se parezca a la de un modelo de lenguaje y detalle técnico en anexo. La quinta es de método, y es la que manda: «Aun cuando pueda ser muy útil, no me sirve un buen compilado de información».
 
-Los modelos de madurez derivan del Capability Maturity Model Integration y ordenan a la institución en cinco etapas, de la conciencia a la transformación, pasando por experimentación, adopción e integración (Asrowardi et al., 2026). El modelo GOVAIHEI aplica la misma lógica a la gobernanza universitaria, con cinco dominios evaluados en una escala de cuatro grados de cumplimiento. Son instrumentos de autodiagnóstico: los responde la propia institución sobre sí misma. Este informe no puede encuestar a nueve universidades de cinco países, y una escala pensada para la introspección se comporta mal cuando se aplica desde fuera.
+A eso se añade la instrucción del encargo: el informe debe ser un insumo que sirva para comprender y para decidir.
 
-Los marcos de preparación miden otra cosa. El Digital Education Council publicó en 2025 un marco de diez dimensiones y cuatro niveles, y Times Higher Education construyó en 2026 un índice de madurez digital con 4.950 respuestas de 1.353 instituciones en 82 países. Diez dimensiones son demasiadas para un gráfico de barras legible, que es una condición del encargo. La preparación, además, mira hacia adelante, porque indica si la institución está en condiciones de hacer algo en lugar de registrar si ya lo hizo, y lo que el Consejo necesita saber es esto último.
+Las dos cosas juntas descartan tres formatos que estaban sobre la mesa. Descartan el compilado temático, que es lo que se rechazó en agosto. Descartan el catálogo institucional, porque una colección de fichas de universidades extranjeras es el mismo compilado ordenado por institución. Descartan también el ranking, porque ordenar instituciones de mejor a peor no le dice a un consejo de profesores qué tiene que hacer el lunes.
 
-Los marcos de competencias son normativos. La Unesco publicó en 2024 dos marcos, uno para docentes y otro para estudiantes, con quince competencias en cinco dimensiones y tres niveles de progresión. Dicen qué debería saber un docente, no qué sabe, de modo que sirven como referencia externa para la dimensión de competencias, sin servir como instrumento de medición.
+Lo que queda es un documento que explique qué cambió en las condiciones de la enseñanza, qué se sabe con solidez sobre ese cambio, y qué decisiones quedan planteadas para quien tiene que tomarlas.
 
-El análisis documental de políticas es el método que más se acerca a los datos disponibles. Wilson (2025) examinó las políticas de inteligencia artificial generativa de las universidades del Russell Group y de una muestra aleatoria de universidades británicas, tomando como fuente las páginas institucionales públicas. La limitación que ese estudio declara es la de este informe: no toda la documentación interna de una universidad está en su sitio público, y algunas la reservan a su intranet.
+---
 
-El descarte de las tres primeras familias deja el análisis documental como única vía practicable. Su debilidad conocida tiene nombre en la literatura, y consiste en la distancia entre la política declarada y la práctica del aula. Los estudios de 2026 muestran que las políticas institucionales privilegian la gobernanza del riesgo y el apoyo a la escritura académica, mientras la práctica docente se concentra en otros usos, y que la mayoría de las políticas de asignatura siguen siendo prohibitivas, sin coincidir con lo que la institución declara (Zhang et al., 2026).
+## 2. El objeto
 
-Un informe que se limitara a leer documentos institucionales mediría la política y afirmaría estar midiendo la enseñanza. La decisión metodológica central de este trabajo consiste en incorporar esa distancia a la escala, en lugar de declararla como limitación al final.
+El objeto es la transformación de la enseñanza en el contexto sociotécnico actual. La universidad es el género y el Derecho la especie, de modo que el informe razona sobre la pedagogía universitaria y trata la enseñanza jurídica como caso particular, en un capítulo propio.
+
+Esa relación de género a especie no es un adorno de alcance. La formación jurídica concentra en grado extremo los rasgos que el informe examina en general, porque su producto característico es un texto argumentado sobre fuentes, la verificación de esas fuentes es una responsabilidad profesional con sanción, y el error tiene consecuencias que constan en registros públicos. El Derecho funciona como caso crítico: lo que en otras disciplinas es un problema pedagógico, allí es además un problema de responsabilidad.
 
 ---
 
 ## 3. La unidad de análisis
 
-Aquí es donde este informe se separa del Informe 01, y conviene explicar la separación porque la instrucción recibida fue que ambos se parecieran lo más posible.
+La unidad de análisis es la función pedagógica y su redistribución.
 
-El Informe 01 pregunta qué capacidades han construido once facultades de Derecho chilenas. La unidad de análisis es la facultad, y por eso la ficha es una facultad: el lector recorre once fichas y sabe qué tiene cada una. La forma sigue a la pregunta.
+Una función pedagógica es algo que ocurre en la enseñanza y que alguien realiza: producir un texto, evaluar lo aprendido, practicar hasta dominar, recibir retroalimentación, calibrar el propio nivel, acreditar lo alcanzado. Cada una de esas funciones tenía hasta 2022 un reparto estable entre el estudiante, el docente y los artefactos disponibles.
 
-El Informe 02 pregunta cómo cambia la enseñanza universitaria ante la automatización del trabajo cognitivo. Si la ficha fuera la institución, el resultado serían nueve fichas de universidades extranjeras, y el Consejo recibiría un catálogo de lo que hacen Sydney, Ohio State y Monterrey. Eso es un compilado de información, esta vez ordenado por institución en lugar de por tema, y volvería a incumplir la única condición de método que puso el profesor.
+La automatización del trabajo cognitivo desagregó esas funciones en lugar de eliminarlas. Lo que antes venía junto ahora viene separado, y las partes que se producían solas, como subproducto de otra tarea, dejaron de producirse y quedaron sin responsable asignado.
 
-La unidad de análisis de este informe es la dimensión de la enseñanza. Son siete, y ya están fijadas y verificadas en la matriz del informe experto: metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad. Cada una responde a una pregunta con respuesta comprobable sobre qué le ocurrió a esa parte de la enseñanza entre 2022 y 2026.
+El ejemplo más claro está en la verificación de fuentes. Hasta 2022, quien encontraba una sentencia la había leído: verificar era un subproducto automático de buscar. Cuando la búsqueda y la redacción se automatizan, la verificación no desaparece como necesidad, desaparece como subproducto. Pasa a ser un paso separado que nadie está haciendo, porque nunca hubo que encargárselo a nadie.
 
-Las instituciones no desaparecen: pasan a ser la evidencia dentro de cada dimensión. La ficha de evaluación muestra qué hicieron con la evaluación las nueve instituciones examinadas, cuál llegó más lejos y qué acredita exactamente. La matriz es la misma que la del informe experto, y lo que cambia es que se lee por columnas en vez de por filas.
+De ahí sale el método, que para cada función pedagógica establece cinco cosas:
 
-La consecuencia para la forma es menor de lo que parece. El informe conserva la ficha, el gráfico de barras, el color propio de cada institución sostenido entre figuras, el mapeo general antes de concluir y las conclusiones numeradas. Todo eso es del Informe 01. Lo que cambia es el sujeto de la ficha.
+1. Cómo estaba repartida en 2022, entre estudiante, docente y artefacto.
+2. Qué parte se automatizó, con la evidencia que lo acredita.
+3. Qué parte quedó sin responsable, que es el residuo de la desagregación.
+4. Qué dice la evidencia sobre las consecuencias, con su grado de solidez declarado.
+5. Qué hay que decidir, quién tiene competencia para decidirlo y qué ocurre si no se decide.
 
-Un capítulo posterior recupera la lectura por filas con nueve perfiles institucionales breves, de modo que el Consejo pueda ver una institución entera de una vez. Una matriz admite dos lecturas y el informe entrega las dos, en ese orden, porque la pregunta se responde por columnas.
+Los puntos 1 a 4 sirven para comprender. El punto 5 sirve para decidir. Ninguno de los dos existe sin el otro, y es la razón por la que el informe no puede ser ni un ensayo ni una lista de recomendaciones.
 
 ---
 
-## 4. La escala y el umbral del nivel 3
+## 4. Las seis funciones
 
-La escala es la de seis niveles del informe experto, de 0 a 5. Se conserva sin modificación porque ya está aplicada a las sesenta y tres celdas de la matriz y porque tiene una propiedad que resuelve el problema del análisis documental.
+Las funciones se derivaron del material verificado del informe experto, en lugar de tomarse de una tipología previa. El criterio de inclusión fue doble: que exista evidencia empírica sobre la desagregación, y que la parte huérfana sea asignable por una decisión que una facultad pueda tomar.
 
-| Nivel | Denominación | Señal que lo distingue |
+| Función | Qué se automatizó | Qué quedó sin responsable |
 |---|---|---|
-| 0 | Ausencia o restricción | Reglamento que la prohíbe, o silencio institucional |
-| 1 | Herramienta | Hay contrato de licencia y no hay documento pedagógico |
-| 2 | Política y alfabetización | Existe una política citable y un plan de formación |
-| 3 | Integración pedagógica | Los programas de asignatura de este año difieren de los de 2022 |
-| 4 | Transformación curricular | Un documento de gobierno académico aprobó competencias nuevas |
-| 5 | Transformación sistémica | Cambio coordinado de todas las dimensiones |
+| Producir un texto | La redacción y la búsqueda de fuentes | La verificación de lo que el texto afirma |
+| Evaluar lo aprendido | La producción del entregable | La inferencia del aprendizaje a partir del producto |
+| Practicar hasta dominar | La resolución del ejercicio | La dificultad que producía la práctica |
+| Recibir retroalimentación | La corrección inmediata y abundante | El criterio para saber cuándo esa corrección se equivoca |
+| Calibrar el propio nivel | La fluidez del producto final | La estimación realista de lo que uno sabe hacer |
+| Acreditar lo alcanzado | El costo de producir | Aquello que el título certifica |
 
-La propiedad está en que la naturaleza de la señal cambia entre el nivel 2 y el nivel 3. Los niveles 0, 1 y 2 se acreditan con documentos que la institución produce sobre sí misma: una prohibición, un contrato de licencia, una política, un plan de formación. Los niveles 3, 4 y 5 exigen un rastro de enseñanza, como un programa de asignatura que difiere del de 2022, un acuerdo de gobierno académico que aprobó competencias nuevas o un cambio coordinado entre dimensiones.
-
-El nivel 3 es, por tanto, el umbral en que la evidencia deja de ser una declaración y pasa a ser la huella de algo ocurrido en la enseñanza. La distancia entre política y práctica que la literatura describe como limitación del método documental queda así convertida en una medición, de modo que al lector se le informa de su tamaño en lugar de advertirle de que existe.
-
-El tamaño, con los datos actuales, es este. De las sesenta y tres celdas de la matriz, veintitrés están por debajo del nivel 3. La media del conjunto es 2,89, de modo que la parte documentada del sistema se sitúa apenas por debajo del umbral. Solo cuatro celdas alcanzan el nivel 5 y quince llegan a 4 o más.
-
-Leída por columnas, la matriz ordena las siete dimensiones así:
-
-| Dimensión | Media | Rango | Celdas bajo el nivel 3 |
-|---|---|---|---|
-| Gobernanza | 3,33 | 2 a 5 | 3 de 9 |
-| Competencias | 3,00 | 2 a 5 | 3 de 9 |
-| Rol docente | 3,00 | 2 a 4 | 2 de 9 |
-| Metodologías | 2,89 | 2 a 4 | 2 de 9 |
-| Currículo | 2,78 | 1 a 5 | 4 de 9 |
-| Equidad | 2,78 | 2 a 4 | 3 de 9 |
-| Evaluación | 2,44 | 1 a 5 | 6 de 9 |
-
-Gobernanza encabeza porque se resuelve con presupuesto y una firma. Evaluación cierra, con seis de nueve instituciones por debajo del umbral, porque exige acuerdo colegiado. Ese contraste lo produce el instrumento, y es la clase de afirmación que un compilado no puede producir.
+Seis funciones, seis capítulos, seis decisiones. El capítulo del Derecho recorre las seis en su versión disciplinar.
 
 ---
 
-## 5. La regla de evidencia
+## 5. Cómo se mide
 
-Cada celda recibe su nivel según el mejor nivel demostrativo acreditado, sin atender al número de fuentes que lo mencionan.
+Medir aquí no significa puntuar instituciones. Significa declarar cuánto pesa lo que sabemos, porque una decisión se toma distinto según si descansa sobre un experimento o sobre un comunicado de prensa.
 
-La distinción tiene consecuencias comprobables sobre las cifras. El informe de 2025 sobre las escuelas de Derecho puntuaba actividades individuales halladas en las páginas de cada facultad, y su puntaje crecía con el número de actividades encontradas, que dependía tanto de la actividad real como de cuánto se hubiera buscado. La edición de 2026 sustituyó ese procedimiento por una rúbrica común aplicada igual a todas las instituciones, y este informe hereda esa corrección.
+La escala es la de nivel demostrativo que el informe experto ya aplica a cada afirmación de su anexo B, y que se conserva sin modificación:
 
-El informe experto ya clasifica cada afirmación por tres criterios independientes, y esa clasificación se conserva íntegra como base de la regla. El tipo de fuente distingue entre evidencia académica revisada por pares, organismo internacional o público, fuente institucional primaria, proveedor, prensa especializada y otras. El nivel demostrativo distingue cinco grados: que la iniciativa exista, que fuera implementada, que haya adopción efectiva, que haya resultados medidos y que pueda atribuirse causalidad. El estado epistemológico va de verificado a no demostrado, pasando por reportado, emergente y controvertido.
+| Nivel | Qué acredita la mejor fuente disponible |
+|---|---|
+| 1 | La iniciativa existe |
+| 2 | Fue implementada |
+| 3 | Hay adopción efectiva medida |
+| 4 | Hay resultados medidos |
+| 5 | Puede atribuirse causalidad |
 
-La regla de asignación queda así: una celda alcanza el nivel 3 o superior cuando existe al menos una fuente académica, de organismo público o institucional primaria que acredite implementación o más sobre un rastro de enseñanza. Una fuente de proveedor o de prensa sostiene la existencia de una iniciativa, sin acreditar su implementación, de modo que por sí sola no cruza el umbral.
+La medida se aplica dos veces a cada función, y esa duplicación es el hallazgo central del instrumento. Se aplica una vez sobre el diagnóstico, es decir sobre lo que sabemos del problema, y otra vez sobre la respuesta, es decir sobre lo que sabemos de que las soluciones propuestas funcionen.
 
----
+La comparación entre ambas columnas produce el resultado que un consejo necesita antes de deliberar. En la evaluación, por ejemplo, el diagnóstico llega a nivel 4, porque un experimento publicado en PLOS ONE estableció que el 94 % de las entregas generadas con inteligencia artificial pasó sin detección y obtuvo notas superiores a las de los estudiantes reales. La respuesta más extendida, el modelo de dos carriles que adoptaron Sydney y Bath, llega a nivel 2: está implementada y no hay ningún resultado publicado sobre su efecto.
 
-## 6. Qué se hace cuando no hay evidencia
-
-Un cero afirma que la capacidad no existe, y sostener eso exige evidencia de la que rara vez se dispone. Cuando la búsqueda encuentra indicios sin llegar a establecer el estado de una dimensión, la celda queda registrada como no concluyente, el promedio informado no la cuenta, y la ficha advierte hasta dónde llegaría si se acreditara. Es la misma regla del Informe 01, y evita que el silencio de una institución se lea como ausencia.
-
-Esto obliga a una revisión que todavía no se ha hecho. Las sesenta y tres celdas de la matriz actual tienen todas un número, sin ninguna marcada como no concluyente, y resulta improbable que las nueve instituciones documenten públicamente las siete dimensiones. La primera tarea de la redacción consiste en recorrer la matriz celda por celda contra el anexo B del informe experto, comprobar qué fuente sostiene cada valor y degradar a no concluyente las que descansen sobre inferencia. Es probable que la media baje y que la distancia respecto del umbral aumente.
-
----
-
-## 7. Lo que la escala no mide
-
-La escala mide transformación documentada, no transformación. Los sesgos que ello introduce se declaran una sola vez, en el capítulo de metodología, y no se repiten después.
-
-El primero es idiomático, porque la documentación pública de las instituciones anglófonas es más accesible y detallada, y la escala las favorece. El segundo es de publicación, porque las instituciones publican sus éxitos y no sus fracasos, y la única excepción localizada en todo el corpus es la encuesta interna de California State University, reveladora por su rareza. El tercero es de muestra, porque solo entran instituciones que documentan, de modo que el mapa sobreestima el nivel medio del sistema universitario.
-
-El cuarto sesgo tiene consecuencias mayores que los tres anteriores, porque la escala no mide si la transformación mejoró el aprendizaje. Son dos preguntas independientes y el informe las mantiene separadas, porque de esa separación sale su hallazgo más incómodo: las instituciones con despliegues más profundos son las que menos saben sobre sus propios efectos. Si la profundidad y el resultado se midieran en un mismo número, ese hallazgo desaparecería dentro del promedio.
+Sabemos más del problema que de la solución, y la distancia es medible función por función. Una decisión tomada sobre diagnóstico sólido y respuesta débil debe tomarse de forma reversible, con un indicador definido de antemano. Decirlo con una cifra es más útil que decirlo con un adverbio.
 
 ---
 
-## 8. Qué se sigue para la estructura
+## 6. La regla de evidencia
+
+El nivel lo fija la mejor fuente disponible, y no el número de fuentes que mencionan el asunto. Es la corrección que el Informe 01 ya aplicó al informe de 2025, cuyo puntaje crecía con la cantidad de actividades encontradas y dependía por tanto de cuánto se hubiera buscado.
+
+Una fuente de proveedor o de prensa acredita que una iniciativa existe. No acredita que se haya implementado, y menos que haya funcionado. El informe lo dice en cada caso, y por eso puede sostener afirmaciones incómodas sin exagerarlas.
+
+La regla se aplica también contra el propio argumento. El estudio más difundido sobre degradación cognitiva, «Your Brain on ChatGPT» del MIT Media Lab, es también uno de los más débiles del campo, con cincuenta y cuatro participantes, problemas señalados en su análisis y hallazgos limitados a una sola tarea. El informe lo cita y lo descuenta, porque un instrumento que solo acepta la evidencia que le conviene no sirve para decidir. El metaanálisis más citado del campo, el de Wang y Fan, fue retractado durante la elaboración del informe experto, y ese hecho se conserva en el capítulo sobre el estado de la evidencia.
+
+---
+
+## 7. Qué se decide y quién decide
+
+Cada capítulo cierra con la decisión que su función deja planteada, y con tres datos que la hacen operativa.
+
+El primero de esos datos es la competencia para resolver el asunto. Algunas decisiones son del Consejo de Profesores, otras de la Universidad y otras de cada docente en su propio programa. Confundirlas es la causa más común de que una reunión termine sin acuerdo, y nombrarlas ahorra esa discusión.
+
+El segundo son las opciones reales, con su costo y su riesgo, entre dos y cuatro por decisión. El informe no recomienda una: expone lo que cada una supone y qué evidencia la respalda. Mantener el estado actual es siempre una de las opciones, con sus consecuencias explicitadas, porque no decidir es una decisión que se toma por omisión.
+
+El tercero es el indicador de seguimiento, es decir qué habría que observar, y en qué plazo, para saber si la opción elegida funcionó. Sin ese dato la decisión no es revisable, y una decisión no revisable sobre evidencia de nivel 2 es una apuesta.
+
+---
+
+## 8. Lo que este instrumento no hace
+
+No mide instituciones ni las ordena. El material comparado sobre lo que han decidido otras universidades existe, está verificado y va al anexo B, que es donde el profesor pidió que fuera el detalle técnico. En el cuerpo aparece como precedente dentro de cada decisión, en una o dos frases, con lo que esa institución acredita y lo que todavía no sabe.
+
+No mide el efecto sobre el aprendizaje en ninguna facultad chilena, por la razón elemental de que ninguna ha publicado una medición semejante. Esa ausencia es uno de los resultados del informe y se trata como tal.
+
+El informe tampoco predice, y los escenarios del informe experto se conservan como material del anexo sin entrar al cuerpo, porque una proyección a 2030 no es un insumo para una decisión que se toma este semestre.
+
+---
+
+## 9. Estructura
 
 | Capítulo | Palabras | Gráficos | Qué hace |
 |---|---|---|---|
-| I. Resumen | 900 | — | Qué se examinó, con qué escala y los cinco resultados que el Consejo debe retener |
-| II. Objetivos y alcance | 600 | — | Qué responde el informe y qué deja fuera |
-| III. Metodología | 1.200 | — | Los apartados 3 a 7 de este documento, en prosa y sin detalle técnico |
-| IV. Las siete dimensiones | 5.000 | 7 | Una ficha por dimensión, con las nueve instituciones dentro |
-| V. Perfiles institucionales | 2.500 | 9 | La lectura por filas: cada institución entera de una vez |
-| VI. El mapa internacional | 1.800 | 3 | Treinta instituciones de diez países, con los patrones regionales |
-| VII. El efecto sobre el aprendizaje | 2.000 | 2 | Los dos ensayos de 2025 y la retractación del metaanálisis más citado |
-| VIII. El caso del Derecho | 2.000 | 2 | Por qué la formación jurídica es el caso crítico; remite al Informe 01 |
-| IX. Mapeo general | 1.200 | 2 | La matriz completa y la relación entre profundidad y evidencia |
-| X. Conclusiones | 1.500 | — | Entre doce y dieciséis, numeradas y agrupadas |
-| XI. Referencias | — | — | Formato APA, ordenadas y agrupadas por tipo |
+| I. Resumen | 900 | — | Qué cambió, qué sabemos y qué queda por decidir |
+| II. Objeto y alcance | 600 | — | La pregunta, el marco sociotécnico y qué queda fuera |
+| III. Metodología | 1.100 | 1 | Los apartados 3 a 7, en prosa y sin detalle técnico |
+| IV. La producción de textos y la verificación | 1.700 | 2 | Primera función |
+| V. La evaluación y la inferencia del aprendizaje | 1.900 | 2 | Segunda función |
+| VI. La práctica y la dificultad | 1.600 | 2 | Tercera función |
+| VII. La retroalimentación y el criterio | 1.500 | 1 | Cuarta función |
+| VIII. La calibración | 1.400 | 1 | Quinta función |
+| IX. La acreditación | 1.500 | 1 | Sexta función |
+| X. El Derecho como caso particular | 2.300 | 3 | Las seis funciones en la enseñanza jurídica |
+| XI. Mapeo general | 1.300 | 2 | Las seis funciones juntas y el vacío que comparten |
+| XII. Decisiones | 1.600 | 1 | Las decisiones ordenadas, con competencia e indicador |
+| XIII. Referencias | — | — | Formato APA, agrupadas por tipo |
 
-Suman unas 18.700 palabras y veinticinco gráficos, frente a las 20.460 palabras y veintiséis gráficos del Informe 01. La proporción es la que el Consejo aprobó.
+Suman unas 17.400 palabras y diecisiete gráficos, frente a las 20.460 palabras y veintiséis gráficos del Informe 01. Menos figuras y más argumento, que es lo que distingue a un insumo de decisión de un mapeo.
 
-Todos los gráficos son de barras horizontales, con el color de cada institución sostenido entre figuras. Los siete del capítulo IV comparten escala de 0 a 5, de modo que la altura de las barras sea comparable de una ficha a otra.
-
----
-
-## 9. Qué va al anexo
-
-La instrucción fue que todos los detalles técnicos vayan a un anexo. En concreto, el anexo A recoge la rúbrica y el procedimiento: las siete dimensiones con su pregunta verificable, la escala completa, la regla de asignación del apartado 5, el registro de celdas no concluyentes y la prueba de robustez. El anexo B recoge la matriz y las fuentes: las nueve instituciones por sus siete dimensiones, la tabla de las treinta instituciones del mapa y la matriz maestra de evidencia heredada del informe experto. El anexo C recoge el uso de inteligencia artificial en la elaboración, con las tareas que se apoyaron en esas herramientas, lo que verificó personalmente el autor y el procedimiento seguido.
-
-El anexo C va ahí por instrucción expresa del profesor. Rige además una regla propia de este documento: el cuerpo no menciona el uso de inteligencia artificial en la elaboración, y cualquier referencia a ese asunto remite al anexo.
+Los gráficos son todos de barras horizontales. El principal, repetido en versión parcial al inicio de cada capítulo de función, enfrenta la solidez del diagnóstico con la de la respuesta en una escala común de 1 a 5.
 
 ---
 
-## 10. Lo que falta antes de redactar
+## 10. Qué va al anexo
 
-1. Revisar las sesenta y tres celdas contra el anexo B del informe experto y degradar a no concluyente las que descansen sobre inferencia, según el apartado 6.
-2. Trasladar las treinta instituciones del mapa internacional a `puntaje/niveles-instituciones.json`, con su país y su nivel verificado.
-3. Formular las siete preguntas verificables, una por dimensión, que el anexo A debe publicar.
+El anexo A recoge la rúbrica y el procedimiento: la definición de función pedagógica, el criterio con que se seleccionaron las seis, la escala de nivel demostrativo y la regla de asignación.
+
+El anexo B recoge el material institucional comparado: la matriz de nueve instituciones por siete dimensiones, el mapa de treinta instituciones en diez países y la matriz maestra de evidencia heredada del informe experto. Es el material que en la versión anterior ocupaba el cuerpo.
+
+El anexo C recoge el uso de inteligencia artificial en la elaboración, con las tareas que se apoyaron en esas herramientas, lo que verificó personalmente el autor y el procedimiento seguido. Va ahí por instrucción expresa del profesor, y rige además una regla propia de este documento: el cuerpo no menciona el asunto y cualquier referencia remite al anexo.
+
+---
+
+## 11. Lo que falta antes de redactar
+
+1. Asignar a cada una de las seis funciones su nivel demostrativo de diagnóstico y de respuesta, contra el anexo B del informe experto, y registrar la fuente que sostiene cada nivel.
+2. Redactar las seis decisiones con su competencia, sus opciones y su indicador.
+3. Construir `puntaje/funciones-pedagogicas.json` con las seis funciones, sus dos niveles y su evidencia.
 4. Adaptar `auditar-cifras.mjs`, que hoy comprueba la escala de cinco dimensiones sobre quince del Informe 01.
+5. Trasladar el material institucional al anexo B, incluido el mapa de las treinta instituciones que todavía no está en formato de datos.
 
 ---
 
 ## Referencias de este documento
 
-Asrowardi, I., et al. (2026). A comparative analysis of AI maturity frameworks: Toward transformative applications in higher education. *JOIV: International Journal on Informatics Visualization*. https://joiv.org/index.php/joiv/article/view/3563
+Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI can harm learning. *Proceedings of the National Academy of Sciences*.
 
-Digital Education Council. (2025). *Ten dimension AI readiness framework*. https://www.digitaleducationcouncil.com/post/ten-dimension-ai-readiness-framework
+Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C., & Ho, D. (2025). Hallucination-free? Assessing the reliability of leading AI legal research tools. *Journal of Empirical Legal Studies*.
 
-Times Higher Education. (2026). *AI & digital maturity index 2026*. https://www.timeshighereducation.com/content/ai-digital-maturity-index-2026
+METR. (2025). *Measuring the impact of early-2025 AI on experienced open-source developer productivity*.
 
-Unesco. (2024). *AI competency framework for teachers* y *AI competency framework for students*. https://www.unesco.org/en/articles/what-you-need-know-about-unescos-new-ai-competency-frameworks-students-and-teachers
+Scarfe, P., Watcham, K., Clarke, A., & Roesch, E. (2024). A real-world test of artificial intelligence infiltration of a university examinations system. *PLOS ONE, 19*(6), e0305354.
 
 Wilson, T. D. (2025). The development of policies on generative artificial intelligence in UK universities. *Journal of Librarianship and Information Science*. https://journals.sagepub.com/doi/10.1177/03400352251333796
 

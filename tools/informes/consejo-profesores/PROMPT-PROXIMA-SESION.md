@@ -4,104 +4,81 @@ Copiar desde la línea siguiente.
 
 ---
 
-Trabajo en el repositorio `dojedacifuentes/aldunate_experimento02`. Necesito que redactes un informe para el Consejo de Profesores de la Escuela de Derecho de la Pontificia Universidad Católica de Valparaíso.
+Trabajo en el repositorio `dojedacifuentes/aldunate_experimento02`. Continúo dos informes para el Consejo de Profesores de la Escuela de Derecho de la Pontificia Universidad Católica de Valparaíso. Ambos están redactados y compilados, y lo que queda es verificación y ajuste.
+
+## Son dos informes distintos
+
+Este directorio produce dos documentos con objetos diferentes. Conviene fijarlo antes de tocar nada, porque el nombre corto de cada uno no lo dice.
+
+El **Informe 01**, «Uso de inteligencia artificial en las Escuelas de Derecho», mide qué capacidades han construido once facultades de Derecho chilenas: unidades, normas propias, presencia en pregrado, formación continua, investigación, transferencia y uso interno. Escala de cinco dimensiones sobre quince puntos, heredada del informe que el Consejo aprobó en 2025. Está terminado, en `_build/redaccion/informe-01/`.
+
+El **Informe 02**, «La transformación de la enseñanza ante la automatización del trabajo cognitivo», examina cómo cambia la enseñanza universitaria. Su alcance es universitario y el Derecho entra como caso particular en un capítulo propio, lo que el usuario confirmó el 16 de septiembre de 2026. Está terminado en su edición vigente, en `_build/redaccion/informe-02b/`.
+
+Existe además una versión temática anterior del Informe 02, de 43 páginas, en `_build/redaccion/informe-02/`. Se conserva como antecedente y quedó superada.
 
 ## Lo primero que debes leer
 
 Todo el material está en `tools/informes/consejo-profesores/`. Lee, en este orden:
 
 1. `README.md` — cómo funciona la cadena de construcción y qué debe dar cada control.
-2. `_build/redaccion/metodologia-informe-02b.md` — la unidad de análisis, la escala, la regla de evidencia y los sesgos declarados. Manda sobre el plan ante cualquier discrepancia.
-3. `_build/redaccion/plan-informe-02b.md` — la estructura y el índice de lo que hay que escribir. Ya está decidido; no lo rediseñes.
-4. `docs/HANDOFF-CONSEJO-PROFESORES.md` (en la raíz del repo) — las decisiones tomadas que no deben revertirse.
+2. `_build/redaccion/metodologia-informe-02b.md` — la unidad de análisis, la escala y la regla de evidencia del Informe 02. Manda sobre cualquier otro documento.
+3. `_build/redaccion/plan-informe-02b.md` — qué se entregó y qué queda pendiente.
+4. `docs/HANDOFF-CONSEJO-PROFESORES.md` — las decisiones tomadas que no deben revertirse.
 5. `_build/estilo/reglas-documento-a.md` — las reglas de redacción, que mandan sobre cualquier costumbre.
 
-## Qué hay que hacer
+## Tres decisiones que no debes revertir
 
-Redactar el **Informe 02, edición de fichas por dimensión**.
+La primera es que el Informe 02 **no es un catálogo de instituciones**. Ese plan existió y el usuario lo descartó el 16 de septiembre de 2026, con una razón que conviene recordar: nueve fichas de universidades extranjeras son el mismo compilado que el profesor rechazó en agosto, ordenado por institución en lugar de por tema. El material institucional vive en el anexo B y en el cuerpo aparece solo como precedente dentro de cada decisión.
 
-Antes de empezar, fija la distinción, porque el directorio produce dos documentos con objetos distintos y es fácil confundirlos.
+La segunda es la unidad de análisis. Es la **función pedagógica y su redistribución**. La automatización desagregó las funciones de la enseñanza en lugar de eliminarlas, y las partes que se producían como subproducto de otra tarea quedaron sin responsable. El ejemplo que ordena todo el documento es la verificación de fuentes: hasta 2022 quien encontraba una sentencia la había leído, y hoy verificar es un paso separado que ningún programa encarga a nadie.
 
-El **Informe 01** ya está terminado y mide qué capacidades han construido once facultades de Derecho chilenas. Sirve de modelo de forma, y su contenido no es el tuyo.
+La tercera es la medida. La escala de nivel demostrativo se aplica **dos veces a cada función**, al diagnóstico y a la respuesta. La media del diagnóstico es 4,17 y la de la respuesta 2,00, de modo que el campo sabe qué pasó e ignora qué hacer. Ese contraste es el resultado principal del informe y sale del archivo `_build/puntaje/funciones-pedagogicas.json`, del que se generan las figuras sin intervención manual.
 
-El **Informe 02**, que es el tuyo, examina **cómo cambia la enseñanza universitaria** ante la inteligencia artificial generativa: metodologías, evaluación, competencias, currículo, rol docente, gobernanza y equidad. Su alcance es universitario, no solo jurídico, y el Derecho es uno de sus capítulos, tratado como caso crítico. Deriva del informe experto «La universidad ante la automatización del trabajo cognitivo».
+## Qué queda por hacer
 
-Cuidado con un detalle: la versión anterior de ese Informe 02 se entregó bajo el título «Inteligencia artificial generativa y enseñanza del Derecho», que estrechó su objeto. El informe experto de base tiene alcance universitario, y la reestructuración debe recuperarlo, salvo que el usuario indique lo contrario.
-
-Lo que se te pide es que el Informe 02 adopte la forma del Informe 01: fichas con gráfico de barras, color propio por institución sostenido entre figuras, mapeo general y conclusiones numeradas.
-
-Con una diferencia que ya está decidida y fundada, y que no debes revertir. En el Informe 01 la ficha es una facultad, porque la pregunta es qué capacidades tiene cada una. Aquí la ficha es una dimensión de la enseñanza —metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad—, porque la pregunta es cómo cambia la enseñanza. Las nueve instituciones aparecen dentro de cada ficha como evidencia, y un capítulo posterior recupera la lectura por institución con nueve perfiles breves. El apartado 3 de `metodologia-informe-02b.md` explica por qué nueve fichas de universidades extranjeras volverían a ser el compilado que el profesor rechazó.
-
-El `config.json` está creado en `_build/redaccion/informe-02b/` con los once archivos del cuerpo y tres anexos. Falta escribir todos esos archivos.
-
-## De dónde sale el contenido
-
-El informe experto completo está en `_build/insumos/informe-02/informe-experto-v0.3.0-rechazado.pdf`, setenta y siete páginas, y cortado en veinticuatro archivos de texto en `_build/insumos/informe-02/capitulos/`.
-
-**La matriz ya está construida y no hay que reconstruirla.** Está en `_build/puntaje/niveles-instituciones.json`: nueve instituciones, siete dimensiones y una escala de cero a cinco, con la fortaleza verificada y la evidencia de resultados de cada una.
-
-Las siete dimensiones son **metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad**. Conviene saber, antes de escribir, que sus promedios confirman lo que el propio informe sostiene: gobernanza es la más alta con 3,33 y evaluación la más baja con 2,44. Ninguna institución alcanza el nivel 5 en el conjunto.
-
-Lo que sí falta trasladar a ese archivo es el mapa de las treinta instituciones de diez países, que está en `_build/insumos/informe-02/capitulos/12-capitulo-11-...txt` con el nivel verificado y lo que acredita cada una.
+1. **Verificar el material institucional del anexo B** contra sus fuentes primarias. Procede del informe experto de base y no se contrastó institución por institución, según declara el apartado C.3 del propio documento. Ninguna afirmación del cuerpo descansa exclusivamente sobre ese material.
+2. **Adaptar `auditar-cifras.mjs`**, que hoy comprueba la escala de cinco dimensiones sobre quince del Informe 01. Para el Informe 02 debería comprobar los doce niveles del cuerpo contra `funciones-pedagogicas.json`.
+3. **Trasladar las treinta instituciones del mapa internacional** a formato de datos, solo si alguna afirmación del cuerpo llega a descansar sobre ellas. Hoy ninguna lo hace, y por eso quedaron fuera.
+4. **Preguntar al usuario** si el profesor devolvió observaciones escritas además del correo transcrito más abajo.
 
 ## Reglas que no puedes romper
 
-1. **El cuerpo no menciona el uso de inteligencia artificial en la elaboración del documento.** Eso va íntegro al anexo C, por instrucción expresa del profesor. Es la regla propia de este informe.
-2. **Prosa humanizada.** Sin antítesis correctiva del tipo «no es X: es Y», sin fragmentos enfáticos, sin metáforas en los títulos, sin negritas en el cuerpo, sin preguntas retóricas, sin remates con moraleja. Oración media de 20 a 30 palabras. La medición lo comprueba: `node medir-estilo.mjs <archivo>` debe decir «Sin alertas» en cada archivo del cuerpo.
-3. **Gráficos de barras fácilmente discernibles**, con un color por institución conservado entre figuras. Usa `colorDe(id)` de `graficos.mjs` y toma `figuras-por-institucion.mjs` como plantilla.
-4. **Lo técnico va a los anexos.** El cuerpo expone lo indispensable para leer los puntajes.
-5. **Distingue siempre lo no localizado de lo no concluyente.** Anotar un cero afirma que algo no existe, y eso exige evidencia.
-6. **Separa la institución de la unidad.** Una política de universidad no acredita una capacidad de una facultad.
-7. **Distingue el anuncio de la ejecución.** Un programa anunciado sin constancia de dictación es capacidad incipiente.
+El cuerpo del Informe 02 no menciona el uso de inteligencia artificial en la elaboración. Eso va íntegro al anexo C, por instrucción expresa del profesor.
 
-## Orden de trabajo
+Cada vez que se cite el trabajo de 2024 de Faúndez-Ugalde, Mellado-Silva, Aldunate-Lizana y Benfeld, se declara en nota al pie que el autor del informe figura entre sus ayudantes de investigación agradecidos. El profesor destinatario es coautor de ese trabajo, y es la única medición de efecto del corpus.
 
-1. Recorre las 63 celdas de la matriz contra el anexo B del informe experto, comprueba qué fuente sostiene cada valor y degrada a no concluyente las que descansen sobre inferencia. Hoy las 63 tienen un número y ninguna está marcada como no concluyente, lo que resulta improbable. Espera que la media baje desde el 2,89 actual.
-2. Formula las siete preguntas verificables, una por dimensión, que el anexo A debe publicar.
-3. Traslada las treinta instituciones del mapa internacional a `_build/puntaje/niveles-instituciones.json`, que ya contiene la matriz de nueve.
-4. Genera los gráficos. Los siete del capítulo IV comparten escala de 0 a 5 para que las barras sean comparables entre fichas.
-5. Redacta en el orden IV, V, VIII, VII, VI, IX, X, y al final I, II y III. El resumen y la metodología se escriben con el resto a la vista.
-6. Escribe el anexo C sobre uso de inteligencia artificial en la elaboración. Toma como modelo el apartado 4 del anexo de `_build/redaccion/informe-02/A-anexo.md`.
-7. Adapta `auditar-cifras.mjs`: hoy comprueba una escala de cinco dimensiones sobre quince, y aquí debe comprobar niveles de cero a cinco.
+Los títulos son descriptivos y numerados, sin metáforas, sin dos puntos y sin preguntas. Sin negritas en el cuerpo. Oración media de 20 a 30 palabras.
 
 ## Antes de entregar
 
-```bash
-cd tools/informes/consejo-profesores/_build
-npm install                                  # docx, pdfjs-dist, playwright-core
-node auditar-cifras.mjs                      # sin problemas
-node revisar-residuos.mjs redaccion/informe-02b figuras/informe-02b --doc b
-node construir-docx.mjs redaccion/informe-02b/config.json   # "avisos": []
+```
+node medir-estilo.mjs redaccion/informe-02b
+node revisar-residuos.mjs redaccion/informe-02b figuras/informe-02b --doc a
+node construir-docx.mjs redaccion/informe-02b/config.json
 ```
 
-Y el PDF desde PowerShell con `word-a-pdf.ps1`. Requiere Word instalado y Edge en su ruta habitual.
+El control de estilo debe pasar sin alertas, salvo las líneas de bibliografía, que también las produce el Informe 01. Los otros dos no deben arrojar hallazgos ni avisos.
+
+Las figuras se regeneran con `node figuras-funciones.mjs`, que las produce a partir del archivo de datos. Nunca edites una cifra en el texto sin cambiarla antes en el JSON.
 
 ## Qué rechazó el profesor, con ejemplos
 
-El informe experto que está en el repositorio es **el que fue rechazado**. Léelo para saber qué contenido hay disponible, y no para imitar su forma. Sus rasgos son justamente los que el profesor objetó.
+El informe experto que está en `_build/insumos/informe-02/informe-experto-v0.3.0-rechazado.pdf` es **el que fue rechazado**. Léelo para saber qué contenido hay disponible, y no para imitar su forma.
 
-Tiene veinticuatro capítulos y tres anexos en setenta y siete páginas, y su portada abre con cuatro cifras grandes en caja. Eso es el «buen compilado de información» que el profesor dice que no le sirve.
+Tiene veinticuatro capítulos y tres anexos en setenta y siete páginas, y su portada abre con cuatro cifras grandes en caja. Eso es el «buen compilado de información» que el profesor dice que no le sirve. Su índice está en `_build/insumos/informe-02/indice-borrador-v0.3.0.pdf`.
 
-Sus títulos son ensayísticos y llevan metáfora o gancho. Estos son suyos, y ninguno debe aparecer en la nueva versión:
+Sus títulos son ensayísticos y llevan metáfora o gancho. Estos son suyos, y ninguno debe aparecer:
 
 - «El rol docente: el eslabón que nadie financió»
 - «Adopción: la curva que todos citan y la que casi nadie mira»
 - «Universidad y mercado profesional: el peldaño que se erosiona»
 - «La pirámide se estrecha»
 - «Gobernanza: licenciar, construir, federar o dejar hacer»
-- «Hoja de ruta para una facultad de Derecho»
 
-Escríbelos descriptivos y numerados, como en el Informe 01: «VI. El efecto sobre el aprendizaje», «2.3. Investigación y desarrollo».
+El contenido del informe rechazado, en cambio, es sólido y verificado.
 
-El contenido del informe rechazado, en cambio, es sólido y verificado. Lo que cambia es la forma: menos capítulos, títulos descriptivos, fichas con gráfico, y lo técnico al anexo.
+## El correo del profesor, transcrito
 
-## Dos cosas que debes pedirme antes de redactar
+> Respecto de los dos informes, sin entrar a su contenido, el formato de presentación debe ser un documento en formato más o menos tradicional, presentable al consejo de profesores, y en que la presentación de la información relevante puede apoyarse en gráficos, pero estos tienen que ser fácilmente discernibles. Aun cuando pueda ser muy útil, no me sirve un buen compilado de información. Adicionalmente, y sin rechazar en absoluto el uso de IA en su confección, la redacción y estilo debe estar debidamente humanizado. Muchos profesores ya manejan herramientas de IA y está surgiendo un cierto rechazo a la autoridad de los documentos cuando el estilo se asemeja mucho a respuestas de módulos de LLM. Por lo tanto, en ambos casos le pido que me envíe unos borradores en un documento con una estructura tradicional, y estilo humano «listo para usar», por así decirlo. Todos los detalles técnicos pueden ir en un anexo.
 
-1. **Si hubo observaciones del profesor además del correo.** El informe rechazado y el índice del borrador ya están en el repositorio, pero no consta si el profesor los devolvió con comentarios propios.
-2. **Confirmación de si el alcance vuelve a ser universitario o sigue acotado al Derecho.** La versión anterior de 43 páginas se tituló «Inteligencia artificial generativa y enseñanza del Derecho» y estrechó el objeto. El material institucional que ahora se usa —las nueve instituciones de la matriz y las treinta del mapa— es de alcance universitario, con el Derecho como uno de sus capítulos. El plan supone ese alcance más amplio; conviene confirmarlo.
-
-## Contexto de por qué el formato es así
-
-El profesor Eduardo Aldunate pidió, sin entrar al contenido: formato tradicional presentable al Consejo, gráficos admisibles pero fácilmente discernibles, «no me sirve un buen compilado de información», redacción humanizada porque los profesores reconocen el estilo de los modelos de lenguaje y le restan autoridad al documento, borradores listos para usar y todos los detalles técnicos en anexo.
-
-El Informe 01 ya cumple ese encargo y está terminado en `_build/redaccion/informe-01/`. Léelo antes de escribir: es el modelo.
+De esas cinco condiciones, cuatro son de forma y una es de método. La de método es la frase sobre el compilado, y es la que explica por qué el Informe 02 se organiza por decisiones y no por temas ni por instituciones.
