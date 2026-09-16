@@ -1,0 +1,40 @@
+{
+  "salida": "../../salida/Informe-02-Transformaciones-ensenanza-universitaria.docx",
+  "titulo": "Transformaciones de la enseñanza universitaria en el contexto de la inteligencia artificial",
+  "subtitulo": "Evidencia reciente, respuestas institucionales e implicancias para la formación jurídica",
+  "encabezado": "Transformaciones de la enseñanza universitaria · 2026",
+  "institucion": "Escuela de Derecho · Pontificia Universidad Católica de Valparaíso",
+  "unidad": "Documento de trabajo para el Consejo de Profesores",
+  "preparado_para": "Preparado para la Dirección de la Escuela de Derecho",
+  "autor": "Diego Hernán Ojeda Cifuentes",
+  "autor_titulo": "Licenciado en Ciencias Jurídicas",
+  "lugar_fecha": "Valparaíso, septiembre de 2026",
+  "figuras": "../../figuras/informe-02c",
+  "sangria_francesa": [
+    "F-referencias.md"
+  ],
+  "cuerpo": [
+    "00-resumen.md",
+    "01-introduccion.md",
+    "02-adopcion.md",
+    "03-evaluacion.md",
+    "04-aprendizaje.md",
+    "05-competencias.md",
+    "06-curriculo.md",
+    "07-docencia.md",
+    "08-respuestas.md",
+    "09-profesion.md",
+    "10-derecho.md",
+    "11-implicancias.md",
+    "12-conclusiones.md"
+  ],
+  "anexos": [
+    "A-metodologia.md",
+    "B-matriz-evidencia.md",
+    "C-casos.md",
+    "D-derecho.md",
+    "E-declaracion-ia.md",
+    "F-referencias.md"
+  ],
+  "capitulo_en_pagina_nueva": false
+}
