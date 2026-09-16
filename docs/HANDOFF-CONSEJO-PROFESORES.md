@@ -1,12 +1,10 @@
 # Traspaso · Ediciones para el Consejo de Profesores
 
-Estado al 15 de septiembre de 2026. Este documento permite retomar el trabajo sin releer la conversación.
-
----
+Estado al 16 de septiembre de 2026. Todo está versionado en este repositorio y no hace falta ningún archivo del escritorio.
 
 ## 0. Son dos informes distintos
 
-Este directorio produce **dos documentos con objetos diferentes**. Conviene fijarlo antes de tocar nada, porque el nombre corto de cada uno no lo dice.
+Este directorio produce dos documentos con objetos diferentes. Conviene fijarlo antes de tocar nada, porque el nombre corto de cada uno no lo dice.
 
 ### Informe 01 · Uso de inteligencia artificial en las Escuelas de Derecho
 
@@ -17,58 +15,54 @@ Qué capacidades han construido **once facultades de Derecho chilenas**: unidade
 - En el sitio: `/informes/ia-escuelas-derecho-chile`
 - Borradores en `_build/redaccion/informe-01/`
 
-### Informe 02 · La universidad ante la automatización del trabajo cognitivo
+### Informe 02 · Transformaciones de la enseñanza universitaria
 
-**Cómo cambia la enseñanza universitaria** ante la inteligencia artificial generativa: metodologías, evaluación, competencias, currículo, rol docente, gobernanza y equidad. Su alcance es universitario, no solo jurídico, y el Derecho es uno de sus capítulos, tratado como caso crítico.
+**Qué ha cambiado en la enseñanza universitaria** desde que estudiantes y docentes disponen de sistemas capaces de ejecutar parte del trabajo cognitivo que antes exigía el aprendizaje. Su alcance es universitario, y la formación jurídica entra como caso particular en el capítulo X.
 
-- Escala de seis niveles de profundidad de la transformación, de 0 a 5.
-- Informe experto de base: v0.3.0, agosto de 2026, setenta y siete páginas.
-- En el sitio: `/informes/transformacion-ensenanza-derecho`
-- Borradores en `_build/redaccion/informe-02/` y, la reestructuración pendiente, en `_build/redaccion/informe-02b/`
+- Escala ordinal de nivel demostrativo, que declara qué acredita la mejor fuente disponible sobre cada afirmación. **Nunca se promedia.**
+- Informe experto de base: v0.3.0, agosto de 2026, setenta y siete páginas, rechazado por el profesor.
+- Borradores en `_build/redaccion/informe-02c/`
 
 ### Una confusión que conviene evitar
 
-La versión para el Consejo del Informe 02 se tituló **«Inteligencia artificial generativa y enseñanza del Derecho»**, lo que estrechó su objeto y la acerca en apariencia al Informe 01. No son lo mismo: el primero mide qué tienen las facultades chilenas, el segundo examina cómo cambia la enseñanza en cualquier universidad. La reestructuración pendiente debe recuperar el alcance universitario del informe experto de base.
+Una versión anterior del Informe 02 se entregó bajo el título «Inteligencia artificial generativa y enseñanza del Derecho», lo que estrechó su objeto y lo acercó en apariencia al Informe 01. No son lo mismo: el primero mide qué tienen las facultades chilenas, el segundo examina cómo cambia la enseñanza en cualquier universidad. El alcance universitario quedó confirmado por el usuario el 16 de septiembre de 2026.
 
 ---
 
 ## 1. Qué pidió el profesor
 
-Correo de Eduardo Aldunate Lizana, sin entrar al contenido de los informes:
+Correo del director de la Escuela, Eduardo Aldunate Lizana, transcrito literalmente:
 
-- Formato de presentación **tradicional**, presentable al Consejo de Profesores.
-- Los gráficos son admisibles, pero **fácilmente discernibles**.
-- «No me sirve un buen compilado de información.»
-- Redacción **humanizada**: los profesores reconocen el estilo de los modelos de lenguaje y le restan autoridad al documento.
-- Borradores «listo para usar».
-- **Todos los detalles técnicos en anexo.**
+> Respecto de los dos informes, sin entrar a su contenido, el formato de presentación debe ser un documento en formato más o menos tradicional, presentable al consejo de profesores, y en que la presentación de la información relevante puede apoyarse en gráficos, pero estos tienen que ser fácilmente discernibles. Aun cuando pueda ser muy util, no me sirve un buen compilado de información. Adicionalmente, y sin rechazar en absoluto el uso de IA en su confección, la redacción y estilo debe estar debidamente humanizado. Muchos profesores ya manejan herramientas de IA y está surgiendo un cierto rechazo a la autoridad de los documentos cuando el estilo se asemeja mucho a respuestas de módulos de LLM. Por lo tanto, en ambos casos le pido que me envie unos borradores en un documento con una estructura tradicional, y estilo humano «listo para usar», por asi decirlo. Todos los detalles técnicos pueden ir en un anexo.
 
-El usuario añadió después dos precisiones. La primera: replicar el formato del informe de 2025 que el Consejo sí aprobó (`Edición 2 informe mapeo IA y Derecho en Universidades`). La segunda, para el informe de enseñanza: que se parezca lo más posible al Informe 01, con gráficos de barra y fichas institucionales, y que **todo el detalle metodológico sobre el uso de inteligencia artificial quede en un anexo aparte**.
+De esas cinco condiciones, cuatro son de forma y una es de método. La de método es la frase sobre el compilado, y es la que explica por qué el Informe 02 se reescribió tres veces.
 
 ---
 
 ## 2. Dónde está el trabajo
 
-Todo está versionado en este repositorio, en `tools/informes/consejo-profesores/`. No hace falta ningún archivo del escritorio.
-
 ```
-consejo-profesores/
+tools/informes/consejo-profesores/
   README.md                          cómo operar la cadena
   PROMPT-PROXIMA-SESION.md           el encargo para retomar
   PROMPT-PARA-GEMINI-O-CHATGPT.md    encargo de investigación autocontenido
   PROMPT-INVESTIGACION-PROFUNDA.md   encargo para un agente con contexto
   _build/
-    redaccion/informe-01/       Escuelas de Derecho chilenas · terminado
-    redaccion/informe-02/       Transformación de la enseñanza · versión temática
-    redaccion/informe-02b/      Transformación de la enseñanza · decisiones · TERMINADO
-    redaccion/metodologia-informe-02b.md  la metodología del próximo trabajo
-    redaccion/plan-informe-02b.md    la estructura y el índice del próximo trabajo
+    redaccion/informe-01/       Escuelas de Derecho chilenas · TERMINADO
+    redaccion/informe-02c/      Transformaciones de la enseñanza · TERMINADO
+    redaccion/_descartado/      versiones superadas, con su LEEME
     puntaje/                    matriz, escalas y scripts de cálculo
     hechos/                     hallazgos de cada ronda de búsqueda
     insumos/                    corpus de origen, incluido el informe rechazado
     estilo/                     guía de estilo y reglas de redacción
-    figuras/                    PNG y SVG generados
+    figuras/informe-01/         26 figuras
+    figuras/informe-02c/        5 figuras
     salida/                     docx y pdf compilados
+docs/
+  HANDOFF-CONSEJO-PROFESORES.md      este archivo
+  REESTRUCTURACION_INFORME02.md      matriz de recuperación del Informe 02
+  CAMBIOS_INFORME02.md               qué se mantuvo, reescribió, movió y eliminó
+  VERIFICACIONES_PENDIENTES.md       material sin contrastar contra fuente primaria
 ```
 
 ---
@@ -77,103 +71,57 @@ consejo-profesores/
 
 ### Informe 01 · terminado
 
-**Uso de IA en las Escuelas de Derecho, edición 2026.** 63 páginas, 20.138 palabras, 26 gráficos, 10 tablas.
+Nueve capítulos y tres anexos, 20.460 palabras, 26 figuras, 63 páginas. Compila y pasa los tres controles. Salida en `salida/Informe-01-IA-escuelas-de-Derecho-Consejo.docx`.
 
-Estructura: I Resumen · II Objetivos · III Metodología · IV Fichas institucionales comparadas · V Casos internacionales · VI Mapeo general · VII Conclusiones (16, numeradas) · VIII Referencias · Anexos A, B y C.
+### Informe 02 · terminado
 
-Escala de cinco dimensiones sobre quince puntos, la misma que el Consejo aprobó en 2025, recalculada sobre la matriz de diez capacidades.
+Doce capítulos y seis anexos, 14.874 palabras, 5 figuras, 9 tablas, 52 páginas. Compila y pasa los tres controles. Salida en `salida/Informe-02-Transformaciones-ensenanza-universitaria.docx`.
 
-Orden vigente: U. Autónoma 11,67 · UC 10,83 · U. Central 9,83 · UAI 8,17 · U. de Chile 6,67 a 8,67 · UNAB 6,33 · UDP 5,83 · UDD 5,17 a 5,83 · U. de los Andes 3,33 a 6,00 · UdeC 3,17 a 5,17. La PUCV se informa aparte con 6,67.
-
-### Informe 02 · versión temática, terminada
-
-El de **transformación de la enseñanza universitaria**, derivado del informe experto «La universidad ante la automatización del trabajo cognitivo». 43 páginas, 14.857 palabras, cuerpo temático en once capítulos.
-
-Se entregó bajo el título «Inteligencia artificial generativa y enseñanza del Derecho», que estrechó su objeto al ámbito jurídico. El informe experto de base tiene alcance universitario, y la reestructuración pendiente debe recuperarlo.
-
-### Informe 02b · por hacer
-
-Terminado el 16 de septiembre de 2026, en `redaccion/informe-02b/`. Trece capítulos y tres anexos, 15.220 palabras de borrador, 15 figuras, 8 tablas y 52 páginas compiladas.
-
-**No es una edición de fichas institucionales.** Ese plan existió y el usuario lo descartó ese mismo día, con una razón que conviene no olvidar: nueve fichas de universidades extranjeras son el mismo compilado que el profesor rechazó en agosto, ordenado por institución en lugar de por tema.
-
-La unidad de análisis es la **función pedagógica y su redistribución**. La automatización desagregó las funciones de la enseñanza en lugar de eliminarlas, y las partes que se producían como subproducto de otra tarea quedaron sin responsable. El caso claro es la verificación de fuentes: hasta 2022 quien encontraba una sentencia la había leído, y hoy verificar es un paso separado que nadie tiene encargado.
-
-La escala de nivel demostrativo se aplica **dos veces a cada función**, al diagnóstico y a la respuesta. La media del diagnóstico es 4,17 y la de la respuesta 2,00, de modo que el campo sabe qué pasó e ignora qué hacer. La calibración tiene diagnóstico 4 y ninguna respuesta localizada.
-
-El alcance es universitario, con el Derecho como caso particular en el capítulo X, según confirmó el usuario el 16 de septiembre de 2026. Esa pregunta queda cerrada.
+Su estructura sigue los cambios observados: adopción, evaluación, aprendizaje, competencias, currículo, trabajo docente, respuestas institucionales comparadas, formación profesional, Derecho, implicancias y conclusiones.
 
 ---
 
 ## 4. Decisiones tomadas que no deben revertirse
 
-1. **La escala de cinco dimensiones se recalcula sobre la matriz de capacidades, nunca sobre `iniciativas.csv`.** Ese archivo registra entre tres y nueve iniciativas por facultad y su volumen depende de cuánto se buscó, lo que disparaba artificialmente a la PUCV por el piloto de profundidad.
+**El entregable no narra su propia confección.** Nada de versiones anteriores, correcciones internas, instrucciones de formato de la Dirección ni remisiones a archivos del repositorio. Las limitaciones metodológicas sí se declaran, porque son metodología y no proceso. El registro del proceso vive en `docs/`, fuera del documento.
 
-2. **Las capacidades sin información concluyente jamás se anotan como cero.** Se informa el piso y una banda hasta dos puntos. Anotar cero hundía a la U. de Chile del segundo al quinto lugar sin evidencia que lo sostuviera.
+**No se promedia una escala ordinal.** Una versión anterior calculaba medias como 4,17 y 2,00 sobre niveles demostrativos. La distancia entre el nivel 1 y el 2 no equivale a la que hay entre el 4 y el 5, de modo que esas medias no significan nada. Se reportan recuentos y distribución.
 
-3. **La PUCV se informa fuera del orden comparativo**, por el conflicto de interés del autor y por la asimetría de cobertura.
+**El índice no se organiza alrededor de una taxonomía propia del informe.** Obliga al lector a aceptarla antes de leer. Sigue los cambios observados y la evidencia disponible.
 
-4. **La revisión interna de la PUCV corrige a la baja y solo alcanza a la PUCV.** La Dirección bajó cuatro capacidades contrastando la evidencia pública con lo que conoce de su funcionamiento interno: presencia en pregrado y formación estructurada de 2 a 1, unidad especializada de 2 a 1, transferencia de 3 a 1. El total pasó de 10,17 a 6,67. La asimetría está declarada en el documento.
+**La pregunta rectora es qué cambió, no qué decidir.** Las cuestiones institucionales son consecuencia del análisis y ocupan un solo capítulo, el XI, sin imperativos.
 
-5. **El artículo de 2024 sobre asistentes virtuales se cita con su matiz.** Aldunate es coautor, y el autor del informe figura entre los ayudantes agradecidos. Sin ese matiz, la frase «ninguna facultad ha medido» es insostenible ante él. Ver `docs/` y la memoria `medicion-efecto-pucv-2024`.
+**El Informe 02 no es un catálogo de instituciones.** Nueve fichas de universidades extranjeras son el mismo compilado que el profesor rechazó, ordenado por institución en lugar de por tema. El material institucional vive en los anexos C y D, y en el cuerpo aparece como precedente dentro del argumento.
 
-6. **Un color por institución, estable entre gráficos.** Definido en `graficos.mjs` como `COLOR_UNIVERSIDAD` y `colorDe(id)`.
+**El recálculo del Informe 01 va sobre la matriz de capacidades**, no sobre el recuento de iniciativas, porque un puntaje que crece con el número de actividades halladas mide la intensidad de la búsqueda tanto como la actividad real.
 
-7. **En el encabezado de página se escribe «inteligencia artificial» completo**, porque en versalitas «IA» se lee «LA».
+**La ausencia de evidencia no se cuenta como cero.** Un cero afirma que la capacidad no existe, y sostener eso exige evidencia de la que no se dispone.
 
----
-
-## 5. Hallazgos de investigación que ya están integrados
-
-Ronda de septiembre de 2026, registrada en `hechos/ronda-3-hallazgos.json`:
-
-- El **Minor en IA y Derecho de la U. Autónoma opera desde 2018**, no desde 2026, con cinco asignaturas electivas, créditos publicados, microcredencial y doce egresados. Documentado en dos artículos revisados por pares. Es la corrección más importante del informe.
-- El **Laboratorio de la UAI** produce investigación con la IA por objeto, incluida una encuesta propia a jueces civiles chilenos, proyecto ANID 202332026.
-- La **UdeC tiene una publicación revisada por pares** de un profesor de Derecho Civil, lo que corrige su investigación de cero a incipiente.
-- La **Universidad Austral de Chile** tiene un protocolo de facultad de dieciocho artículos, de 2025, más completo que las dos normas de la cohorte, e incluye el deber de verificar que las fuentes existan. **No está en la cohorte de once**, y eso queda declarado como limitación.
-- El **archivo de políticas de Andrew Perlman** (agosto de 2026) cataloga 128 de las 196 facultades estadounidenses y registra **26 con componente curricular obligatorio**. La edición anterior decía tres.
-- El **IALAB de la Universidad de Buenos Aires**, primer laboratorio de IA en una facultad de Derecho iberoamericana.
+**La relación del autor con la medición de 2024 se declara en nota al pie, cada vez que se cita.** El profesor destinatario es coautor de ese trabajo, que es la única medición de efecto del corpus.
 
 ---
 
-## 6. Cómo compilar
+## 5. Cómo compilar
 
-Desde `CONSEJO-PROFESORES/_build`:
-
-```bash
-node puntaje/escala-2025.mjs
-node figuras-escala-2025.mjs
-node figuras-por-institucion.mjs
-node figuras-internacional.mjs
-node auditar-cifras.mjs
-node revisar-residuos.mjs redaccion/informe-01 figuras/informe-01 --doc a
-node construir-docx.mjs redaccion/informe-01/config.json
+```
+cd tools/informes/consejo-profesores/_build
+npm install
+node medir-estilo.mjs redaccion/informe-02c
+node revisar-residuos.mjs redaccion/informe-02c figuras/informe-02c --doc a
+node construir-docx.mjs redaccion/informe-02c/config.json
+pwsh word-a-pdf.ps1 -Docx "<ruta>.docx" -Pdf "<ruta>.pdf"
 ```
 
-Y para el PDF, desde PowerShell:
+El control de estilo debe pasar sin alertas, salvo las líneas de bibliografía, que también las produce el Informe 01. Los otros dos no deben arrojar hallazgos ni avisos.
 
-```powershell
-.\word-a-pdf.ps1 -Docx salida\Informe-01-IA-escuelas-de-Derecho-Consejo.docx -Pdf salida\Informe-01-IA-escuelas-de-Derecho-Consejo.pdf
-```
+Las figuras del Informe 02 se regeneran con `node figuras-informe-02c.mjs`. Nunca se edita una cifra en el texto sin cambiarla antes en su fuente de datos.
 
-Controles antes de entregar: `auditar-cifras.mjs` debe dar 73 comprobaciones correctas, `revisar-residuos.mjs` no debe encontrar hallazgos salvo el falso positivo de «ecosistema» dentro del título de una fuente citada, y `medir-estilo.mjs` debe decir «Sin alertas» en cada archivo del cuerpo.
+El salto de página por capítulo cuesta unas diez páginas y se desactiva con `capitulo_en_pagina_nueva: false` en el `config.json`. Con él, el Informe 02 tiene 52 páginas; sin él, 38.
 
 ---
 
-## 7. Lo próximo, en orden
+## 6. Lo próximo
 
-1. **Trasladar el mapa de las treinta instituciones** del capítulo 11 a `puntaje/niveles-instituciones.json`, que ya contiene la matriz de nueve por siete dimensiones. Las siete son metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad, y quedaron resueltas con los datos del bloque G9 de `tools/informes/informe-02/Graficos.ps1`.
-2. **Generar los gráficos** reutilizando `figuras-por-institucion.mjs` como plantilla.
-3. **Redactar** en el orden IV, V, VII, VI, VIII, IX, y al final I, II y III.
-4. **Escribir el anexo C** sobre uso de inteligencia artificial en la elaboración, que por instrucción expresa no puede aparecer en el cuerpo.
-5. **Adaptar `auditar-cifras.mjs`**, que hoy comprueba la escala de cinco dimensiones sobre quince y aquí debe comprobar niveles de cero a cinco.
-
----
-
-## 8. Asuntos pendientes con el usuario
-
-El informe de enseñanza que fue rechazado ya está en el repositorio, en `_build/insumos/informe-02/informe-experto-v0.3.0-rechazado.pdf`, con sus setenta y siete páginas. Quedan dos cosas por preguntar antes de redactar.
-
-La primera es si el profesor devolvió observaciones propias además del correo transcrito en el apartado 1.
-
-La segunda es si el alcance del Informe 02 vuelve a ser universitario o sigue acotado al Derecho. La versión de 43 páginas se entregó bajo un título que lo estrechaba al ámbito jurídico, mientras que el informe experto de base y su material institucional son de alcance universitario. El plan supone el alcance amplio, con el Derecho como capítulo, y conviene confirmarlo.
+1. **Verificar el material institucional** contra sus fuentes primarias, según `VERIFICACIONES_PENDIENTES.md`. Son tres entradas y ninguna sostiene por sí sola una conclusión.
+2. **Adaptar `auditar-cifras.mjs`** al Informe 02. Hoy comprueba la escala de cinco dimensiones sobre quince del Informe 01.
+3. **Preguntar al usuario** si el profesor devolvió observaciones escritas además del correo transcrito en el apartado 1.

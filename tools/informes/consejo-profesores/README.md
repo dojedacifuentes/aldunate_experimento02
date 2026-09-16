@@ -19,14 +19,14 @@ Qué capacidades han construido **once facultades de Derecho chilenas**: unidade
 - En el sitio: `/informes/ia-escuelas-derecho-chile`
 - Borradores en `_build/redaccion/informe-01/`
 
-### Informe 02 · La universidad ante la automatización del trabajo cognitivo
+### Informe 02 · Transformaciones de la enseñanza universitaria
 
 **Cómo cambia la enseñanza universitaria** ante la inteligencia artificial generativa: metodologías, evaluación, competencias, currículo, rol docente, gobernanza y equidad. Su alcance es universitario, no solo jurídico, y el Derecho es uno de sus capítulos, tratado como caso crítico.
 
 - Escala de seis niveles de profundidad de la transformación, de 0 a 5.
 - Informe experto de base: v0.3.0, agosto de 2026, setenta y siete páginas.
 - En el sitio: `/informes/transformacion-ensenanza-derecho`
-- Borradores en `_build/redaccion/informe-02/` (versión temática) y `_build/redaccion/informe-02b/` (edición de decisiones, vigente)
+- Borradores en `_build/redaccion/informe-02c/`
 
 ### Una confusión que conviene evitar
 
@@ -43,16 +43,14 @@ consejo-profesores/
   _build/
     redaccion/
       informe-01/        Escuelas de Derecho chilenas · terminado
-      informe-02/        Transformación de la enseñanza · versión temática, terminada
-      informe-02b/       Transformación de la enseñanza · edición de decisiones, terminada
-      metodologia-informe-02b.md  unidad de análisis, escala y regla de evidencia
-      plan-informe-02b.md   qué se entregó y qué queda pendiente
+      informe-02c/       Transformaciones de la enseñanza · terminado
+      _descartado/       versiones superadas, con su LEEME
     puntaje/             matriz, escalas y scripts de cálculo
     hechos/              hallazgos de cada ronda de búsqueda, con sus fuentes
     insumos/             corpus de origen: informes expertos, CSV y capítulos
     estilo/              guía de estilo y reglas de redacción
     figuras/             PNG, SVG y medidas de cada gráfico
-    salida/              los cuatro documentos compilados
+    salida/              los dos informes compilados, en docx y pdf
     *.mjs                la cadena de construcción
     word-a-pdf.ps1       conversión a PDF por Word
 ```
@@ -154,12 +152,10 @@ La numeración de capítulos y apartados la escribe el redactor dentro del títu
 
 ## Lo próximo
 
-El Informe 02, el de transformación de la enseñanza, está **terminado en su edición de decisiones**, en `_build/redaccion/informe-02b/`.
+Los dos informes están terminados y compilan sin avisos. Lo que queda es verificación.
 
-No adoptó la forma de fichas institucionales. El 16 de septiembre de 2026 el usuario descartó esa vía, porque un catálogo de universidades extranjeras es el mismo compilado que el profesor rechazó, ordenado de otra manera. El documento es un insumo para comprender y decidir: su unidad de análisis es la función pedagógica y su redistribución, y cada capítulo identifica qué se automatizó, qué quedó sin responsable y qué decisión deja planteada, con la instancia competente y un indicador de seguimiento.
+Hay tres materiales del Informe 02 que no se contrastaron contra sus fuentes primarias, y están listados en [`docs/VERIFICACIONES_PENDIENTES.md`](../../../docs/VERIFICACIONES_PENDIENTES.md) con lo que ocurriría si alguna verificación saliera negativa. Ninguno sostiene por sí solo una conclusión.
 
-La metodología está en [`_build/redaccion/metodologia-informe-02b.md`](_build/redaccion/metodologia-informe-02b.md) y manda sobre el plan. Lo entregado y lo pendiente están en [`_build/redaccion/plan-informe-02b.md`](_build/redaccion/plan-informe-02b.md).
+Falta además adaptar `auditar-cifras.mjs` al Informe 02, porque hoy comprueba la escala de cinco dimensiones sobre quince del Informe 01.
 
-La matriz ya está construida en [`_build/puntaje/niveles-instituciones.json`](_build/puntaje/niveles-instituciones.json): nueve instituciones, siete dimensiones —metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad— y una escala de cero a cinco. Falta trasladar a ese archivo el mapa de las treinta instituciones del capítulo 11.
-
-El encargo completo para retomar está en [`PROMPT-PROXIMA-SESION.md`](PROMPT-PROXIMA-SESION.md).
+El encargo completo para retomar está en [`PROMPT-PROXIMA-SESION.md`](PROMPT-PROXIMA-SESION.md), y el estado detallado en [`docs/HANDOFF-CONSEJO-PROFESORES.md`](../../../docs/HANDOFF-CONSEJO-PROFESORES.md).

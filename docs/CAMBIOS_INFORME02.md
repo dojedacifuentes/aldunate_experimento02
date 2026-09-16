@@ -7,8 +7,8 @@ Registro de la reestructuración del 16 de septiembre de 2026, ejecutada según 
 | Versión | Carpeta | Organización | Extensión | Estado |
 |---|---|---|---|---|
 | Informe experto v0.3.0 | `insumos/informe-02/` | 24 capítulos temáticos | 77 páginas | Rechazado en agosto de 2026 |
-| Edición temática | `redaccion/informe-02/` | 11 capítulos temáticos | 43 páginas | Superada |
-| Edición de decisiones | `redaccion/informe-02b/` | 6 funciones pedagógicas | 52 páginas | Superada |
+| Edición temática | `redaccion/_descartado/informe-02/` | 11 capítulos temáticos | 43 páginas | Superada |
+| Edición de decisiones | `redaccion/_descartado/informe-02b/` | 6 funciones pedagógicas | 52 páginas | Superada |
 | **Edición reestructurada** | `redaccion/informe-02c/` | **12 capítulos según los cambios observados** | **52 páginas** | **Vigente** |
 
 ## 2. Los cuatro defectos que la auditoría señaló, y qué se hizo con cada uno
@@ -37,7 +37,7 @@ El cuarto era de prosa. Seis capítulos con la misma secuencia interna de cinco 
 | Anexo A, rúbrica | Reescrito como anexo A, sin las medias |
 | Anexo B, material institucional | Dividido entre el anexo B, matriz de evidencia, y el anexo C, casos |
 | Anexo C, uso de IA | Reducido de 615 a 175 palabras como anexo E |
-| Las 15 figuras | Cinco sobreviven en forma nueva; las diez restantes se conservan en `figuras/informe-02b/` |
+| Las 15 figuras | Cinco sobreviven en forma nueva; las diez restantes se conservan en `figuras/_no-usadas/informe-02b/` |
 
 ## 4. Material nuevo
 
