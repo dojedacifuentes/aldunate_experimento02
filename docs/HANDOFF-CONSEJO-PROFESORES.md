@@ -61,6 +61,7 @@ consejo-profesores/
     redaccion/informe-01/       Escuelas de Derecho chilenas · terminado
     redaccion/informe-02/       Transformación de la enseñanza · versión temática
     redaccion/informe-02b/      Transformación de la enseñanza · fichas · SOLO CONFIG
+    redaccion/metodologia-informe-02b.md  la metodología del próximo trabajo
     redaccion/plan-informe-02b.md    la estructura y el índice del próximo trabajo
     puntaje/                    matriz, escalas y scripts de cálculo
     hechos/                     hallazgos de cada ronda de búsqueda
@@ -92,7 +93,9 @@ Se entregó bajo el título «Inteligencia artificial generativa y enseñanza de
 
 ### Informe 02b · por hacer
 
-Reestructuración del anterior con la forma del Informe 01. **La estructura y el índice están escritos en `redaccion/plan-informe-02b.md`.** El `config.json` está creado con los once archivos del cuerpo y los tres anexos. Falta todo lo demás.
+Reestructuración del anterior con la forma del Informe 01. La metodología está fijada en `redaccion/metodologia-informe-02b.md` y la estructura en `redaccion/plan-informe-02b.md`. El `config.json` está creado con los once archivos del cuerpo y los tres anexos. Falta todo lo demás.
+
+La decisión metodológica del 15 de septiembre de 2026 conviene no revertirla. La unidad de análisis es la dimensión de la enseñanza y no la institución, porque nueve fichas de universidades extranjeras serían otra vez el compilado que el profesor rechazó. El nivel 3 de la escala funciona como umbral: por debajo, la evidencia es una declaración institucional; por encima, es un rastro de enseñanza. Eso convierte en medición la distancia entre política y aula, que es la debilidad conocida del análisis documental.
 
 ---
 

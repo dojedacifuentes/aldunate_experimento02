@@ -11,13 +11,14 @@ Trabajo en el repositorio `dojedacifuentes/aldunate_experimento02`. Necesito que
 Todo el material está en `tools/informes/consejo-profesores/`. Lee, en este orden:
 
 1. `README.md` — cómo funciona la cadena de construcción y qué debe dar cada control.
-2. `_build/redaccion/plan-informe-02b.md` — la estructura y el índice de lo que hay que escribir. Ya está decidido; no lo rediseñes.
-3. `docs/HANDOFF-CONSEJO-PROFESORES.md` (en la raíz del repo) — las decisiones tomadas que no deben revertirse.
-4. `_build/estilo/reglas-documento-a.md` — las reglas de redacción, que mandan sobre cualquier costumbre.
+2. `_build/redaccion/metodologia-informe-02b.md` — la unidad de análisis, la escala, la regla de evidencia y los sesgos declarados. Manda sobre el plan ante cualquier discrepancia.
+3. `_build/redaccion/plan-informe-02b.md` — la estructura y el índice de lo que hay que escribir. Ya está decidido; no lo rediseñes.
+4. `docs/HANDOFF-CONSEJO-PROFESORES.md` (en la raíz del repo) — las decisiones tomadas que no deben revertirse.
+5. `_build/estilo/reglas-documento-a.md` — las reglas de redacción, que mandan sobre cualquier costumbre.
 
 ## Qué hay que hacer
 
-Redactar el **Informe 02, edición de fichas institucionales**.
+Redactar el **Informe 02, edición de fichas por dimensión**.
 
 Antes de empezar, fija la distinción, porque el directorio produce dos documentos con objetos distintos y es fácil confundirlos.
 
@@ -27,7 +28,9 @@ El **Informe 02**, que es el tuyo, examina **cómo cambia la enseñanza universi
 
 Cuidado con un detalle: la versión anterior de ese Informe 02 se entregó bajo el título «Inteligencia artificial generativa y enseñanza del Derecho», que estrechó su objeto. El informe experto de base tiene alcance universitario, y la reestructuración debe recuperarlo, salvo que el usuario indique lo contrario.
 
-Lo que se te pide es que el Informe 02 adopte la forma del Informe 01: fichas institucionales con gráfico de barras, mapeo general y conclusiones numeradas.
+Lo que se te pide es que el Informe 02 adopte la forma del Informe 01: fichas con gráfico de barras, color propio por institución sostenido entre figuras, mapeo general y conclusiones numeradas.
+
+Con una diferencia que ya está decidida y fundada, y que no debes revertir. En el Informe 01 la ficha es una facultad, porque la pregunta es qué capacidades tiene cada una. Aquí la ficha es una dimensión de la enseñanza —metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad—, porque la pregunta es cómo cambia la enseñanza. Las nueve instituciones aparecen dentro de cada ficha como evidencia, y un capítulo posterior recupera la lectura por institución con nueve perfiles breves. El apartado 3 de `metodologia-informe-02b.md` explica por qué nueve fichas de universidades extranjeras volverían a ser el compilado que el profesor rechazó.
 
 El `config.json` está creado en `_build/redaccion/informe-02b/` con los once archivos del cuerpo y tres anexos. Falta escribir todos esos archivos.
 
@@ -53,11 +56,13 @@ Lo que sí falta trasladar a ese archivo es el mapa de las treinta instituciones
 
 ## Orden de trabajo
 
-1. Traslada las treinta instituciones del mapa internacional a `_build/puntaje/niveles-instituciones.json`, que ya contiene la matriz de nueve.
-2. Genera los gráficos.
-3. Redacta en el orden IV, V, VII, VI, VIII, IX, y al final I, II y III. El resumen y la metodología se escriben con el resto a la vista.
-4. Escribe el anexo C sobre uso de inteligencia artificial en la elaboración. Toma como modelo el apartado 4 del anexo de `_build/redaccion/informe-02/A-anexo.md`.
-5. Adapta `auditar-cifras.mjs`: hoy comprueba una escala de cinco dimensiones sobre quince, y aquí debe comprobar niveles de cero a cinco.
+1. Recorre las 63 celdas de la matriz contra el anexo B del informe experto, comprueba qué fuente sostiene cada valor y degrada a no concluyente las que descansen sobre inferencia. Hoy las 63 tienen un número y ninguna está marcada como no concluyente, lo que resulta improbable. Espera que la media baje desde el 2,89 actual.
+2. Formula las siete preguntas verificables, una por dimensión, que el anexo A debe publicar.
+3. Traslada las treinta instituciones del mapa internacional a `_build/puntaje/niveles-instituciones.json`, que ya contiene la matriz de nueve.
+4. Genera los gráficos. Los siete del capítulo IV comparten escala de 0 a 5 para que las barras sean comparables entre fichas.
+5. Redacta en el orden IV, V, VIII, VII, VI, IX, X, y al final I, II y III. El resumen y la metodología se escriben con el resto a la vista.
+6. Escribe el anexo C sobre uso de inteligencia artificial en la elaboración. Toma como modelo el apartado 4 del anexo de `_build/redaccion/informe-02/A-anexo.md`.
+7. Adapta `auditar-cifras.mjs`: hoy comprueba una escala de cinco dimensiones sobre quince, y aquí debe comprobar niveles de cero a cinco.
 
 ## Antes de entregar
 
@@ -88,11 +93,11 @@ Sus títulos son ensayísticos y llevan metáfora o gancho. Estos son suyos, y n
 
 Escríbelos descriptivos y numerados, como en el Informe 01: «VI. El efecto sobre el aprendizaje», «2.3. Investigación y desarrollo».
 
-El contenido del informe rechazado, en cambio, es sólido y verificado. Lo que cambia es la forma: menos capítulos, títulos descriptivos, fichas institucionales con gráfico, y lo técnico al anexo.
+El contenido del informe rechazado, en cambio, es sólido y verificado. Lo que cambia es la forma: menos capítulos, títulos descriptivos, fichas con gráfico, y lo técnico al anexo.
 
 ## Dos cosas que debes pedirme antes de redactar
 
-1. **Si hubo observaciones del profesor además del correo.** El informe rechazado ya está en el repositorio, pero no consta si lo devolvió con comentarios propios.
+1. **Si hubo observaciones del profesor además del correo.** El informe rechazado y el índice del borrador ya están en el repositorio, pero no consta si el profesor los devolvió con comentarios propios.
 2. **Confirmación de si el alcance vuelve a ser universitario o sigue acotado al Derecho.** La versión anterior de 43 páginas se tituló «Inteligencia artificial generativa y enseñanza del Derecho» y estrechó el objeto. El material institucional que ahora se usa —las nueve instituciones de la matriz y las treinta del mapa— es de alcance universitario, con el Derecho como uno de sus capítulos. El plan supone ese alcance más amplio; conviene confirmarlo.
 
 ## Contexto de por qué el formato es así

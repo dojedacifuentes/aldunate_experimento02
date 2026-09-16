@@ -45,6 +45,7 @@ consejo-profesores/
       informe-01/        Escuelas de Derecho chilenas · terminado
       informe-02/        Transformación de la enseñanza · versión temática, terminada
       informe-02b/       Transformación de la enseñanza · edición de fichas, pendiente
+      metodologia-informe-02b.md  unidad de análisis, escala y regla de evidencia
       plan-informe-02b.md   estructura e índice del trabajo pendiente
     puntaje/             matriz, escalas y scripts de cálculo
     hechos/              hallazgos de cada ronda de búsqueda, con sus fuentes
@@ -153,7 +154,9 @@ La numeración de capítulos y apartados la escribe el redactor dentro del títu
 
 ## Lo próximo
 
-El Informe 02, el de transformación de la enseñanza, debe adoptar la forma de fichas del Informe 01. La estructura, el índice y el orden de trabajo están en [`_build/redaccion/plan-informe-02b.md`](_build/redaccion/plan-informe-02b.md), y el `config.json` ya está creado.
+El Informe 02, el de transformación de la enseñanza, debe adoptar la forma de fichas del Informe 01, con una diferencia decidida el 15 de septiembre de 2026: la ficha es una dimensión de la enseñanza y no una institución, porque la pregunta que responde este informe es cómo cambia la enseñanza. Las instituciones aparecen dentro de cada ficha como evidencia, y un capítulo posterior recupera la lectura por institución.
+
+La metodología está en [`_build/redaccion/metodologia-informe-02b.md`](_build/redaccion/metodologia-informe-02b.md) y manda sobre el plan. La estructura, el índice y el orden de trabajo están en [`_build/redaccion/plan-informe-02b.md`](_build/redaccion/plan-informe-02b.md), y el `config.json` ya está creado.
 
 La matriz ya está construida en [`_build/puntaje/niveles-instituciones.json`](_build/puntaje/niveles-instituciones.json): nueve instituciones, siete dimensiones —metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad— y una escala de cero a cinco. Falta trasladar a ese archivo el mapa de las treinta instituciones del capítulo 11.
 

@@ -2,6 +2,8 @@
 
 Reestructuración del informe sobre transformación de la enseñanza superior ante la inteligencia artificial, para que adopte la forma del Informe 01 aprobado por el Consejo de Profesores.
 
+La metodología que gobierna este plan está fijada en [`metodologia-informe-02b.md`](metodologia-informe-02b.md), documento del 15 de septiembre de 2026. Ante cualquier discrepancia manda ese archivo.
+
 ## 1. Identidad
 
 - **Título:** Informe sobre la transformación de la enseñanza universitaria ante la inteligencia artificial
@@ -14,7 +16,9 @@ Reestructuración del informe sobre transformación de la enseñanza superior an
 
 La versión anterior organizó el material por temas: uso, evaluación, aprendizaje, competencias, el Derecho, respuestas institucionales. Esa forma es la de un artículo académico.
 
-Esta edición adopta la forma del Informe 01: **fichas institucionales comparadas, con puntaje por dimensión y un gráfico de barras por institución**. El propósito es nuevo (transformación de la enseñanza, no capacidad instalada en Chile), pero la estructura, la escala visible y el tratamiento de la evidencia son los mismos que el Consejo ya aprobó.
+Esta edición adopta la forma del Informe 01: fichas comparadas, puntaje por dimensión, un gráfico de barras por ficha, color propio de cada institución sostenido entre figuras, mapeo general antes de concluir y conclusiones numeradas.
+
+Lo que cambia respecto del Informe 01 es el sujeto de la ficha. Allí la unidad de análisis es la facultad, porque la pregunta es qué capacidades tiene cada una. Aquí la unidad es la dimensión de la enseñanza, porque la pregunta es cómo cambia la enseñanza, y las instituciones pasan a ser la evidencia dentro de cada dimensión. La matriz es la misma del informe experto y se lee por columnas en vez de por filas, con un capítulo posterior que recupera la lectura por filas. El apartado 3 de [`metodologia-informe-02b.md`](metodologia-informe-02b.md) desarrolla la decisión y su fundamento.
 
 Cambio adicional exigido por el profesor: **todo el detalle metodológico sobre el uso de inteligencia artificial en la elaboración del documento sale del cuerpo y pasa a un anexo propio.**
 
@@ -29,11 +33,27 @@ Se conserva la escala de seis niveles del informe experto, que ya está construi
 | 2 | Política y alfabetización | Existe una política citable y un plan de formación |
 | 3 | Integración pedagógica | Los programas de asignatura de este año difieren de los de 2022 |
 | 4 | Transformación curricular | Un documento de gobierno académico aprobó competencias nuevas |
-| 5 | Transformación sistémica | Cambio coordinado de las seis dimensiones |
+| 5 | Transformación sistémica | Cambio coordinado de todas las dimensiones |
 
-Las seis dimensiones son currículo, evaluación, docencia, competencias, infraestructura y gobernanza. La matriz comparada añade una séptima columna de evidencia de resultados, que no es una dimensión de transformación sino una medida de lo que la institución sabe sobre su propio efecto.
+Las siete dimensiones son metodologías, competencias, evaluación, currículo, rol docente, gobernanza y equidad. Están construidas y verificadas en `puntaje/niveles-instituciones.json`, con las nueve instituciones de la matriz del capítulo 17.
 
-**Pendiente de confirmación antes de redactar:** las siete columnas exactas de la matriz del capítulo 17 del informe experto. El texto nombra seis dimensiones y una columna de evidencia; hay que verificar en los datos de la figura 9 si la séptima es la evidencia u otra distinta.
+### El umbral del nivel 3
+
+La naturaleza de la señal cambia entre el nivel 2 y el nivel 3. Los niveles 0, 1 y 2 se acreditan con documentos que la institución produce sobre sí misma. Los niveles 3, 4 y 5 exigen un rastro de enseñanza, como un programa de asignatura que difiere del de 2022 o un acuerdo de gobierno académico. El nivel 3 es, por tanto, el umbral en que la evidencia deja de ser una declaración.
+
+Ese umbral convierte en medición la distancia entre política y práctica, que es la debilidad conocida del método documental. Los datos actuales sitúan la media del conjunto en 2,89 sobre 63 celdas, con 23 celdas bajo el nivel 3.
+
+| Dimensión | Media | Rango | Celdas bajo el nivel 3 |
+|---|---|---|---|
+| Gobernanza | 3,33 | 2 a 5 | 3 de 9 |
+| Competencias | 3,00 | 2 a 5 | 3 de 9 |
+| Rol docente | 3,00 | 2 a 4 | 2 de 9 |
+| Metodologías | 2,89 | 2 a 4 | 2 de 9 |
+| Currículo | 2,78 | 1 a 5 | 4 de 9 |
+| Equidad | 2,78 | 2 a 4 | 3 de 9 |
+| Evaluación | 2,44 | 1 a 5 | 6 de 9 |
+
+Pendiente antes de redactar: ninguna de las 63 celdas está marcada como no concluyente, lo que resulta improbable. Hay que recorrerlas contra el anexo B del informe experto y degradar las que descansen sobre inferencia.
 
 ## 4. Estructura e índice
 
@@ -52,15 +72,35 @@ Por qué importa la pregunta ahora, qué se propone el informe y qué deja fuera
 ### III. Metodología · 1.200 palabras
 
 - Qué se hizo, paso a paso: criterio de inclusión de instituciones, verificación en fuente primaria, aplicación de la escala.
-- La escala de seis niveles y las seis dimensiones.
+- La escala de seis niveles, las siete dimensiones y el umbral del nivel 3.
+- La regla de evidencia: el nivel lo fija el mejor nivel demostrativo acreditado, sin atender al número de fuentes.
+- Qué se hace cuando la evidencia no permite concluir.
 - El sesgo declarado de la muestra: solo entran instituciones que documentan, de modo que el mapa sobreestima el nivel medio del sistema.
 - **Sin ninguna mención al uso de inteligencia artificial en la elaboración.** Eso va íntegro al anexo C.
 
-### IV. Fichas institucionales comparadas · 4.500 palabras · 9 gráficos
+### IV. Las siete dimensiones de la transformación · 5.000 palabras · 7 gráficos
 
-Nueve instituciones examinadas en profundidad, cada una con su ficha y su gráfico de perfil en las siete columnas de la matriz, en el formato del Informe 01: un apartado por dimensión con su nivel, la evidencia que lo sostiene y lo que no consta, y un cierre con el nivel global y una síntesis en prosa.
+El capítulo central, y donde el informe responde su pregunta. Una ficha por dimensión de la enseñanza, en el formato de ficha del Informe 01, con su gráfico de barras mostrando el nivel de las nueve instituciones dentro de esa dimensión.
 
-Orden propuesto, por nivel global descendente:
+Cada ficha desarrolla qué le ocurrió a esa parte de la enseñanza entre 2022 y 2026, qué institución llegó más lejos y qué acredita exactamente, cuántas quedaron bajo el umbral del nivel 3, y qué se sigue para una facultad de Derecho chilena.
+
+Orden por media descendente, que es el orden del dato:
+
+1. Gobernanza · media 3,33
+2. Competencias · media 3,00
+3. Rol docente · media 3,00
+4. Metodologías · media 2,89
+5. Currículo · media 2,78
+6. Equidad · media 2,78
+7. Evaluación · media 2,44
+
+Los siete gráficos comparten escala de 0 a 5 y la paleta institucional, de modo que las barras sean comparables entre fichas.
+
+### V. Perfiles institucionales · 2.500 palabras · 9 gráficos
+
+La lectura por filas de la misma matriz, para que el Consejo pueda ver una institución entera de una vez. Nueve perfiles breves, cada uno con su gráfico en las siete dimensiones y una síntesis en prosa de su fortaleza verificada y su evidencia de resultados.
+
+Orden por nivel global descendente:
 
 1. University of Sydney · Australia · nivel 4
 2. Ohio State University · Estados Unidos · nivel 4
@@ -72,31 +112,31 @@ Orden propuesto, por nivel global descendente:
 8. California State University · Estados Unidos · nivel 2
 9. Universidad de Chile · Chile · nivel 2
 
-Cada ficha conserva el color propio de su institución en todos los gráficos del documento, como en el Informe 01.
+Cada institución conserva su color en todos los gráficos del documento, como en el Informe 01.
 
-### V. El mapa internacional · 2.000 palabras · 3 gráficos
+### VI. El mapa internacional · 1.800 palabras · 3 gráficos
 
 Las treinta instituciones de diez países, ordenadas por nivel verificado. Gráficos de barras por nivel, por país y por tipo de intervención. Los cuatro patrones que el mapa revela, con la advertencia de sesgo al alza.
 
 Aquí entra el material chileno del mapa: Universidad Católica de Chile, Universidad de Chile y Universidad Andrés Bello, las tres en nivel 2, lo que permite al Consejo situar a las instituciones nacionales dentro de la escala internacional.
 
-### VI. La evidencia sobre el efecto en el aprendizaje · 2.200 palabras · 2 gráficos
+### VII. La evidencia sobre el efecto en el aprendizaje · 2.000 palabras · 2 gráficos
 
 Lo que la literatura experimental sostiene y lo que no. Los dos ensayos de 2025, la regla del diseño de la tarea, la distancia entre rendimiento percibido y medido, y la retractación del metaanálisis más citado. Es el capítulo que fundamenta por qué la escala mide transformación y no resultado.
 
-### VII. El caso del Derecho · 2.200 palabras · 2 gráficos
+### VIII. El caso del Derecho · 2.000 palabras · 2 gráficos
 
 Por qué la formación jurídica es el caso crítico: verificación de fuentes y responsabilidad personal. Fiabilidad medida de las herramientas jurídicas, citas fabricadas en tribunales, y las tres facultades de Derecho que alcanzan nivel 4 en el mapa. Cierra con el estado chileno, remitiendo al Informe 01.
 
-### VIII. Mapeo general · 1.200 palabras · 2 gráficos
+### IX. Mapeo general · 1.200 palabras · 2 gráficos
 
 Síntesis del conjunto antes de concluir, con el mismo papel que cumple en el Informe 01: qué muestra la matriz leída por columnas, dónde está el vacío estructural y qué relación hay entre profundidad de la transformación y calidad de la evidencia disponible.
 
-### IX. Conclusiones · 1.500 palabras
+### X. Conclusiones · 1.500 palabras
 
 Entre doce y dieciséis conclusiones numeradas, agrupadas en bloques: sobre las instituciones examinadas, sobre el contraste internacional, sobre las limitaciones del informe y sobre lo que se sigue para una escuela de Derecho chilena. Ninguna introduce información nueva.
 
-### X. Referencias
+### XI. Referencias
 
 Todas las fuentes citadas, en formato APA, ordenadas alfabéticamente y agrupadas por tipo, como en el Informe 01.
 
@@ -112,16 +152,19 @@ Todos de barras horizontales, un color por institución conservado entre figuras
 
 | id | Capítulo | Qué muestra |
 |---|---|---|
-| n01-niveles | V | Las treinta instituciones por nivel verificado |
-| n02-paises | V | Instituciones por país y nivel medio |
-| n03-tipo | V | Mandato curricular frente a rediseño evaluativo |
-| m01 a m09 | IV | Perfil de cada institución en las columnas de la matriz |
-| e01-ensayos | VI | Los dos ensayos aleatorizados de 2025 |
-| e02-percepcion | VI | Distancia entre rendimiento percibido y medido |
-| d01-alucinaciones | VII | Contenido inventado en herramientas jurídicas |
-| d02-citas | VII | Resoluciones con citas fabricadas |
-| g01-matriz | VIII | La matriz completa leída por columnas |
-| g02-evidencia | VIII | Profundidad de la transformación frente a calidad de la evidencia |
+| d01 a d07 | IV | Las nueve instituciones dentro de cada dimensión, escala común de 0 a 5 |
+| m01 a m09 | V | Perfil de cada institución en las siete dimensiones |
+| n01-niveles | VI | Las treinta instituciones por nivel verificado |
+| n02-paises | VI | Instituciones por país y nivel medio |
+| n03-tipo | VI | Mandato curricular frente a rediseño evaluativo |
+| e01-ensayos | VII | Los dos ensayos aleatorizados de 2025 |
+| e02-percepcion | VII | Distancia entre rendimiento percibido y medido |
+| j01-alucinaciones | VIII | Contenido inventado en herramientas jurídicas |
+| j02-citas | VIII | Resoluciones con citas fabricadas |
+| g01-matriz | IX | La matriz completa leída por columnas |
+| g02-evidencia | IX | Profundidad de la transformación frente a calidad de la evidencia |
+
+Son veinticinco figuras, frente a las veintiséis del Informe 01.
 
 ## 6. Reglas de redacción
 
@@ -141,9 +184,10 @@ Todo el andamiaje del Informe 01 sirve sin modificación:
 
 ## 8. Orden de trabajo sugerido
 
-1. Confirmar las siete columnas de la matriz del capítulo 17 en los datos de la figura 9.
-2. Construir `puntaje/niveles-instituciones.json` con las nueve instituciones y sus columnas, y las treinta del mapa con su nivel y país.
-3. Generar los gráficos con la paleta y el estilo del Informe 01.
-4. Redactar en el orden IV, V, VII, VI, VIII, IX, y al final I, II y III.
-5. Escribir el anexo C con el mismo detalle que el anexo del documento anterior.
-6. Auditar cifras, medir estilo, compilar y convertir a PDF.
+1. Revisar las 63 celdas contra el anexo B del informe experto y degradar a no concluyente las que descansen sobre inferencia.
+2. Formular las siete preguntas verificables, una por dimensión, que el anexo A debe publicar.
+3. Trasladar las treinta instituciones del mapa internacional a `puntaje/niveles-instituciones.json`, con su país y su nivel verificado.
+4. Generar los gráficos con la paleta y el estilo del Informe 01.
+5. Redactar en el orden IV, V, VIII, VII, VI, IX, X, y al final I, II y III.
+6. Escribir el anexo C con el mismo detalle que el anexo del documento anterior.
+7. Auditar cifras, medir estilo, compilar y convertir a PDF.
