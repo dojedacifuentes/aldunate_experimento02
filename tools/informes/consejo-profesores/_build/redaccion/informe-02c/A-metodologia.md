@@ -14,7 +14,7 @@ De 2022 a 2026, con prioridad en 2024-2026. Los casos de educación secundaria s
 
 ## A.3 Estrategia de búsqueda
 
-La investigación se realizó mediante búsqueda directa y verificación individual de fuentes, y quedó recogida en el informe experto de base de setenta y siete páginas, del que este documento procede.
+La investigación se realizó mediante búsqueda directa y verificación individual de fuentes, y quedó recogida en el informe experto de base de setenta y siete páginas, que reúne el corpus sobre el que este trabajo se apoya.
 
 Las vías recorridas fueron seis: bases de literatura académica revisada por pares; repositorios de preprints, para localizar trabajos aún no publicados y comprobar después su estado; publicaciones de organismos internacionales y agencias públicas de aseguramiento de la calidad; sitios institucionales de universidades, con sus políticas, reglamentos y programas; registros y bases de datos especializadas, como el de resoluciones judiciales con contenido inventado; y prensa sectorial, usada solo para localizar iniciativas cuya existencia se verificó después en fuente primaria.
 
@@ -46,7 +46,7 @@ Sobre la clasificación anterior se aplica una escala ordinal de nivel demostrat
 
 El nivel de cada afirmación lo fija la mejor fuente disponible, con independencia del número de fuentes que mencionen el asunto. Un recuento de menciones mide la intensidad con que se buscó tanto como el estado real de la cuestión.
 
-Conviene advertir un límite de este instrumento, porque una versión anterior de este informe lo pasó por alto. La escala es ordinal y no métrica: la distancia entre el primer grado y el segundo no equivale a la distancia entre el cuarto y el quinto. De ahí se sigue que promediar los niveles para obtener una cifra única carece de justificación, y que las medias que aparecían en versiones previas se han retirado. Lo que el informe reporta son recuentos y distribución, que es lo que una escala ordinal admite.
+La escala es ordinal y no métrica, y de ahí se sigue una precaución sobre su uso. La distancia entre el primer grado y el segundo no equivale a la distancia entre el cuarto y el quinto, de modo que promediar los niveles para obtener una cifra única carecería de justificación. El informe reporta por tanto recuentos y distribución, que es lo que una escala de esta naturaleza admite.
 
 Aplicada al material de este documento, la distribución es la siguiente. Cinco afirmaciones centrales alcanzan el cuarto o el quinto grado, todas ellas relativas al diagnóstico de lo ocurrido. Ninguna de las respuestas institucionales examinadas supera el segundo grado, salvo el tutor de Harvard, que alcanza el cuarto y que es un experimento antes que una política.
 
@@ -56,7 +56,7 @@ Cuatro limitaciones afectan al conjunto del informe.
 
 La documentación pública de instituciones anglófonas es más accesible y detallada, de modo que el panorama descrito las favorece. Las instituciones publican sus éxitos con mucha mayor frecuencia que sus fracasos, y la única excepción localizada en todo el corpus es la encuesta interna de California State University. Ninguna medición procede de una facultad chilena, ni los datos de empleo, que corresponden al mercado estadounidense. Y los hallazgos de este campo caducan deprisa, como muestran la retractación del metaanálisis de Wang y Fan en abril de 2026 y la reclasificación posterior del resultado de METR por sus propios autores.
 
-Dos materiales concretos no se contrastaron contra fuentes primarias en esta edición, y quedan registrados en `VERIFICACIONES_PENDIENTES.md`. El primero son las cifras de expansión de la oferta asiática del capítulo VI. El segundo es la información institucional de la tabla del capítulo VIII, que procede del informe experto de base.
+Dos materiales concretos no se contrastaron contra sus fuentes primarias, y el informe los señala allí donde los emplea. El primero son las cifras de expansión de la oferta asiática del capítulo VI. El segundo es la información institucional de la tabla del capítulo VIII y del anexo C, que procede del informe experto de base. Ninguna conclusión de este documento descansa exclusivamente sobre ellos.
 
 ## A.8 Fecha de corte
 

@@ -6,4 +6,4 @@ La selección de fuentes, la interpretación de los resultados, la estructura ar
 
 El uso de estas herramientas no sustituye la responsabilidad del autor sobre el contenido del documento.
 
-Esta declaración figura en anexo por indicación expresa de la Dirección de la Escuela, y se incluye porque el capítulo XI plantea la cuestión de exigir declaraciones equivalentes en los trabajos de los estudiantes.
+Se incluye porque el capítulo XI plantea la cuestión de exigir declaraciones equivalentes en los trabajos de los estudiantes, exigencia que carecería de fundamento si los documentos institucionales no la cumplieran primero.

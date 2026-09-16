@@ -9,7 +9,7 @@ Registro de la reestructuración del 16 de septiembre de 2026, ejecutada según 
 | Informe experto v0.3.0 | `insumos/informe-02/` | 24 capítulos temáticos | 77 páginas | Rechazado en agosto de 2026 |
 | Edición temática | `redaccion/informe-02/` | 11 capítulos temáticos | 43 páginas | Superada |
 | Edición de decisiones | `redaccion/informe-02b/` | 6 funciones pedagógicas | 52 páginas | Superada |
-| **Edición reestructurada** | `redaccion/informe-02c/` | **12 capítulos según los cambios observados** | **38 páginas** | **Vigente** |
+| **Edición reestructurada** | `redaccion/informe-02c/` | **12 capítulos según los cambios observados** | **52 páginas** | **Vigente** |
 
 ## 2. Los cuatro defectos que la auditoría señaló, y qué se hizo con cada uno
 
@@ -73,8 +73,16 @@ Se ejecutaron además dos revisiones que la auditoría exige. La epistemológica
 
 ## 7. Una nota sobre la extensión
 
-La auditoría fija un objetivo de 34 a 38 páginas. El documento tiene 38.
+La auditoría fijaba un objetivo de 34 a 38 páginas, y el usuario lo relajó el 16 de septiembre de 2026 en favor de la coherencia del documento. El entregable tiene 52 páginas.
 
-Alcanzarlo exigió una decisión de formato que conviene registrar. Con el salto de página por capítulo que usa el Informe 01, el mismo contenido ocupa 48 páginas. Sin él, 38. El contenido es idéntico y los capítulos siguen abriendo con su encabezado numerado.
+La cifra depende de dos decisiones. La primera es el salto de página por capítulo, que es el formato del Informe 01 y cuesta unas diez páginas; conservarlo produce un documento tradicional, y desactivarlo con `capitulo_en_pagina_nueva: false` en el config lo comprime a 38. La segunda es la extensión de los anexos C y D, que en la versión de 38 páginas estaban recortados y ahora llevan las fichas institucionales completas y las tablas de cifras jurídicas.
 
 Para situar la cifra: el Informe 01, que el Consejo aprobó, tiene 63 páginas, y el informe experto rechazado, 77.
+
+## 8. Qué no aparece en el entregable
+
+El documento no narra su propia confección. Se retiraron de él tres pasajes que lo hacían: la advertencia del anexo A sobre que una versión anterior había promediado la escala ordinal, la mención del anexo E a que la declaración figura ahí por indicación de la Dirección, y la remisión del anexo A a `VERIFICACIONES_PENDIENTES.md`, que es un archivo interno.
+
+Las limitaciones sustantivas se conservan íntegras, porque son metodología y no proceso: los dos materiales sin contrastar contra fuente primaria se declaran allí donde se emplean, y el anexo A los enumera.
+
+El registro del proceso vive en este archivo y en los otros dos de `docs/`, fuera del documento que se entrega.

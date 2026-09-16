@@ -42,7 +42,7 @@ El cuarto es de prosa. Seis capítulos con la misma secuencia interna de cinco a
 
 ## 3. Gráficos
 
-La edición 02b tenía quince figuras. La reestructurada tiene cinco, porque la auditoría exige que cada gráfico resuelva una pregunta visual y que lo que pueda decirse en una frase se diga en una frase.
+La edición 02b tenía quince figuras. La reestructurada tiene cinco, porque la auditoría exige que cada gráfico resuelva una pregunta visual y que lo que pueda decirse en una frase se diga en una frase. Esa reducción se mantiene aunque la restricción de extensión se haya relajado, porque no dependía de ella.
 
 | Id | Capítulo | Pregunta visual que resuelve | Series |
 |---|---|---|---|

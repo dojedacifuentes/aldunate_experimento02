@@ -30,7 +30,7 @@ En paralelo al currículo transversal, la oferta de titulaciones específicas cr
 
 En China más de seiscientas universidades ofrecen grados de inteligencia artificial en 2026, frente a las treinta y cinco que recibieron aprobación en 2018, y en abril de 2026 el Ministerio de Educación publicó junto a otros cuatro organismos un plan que la convierte en asignatura obligatoria del tronco común. En México más de ciento noventa universidades ofrecen programas relacionados, en ausencia de regulación nacional unificada. Singapur y Hong Kong optaron por el requisito universal antes que por la titulación específica, y Hong Kong exige dos cursos sucesivos para graduarse.
 
-Estas cifras proceden del informe experto de base, sin contraste contra fuentes primarias en esta edición, según registra el anexo A.
+Estas cifras proceden del informe experto de base, sin contraste contra sus fuentes primarias, según registra el anexo A.
 
 El contraste entre rutas nacionales es instructivo. China resuelve por mandato estatal, Singapur y Hong Kong por requisito institucional universal, Estados Unidos por iniciativa aislada de universidades concretas, y Europa continental por regulación del uso antes que por currículo. Las cuatro producen titulados que saben sobre inteligencia artificial. Ninguna garantiza todavía titulados que sepan trabajar en entornos donde estos sistemas ejecutan parte de su oficio.
 
